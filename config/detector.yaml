@@ -1,0 +1,12 @@
+# Detector schedule and change detection parameters.
+schedule: "*/1 * * * *"
+ewma_alpha: 0.1
+cusum_k: 0.5
+cusum_h: 5.0
+min_breach_windows: 3
+metrics:
+  - recall_at_k
+  - groundedness
+  - citation_rate
+  - latency_p95_ms
+  - error_rate

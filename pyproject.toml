@@ -1,0 +1,51 @@
+[project]
+name = "driftline"
+version = "0.1.0"
+description = "Multi agent system that detects RAG quality drift and opens fix PRs"
+requires-python = ">=3.12,<3.13"
+dependencies = ["driftline-common"]
+
+[tool.uv]
+package = false
+
+[tool.uv.workspace]
+members = ["packages/*"]
+
+[tool.uv.sources]
+driftline-common = { workspace = true }
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = ["apps/console"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "N", "S", "ASYNC", "RUF", "SIM", "PT"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["driftline_common"]
+
+[tool.ruff.lint.per-file-ignores]
+"**/tests/**" = ["S101"]
+
+[tool.mypy]
+strict = true
+python_version = "3.12"
+plugins = ["pydantic.mypy"]
+files = ["packages"]
+explicit_package_bases = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["packages", "tests"]
+addopts = "--import-mode=importlib"
+
+[dependency-groups]
+dev = [
+    "mypy==2.4.0",
+    "pre-commit==4.6.2",
+    "pytest==9.1.1",
+    "pytest-asyncio==1.4.0",
+    "ruff==0.17.0",
+    "types-pyyaml==6.0.12.20260906",
+]

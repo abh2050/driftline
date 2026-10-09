@@ -1,0 +1,34 @@
+# Human steps
+
+Steps Claude Code cannot do for you. Each one is added at the point the build is blocked, with its date.
+
+## 2026-10-09: Azure sign in and Foundry model quota
+
+> **Resolved by ADR 0001:** Decision-1 and Claude are dropped, so the quota requests in steps 3–4 are optional. Only step 1 (`azd auth login`) is still needed.
+
+Subscription: `Azure subscription 1` (37dc8b49-69c9-4d42-827d-9727d47224c1), Pay-As-You-Go. Target region: **westus3**, where the portal created project `avixek-7316` (resource group `rg-avixek-3684`). Quota numbers below are the same in westus3 and eastus2.
+
+1. Sign in to azd: `azd auth login`. `az login` is already done.
+2. Quota check in westus3 (thousands of tokens per minute):
+   | Need | Model | Deployment type | Current quota | Action |
+   |---|---|---|---|---|
+   | Router | Microsoft-Decision-1 | GlobalStandard | 0 | Request quota |
+   | Specialists, Claude router | claude-sonnet-5-5 | GlobalStandard | 0 | Request quota |
+   | General chat, LLM router | gpt-5.4-mini | DataZoneStandard | 200 | None |
+   | Judge | o4-mini | GlobalStandard | 100 | None |
+   | Embedding | text-embedding-3-small | GlobalStandard | 1000 | None |
+3. Request quota for Microsoft-Decision-1 and claude-sonnet-5-5:
+   - Go to https://ai.azure.com and open project `avixek-7316` (westus3).
+   - The quota is counted in **requests per minute** (the unit is `Requests Per Minute - Microsoft-Decision-1`), and the limit is 0 in every region. Ask for **500 RPM** in **westus3**, GlobalStandard. A test deployment fails with: `InsufficientQuota ... the quota limit is 0 for quota Requests Per Minute - Microsoft-Decision-1`.
+   - With the New Foundry toggle on, open **Operate → Quota** (or **Manage → Quota**), go to the Tokens per minute tab and click **Request quota** in the upper right. If it isn't there, use the form at https://aka.ms/oai/stuquotarequest. In the classic portal it's under Management center → Quota. Then and submit one request per model, choosing westus3 and GlobalStandard. 100K TPM is enough for this project.
+   - If the portal does not offer a quota form for a model, open an Azure support request: Help + support → Create a support request → Service and subscription limits (quotas) → Microsoft Foundry / Cognitive Services. Name the model, the region and the GlobalStandard deployment type.
+4. Accept the Claude Marketplace terms: in the Foundry model catalog, open claude-sonnet-5-5 and click **Deploy**. Fill in the industry, organization name and country. This creates the Marketplace subscription. If the deploy then fails on quota, wait for step 3 to be approved.
+5. Tell Claude Code when the approval emails arrive. Approval can take several days. Phase 0 and the offline parts of Phase 1 can go ahead in the meantime.
+
+## 2026-10-09: Rotate the leaked Foundry API key
+
+The key for `avixek-7316-resource` was pasted into a chat session. Regenerate it:
+
+    az cognitiveservices account keys regenerate -g rg-avixek-3684 -n avixek-7316-resource --key-name key1
+
+Driftline does not use API keys. Every service signs in with managed identity through DefaultAzureCredential (spec section 2.4).

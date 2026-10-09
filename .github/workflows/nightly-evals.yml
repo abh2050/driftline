@@ -1,0 +1,17 @@
+name: nightly-evals
+
+# Layers 2a, 2b and 3 against dev through an OIDC federated credential (Phase 9).
+on:
+  schedule:
+    - cron: "0 7 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  evals:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Nightly evals are wired up in Phase 9."

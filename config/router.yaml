@@ -1,0 +1,16 @@
+# Router configuration (ADR 0001). All decisions go through the router service.
+active: gpt-5-mini
+escalation_threshold: 0.6
+dual_route_margin: 0.15
+clients:
+  gpt-5-mini:
+    kind: llm
+    deployment: gpt-5-mini
+  gpt-4.1-mini:
+    kind: llm
+    deployment: gpt-4.1-mini
+  gpt-oss-120b:
+    kind: llm
+    deployment: gpt-oss-120b
+  rules:
+    kind: rules

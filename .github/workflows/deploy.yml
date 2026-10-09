@@ -1,0 +1,15 @@
+name: deploy
+
+# azd deploy of changed services on merge to main (enabled after Phase 2).
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Deployment is wired up after Phase 2 provisions the environment."

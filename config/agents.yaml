@@ -1,0 +1,11 @@
+# Model deployment per agent (ADR 0001).
+defaults:
+  deployment: gpt-5-mini
+agents:
+  retrieval-specialist: {}
+  prompt-specialist: {}
+  index-specialist: {}
+  performance-specialist: {}
+  validator: {}
+  pr-writer: {}
+  explainer: {}
