@@ -23,17 +23,18 @@ extend-exclude = ["apps/console"]
 select = ["E", "F", "W", "I", "B", "UP", "N", "S", "ASYNC", "RUF", "SIM", "PT"]
 
 [tool.ruff.lint.isort]
-known-first-party = ["driftline_common", "synth"]
+known-first-party = ["driftline_common", "synth", "scripts"]
 
 [tool.ruff.lint.per-file-ignores]
 "**/tests/**" = ["S101", "S311"]
 "synth/**" = ["S311"]
+"scripts/**" = ["S603", "S607"]
 
 [tool.mypy]
 strict = true
 python_version = "3.12"
 plugins = ["pydantic.mypy"]
-files = ["packages", "synth", "tests"]
+files = ["packages", "synth", "scripts", "tests"]
 explicit_package_bases = true
 
 [tool.pytest.ini_options]
@@ -44,6 +45,8 @@ pythonpath = ["."]
 
 [dependency-groups]
 dev = [
+    "azure-mgmt-resource==26.0.0",
+    "azure-monitor-query==2.0.0",
     "mypy==2.4.0",
     "pre-commit==4.6.2",
     "pytest==9.1.1",

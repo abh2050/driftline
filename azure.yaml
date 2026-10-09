@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+name: driftline
+metadata:
+  template: driftline@0.1.0
+infra:
+  provider: bicep
+  path: infra
+hooks:
+  preprovision:
+    shell: sh
+    run: uv run python -m scripts.entra_app pre
+  postprovision:
+    shell: sh
+    run: uv run python -m scripts.entra_app post
+services:
+  otel-collector:
+    project: apps/otel-collector
+    language: docker
+    host: containerapp
+    docker:
+      path: Dockerfile
+      remoteBuild: true

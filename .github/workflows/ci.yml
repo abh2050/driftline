@@ -29,4 +29,14 @@ jobs:
         run: uv run pytest -q
       - name: synthetic data determinism
         run: ./scripts/check-synth-determinism.sh
-      # Added in later phases: Bicep lint, layer 1 offline.
+      # Added in later phases: layer 1 offline.
+
+  bicep:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - name: bicep lint
+        run: |
+          az bicep install
+          az bicep lint --file infra/main.bicep --diagnostics-format sarif > bicep.sarif
+          az bicep build --file infra/main.bicep --stdout > /dev/null
