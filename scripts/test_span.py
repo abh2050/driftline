@@ -15,7 +15,7 @@ import time
 from datetime import timedelta
 
 from azure.identity import AzureCliCredential
-from azure.monitor.query import LogsQueryStatus, LogsQueryClient
+from azure.monitor.query import LogsQueryClient, LogsQueryStatus
 
 from driftline_common.telemetry import setup_telemetry
 from scripts.smoke import azd_env
