@@ -52,7 +52,7 @@ processors:
       - name: baseline
         type: probabilistic
         probabilistic: { sampling_percentage: 10 }
-  cumulativetodelta:
+  cumulative_to_delta:
   resource/env:
     attributes:
       - key: deployment.environment
@@ -63,7 +63,7 @@ connectors:
   forward/sample:
   # Request rate, error rate and latency histograms per service, agent, decision type and
   # model deployment, computed before sampling so the numbers are unbiased.
-  spanmetrics:
+  span_metrics:
     histogram:
       exponential:
         max_size: 160
@@ -75,7 +75,7 @@ connectors:
     metrics_flush_interval: 30s
 
 exporters:
-  otlphttp/azuremonitor:
+  otlp_http/azuremonitor:
     traces_endpoint: ${env:DCE_LOGS_ENDPOINT}/datacollectionRules/${env:OTLP_DCR_IMMUTABLE_ID}/streams/Microsoft-OTLP-Traces/otlp/v1/traces
     logs_endpoint: ${env:DCE_LOGS_ENDPOINT}/datacollectionRules/${env:OTLP_DCR_IMMUTABLE_ID}/streams/Microsoft-OTLP-Logs/otlp/v1/logs
     metrics_endpoint: ${env:DCE_METRICS_ENDPOINT}/datacollectionRules/${env:OTLP_DCR_IMMUTABLE_ID}/streams/Custom-Metrics-Otel/otlp/v1/metrics
@@ -98,16 +98,16 @@ service:
     traces/in:
       receivers: [otlp]
       processors: [memory_limiter, resource/env]
-      exporters: [spanmetrics, forward/sample]
+      exporters: [span_metrics, forward/sample]
     traces/out:
       receivers: [forward/sample]
       processors: [tail_sampling, batch]
-      exporters: [otlphttp/azuremonitor]
+      exporters: [otlp_http/azuremonitor]
     metrics:
-      receivers: [otlp, spanmetrics]
-      processors: [memory_limiter, resource/env, cumulativetodelta, batch]
-      exporters: [otlphttp/azuremonitor]
+      receivers: [otlp, span_metrics]
+      processors: [memory_limiter, resource/env, cumulative_to_delta, batch]
+      exporters: [otlp_http/azuremonitor]
     logs:
       receivers: [otlp]
       processors: [memory_limiter, resource/env, batch]
-      exporters: [otlphttp/azuremonitor]
+      exporters: [otlp_http/azuremonitor]

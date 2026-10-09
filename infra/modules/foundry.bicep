@@ -27,6 +27,7 @@ resource account 'Microsoft.CognitiveServices/accounts@2025-06-01' = {
 
 resource project 'Microsoft.CognitiveServices/accounts/projects@2025-06-01' = {
   parent: account
+  dependsOn: [models]
   name: '${prefix}-project'
   location: location
   tags: tags
@@ -37,7 +38,8 @@ resource project 'Microsoft.CognitiveServices/accounts/projects@2025-06-01' = {
   }
 }
 
-// Deployments must be created one at a time on the same account.
+// The account accepts one write at a time: deployments run sequentially, and the project
+// and connection wait for them.
 @batchSize(1)
 resource models 'Microsoft.CognitiveServices/accounts/deployments@2025-06-01' = [for d in deployments: {
   parent: account
@@ -56,6 +58,7 @@ resource appi 'Microsoft.Insights/components@2020-02-02' existing = {
 // Connect the project to Application Insights for Foundry tracing views.
 resource tracing 'Microsoft.CognitiveServices/accounts/projects/connections@2025-06-01' = {
   parent: project
+  dependsOn: [models]
   name: 'appinsights'
   properties: {
     category: 'AppInsights'

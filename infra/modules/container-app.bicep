@@ -26,8 +26,9 @@ param probes array = []
 @description('Image used until azd deploys the service image.')
 param placeholderImage string = 'mcr.microsoft.com/k8se/quickstart:latest'
 
-resource existing 'Microsoft.App/containerApps@2025-01-01' existing = if (exists) {
-  name: name
+module current 'fetch-image.bicep' = if (exists) {
+  name: 'fetch-image-${name}'
+  params: { name: name }
 }
 
 var ipRules = [for (ip, i) in allowedIps: {
@@ -35,7 +36,7 @@ var ipRules = [for (ip, i) in allowedIps: {
   action: 'Allow'
   ipAddressRange: ip
 }]
-var image = exists ? existing!.properties.template.containers[0].image : placeholderImage
+var image = exists ? current!.outputs.image : placeholderImage
 
 resource app 'Microsoft.App/containerApps@2025-01-01' = {
   name: name
