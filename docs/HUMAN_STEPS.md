@@ -44,3 +44,5 @@ For each record, check that the question is answerable from the source fact and 
     uv run python -m synth.review status
 
 Tell Claude Code when `reviewed` is 30 or more.
+
+> **2026-10-09:** The owner deferred this review and asked to continue to Phase 2. Phase 1 is accepted with this item **open**. Complete it before relying on layer 1 numbers in reports.
