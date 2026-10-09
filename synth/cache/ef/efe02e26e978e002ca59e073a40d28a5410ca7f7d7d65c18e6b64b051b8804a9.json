@@ -1,0 +1,16 @@
+{
+ "content": "{\n  \"paraphrases\": [\n    \"A breach persisted across 17 one-minute windows. Observed metric changes: citation_rate 0.9515 -> 0.8806 (-7.5%), top_score 0.8545 -> 0.8237 (-3.6%). Config drift since baseline: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 1. Logs: citation parser: doc_id missing from search results; autoscaler: replicas 2 -> 3.\",\n    \"Sustained violation lasted 17 one-minute windows. Metrics shifted: citation_rate fell from 0.9515 to 0.8806 (-7.5%), top_score dropped from 0.8545 to 0.8237 (-3.6%). Configuration changed: index_schema.fields.doc_id.retrievable: True -> False. There was 1 recent deploy. Relevant logs: citation parser: doc_id missing from search results | autoscaler: replicas 2 -> 3.\",\n    \"The incident extended for 17 one-minute windows. Metric deltas: citation_rate 0.9515 -> 0.8806 (-7.5%); top_score 0.8545 -> 0.8237 (-3.6%). Config difference from baseline: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys count: 1. Logs captured: citation parser: doc_id missing from search results, autoscaler: replicas 2 -> 3.\",\n    \"Duration: breach spanned 17 one-minute windows. Performance metrics: citation_rate changed 0.9515 -> 0.8806 (-7.5%), top_score changed 0.8545 -> 0.8237 (-3.6%). Config change recorded: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 1. Log entries: citation parser: doc_id missing from search results; autoscaler: replicas 2 -> 3.\"\n  ]\n}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0082#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 17 one-minute windows. Metrics: citation_rate 0.9515 -> 0.8806 (-7.5%), top_score 0.8545 -> 0.8237 (-3.6%). Config changes since baseline: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 1. Logs: citation parser: doc_id missing from search results | autoscaler: replicas 2 -> 3",
+   "role": "user"
+  }
+ ]
+}

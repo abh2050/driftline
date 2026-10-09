@@ -1,0 +1,16 @@
+{
+ "content": "{\n  \"paraphrases\": [\n    \"Breach persisted across 27 one-minute windows. Groundedness moved from 4.3761 to 4.1826, a -4.4% change. Config changes since baseline: none. Recent deploys: 1. Relevant logs: indexer cfw-docs-indexer: status=disabled since 3h | search: 30 documents older than source revision | search: warm cache miss.\",\n    \"We observed a sustained breach for 27 one-minute windows. The groundedness metric fell 4.3761 -> 4.1826 (−4.4%). No config changes since baseline. There was 1 recent deploy. Logs show: indexer cfw-docs-indexer: status=disabled since 3h | search: 30 documents older than source revision | search: warm cache miss.\",\n    \"For 27 one-minute windows the breach remained active. Groundedness decreased from 4.3761 to 4.1826 (a -4.4% delta). Config changes since baseline: none. Recent deploys count: 1. Logged entries include: indexer cfw-docs-indexer: status=disabled since 3h | search: 30 documents older than source revision | search: warm cache miss.\",\n    \"The system sustained a breach across 27 one-minute windows. Groundedness: 4.3761 -> 4.1826, representing -4.4%. No config changes were made since the baseline. Recent deploys: 1. Logs: indexer cfw-docs-indexer: status=disabled since 3h | search: 30 documents older than source revision | search: warm cache miss.\"\n  ]\n}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0799#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 27 one-minute windows. Metrics: groundedness 4.3761 -> 4.1826 (-4.4%). Config changes since baseline: none. Recent deploys: 1. Logs: indexer cfw-docs-indexer: status=disabled since 3h | search: 30 documents older than source revision | search: warm cache miss",
+   "role": "user"
+  }
+ ]
+}

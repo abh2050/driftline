@@ -1,0 +1,16 @@
+{
+ "content": "# Operator Note — Line Startup: Ring Rolling (SOP-P3-L2-01)\n\nPurpose\n- Provide a focused checklist for operators initiating the Ring Rolling line in accordance with SOP-P3-L2-01. Use this note to confirm readiness and to catch common startup issues.\n\nPre-start verification\n- Confirm completed shift handover and review any outstanding flags in the logbook.\n- Ensure machine guards, emergency stops, and safety interlocks are installed and functional.\n- Verify tooling and mandrel assemblies match the production order and are secured per torque procedure.\n- Confirm lubricant reservoirs, coolant flow paths, and filtration indicators show acceptable conditions.\n\nControl system and instrumentation\n- Power up the control cabinet and confirm the HMI boots to the operational screen.\n- Validate feedback signals from position sensors and load cells; report any fault codes before proceeding.\n- Check alarm history for latent faults that may immediately reappear on startup.\n\nMaterial and feed\n- Verify billet dimensions and material lot traceability are logged.\n- Ensure feed conveyors and end stops are cleared and free of obstructions.\n- Confirm heating process is at target state per heat control schedule before moving product to the roll area.\n\nInitial roll sequence\n- Perform a slow verification pass with an empty mandrel or dummy stock to confirm roll alignment and axis movement.\n- Monitor bearings and drive systems for abnormal noise or vibration.\n- Observe cooling flow and chip evacuation paths.\n\nCommunication and escalation\n- Notify the line lead before introducing production material.\n- If any anomaly is detected, stop the line, record the defect, and escalate per SOP-P3-L2-01.\n- Log final startup confirmation and sign off in the shift record before handing over.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "redteam:10",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional forging manufacturer. Write concise realistic markdown, 200 to 300 words, starting with a level-1 heading. Do not include numeric specifications.",
+   "role": "system"
+  },
+  {
+   "content": "Write a short operator note related to: Line startup - Ring Rolling line (see SOP-P3-L2-01).",
+   "role": "user"
+  }
+ ]
+}

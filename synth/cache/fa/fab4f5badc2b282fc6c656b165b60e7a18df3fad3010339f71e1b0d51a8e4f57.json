@@ -1,0 +1,16 @@
+{
+ "content": "# SB-1015 Safety bulletin: noise exposure\n\nRevision: Rev D  \nPlant: P3, line P3-L2  \nEquipment: EQ-P3-L2-HT03\n\nHazard description\n- Personnel working adjacent to the Ring Rolling heat treat furnace generate and are exposed to elevated noise levels during loading, quench, and door operations. Noise can cause temporary or permanent hearing impairment and degrades situational awareness, increasing risk of dropped loads and pinch incidents. Intermittent high-energy events associated with quench cycles and material handling are the primary contributors to hazardous exposure. The quench delay maximum for Ring Rolling heat treat furnace #3 (EQ-P3-L2-HT03) is 13 seconds. Prolonged presence in the immediate work zone during these events without adequate protection increases the likelihood of an adverse hearing safety outcome.\n\nAffected equipment\n- EQ-P3-L2-HT03 (Ring Rolling heat treat furnace #3) as identified above.\n- All ancillary handling devices directly operated within the P3-L2 line that position workpieces into or out of EQ-P3-L2-HT03 during active heat treat cycles.\n\nRequired controls\n- Administrative controls: restrict access to the defined hazard zone while EQ-P3-L2-HT03 is in active cycle; post signage indicating required hearing protection and hazard zone boundaries; incorporate the quench delay maximum for Ring Rolling heat treat furnace #3 (EQ-P3-L2-HT03) is 13 seconds into job hazard analyses and work instructions referenced in MM-P3-L2-HT03.\n- Personal protective equipment: enforce use of hearing protection that meets site PPE policy for heat treat operations; verify fit and condition prior to entry to the hazard zone.\n- Engineering/operational controls: ensure operators follow procedures in MM-P3-L2-HT03 to minimize exposure time and synchronize handling to reduce intermittent high-noise events. Report any deviations or abnormal noise signatures to maintenance per ECN-2026-017 and initiate follow-up per SB-1041.\n\nEffective date\n- This bulletin is effective immediately upon issue. Implement the required controls and reference MM-P3-L2-HT03, ECN-2026-017, and SB-1041 for related procedures and corrective actions.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:SB-1015:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: safety bulletin\nDocument id: SB-1015\nTitle: Safety bulletin: noise exposure\nRevision: Rev D\nPlant: P3, line P3-L2\nEquipment: EQ-P3-L2-HT03\nRelated documents to cite: ECN-2026-017, MM-P3-L2-HT03, SB-1041\nValues to include exactly:\n- The quench delay maximum for Ring Rolling heat treat furnace #3 (EQ-P3-L2-HT03) is 13 seconds.\nStructure: hazard description, affected equipment, required controls, effective date. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

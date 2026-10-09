@@ -1,0 +1,16 @@
+{
+ "content": "{\"question\":\"What is the bore diameter tolerance for the connecting rod, part number CFW-7434-20?\"}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "golden:G-127#0",
+ "messages": [
+  {
+   "content": "You write test questions for a document search assistant at Cascade Forge Works, a fictional forging manufacturer. Return JSON {\"question\": \"...\"}.",
+   "role": "system"
+  },
+  {
+   "content": "Write a question that names the equipment or part by description whose answer is this fact. Do not include the value itself.\nFact: the bore diameter tolerance for connecting rod CFW-7434-20 (CFW-7434-20) is ±0.11 mm.",
+   "role": "user"
+  }
+ ]
+}

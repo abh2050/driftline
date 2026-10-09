@@ -1,0 +1,16 @@
+{
+ "content": "# ECN-2026-039 - Change notice - Hot Forge induction billet heater #2\n\nRevision: Rev E  \nPlant: P2, line P2-L1  \nEquipment: EQ-P2-L1-IH02\n\nReason for change\nThe coil cooling water flow minimum for Hot Forge induction billet heater #2 (EQ-P2-L1-IH02) is 55 L/min. This ECN establishes the minimum flow requirement as a controlled parameter for heater operation and maintenance. The change clarifies acceptance criteria for maintenance checks and process support documentation to reduce thermal stress on the coil assembly and improve heater reliability and life.\n\nAffected items\n- Equipment EQ-P2-L1-IH02 physical installation and associated cooling system monitoring.  \n- Maintenance documentation MM-P2-L1-IH02 to reflect the verified minimum flow requirement and associated acceptance steps.  \n- Operational procedure references in SOP-P2-L1-04 to include the minimum flow as an operational limit for safe heater start and run conditions.  \n- Quality procedure QS-PROC-06 to include the minimum flow in inspection and audit checklists where applicable.\n\nImplementation\n- Update MM-P2-L1-IH02 to include a recorded verification step that documents measured flow equals or exceeds the specified minimum.  \n- Revise SOP-P2-L1-04 to include a pre-start verification step that confirms coil cooling flow meets the minimum requirement and to define response actions if the requirement is not met.  \n- Amend QS-PROC-06 to incorporate the minimum flow into periodic verification and audit criteria for induction heater cooling system integrity.  \n- Field execution will be coordinated with maintenance and operations to perform initial verification and to place updated documents at points of use. All changes will be implemented in documentation and training prior to routine application.\n\nApprovals\nPrepared by: Maintenance Engineering (references: MM-P2-L1-IH02)  \nReviewed per quality process: QS-PROC-06  \nImplemented per operations procedure: SOP-P2-L1-04\n\nSignatures on file in document control.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:ECN-2026-039:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: engineering change notice\nDocument id: ECN-2026-039\nTitle: Change notice - Hot Forge induction billet heater #2\nRevision: Rev E\nPlant: P2, line P2-L1\nEquipment: EQ-P2-L1-IH02\nRelated documents to cite: MM-P2-L1-IH02, QS-PROC-06, SOP-P2-L1-04\nValues to include exactly:\n- The coil cooling water flow minimum for Hot Forge induction billet heater #2 (EQ-P2-L1-IH02) is 55 L/min.\nStructure: reason for change, affected items, implementation, approvals. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

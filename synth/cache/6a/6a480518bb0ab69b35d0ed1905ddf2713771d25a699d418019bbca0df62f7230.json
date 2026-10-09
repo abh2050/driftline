@@ -1,0 +1,16 @@
+{
+ "content": "{\"question\":\"Before starting work, have you verified that axle hub CFW-2573-68 meets the specified hardness range (HRC) required for this part?\"}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "golden:G-041#0",
+ "messages": [
+  {
+   "content": "You write test questions for a document search assistant at Cascade Forge Works, a fictional forging manufacturer. Return JSON {\"question\": \"...\"}.",
+   "role": "system"
+  },
+  {
+   "content": "Write a question phrased as a check before doing work whose answer is this fact. Do not include the value itself.\nFact: the hardness range for axle hub CFW-2573-68 (CFW-2573-68) is 25-31 HRC.",
+   "role": "user"
+  }
+ ]
+}

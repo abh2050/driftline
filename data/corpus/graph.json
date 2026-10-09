@@ -1,0 +1,2934 @@
+{
+ "equipment": [
+  {
+   "facts": [
+    {
+     "id": "EQ-P1-L1-RR01:mandrel clamp bolt torque",
+     "key": "mandrel clamp bolt torque",
+     "subject": "EQ-P1-L1-RR01",
+     "subject_name": "Hot Forge radial ring rolling mill #1",
+     "unit": "N·m",
+     "value": "635"
+    },
+    {
+     "id": "EQ-P1-L1-RR01:main roll bearing lubrication interval",
+     "key": "main roll bearing lubrication interval",
+     "subject": "EQ-P1-L1-RR01",
+     "subject_name": "Hot Forge radial ring rolling mill #1",
+     "unit": "hours",
+     "value": "120"
+    },
+    {
+     "id": "EQ-P1-L1-RR01:maximum ring outer diameter",
+     "key": "maximum ring outer diameter",
+     "subject": "EQ-P1-L1-RR01",
+     "subject_name": "Hot Forge radial ring rolling mill #1",
+     "unit": "mm",
+     "value": "1240"
+    },
+    {
+     "id": "EQ-P1-L1-RR01:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P1-L1-RR01",
+     "subject_name": "Hot Forge radial ring rolling mill #1",
+     "unit": "",
+     "value": "CFW-LUB-907"
+    }
+   ],
+   "id": "EQ-P1-L1-RR01",
+   "line": "P1-L1",
+   "name": "Hot Forge radial ring rolling mill #1",
+   "plant": "P1",
+   "type_code": "RR",
+   "type_name": "radial ring rolling mill"
+  },
+  {
+   "facts": [
+    {
+     "id": "EQ-P1-L1-CN02:chuck jaw bolt torque",
+     "key": "chuck jaw bolt torque",
+     "subject": "EQ-P1-L1-CN02",
+     "subject_name": "Hot Forge CNC turning center #2",
+     "unit": "N·m",
+     "value": "100"
+    },
+    {
+     "id": "EQ-P1-L1-CN02:spindle warm-up time",
+     "key": "spindle warm-up time",
+     "subject": "EQ-P1-L1-CN02",
+     "subject_name": "Hot Forge CNC turning center #2",
+     "unit": "minutes",
+     "value": "21"
+    },
+    {
+     "id": "EQ-P1-L1-CN02:way lube refill interval",
+     "key": "way lube refill interval",
+     "subject": "EQ-P1-L1-CN02",
+     "subject_name": "Hot Forge CNC turning center #2",
+     "unit": "hours",
+     "value": "65"
+    },
+    {
+     "id": "EQ-P1-L1-CN02:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P1-L1-CN02",
+     "subject_name": "Hot Forge CNC turning center #2",
+     "unit": "",
+     "value": "CFW-LUB-508"
+    }
+   ],
+   "id": "EQ-P1-L1-CN02",
+   "line": "P1-L1",
+   "name": "Hot Forge CNC turning center #2",
+   "plant": "P1",
+   "type_code": "CN",
+   "type_name": "CNC turning center"
+  },
+  {
+   "facts": [
+    {
+     "id": "EQ-P1-L1-IH03:target billet temperature",
+     "key": "target billet temperature",
+     "subject": "EQ-P1-L1-IH03",
+     "subject_name": "Hot Forge induction billet heater #3",
+     "unit": "°C",
+     "value": "1180"
+    },
+    {
+     "id": "EQ-P1-L1-IH03:coil cooling water flow minimum",
+     "key": "coil cooling water flow minimum",
+     "subject": "EQ-P1-L1-IH03",
+     "subject_name": "Hot Forge induction billet heater #3",
+     "unit": "L/min",
+     "value": "72"
+    },
+    {
+     "id": "EQ-P1-L1-IH03:coil inspection interval",
+     "key": "coil inspection interval",
+     "subject": "EQ-P1-L1-IH03",
+     "subject_name": "Hot Forge induction billet heater #3",
+     "unit": "hours",
+     "value": "290"
+    },
+    {
+     "id": "EQ-P1-L1-IH03:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P1-L1-IH03",
+     "subject_name": "Hot Forge induction billet heater #3",
+     "unit": "",
+     "value": "CFW-LUB-188"
+    }
+   ],
+   "id": "EQ-P1-L1-IH03",
+   "line": "P1-L1",
+   "name": "Hot Forge induction billet heater #3",
+   "plant": "P1",
+   "type_code": "IH",
+   "type_name": "induction billet heater"
+  },
+  {
+   "facts": [
+    {
+     "id": "EQ-P1-L2-RR01:mandrel clamp bolt torque",
+     "key": "mandrel clamp bolt torque",
+     "subject": "EQ-P1-L2-RR01",
+     "subject_name": "Ring Rolling radial ring rolling mill #1",
+     "unit": "N·m",
+     "value": "395"
+    },
+    {
+     "id": "EQ-P1-L2-RR01:main roll bearing lubrication interval",
+     "key": "main roll bearing lubrication interval",
+     "subject": "EQ-P1-L2-RR01",
+     "subject_name": "Ring Rolling radial ring rolling mill #1",
+     "unit": "hours",
+     "value": "145"
+    },
+    {
+     "id": "EQ-P1-L2-RR01:maximum ring outer diameter",
+     "key": "maximum ring outer diameter",
+     "subject": "EQ-P1-L2-RR01",
+     "subject_name": "Ring Rolling radial ring rolling mill #1",
+     "unit": "mm",
+     "value": "995"
+    },
+    {
+     "id": "EQ-P1-L2-RR01:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P1-L2-RR01",
+     "subject_name": "Ring Rolling radial ring rolling mill #1",
+     "unit": "",
+     "value": "CFW-LUB-961"
+    }
+   ],
+   "id": "EQ-P1-L2-RR01",
+   "line": "P1-L2",
+   "name": "Ring Rolling radial ring rolling mill #1",
+   "plant": "P1",
+   "type_code": "RR",
+   "type_name": "radial ring rolling mill"
+  },
+  {
+   "facts": [
+    {
+     "id": "EQ-P1-L2-IH02:target billet temperature",
+     "key": "target billet temperature",
+     "subject": "EQ-P1-L2-IH02",
+     "subject_name": "Ring Rolling induction billet heater #2",
+     "unit": "°C",
+     "value": "1230"
+    },
+    {
+     "id": "EQ-P1-L2-IH02:coil cooling water flow minimum",
+     "key": "coil cooling water flow minimum",
+     "subject": "EQ-P1-L2-IH02",
+     "subject_name": "Ring Rolling induction billet heater #2",
+     "unit": "L/min",
+     "value": "46"
+    },
+    {
+     "id": "EQ-P1-L2-IH02:coil inspection interval",
+     "key": "coil inspection interval",
+     "subject": "EQ-P1-L2-IH02",
+     "subject_name": "Ring Rolling induction billet heater #2",
+     "unit": "hours",
+     "value": "580"
+    },
+    {
+     "id": "EQ-P1-L2-IH02:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P1-L2-IH02",
+     "subject_name": "Ring Rolling induction billet heater #2",
+     "unit": "",
+     "value": "CFW-LUB-788"
+    }
+   ],
+   "id": "EQ-P1-L2-IH02",
+   "line": "P1-L2",
+   "name": "Ring Rolling induction billet heater #2",
+   "plant": "P1",
+   "type_code": "IH",
+   "type_name": "induction billet heater"
+  },
+  {
+   "facts": [
+    {
+     "id": "EQ-P1-L2-HT03:austenitizing setpoint",
+     "key": "austenitizing setpoint",
+     "subject": "EQ-P1-L2-HT03",
+     "subject_name": "Ring Rolling heat treat furnace #3",
+     "unit": "°C",
+     "value": "855"
+    },
+    {
+     "id": "EQ-P1-L2-HT03:thermocouple calibration interval",
+     "key": "thermocouple calibration interval",
+     "subject": "EQ-P1-L2-HT03",
+     "subject_name": "Ring Rolling heat treat furnace #3",
+     "unit": "days",
+     "value": "95"
+    },
+    {
+     "id": "EQ-P1-L2-HT03:quench delay maximum",
+     "key": "quench delay maximum",
+     "subject": "EQ-P1-L2-HT03",
+     "subject_name": "Ring Rolling heat treat furnace #3",
+     "unit": "seconds",
+     "value": "24"
+    },
+    {
+     "id": "EQ-P1-L2-HT03:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P1-L2-HT03",
+     "subject_name": "Ring Rolling heat treat furnace #3",
+     "unit": "",
+     "value": "CFW-LUB-465"
+    }
+   ],
+   "id": "EQ-P1-L2-HT03",
+   "line": "P1-L2",
+   "name": "Ring Rolling heat treat furnace #3",
+   "plant": "P1",
+   "type_code": "HT",
+   "type_name": "heat treat furnace"
+  },
+  {
+   "facts": [
+    {
+     "id": "EQ-P1-L3-IH01:target billet temperature",
+     "key": "target billet temperature",
+     "subject": "EQ-P1-L3-IH01",
+     "subject_name": "Machining induction billet heater #1",
+     "unit": "°C",
+     "value": "1235"
+    },
+    {
+     "id": "EQ-P1-L3-IH01:coil cooling water flow minimum",
+     "key": "coil cooling water flow minimum",
+     "subject": "EQ-P1-L3-IH01",
+     "subject_name": "Machining induction billet heater #1",
+     "unit": "L/min",
+     "value": "79"
+    },
+    {
+     "id": "EQ-P1-L3-IH01:coil inspection interval",
+     "key": "coil inspection interval",
+     "subject": "EQ-P1-L3-IH01",
+     "subject_name": "Machining induction billet heater #1",
+     "unit": "hours",
+     "value": "480"
+    },
+    {
+     "id": "EQ-P1-L3-IH01:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P1-L3-IH01",
+     "subject_name": "Machining induction billet heater #1",
+     "unit": "",
+     "value": "CFW-LUB-282"
+    }
+   ],
+   "id": "EQ-P1-L3-IH01",
+   "line": "P1-L3",
+   "name": "Machining induction billet heater #1",
+   "plant": "P1",
+   "type_code": "IH",
+   "type_name": "induction billet heater"
+  },
+  {
+   "facts": [
+    {
+     "id": "EQ-P1-L3-HP02:main ram bolt torque",
+     "key": "main ram bolt torque",
+     "subject": "EQ-P1-L3-HP02",
+     "subject_name": "Machining hydraulic forging press #2",
+     "unit": "N·m",
+     "value": "1330"
+    },
+    {
+     "id": "EQ-P1-L3-HP02:system pressure limit",
+     "key": "system pressure limit",
+     "subject": "EQ-P1-L3-HP02",
+     "subject_name": "Machining hydraulic forging press #2",
+     "unit": "bar",
+     "value": "295"
+    },
+    {
+     "id": "EQ-P1-L3-HP02:hydraulic oil change interval",
+     "key": "hydraulic oil change interval",
+     "subject": "EQ-P1-L3-HP02",
+     "subject_name": "Machining hydraulic forging press #2",
+     "unit": "hours",
+     "value": "1800"
+    },
+    {
+     "id": "EQ-P1-L3-HP02:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P1-L3-HP02",
+     "subject_name": "Machining hydraulic forging press #2",
+     "unit": "",
+     "value": "CFW-LUB-497"
+    }
+   ],
+   "id": "EQ-P1-L3-HP02",
+   "line": "P1-L3",
+   "name": "Machining hydraulic forging press #2",
+   "plant": "P1",
+   "type_code": "HP",
+   "type_name": "hydraulic forging press"
+  },
+  {
+   "facts": [
+    {
+     "id": "EQ-P1-L3-CN03:chuck jaw bolt torque",
+     "key": "chuck jaw bolt torque",
+     "subject": "EQ-P1-L3-CN03",
+     "subject_name": "Machining CNC turning center #3",
+     "unit": "N·m",
+     "value": "95"
+    },
+    {
+     "id": "EQ-P1-L3-CN03:spindle warm-up time",
+     "key": "spindle warm-up time",
+     "subject": "EQ-P1-L3-CN03",
+     "subject_name": "Machining CNC turning center #3",
+     "unit": "minutes",
+     "value": "27"
+    },
+    {
+     "id": "EQ-P1-L3-CN03:way lube refill interval",
+     "key": "way lube refill interval",
+     "subject": "EQ-P1-L3-CN03",
+     "subject_name": "Machining CNC turning center #3",
+     "unit": "hours",
+     "value": "60"
+    },
+    {
+     "id": "EQ-P1-L3-CN03:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P1-L3-CN03",
+     "subject_name": "Machining CNC turning center #3",
+     "unit": "",
+     "value": "CFW-LUB-662"
+    }
+   ],
+   "id": "EQ-P1-L3-CN03",
+   "line": "P1-L3",
+   "name": "Machining CNC turning center #3",
+   "plant": "P1",
+   "type_code": "CN",
+   "type_name": "CNC turning center"
+  },
+  {
+   "facts": [
+    {
+     "id": "EQ-P1-L4-CN01:chuck jaw bolt torque",
+     "key": "chuck jaw bolt torque",
+     "subject": "EQ-P1-L4-CN01",
+     "subject_name": "Heat Treat CNC turning center #1",
+     "unit": "N·m",
+     "value": "90"
+    },
+    {
+     "id": "EQ-P1-L4-CN01:spindle warm-up time",
+     "key": "spindle warm-up time",
+     "subject": "EQ-P1-L4-CN01",
+     "subject_name": "Heat Treat CNC turning center #1",
+     "unit": "minutes",
+     "value": "15"
+    },
+    {
+     "id": "EQ-P1-L4-CN01:way lube refill interval",
+     "key": "way lube refill interval",
+     "subject": "EQ-P1-L4-CN01",
+     "subject_name": "Heat Treat CNC turning center #1",
+     "unit": "hours",
+     "value": "40"
+    },
+    {
+     "id": "EQ-P1-L4-CN01:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P1-L4-CN01",
+     "subject_name": "Heat Treat CNC turning center #1",
+     "unit": "",
+     "value": "CFW-LUB-477"
+    }
+   ],
+   "id": "EQ-P1-L4-CN01",
+   "line": "P1-L4",
+   "name": "Heat Treat CNC turning center #1",
+   "plant": "P1",
+   "type_code": "CN",
+   "type_name": "CNC turning center"
+  },
+  {
+   "facts": [
+    {
+     "id": "EQ-P1-L4-HP02:main ram bolt torque",
+     "key": "main ram bolt torque",
+     "subject": "EQ-P1-L4-HP02",
+     "subject_name": "Heat Treat hydraulic forging press #2",
+     "unit": "N·m",
+     "value": "970"
+    },
+    {
+     "id": "EQ-P1-L4-HP02:system pressure limit",
+     "key": "system pressure limit",
+     "subject": "EQ-P1-L4-HP02",
+     "subject_name": "Heat Treat hydraulic forging press #2",
+     "unit": "bar",
+     "value": "300"
+    },
+    {
+     "id": "EQ-P1-L4-HP02:hydraulic oil change interval",
+     "key": "hydraulic oil change interval",
+     "subject": "EQ-P1-L4-HP02",
+     "subject_name": "Heat Treat hydraulic forging press #2",
+     "unit": "hours",
+     "value": "2680"
+    },
+    {
+     "id": "EQ-P1-L4-HP02:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P1-L4-HP02",
+     "subject_name": "Heat Treat hydraulic forging press #2",
+     "unit": "",
+     "value": "CFW-LUB-195"
+    }
+   ],
+   "id": "EQ-P1-L4-HP02",
+   "line": "P1-L4",
+   "name": "Heat Treat hydraulic forging press #2",
+   "plant": "P1",
+   "type_code": "HP",
+   "type_name": "hydraulic forging press"
+  },
+  {
+   "facts": [
+    {
+     "id": "EQ-P1-L4-HT03:austenitizing setpoint",
+     "key": "austenitizing setpoint",
+     "subject": "EQ-P1-L4-HT03",
+     "subject_name": "Heat Treat heat treat furnace #3",
+     "unit": "°C",
+     "value": "880"
+    },
+    {
+     "id": "EQ-P1-L4-HT03:thermocouple calibration interval",
+     "key": "thermocouple calibration interval",
+     "subject": "EQ-P1-L4-HT03",
+     "subject_name": "Heat Treat heat treat furnace #3",
+     "unit": "days",
+     "value": "95"
+    },
+    {
+     "id": "EQ-P1-L4-HT03:quench delay maximum",
+     "key": "quench delay maximum",
+     "subject": "EQ-P1-L4-HT03",
+     "subject_name": "Heat Treat heat treat furnace #3",
+     "unit": "seconds",
+     "value": "15"
+    },
+    {
+     "id": "EQ-P1-L4-HT03:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P1-L4-HT03",
+     "subject_name": "Heat Treat heat treat furnace #3",
+     "unit": "",
+     "value": "CFW-LUB-231"
+    }
+   ],
+   "id": "EQ-P1-L4-HT03",
+   "line": "P1-L4",
+   "name": "Heat Treat heat treat furnace #3",
+   "plant": "P1",
+   "type_code": "HT",
+   "type_name": "heat treat furnace"
+  },
+  {
+   "facts": [
+    {
+     "id": "EQ-P2-L1-RR01:mandrel clamp bolt torque",
+     "key": "mandrel clamp bolt torque",
+     "subject": "EQ-P2-L1-RR01",
+     "subject_name": "Hot Forge radial ring rolling mill #1",
+     "unit": "N·m",
+     "value": "430"
+    },
+    {
+     "id": "EQ-P2-L1-RR01:main roll bearing lubrication interval",
+     "key": "main roll bearing lubrication interval",
+     "subject": "EQ-P2-L1-RR01",
+     "subject_name": "Hot Forge radial ring rolling mill #1",
+     "unit": "hours",
+     "value": "220"
+    },
+    {
+     "id": "EQ-P2-L1-RR01:maximum ring outer diameter",
+     "key": "maximum ring outer diameter",
+     "subject": "EQ-P2-L1-RR01",
+     "subject_name": "Hot Forge radial ring rolling mill #1",
+     "unit": "mm",
+     "value": "1125"
+    },
+    {
+     "id": "EQ-P2-L1-RR01:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P2-L1-RR01",
+     "subject_name": "Hot Forge radial ring rolling mill #1",
+     "unit": "",
+     "value": "CFW-LUB-724"
+    }
+   ],
+   "id": "EQ-P2-L1-RR01",
+   "line": "P2-L1",
+   "name": "Hot Forge radial ring rolling mill #1",
+   "plant": "P2",
+   "type_code": "RR",
+   "type_name": "radial ring rolling mill"
+  },
+  {
+   "facts": [
+    {
+     "id": "EQ-P2-L1-IH02:target billet temperature",
+     "key": "target billet temperature",
+     "subject": "EQ-P2-L1-IH02",
+     "subject_name": "Hot Forge induction billet heater #2",
+     "unit": "°C",
+     "value": "1180"
+    },
+    {
+     "id": "EQ-P2-L1-IH02:coil cooling water flow minimum",
+     "key": "coil cooling water flow minimum",
+     "subject": "EQ-P2-L1-IH02",
+     "subject_name": "Hot Forge induction billet heater #2",
+     "unit": "L/min",
+     "value": "55"
+    },
+    {
+     "id": "EQ-P2-L1-IH02:coil inspection interval",
+     "key": "coil inspection interval",
+     "subject": "EQ-P2-L1-IH02",
+     "subject_name": "Hot Forge induction billet heater #2",
+     "unit": "hours",
+     "value": "210"
+    },
+    {
+     "id": "EQ-P2-L1-IH02:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P2-L1-IH02",
+     "subject_name": "Hot Forge induction billet heater #2",
+     "unit": "",
+     "value": "CFW-LUB-252"
+    }
+   ],
+   "id": "EQ-P2-L1-IH02",
+   "line": "P2-L1",
+   "name": "Hot Forge induction billet heater #2",
+   "plant": "P2",
+   "type_code": "IH",
+   "type_name": "induction billet heater"
+  },
+  {
+   "facts": [
+    {
+     "id": "EQ-P2-L1-SB03:blast wheel liner bolt torque",
+     "key": "blast wheel liner bolt torque",
+     "subject": "EQ-P2-L1-SB03",
+     "subject_name": "Hot Forge shot blast cabinet #3",
+     "unit": "N·m",
+     "value": "50"
+    },
+    {
+     "id": "EQ-P2-L1-SB03:shot media top-up interval",
+     "key": "shot media top-up interval",
+     "subject": "EQ-P2-L1-SB03",
+     "subject_name": "Hot Forge shot blast cabinet #3",
+     "unit": "hours",
+     "value": "33"
+    },
+    {
+     "id": "EQ-P2-L1-SB03:dust collector pressure drop alarm",
+     "key": "dust collector pressure drop alarm",
+     "subject": "EQ-P2-L1-SB03",
+     "subject_name": "Hot Forge shot blast cabinet #3",
+     "unit": "Pa",
+     "value": "1240"
+    },
+    {
+     "id": "EQ-P2-L1-SB03:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P2-L1-SB03",
+     "subject_name": "Hot Forge shot blast cabinet #3",
+     "unit": "",
+     "value": "CFW-LUB-299"
+    }
+   ],
+   "id": "EQ-P2-L1-SB03",
+   "line": "P2-L1",
+   "name": "Hot Forge shot blast cabinet #3",
+   "plant": "P2",
+   "type_code": "SB",
+   "type_name": "shot blast cabinet"
+  },
+  {
+   "facts": [
+    {
+     "id": "EQ-P2-L2-IH01:target billet temperature",
+     "key": "target billet temperature",
+     "subject": "EQ-P2-L2-IH01",
+     "subject_name": "Ring Rolling induction billet heater #1",
+     "unit": "°C",
+     "value": "1230"
+    },
+    {
+     "id": "EQ-P2-L2-IH01:coil cooling water flow minimum",
+     "key": "coil cooling water flow minimum",
+     "subject": "EQ-P2-L2-IH01",
+     "subject_name": "Ring Rolling induction billet heater #1",
+     "unit": "L/min",
+     "value": "81"
+    },
+    {
+     "id": "EQ-P2-L2-IH01:coil inspection interval",
+     "key": "coil inspection interval",
+     "subject": "EQ-P2-L2-IH01",
+     "subject_name": "Ring Rolling induction billet heater #1",
+     "unit": "hours",
+     "value": "365"
+    },
+    {
+     "id": "EQ-P2-L2-IH01:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P2-L2-IH01",
+     "subject_name": "Ring Rolling induction billet heater #1",
+     "unit": "",
+     "value": "CFW-LUB-938"
+    }
+   ],
+   "id": "EQ-P2-L2-IH01",
+   "line": "P2-L2",
+   "name": "Ring Rolling induction billet heater #1",
+   "plant": "P2",
+   "type_code": "IH",
+   "type_name": "induction billet heater"
+  },
+  {
+   "facts": [
+    {
+     "id": "EQ-P2-L2-HT02:austenitizing setpoint",
+     "key": "austenitizing setpoint",
+     "subject": "EQ-P2-L2-HT02",
+     "subject_name": "Ring Rolling heat treat furnace #2",
+     "unit": "°C",
+     "value": "855"
+    },
+    {
+     "id": "EQ-P2-L2-HT02:thermocouple calibration interval",
+     "key": "thermocouple calibration interval",
+     "subject": "EQ-P2-L2-HT02",
+     "subject_name": "Ring Rolling heat treat furnace #2",
+     "unit": "days",
+     "value": "40"
+    },
+    {
+     "id": "EQ-P2-L2-HT02:quench delay maximum",
+     "key": "quench delay maximum",
+     "subject": "EQ-P2-L2-HT02",
+     "subject_name": "Ring Rolling heat treat furnace #2",
+     "unit": "seconds",
+     "value": "16"
+    },
+    {
+     "id": "EQ-P2-L2-HT02:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P2-L2-HT02",
+     "subject_name": "Ring Rolling heat treat furnace #2",
+     "unit": "",
+     "value": "CFW-LUB-376"
+    }
+   ],
+   "id": "EQ-P2-L2-HT02",
+   "line": "P2-L2",
+   "name": "Ring Rolling heat treat furnace #2",
+   "plant": "P2",
+   "type_code": "HT",
+   "type_name": "heat treat furnace"
+  },
+  {
+   "facts": [
+    {
+     "id": "EQ-P2-L2-RR03:mandrel clamp bolt torque",
+     "key": "mandrel clamp bolt torque",
+     "subject": "EQ-P2-L2-RR03",
+     "subject_name": "Ring Rolling radial ring rolling mill #3",
+     "unit": "N·m",
+     "value": "620"
+    },
+    {
+     "id": "EQ-P2-L2-RR03:main roll bearing lubrication interval",
+     "key": "main roll bearing lubrication interval",
+     "subject": "EQ-P2-L2-RR03",
+     "subject_name": "Ring Rolling radial ring rolling mill #3",
+     "unit": "hours",
+     "value": "185"
+    },
+    {
+     "id": "EQ-P2-L2-RR03:maximum ring outer diameter",
+     "key": "maximum ring outer diameter",
+     "subject": "EQ-P2-L2-RR03",
+     "subject_name": "Ring Rolling radial ring rolling mill #3",
+     "unit": "mm",
+     "value": "1525"
+    },
+    {
+     "id": "EQ-P2-L2-RR03:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P2-L2-RR03",
+     "subject_name": "Ring Rolling radial ring rolling mill #3",
+     "unit": "",
+     "value": "CFW-LUB-101"
+    }
+   ],
+   "id": "EQ-P2-L2-RR03",
+   "line": "P2-L2",
+   "name": "Ring Rolling radial ring rolling mill #3",
+   "plant": "P2",
+   "type_code": "RR",
+   "type_name": "radial ring rolling mill"
+  },
+  {
+   "facts": [
+    {
+     "id": "EQ-P2-L3-RR01:mandrel clamp bolt torque",
+     "key": "mandrel clamp bolt torque",
+     "subject": "EQ-P2-L3-RR01",
+     "subject_name": "Machining radial ring rolling mill #1",
+     "unit": "N·m",
+     "value": "470"
+    },
+    {
+     "id": "EQ-P2-L3-RR01:main roll bearing lubrication interval",
+     "key": "main roll bearing lubrication interval",
+     "subject": "EQ-P2-L3-RR01",
+     "subject_name": "Machining radial ring rolling mill #1",
+     "unit": "hours",
+     "value": "165"
+    },
+    {
+     "id": "EQ-P2-L3-RR01:maximum ring outer diameter",
+     "key": "maximum ring outer diameter",
+     "subject": "EQ-P2-L3-RR01",
+     "subject_name": "Machining radial ring rolling mill #1",
+     "unit": "mm",
+     "value": "1310"
+    },
+    {
+     "id": "EQ-P2-L3-RR01:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P2-L3-RR01",
+     "subject_name": "Machining radial ring rolling mill #1",
+     "unit": "",
+     "value": "CFW-LUB-225"
+    }
+   ],
+   "id": "EQ-P2-L3-RR01",
+   "line": "P2-L3",
+   "name": "Machining radial ring rolling mill #1",
+   "plant": "P2",
+   "type_code": "RR",
+   "type_name": "radial ring rolling mill"
+  },
+  {
+   "facts": [
+    {
+     "id": "EQ-P2-L3-HT02:austenitizing setpoint",
+     "key": "austenitizing setpoint",
+     "subject": "EQ-P2-L3-HT02",
+     "subject_name": "Machining heat treat furnace #2",
+     "unit": "°C",
+     "value": "845"
+    },
+    {
+     "id": "EQ-P2-L3-HT02:thermocouple calibration interval",
+     "key": "thermocouple calibration interval",
+     "subject": "EQ-P2-L3-HT02",
+     "subject_name": "Machining heat treat furnace #2",
+     "unit": "days",
+     "value": "50"
+    },
+    {
+     "id": "EQ-P2-L3-HT02:quench delay maximum",
+     "key": "quench delay maximum",
+     "subject": "EQ-P2-L3-HT02",
+     "subject_name": "Machining heat treat furnace #2",
+     "unit": "seconds",
+     "value": "8"
+    },
+    {
+     "id": "EQ-P2-L3-HT02:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P2-L3-HT02",
+     "subject_name": "Machining heat treat furnace #2",
+     "unit": "",
+     "value": "CFW-LUB-373"
+    }
+   ],
+   "id": "EQ-P2-L3-HT02",
+   "line": "P2-L3",
+   "name": "Machining heat treat furnace #2",
+   "plant": "P2",
+   "type_code": "HT",
+   "type_name": "heat treat furnace"
+  },
+  {
+   "facts": [
+    {
+     "id": "EQ-P2-L3-IH03:target billet temperature",
+     "key": "target billet temperature",
+     "subject": "EQ-P2-L3-IH03",
+     "subject_name": "Machining induction billet heater #3",
+     "unit": "°C",
+     "value": "1175"
+    },
+    {
+     "id": "EQ-P2-L3-IH03:coil cooling water flow minimum",
+     "key": "coil cooling water flow minimum",
+     "subject": "EQ-P2-L3-IH03",
+     "subject_name": "Machining induction billet heater #3",
+     "unit": "L/min",
+     "value": "72"
+    },
+    {
+     "id": "EQ-P2-L3-IH03:coil inspection interval",
+     "key": "coil inspection interval",
+     "subject": "EQ-P2-L3-IH03",
+     "subject_name": "Machining induction billet heater #3",
+     "unit": "hours",
+     "value": "390"
+    },
+    {
+     "id": "EQ-P2-L3-IH03:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P2-L3-IH03",
+     "subject_name": "Machining induction billet heater #3",
+     "unit": "",
+     "value": "CFW-LUB-725"
+    }
+   ],
+   "id": "EQ-P2-L3-IH03",
+   "line": "P2-L3",
+   "name": "Machining induction billet heater #3",
+   "plant": "P2",
+   "type_code": "IH",
+   "type_name": "induction billet heater"
+  },
+  {
+   "facts": [
+    {
+     "id": "EQ-P2-L4-RR01:mandrel clamp bolt torque",
+     "key": "mandrel clamp bolt torque",
+     "subject": "EQ-P2-L4-RR01",
+     "subject_name": "Heat Treat radial ring rolling mill #1",
+     "unit": "N·m",
+     "value": "525"
+    },
+    {
+     "id": "EQ-P2-L4-RR01:main roll bearing lubrication interval",
+     "key": "main roll bearing lubrication interval",
+     "subject": "EQ-P2-L4-RR01",
+     "subject_name": "Heat Treat radial ring rolling mill #1",
+     "unit": "hours",
+     "value": "195"
+    },
+    {
+     "id": "EQ-P2-L4-RR01:maximum ring outer diameter",
+     "key": "maximum ring outer diameter",
+     "subject": "EQ-P2-L4-RR01",
+     "subject_name": "Heat Treat radial ring rolling mill #1",
+     "unit": "mm",
+     "value": "1570"
+    },
+    {
+     "id": "EQ-P2-L4-RR01:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P2-L4-RR01",
+     "subject_name": "Heat Treat radial ring rolling mill #1",
+     "unit": "",
+     "value": "CFW-LUB-723"
+    }
+   ],
+   "id": "EQ-P2-L4-RR01",
+   "line": "P2-L4",
+   "name": "Heat Treat radial ring rolling mill #1",
+   "plant": "P2",
+   "type_code": "RR",
+   "type_name": "radial ring rolling mill"
+  },
+  {
+   "facts": [
+    {
+     "id": "EQ-P2-L4-HT02:austenitizing setpoint",
+     "key": "austenitizing setpoint",
+     "subject": "EQ-P2-L4-HT02",
+     "subject_name": "Heat Treat heat treat furnace #2",
+     "unit": "°C",
+     "value": "885"
+    },
+    {
+     "id": "EQ-P2-L4-HT02:thermocouple calibration interval",
+     "key": "thermocouple calibration interval",
+     "subject": "EQ-P2-L4-HT02",
+     "subject_name": "Heat Treat heat treat furnace #2",
+     "unit": "days",
+     "value": "55"
+    },
+    {
+     "id": "EQ-P2-L4-HT02:quench delay maximum",
+     "key": "quench delay maximum",
+     "subject": "EQ-P2-L4-HT02",
+     "subject_name": "Heat Treat heat treat furnace #2",
+     "unit": "seconds",
+     "value": "10"
+    },
+    {
+     "id": "EQ-P2-L4-HT02:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P2-L4-HT02",
+     "subject_name": "Heat Treat heat treat furnace #2",
+     "unit": "",
+     "value": "CFW-LUB-426"
+    }
+   ],
+   "id": "EQ-P2-L4-HT02",
+   "line": "P2-L4",
+   "name": "Heat Treat heat treat furnace #2",
+   "plant": "P2",
+   "type_code": "HT",
+   "type_name": "heat treat furnace"
+  },
+  {
+   "facts": [
+    {
+     "id": "EQ-P2-L4-HP03:main ram bolt torque",
+     "key": "main ram bolt torque",
+     "subject": "EQ-P2-L4-HP03",
+     "subject_name": "Heat Treat hydraulic forging press #3",
+     "unit": "N·m",
+     "value": "1575"
+    },
+    {
+     "id": "EQ-P2-L4-HP03:system pressure limit",
+     "key": "system pressure limit",
+     "subject": "EQ-P2-L4-HP03",
+     "subject_name": "Heat Treat hydraulic forging press #3",
+     "unit": "bar",
+     "value": "320"
+    },
+    {
+     "id": "EQ-P2-L4-HP03:hydraulic oil change interval",
+     "key": "hydraulic oil change interval",
+     "subject": "EQ-P2-L4-HP03",
+     "subject_name": "Heat Treat hydraulic forging press #3",
+     "unit": "hours",
+     "value": "2620"
+    },
+    {
+     "id": "EQ-P2-L4-HP03:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P2-L4-HP03",
+     "subject_name": "Heat Treat hydraulic forging press #3",
+     "unit": "",
+     "value": "CFW-LUB-450"
+    }
+   ],
+   "id": "EQ-P2-L4-HP03",
+   "line": "P2-L4",
+   "name": "Heat Treat hydraulic forging press #3",
+   "plant": "P2",
+   "type_code": "HP",
+   "type_name": "hydraulic forging press"
+  },
+  {
+   "facts": [
+    {
+     "id": "EQ-P3-L1-HP01:main ram bolt torque",
+     "key": "main ram bolt torque",
+     "subject": "EQ-P3-L1-HP01",
+     "subject_name": "Hot Forge hydraulic forging press #1",
+     "unit": "N·m",
+     "value": "1425"
+    },
+    {
+     "id": "EQ-P3-L1-HP01:system pressure limit",
+     "key": "system pressure limit",
+     "subject": "EQ-P3-L1-HP01",
+     "subject_name": "Hot Forge hydraulic forging press #1",
+     "unit": "bar",
+     "value": "330"
+    },
+    {
+     "id": "EQ-P3-L1-HP01:hydraulic oil change interval",
+     "key": "hydraulic oil change interval",
+     "subject": "EQ-P3-L1-HP01",
+     "subject_name": "Hot Forge hydraulic forging press #1",
+     "unit": "hours",
+     "value": "2425"
+    },
+    {
+     "id": "EQ-P3-L1-HP01:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P3-L1-HP01",
+     "subject_name": "Hot Forge hydraulic forging press #1",
+     "unit": "",
+     "value": "CFW-LUB-927"
+    }
+   ],
+   "id": "EQ-P3-L1-HP01",
+   "line": "P3-L1",
+   "name": "Hot Forge hydraulic forging press #1",
+   "plant": "P3",
+   "type_code": "HP",
+   "type_name": "hydraulic forging press"
+  },
+  {
+   "facts": [
+    {
+     "id": "EQ-P3-L1-SB02:blast wheel liner bolt torque",
+     "key": "blast wheel liner bolt torque",
+     "subject": "EQ-P3-L1-SB02",
+     "subject_name": "Hot Forge shot blast cabinet #2",
+     "unit": "N·m",
+     "value": "65"
+    },
+    {
+     "id": "EQ-P3-L1-SB02:shot media top-up interval",
+     "key": "shot media top-up interval",
+     "subject": "EQ-P3-L1-SB02",
+     "subject_name": "Hot Forge shot blast cabinet #2",
+     "unit": "hours",
+     "value": "45"
+    },
+    {
+     "id": "EQ-P3-L1-SB02:dust collector pressure drop alarm",
+     "key": "dust collector pressure drop alarm",
+     "subject": "EQ-P3-L1-SB02",
+     "subject_name": "Hot Forge shot blast cabinet #2",
+     "unit": "Pa",
+     "value": "2025"
+    },
+    {
+     "id": "EQ-P3-L1-SB02:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P3-L1-SB02",
+     "subject_name": "Hot Forge shot blast cabinet #2",
+     "unit": "",
+     "value": "CFW-LUB-278"
+    }
+   ],
+   "id": "EQ-P3-L1-SB02",
+   "line": "P3-L1",
+   "name": "Hot Forge shot blast cabinet #2",
+   "plant": "P3",
+   "type_code": "SB",
+   "type_name": "shot blast cabinet"
+  },
+  {
+   "facts": [
+    {
+     "id": "EQ-P3-L1-IH03:target billet temperature",
+     "key": "target billet temperature",
+     "subject": "EQ-P3-L1-IH03",
+     "subject_name": "Hot Forge induction billet heater #3",
+     "unit": "°C",
+     "value": "1260"
+    },
+    {
+     "id": "EQ-P3-L1-IH03:coil cooling water flow minimum",
+     "key": "coil cooling water flow minimum",
+     "subject": "EQ-P3-L1-IH03",
+     "subject_name": "Hot Forge induction billet heater #3",
+     "unit": "L/min",
+     "value": "65"
+    },
+    {
+     "id": "EQ-P3-L1-IH03:coil inspection interval",
+     "key": "coil inspection interval",
+     "subject": "EQ-P3-L1-IH03",
+     "subject_name": "Hot Forge induction billet heater #3",
+     "unit": "hours",
+     "value": "540"
+    },
+    {
+     "id": "EQ-P3-L1-IH03:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P3-L1-IH03",
+     "subject_name": "Hot Forge induction billet heater #3",
+     "unit": "",
+     "value": "CFW-LUB-259"
+    }
+   ],
+   "id": "EQ-P3-L1-IH03",
+   "line": "P3-L1",
+   "name": "Hot Forge induction billet heater #3",
+   "plant": "P3",
+   "type_code": "IH",
+   "type_name": "induction billet heater"
+  },
+  {
+   "facts": [
+    {
+     "id": "EQ-P3-L2-SB01:blast wheel liner bolt torque",
+     "key": "blast wheel liner bolt torque",
+     "subject": "EQ-P3-L2-SB01",
+     "subject_name": "Ring Rolling shot blast cabinet #1",
+     "unit": "N·m",
+     "value": "100"
+    },
+    {
+     "id": "EQ-P3-L2-SB01:shot media top-up interval",
+     "key": "shot media top-up interval",
+     "subject": "EQ-P3-L2-SB01",
+     "subject_name": "Ring Rolling shot blast cabinet #1",
+     "unit": "hours",
+     "value": "40"
+    },
+    {
+     "id": "EQ-P3-L2-SB01:dust collector pressure drop alarm",
+     "key": "dust collector pressure drop alarm",
+     "subject": "EQ-P3-L2-SB01",
+     "subject_name": "Ring Rolling shot blast cabinet #1",
+     "unit": "Pa",
+     "value": "1285"
+    },
+    {
+     "id": "EQ-P3-L2-SB01:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P3-L2-SB01",
+     "subject_name": "Ring Rolling shot blast cabinet #1",
+     "unit": "",
+     "value": "CFW-LUB-463"
+    }
+   ],
+   "id": "EQ-P3-L2-SB01",
+   "line": "P3-L2",
+   "name": "Ring Rolling shot blast cabinet #1",
+   "plant": "P3",
+   "type_code": "SB",
+   "type_name": "shot blast cabinet"
+  },
+  {
+   "facts": [
+    {
+     "id": "EQ-P3-L2-RR02:mandrel clamp bolt torque",
+     "key": "mandrel clamp bolt torque",
+     "subject": "EQ-P3-L2-RR02",
+     "subject_name": "Ring Rolling radial ring rolling mill #2",
+     "unit": "N·m",
+     "value": "475"
+    },
+    {
+     "id": "EQ-P3-L2-RR02:main roll bearing lubrication interval",
+     "key": "main roll bearing lubrication interval",
+     "subject": "EQ-P3-L2-RR02",
+     "subject_name": "Ring Rolling radial ring rolling mill #2",
+     "unit": "hours",
+     "value": "105"
+    },
+    {
+     "id": "EQ-P3-L2-RR02:maximum ring outer diameter",
+     "key": "maximum ring outer diameter",
+     "subject": "EQ-P3-L2-RR02",
+     "subject_name": "Ring Rolling radial ring rolling mill #2",
+     "unit": "mm",
+     "value": "1415"
+    },
+    {
+     "id": "EQ-P3-L2-RR02:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P3-L2-RR02",
+     "subject_name": "Ring Rolling radial ring rolling mill #2",
+     "unit": "",
+     "value": "CFW-LUB-930"
+    }
+   ],
+   "id": "EQ-P3-L2-RR02",
+   "line": "P3-L2",
+   "name": "Ring Rolling radial ring rolling mill #2",
+   "plant": "P3",
+   "type_code": "RR",
+   "type_name": "radial ring rolling mill"
+  },
+  {
+   "facts": [
+    {
+     "id": "EQ-P3-L2-HT03:austenitizing setpoint",
+     "key": "austenitizing setpoint",
+     "subject": "EQ-P3-L2-HT03",
+     "subject_name": "Ring Rolling heat treat furnace #3",
+     "unit": "°C",
+     "value": "870"
+    },
+    {
+     "id": "EQ-P3-L2-HT03:thermocouple calibration interval",
+     "key": "thermocouple calibration interval",
+     "subject": "EQ-P3-L2-HT03",
+     "subject_name": "Ring Rolling heat treat furnace #3",
+     "unit": "days",
+     "value": "55"
+    },
+    {
+     "id": "EQ-P3-L2-HT03:quench delay maximum",
+     "key": "quench delay maximum",
+     "subject": "EQ-P3-L2-HT03",
+     "subject_name": "Ring Rolling heat treat furnace #3",
+     "unit": "seconds",
+     "value": "13"
+    },
+    {
+     "id": "EQ-P3-L2-HT03:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P3-L2-HT03",
+     "subject_name": "Ring Rolling heat treat furnace #3",
+     "unit": "",
+     "value": "CFW-LUB-159"
+    }
+   ],
+   "id": "EQ-P3-L2-HT03",
+   "line": "P3-L2",
+   "name": "Ring Rolling heat treat furnace #3",
+   "plant": "P3",
+   "type_code": "HT",
+   "type_name": "heat treat furnace"
+  },
+  {
+   "facts": [
+    {
+     "id": "EQ-P3-L3-SB01:blast wheel liner bolt torque",
+     "key": "blast wheel liner bolt torque",
+     "subject": "EQ-P3-L3-SB01",
+     "subject_name": "Machining shot blast cabinet #1",
+     "unit": "N·m",
+     "value": "105"
+    },
+    {
+     "id": "EQ-P3-L3-SB01:shot media top-up interval",
+     "key": "shot media top-up interval",
+     "subject": "EQ-P3-L3-SB01",
+     "subject_name": "Machining shot blast cabinet #1",
+     "unit": "hours",
+     "value": "22"
+    },
+    {
+     "id": "EQ-P3-L3-SB01:dust collector pressure drop alarm",
+     "key": "dust collector pressure drop alarm",
+     "subject": "EQ-P3-L3-SB01",
+     "subject_name": "Machining shot blast cabinet #1",
+     "unit": "Pa",
+     "value": "1590"
+    },
+    {
+     "id": "EQ-P3-L3-SB01:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P3-L3-SB01",
+     "subject_name": "Machining shot blast cabinet #1",
+     "unit": "",
+     "value": "CFW-LUB-709"
+    }
+   ],
+   "id": "EQ-P3-L3-SB01",
+   "line": "P3-L3",
+   "name": "Machining shot blast cabinet #1",
+   "plant": "P3",
+   "type_code": "SB",
+   "type_name": "shot blast cabinet"
+  },
+  {
+   "facts": [
+    {
+     "id": "EQ-P3-L3-CN02:chuck jaw bolt torque",
+     "key": "chuck jaw bolt torque",
+     "subject": "EQ-P3-L3-CN02",
+     "subject_name": "Machining CNC turning center #2",
+     "unit": "N·m",
+     "value": "75"
+    },
+    {
+     "id": "EQ-P3-L3-CN02:spindle warm-up time",
+     "key": "spindle warm-up time",
+     "subject": "EQ-P3-L3-CN02",
+     "subject_name": "Machining CNC turning center #2",
+     "unit": "minutes",
+     "value": "24"
+    },
+    {
+     "id": "EQ-P3-L3-CN02:way lube refill interval",
+     "key": "way lube refill interval",
+     "subject": "EQ-P3-L3-CN02",
+     "subject_name": "Machining CNC turning center #2",
+     "unit": "hours",
+     "value": "70"
+    },
+    {
+     "id": "EQ-P3-L3-CN02:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P3-L3-CN02",
+     "subject_name": "Machining CNC turning center #2",
+     "unit": "",
+     "value": "CFW-LUB-611"
+    }
+   ],
+   "id": "EQ-P3-L3-CN02",
+   "line": "P3-L3",
+   "name": "Machining CNC turning center #2",
+   "plant": "P3",
+   "type_code": "CN",
+   "type_name": "CNC turning center"
+  },
+  {
+   "facts": [
+    {
+     "id": "EQ-P3-L3-HP03:main ram bolt torque",
+     "key": "main ram bolt torque",
+     "subject": "EQ-P3-L3-HP03",
+     "subject_name": "Machining hydraulic forging press #3",
+     "unit": "N·m",
+     "value": "1600"
+    },
+    {
+     "id": "EQ-P3-L3-HP03:system pressure limit",
+     "key": "system pressure limit",
+     "subject": "EQ-P3-L3-HP03",
+     "subject_name": "Machining hydraulic forging press #3",
+     "unit": "bar",
+     "value": "295"
+    },
+    {
+     "id": "EQ-P3-L3-HP03:hydraulic oil change interval",
+     "key": "hydraulic oil change interval",
+     "subject": "EQ-P3-L3-HP03",
+     "subject_name": "Machining hydraulic forging press #3",
+     "unit": "hours",
+     "value": "2135"
+    },
+    {
+     "id": "EQ-P3-L3-HP03:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P3-L3-HP03",
+     "subject_name": "Machining hydraulic forging press #3",
+     "unit": "",
+     "value": "CFW-LUB-340"
+    }
+   ],
+   "id": "EQ-P3-L3-HP03",
+   "line": "P3-L3",
+   "name": "Machining hydraulic forging press #3",
+   "plant": "P3",
+   "type_code": "HP",
+   "type_name": "hydraulic forging press"
+  },
+  {
+   "facts": [
+    {
+     "id": "EQ-P3-L4-RR01:mandrel clamp bolt torque",
+     "key": "mandrel clamp bolt torque",
+     "subject": "EQ-P3-L4-RR01",
+     "subject_name": "Heat Treat radial ring rolling mill #1",
+     "unit": "N·m",
+     "value": "605"
+    },
+    {
+     "id": "EQ-P3-L4-RR01:main roll bearing lubrication interval",
+     "key": "main roll bearing lubrication interval",
+     "subject": "EQ-P3-L4-RR01",
+     "subject_name": "Heat Treat radial ring rolling mill #1",
+     "unit": "hours",
+     "value": "160"
+    },
+    {
+     "id": "EQ-P3-L4-RR01:maximum ring outer diameter",
+     "key": "maximum ring outer diameter",
+     "subject": "EQ-P3-L4-RR01",
+     "subject_name": "Heat Treat radial ring rolling mill #1",
+     "unit": "mm",
+     "value": "1720"
+    },
+    {
+     "id": "EQ-P3-L4-RR01:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P3-L4-RR01",
+     "subject_name": "Heat Treat radial ring rolling mill #1",
+     "unit": "",
+     "value": "CFW-LUB-315"
+    }
+   ],
+   "id": "EQ-P3-L4-RR01",
+   "line": "P3-L4",
+   "name": "Heat Treat radial ring rolling mill #1",
+   "plant": "P3",
+   "type_code": "RR",
+   "type_name": "radial ring rolling mill"
+  },
+  {
+   "facts": [
+    {
+     "id": "EQ-P3-L4-HT02:austenitizing setpoint",
+     "key": "austenitizing setpoint",
+     "subject": "EQ-P3-L4-HT02",
+     "subject_name": "Heat Treat heat treat furnace #2",
+     "unit": "°C",
+     "value": "885"
+    },
+    {
+     "id": "EQ-P3-L4-HT02:thermocouple calibration interval",
+     "key": "thermocouple calibration interval",
+     "subject": "EQ-P3-L4-HT02",
+     "subject_name": "Heat Treat heat treat furnace #2",
+     "unit": "days",
+     "value": "110"
+    },
+    {
+     "id": "EQ-P3-L4-HT02:quench delay maximum",
+     "key": "quench delay maximum",
+     "subject": "EQ-P3-L4-HT02",
+     "subject_name": "Heat Treat heat treat furnace #2",
+     "unit": "seconds",
+     "value": "20"
+    },
+    {
+     "id": "EQ-P3-L4-HT02:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P3-L4-HT02",
+     "subject_name": "Heat Treat heat treat furnace #2",
+     "unit": "",
+     "value": "CFW-LUB-407"
+    }
+   ],
+   "id": "EQ-P3-L4-HT02",
+   "line": "P3-L4",
+   "name": "Heat Treat heat treat furnace #2",
+   "plant": "P3",
+   "type_code": "HT",
+   "type_name": "heat treat furnace"
+  },
+  {
+   "facts": [
+    {
+     "id": "EQ-P3-L4-SB03:blast wheel liner bolt torque",
+     "key": "blast wheel liner bolt torque",
+     "subject": "EQ-P3-L4-SB03",
+     "subject_name": "Heat Treat shot blast cabinet #3",
+     "unit": "N·m",
+     "value": "90"
+    },
+    {
+     "id": "EQ-P3-L4-SB03:shot media top-up interval",
+     "key": "shot media top-up interval",
+     "subject": "EQ-P3-L4-SB03",
+     "subject_name": "Heat Treat shot blast cabinet #3",
+     "unit": "hours",
+     "value": "48"
+    },
+    {
+     "id": "EQ-P3-L4-SB03:dust collector pressure drop alarm",
+     "key": "dust collector pressure drop alarm",
+     "subject": "EQ-P3-L4-SB03",
+     "subject_name": "Heat Treat shot blast cabinet #3",
+     "unit": "Pa",
+     "value": "1510"
+    },
+    {
+     "id": "EQ-P3-L4-SB03:lubricant",
+     "key": "lubricant part number",
+     "subject": "EQ-P3-L4-SB03",
+     "subject_name": "Heat Treat shot blast cabinet #3",
+     "unit": "",
+     "value": "CFW-LUB-526"
+    }
+   ],
+   "id": "EQ-P3-L4-SB03",
+   "line": "P3-L4",
+   "name": "Heat Treat shot blast cabinet #3",
+   "plant": "P3",
+   "type_code": "SB",
+   "type_name": "shot blast cabinet"
+  }
+ ],
+ "lines": [
+  {
+   "equipment": [
+    "EQ-P1-L1-RR01",
+    "EQ-P1-L1-CN02",
+    "EQ-P1-L1-IH03"
+   ],
+   "id": "P1-L1",
+   "name": "Hot Forge",
+   "plant": "P1"
+  },
+  {
+   "equipment": [
+    "EQ-P1-L2-RR01",
+    "EQ-P1-L2-IH02",
+    "EQ-P1-L2-HT03"
+   ],
+   "id": "P1-L2",
+   "name": "Ring Rolling",
+   "plant": "P1"
+  },
+  {
+   "equipment": [
+    "EQ-P1-L3-IH01",
+    "EQ-P1-L3-HP02",
+    "EQ-P1-L3-CN03"
+   ],
+   "id": "P1-L3",
+   "name": "Machining",
+   "plant": "P1"
+  },
+  {
+   "equipment": [
+    "EQ-P1-L4-CN01",
+    "EQ-P1-L4-HP02",
+    "EQ-P1-L4-HT03"
+   ],
+   "id": "P1-L4",
+   "name": "Heat Treat",
+   "plant": "P1"
+  },
+  {
+   "equipment": [
+    "EQ-P2-L1-RR01",
+    "EQ-P2-L1-IH02",
+    "EQ-P2-L1-SB03"
+   ],
+   "id": "P2-L1",
+   "name": "Hot Forge",
+   "plant": "P2"
+  },
+  {
+   "equipment": [
+    "EQ-P2-L2-IH01",
+    "EQ-P2-L2-HT02",
+    "EQ-P2-L2-RR03"
+   ],
+   "id": "P2-L2",
+   "name": "Ring Rolling",
+   "plant": "P2"
+  },
+  {
+   "equipment": [
+    "EQ-P2-L3-RR01",
+    "EQ-P2-L3-HT02",
+    "EQ-P2-L3-IH03"
+   ],
+   "id": "P2-L3",
+   "name": "Machining",
+   "plant": "P2"
+  },
+  {
+   "equipment": [
+    "EQ-P2-L4-RR01",
+    "EQ-P2-L4-HT02",
+    "EQ-P2-L4-HP03"
+   ],
+   "id": "P2-L4",
+   "name": "Heat Treat",
+   "plant": "P2"
+  },
+  {
+   "equipment": [
+    "EQ-P3-L1-HP01",
+    "EQ-P3-L1-SB02",
+    "EQ-P3-L1-IH03"
+   ],
+   "id": "P3-L1",
+   "name": "Hot Forge",
+   "plant": "P3"
+  },
+  {
+   "equipment": [
+    "EQ-P3-L2-SB01",
+    "EQ-P3-L2-RR02",
+    "EQ-P3-L2-HT03"
+   ],
+   "id": "P3-L2",
+   "name": "Ring Rolling",
+   "plant": "P3"
+  },
+  {
+   "equipment": [
+    "EQ-P3-L3-SB01",
+    "EQ-P3-L3-CN02",
+    "EQ-P3-L3-HP03"
+   ],
+   "id": "P3-L3",
+   "name": "Machining",
+   "plant": "P3"
+  },
+  {
+   "equipment": [
+    "EQ-P3-L4-RR01",
+    "EQ-P3-L4-HT02",
+    "EQ-P3-L4-SB03"
+   ],
+   "id": "P3-L4",
+   "name": "Heat Treat",
+   "plant": "P3"
+  }
+ ],
+ "parts": [
+  {
+   "facts": [
+    {
+     "id": "CFW-3043-62:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-3043-62",
+     "subject_name": "flange blank CFW-3043-62",
+     "unit": "HRC",
+     "value": "37-43"
+    },
+    {
+     "id": "CFW-3043-62:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-3043-62",
+     "subject_name": "flange blank CFW-3043-62",
+     "unit": "mm",
+     "value": "±0.04"
+    },
+    {
+     "id": "CFW-3043-62:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-3043-62",
+     "subject_name": "flange blank CFW-3043-62",
+     "unit": "kg",
+     "value": "28.1"
+    }
+   ],
+   "material": "4140",
+   "name": "flange blank",
+   "number": "CFW-3043-62",
+   "plant": "P1"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-5798-88:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-5798-88",
+     "subject_name": "crankshaft blank CFW-5798-88",
+     "unit": "HRC",
+     "value": "25-29"
+    },
+    {
+     "id": "CFW-5798-88:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-5798-88",
+     "subject_name": "crankshaft blank CFW-5798-88",
+     "unit": "mm",
+     "value": "±0.09"
+    },
+    {
+     "id": "CFW-5798-88:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-5798-88",
+     "subject_name": "crankshaft blank CFW-5798-88",
+     "unit": "kg",
+     "value": "119.4"
+    }
+   ],
+   "material": "4340",
+   "name": "crankshaft blank",
+   "number": "CFW-5798-88",
+   "plant": "P2"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-1476-90:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-1476-90",
+     "subject_name": "connecting rod CFW-1476-90",
+     "unit": "HRC",
+     "value": "35-39"
+    },
+    {
+     "id": "CFW-1476-90:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-1476-90",
+     "subject_name": "connecting rod CFW-1476-90",
+     "unit": "mm",
+     "value": "±0.03"
+    },
+    {
+     "id": "CFW-1476-90:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-1476-90",
+     "subject_name": "connecting rod CFW-1476-90",
+     "unit": "kg",
+     "value": "48.9"
+    }
+   ],
+   "material": "1045",
+   "name": "connecting rod",
+   "number": "CFW-1476-90",
+   "plant": "P3"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-3173-95:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-3173-95",
+     "subject_name": "gear blank CFW-3173-95",
+     "unit": "HRC",
+     "value": "37-43"
+    },
+    {
+     "id": "CFW-3173-95:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-3173-95",
+     "subject_name": "gear blank CFW-3173-95",
+     "unit": "mm",
+     "value": "±0.03"
+    },
+    {
+     "id": "CFW-3173-95:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-3173-95",
+     "subject_name": "gear blank CFW-3173-95",
+     "unit": "kg",
+     "value": "100.6"
+    }
+   ],
+   "material": "8620",
+   "name": "gear blank",
+   "number": "CFW-3173-95",
+   "plant": "P1"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-1466-55:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-1466-55",
+     "subject_name": "bearing ring CFW-1466-55",
+     "unit": "HRC",
+     "value": "36-41"
+    },
+    {
+     "id": "CFW-1466-55:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-1466-55",
+     "subject_name": "bearing ring CFW-1466-55",
+     "unit": "mm",
+     "value": "±0.05"
+    },
+    {
+     "id": "CFW-1466-55:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-1466-55",
+     "subject_name": "bearing ring CFW-1466-55",
+     "unit": "kg",
+     "value": "32.2"
+    }
+   ],
+   "material": "52100",
+   "name": "bearing ring",
+   "number": "CFW-1466-55",
+   "plant": "P2"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-5042-83:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-5042-83",
+     "subject_name": "valve body CFW-5042-83",
+     "unit": "HRC",
+     "value": "33-38"
+    },
+    {
+     "id": "CFW-5042-83:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-5042-83",
+     "subject_name": "valve body CFW-5042-83",
+     "unit": "mm",
+     "value": "±0.06"
+    },
+    {
+     "id": "CFW-5042-83:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-5042-83",
+     "subject_name": "valve body CFW-5042-83",
+     "unit": "kg",
+     "value": "77.3"
+    }
+   ],
+   "material": "F316",
+   "name": "valve body",
+   "number": "CFW-5042-83",
+   "plant": "P3"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-9852-71:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-9852-71",
+     "subject_name": "axle hub CFW-9852-71",
+     "unit": "HRC",
+     "value": "34-40"
+    },
+    {
+     "id": "CFW-9852-71:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-9852-71",
+     "subject_name": "axle hub CFW-9852-71",
+     "unit": "mm",
+     "value": "±0.06"
+    },
+    {
+     "id": "CFW-9852-71:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-9852-71",
+     "subject_name": "axle hub CFW-9852-71",
+     "unit": "kg",
+     "value": "73.0"
+    }
+   ],
+   "material": "4140",
+   "name": "axle hub",
+   "number": "CFW-9852-71",
+   "plant": "P1"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-5998-73:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-5998-73",
+     "subject_name": "track link CFW-5998-73",
+     "unit": "HRC",
+     "value": "34-38"
+    },
+    {
+     "id": "CFW-5998-73:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-5998-73",
+     "subject_name": "track link CFW-5998-73",
+     "unit": "mm",
+     "value": "±0.10"
+    },
+    {
+     "id": "CFW-5998-73:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-5998-73",
+     "subject_name": "track link CFW-5998-73",
+     "unit": "kg",
+     "value": "4.8"
+    }
+   ],
+   "material": "15B37",
+   "name": "track link",
+   "number": "CFW-5998-73",
+   "plant": "P2"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-4540-42:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-4540-42",
+     "subject_name": "flange blank CFW-4540-42",
+     "unit": "HRC",
+     "value": "38-44"
+    },
+    {
+     "id": "CFW-4540-42:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-4540-42",
+     "subject_name": "flange blank CFW-4540-42",
+     "unit": "mm",
+     "value": "±0.07"
+    },
+    {
+     "id": "CFW-4540-42:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-4540-42",
+     "subject_name": "flange blank CFW-4540-42",
+     "unit": "kg",
+     "value": "71.9"
+    }
+   ],
+   "material": "4140",
+   "name": "flange blank",
+   "number": "CFW-4540-42",
+   "plant": "P3"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-6160-72:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-6160-72",
+     "subject_name": "crankshaft blank CFW-6160-72",
+     "unit": "HRC",
+     "value": "26-31"
+    },
+    {
+     "id": "CFW-6160-72:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-6160-72",
+     "subject_name": "crankshaft blank CFW-6160-72",
+     "unit": "mm",
+     "value": "±0.09"
+    },
+    {
+     "id": "CFW-6160-72:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-6160-72",
+     "subject_name": "crankshaft blank CFW-6160-72",
+     "unit": "kg",
+     "value": "26.9"
+    }
+   ],
+   "material": "4340",
+   "name": "crankshaft blank",
+   "number": "CFW-6160-72",
+   "plant": "P1"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-7434-20:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-7434-20",
+     "subject_name": "connecting rod CFW-7434-20",
+     "unit": "HRC",
+     "value": "26-30"
+    },
+    {
+     "id": "CFW-7434-20:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-7434-20",
+     "subject_name": "connecting rod CFW-7434-20",
+     "unit": "mm",
+     "value": "±0.07"
+    },
+    {
+     "id": "CFW-7434-20:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-7434-20",
+     "subject_name": "connecting rod CFW-7434-20",
+     "unit": "kg",
+     "value": "101.0"
+    }
+   ],
+   "material": "1045",
+   "name": "connecting rod",
+   "number": "CFW-7434-20",
+   "plant": "P2"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-1931-62:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-1931-62",
+     "subject_name": "gear blank CFW-1931-62",
+     "unit": "HRC",
+     "value": "38-41"
+    },
+    {
+     "id": "CFW-1931-62:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-1931-62",
+     "subject_name": "gear blank CFW-1931-62",
+     "unit": "mm",
+     "value": "±0.08"
+    },
+    {
+     "id": "CFW-1931-62:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-1931-62",
+     "subject_name": "gear blank CFW-1931-62",
+     "unit": "kg",
+     "value": "97.9"
+    }
+   ],
+   "material": "8620",
+   "name": "gear blank",
+   "number": "CFW-1931-62",
+   "plant": "P3"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-7189-64:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-7189-64",
+     "subject_name": "bearing ring CFW-7189-64",
+     "unit": "HRC",
+     "value": "24-29"
+    },
+    {
+     "id": "CFW-7189-64:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-7189-64",
+     "subject_name": "bearing ring CFW-7189-64",
+     "unit": "mm",
+     "value": "±0.04"
+    },
+    {
+     "id": "CFW-7189-64:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-7189-64",
+     "subject_name": "bearing ring CFW-7189-64",
+     "unit": "kg",
+     "value": "22.9"
+    }
+   ],
+   "material": "52100",
+   "name": "bearing ring",
+   "number": "CFW-7189-64",
+   "plant": "P1"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-1730-97:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-1730-97",
+     "subject_name": "valve body CFW-1730-97",
+     "unit": "HRC",
+     "value": "25-29"
+    },
+    {
+     "id": "CFW-1730-97:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-1730-97",
+     "subject_name": "valve body CFW-1730-97",
+     "unit": "mm",
+     "value": "±0.09"
+    },
+    {
+     "id": "CFW-1730-97:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-1730-97",
+     "subject_name": "valve body CFW-1730-97",
+     "unit": "kg",
+     "value": "118.5"
+    }
+   ],
+   "material": "F316",
+   "name": "valve body",
+   "number": "CFW-1730-97",
+   "plant": "P2"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-2573-68:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-2573-68",
+     "subject_name": "axle hub CFW-2573-68",
+     "unit": "HRC",
+     "value": "25-31"
+    },
+    {
+     "id": "CFW-2573-68:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-2573-68",
+     "subject_name": "axle hub CFW-2573-68",
+     "unit": "mm",
+     "value": "±0.03"
+    },
+    {
+     "id": "CFW-2573-68:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-2573-68",
+     "subject_name": "axle hub CFW-2573-68",
+     "unit": "kg",
+     "value": "97.2"
+    }
+   ],
+   "material": "4140",
+   "name": "axle hub",
+   "number": "CFW-2573-68",
+   "plant": "P3"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-7661-91:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-7661-91",
+     "subject_name": "track link CFW-7661-91",
+     "unit": "HRC",
+     "value": "39-42"
+    },
+    {
+     "id": "CFW-7661-91:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-7661-91",
+     "subject_name": "track link CFW-7661-91",
+     "unit": "mm",
+     "value": "±0.02"
+    },
+    {
+     "id": "CFW-7661-91:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-7661-91",
+     "subject_name": "track link CFW-7661-91",
+     "unit": "kg",
+     "value": "28.0"
+    }
+   ],
+   "material": "15B37",
+   "name": "track link",
+   "number": "CFW-7661-91",
+   "plant": "P1"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-8165-49:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-8165-49",
+     "subject_name": "flange blank CFW-8165-49",
+     "unit": "HRC",
+     "value": "36-42"
+    },
+    {
+     "id": "CFW-8165-49:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-8165-49",
+     "subject_name": "flange blank CFW-8165-49",
+     "unit": "mm",
+     "value": "±0.06"
+    },
+    {
+     "id": "CFW-8165-49:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-8165-49",
+     "subject_name": "flange blank CFW-8165-49",
+     "unit": "kg",
+     "value": "25.2"
+    }
+   ],
+   "material": "4140",
+   "name": "flange blank",
+   "number": "CFW-8165-49",
+   "plant": "P2"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-9184-50:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-9184-50",
+     "subject_name": "crankshaft blank CFW-9184-50",
+     "unit": "HRC",
+     "value": "32-38"
+    },
+    {
+     "id": "CFW-9184-50:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-9184-50",
+     "subject_name": "crankshaft blank CFW-9184-50",
+     "unit": "mm",
+     "value": "±0.02"
+    },
+    {
+     "id": "CFW-9184-50:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-9184-50",
+     "subject_name": "crankshaft blank CFW-9184-50",
+     "unit": "kg",
+     "value": "80.8"
+    }
+   ],
+   "material": "4340",
+   "name": "crankshaft blank",
+   "number": "CFW-9184-50",
+   "plant": "P3"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-2490-88:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-2490-88",
+     "subject_name": "connecting rod CFW-2490-88",
+     "unit": "HRC",
+     "value": "22-27"
+    },
+    {
+     "id": "CFW-2490-88:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-2490-88",
+     "subject_name": "connecting rod CFW-2490-88",
+     "unit": "mm",
+     "value": "±0.02"
+    },
+    {
+     "id": "CFW-2490-88:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-2490-88",
+     "subject_name": "connecting rod CFW-2490-88",
+     "unit": "kg",
+     "value": "50.1"
+    }
+   ],
+   "material": "1045",
+   "name": "connecting rod",
+   "number": "CFW-2490-88",
+   "plant": "P1"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-4922-70:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-4922-70",
+     "subject_name": "gear blank CFW-4922-70",
+     "unit": "HRC",
+     "value": "38-42"
+    },
+    {
+     "id": "CFW-4922-70:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-4922-70",
+     "subject_name": "gear blank CFW-4922-70",
+     "unit": "mm",
+     "value": "±0.03"
+    },
+    {
+     "id": "CFW-4922-70:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-4922-70",
+     "subject_name": "gear blank CFW-4922-70",
+     "unit": "kg",
+     "value": "69.8"
+    }
+   ],
+   "material": "8620",
+   "name": "gear blank",
+   "number": "CFW-4922-70",
+   "plant": "P2"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-4068-79:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-4068-79",
+     "subject_name": "bearing ring CFW-4068-79",
+     "unit": "HRC",
+     "value": "35-40"
+    },
+    {
+     "id": "CFW-4068-79:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-4068-79",
+     "subject_name": "bearing ring CFW-4068-79",
+     "unit": "mm",
+     "value": "±0.07"
+    },
+    {
+     "id": "CFW-4068-79:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-4068-79",
+     "subject_name": "bearing ring CFW-4068-79",
+     "unit": "kg",
+     "value": "91.7"
+    }
+   ],
+   "material": "52100",
+   "name": "bearing ring",
+   "number": "CFW-4068-79",
+   "plant": "P3"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-7855-84:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-7855-84",
+     "subject_name": "valve body CFW-7855-84",
+     "unit": "HRC",
+     "value": "32-36"
+    },
+    {
+     "id": "CFW-7855-84:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-7855-84",
+     "subject_name": "valve body CFW-7855-84",
+     "unit": "mm",
+     "value": "±0.05"
+    },
+    {
+     "id": "CFW-7855-84:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-7855-84",
+     "subject_name": "valve body CFW-7855-84",
+     "unit": "kg",
+     "value": "105.0"
+    }
+   ],
+   "material": "F316",
+   "name": "valve body",
+   "number": "CFW-7855-84",
+   "plant": "P1"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-4713-78:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-4713-78",
+     "subject_name": "axle hub CFW-4713-78",
+     "unit": "HRC",
+     "value": "29-32"
+    },
+    {
+     "id": "CFW-4713-78:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-4713-78",
+     "subject_name": "axle hub CFW-4713-78",
+     "unit": "mm",
+     "value": "±0.04"
+    },
+    {
+     "id": "CFW-4713-78:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-4713-78",
+     "subject_name": "axle hub CFW-4713-78",
+     "unit": "kg",
+     "value": "106.1"
+    }
+   ],
+   "material": "4140",
+   "name": "axle hub",
+   "number": "CFW-4713-78",
+   "plant": "P2"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-1159-60:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-1159-60",
+     "subject_name": "track link CFW-1159-60",
+     "unit": "HRC",
+     "value": "36-40"
+    },
+    {
+     "id": "CFW-1159-60:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-1159-60",
+     "subject_name": "track link CFW-1159-60",
+     "unit": "mm",
+     "value": "±0.03"
+    },
+    {
+     "id": "CFW-1159-60:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-1159-60",
+     "subject_name": "track link CFW-1159-60",
+     "unit": "kg",
+     "value": "80.0"
+    }
+   ],
+   "material": "15B37",
+   "name": "track link",
+   "number": "CFW-1159-60",
+   "plant": "P3"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-9497-56:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-9497-56",
+     "subject_name": "flange blank CFW-9497-56",
+     "unit": "HRC",
+     "value": "31-34"
+    },
+    {
+     "id": "CFW-9497-56:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-9497-56",
+     "subject_name": "flange blank CFW-9497-56",
+     "unit": "mm",
+     "value": "±0.03"
+    },
+    {
+     "id": "CFW-9497-56:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-9497-56",
+     "subject_name": "flange blank CFW-9497-56",
+     "unit": "kg",
+     "value": "57.2"
+    }
+   ],
+   "material": "4140",
+   "name": "flange blank",
+   "number": "CFW-9497-56",
+   "plant": "P1"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-7185-40:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-7185-40",
+     "subject_name": "crankshaft blank CFW-7185-40",
+     "unit": "HRC",
+     "value": "39-42"
+    },
+    {
+     "id": "CFW-7185-40:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-7185-40",
+     "subject_name": "crankshaft blank CFW-7185-40",
+     "unit": "mm",
+     "value": "±0.07"
+    },
+    {
+     "id": "CFW-7185-40:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-7185-40",
+     "subject_name": "crankshaft blank CFW-7185-40",
+     "unit": "kg",
+     "value": "117.8"
+    }
+   ],
+   "material": "4340",
+   "name": "crankshaft blank",
+   "number": "CFW-7185-40",
+   "plant": "P2"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-4516-94:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-4516-94",
+     "subject_name": "connecting rod CFW-4516-94",
+     "unit": "HRC",
+     "value": "28-32"
+    },
+    {
+     "id": "CFW-4516-94:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-4516-94",
+     "subject_name": "connecting rod CFW-4516-94",
+     "unit": "mm",
+     "value": "±0.10"
+    },
+    {
+     "id": "CFW-4516-94:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-4516-94",
+     "subject_name": "connecting rod CFW-4516-94",
+     "unit": "kg",
+     "value": "28.4"
+    }
+   ],
+   "material": "1045",
+   "name": "connecting rod",
+   "number": "CFW-4516-94",
+   "plant": "P3"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-6874-71:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-6874-71",
+     "subject_name": "gear blank CFW-6874-71",
+     "unit": "HRC",
+     "value": "38-42"
+    },
+    {
+     "id": "CFW-6874-71:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-6874-71",
+     "subject_name": "gear blank CFW-6874-71",
+     "unit": "mm",
+     "value": "±0.07"
+    },
+    {
+     "id": "CFW-6874-71:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-6874-71",
+     "subject_name": "gear blank CFW-6874-71",
+     "unit": "kg",
+     "value": "113.4"
+    }
+   ],
+   "material": "8620",
+   "name": "gear blank",
+   "number": "CFW-6874-71",
+   "plant": "P1"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-6476-89:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-6476-89",
+     "subject_name": "bearing ring CFW-6476-89",
+     "unit": "HRC",
+     "value": "29-32"
+    },
+    {
+     "id": "CFW-6476-89:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-6476-89",
+     "subject_name": "bearing ring CFW-6476-89",
+     "unit": "mm",
+     "value": "±0.04"
+    },
+    {
+     "id": "CFW-6476-89:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-6476-89",
+     "subject_name": "bearing ring CFW-6476-89",
+     "unit": "kg",
+     "value": "119.0"
+    }
+   ],
+   "material": "52100",
+   "name": "bearing ring",
+   "number": "CFW-6476-89",
+   "plant": "P2"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-4376-34:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-4376-34",
+     "subject_name": "valve body CFW-4376-34",
+     "unit": "HRC",
+     "value": "31-34"
+    },
+    {
+     "id": "CFW-4376-34:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-4376-34",
+     "subject_name": "valve body CFW-4376-34",
+     "unit": "mm",
+     "value": "±0.10"
+    },
+    {
+     "id": "CFW-4376-34:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-4376-34",
+     "subject_name": "valve body CFW-4376-34",
+     "unit": "kg",
+     "value": "46.2"
+    }
+   ],
+   "material": "F316",
+   "name": "valve body",
+   "number": "CFW-4376-34",
+   "plant": "P3"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-1140-78:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-1140-78",
+     "subject_name": "axle hub CFW-1140-78",
+     "unit": "HRC",
+     "value": "27-32"
+    },
+    {
+     "id": "CFW-1140-78:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-1140-78",
+     "subject_name": "axle hub CFW-1140-78",
+     "unit": "mm",
+     "value": "±0.08"
+    },
+    {
+     "id": "CFW-1140-78:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-1140-78",
+     "subject_name": "axle hub CFW-1140-78",
+     "unit": "kg",
+     "value": "93.3"
+    }
+   ],
+   "material": "4140",
+   "name": "axle hub",
+   "number": "CFW-1140-78",
+   "plant": "P1"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-5753-95:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-5753-95",
+     "subject_name": "track link CFW-5753-95",
+     "unit": "HRC",
+     "value": "34-37"
+    },
+    {
+     "id": "CFW-5753-95:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-5753-95",
+     "subject_name": "track link CFW-5753-95",
+     "unit": "mm",
+     "value": "±0.03"
+    },
+    {
+     "id": "CFW-5753-95:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-5753-95",
+     "subject_name": "track link CFW-5753-95",
+     "unit": "kg",
+     "value": "28.3"
+    }
+   ],
+   "material": "15B37",
+   "name": "track link",
+   "number": "CFW-5753-95",
+   "plant": "P2"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-8404-30:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-8404-30",
+     "subject_name": "flange blank CFW-8404-30",
+     "unit": "HRC",
+     "value": "33-38"
+    },
+    {
+     "id": "CFW-8404-30:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-8404-30",
+     "subject_name": "flange blank CFW-8404-30",
+     "unit": "mm",
+     "value": "±0.08"
+    },
+    {
+     "id": "CFW-8404-30:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-8404-30",
+     "subject_name": "flange blank CFW-8404-30",
+     "unit": "kg",
+     "value": "15.0"
+    }
+   ],
+   "material": "4140",
+   "name": "flange blank",
+   "number": "CFW-8404-30",
+   "plant": "P3"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-1392-34:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-1392-34",
+     "subject_name": "crankshaft blank CFW-1392-34",
+     "unit": "HRC",
+     "value": "34-37"
+    },
+    {
+     "id": "CFW-1392-34:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-1392-34",
+     "subject_name": "crankshaft blank CFW-1392-34",
+     "unit": "mm",
+     "value": "±0.06"
+    },
+    {
+     "id": "CFW-1392-34:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-1392-34",
+     "subject_name": "crankshaft blank CFW-1392-34",
+     "unit": "kg",
+     "value": "5.8"
+    }
+   ],
+   "material": "4340",
+   "name": "crankshaft blank",
+   "number": "CFW-1392-34",
+   "plant": "P1"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-4919-21:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-4919-21",
+     "subject_name": "connecting rod CFW-4919-21",
+     "unit": "HRC",
+     "value": "29-32"
+    },
+    {
+     "id": "CFW-4919-21:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-4919-21",
+     "subject_name": "connecting rod CFW-4919-21",
+     "unit": "mm",
+     "value": "±0.10"
+    },
+    {
+     "id": "CFW-4919-21:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-4919-21",
+     "subject_name": "connecting rod CFW-4919-21",
+     "unit": "kg",
+     "value": "8.0"
+    }
+   ],
+   "material": "1045",
+   "name": "connecting rod",
+   "number": "CFW-4919-21",
+   "plant": "P2"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-9335-36:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-9335-36",
+     "subject_name": "gear blank CFW-9335-36",
+     "unit": "HRC",
+     "value": "36-41"
+    },
+    {
+     "id": "CFW-9335-36:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-9335-36",
+     "subject_name": "gear blank CFW-9335-36",
+     "unit": "mm",
+     "value": "±0.09"
+    },
+    {
+     "id": "CFW-9335-36:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-9335-36",
+     "subject_name": "gear blank CFW-9335-36",
+     "unit": "kg",
+     "value": "107.9"
+    }
+   ],
+   "material": "8620",
+   "name": "gear blank",
+   "number": "CFW-9335-36",
+   "plant": "P3"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-6417-61:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-6417-61",
+     "subject_name": "bearing ring CFW-6417-61",
+     "unit": "HRC",
+     "value": "29-35"
+    },
+    {
+     "id": "CFW-6417-61:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-6417-61",
+     "subject_name": "bearing ring CFW-6417-61",
+     "unit": "mm",
+     "value": "±0.07"
+    },
+    {
+     "id": "CFW-6417-61:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-6417-61",
+     "subject_name": "bearing ring CFW-6417-61",
+     "unit": "kg",
+     "value": "9.4"
+    }
+   ],
+   "material": "52100",
+   "name": "bearing ring",
+   "number": "CFW-6417-61",
+   "plant": "P1"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-2117-10:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-2117-10",
+     "subject_name": "valve body CFW-2117-10",
+     "unit": "HRC",
+     "value": "39-44"
+    },
+    {
+     "id": "CFW-2117-10:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-2117-10",
+     "subject_name": "valve body CFW-2117-10",
+     "unit": "mm",
+     "value": "±0.09"
+    },
+    {
+     "id": "CFW-2117-10:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-2117-10",
+     "subject_name": "valve body CFW-2117-10",
+     "unit": "kg",
+     "value": "14.5"
+    }
+   ],
+   "material": "F316",
+   "name": "valve body",
+   "number": "CFW-2117-10",
+   "plant": "P2"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-5010-61:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-5010-61",
+     "subject_name": "axle hub CFW-5010-61",
+     "unit": "HRC",
+     "value": "22-28"
+    },
+    {
+     "id": "CFW-5010-61:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-5010-61",
+     "subject_name": "axle hub CFW-5010-61",
+     "unit": "mm",
+     "value": "±0.10"
+    },
+    {
+     "id": "CFW-5010-61:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-5010-61",
+     "subject_name": "axle hub CFW-5010-61",
+     "unit": "kg",
+     "value": "5.4"
+    }
+   ],
+   "material": "4140",
+   "name": "axle hub",
+   "number": "CFW-5010-61",
+   "plant": "P3"
+  },
+  {
+   "facts": [
+    {
+     "id": "CFW-5349-60:hardness range",
+     "key": "hardness range",
+     "subject": "CFW-5349-60",
+     "subject_name": "track link CFW-5349-60",
+     "unit": "HRC",
+     "value": "31-35"
+    },
+    {
+     "id": "CFW-5349-60:bore diameter tolerance",
+     "key": "bore diameter tolerance",
+     "subject": "CFW-5349-60",
+     "subject_name": "track link CFW-5349-60",
+     "unit": "mm",
+     "value": "±0.03"
+    },
+    {
+     "id": "CFW-5349-60:maximum forging weight",
+     "key": "maximum forging weight",
+     "subject": "CFW-5349-60",
+     "subject_name": "track link CFW-5349-60",
+     "unit": "kg",
+     "value": "58.0"
+    }
+   ],
+   "material": "15B37",
+   "name": "track link",
+   "number": "CFW-5349-60",
+   "plant": "P1"
+  }
+ ],
+ "plants": [
+  {
+   "id": "P1",
+   "name": "Tacoma Works"
+  },
+  {
+   "id": "P2",
+   "name": "Spokane Works"
+  },
+  {
+   "id": "P3",
+   "name": "Boise Works"
+  }
+ ]
+}

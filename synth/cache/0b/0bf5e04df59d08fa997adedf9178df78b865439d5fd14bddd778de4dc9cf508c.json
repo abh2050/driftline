@@ -1,0 +1,16 @@
+{
+ "content": "# FAQ-011 Engineering FAQ #11\n\nRevision: Rev A\n\nQ: What is the approved lubricant part number for Hot Forge induction billet heater #3 (EQ-P1-L1-IH03)?\nA: The lubricant part number for Hot Forge induction billet heater #3 (EQ-P1-L1-IH03) is CFW-LUB-188. Use per procurement and storage procedures in SOP-P1-L1-01.\n\nQ: What lubricant is specified for Machining hydraulic forging press #2 (EQ-P1-L3-HP02)?\nA: The lubricant part number for Machining hydraulic forging press #2 (EQ-P1-L3-HP02) is CFW-LUB-497. Apply according to maintenance tasks referenced in SOP-P1-L3-04.\n\nQ: Which lubricant is assigned to Ring Rolling radial ring rolling mill #2 (EQ-P3-L2-RR02)?\nA: The lubricant part number for Ring Rolling radial ring rolling mill #2 (EQ-P3-L2-RR02) is CFW-LUB-930. Verify compatibility before field replenishment as outlined in SB-1029.\n\nQ: What is the thermocouple calibration interval for Machining heat treat furnace #2 (EQ-P2-L3-HT02)?\nA: The thermocouple calibration interval for Machining heat treat furnace #2 (EQ-P2-L3-HT02) is 50 days. Record calibration events in the equipment log and follow SOP-P1-L3-04 for instrumentation checks.\n\nQ: What is the coil inspection interval for Hot Forge induction billet heater #3 (EQ-P1-L1-IH03)?\nA: The coil inspection interval for Hot Forge induction billet heater #3 (EQ-P1-L1-IH03) is 290 hours. Include coil inspection results in the repair dossier and reference SB-1029 for allowable wear criteria.\n\nRelated documents: SB-1029; SOP-P1-L1-01; SOP-P1-L3-04.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:FAQ-011:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: engineering FAQ\nDocument id: FAQ-011\nTitle: Engineering FAQ #11\nRevision: Rev A\nRelated documents to cite: SB-1029, SOP-P1-L1-01, SOP-P1-L3-04\nValues to include exactly:\n- The lubricant part number for Hot Forge induction billet heater #3 (EQ-P1-L1-IH03) is CFW-LUB-188.\n- The lubricant part number for Machining hydraulic forging press #2 (EQ-P1-L3-HP02) is CFW-LUB-497.\n- The lubricant part number for Ring Rolling radial ring rolling mill #2 (EQ-P3-L2-RR02) is CFW-LUB-930.\n- The thermocouple calibration interval for Machining heat treat furnace #2 (EQ-P2-L3-HT02) is 50 days.\n- The coil inspection interval for Hot Forge induction billet heater #3 (EQ-P1-L1-IH03) is 290 hours.\nStructure: five question and answer pairs, one per given value. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "content": "{\"question\":\"For the Heat Treat shot blast cabinet #3 (equipment ID EQ-P3-L4-SB03), what is the required shot media top-up interval?\"}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "golden:G-007#0",
+ "messages": [
+  {
+   "content": "You write test questions for a document search assistant at Cascade Forge Works, a fictional forging manufacturer. Return JSON {\"question\": \"...\"}.",
+   "role": "system"
+  },
+  {
+   "content": "Write a question that names the equipment or part by description whose answer is this fact. Do not include the value itself.\nFact: the shot media top-up interval for Heat Treat shot blast cabinet #3 (EQ-P3-L4-SB03) is 48 hours.",
+   "role": "user"
+  }
+ ]
+}

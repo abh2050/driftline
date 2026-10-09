@@ -1,0 +1,16 @@
+{
+ "content": "{\"question\":\"What's the target billet temperature for Hot Forge induction billet heater #3 (EQ-P3-L1-IH03)?\"}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "golden:G-011#0",
+ "messages": [
+  {
+   "content": "You write test questions for a document search assistant at Cascade Forge Works, a fictional forging manufacturer. Return JSON {\"question\": \"...\"}.",
+   "role": "system"
+  },
+  {
+   "content": "Write a question from someone in a hurry whose answer is this fact. Do not include the value itself.\nFact: the target billet temperature for Hot Forge induction billet heater #3 (EQ-P3-L1-IH03) is 1260 °C.",
+   "role": "user"
+  }
+ ]
+}

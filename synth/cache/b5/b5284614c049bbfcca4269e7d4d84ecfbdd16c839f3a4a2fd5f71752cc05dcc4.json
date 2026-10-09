@@ -1,0 +1,16 @@
+{
+ "content": "{\"question\":\"Before starting work, have you set and verified the torque on the blast wheel liner bolts for Hot Forge shot blast cabinet #2 (EQ-P3-L1-SB02) to the required specification?\"}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "golden:G-013#0",
+ "messages": [
+  {
+   "content": "You write test questions for a document search assistant at Cascade Forge Works, a fictional forging manufacturer. Return JSON {\"question\": \"...\"}.",
+   "role": "system"
+  },
+  {
+   "content": "Write a question phrased as a check before doing work whose answer is this fact. Do not include the value itself.\nFact: the blast wheel liner bolt torque for Hot Forge shot blast cabinet #2 (EQ-P3-L1-SB02) is 65 N·m.",
+   "role": "user"
+  }
+ ]
+}

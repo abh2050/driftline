@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\":[\"Breach persisted for 25 one-minute windows. Metrics shifted: citation_rate 0.9626 -> 0.8177 (-15.1%), groundedness 4.2052 -> 2.8673 (-31.8%). Config changes since baseline: prompt_version: v3 -> v5. Recent deploys: 2. Logs: judge: answer contains claims not in context | prompt v5 loaded (system prompt rewritten) | token refresh ok\",\"Incident lasted across 25 one-minute windows. Observed metric deltas: citation_rate 0.9626 -> 0.8177 (-15.1%); groundedness 4.2052 -> 2.8673 (-31.8%). Config changes since baseline include prompt_version: v3 -> v5. Recent deploys: 2. Logs recorded: judge: answer contains claims not in context | prompt v5 loaded (system prompt rewritten) | token refresh ok\",\"A sustained breach covered 25 one-minute windows. Metrics: citation_rate decreased from 0.9626 to 0.8177 (-15.1%), groundedness dropped from 4.2052 to 2.8673 (-31.8%). Config changes since baseline: prompt_version: v3 -> v5. Recent deploys: 2. Logs show: judge: answer contains claims not in context | prompt v5 loaded (system prompt rewritten) | token refresh ok\",\"Exposure spanned 25 one-minute windows. Metric changes recorded: citation_rate 0.9626 -> 0.8177 (-15.1%) and groundedness 4.2052 -> 2.8673 (-31.8%). Config changes since baseline: prompt_version: v3 -> v5. Recent deploys: 2. Logs: judge: answer contains claims not in context | prompt v5 loaded (system prompt rewritten) | token refresh ok\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0592#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 25 one-minute windows. Metrics: citation_rate 0.9626 -> 0.8177 (-15.1%), groundedness 4.2052 -> 2.8673 (-31.8%). Config changes since baseline: prompt_version: v3 -> v5. Recent deploys: 2. Logs: judge: answer contains claims not in context | prompt v5 loaded (system prompt rewritten) | token refresh ok",
+   "role": "user"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\":[\"Breach persisted for 24 one-minute windows. Metrics moved: groundedness 4.3004 -> 3.9962 (-7.1%), top_score 0.8042 -> 0.7704 (-4.2%). Config changes since baseline: chunk_overlap: 64 -> 0. Recent deploys: 1. Logs show chunker: overlap=0, 14% of answers span chunk boundary | token refresh ok.\",\"Incident lasted 24 one-minute windows. Measured metrics: groundedness dropped 4.3004 -> 3.9962 (-7.1%), top_score fell 0.8042 -> 0.7704 (-4.2%). Configuration diff from baseline: chunk_overlap: 64 -> 0. Recent deploys: 1. Logs: chunker: overlap=0, 14% of answers span chunk boundary | token refresh ok.\",\"Sustained breach over 24 one-minute windows. Metrics: groundedness changed 4.3004 -> 3.9962 (-7.1%), top_score changed 0.8042 -> 0.7704 (-4.2%). Config since baseline shows chunk_overlap: 64 -> 0. Recent deploys: 1. Log entries: chunker: overlap=0, 14% of answers span chunk boundary | token refresh ok.\",\"Observed breach duration: 24 one-minute windows. Key metrics: groundedness 4.3004 -> 3.9962 (-7.1%), top_score 0.8042 -> 0.7704 (-4.2%). Config changes from baseline include chunk_overlap: 64 -> 0. Recent deploys: 1. Logs report chunker: overlap=0, 14% of answers span chunk boundary | token refresh ok.\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-1179#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 24 one-minute windows. Metrics: groundedness 4.3004 -> 3.9962 (-7.1%), top_score 0.8042 -> 0.7704 (-4.2%). Config changes since baseline: chunk_overlap: 64 -> 0. Recent deploys: 1. Logs: chunker: overlap=0, 14% of answers span chunk boundary | token refresh ok",
+   "role": "user"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "content": "# QS-PROC-05 Machining surface finish (P1)\nRevision: Rev B  \nPlant: P1, line P1-L4  \nEquipment: EQ-P1-L4-HT03\n\nScope\nThis quality specification defines required surface finish acceptance criteria, related process constraints, and inspection methods for components machined on line P1-L4 and processed through Heat Treat heat treat furnace #3 (EQ-P1-L4-HT03). Applicable to production and maintenance personnel controlling feed-into and output from EQ-P1-L4-HT03. Refer to ECN-2026-002 for design tolerance updates and SOP-P1-L4-01 and SOP-P1-L4-02 for process execution.\n\nRequirements table\n\n| Item | Requirement |\n|---|---|\n| Surface finish acceptance | See machine program and drawing per ECN-2026-002 |\n| Heat treat quench control | The quench delay maximum for Heat Treat heat treat furnace #3 (EQ-P1-L4-HT03) is 15 seconds. |\n| Process documentation | All runs must be recorded per SOP-P1-L4-01 and SOP-P1-L4-02 |\n| Equipment condition | EQ-P1-L4-HT03 must be verified operational per SOP-P1-L4-02 before use |\n\nInspection method\nInspect finished parts per sampling and acceptance criteria in SOP-P1-L4-01. Visual and profilometer checks shall be performed at the first-piece inspection and after any process interruption. For parts passing through EQ-P1-L4-HT03, verify quench delay using furnace event log and operator checklist recorded in the part traveler. Record any deviation from the quench delay requirement and tag affected lots for review. Retain inspection records with the job packet as required by SOP-P1-L4-01.\n\nNonconformance handling\nNonconforming parts or process records are to be isolated and dispositioned following SOP-P1-L4-02. Report nonconformance referencing QS-PROC-05 and ECN-2026-002. For any instance where the quench delay exceeds the stated requirement for EQ-P1-L4-HT03, initiate containment, perform root cause analysis, and implement corrective action per SOP-P1-L4-02. Rework or scrap decisions shall be documented and approved by Quality.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:QS-PROC-05:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: quality specification\nDocument id: QS-PROC-05\nTitle: Machining surface finish (P1)\nRevision: Rev B\nPlant: P1, line P1-L4\nEquipment: EQ-P1-L4-HT03\nRelated documents to cite: ECN-2026-002, SOP-P1-L4-01, SOP-P1-L4-02\nValues to include exactly:\n- The quench delay maximum for Heat Treat heat treat furnace #3 (EQ-P1-L4-HT03) is 15 seconds.\nStructure: scope, requirements table, inspection method, nonconformance handling. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

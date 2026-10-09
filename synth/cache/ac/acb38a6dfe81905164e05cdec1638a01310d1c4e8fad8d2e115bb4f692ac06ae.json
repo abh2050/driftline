@@ -1,0 +1,16 @@
+{
+ "content": "{\n  \"paraphrases\": [\n    \"Breach sustained for 25 one-minute windows. Metrics observed: citation_rate 0.9143 -> 0.4403 (-51.8%). Config changes since baseline: prompt_version: v3 -> v3.1. Recent deploys: 1. Logs: citation parser: 0 matches for pattern [doc:ID] | search: warm cache miss\",\n    \"For 25 one-minute windows the breach persisted. The metric went: citation_rate 0.9143 -> 0.4403 (-51.8%). Since the baseline, config changed: prompt_version: v3 -> v3.1. There was 1 recent deploy. Logs show: citation parser: 0 matches for pattern [doc:ID] | search: warm cache miss\",\n    \"Sustained breach duration: 25 one-minute windows. Key metric: citation_rate 0.9143 -> 0.4403 (-51.8%). Configuration diff from baseline: prompt_version: v3 -> v3.1. Recent deploys count: 1. Logged entries: citation parser: 0 matches for pattern [doc:ID] | search: warm cache miss\",\n    \"Incident lasted 25 one-minute windows. Measured drop: citation_rate 0.9143 -> 0.4403 (-51.8%). Baseline vs current config: prompt_version: v3 -> v3.1. Number of recent deploys: 1. Relevant logs: citation parser: 0 matches for pattern [doc:ID] | search: warm cache miss\"\n  ]\n}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0141#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 25 one-minute windows. Metrics: citation_rate 0.9143 -> 0.4403 (-51.8%). Config changes since baseline: prompt_version: v3 -> v3.1. Recent deploys: 1. Logs: citation parser: 0 matches for pattern [doc:ID] | search: warm cache miss",
+   "role": "user"
+  }
+ ]
+}

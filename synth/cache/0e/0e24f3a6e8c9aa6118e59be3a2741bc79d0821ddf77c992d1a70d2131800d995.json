@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\":[\"Sustained breach lasted 7 one-minute windows. error_rate moved from 0.0038 to 0.1148 (+2915.9%). p95_latency_ms increased from 2758.2712 to 4230.6441 (+53.4%). Config changes since baseline: none. Recent deploys: 1. Logs: chat: 429 Too Many Requests from gateway (rate limit) | retry: attempt 3/3 failed | token refresh ok\",\"Incident persisted across 7 one-minute windows. Observed metrics: error_rate 0.0038 -> 0.1148 (+2915.9%); p95_latency_ms 2758.2712 -> 4230.6441 (+53.4%). No config changes since baseline. Recent deploys: 1. Relevant logs: chat: 429 Too Many Requests from gateway (rate limit) | retry: attempt 3/3 failed | token refresh ok\",\"Breach duration: 7 one-minute windows. error_rate rose from 0.0038 to 0.1148, an increase of +2915.9%. p95_latency_ms went from 2758.2712 to 4230.6441 (+53.4%). Config changes since baseline: none. Recent deploys: 1. Logs show: chat: 429 Too Many Requests from gateway (rate limit) | retry: attempt 3/3 failed | token refresh ok\",\"The system was in breach for 7 one-minute windows. Key metrics: error_rate 0.0038 -> 0.1148 (+2915.9%); p95_latency_ms 2758.2712 -> 4230.6441 (+53.4%). Config changes since baseline: none. Recent deploys: 1. Logs: chat: 429 Too Many Requests from gateway (rate limit) | retry: attempt 3/3 failed | token refresh ok\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0085#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 7 one-minute windows. Metrics: error_rate 0.0038 -> 0.1148 (+2915.9%), p95_latency_ms 2758.2712 -> 4230.6441 (+53.4%). Config changes since baseline: none. Recent deploys: 1. Logs: chat: 429 Too Many Requests from gateway (rate limit) | retry: attempt 3/3 failed | token refresh ok",
+   "role": "user"
+  }
+ ]
+}

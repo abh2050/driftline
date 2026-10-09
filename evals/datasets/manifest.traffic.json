@@ -1,0 +1,20 @@
+{
+  "generator": "traffic",
+  "generator_version": "1.0.0",
+  "model_deployment": "gpt-5-mini",
+  "outputs_sha256": {
+    "seasonality.json": "b853d63221e969d42990c34dfd1483e75dae318fab53ae6f6dad9b2c382976cc",
+    "traffic.jsonl": "8915aa7ca94d8b60457dc44e0ffd7ff6b2fd531a01752bb6857e600956fd7713"
+  },
+  "record_counts": {
+    "persona_auditor": 200,
+    "persona_maintenance_tech": 600,
+    "persona_new_hire": 360,
+    "persona_plant_manager": 200,
+    "persona_quality_engineer": 400,
+    "persona_safety_officer": 240,
+    "queries": 2000,
+    "typos": 392
+  },
+  "seed": 20261009
+}

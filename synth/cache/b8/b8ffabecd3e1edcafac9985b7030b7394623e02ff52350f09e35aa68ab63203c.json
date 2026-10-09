@@ -1,0 +1,16 @@
+{
+ "content": "# ECN-2026-015 - Change notice - Heat Treat heat treat furnace #3\n\nRevision: Rev C  \nPlant: P1, line P1-L4  \nEquipment: EQ-P1-L4-HT03\n\n## Reason for change\nOperational verification during a recent internal audit identified inconsistent quench timing control on Heat Treat heat treat furnace #3. Corrective tuning of the control logic and interlock sequencing is required to ensure repeatable cooling cycles and to prevent parts quality deviations. The quench delay maximum for Heat Treat heat treat furnace #3 (EQ-P1-L4-HT03) is 15 seconds. This ECN standardizes the control and procedural configuration to enforce that requirement and to align with current process capability targets.\n\n## Affected items\n- Control program for EQ-P1-L4-HT03 furnace PLC.  \n- Human-machine interface (HMI) screens associated with quench sequencing on P1-L4 line.  \n- Operator procedures and checklists that reference quench timing for furnace #3.  \n- Preventive maintenance task lists that verify timing logic and sensor inputs.\n\nRelated documents: ECN-2026-002, SOP-P1-L4-02, SOP-P1-L4-04\n\n## Implementation\n- Update PLC logic to enforce the quench delay maximum for Heat Treat heat treat furnace #3 (EQ-P1-L4-HT03) is 15 seconds. Implement a hard interlock that prevents initiation of the quench if the delay exceeds the configured maximum.  \n- Revise HMI labels and confirmation dialogs to display the enforced quench delay and to require operator acknowledgment of out-of-tolerance conditions.  \n- Modify SOP-P1-L4-02 and SOP-P1-L4-04 references to include the enforced quench delay statement and add a procedural step for recording quench timing at shift change.  \n- Execute a control change checklist and functional test on EQ-P1-L4-HT03 prior to return to production; retain test logs per existing document retention practices referenced in ECN-2026-002.\n\n## Approvals\nEngineering: [signature on file]  \nOperations: [signature on file]  \nQuality: [signature on file]\n\nApprovers are responsible for confirming that PLC code, HMI updates, and SOP revisions are completed and tested on EQ-P1-L4-HT03 before closure of this ECN.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:ECN-2026-015:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: engineering change notice\nDocument id: ECN-2026-015\nTitle: Change notice - Heat Treat heat treat furnace #3\nRevision: Rev C\nPlant: P1, line P1-L4\nEquipment: EQ-P1-L4-HT03\nRelated documents to cite: ECN-2026-002, SOP-P1-L4-02, SOP-P1-L4-04\nValues to include exactly:\n- The quench delay maximum for Heat Treat heat treat furnace #3 (EQ-P1-L4-HT03) is 15 seconds.\nStructure: reason for change, affected items, implementation, approvals. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

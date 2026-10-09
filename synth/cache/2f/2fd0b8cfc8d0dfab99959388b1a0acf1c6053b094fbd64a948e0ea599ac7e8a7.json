@@ -1,0 +1,16 @@
+{
+ "content": "{\n  \"paraphrases\": [\n    \"Breach sustained for 10 one-minute windows. Metrics recorded: error_rate 0.0041 -> 0.1465 (+3495.0%), p95_latency_ms 2795.1271 -> 4269.9217 (+52.8%). Config changes since baseline: none. Recent deploys: 1. Logs: chat: 429 Too Many Requests from gateway (rate limit) | retry: attempt 3/3 failed | autoscaler: replicas 2 -> 3\",\n    \"Incident persisted across 10 one-minute windows. Observed metrics: error_rate 0.0041 -> 0.1465 (+3495.0%), p95_latency_ms 2795.1271 -> 4269.9217 (+52.8%). No config changes since baseline. Recent deploys: 1. Logs captured: chat: 429 Too Many Requests from gateway (rate limit) | retry: attempt 3/3 failed | autoscaler: replicas 2 -> 3\",\n    \"Sustained breach duration: 10 one-minute windows. Key metrics: error_rate 0.0041 -> 0.1465 (+3495.0%), p95_latency_ms 2795.1271 -> 4269.9217 (+52.8%). Config changes since baseline: none. Recent deploys: 1. Relevant logs: chat: 429 Too Many Requests from gateway (rate limit) | retry: attempt 3/3 failed | autoscaler: replicas 2 -> 3\",\n    \"Duration of breach: 10 one-minute windows. Metrics of interest: error_rate 0.0041 -> 0.1465 (+3495.0%), p95_latency_ms 2795.1271 -> 4269.9217 (+52.8%). Config changes since baseline: none. Recent deploys: 1. Logs show: chat: 429 Too Many Requests from gateway (rate limit) | retry: attempt 3/3 failed | autoscaler: replicas 2 -> 3\"\n  ]\n}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0903#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 10 one-minute windows. Metrics: error_rate 0.0041 -> 0.1465 (+3495.0%), p95_latency_ms 2795.1271 -> 4269.9217 (+52.8%). Config changes since baseline: none. Recent deploys: 1. Logs: chat: 429 Too Many Requests from gateway (rate limit) | retry: attempt 3/3 failed | autoscaler: replicas 2 -> 3",
+   "role": "user"
+  }
+ ]
+}

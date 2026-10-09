@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\":[\"Breach persisted across 11 one-minute windows. Metrics show groundedness fell from 4.4589 to 4.3809 (−1.7%), p95_latency_ms rose from 2653.0084 to 3791.4768 (+42.9%), and top_score dropped from 0.8276 to 0.8219 (−0.7%). Config changes since baseline: scale.min_replicas changed 1 -> 0, chunk_overlap changed 64 -> 0. Recent deploys: 2. Logs: chunker reports overlap=0 and 14% of answers span chunk boundary; container cold start 6.2 s; autoscaler adjusted replicas 2 -> 3.\",\"For 11 one-minute windows the breach was maintained. Observed metrics: groundedness 4.4589 -> 4.3809 (−1.7%), p95_latency_ms 2653.0084 -> 3791.4768 (+42.9%), top_score 0.8276 -> 0.8219 (−0.7%). Config diffs from baseline: scale.min_replicas: 1 -> 0; chunk_overlap: 64 -> 0. Number of recent deploys: 2. Relevant logs: chunker: overlap=0 with 14% of answers crossing chunk boundaries; container cold start 6.2 s; autoscaler moved replicas 2 -> 3.\",\"The incident lasted 11 one-minute windows. Key metric deltas: groundedness decreased 4.4589 -> 4.3809 (−1.7%), p95_latency_ms increased 2653.0084 -> 3791.4768 (+42.9%), top_score decreased 0.8276 -> 0.8219 (−0.7%). Configuration changes since baseline include scale.min_replicas 1 -> 0 and chunk_overlap 64 -> 0. There were 2 recent deploys. Logs show chunker overlap=0 and 14% of answers span chunk boundary, container cold start 6.2 s, and autoscaler changed replicas 2 -> 3.\",\"Sustained breach lasted 11 one-minute windows. Metric changes: groundedness 4.4589 -> 4.3809 (−1.7%), p95_latency_ms 2653.0084 -> 3791.4768 (+42.9%), top_score 0.8276 -> 0.8219 (−0.7%). Config updates vs baseline: scale.min_replicas: 1 -> 0; chunk_overlap: 64 -> 0. Recent deploy count: 2. Log entries of note: chunker shows overlap=0 and 14% of answers span chunk boundary; container cold start 6.2 s; autoscaler adjusted replicas 2 -> 3.\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0368#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 11 one-minute windows. Metrics: groundedness 4.4589 -> 4.3809 (-1.7%), p95_latency_ms 2653.0084 -> 3791.4768 (+42.9%), top_score 0.8276 -> 0.8219 (-0.7%). Config changes since baseline: scale.min_replicas: 1 -> 0; chunk_overlap: 64 -> 0. Recent deploys: 2. Logs: chunker: overlap=0, 14% of answers span chunk boundary | container: cold start 6.2 s | autoscaler: replicas 2 -> 3",
+   "role": "user"
+  }
+ ]
+}

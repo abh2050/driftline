@@ -1,0 +1,16 @@
+{
+ "content": "{\"question\":\"What is the required torque setting for the chuck jaw bolts on the Heat Treat CNC turning center #1 (EQ-P1-L4-CN01)?\"}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "golden:G-037#0",
+ "messages": [
+  {
+   "content": "You write test questions for a document search assistant at Cascade Forge Works, a fictional forging manufacturer. Return JSON {\"question\": \"...\"}.",
+   "role": "system"
+  },
+  {
+   "content": "Write a question that names the equipment or part by description whose answer is this fact. Do not include the value itself.\nFact: the chuck jaw bolt torque for Heat Treat CNC turning center #1 (EQ-P1-L4-CN01) is 90 N·m.",
+   "role": "user"
+  }
+ ]
+}

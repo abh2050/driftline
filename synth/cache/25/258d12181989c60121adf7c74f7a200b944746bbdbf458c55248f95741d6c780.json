@@ -1,0 +1,16 @@
+{
+ "content": "# FAQ-027 Engineering FAQ #27\n\nRevision: Rev A\n\nQ1: What is the required coil cooling water flow minimum for Ring Rolling induction billet heater #1 (EQ-P2-L2-IH01)?\nA1: The coil cooling water flow minimum for Ring Rolling induction billet heater #1 (EQ-P2-L2-IH01) is 81 L/min. Maintain this flow to prevent coil overheating and comply with the heater start-up checklist (see SOP-P2-L1-03).\n\nQ2: What mandrel clamp bolt torque should be used for Hot Forge radial ring rolling mill #1 (EQ-P2-L1-RR01)?\nA2: The mandrel clamp bolt torque for Hot Forge radial ring rolling mill #1 (EQ-P2-L1-RR01) is 430 N·m. Apply using a calibrated torque wrench and verify against the maintenance record per SOP-P1-L2-02.\n\nQ3: What is the system pressure limit for Machining hydraulic forging press #2 (EQ-P1-L3-HP02)?\nA3: The system pressure limit for Machining hydraulic forging press #2 (EQ-P1-L3-HP02) is 295 bar. Do not exceed this limit; pressure transducer alarms and interlocks are configured accordingly (refer to ECN-2026-048 for control logic changes).\n\nQ4: What is the coil cooling water flow minimum for Ring Rolling induction billet heater #2 (EQ-P1-L2-IH02)?\nA4: The coil cooling water flow minimum for Ring Rolling induction billet heater #2 (EQ-P1-L2-IH02) is 46 L/min. Confirm flow during heater commissioning and document readings in the equipment log per SOP-P2-L1-03.\n\nQ5: What target billet temperature is specified for Ring Rolling induction billet heater #1 (EQ-P2-L2-IH01)?\nA5: The target billet temperature for Ring Rolling induction billet heater #1 (EQ-P2-L2-IH01) is 1230 °C. Use the calibrated pyrometer and follow the billet readiness procedure; any deviation or control changes must be processed via ECN-2026-048.\n\nRelated documents: ECN-2026-048, SOP-P1-L2-02, SOP-P2-L1-03",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:FAQ-027:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: engineering FAQ\nDocument id: FAQ-027\nTitle: Engineering FAQ #27\nRevision: Rev A\nRelated documents to cite: ECN-2026-048, SOP-P1-L2-02, SOP-P2-L1-03\nValues to include exactly:\n- The coil cooling water flow minimum for Ring Rolling induction billet heater #1 (EQ-P2-L2-IH01) is 81 L/min.\n- The mandrel clamp bolt torque for Hot Forge radial ring rolling mill #1 (EQ-P2-L1-RR01) is 430 N·m.\n- The system pressure limit for Machining hydraulic forging press #2 (EQ-P1-L3-HP02) is 295 bar.\n- The coil cooling water flow minimum for Ring Rolling induction billet heater #2 (EQ-P1-L2-IH02) is 46 L/min.\n- The target billet temperature for Ring Rolling induction billet heater #1 (EQ-P2-L2-IH01) is 1230 °C.\nStructure: five question and answer pairs, one per given value. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

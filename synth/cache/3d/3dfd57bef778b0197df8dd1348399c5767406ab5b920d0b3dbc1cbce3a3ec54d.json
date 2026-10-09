@@ -1,0 +1,16 @@
+{
+ "content": "{\n  \"paraphrases\": [\n    \"Breach sustained for 4 one-minute windows. Metrics: error_rate 0.0039 -> 0.1525 (+3834.1%), groundedness 4.4511 -> 4.3229 (-2.9%), p95_latency_ms 2845.4295 -> 4476.7181 (+57.3%), top_score 0.8591 -> 0.8461 (-1.5%). Config changes since baseline: chunk_overlap: 64 -> 0. Recent deploys: 1. Logs: chunker: overlap=0, 14% of answers span chunk boundary | chat: 429 Too Many Requests from gateway (rate limit) | retry: attempt 3/3 failed | token refresh ok\",\n    \"Observed breach lasted 4 one-minute windows. Key metrics: error_rate increased from 0.0039 to 0.1525 (+3834.1%), groundedness fell from 4.4511 to 4.3229 (-2.9%), p95_latency_ms rose from 2845.4295 to 4476.7181 (+57.3%), top_score dropped from 0.8591 to 0.8461 (-1.5%). Config diff vs baseline: chunk_overlap changed 64 -> 0. Recent deploys count: 1. Relevant logs: chunker reports overlap=0 and 14% of answers span chunk boundary; chat returned 429 Too Many Requests from gateway (rate limit); retry: attempt 3/3 failed; token refresh ok.\",\n    \"Incident: breach persisted across 4 one-minute windows. Metrics snapshot: error_rate 0.0039 -> 0.1525 (+3834.1%), groundedness 4.4511 -> 4.3229 (-2.9%), p95_latency_ms 2845.4295 -> 4476.7181 (+57.3%), top_score 0.8591 -> 0.8461 (-1.5%). Configuration changes since baseline include chunk_overlap: 64 -> 0. Deploys after baseline: 1. Logged events: chunker shows overlap=0 and 14% of answers span chunk boundary; gateway chat returned 429 Too Many Requests (rate limit); retry reached attempt 3/3 failed; token refresh ok.\",\n    \"Sustained breach duration: 4 one-minute windows. Performance metrics: error_rate moved 0.0039 -> 0.1525 (+3834.1%), groundedness changed 4.4511 -> 4.3229 (-2.9%), p95_latency_ms climbed 2845.4295 -> 4476.7181 (+57.3%), top_score shifted 0.8591 -> 0.8461 (-1.5%). Config drift from baseline: chunk_overlap: 64 -> 0. Number of recent deploys: 1. Log summary: chunker: overlap=0 with 14% of answers spanning chunk boundary; chat: 429 Too Many Requests from gateway (rate limit); retry: attempt 3/3 failed; token refresh ok.\"\n  ]\n}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0597#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 4 one-minute windows. Metrics: error_rate 0.0039 -> 0.1525 (+3834.1%), groundedness 4.4511 -> 4.3229 (-2.9%), p95_latency_ms 2845.4295 -> 4476.7181 (+57.3%), top_score 0.8591 -> 0.8461 (-1.5%). Config changes since baseline: chunk_overlap: 64 -> 0. Recent deploys: 1. Logs: chunker: overlap=0, 14% of answers span chunk boundary | chat: 429 Too Many Requests from gateway (rate limit) | retry: attempt 3/3 failed | token refresh ok",
+   "role": "user"
+  }
+ ]
+}

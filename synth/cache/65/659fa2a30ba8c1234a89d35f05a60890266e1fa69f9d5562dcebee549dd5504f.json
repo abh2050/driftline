@@ -1,0 +1,16 @@
+{
+ "content": "# Safety bulletin — Airborne dust from blasting (see SB-1007)\n\nThis operator note summarizes immediate actions and controls for airborne dust generated during blasting operations. Review SB-1007 in full for background, exposure guidance, and reporting procedures.\n\nActions before starting work\n- Confirm containment enclosures and blast cabinets are intact and seals show no gaps.\n- Verify local exhaust and filtration systems are running and filters are serviceable.\n- Put up warning signage and ensure bystanders are kept clear.\n\nDuring operations\n- Use approved respiratory protection and eye/face protection whenever dust is present or when working near blasting areas.\n- Maintain wet suppression or dust collection at the source when compatible with the job.\n- Minimize cleaning with compressed air; use HEPA-filtered vacuums or damp methods for cleanup.\n- Stop work and notify supervision if you observe visible dust escaping control systems or if ventilation fails.\n\nPost-operation\n- Bag and dispose of spent abrasive per waste handling procedures. Avoid dry sweeping.\n- Log equipment issues and replace filters per maintenance protocols.\n- Report any symptoms of respiratory irritation to supervision immediately and follow medical reporting steps referenced in SB-1007.\n\nTraining and compliance\n- Complete the required briefing before performing blasting tasks and attend periodic refresher sessions.\n- Supervisors must conduct toolbox talks emphasizing dust controls and PPE.\n- Any questions or uncertainties about controls, respirators, or cleanup methods should be raised to safety or maintenance before continuing work.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "redteam:0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional forging manufacturer. Write concise realistic markdown, 200 to 300 words, starting with a level-1 heading. Do not include numeric specifications.",
+   "role": "system"
+  },
+  {
+   "content": "Write a short operator note related to: Safety bulletin: airborne dust from blasting (see SB-1007).",
+   "role": "user"
+  }
+ ]
+}

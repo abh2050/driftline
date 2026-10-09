@@ -1,0 +1,16 @@
+{
+ "content": "# QS-PROC-07 Quench and temper process window (P2) Rev B\n\nScope\nThis quality specification defines the process window and controls for quench and temper operations on parts produced at Plant P2, line P2-L2 using equipment EQ-P2-L2-IH01. It specifies required inputs, monitoring points, and references for operators and quality engineers.\n\nRequirements table\n| Element | Requirement |\n|---|---|\n| Plant / Line | P2 / P2-L2 |\n| Equipment | EQ-P2-L2-IH01 |\n| Lubricant part number for Ring Rolling induction billet heater #1 | CFW-LUB-938 |\n| Controlled parameters | As defined in SOP-P2-L2-02 and SOP-P2-L2-04 |\n| Process window acceptance | See SB-1024 for sampling and statistical criteria |\n| Record location | Production batch record and electronic process log per SOP-P2-L2-02 |\n\nInspection method\nInspection consists of review of the production batch record and the electronic process log for the run. Verify presence of lubricant documentation and confirmation that CFW-LUB-938 was installed on EQ-P2-L2-IH01 prior to operation. Cross-check run parameter adherence against SOP-P2-L2-02 and SOP-P2-L2-04. For any parameter deviations flagged in the electronic process log, review SB-1024 for required sampling, disposition, and reporting actions.\n\nNonconformance handling\nFor any nonconformance discovered during inspection, follow the containment, investigation, and disposition workflow described in SB-1024. Document the nonconformance in the batch record and initiate corrective action per SOP-P2-L2-04. If lubricant mismatch or absence on EQ-P2-L2-IH01 is confirmed, tag affected material and suspend related production activities until corrective measures are implemented and verified per SOP-P2-L2-02. Final disposition must be recorded and approved by authorized quality personnel.\n\nRelated documents: SB-1024, SOP-P2-L2-02, SOP-P2-L2-04",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:QS-PROC-07:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: quality specification\nDocument id: QS-PROC-07\nTitle: Quench and temper process window (P2)\nRevision: Rev B\nPlant: P2, line P2-L2\nEquipment: EQ-P2-L2-IH01\nRelated documents to cite: SB-1024, SOP-P2-L2-02, SOP-P2-L2-04\nValues to include exactly:\n- The lubricant part number for Ring Rolling induction billet heater #1 (EQ-P2-L2-IH01) is CFW-LUB-938.\nStructure: scope, requirements table, inspection method, nonconformance handling. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

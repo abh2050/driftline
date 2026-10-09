@@ -1,0 +1,16 @@
+{
+ "content": "# SOP-P3-L4-04 Shift handover - Heat Treat line\n\nRevision: Rev C  \nPlant: P3, line P3-L4  \nEquipment: EQ-P3-L4-RR01, EQ-P3-L4-HT02, EQ-P3-L4-SB03\n\nPreconditions\n1. Incoming and outgoing operators have read ECN-2026-001 and the applicable maintenance manuals MM-P3-L4-HT02 and MM-P3-L4-RR01.\n2. All safety interlocks tested and green at source panel for EQ-P3-L4-RR01, EQ-P3-L4-HT02, EQ-P3-L4-SB03.\n3. All abnormal conditions logged in shift log and cleared or tagged for follow-up.\n\nPersonal protective equipment (PPE)\n4. Required PPE for handover: safety glasses, ear protection, leather gloves, and steel-toe footwear.\n5. Authorized personnel only in machine access zones; respirator as required per MM-P3-L4-HT02 when accessing HT02 service ports.\n\nShift handover procedure\n6. Outgoing operator briefs incoming operator on current running status of EQ-P3-L4-HT02 and EQ-P3-L4-RR01, including any alarms, manual overrides, and parts in process.\n7. Verify material flow and rack inventory with physical confirmation at EQ-P3-L4-RR01 staging area.\n8. Inspect EQ-P3-L4-SB03 for debris, wear, and loose guards. The lubricant part number for Heat Treat shot blast cabinet #3 (EQ-P3-L4-SB03) is CFW-LUB-526.\n9. Confirm maintenance actions completed and record references to MM-P3-L4-HT02 and MM-P3-L4-RR01 where maintenance was performed.\n10. For EQ-P3-L4-SB03, verify blast wheel liner fasteners per maintenance checklist. The blast wheel liner bolt torque for Heat Treat shot blast cabinet #3 (EQ-P3-L4-SB03) is 90 N·m.\n11. Report unresolved maintenance items to on-shift supervisor and tag equipment per ECN-2026-001 if out-of-service.\n\nCommunications and escalation\n12. Document all handover notes in the electronic shift log. Escalate safety-critical items immediately to the on-shift lead.\n\nSign-off\n13. Outgoing operator: ____________________  \n14. Incoming operator: ____________________  \n15. On-shift supervisor: ____________________  \n\nRelated documents: ECN-2026-001, MM-P3-L4-HT02, MM-P3-L4-RR01",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:SOP-P3-L4-04:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: standard operating procedure\nDocument id: SOP-P3-L4-04\nTitle: Shift handover - Heat Treat line\nRevision: Rev C\nPlant: P3, line P3-L4\nEquipment: EQ-P3-L4-RR01, EQ-P3-L4-HT02, EQ-P3-L4-SB03\nRelated documents to cite: ECN-2026-001, MM-P3-L4-HT02, MM-P3-L4-RR01\nValues to include exactly:\n- The lubricant part number for Heat Treat shot blast cabinet #3 (EQ-P3-L4-SB03) is CFW-LUB-526.\n- The blast wheel liner bolt torque for Heat Treat shot blast cabinet #3 (EQ-P3-L4-SB03) is 90 N·m.\nStructure: numbered steps with preconditions, PPE and sign-off. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

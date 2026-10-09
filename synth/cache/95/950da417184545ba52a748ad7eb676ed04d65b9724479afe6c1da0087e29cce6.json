@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\":[\"Breach sustained for 21 one-minute windows. Metrics changed: citation_rate 0.9177 -> 0.7794 (-15.1%), groundedness 4.5498 -> 4.2758 (-6.0%), hit_count 8.1129 -> 6.4634 (-20.3%), tokens_in 2274.6298 -> 1914.6278 (-15.8%). Config changes since baseline: top_k: 8 -> 2; prompt_version: v3 -> v4-nocite. Recent deploys: 1. Logs: answer: 0 citations in response | retrieval: returned 2 hits (top_k=2) | healthcheck ok\",\"Observed breach lasted 21 one-minute windows. Key metrics: citation_rate 0.9177 -> 0.7794 (-15.1%), groundedness 4.5498 -> 4.2758 (-6.0%), hit_count 8.1129 -> 6.4634 (-20.3%), tokens_in 2274.6298 -> 1914.6278 (-15.8%). Configuration drift from baseline: top_k: 8 -> 2; prompt_version: v3 -> v4-nocite. Recent deploys: 1. Logs captured: answer: 0 citations in response | retrieval: returned 2 hits (top_k=2) | healthcheck ok\",\"For 21 consecutive one-minute windows a breach was sustained. Affected metrics: citation_rate 0.9177 -> 0.7794 (-15.1%), groundedness 4.5498 -> 4.2758 (-6.0%), hit_count 8.1129 -> 6.4634 (-20.3%), tokens_in 2274.6298 -> 1914.6278 (-15.8%). Changes since baseline: top_k: 8 -> 2; prompt_version: v3 -> v4-nocite. Recent deploys: 1. Relevant logs: answer: 0 citations in response | retrieval: returned 2 hits (top_k=2) | healthcheck ok\",\"A breach persisted across 21 one-minute windows. Reported metric shifts: citation_rate 0.9177 -> 0.7794 (-15.1%), groundedness 4.5498 -> 4.2758 (-6.0%), hit_count 8.1129 -> 6.4634 (-20.3%), tokens_in 2274.6298 -> 1914.6278 (-15.8%). Baseline config differences: top_k: 8 -> 2; prompt_version: v3 -> v4-nocite. Recent deploys: 1. Logs: answer: 0 citations in response | retrieval: returned 2 hits (top_k=2) | healthcheck ok\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0762#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 21 one-minute windows. Metrics: citation_rate 0.9177 -> 0.7794 (-15.1%), groundedness 4.5498 -> 4.2758 (-6.0%), hit_count 8.1129 -> 6.4634 (-20.3%), tokens_in 2274.6298 -> 1914.6278 (-15.8%). Config changes since baseline: top_k: 8 -> 2; prompt_version: v3 -> v4-nocite. Recent deploys: 1. Logs: answer: 0 citations in response | retrieval: returned 2 hits (top_k=2) | healthcheck ok",
+   "role": "user"
+  }
+ ]
+}

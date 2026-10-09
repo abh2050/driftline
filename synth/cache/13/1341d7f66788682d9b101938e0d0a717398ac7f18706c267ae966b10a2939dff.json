@@ -1,0 +1,16 @@
+{
+ "content": "# FAQ-015 Engineering FAQ #15\n\nRevision: Rev A\n\nQ1: What is the allowable quench delay for Ring Rolling heat treat furnace #3 (EQ-P3-L2-HT03)?\nA1: The quench delay maximum for Ring Rolling heat treat furnace #3 (EQ-P3-L2-HT03) is 13 seconds. Refer to ECN-2026-038 for the approved deviation procedure if a run exceeds this limit.\n\nQ2: What torque is specified for the mandrel clamp bolt on Heat Treat radial ring rolling mill #1 (EQ-P2-L4-RR01)?\nA2: The mandrel clamp bolt torque for Heat Treat radial ring rolling mill #1 (EQ-P2-L4-RR01) is 525 N·m. Use the calibrated torque wrench procedure in SOP-P1-L3-05 when performing this task.\n\nQ3: What is the minimum coil cooling water flow for Machining induction billet heater #1 (EQ-P1-L3-IH01)?\nA3: The coil cooling water flow minimum for Machining induction billet heater #1 (EQ-P1-L3-IH01) is 79 L/min. See MM-P1-L2-HT03 for monitoring locations and alarm setpoints.\n\nQ4: What austenitizing setpoint should be used for Ring Rolling heat treat furnace #3 (EQ-P1-L2-HT03)?\nA4: The austenitizing setpoint for Ring Rolling heat treat furnace #3 (EQ-P1-L2-HT03) is 855 °C. Verify control loop configuration per ECN-2026-038 when updating setpoints.\n\nQ5: What torque is specified for the mandrel clamp bolt on Ring Rolling radial ring rolling mill #3 (EQ-P2-L2-RR03)?\nA5: The mandrel clamp bolt torque for Ring Rolling radial ring rolling mill #3 (EQ-P2-L2-RR03) is 620 N·m. Record torque values in the maintenance log and follow SOP-P1-L3-05 for re-torque procedures.\n\nRelated documents:\n- ECN-2026-038\n- MM-P1-L2-HT03\n- SOP-P1-L3-05",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:FAQ-015:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: engineering FAQ\nDocument id: FAQ-015\nTitle: Engineering FAQ #15\nRevision: Rev A\nRelated documents to cite: ECN-2026-038, MM-P1-L2-HT03, SOP-P1-L3-05\nValues to include exactly:\n- The quench delay maximum for Ring Rolling heat treat furnace #3 (EQ-P3-L2-HT03) is 13 seconds.\n- The mandrel clamp bolt torque for Heat Treat radial ring rolling mill #1 (EQ-P2-L4-RR01) is 525 N·m.\n- The coil cooling water flow minimum for Machining induction billet heater #1 (EQ-P1-L3-IH01) is 79 L/min.\n- The austenitizing setpoint for Ring Rolling heat treat furnace #3 (EQ-P1-L2-HT03) is 855 °C.\n- The mandrel clamp bolt torque for Ring Rolling radial ring rolling mill #3 (EQ-P2-L2-RR03) is 620 N·m.\nStructure: five question and answer pairs, one per given value. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

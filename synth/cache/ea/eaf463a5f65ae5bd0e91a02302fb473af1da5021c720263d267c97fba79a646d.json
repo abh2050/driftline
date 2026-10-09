@@ -1,0 +1,16 @@
+{
+ "content": "# QS-PROC-04 Shot peening coverage (P1)\nRevision: Rev C  \nPlant: P1, line P1-L3  \nEquipment: EQ-P1-L3-IH01\n\nScope\nThis quality specification defines shot peening coverage requirements and related controls for parts processed on line P1-L3 using equipment EQ-P1-L3-IH01. It includes acceptance criteria, required evidence, and links to related documentation ECN-2026-029, SB-1026, SOP-P1-L3-05. The coil cooling water flow minimum for Machining induction billet heater #1 (EQ-P1-L3-IH01) is 79 L/min.\n\nRequirements table\n| Requirement | Acceptance criteria | Reference |\n|-------------|---------------------|-----------|\n| Shot peening coverage | Full visual evidence of specified coverage per part family and routing | SOP-P1-L3-05 |\n| Media condition | Media free of contaminant and within acceptable degradation limits per maintenance log | SB-1026 |\n| Machine setup | Machine parameters match approved change records and ECN documents | ECN-2026-029 |\n| Cooling supply | Coil cooling water flow meets minimum for heater EQ-P1-L3-IH01 | EQ-P1-L3-IH01 spec sheet, this document |\n\nInspection method\nInspectors shall verify shot peening coverage using visual and photographic evidence on the shop floor immediately after peening. Records shall reference the part identifier and the operating checklist from SOP-P1-L3-05. Confirm that media condition is recorded and cross-checked against SB-1026 guidelines. Verify that machine setup corresponds to the latest approved configuration in ECN-2026-029. Confirm coil cooling water flow minimum for Machining induction billet heater #1 (EQ-P1-L3-IH01) is documented in the equipment log and meets the value specified in this document.\n\nNonconformance handling\nNonconforming coverage or media condition requires containment: affected parts are segregated and tagged, process is stopped until corrective action is implemented, and root cause is documented. Notify process engineering and reference ECN-2026-029 for disposition of affected batches. Repeat failures trigger a review of SOP-P1-L3-05 and maintenance actions per SB-1026.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:QS-PROC-04:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: quality specification\nDocument id: QS-PROC-04\nTitle: Shot peening coverage (P1)\nRevision: Rev C\nPlant: P1, line P1-L3\nEquipment: EQ-P1-L3-IH01\nRelated documents to cite: ECN-2026-029, SB-1026, SOP-P1-L3-05\nValues to include exactly:\n- The coil cooling water flow minimum for Machining induction billet heater #1 (EQ-P1-L3-IH01) is 79 L/min.\nStructure: scope, requirements table, inspection method, nonconformance handling. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

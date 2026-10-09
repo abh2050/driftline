@@ -1,0 +1,16 @@
+{
+ "content": "# SB-1030 Safety bulletin: quench oil fire risk\nRevision: Rev C  \nPlant: P2, line P2-L1  \nEquipment: EQ-P2-L1-RR01\n\nHazard description\nA latent failure mode has been identified in the radial ring rolling quench system on EQ-P2-L1-RR01 that can lead to a quench oil ignition event. Oil containment and return paths can be compromised by a loose mandrel clamp bolt, resulting in oil spray onto hot surfaces and bearings. Ignition sources in the immediate area and insufficient local oil containment increase the likelihood of a fire that can propagate along the roll train and adjacent equipment. Operators have reported oil misting during upset conditions consistent with clamp retention loss. This bulletin summarizes the immediate controls required to mitigate the identified fire risk and prevent recurrence.\n\nAffected equipment\n- Hot Forge radial ring rolling mill #1: EQ-P2-L1-RR01 (located on line P2-L1, Plant P2)  \n- Associated quench oil lines and local splash guards connected to EQ-P2-L1-RR01  \nRefer to maintenance history and control drawings in MM-P2-L1-RR01-S2 for the affected assemblies.\n\nRequired controls\n- Verify and document the mandrel clamp bolt torque for Hot Forge radial ring rolling mill #1 (EQ-P2-L1-RR01) is 430 N·m. Adjust only with calibrated tooling and record results in the maintenance log referenced in MM-P2-L1-RR01-S2.  \n- Install or confirm presence of functional splash guards and drip trays on EQ-P2-L1-RR01 to capture any leaked or sprayed oil; maintain as per SOP-P2-L1-04.  \n- Update pre-start checklist to include a visual inspection of clamp retention and quench return integrity before hot operations, and follow SOP-P2-L1-05 for abnormal oil leakage response.  \n- Isolate ignition sources within the work envelope during any maintenance that exposes oil lines; use controls described in SOP-P2-L1-05.  \n- Communicate this bulletin to operations, maintenance, and supervision; retain verification records on file with the site safety lead.\n\nEffective date\nEffective date: Immediate\n\nRelated documents\nMM-P2-L1-RR01-S2, SOP-P2-L1-04, SOP-P2-L1-05",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:SB-1030:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: safety bulletin\nDocument id: SB-1030\nTitle: Safety bulletin: quench oil fire risk\nRevision: Rev C\nPlant: P2, line P2-L1\nEquipment: EQ-P2-L1-RR01\nRelated documents to cite: MM-P2-L1-RR01-S2, SOP-P2-L1-04, SOP-P2-L1-05\nValues to include exactly:\n- The mandrel clamp bolt torque for Hot Forge radial ring rolling mill #1 (EQ-P2-L1-RR01) is 430 N·m.\nStructure: hazard description, affected equipment, required controls, effective date. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

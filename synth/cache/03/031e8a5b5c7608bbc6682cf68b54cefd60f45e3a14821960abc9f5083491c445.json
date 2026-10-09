@@ -1,0 +1,16 @@
+{
+ "content": "# SB-1012 Safety bulletin: arc flash at the induction power cabinet\n\nRevision: Rev A  \nPlant: P1, line P1-L4  \nEquipment: EQ-P1-L4-HP02\n\nHazard description\nAn arc flash occurred at the induction power cabinet adjacent to the Heat Treat hydraulic forging press #2 (EQ-P1-L4-HP02) during a maintenance access event. The incident presented a high-energy arc flash risk to personnel accessing the cabinet and to nearby press control and hydraulic components. Evidence indicates degraded insulation on a phase conductor and a loose main ram bolt connection contributed to arcing and an unexpected phase-to-ground fault. Potential outcomes include thermal injury, hearing damage, and secondary mechanical hazards from sudden hydraulic or control system disturbances.\n\nAffected equipment\nPrimary: Heat Treat hydraulic forging press #2 (EQ-P1-L4-HP02), induction power cabinet feeding the press.  \nLocation: P1, line P1-L4.  \nThe main ram bolt torque for Heat Treat hydraulic forging press #2 (EQ-P1-L4-HP02) is 970 N·m.\n\nRequired controls\n- Immediately suspend unauthorized access to the induction power cabinet until verification and corrective actions are complete.  \n- Perform an electrical inspection of the induction power cabinet, verify conductor insulation, tighten terminations per documented values, and verify the main ram bolt torque specification above during mechanical inspection. Reference maintenance procedures in MM-P1-L4-HP02 for mechanical checks and torque verification.  \n- Follow arc flash PPE and work authorization procedures in SOP-P1-L4-01 for any energized work. Use SB-1034 for guidance on barricading and incident reporting requirements.  \n- Implement a lockout-tagout and electrical isolation verification step prior to any entry into the cabinet. Document all findings and corrective actions in the equipment maintenance record cited in MM-P1-L4-HP02.  \n- Schedule an electrical preventative inspection focused on terminations and protective device coordination; adjust procedures to ensure torque verification and termination integrity are included in routine maintenance.\n\nEffective date\nEffective upon issue.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:SB-1012:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: safety bulletin\nDocument id: SB-1012\nTitle: Safety bulletin: arc flash at the induction power cabinet\nRevision: Rev A\nPlant: P1, line P1-L4\nEquipment: EQ-P1-L4-HP02\nRelated documents to cite: MM-P1-L4-HP02, SB-1034, SOP-P1-L4-01\nValues to include exactly:\n- The main ram bolt torque for Heat Treat hydraulic forging press #2 (EQ-P1-L4-HP02) is 970 N·m.\nStructure: hazard description, affected equipment, required controls, effective date. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

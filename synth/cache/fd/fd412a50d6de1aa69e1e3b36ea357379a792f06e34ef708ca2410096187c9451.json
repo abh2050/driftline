@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\": [\"Breach persisted across 6 one-minute windows. Metrics shifted: citation_rate 0.9575 -> 0.5414 (-43.5%), groundedness 4.2323 -> 3.1931 (-24.6%), hit_count 8.255 -> 2.4128 (-70.8%), tokens_in 2333.0534 -> 684.0036 (-70.7%). Configuration changes from baseline: top_k: 8 -> 2; prompt_version: v3 -> v3.1. There were 2 recent deploys. Relevant logs: retrieval: returned 2 hits (top_k=2) | citation parser: 0 matches for pattern [doc:ID] | gc pause 120 ms\"], \"paraphrases\": [\"For 6 one-minute windows a breach was observed. Recorded metric deltas: citation_rate 0.9575 -> 0.5414 (-43.5%), groundedness 4.2323 -> 3.1931 (-24.6%), hit_count 8.255 -> 2.4128 (-70.8%), tokens_in 2333.0534 -> 684.0036 (-70.7%). Config drift vs baseline: top_k: 8 -> 2; prompt_version: v3 -> v3.1. Number of recent deploys: 2. Logs captured: retrieval: returned 2 hits (top_k=2) | citation parser: 0 matches for pattern [doc:ID] | gc pause 120 ms\", \"paraphrases\\\": [\\\"The incident lasted 6 one-minute windows. Metric changes: citation_rate 0.9575 -> 0.5414 (-43.5%), groundedness 4.2323 -> 3.1931 (-24.6%), hit_count 8.255 -> 2.4128 (-70.8%), tokens_in 2333.0534 -> 684.0036 (-70.7%). Baseline-to-current config diffs: top_k: 8 -> 2; prompt_version: v3 -> v3.1. Recent deploy count: 2. Logs: retrieval: returned 2 hits (top_k=2) | citation parser: 0 matches for pattern [doc:ID] | gc pause 120 ms\\\"\"], \"paraphrases\": [\"Observed breach duration: 6 one-minute windows. Metrics (before -> after and percent change): citation_rate 0.9575 -> 0.5414 (-43.5%), groundedness 4.2323 -> 3.1931 (-24.6%), hit_count 8.255 -> 2.4128 (-70.8%), tokens_in 2333.0534 -> 684.0036 (-70.7%). Config updates since baseline: top_k: 8 -> 2; prompt_version: v3 -> v3.1. Recent deploys: 2. Logged events: retrieval: returned 2 hits (top_k=2) | citation parser: 0 matches for pattern [doc:ID] | gc pause 120 ms\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0936#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 6 one-minute windows. Metrics: citation_rate 0.9575 -> 0.5414 (-43.5%), groundedness 4.2323 -> 3.1931 (-24.6%), hit_count 8.255 -> 2.4128 (-70.8%), tokens_in 2333.0534 -> 684.0036 (-70.7%). Config changes since baseline: top_k: 8 -> 2; prompt_version: v3 -> v3.1. Recent deploys: 2. Logs: retrieval: returned 2 hits (top_k=2) | citation parser: 0 matches for pattern [doc:ID] | gc pause 120 ms",
+   "role": "user"
+  }
+ ]
+}

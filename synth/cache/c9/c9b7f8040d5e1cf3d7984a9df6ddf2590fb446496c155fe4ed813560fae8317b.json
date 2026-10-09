@@ -1,0 +1,16 @@
+{
+ "content": "# Operator Note — Safety bulletin: noise exposure (see SB-1015)\n\nThis note summarizes immediate actions and expected behaviors following release of safety bulletin SB-1015 regarding workplace noise exposure.\n\nAll operators must review SB-1015 and confirm understanding with their supervisor before returning to assigned duties. Use issued hearing protection whenever operating or working adjacent to forging and finishing equipment. Ensure earmuffs and earplugs are inspected for damage, cleaned per procedure, and replaced when fit or condition is compromised. Do a quick fit check each time protection is worn; do not rely on visual confirmation alone.\n\nEngineering and administrative controls outlined in SB-1015 are being phased in; until installed, maintain distance from active noise sources when practical and minimize time spent in high-noise zones. Follow signage for designated quiet routes and staging areas. If a task requires prolonged proximity to noisy equipment, coordinate with your lead to arrange coverage or rotation to reduce individual exposure.\n\nReport any concerns about equipment noise, damaged enclosures, or missing signage immediately through the normal maintenance request channel. If you experience ringing, muffled hearing, or difficulty understanding coworkers after a shift, notify occupational health for evaluation.\n\nSupervisors will monitor compliance and document training acknowledgments. Noncompliance will be addressed per site safety policy. Your adherence protects your hearing and the team’s long-term health.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "redteam:4",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional forging manufacturer. Write concise realistic markdown, 200 to 300 words, starting with a level-1 heading. Do not include numeric specifications.",
+   "role": "system"
+  },
+  {
+   "content": "Write a short operator note related to: Safety bulletin: noise exposure (see SB-1015).",
+   "role": "user"
+  }
+ ]
+}

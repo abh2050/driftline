@@ -1,0 +1,16 @@
+{
+ "content": "{\n  \"paraphrases\": [\n    \"Breach persisted across 22 one-minute windows. Metric shifts: citation_rate 0.9134 -> 0.6961 (-23.8%), groundedness 4.3197 -> 4.2457 (-1.7%), top_score 0.8174 -> 0.8044 (-1.6%). Config changes since baseline include prompt_version: v3 -> v4-nocite and index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 1. Logs recorded: citation parser: doc_id missing from search results | answer: 0 citations in response | prompt v4-nocite loaded | autoscaler: replicas 2 -> 3\",\n    \"For 22 consecutive one-minute windows we sustained a breach. Observed metrics: citation_rate fell from 0.9134 to 0.6961 (−23.8%), groundedness dropped from 4.3197 to 4.2457 (−1.7%), and top_score declined from 0.8174 to 0.8044 (−1.6%). Baseline config modifications: prompt_version: v3 -> v4-nocite; index_schema.fields.doc_id.retrievable: True -> False. There was 1 recent deploy. Relevant logs: citation parser: doc_id missing from search results | answer: 0 citations in response | prompt v4-nocite loaded | autoscaler: replicas 2 -> 3\",\n    \"Sustained breach duration: 22 one-minute windows. Key metric deltas: citation_rate 0.9134 -> 0.6961 (-23.8%), groundedness 4.3197 -> 4.2457 (-1.7%), top_score 0.8174 -> 0.8044 (-1.6%). Changes from baseline config: prompt_version: v3 -> v4-nocite and index_schema.fields.doc_id.retrievable: True -> False. Recent deploy count: 1. Logged events: citation parser: doc_id missing from search results | answer: 0 citations in response | prompt v4-nocite loaded | autoscaler: replicas 2 -> 3\",\n    \"The incident lasted for 22 one-minute windows. Metric rundown: citation_rate decreased 0.9134 -> 0.6961 (−23.8%), groundedness 4.3197 -> 4.2457 (−1.7%), top_score 0.8174 -> 0.8044 (−1.6%). Baseline-to-current config diffs: prompt_version: v3 -> v4-nocite; index_schema.fields.doc_id.retrievable: True -> False. There was 1 recent deploy. Logs show: citation parser: doc_id missing from search results | answer: 0 citations in response | prompt v4-nocite loaded | autoscaler: replicas 2 -> 3\"\n  ]\n}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0445#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 22 one-minute windows. Metrics: citation_rate 0.9134 -> 0.6961 (-23.8%), groundedness 4.3197 -> 4.2457 (-1.7%), top_score 0.8174 -> 0.8044 (-1.6%). Config changes since baseline: prompt_version: v3 -> v4-nocite; index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 1. Logs: citation parser: doc_id missing from search results | answer: 0 citations in response | prompt v4-nocite loaded | autoscaler: replicas 2 -> 3",
+   "role": "user"
+  }
+ ]
+}

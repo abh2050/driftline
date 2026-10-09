@@ -9,7 +9,7 @@ repos:
       - id: check-json
         exclude: ^apps/console/tsconfig\.json$
       - id: check-added-large-files
-        args: [--maxkb=2048]
+        args: [--maxkb=4096]
       - id: detect-private-key
   - repo: local
     hooks:

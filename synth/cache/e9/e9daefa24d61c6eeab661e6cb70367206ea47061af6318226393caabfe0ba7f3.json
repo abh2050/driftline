@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\":[\"Breach persisted across 8 one-minute windows. Observed metric shifts: citation_rate fell from 0.8976 to 0.6161 (−31.4%), top_score dropped from 0.825 to 0.6871 (−16.7%). Configuration changed since baseline: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 1. Relevant logs: citation parser: doc_id missing from search results | token refresh ok\",\"Issue lasted for 8 one-minute windows. Key metric changes: citation_rate 0.8976 -> 0.6161 (−31.4%), top_score 0.825 -> 0.6871 (−16.7%). Config difference from baseline: index_schema.fields.doc_id.retrievable: True -> False. There has been 1 recent deploy. Logs show: citation parser: doc_id missing from search results | token refresh ok\",\"Sustained breach covered 8 one-minute windows. Metrics degraded: citation_rate decreased 0.8976 -> 0.6161 (−31.4%), top_score decreased 0.825 -> 0.6871 (−16.7%). Baseline config change detected: index_schema.fields.doc_id.retrievable: True -> False. Recent deploy count: 1. Log entries: citation parser: doc_id missing from search results | token refresh ok\",\"The incident persisted for 8 one-minute windows. Measured impacts: citation_rate dropped from 0.8976 to 0.6161 (−31.4%); top_score went from 0.825 to 0.6871 (−16.7%). Configuration altered versus baseline: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 1. Logged events include: citation parser: doc_id missing from search results | token refresh ok\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0743#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 8 one-minute windows. Metrics: citation_rate 0.8976 -> 0.6161 (-31.4%), top_score 0.825 -> 0.6871 (-16.7%). Config changes since baseline: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 1. Logs: citation parser: doc_id missing from search results | token refresh ok",
+   "role": "user"
+  }
+ ]
+}

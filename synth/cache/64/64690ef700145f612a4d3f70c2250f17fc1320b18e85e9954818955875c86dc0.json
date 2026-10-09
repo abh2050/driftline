@@ -1,0 +1,16 @@
+{
+ "content": "# MM-P3-L3-CN02 - Maintenance manual - Machining CNC turning center #2\nRevision: Rev E\nPlant: P3, line P3-L3\nEquipment: EQ-P3-L3-CN02\n\n## Scope\nThis document defines the preventative maintenance tasks required for Machining CNC turning center #2 (EQ-P3-L3-CN02). It covers mechanical inspection, chuck jaw bolt verification, spindle warm-up, and return-to-service checks. Refer to MM-P3-L3-CN02-S1 for parts breakdown and SOP-P3-L3-02 and SOP-P3-L3-04 for safety and lockout procedures.\n\n## Tools\n- Torque wrench calibrated per site procedure.\n- Basic hand tools and inspection mirror.\n- Manufacturer spindle warm-up monitoring tools or machine interface as required.\n- Personal protective equipment per SOP-P3-L3-02.\n\n## Procedure\n- Perform lockout/tagout per SOP-P3-L3-04 prior to any maintenance on EQ-P3-L3-CN02.\n- Visually inspect chuck assembly for wear, debris, and runout as described in MM-P3-L3-CN02-S1.\n- Verify chuck jaw bolt torque for Machining CNC turning center #2 (EQ-P3-L3-CN02) is 75 N·m. Use the calibrated torque wrench and apply torque to each bolt in a star pattern until specified torque is achieved.\n- Execute spindle warm-up cycle on the machine HMI according to manufacturer guidance. Confirm spindle warm-up time for Machining CNC turning center #2 (EQ-P3-L3-CN02) is 24 minutes. Record start and completion on maintenance log.\n- Clean and re-lubricate exterior lubrication points as identified in MM-P3-L3-CN02-S1 using manufacturer-specified lubricants.\n- Remove lockout/tagout and return machine to service following SOP-P3-L3-04.\n\n## Acceptance criteria\n- Chuck fasteners torqued to the specified value and torque readings recorded on the maintenance record.\n- Spindle has completed warm-up and machine reports normal status after the warm-up period.\n- No abnormal noise, vibration, oil leaks, or loose components observed on post-maintenance run.\n- Maintenance activities documented and cross-referenced to MM-P3-L3-CN02-S1 and relevant SOPs SOP-P3-L3-02 and SOP-P3-L3-04.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:MM-P3-L3-CN02:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: equipment maintenance manual\nDocument id: MM-P3-L3-CN02\nTitle: Maintenance manual - Machining CNC turning center #2\nRevision: Rev E\nPlant: P3, line P3-L3\nEquipment: EQ-P3-L3-CN02\nRelated documents to cite: MM-P3-L3-CN02-S1, SOP-P3-L3-02, SOP-P3-L3-04\nValues to include exactly:\n- The chuck jaw bolt torque for Machining CNC turning center #2 (EQ-P3-L3-CN02) is 75 N·m.\n- The spindle warm-up time for Machining CNC turning center #2 (EQ-P3-L3-CN02) is 24 minutes.\nStructure: sections for scope, tools, procedure, acceptance criteria. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

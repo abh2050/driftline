@@ -1,0 +1,16 @@
+{
+ "content": "# QS-CFW-1140-78 - Quality specification - axle hub CFW-1140-78 (4140)  \nRevision: Rev E · Plant: P1 · Parts: CFW-1140-78  \nThis revision supersedes Rev D.\n\nScope\n- Defines material and dimensional quality requirements for axle hub CFW-1140-78 (CFW-1140-78) produced in Plant P1. Applies to forged and heat-treated parts delivered for final machining and assembly.\n\nRequirements table\n\n| Characteristic | Requirement | Notes |\n|---|---:|---|\n| Material | 4140 per procurement specification | Verify heat lot traceability on packing |\n| Hardness | 27-32 HRC | Hardness is measured on finished, machined surface |\n| Bore diameter tolerance | ±0.08 mm | Applies to specified bore feature on drawing for CFW-1140-78 |\n| Maximum forging weight | 74.6 kg | Weigh part after forging and cleaning; do not exceed for press capacity |\n\nInspection method\n- Visual: Inspect for surface discontinuities, laps, and cold shuts. Reject parts with visible forging defects that compromise fit or function.  \n- Dimensional: Measure bore diameter using appropriate gauge or CMM; verify conformance to bore diameter tolerance ±0.08 mm. Record measured values on inspection record.  \n- Hardness: Perform hardness testing on finished, machined surface using Rockwell method; report values and ensure they fall within 27-32 HRC. Calibrate hardness tester per plant calibration program.  \n- Weight: Weigh forgings after cleaning and verify maximum forging weight 74.6 kg is not exceeded for press and handling constraints.\n\nNonconformance handling\n- Isolate nonconforming parts and tag to prevent use. Create nonconformance record and include material heat lot and forging information.  \n- For dimensional or hardness failures, evaluate cause (process, heat treat, machining) and disposition (rework, reheat, or scrap) based on engineering review.  \n- Document corrective actions and prevent recurrence. Retain inspection records with part traceability for audit and customer review.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:QS-CFW-1140-78:v2#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: quality specification\nDocument id: QS-CFW-1140-78\nTitle: Quality specification - axle hub CFW-1140-78 (4140)\nRevision: Rev E\nPlant: P1\nParts: CFW-1140-78\nThis revision supersedes Rev D. Mention that in the header.\nRelated documents to cite: none\nValues to include exactly:\n- The hardness range for axle hub CFW-1140-78 (CFW-1140-78) is 27-32 HRC.\n- The bore diameter tolerance for axle hub CFW-1140-78 (CFW-1140-78) is ±0.08 mm.\n- The maximum forging weight for axle hub CFW-1140-78 (CFW-1140-78) is 74.6 kg.\nStructure: scope, requirements table, inspection method, nonconformance handling. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

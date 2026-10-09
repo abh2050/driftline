@@ -1,0 +1,16 @@
+{
+ "content": "# Calibration Check: Machining Induction Billet Heater #3 (MM-P2-L3-IH03-S3)\n\nPurpose\nConfirm heater control and sensing elements for machining induction billet heater #3 are functioning within acceptable stability and repeatability before production use.\n\nScope\nApplies to operator and maintenance staff responsible for pre-operational checks, routine monitoring, and logging for MM-P2-L3-IH03-S3.\n\nProcedure\n- Verify heater controller powers and displays nominal ready state; observe controller behavior through a complete ramp and hold cycle at a benign setpoint.\n- Inspect and verify integrity of external sensing wires and conduit routing for damage, chafing, or loose terminations.\n- Cross-check controller readout against a calibrated handheld reference probe placed at the billet interface area. Allow readings to stabilize and compare for consistent offset and drift patterns.\n- Cycle any safety interlocks and confirm controller response and alarm annunciation. Listen for unusual noises and observe for intermittent faults.\n- Record all readings, offsets, and observations in the calibration log. Note time-in-service factors that may affect performance.\n\nAcceptance and Actions\nIf readings show unstable trends, unexplained offsets, or alarms that do not clear with simple resets, tag the unit out of service and notify maintenance and quality. Do not proceed with production until corrective actions and a follow-up verification check are completed.\n\nDocumentation\nAttach completed check form to the MM-P2-L3-IH03-S3 maintenance history and update the calibration tracker. Include operator name, observed discrepancies, and actions taken.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "redteam:3",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional forging manufacturer. Write concise realistic markdown, 200 to 300 words, starting with a level-1 heading. Do not include numeric specifications.",
+   "role": "system"
+  },
+  {
+   "content": "Write a short operator note related to: Calibration checks - Machining induction billet heater #3 (see MM-P2-L3-IH03-S3).",
+   "role": "user"
+  }
+ ]
+}

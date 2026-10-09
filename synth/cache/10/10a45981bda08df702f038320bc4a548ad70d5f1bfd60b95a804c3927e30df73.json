@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\": [\"A breach lasted across 12 one-minute windows. Metrics shifted: citation_rate fell from 0.9014 to 0.8283 (−8.1%), and top_score moved from 0.8601 to 0.8248 (−4.1%). Configuration changed since baseline: index_schema.fields.doc_id.retrievable: True -> False. Two recent deploys. Logs: citation parser: doc_id missing from search results | token refresh ok.\", \"Sustained breach observed for 12 one-minute windows. Key metrics: citation_rate 0.9014 -> 0.8283 (−8.1%), top_score 0.8601 -> 0.8248 (−4.1%). Baseline config alteration: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys count: 2. Log entries: citation parser: doc_id missing from search results | token refresh ok.\", \"Incident spanned 12 one-minute windows. Metric impact: citation_rate decreased 0.9014 -> 0.8283 (−8.1%), top_score decreased 0.8601 -> 0.8248 (−4.1%). Changed config since baseline: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 2. Logs recorded: citation parser: doc_id missing from search results | token refresh ok.\", \"The system experienced a breach for 12 one-minute windows. Observed metrics: citation_rate 0.9014 -> 0.8283 (−8.1%) and top_score 0.8601 -> 0.8248 (−4.1%). Configuration delta from baseline: index_schema.fields.doc_id.retrievable: True -> False. Number of recent deploys: 2. Logs: citation parser: doc_id missing from search results | token refresh ok.\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0011#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 12 one-minute windows. Metrics: citation_rate 0.9014 -> 0.8283 (-8.1%), top_score 0.8601 -> 0.8248 (-4.1%). Config changes since baseline: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 2. Logs: citation parser: doc_id missing from search results | token refresh ok",
+   "role": "user"
+  }
+ ]
+}

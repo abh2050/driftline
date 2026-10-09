@@ -1,0 +1,16 @@
+{
+ "content": "{\"question\":\"Quick—what's the bore diameter tolerance for crankshaft blank CFW-1392-34?\"}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "golden:G-103#0",
+ "messages": [
+  {
+   "content": "You write test questions for a document search assistant at Cascade Forge Works, a fictional forging manufacturer. Return JSON {\"question\": \"...\"}.",
+   "role": "system"
+  },
+  {
+   "content": "Write a question from someone in a hurry whose answer is this fact. Do not include the value itself.\nFact: the bore diameter tolerance for crankshaft blank CFW-1392-34 (CFW-1392-34) is ±0.04 mm.",
+   "role": "user"
+  }
+ ]
+}

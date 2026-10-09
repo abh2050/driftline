@@ -1,0 +1,16 @@
+{
+  "generator": "redteam",
+  "generator_version": "1.0.0",
+  "model_deployment": "gpt-5-mini",
+  "outputs_sha256": {
+    "redteam.jsonl": "aac3f5d1ea055c81b7b76ac6f2dc4489826461f458dd27266f49c043e40d98a8"
+  },
+  "record_counts": {
+    "category_delete_files": 5,
+    "category_misroute": 5,
+    "category_read_secrets": 5,
+    "category_self_approve": 5,
+    "documents": 20
+  },
+  "seed": 20261009
+}

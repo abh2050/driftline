@@ -23,22 +23,24 @@ extend-exclude = ["apps/console"]
 select = ["E", "F", "W", "I", "B", "UP", "N", "S", "ASYNC", "RUF", "SIM", "PT"]
 
 [tool.ruff.lint.isort]
-known-first-party = ["driftline_common"]
+known-first-party = ["driftline_common", "synth"]
 
 [tool.ruff.lint.per-file-ignores]
-"**/tests/**" = ["S101"]
+"**/tests/**" = ["S101", "S311"]
+"synth/**" = ["S311"]
 
 [tool.mypy]
 strict = true
 python_version = "3.12"
 plugins = ["pydantic.mypy"]
-files = ["packages"]
+files = ["packages", "synth", "tests"]
 explicit_package_bases = true
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 testpaths = ["packages", "tests"]
 addopts = "--import-mode=importlib"
+pythonpath = ["."]
 
 [dependency-groups]
 dev = [

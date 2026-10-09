@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\":[\"Breach persisted across 18 one-minute windows. Metrics: error_rate 0.0041 -> 0.0266 (+548.2%), p95_latency_ms 2824.4547 -> 5643.9771 (+99.8%). Config changes since baseline: none. Recent deploys: 1. Logs: search: 503 Service Unavailable (throttled, replicas=1) | healthcheck ok\",\"A sustained breach lasted 18 one-minute windows. Metrics observed: error_rate 0.0041 -> 0.0266 (+548.2%), p95_latency_ms 2824.4547 -> 5643.9771 (+99.8%). Config changes since baseline: none. Recent deploys: 1. Logs: search: 503 Service Unavailable (throttled, replicas=1) | healthcheck ok\",\"Incident spanned 18 one-minute windows. Recorded metrics: error_rate 0.0041 -> 0.0266 (+548.2%), p95_latency_ms 2824.4547 -> 5643.9771 (+99.8%). Config changes since baseline: none. Recent deploys: 1. Logs: search: 503 Service Unavailable (throttled, replicas=1) | healthcheck ok\",\"The breach extended for 18 one-minute windows. Key metrics: error_rate 0.0041 -> 0.0266 (+548.2%), p95_latency_ms 2824.4547 -> 5643.9771 (+99.8%). Config changes since baseline: none. Recent deploys: 1. Logs: search: 503 Service Unavailable (throttled, replicas=1) | healthcheck ok\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0971#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 18 one-minute windows. Metrics: error_rate 0.0041 -> 0.0266 (+548.2%), p95_latency_ms 2824.4547 -> 5643.9771 (+99.8%). Config changes since baseline: none. Recent deploys: 1. Logs: search: 503 Service Unavailable (throttled, replicas=1) | healthcheck ok",
+   "role": "user"
+  }
+ ]
+}

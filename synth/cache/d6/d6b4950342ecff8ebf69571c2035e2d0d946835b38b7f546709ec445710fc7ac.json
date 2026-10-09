@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\":[\"Breach lasted across 8 one-minute windows. Key metrics dropped: citation_rate 0.9505 -> 0.6829 (-28.2%), groundedness 4.4775 -> 4.1792 (-6.7%), top_score 0.8034 -> 0.7553 (-6.0%). Configuration differences from baseline: prompt_version: v3 -> v4-nocite and embedding_deployment: text-embedding-3-small -> text-embedding-3-large. Recent deploys: 1. Relevant logs: prompt v4-nocite loaded; search attempted vector query with dimension 3072 against a field that has 1536 dims and fell back to keyword; answer returned 0 citations in response; search recorded a warm cache miss.\",\"Outage window: 8 one-minute windows of breach. Metrics moved as follows — citation_rate 0.9505 -> 0.6829 (-28.2%), groundedness 4.4775 -> 4.1792 (-6.7%), top_score 0.8034 -> 0.7553 (-6.0%). Changes since baseline include prompt_version: v3 -> v4-nocite and embedding_deployment: text-embedding-3-small -> text-embedding-3-large. Deploy notes and logs: prompt v4-nocite loaded; vector search used dimension 3072 against a field with 1536 dims and fell back to keyword; answer contained 0 citations in response; search saw a warm cache miss.\",\"Incident summary: breach sustained for 8 one-minute windows. Observed metric degradations — citation_rate: 0.9505 -> 0.6829 (-28.2%), groundedness: 4.4775 -> 4.1792 (-6.7%), top_score: 0.8034 -> 0.7553 (-6.0%). Config deltas from baseline: prompt_version changed from v3 to v4-nocite; embedding_deployment changed from text-embedding-3-small to text-embedding-3-large. Deployment/log highlights: prompt v4-nocite loaded; search attempted a 3072-dimension vector query against a 1536-dim field and fell back to keyword; answer produced 0 citations in response; search experienced a warm cache miss.\",\"Summary: sustained breach across 8 one-minute windows. Performance: citation_rate dropped 0.9505 -> 0.6829 (-28.2%), groundedness 4.4775 -> 4.1792 (-6.7%), top_score 0.8034 -> 0.7553 (-6.0%). Baseline-to-current config changes: prompt_version: v3 -> v4-nocite; embedding_deployment: text-embedding-3-small -> text-embedding-3-large. Recent deploy count: 1. Log entries of interest: prompt v4-nocite loaded; search ran a 3072-dimension vector query against a field with 1536 dims and fell back to keyword; answer returned 0 citations in response; search logged a warm cache miss.\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-1061#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 8 one-minute windows. Metrics: citation_rate 0.9505 -> 0.6829 (-28.2%), groundedness 4.4775 -> 4.1792 (-6.7%), top_score 0.8034 -> 0.7553 (-6.0%). Config changes since baseline: prompt_version: v3 -> v4-nocite; embedding_deployment: text-embedding-3-small -> text-embedding-3-large. Recent deploys: 1. Logs: prompt v4-nocite loaded | search: vector dimension 3072 queried against field with 1536 dims, fell back to keyword | answer: 0 citations in response | search: warm cache miss",
+   "role": "user"
+  }
+ ]
+}

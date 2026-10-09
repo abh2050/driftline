@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\":[\"Sustained breach lasted 14 one-minute windows. error_rate rose from 0.0038 to 0.1192 (+2996.5%). p95_latency_ms climbed from 2674.2313 to 4006.4153 (+49.8%). Config changes since baseline: none. Recent deploys: 1. Logs: chat: 429 Too Many Requests from gateway (rate limit) | retry: attempt 3/3 failed | search: warm cache miss\",\"Incident persisted for 14 one-minute windows. Observed error_rate went 0.0038 -> 0.1192 (+2996.5%); p95_latency_ms increased 2674.2313 -> 4006.4153 (+49.8%). No config changes since baseline. Recent deploys: 1. Logs captured: chat: 429 Too Many Requests from gateway (rate limit) | retry: attempt 3/3 failed | search: warm cache miss\",\"Breach duration: 14 one-minute windows. Metrics: error_rate 0.0038 to 0.1192 (+2996.5%), p95_latency_ms 2674.2313 to 4006.4153 (+49.8%). Config changes since baseline: none. Recent deploys: 1. Logs: chat: 429 Too Many Requests from gateway (rate limit) | retry: attempt 3/3 failed | search: warm cache miss\",\"The service remained in breach for 14 one-minute windows. error_rate increased from 0.0038 to 0.1192 (+2996.5%); p95_latency_ms rose from 2674.2313 to 4006.4153 (+49.8%). No config changes since baseline. Recent deploys count: 1. Relevant logs: chat: 429 Too Many Requests from gateway (rate limit) | retry: attempt 3/3 failed | search: warm cache miss\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0109#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 14 one-minute windows. Metrics: error_rate 0.0038 -> 0.1192 (+2996.5%), p95_latency_ms 2674.2313 -> 4006.4153 (+49.8%). Config changes since baseline: none. Recent deploys: 1. Logs: chat: 429 Too Many Requests from gateway (rate limit) | retry: attempt 3/3 failed | search: warm cache miss",
+   "role": "user"
+  }
+ ]
+}

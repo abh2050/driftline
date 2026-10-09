@@ -1,0 +1,16 @@
+{
+ "content": "# QS-CFW-3043-62 - Quality specification - flange blank CFW-3043-62 (4140)\n\nRevision: Rev D  \nPlant: P1  \nParts: CFW-3043-62\n\nScope\nThis quality specification applies to flange blank CFW-3043-62 produced at Plant P1 from material 4140. It defines acceptance criteria for hardness, bore tolerance, and maximum forging weight, and specifies inspection and nonconformance handling processes for delivery of flange blanks to downstream machining.\n\nRequirements table\n\n| Feature | Requirement |\n|---|---|\n| Hardness | The hardness range for flange blank CFW-3043-62 (CFW-3043-62) is 37-43 HRC. |\n| Bore tolerance | The bore diameter tolerance for flange blank CFW-3043-62 (CFW-3043-62) is ±0.04 mm. |\n| Forging weight | The maximum forging weight for flange blank CFW-3043-62 (CFW-3043-62) is 28.1 kg. |\n\nInspection method\n- Hardness: Verify hardness on a representative area using a calibrated Rockwell hardness tester according to standard practice for HRC measurement. Record locations and results on the inspection record. Hardness checks shall be performed prior to release for machining.\n- Bore tolerance: Measure bore diameter using a calibrated internal micrometer, bore gauge, or equivalent that provides traceable results. Record measured diameters and verify compliance with the specified tolerance.\n- Forging weight: Determine weight using a calibrated scale; record measured weight on the inspection record. Reject parts that exceed the stated maximum forging weight.\n\nNonconformance handling\nNonconforming flange blanks shall be segregated and tagged. Disposition options include rework if a valid process exists to demonstrably bring the feature into conformance, return to forging for corrective action, or scrap. All nonconformances require documented root cause analysis and corrective action tracking in the plant quality system. Release from nonconformance requires documented verification that the affected feature now meets the requirement table.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:QS-CFW-3043-62:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: quality specification\nDocument id: QS-CFW-3043-62\nTitle: Quality specification - flange blank CFW-3043-62 (4140)\nRevision: Rev D\nPlant: P1\nParts: CFW-3043-62\nRelated documents to cite: none\nValues to include exactly:\n- The hardness range for flange blank CFW-3043-62 (CFW-3043-62) is 37-43 HRC.\n- The bore diameter tolerance for flange blank CFW-3043-62 (CFW-3043-62) is ±0.04 mm.\n- The maximum forging weight for flange blank CFW-3043-62 (CFW-3043-62) is 28.1 kg.\nStructure: scope, requirements table, inspection method, nonconformance handling. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

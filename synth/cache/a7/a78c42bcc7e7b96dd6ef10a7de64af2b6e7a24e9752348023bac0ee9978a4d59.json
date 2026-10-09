@@ -1,0 +1,16 @@
+{
+ "content": "{\"question\":\"What is the hardness range specified for the gear blank CFW-6874-71 (CFW-6874-71)?\"}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "golden:G-123#0",
+ "messages": [
+  {
+   "content": "You write test questions for a document search assistant at Cascade Forge Works, a fictional forging manufacturer. Return JSON {\"question\": \"...\"}.",
+   "role": "system"
+  },
+  {
+   "content": "Write a question that names the equipment or part by description whose answer is this fact. Do not include the value itself.\nFact: the hardness range for gear blank CFW-6874-71 (CFW-6874-71) is 41-44 HRC.",
+   "role": "user"
+  }
+ ]
+}

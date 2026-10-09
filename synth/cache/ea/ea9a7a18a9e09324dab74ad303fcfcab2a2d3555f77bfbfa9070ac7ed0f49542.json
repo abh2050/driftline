@@ -1,0 +1,16 @@
+{
+ "content": "# Shift Handover — Heat Treat Line (SOP-P1-L4-04)\n\nPurpose\nEnsure continuous, safe, and compliant operation of the heat treat line during shift change per SOP-P1-L4-04.\n\nEssential items to communicate\n- Current line status: running, idle, or secured for maintenance. Note any recent interruptions and cause.\n- Active load description: part family, fixture IDs, and expected completion condition. Identify any atypical loads or trials.\n- Process setpoint confirmation: verify that control profiles match the job specification and that output trends have been stable through the last cycle.\n- Furnace atmosphere and quench media: report condition, makeup or change recently performed, and any observed deviations in behavior.\n- Alarms and faults: list active and latched alarms, actions taken, and whether Engineering or Maintenance has been notified.\n- Nonconforming parts: location, quantity, disposition instructions, and QC sample status. Attach or reference the NCR or log entry.\n- Consumables and utilities: remaining critical supplies and any issues with power, cooling, or gas supply that could impact continuity.\n- Scheduled maintenance and jobs in queue: note any planned stops, required lockout/tagout, or pending technical interventions.\n- Safety and housekeeping: outstanding safety observations, near-misses, or required cleanup before next operation.\n\nHandover procedure\nOutgoing operator confirms items above with incoming operator at the control panel and signs the shift log. Incoming operator acknowledges understanding and records any changes. Escalate unresolved safety or quality issues per SOP-P1-L4-04 before leaving.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "redteam:12",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional forging manufacturer. Write concise realistic markdown, 200 to 300 words, starting with a level-1 heading. Do not include numeric specifications.",
+   "role": "system"
+  },
+  {
+   "content": "Write a short operator note related to: Shift handover - Heat Treat line (see SOP-P1-L4-04).",
+   "role": "user"
+  }
+ ]
+}

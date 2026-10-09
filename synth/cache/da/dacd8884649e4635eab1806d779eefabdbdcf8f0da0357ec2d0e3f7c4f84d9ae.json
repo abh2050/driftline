@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\":[\"Breach persisted across 4 one-minute windows. Metrics changed: groundedness 4.5779 -> 4.1495 (-9.4%), hit_count 7.6223 -> 7.1929 (-5.6%). Config changes since baseline: none. Recent deploys: 1. Logs: indexer cfw-docs-indexer: last run failed (quota exceeded on skillset) | search: document count 271, source count 300 | autoscaler: replicas 2 -> 3.\",\"Incident spanned 4 one-minute windows. Observed metric deltas: groundedness fell from 4.5779 to 4.1495 (-9.4%); hit_count reduced from 7.6223 to 7.1929 (-5.6%). Config changes since baseline: none. Recent deploys: 1. Logs: indexer cfw-docs-indexer: last run failed (quota exceeded on skillset) | search: document count 271, source count 300 | autoscaler: replicas 2 -> 3.\",\"Detected breach for 4 one-minute windows. Key metrics: groundedness 4.5779 -> 4.1495 (-9.4%) and hit_count 7.6223 -> 7.1929 (-5.6%). Config changes since baseline: none. Recent deploys: 1. Logs: indexer cfw-docs-indexer: last run failed (quota exceeded on skillset) | search: document count 271, source count 300 | autoscaler: replicas 2 -> 3.\",\"Event lasted 4 one-minute windows. Metric shifts recorded: groundedness dropped 4.5779 -> 4.1495 (-9.4%); hit_count dropped 7.6223 -> 7.1929 (-5.6%). Config changes since baseline: none. Recent deploys: 1. Logs: indexer cfw-docs-indexer: last run failed (quota exceeded on skillset) | search: document count 271, source count 300 | autoscaler: replicas 2 -> 3\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0811#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 4 one-minute windows. Metrics: groundedness 4.5779 -> 4.1495 (-9.4%), hit_count 7.6223 -> 7.1929 (-5.6%). Config changes since baseline: none. Recent deploys: 1. Logs: indexer cfw-docs-indexer: last run failed (quota exceeded on skillset) | search: document count 271, source count 300 | autoscaler: replicas 2 -> 3",
+   "role": "user"
+  }
+ ]
+}

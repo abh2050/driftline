@@ -32,3 +32,15 @@ The key for `avixek-7316-resource` was pasted into a chat session. Regenerate it
     az cognitiveservices account keys regenerate -g rg-avixek-3684 -n avixek-7316-resource --key-name key1
 
 Driftline does not use API keys. Every service signs in with managed identity through DefaultAzureCredential (spec section 2.4).
+
+## 2026-10-09: Review at least 30 golden QA records (Phase 1 acceptance)
+
+Run this in a terminal at the repo root:
+
+    uv run python -m synth.review
+
+For each record, check that the question is answerable from the source fact and that the reference answer is right. Press `a` to accept, `e` to edit the question, `r` to reject, `s` to skip and `q` to quit. Progress is saved after every record to `evals/datasets/golden_reviews.jsonl`. Check your count with:
+
+    uv run python -m synth.review status
+
+Tell Claude Code when `reviewed` is 30 or more.

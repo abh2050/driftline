@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\":[\"Breach persisted across 17 one-minute windows. Metric moved from 4.6166 to 4.4066 (−4.5%). No config changes since baseline. Recent deploys: 1. Logs: indexer cfw-docs-indexer: status=disabled since 3h | search: 30 documents older than source revision | gc pause 120 ms\",\"Sustained breach for 17 consecutive one-minute windows. Groundedness dropped 4.6166 -> 4.4066 (−4.5%). Config changes since baseline: none. Recent deploys: 1. Logged details: indexer cfw-docs-indexer: status=disabled since 3h | search: 30 documents older than source revision | gc pause 120 ms\",\"A breach was held for 17 one-minute windows. Metrics: groundedness 4.6166 to 4.4066 (−4.5%). No config changes from baseline. Recent deploy count: 1. Logs show: indexer cfw-docs-indexer: status=disabled since 3h | search: 30 documents older than source revision | gc pause 120 ms\",\"For 17 one-minute windows the breach remained. Groundedness moved 4.6166 -> 4.4066 (−4.5%). Config since baseline: none. Recent deploys: 1. Relevant logs: indexer cfw-docs-indexer: status=disabled since 3h | search: 30 documents older than source revision | gc pause 120 ms\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0336#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 17 one-minute windows. Metrics: groundedness 4.6166 -> 4.4066 (-4.5%). Config changes since baseline: none. Recent deploys: 1. Logs: indexer cfw-docs-indexer: status=disabled since 3h | search: 30 documents older than source revision | gc pause 120 ms",
+   "role": "user"
+  }
+ ]
+}

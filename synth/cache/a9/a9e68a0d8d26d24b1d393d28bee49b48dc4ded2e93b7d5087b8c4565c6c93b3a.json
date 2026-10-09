@@ -1,0 +1,16 @@
+{
+ "content": "{\"question\":\"What is the hardness range (HRC) for track link CFW-5998-73?\"}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "golden:G-120#0",
+ "messages": [
+  {
+   "content": "You write test questions for a document search assistant at Cascade Forge Works, a fictional forging manufacturer. Return JSON {\"question\": \"...\"}.",
+   "role": "system"
+  },
+  {
+   "content": "Write a question that names the equipment or part id whose answer is this fact. Do not include the value itself.\nFact: the hardness range for track link CFW-5998-73 (CFW-5998-73) is 31-35 HRC.",
+   "role": "user"
+  }
+ ]
+}

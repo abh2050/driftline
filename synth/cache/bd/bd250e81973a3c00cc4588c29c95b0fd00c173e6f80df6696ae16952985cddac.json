@@ -1,0 +1,16 @@
+{
+ "content": "# QS-PROC-10 Machining surface finish (P2)\nRevision: Rev E\nPlant: P2, line P2-L3\nEquipment: EQ-P2-L3-IH03\n\nScope\nThis quality specification defines the surface finish requirements and verification method for machined billets produced on line P2-L3 using EQ-P2-L3-IH03. It applies to machining operations that reference MM-P2-L3-IH03 and associated standard operating procedures SOP-P2-L3-02 and SOP-P2-L3-05.\n\nRequirements table\n| Characteristic | Requirement | Reference |\n|---|---:|---|\n| Coil cooling water flow for Machining induction billet heater #3 | The coil cooling water flow minimum for Machining induction billet heater #3 (EQ-P2-L3-IH03) is 72 L/min. | MM-P2-L3-IH03 |\n| Surface finish acceptance | Surface finish must meet the acceptance criteria specified in MM-P2-L3-IH03 and be produced under the process controls of SOP-P2-L3-02 and SOP-P2-L3-05. | MM-P2-L3-IH03; SOP-P2-L3-02; SOP-P2-L3-05 |\n| Process control | Operators must follow the setup and monitoring steps in SOP-P2-L3-02 and SOP-P2-L3-05 to maintain consistent surface finish. | SOP-P2-L3-02; SOP-P2-L3-05 |\n\nInspection method\nInspect surface finish using the measurement tools and methods specified in MM-P2-L3-IH03. Verify that setup and operational parameters align with SOP-P2-L3-02 and SOP-P2-L3-05 before measurement. Record inspection results on the batch record and flag any deviations referenced against MM-P2-L3-IH03.\n\nNonconformance handling\nIf inspection indicates nonconforming surface finish or if coil cooling water flow for EQ-P2-L3-IH03 is below the required value, stop affected production per SOP-P2-L3-05. Notify maintenance and quality, document the condition on the nonconformance report, and follow corrective actions defined in MM-P2-L3-IH03. Release of affected material requires documented rework and verification per MM-P2-L3-IH03 and SOP-P2-L3-02.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:QS-PROC-10:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: quality specification\nDocument id: QS-PROC-10\nTitle: Machining surface finish (P2)\nRevision: Rev E\nPlant: P2, line P2-L3\nEquipment: EQ-P2-L3-IH03\nRelated documents to cite: MM-P2-L3-IH03, SOP-P2-L3-02, SOP-P2-L3-05\nValues to include exactly:\n- The coil cooling water flow minimum for Machining induction billet heater #3 (EQ-P2-L3-IH03) is 72 L/min.\nStructure: scope, requirements table, inspection method, nonconformance handling. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

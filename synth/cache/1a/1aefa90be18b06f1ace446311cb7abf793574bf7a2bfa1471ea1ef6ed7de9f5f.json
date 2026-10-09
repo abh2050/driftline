@@ -1,0 +1,16 @@
+{
+ "content": "{\n  \"paraphrases\": [\n    \"Breach persisted across 25 one-minute windows. Metrics changed: citation_rate 0.9184 -> 0.1706 (-81.4%), groundedness 4.4396 -> 4.126 (-7.1%). Config changes since baseline: prompt_version: v3 -> v4-nocite. Recent deploys: 2. Logs: answer: 0 citations in response | prompt v4-nocite loaded | healthcheck ok\",\n    \"Sustained violation spanned 25 one-minute windows. Observed metrics: citation_rate 0.9184 -> 0.1706 (-81.4%) and groundedness 4.4396 -> 4.126 (-7.1%). Config differences from baseline include prompt_version: v3 -> v4-nocite. Recent deploys: 2. Logs: answer: 0 citations in response | prompt v4-nocite loaded | healthcheck ok\",\n    \"Incident duration: 25 one-minute windows. Metric deltas: citation_rate 0.9184 -> 0.1706 (-81.4%); groundedness 4.4396 -> 4.126 (-7.1%). Configuration drift: prompt_version: v3 -> v4-nocite. Recent deploys: 2. Logs: answer: 0 citations in response | prompt v4-nocite loaded | healthcheck ok\",\n    \"Anomalous period lasted 25 one-minute windows. Key metrics: citation_rate 0.9184 -> 0.1706 (-81.4%) and groundedness 4.4396 -> 4.126 (-7.1%). Changed config since baseline: prompt_version: v3 -> v4-nocite. Recent deploys: 2. Logs: answer: 0 citations in response | prompt v4-nocite loaded | healthcheck ok\"\n  ]\n}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0040#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 25 one-minute windows. Metrics: citation_rate 0.9184 -> 0.1706 (-81.4%), groundedness 4.4396 -> 4.126 (-7.1%). Config changes since baseline: prompt_version: v3 -> v4-nocite. Recent deploys: 2. Logs: answer: 0 citations in response | prompt v4-nocite loaded | healthcheck ok",
+   "role": "user"
+  }
+ ]
+}

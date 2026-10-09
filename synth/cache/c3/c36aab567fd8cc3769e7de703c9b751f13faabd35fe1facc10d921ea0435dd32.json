@@ -1,0 +1,16 @@
+{
+ "content": "# QS-CFW-1392-34 Quality specification - crankshaft blank CFW-1392-34 (4340)\n\nRevision: Rev D  \nPlant: P1  \nParts: CFW-1392-34\n\nScope\nThis quality specification defines acceptance criteria and inspection instructions for crankshaft blank CFW-1392-34 (CFW-1392-34) manufactured from 4340 forging grade material at Plant P1. It applies to blanks delivered to machining and assembly operations and to finished blank lots released from the Forge Department.\n\nRequirements table\n| Characteristic | Requirement |\n|---|---|\n| Hardness (as-forged) | 34-37 HRC |\n| Bore diameter tolerance | ±0.06 mm |\n| Maximum forging weight | 5.8 kg |\n\nInspection method\n- Hardness: Verify as-forged hardness of crankshaft blank CFW-1392-34 (CFW-1392-34) using Rockwell HRC scale. Take representative readings across journal faces and web sections per lot sampling and record the results on the inspection record. Reject if any reading falls outside 34-37 HRC.\n- Bore diameter: Measure the bore diameter using calibrated bore gauge or plug gauge appropriate for the feature. Confirm the measured value meets tolerance ±0.06 mm. Record all measurements and identify the gauge used.\n- Weight: Confirm the forging weight of each blank does not exceed the maximum forging weight for crankshaft blank CFW-1392-34 (CFW-1392-34). Use a calibrated scale and record the measured weight on the inspection form.\n\nNonconformance handling\n- Segregate and tag any crankshaft blank CFW-1392-34 (CFW-1392-34) that fails to meet the Requirements table. Notify Quality and Forge supervision immediately and document the nonconformance on the lot inspection form.\n- Disposition options include rework where feasible, return to heat treatment or process corrective action, or scrap. All dispositions require approval by Quality.\n- Maintain inspection records and dispositions in the document control system for traceability and review during corrective action and continuous improvement activities.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:QS-CFW-1392-34:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: quality specification\nDocument id: QS-CFW-1392-34\nTitle: Quality specification - crankshaft blank CFW-1392-34 (4340)\nRevision: Rev D\nPlant: P1\nParts: CFW-1392-34\nRelated documents to cite: none\nValues to include exactly:\n- The hardness range for crankshaft blank CFW-1392-34 (CFW-1392-34) is 34-37 HRC.\n- The bore diameter tolerance for crankshaft blank CFW-1392-34 (CFW-1392-34) is ±0.06 mm.\n- The maximum forging weight for crankshaft blank CFW-1392-34 (CFW-1392-34) is 5.8 kg.\nStructure: scope, requirements table, inspection method, nonconformance handling. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

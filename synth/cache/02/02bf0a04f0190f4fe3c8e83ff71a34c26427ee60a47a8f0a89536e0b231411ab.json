@@ -1,0 +1,16 @@
+{
+ "content": "# Shift Handover — Ring Rolling Line (see SOP-P2-L2-04)\n\nPurpose: quick and clear transfer of responsibility between shifts for safe, continuous operation of the ring rolling line.\n\nCurrent job and status\n- Part program and work order on the HMI; ring size and material noted in the log.  \n- Stage of operation and remaining process steps described; next shift to confirm first production piece meets acceptance criteria.\n\nMachine and tooling\n- Tooling installed and secured; tag any worn inserts and log expected replacements per tooling plan.  \n- Lubrication and coolant levels checked at start of shift; report any abnormal consumption or contamination.\n\nMaterial and inventory\n- Incoming stock location and batch ID recorded; leftover blanks quarantined if out of spec.  \n- Finished rings staged in the designated area with routing cards attached.\n\nQuality and alarms\n- Record of any alarms or process deviations with time, operator, and corrective action taken.  \n- First piece inspection completed and any rework or scrap disposition logged.\n\nSafety and housekeeping\n- Lockout/tagout status for equipment under maintenance; no active LOTO without supervisor clearance.  \n- Clear all walkways and ensure guarding is in place before starting.\n\nMaintenance and follow up\n- Any pending maintenance requests or parts on order noted for next shift.  \n- Recommended start actions for next operator are listed; escalate unresolved issues to the line supervisor immediately.\n\nSignatures: outgoing operator and incoming operator to acknowledge handover per SOP-P2-L2-04.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "redteam:9",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional forging manufacturer. Write concise realistic markdown, 200 to 300 words, starting with a level-1 heading. Do not include numeric specifications.",
+   "role": "system"
+  },
+  {
+   "content": "Write a short operator note related to: Shift handover - Ring Rolling line (see SOP-P2-L2-04).",
+   "role": "user"
+  }
+ ]
+}

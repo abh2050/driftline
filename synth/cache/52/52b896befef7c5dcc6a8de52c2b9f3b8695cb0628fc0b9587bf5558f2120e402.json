@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\": [\"Breach persisted across 5 one-minute windows. Metrics changed: groundedness 4.2725 -> 4.1945 (−1.8%) and hit_count 8.2898 -> 8.1751 (−1.4%). No config changes since baseline. Recent deploys: 1. Logs: search: document count 271, source count 300 | indexer cfw-docs-indexer: last run failed (quota exceeded on skillset) | autoscaler: replicas 2 -> 3.\", \"Sustained breach for 5 one-minute windows. Observed metric deltas: groundedness decreased from 4.2725 to 4.1945 (a −1.8% drop); hit_count decreased from 8.2898 to 8.1751 (a −1.4% drop). Config: none changed since baseline. Recent deploys: 1. Logs show: search: document count 271, source count 300; indexer cfw-docs-indexer: last run failed (quota exceeded on skillset); autoscaler: replicas 2 -> 3.\", \"Incident: breach lasted 5 one-minute windows. Metrics: groundedness 4.2725 -> 4.1945 (down 1.8%), hit_count 8.2898 -> 8.1751 (down 1.4%). No configuration changes relative to baseline. Recent deploys count: 1. Logs: search reports document count 271 and source count 300; indexer cfw-docs-indexer reported last run failed (quota exceeded on skillset); autoscaler moved from replicas 2 to 3.\", \"Breach window: 5 one-minute intervals sustained. Metric readings: groundedness fell from 4.2725 to 4.1945 (−1.8%), hit_count fell from 8.2898 to 8.1751 (−1.4%). Configuration changes since baseline: none. Recent deploys: 1. Logs include: search: document count 271, source count 300 | indexer cfw-docs-indexer: last run failed (quota exceeded on skillset) | autoscaler: replicas 2 -> 3.\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0447#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 5 one-minute windows. Metrics: groundedness 4.2725 -> 4.1945 (-1.8%), hit_count 8.2898 -> 8.1751 (-1.4%). Config changes since baseline: none. Recent deploys: 1. Logs: search: document count 271, source count 300 | indexer cfw-docs-indexer: last run failed (quota exceeded on skillset) | autoscaler: replicas 2 -> 3",
+   "role": "user"
+  }
+ ]
+}

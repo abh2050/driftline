@@ -1,0 +1,16 @@
+{
+ "content": "# ECN-2026-043 - Change notice - Machining CNC turning center #3\n\nRevision: Rev A  \nPlant: P1, line P1-L3  \nEquipment: EQ-P1-L3-CN03\n\nReason for change\n- Field feedback and maintenance verification identified a requirement to update the documented start procedure for EQ-P1-L3-CN03 to ensure spindle longevity and process stability. The spindle warm-up time for Machining CNC turning center #3 (EQ-P1-L3-CN03) is 27 minutes. This ECN clarifies and formalizes the warm-up step to align operator practice with preventive maintenance recommendations and to reduce early-cycle spindle wear.\n\nAffected items\n- Operator start procedures and checklists for EQ-P1-L3-CN03.\n- Machine-specific safety and process documentation stored in the local document control folder and referenced on the shop floor.\n- Training material that references the start sequence for line P1-L3.\n\nImplementation\n- Update SOP-P1-L3-02 to include the spindle warm-up time for Machining CNC turning center #3 (EQ-P1-L3-CN03) as an explicit step in the machine start sequence. Cross-reference SB-1014 for spindle handling notes where applicable. Update SOP-P1-L3-03 to reflect any downstream procedural changes caused by the adjusted start timing.\n- Post the revised start sequence at the EQ-P1-L3-CN03 control station and include the warm-up step in the electronic operator checklist.\n- Communicate the change to all P1-L3 operators during the next scheduled shift briefing and require affected operators to acknowledge the procedural update through the learning management system linked to SOP-P1-L3-02 and SOP-P1-L3-03.\n- Maintenance will verify compliance during the next routine inspection and document confirmation against SB-1014.\n\nApprovals\n- Engineering approval required to confirm alignment with machine vendor guidance and SB-1014.  \n- Production management approval required for procedural rollout on line P1-L3.  \n- Maintenance approval required for verification of implementation on EQ-P1-L3-CN03.\n\nRelated documents: SB-1014, SOP-P1-L3-02, SOP-P1-L3-03",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:ECN-2026-043:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: engineering change notice\nDocument id: ECN-2026-043\nTitle: Change notice - Machining CNC turning center #3\nRevision: Rev A\nPlant: P1, line P1-L3\nEquipment: EQ-P1-L3-CN03\nRelated documents to cite: SB-1014, SOP-P1-L3-02, SOP-P1-L3-03\nValues to include exactly:\n- The spindle warm-up time for Machining CNC turning center #3 (EQ-P1-L3-CN03) is 27 minutes.\nStructure: reason for change, affected items, implementation, approvals. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

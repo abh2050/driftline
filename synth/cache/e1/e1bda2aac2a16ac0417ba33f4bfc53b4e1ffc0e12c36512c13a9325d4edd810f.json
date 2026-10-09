@@ -1,0 +1,16 @@
+{
+ "content": "{\n  \"paraphrases\": [\n    \"Breach persisted across 26 one-minute windows. Metrics changed: citation_rate dropped 0.8872 -> 0.5552 (−37.4%), groundedness fell 4.5288 -> 4.2992 (−5.1%), top_score decreased 0.8179 -> 0.6942 (−15.1%). Config diffs since baseline: index_schema.fields.doc_id.retrievable: True -> False; chunk_size: 512 -> 128. Recent deploys: 1. Relevant logs: citation parser: doc_id missing from search results | retrieval: chunks average 121 tokens; answers missing table rows | search: warm cache miss.\",\n    \"We observed a sustained breach for 26 one-minute windows. Key metric regressions: citation_rate 0.8872 -> 0.5552 (−37.4%), groundedness 4.5288 -> 4.2992 (−5.1%), top_score 0.8179 -> 0.6942 (−15.1%). Configuration changes post-baseline: index_schema.fields.doc_id.retrievable changed from True to False; chunk_size changed from 512 to 128. There has been 1 recent deploy. Logs captured: citation parser: doc_id missing from search results | retrieval: chunks average 121 tokens; answers missing table rows | search: warm cache miss.\",\n    \"The incident lasted 26 one-minute windows. Metric impacts: citation_rate fell from 0.8872 to 0.5552 (a −37.4% change), groundedness dropped from 4.5288 to 4.2992 (−5.1%), and top_score moved 0.8179 -> 0.6942 (−15.1%). Configs altered since baseline include index_schema.fields.doc_id.retrievable: True -> False and chunk_size: 512 -> 128. There was 1 recent deploy. Logs: citation parser: doc_id missing from search results | retrieval: chunks average 121 tokens; answers missing table rows | search: warm cache miss.\",\n    \"Duration: breach persisted for 26 one-minute windows. Observed metric regressions: citation_rate 0.8872 -> 0.5552 (−37.4%), groundedness 4.5288 -> 4.2992 (−5.1%), top_score 0.8179 -> 0.6942 (−15.1%). Config changes vs baseline: index_schema.fields.doc_id.retrievable switched True -> False; chunk_size reduced 512 -> 128. Recent deploy count: 1. Collected logs: citation parser: doc_id missing from search results | retrieval: chunks average 121 tokens; answers missing table rows | search: warm cache miss.\"\n  ]\n}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0069#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 26 one-minute windows. Metrics: citation_rate 0.8872 -> 0.5552 (-37.4%), groundedness 4.5288 -> 4.2992 (-5.1%), top_score 0.8179 -> 0.6942 (-15.1%). Config changes since baseline: index_schema.fields.doc_id.retrievable: True -> False; chunk_size: 512 -> 128. Recent deploys: 1. Logs: citation parser: doc_id missing from search results | retrieval: chunks average 121 tokens; answers missing table rows | search: warm cache miss",
+   "role": "user"
+  }
+ ]
+}

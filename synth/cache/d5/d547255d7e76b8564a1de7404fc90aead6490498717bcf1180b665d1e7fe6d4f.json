@@ -1,0 +1,16 @@
+{
+ "content": "# FAQ-007 Engineering FAQ #7\n\nRevision: Rev A\n\nQ: What is the correct mandrel clamp bolt torque for the Ring Rolling radial ring rolling mill EQ-P1-L2-RR01?\nA: Set the mandrel clamp bolt torque to 395 N·m. Verify with SB-1029 and SOP-P1-L2-05 during setup and after maintenance.\n\nQ: What is the system pressure limit for Machining hydraulic forging press EQ-P1-L3-HP02?\nA: The system pressure limit is 295 bar. Do not exceed this value; reference SOP-P2-L3-01 for pressure testing and SB-1029 for safety acceptance criteria.\n\nQ: What lubricant part number is specified for Machining shot blast cabinet EQ-P3-L3-SB01?\nA: Use lubricant part number CFW-LUB-709. Record lubricant changes in maintenance logs per SOP-P1-L2-05.\n\nQ: What lubricant part number is specified for Machining heat treat furnace EQ-P2-L3-HT02?\nA: Use lubricant part number CFW-LUB-373. Confirm inventory and purchase orders against this part number and SOP-P2-L3-01.\n\nQ: What is the coil cooling water flow minimum for Machining induction billet heater EQ-P1-L3-IH01?\nA: Maintain a coil cooling water flow minimum of 79 L/min. Follow flow verification procedures in SOP-P1-L2-05 and report deviations to maintenance per SB-1029.\n\nRelated documents: SB-1029, SOP-P1-L2-05, SOP-P2-L3-01\n\nNotes:\n- These values are control points for equipment safety and performance. Follow the cited documents for procedures, checklists, and acceptance criteria.\n- Log any adjustments or nonconformances in the equipment maintenance record and initiate corrective actions as required by SOP-P2-L3-01.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:FAQ-007:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: engineering FAQ\nDocument id: FAQ-007\nTitle: Engineering FAQ #7\nRevision: Rev A\nRelated documents to cite: SB-1029, SOP-P1-L2-05, SOP-P2-L3-01\nValues to include exactly:\n- The mandrel clamp bolt torque for Ring Rolling radial ring rolling mill #1 (EQ-P1-L2-RR01) is 395 N·m.\n- The system pressure limit for Machining hydraulic forging press #2 (EQ-P1-L3-HP02) is 295 bar.\n- The lubricant part number for Machining shot blast cabinet #1 (EQ-P3-L3-SB01) is CFW-LUB-709.\n- The lubricant part number for Machining heat treat furnace #2 (EQ-P2-L3-HT02) is CFW-LUB-373.\n- The coil cooling water flow minimum for Machining induction billet heater #1 (EQ-P1-L3-IH01) is 79 L/min.\nStructure: five question and answer pairs, one per given value. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

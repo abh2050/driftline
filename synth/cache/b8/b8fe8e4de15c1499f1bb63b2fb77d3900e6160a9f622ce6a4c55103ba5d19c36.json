@@ -1,0 +1,16 @@
+{
+ "content": "{\"question\":\"Before starting work, have you verified that the chuck jaw bolts on Machining CNC turning center #2 (EQ-P3-L3-CN02) are tightened to the required torque?\"}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "golden:G-078#0",
+ "messages": [
+  {
+   "content": "You write test questions for a document search assistant at Cascade Forge Works, a fictional forging manufacturer. Return JSON {\"question\": \"...\"}.",
+   "role": "system"
+  },
+  {
+   "content": "Write a question phrased as a check before doing work whose answer is this fact. Do not include the value itself.\nFact: the chuck jaw bolt torque for Machining CNC turning center #2 (EQ-P3-L3-CN02) is 75 N·m.",
+   "role": "user"
+  }
+ ]
+}

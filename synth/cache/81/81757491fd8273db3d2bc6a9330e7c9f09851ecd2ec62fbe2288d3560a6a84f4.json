@@ -1,0 +1,16 @@
+{
+ "content": "{\n  \"paraphrases\": [\n    \"Breach persisted across 12 one-minute windows. Metrics moved: groundedness 4.3068 -> 4.1774 (-3.0%), hit_count 8.1584 -> 7.9363 (-2.7%). Config changes since baseline: none. Recent deploys: 0. Logs: indexer cfw-docs-indexer: last run failed (quota exceeded on skillset) | search: document count 271, source count 300 | token refresh ok\",\n    \"Sustained breach for 12 one-minute windows. Metric deltas: groundedness went from 4.3068 to 4.1774 (-3.0%); hit_count went from 8.1584 to 7.9363 (-2.7%). Config changes since baseline: none. Recent deploys: 0. Logs: indexer cfw-docs-indexer: last run failed (quota exceeded on skillset) | search: document count 271, source count 300 | token refresh ok\",\n    \"There was a breach lasting 12 one-minute windows. Observed metrics: groundedness 4.3068 -> 4.1774 (-3.0%), hit_count 8.1584 -> 7.9363 (-2.7%). Config changes since baseline: none. Recent deploys: 0. Logs: indexer cfw-docs-indexer: last run failed (quota exceeded on skillset) | search: document count 271, source count 300 | token refresh ok\",\n    \"Incident spanned 12 one-minute windows. Key metrics: groundedness decreased 4.3068 -> 4.1774 (-3.0%); hit_count decreased 8.1584 -> 7.9363 (-2.7%). Config changes since baseline: none. Recent deploys: 0. Logs: indexer cfw-docs-indexer: last run failed (quota exceeded on skillset) | search: document count 271, source count 300 | token refresh ok\"\n  ]\n}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0451#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 12 one-minute windows. Metrics: groundedness 4.3068 -> 4.1774 (-3.0%), hit_count 8.1584 -> 7.9363 (-2.7%). Config changes since baseline: none. Recent deploys: 0. Logs: indexer cfw-docs-indexer: last run failed (quota exceeded on skillset) | search: document count 271, source count 300 | token refresh ok",
+   "role": "user"
+  }
+ ]
+}

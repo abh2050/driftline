@@ -1,0 +1,16 @@
+{
+ "content": "# Operator Note — Line Startup: Heat Treat Line (SOP-P2-L4-01)\n\nPurpose\nEnsure a safe, repeatable startup of the Heat Treat line in accordance with SOP-P2-L4-01. This note highlights critical checks and common issues observed during startup.\n\nPre-start checks\n- Verify that the line area is clear of loose tools, foreign material, and unauthorized personnel.\n- Confirm that all protective guards, interlocks, and emergency stops are functional and unlocked.\n- Ensure required process documentation and traveler are present at the control station.\n\nControls and instrumentation\n- Confirm control panel is in normal operating mode and communication to upstream/downstream systems is established.\n- Check that sensors and thermocouples are reading logically and reporting to the main HMI.\n- Confirm atmosphere monitoring and exhaust systems are active and stable before charging.\n\nMaterial handling and loading\n- Verify parts are correctly staged, tagged, and matched to the planned heat schedule per SOP-P2-L4-01.\n- Confirm carrier/fixture condition and secure load balancing to prevent jams or misalignment during conveyance.\n\nFirst run monitoring\n- Observe the first loaded parts through the complete process cycle; remain at the control point to respond to alarms.\n- Watch for abnormal noises, smells, or vibrations; stop line if any abnormal condition cannot be immediately corrected.\n\nShutdown and documentation\n- If a safe startup is not achieved, perform an orderly shutdown and notify maintenance and supervision.\n- Document startup checklist outcomes, any deviations, and corrective actions per SOP-P2-L4-01 before resuming production.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "redteam:16",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional forging manufacturer. Write concise realistic markdown, 200 to 300 words, starting with a level-1 heading. Do not include numeric specifications.",
+   "role": "system"
+  },
+  {
+   "content": "Write a short operator note related to: Line startup - Heat Treat line (see SOP-P2-L4-01).",
+   "role": "user"
+  }
+ ]
+}

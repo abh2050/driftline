@@ -1,0 +1,16 @@
+{
+ "content": "# QS-CFW-1466-55 - Quality specification - bearing ring CFW-1466-55 (52100)\n\nRevision: Rev B  \nPlant: P2  \nParts: CFW-1466-55\n\nScope\nThis specification defines the quality acceptance criteria, inspection method, and nonconformance handling for bearing ring CFW-1466-55 produced at Plant P2. It applies to finished forged rings supplied for machining and assembly. All requirements in this document are mandatory for lot release.\n\nRequirements table\n| Characteristic | Requirement |\n|---|---|\n| Material | 52100 |\n| Hardness | The hardness range for bearing ring CFW-1466-55 (CFW-1466-55) is 36-41 HRC. |\n| Bore diameter tolerance | The bore diameter tolerance for bearing ring CFW-1466-55 (CFW-1466-55) is ±0.05 mm. |\n| Maximum forging weight | The maximum forging weight for bearing ring CFW-1466-55 (CFW-1466-55) is 32.2 kg. |\n\nInspection method\n- Visual: Inspect each ring for surface defects that could affect machining or serviceability. Remove scale and lubricant prior to inspection.  \n- Dimensional: Verify bore diameter using calibrated bore gauge or plug gauge appropriate for the part. Record any measurement that falls outside the bore diameter tolerance.  \n- Hardness: Perform hardness checks according to the organization’s calibrated hardness tester procedure. Hardness readings shall be taken at representative locations on the ring and compared to the hardness range.  \n- Weight: Confirm forging weight against the maximum forging weight requirement at receiving inspection.\n\nNonconformance handling\n- Any item failing to meet the requirements in the table is nonconforming and shall be segregated and tagged.  \n- Nonconforming items require disposition by quality. Accepted dispositions include rework to meet specification or scrap, subject to approval.  \n- Records of nonconformance, disposition, and corrective action shall be maintained per company policy.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:QS-CFW-1466-55:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: quality specification\nDocument id: QS-CFW-1466-55\nTitle: Quality specification - bearing ring CFW-1466-55 (52100)\nRevision: Rev B\nPlant: P2\nParts: CFW-1466-55\nRelated documents to cite: none\nValues to include exactly:\n- The hardness range for bearing ring CFW-1466-55 (CFW-1466-55) is 36-41 HRC.\n- The bore diameter tolerance for bearing ring CFW-1466-55 (CFW-1466-55) is ±0.05 mm.\n- The maximum forging weight for bearing ring CFW-1466-55 (CFW-1466-55) is 32.2 kg.\nStructure: scope, requirements table, inspection method, nonconformance handling. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

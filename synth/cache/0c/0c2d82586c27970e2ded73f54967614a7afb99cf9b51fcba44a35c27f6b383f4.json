@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\": [\"Breach persisted across 16 one-minute windows. Metrics moved: citation_rate 0.8989 -> 0.7671 (-14.7%), groundedness 4.1827 -> 3.6125 (-13.6%), top_score 0.8068 -> 0.7526 (-6.7%). Since the baseline, config change chunk_size: 512 -> 128. There have been 2 recent deploys. Logs show retrieval: chunks average 121 tokens; answers missing table rows | healthcheck ok\", \"We observed a sustained breach for 16 one-minute windows. Measurement deltas: citation_rate 0.8989 -> 0.7671 (-14.7%), groundedness 4.1827 -> 3.6125 (-13.6%), top_score 0.8068 -> 0.7526 (-6.7%). Configuration altered since baseline: chunk_size: 512 -> 128. Recent deploys: 2. Log entries: retrieval: chunks average 121 tokens; answers missing table rows | healthcheck ok\", \"Duration of breach: 16 one-minute windows. Key metrics: citation_rate 0.8989 -> 0.7671 (-14.7%), groundedness 4.1827 -> 3.6125 (-13.6%), top_score 0.8068 -> 0.7526 (-6.7%). Config diff from baseline shows chunk_size: 512 -> 128. Number of recent deploys: 2. Relevant logs: retrieval: chunks average 121 tokens; answers missing table rows | healthcheck ok\", \"Breach length: 16 one-minute windows. Impacted metrics: citation_rate 0.8989 -> 0.7671 (-14.7%), groundedness 4.1827 -> 3.6125 (-13.6%), top_score 0.8068 -> 0.7526 (-6.7%). Baseline-to-current config change: chunk_size: 512 -> 128. Recent deploy count: 2. Logs indicate retrieval: chunks average 121 tokens; answers missing table rows | healthcheck ok\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0246#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 16 one-minute windows. Metrics: citation_rate 0.8989 -> 0.7671 (-14.7%), groundedness 4.1827 -> 3.6125 (-13.6%), top_score 0.8068 -> 0.7526 (-6.7%). Config changes since baseline: chunk_size: 512 -> 128. Recent deploys: 2. Logs: retrieval: chunks average 121 tokens; answers missing table rows | healthcheck ok",
+   "role": "user"
+  }
+ ]
+}

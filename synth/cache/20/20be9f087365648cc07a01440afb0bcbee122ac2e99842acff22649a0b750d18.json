@@ -1,0 +1,16 @@
+{
+ "content": "{\"question\":\"Before beginning work, have you verified that the bore diameter tolerance called out for axle hub CFW-4713-78 on the drawing/specification is being used?\"}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "golden:G-010#0",
+ "messages": [
+  {
+   "content": "You write test questions for a document search assistant at Cascade Forge Works, a fictional forging manufacturer. Return JSON {\"question\": \"...\"}.",
+   "role": "system"
+  },
+  {
+   "content": "Write a question phrased as a check before doing work whose answer is this fact. Do not include the value itself.\nFact: the bore diameter tolerance for axle hub CFW-4713-78 (CFW-4713-78) is ±0.04 mm.",
+   "role": "user"
+  }
+ ]
+}

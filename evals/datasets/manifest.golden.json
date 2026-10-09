@@ -1,0 +1,14 @@
+{
+  "generator": "golden",
+  "generator_version": "1.0.0",
+  "model_deployment": "gpt-5-mini",
+  "outputs_sha256": {
+    "golden.jsonl": "064a5fbe8bb145c0adea5362f7542aea56f967dee69130a65b7ba045d1eaf374"
+  },
+  "record_counts": {
+    "fresh": 50,
+    "questions": 150,
+    "standard": 100
+  },
+  "seed": 20261009
+}

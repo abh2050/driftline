@@ -1,0 +1,16 @@
+{
+ "content": "# QS-CFW-4919-21 — Quality specification - connecting rod CFW-4919-21 (1045)\n\nRevision: Rev E  \nPlant: P2  \nParts: CFW-4919-21\n\nScope\nThis specification applies to the manufacturing and final inspection requirements for connecting rod CFW-4919-21 produced at Plant P2. It defines acceptance criteria for material hardness, critical bore dimensional tolerance, and maximum forging weight for shipment.\n\nRequirements table\n| Characteristic | Requirement |\n|---|---|\n| Material hardness | The hardness range for connecting rod CFW-4919-21 (CFW-4919-21) is 29-32 HRC. |\n| Big end bore tolerance | The bore diameter tolerance for connecting rod CFW-4919-21 (CFW-4919-21) is ±0.10 mm. |\n| Forging mass limit | The maximum forging weight for connecting rod CFW-4919-21 (CFW-4919-21) is 8.0 kg. |\n\nInspection method\n- Hardness: Verify hardness using a calibrated Rockwell hardness tester on prepared surfaces; report readings against the specified hardness range. Record hardness values on the inspection record.\n- Bore diameter: Measure the big end bore using calibrated bore measurement equipment; confirm the measured diameter is within the specified bore diameter tolerance. Document measurement results on the part inspection sheet.\n- Weight: Confirm forging mass at final inspection using a calibrated scale; ensure the forging does not exceed the specified maximum forging weight. Include weight result in the inspection report.\n\nNonconformance handling\nParts that do not meet any requirement in the Requirements table shall be segregated and flagged as nonconforming. Nonconforming parts must be dispositioned by QA in accordance with internal nonconformance procedures. Rework or repair actions shall be evaluated and approved by QA; only parts meeting all specified requirements shall be released for final packing and shipment.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:QS-CFW-4919-21:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: quality specification\nDocument id: QS-CFW-4919-21\nTitle: Quality specification - connecting rod CFW-4919-21 (1045)\nRevision: Rev E\nPlant: P2\nParts: CFW-4919-21\nRelated documents to cite: none\nValues to include exactly:\n- The hardness range for connecting rod CFW-4919-21 (CFW-4919-21) is 29-32 HRC.\n- The bore diameter tolerance for connecting rod CFW-4919-21 (CFW-4919-21) is ±0.10 mm.\n- The maximum forging weight for connecting rod CFW-4919-21 (CFW-4919-21) is 8.0 kg.\nStructure: scope, requirements table, inspection method, nonconformance handling. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

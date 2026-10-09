@@ -1,0 +1,16 @@
+{
+ "content": "# FAQ-026 Engineering FAQ #26\n\nRevision: Rev A\n\nQ1: What lubricant part should be used for Heat Treat hydraulic forging press #2 (EQ-P1-L4-HP02)?\nA1: Use lubricant part number CFW-LUB-195 for EQ-P1-L4-HP02. Refer to MM-P1-L4-HP02-S2 for storage and handling specifics and ECN-2026-044 for the latest approved substitution guidance.\n\nQ2: What is the mandrel clamp bolt torque for Ring Rolling radial ring rolling mill #2 (EQ-P3-L2-RR02)?\nA2: Set mandrel clamp bolt torque to 475 N·m for EQ-P3-L2-RR02. Record the torque verification in the maintenance log per SOP-P3-L2-05 and reference ECN-2026-044 for any retrofit notes.\n\nQ3: What lubricant part should be used for Ring Rolling shot blast cabinet #1 (EQ-P3-L2-SB01)?\nA3: Use lubricant part number CFW-LUB-463 for EQ-P3-L2-SB01. Consult MM-P1-L4-HP02-S2 for approved lubricant families and SOP-P3-L2-05 for application points and purge procedures.\n\nQ4: What is the required coil cooling water flow minimum for Hot Forge induction billet heater #3 (EQ-P3-L1-IH03)?\nA4: Maintain coil cooling water flow minimum at 65 L/min for EQ-P3-L1-IH03. Verify flow per SOP-P3-L2-05 and document any deviations; ECN-2026-044 contains instructions if system modifications affect flow.\n\nQ5: What is the mandrel clamp bolt torque for Heat Treat radial ring rolling mill #1 (EQ-P3-L4-RR01)?\nA5: Set mandrel clamp bolt torque to 605 N·m for EQ-P3-L4-RR01. Torque checks must follow SOP-P3-L2-05 intervals and tooling references in MM-P1-L4-HP02-S2; log results and reference ECN-2026-044 if corrective action is required.\n\nRelated documents: ECN-2026-044, MM-P1-L4-HP02-S2, SOP-P3-L2-05",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:FAQ-026:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: engineering FAQ\nDocument id: FAQ-026\nTitle: Engineering FAQ #26\nRevision: Rev A\nRelated documents to cite: ECN-2026-044, MM-P1-L4-HP02-S2, SOP-P3-L2-05\nValues to include exactly:\n- The lubricant part number for Heat Treat hydraulic forging press #2 (EQ-P1-L4-HP02) is CFW-LUB-195.\n- The mandrel clamp bolt torque for Ring Rolling radial ring rolling mill #2 (EQ-P3-L2-RR02) is 475 N·m.\n- The lubricant part number for Ring Rolling shot blast cabinet #1 (EQ-P3-L2-SB01) is CFW-LUB-463.\n- The coil cooling water flow minimum for Hot Forge induction billet heater #3 (EQ-P3-L1-IH03) is 65 L/min.\n- The mandrel clamp bolt torque for Heat Treat radial ring rolling mill #1 (EQ-P3-L4-RR01) is 605 N·m.\nStructure: five question and answer pairs, one per given value. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

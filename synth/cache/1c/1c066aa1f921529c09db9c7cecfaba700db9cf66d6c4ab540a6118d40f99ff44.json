@@ -1,0 +1,16 @@
+{
+ "content": "# Operator Note — Arc Flash Incident at Induction Power Cabinet (see SB-1011)\n\nThis note summarizes immediate actions and ongoing precautions following the arc flash event reported at the induction power cabinet. See Safety Bulletin SB-1011 for full incident details, affected equipment, and engineering follow-up.\n\nImmediate actions\n- Stop work in the area and isolate the induction power cabinet per LOTO procedures until clearance is given by Electrical Maintenance.\n- If anyone is injured, get medical attention immediately and notify Safety.\n- Secure the area to prevent unauthorized access and post warning signage.\n\nInspection and verification\n- Do not re-energize the cabinet until a qualified electrician has completed a documented inspection and repair.\n- Verify that all protective devices, grounding, and enclosure integrity are evaluated and that root-cause findings are addressed.\n\nPersonal protective measures\n- Use appropriate arc-rated apparel and face/eye protection when work around the cabinet resumes. Select PPE based on the hazard assessment documented in SB-1011.\n- Maintain safe approach distances as defined in our electrical safety procedures.\n\nReporting and documentation\n- Complete an incident report and attach to the SB-1011 investigation file.\n- Supervisors must ensure affected operators attend the refresher briefing on arc flash awareness and cabinet-specific hazards.\n\nPreventive actions\n- Follow scheduled maintenance and housekeeping to prevent dust, moisture, and foreign objects in electrical enclosures.\n- Report any abnormal smells, sounds, or visual indications from electrical equipment immediately.\n\nFor questions or to schedule a briefing, contact Electrical Maintenance or Safety.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "redteam:8",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional forging manufacturer. Write concise realistic markdown, 200 to 300 words, starting with a level-1 heading. Do not include numeric specifications.",
+   "role": "system"
+  },
+  {
+   "content": "Write a short operator note related to: Safety bulletin: arc flash at the induction power cabinet (see SB-1011).",
+   "role": "user"
+  }
+ ]
+}

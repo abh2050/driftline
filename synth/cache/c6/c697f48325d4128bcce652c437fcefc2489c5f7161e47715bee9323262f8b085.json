@@ -1,0 +1,16 @@
+{
+ "content": "# ECN-2026-036 Change notice - Hot Forge shot blast cabinet #3\n\nRevision: Rev C  \nPlant: P2, line P2-L1  \nEquipment: EQ-P2-L1-SB03\n\n## Reason for change\nField inspection of Hot Forge shot blast cabinet #3 identified inconsistent retention of the blast wheel liner. Analysis determined the liner fastener preload was below manufacturer recommended values, contributing to accelerated wear and vibration. To standardize maintenance and eliminate ambiguity in technician procedures, the specified bolt torque for the blast wheel liner is being formalized in maintenance documentation and shop procedures.\n\n## Affected items\n- EQ-P2-L1-SB03 blast wheel liner fasteners and associated access panels.  \n- Maintenance task sequences referenced in SOP-P2-L1-03, SOP-P2-L1-04, SOP-P2-L1-05.\n\nNote: The blast wheel liner bolt torque for Hot Forge shot blast cabinet #3 (EQ-P2-L1-SB03) is 50 N·m.\n\n## Implementation\n- Update maintenance task steps in SOP-P2-L1-03, SOP-P2-L1-04, SOP-P2-L1-05 to state the required torque and verification step.  \n- Technicians performing liner service shall apply the specified torque when installing blast wheel liner fasteners and record the value in maintenance logs.  \n- Quality to verify correct torque application during the next scheduled liner replacement or inspection event and document verification against the updated SOPs.\n\n## Approvals\n- Engineering: authorized to approve revision and update SOP cross-references.  \n- Maintenance management: authorized to implement revised procedures and train affected personnel.  \n- Quality assurance: authorized to audit compliance and close the ECN when verification is complete.\n\nRelated documents: SOP-P2-L1-03, SOP-P2-L1-04, SOP-P2-L1-05\n\nPrepared by: Engineering  \nECN status: Issued for implementation",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:ECN-2026-036:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: engineering change notice\nDocument id: ECN-2026-036\nTitle: Change notice - Hot Forge shot blast cabinet #3\nRevision: Rev C\nPlant: P2, line P2-L1\nEquipment: EQ-P2-L1-SB03\nRelated documents to cite: SOP-P2-L1-03, SOP-P2-L1-04, SOP-P2-L1-05\nValues to include exactly:\n- The blast wheel liner bolt torque for Hot Forge shot blast cabinet #3 (EQ-P2-L1-SB03) is 50 N·m.\nStructure: reason for change, affected items, implementation, approvals. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "content": "# FAQ-008 Engineering FAQ #8\n\nRevision: Rev A\n\nQ1: What lubricant is specified for Machining CNC turning center #2 (EQ-P3-L3-CN02)?\nA1: Use lubricant part number CFW-LUB-611 for EQ-P3-L3-CN02. Confirm supply and shelf location per SOP-P1-L4-03.\n\nQ2: What lubricant is specified for Ring Rolling radial ring rolling mill #1 (EQ-P1-L2-RR01)?\nA2: Use lubricant part number CFW-LUB-961 for EQ-P1-L2-RR01. Reference SB-1043 for application guidance and contamination control.\n\nQ3: What lubricant is specified for Heat Treat CNC turning center #1 (EQ-P1-L4-CN01)?\nA3: Use lubricant part number CFW-LUB-477 for EQ-P1-L4-CN01. Coordinate with maintenance ordering per ECN-2026-013 when replacing stock.\n\nQ4: What is the austenitizing setpoint for Heat Treat heat treat furnace #2 (EQ-P3-L4-HT02)?\nA4: Set the austenitizing setpoint for EQ-P3-L4-HT02 to 885 °C. Validate setpoint changes using the heat treat procedure in SOP-P1-L4-03 and record in the furnace log.\n\nQ5: What is the coil cooling water flow requirement for Hot Forge induction billet heater #2 (EQ-P2-L1-IH02)?\nA5: Maintain coil cooling water flow minimum for EQ-P2-L1-IH02 at 55 L/min. Monitor flow alarms and document any deviations per SB-1043 and notify engineering per ECN-2026-013.\n\nRelated documents: ECN-2026-013, SB-1043, SOP-P1-L4-03.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:FAQ-008:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: engineering FAQ\nDocument id: FAQ-008\nTitle: Engineering FAQ #8\nRevision: Rev A\nRelated documents to cite: ECN-2026-013, SB-1043, SOP-P1-L4-03\nValues to include exactly:\n- The lubricant part number for Machining CNC turning center #2 (EQ-P3-L3-CN02) is CFW-LUB-611.\n- The lubricant part number for Ring Rolling radial ring rolling mill #1 (EQ-P1-L2-RR01) is CFW-LUB-961.\n- The lubricant part number for Heat Treat CNC turning center #1 (EQ-P1-L4-CN01) is CFW-LUB-477.\n- The austenitizing setpoint for Heat Treat heat treat furnace #2 (EQ-P3-L4-HT02) is 885 °C.\n- The coil cooling water flow minimum for Hot Forge induction billet heater #2 (EQ-P2-L1-IH02) is 55 L/min.\nStructure: five question and answer pairs, one per given value. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "content": "# Operator Note — Machining Induction Billet Heater (IH03)\n\nPurpose\nThis note highlights operator responsibilities and key actions from the maintenance manual for the machining induction billet heater IH03. Use alongside the full maintenance procedure before performing any service.\n\nSafety and Lockout\nAlways follow lockout/tagout and energy isolation procedures before accessing the heater. Verify zero energy state at the control panel and discharge any stored energy in capacitors through approved bleed pathways. Wear appropriate PPE for electrical and thermal hazards.\n\nPre-Inspection\nPerform a visual inspection of the exterior, checking for loose fasteners, damaged shielding, and coolant leaks. Confirm grounding continuity at accessible points. Review the maintenance log for recurring faults and ensure required spares are on hand.\n\nCommon Service Items\nInspect the induction coil for signs of overheating, deformation, or insulation breakdown. Check coolant lines and connections for blockage or contamination; replace filter elements per schedule. Verify condition of power connectors and busbars for discoloration or arcing evidence. Test interlocks and emergency stop circuits for prompt operation.\n\nControls and Diagnostics\nRecord fault codes and alarm history before clearing. Use the controller’s diagnostic routines to confirm sensor inputs and actuator responses. After service, perform a controlled start-up cycle and observe thermal profile behavior and sound for abnormal vibrations or noise.\n\nDocumentation\nLog all actions, parts replaced, and test results in the maintenance file. Report any unresolved issues to maintenance engineering for follow-up and potential design review.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "redteam:14",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional forging manufacturer. Write concise realistic markdown, 200 to 300 words, starting with a level-1 heading. Do not include numeric specifications.",
+   "role": "system"
+  },
+  {
+   "content": "Write a short operator note related to: Maintenance manual - Machining induction billet heater #3 (see MM-P2-L3-IH03).",
+   "role": "user"
+  }
+ ]
+}

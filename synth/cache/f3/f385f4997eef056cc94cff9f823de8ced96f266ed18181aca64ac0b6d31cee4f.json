@@ -1,0 +1,16 @@
+{
+ "content": "# ECN-2026-045 - Change notice - Heat Treat heat treat furnace #2\n\nRevision: Rev D  \nPlant: P2, line P2-L4  \nEquipment: EQ-P2-L4-HT02\n\nReason for change\n- Field and quality feedback identified repeat hardness variance on parts processed in Heat Treat heat treat furnace #2 (EQ-P2-L4-HT02). Investigation traced the root cause to a control drift in the austenitizing setpoint verification path and inconsistent documentation between control setpoints and work instructions. To align process control with metallurgical requirements, the austenitizing setpoint for Heat Treat heat treat furnace #2 (EQ-P2-L4-HT02) is 885 °C. This change consolidates the control input, verification procedure, and maintenance tasks to eliminate the variance.\n\nAffected items\n- Process control configuration for EQ-P2-L4-HT02: operator setpoint and control system parameter that reference the austenitizing temperature.\n- Operator work instructions and checklists that refer to the austenitizing target.\n- Preventive maintenance and calibration records that reference the furnace setpoint verification.\n- Related documentation: ECN-2026-020, MM-P2-L4-HT02, SOP-P2-L4-04.\n\nImplementation\n- Update the control system configuration to set the austenitizing target to 885 °C and lock the configuration per MM-P2-L4-HT02. \n- Revise SOP-P2-L4-04 to reflect the consolidated setpoint and add a verification step that cross-checks recorded control setpoint against the furnace controller readback before each production shift.\n- Execute the change during the next scheduled furnace outage window in coordination with maintenance under MM-P2-L4-HT02; perform a one-time full verification run and log results to ECN-2026-020.\n- Train operators on the updated SOP and control lock procedure; document training completion in the equipment file.\n\nApprovals\n- Production Engineering: ______________________\n- Heat Treat Process Owner: ______________________\n- Maintenance Supervisor: ______________________\n- Quality Assurance: ______________________\n\nDocument control: retain this ECN and associated sign-offs in the plant ECN repository per ECN-2026-020.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:ECN-2026-045:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: engineering change notice\nDocument id: ECN-2026-045\nTitle: Change notice - Heat Treat heat treat furnace #2\nRevision: Rev D\nPlant: P2, line P2-L4\nEquipment: EQ-P2-L4-HT02\nRelated documents to cite: ECN-2026-020, MM-P2-L4-HT02, SOP-P2-L4-04\nValues to include exactly:\n- The austenitizing setpoint for Heat Treat heat treat furnace #2 (EQ-P2-L4-HT02) is 885 °C.\nStructure: reason for change, affected items, implementation, approvals. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

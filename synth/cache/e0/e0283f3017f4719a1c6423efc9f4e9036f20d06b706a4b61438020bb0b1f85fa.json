@@ -1,0 +1,16 @@
+{
+ "content": "# ECN-2026-016 - Change notice - Machining shot blast cabinet #1\n\nRevision: Rev C  \nPlant: P3, line P3-L3  \nEquipment: EQ-P3-L3-SB01\n\nReason for change\n- Implement standardized lubricant for improved seal and bearing life on machining shot blast cabinet EQ-P3-L3-SB01. Current practice allowed multiple equivalent part numbers, causing inventory variance and installation errors. Standardization reduces downtime and simplifies procurement and maintenance documentation. Refer to historical maintenance findings summarized in SB-1010 for failure mode context.\n\nAffected items\n- Lubricant for bearings and rotating assemblies on EQ-P3-L3-SB01 will be changed to part number CFW-LUB-709. This is the only lubricant part number authorized for this equipment after this ECN.\n- Maintenance kits and spares lists for P3-L3 inventory must be updated to reflect CFW-LUB-709. Update affected pages in SOP-P3-L3-03 and SOP-P3-L3-04 to reflect the approved lubricant and handling requirements.\n\nImplementation\n- Effective immediately upon approval, all scheduled and corrective maintenance actions on EQ-P3-L3-SB01 shall use CFW-LUB-709. Existing stock of previously used lubricants may be consumed under a one-time allowance only if documented with the maintenance record and cross-referenced to this ECN.\n- Update parts master, procurement orders, and storeroom bin labels to show CFW-LUB-709 as the authorized lubricant for EQ-P3-L3-SB01.\n- Maintenance personnel shall follow lubrication procedures and safety precautions as written in SOP-P3-L3-03 and SOP-P3-L3-04. Training briefings will be recorded in the maintenance log for EQ-P3-L3-SB01.\n- Verification: maintenance supervisor to inspect next three maintenance actions on EQ-P3-L3-SB01 to confirm use of CFW-LUB-709 and update the equipment history record.\n\nApprovals\n- Originator: Maintenance Engineering (signature)  \n- Functional approval: Plant Maintenance Manager (signature)  \n- Technical approval: Reliability Engineering (signature)  \n- Document control: Quality Assurance (signature)\n\nRelated documents: SB-1010, SOP-P3-L3-03, SOP-P3-L3-04",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:ECN-2026-016:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: engineering change notice\nDocument id: ECN-2026-016\nTitle: Change notice - Machining shot blast cabinet #1\nRevision: Rev C\nPlant: P3, line P3-L3\nEquipment: EQ-P3-L3-SB01\nRelated documents to cite: SB-1010, SOP-P3-L3-03, SOP-P3-L3-04\nValues to include exactly:\n- The lubricant part number for Machining shot blast cabinet #1 (EQ-P3-L3-SB01) is CFW-LUB-709.\nStructure: reason for change, affected items, implementation, approvals. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

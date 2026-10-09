@@ -1,0 +1,16 @@
+{
+ "content": "# ECN-2026-021 - Change notice - Machining hydraulic forging press #2\n\nRevision: Rev C  \nPlant: P1, line P1-L3  \nEquipment: EQ-P1-L3-HP02\n\nReason for change\n- A review of operational records and vendor guidance has identified that the current machine control settings do not explicitly limit the system pressure to the manufacturer-recommended maximum. To mitigate risk of seal failure and pump overload during machining cycles, the hydraulic system pressure limit for Machining hydraulic forging press #2 (EQ-P1-L3-HP02) will be defined and enforced in the machine control and documented in maintenance procedures.\n- This change aligns the press configuration with preventative maintenance practices referenced in SB-1029 and the process control expectations in SOP-P1-L3-01.\n\nAffected items\n- Hydraulic pressure setpoint in the machine PLC and HMI for EQ-P1-L3-HP02.\n- Alarm and interlock logic associated with overpressure condition on EQ-P1-L3-HP02.\n- Operator and maintenance procedures that reference allowable system pressures for EQ-P1-L3-HP02 (update to SOP-P1-L3-01 required).\n- Spare parts and inspection criteria in SB-1029 where pressure-related wear items are listed for EQ-P1-L3-HP02.\n\nImplementation\n- Configure PLC/HMI for EQ-P1-L3-HP02 to enforce a hard limit of 295 bar as the system pressure limit. Integrate an immediate machine inhibit and visible alarm if pressure exceeds this limit.\n- Update SOP-P1-L3-01 to reflect the enforced system pressure limit for EQ-P1-L3-HP02 and add verification steps for operators during shift startup.\n- Update SB-1029 to include inspection guidance tied to the enforced pressure limit for wear items on EQ-P1-L3-HP02.\n- Execute a verification run on EQ-P1-L3-HP02 after configuration changes; document results in the equipment history file.\n\nApprovals\n- Engineering: ______________________\n- Maintenance: ______________________\n- Operations: ______________________\n\nRelated documents\n- ECN-2026-035\n- SB-1029\n- SOP-P1-L3-01",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:ECN-2026-021:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: engineering change notice\nDocument id: ECN-2026-021\nTitle: Change notice - Machining hydraulic forging press #2\nRevision: Rev C\nPlant: P1, line P1-L3\nEquipment: EQ-P1-L3-HP02\nRelated documents to cite: ECN-2026-035, SB-1029, SOP-P1-L3-01\nValues to include exactly:\n- The system pressure limit for Machining hydraulic forging press #2 (EQ-P1-L3-HP02) is 295 bar.\nStructure: reason for change, affected items, implementation, approvals. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

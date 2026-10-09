@@ -1,0 +1,16 @@
+{
+ "content": "{\"question\":\"What is the blast wheel liner bolt torque for the Ring Rolling shot blast cabinet #1 (EQ-P3-L2-SB01)?\"}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "golden:G-075#0",
+ "messages": [
+  {
+   "content": "You write test questions for a document search assistant at Cascade Forge Works, a fictional forging manufacturer. Return JSON {\"question\": \"...\"}.",
+   "role": "system"
+  },
+  {
+   "content": "Write a question that names the equipment or part by description whose answer is this fact. Do not include the value itself.\nFact: the blast wheel liner bolt torque for Ring Rolling shot blast cabinet #1 (EQ-P3-L2-SB01) is 100 N·m.",
+   "role": "user"
+  }
+ ]
+}

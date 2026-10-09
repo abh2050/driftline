@@ -1,0 +1,16 @@
+{
+ "content": "# MM-P1-L2-HT03-S1 - Lubrication and fluids - Ring Rolling heat treat furnace #3\nRevision: Rev E  \nSupersedes: Rev D  \nPlant: P1, line P1-L2  \nEquipment: EQ-P1-L2-HT03\n\nScope\nThis procedure covers lubrication and fluid handling for Ring Rolling heat treat furnace #3 (EQ-P1-L2-HT03) in P1, line P1-L2. It defines approved lubricant part number, quench delay requirement, tools required, stepwise procedure for application and inspection, and acceptance criteria. Refer to SOP-P1-L2-01, SOP-P1-L2-02, and SOP-P1-L2-03 for related operational and safety procedures.\n\nTools\n- Approved lubricant: CFW-LUB-652\n- Clean lint-free wipes\n- Approved dispensing container compatible with CFW-LUB-652\n- PPE as required by SOP-P1-L2-02\n\nProcedure\n1. Verify equipment is in a safe state per SOP-P1-L2-01 and SOP-P1-L2-03. Confirm work area and PPE.\n2. Inspect dispensing container and confirm label matches CFW-LUB-652. Use only CFW-LUB-652 for all lubrication tasks on EQ-P1-L2-HT03.\n3. Clean application points with lint-free wipes to remove contaminants prior to lubrication.\n4. Apply lubricant sparingly to bearings and sliding interfaces identified in the equipment maintenance diagram. Remove excess immediately to prevent accumulation.\n5. For quench operations, ensure the quench delay maximum for Ring Rolling heat treat furnace #3 (EQ-P1-L2-HT03) is 24 seconds. Do not exceed this quench delay maximum.\n6. Record lubricant part number applied and any deviations in the maintenance log. Follow escalation in SOP-P1-L2-03 if discrepancies are found.\n\nAcceptance criteria\n- Lubricant applied is CFW-LUB-652 with no evidence of cross-contamination.\n- Application points are clean, dry except for the intended lubricant film, and free of excess buildup.\n- Quench operations meet the quench delay maximum for Ring Rolling heat treat furnace #3 (EQ-P1-L2-HT03) of 24 seconds.\n- Maintenance log entries completed and consistent with SOP-P1-L2-01 and SOP-P1-L2-02.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:MM-P1-L2-HT03-S1:v2#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: equipment maintenance manual\nDocument id: MM-P1-L2-HT03-S1\nTitle: Lubrication and fluids - Ring Rolling heat treat furnace #3\nRevision: Rev E\nPlant: P1, line P1-L2\nEquipment: EQ-P1-L2-HT03\nThis revision supersedes Rev D. Mention that in the header.\nRelated documents to cite: SOP-P1-L2-01, SOP-P1-L2-02, SOP-P1-L2-03\nValues to include exactly:\n- The quench delay maximum for Ring Rolling heat treat furnace #3 (EQ-P1-L2-HT03) is 24 seconds.\n- The lubricant part number for Ring Rolling heat treat furnace #3 (EQ-P1-L2-HT03) is CFW-LUB-652.\nStructure: sections for scope, tools, procedure, acceptance criteria. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

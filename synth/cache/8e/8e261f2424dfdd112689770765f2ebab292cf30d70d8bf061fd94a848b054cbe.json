@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\": [\"A breach persisted across 17 one-minute windows. Metrics changed: citation_rate 0.954 -> 0.6931 (-27.3%), groundedness 4.3211 -> 3.1259 (-27.7%), hit_count 7.508 -> 0.7489 (-90.0%), tokens_in 2221.2756 -> -57.4126 (-102.6%). Config drift since baseline: top_k: 8 -> 2. Recent deploys: 2. Logs: retrieval: returned 2 hits (top_k=2) | search: warm cache miss\", \"Sustained breach lasted 17 one-minute windows. Observed metric deltas: citation_rate 0.954 -> 0.6931 (-27.3%), groundedness 4.3211 -> 3.1259 (-27.7%), hit_count 7.508 -> 0.7489 (-90.0%), tokens_in 2221.2756 -> -57.4126 (-102.6%). Configuration change from baseline: top_k: 8 -> 2. Recent deploys: 2. Logs captured: retrieval: returned 2 hits (top_k=2) | search: warm cache miss\", \"There was a breach for 17 one-minute windows. Key metrics: citation_rate 0.954 -> 0.6931 (-27.3%), groundedness 4.3211 -> 3.1259 (-27.7%), hit_count 7.508 -> 0.7489 (-90.0%), tokens_in 2221.2756 -> -57.4126 (-102.6%). Baseline vs current config: top_k: 8 -> 2. Recent deploys: 2. Relevant logs: retrieval: returned 2 hits (top_k=2) | search: warm cache miss\", \"Incident spanned 17 one-minute windows. Metric shifts recorded: citation_rate 0.954 -> 0.6931 (-27.3%), groundedness 4.3211 -> 3.1259 (-27.7%), hit_count 7.508 -> 0.7489 (-90.0%), tokens_in 2221.2756 -> -57.4126 (-102.6%). Config changes since baseline include top_k: 8 -> 2. Recent deploys: 2. Logs show: retrieval: returned 2 hits (top_k=2) | search: warm cache miss\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0317#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 17 one-minute windows. Metrics: citation_rate 0.954 -> 0.6931 (-27.3%), groundedness 4.3211 -> 3.1259 (-27.7%), hit_count 7.508 -> 0.7489 (-90.0%), tokens_in 2221.2756 -> -57.4126 (-102.6%). Config changes since baseline: top_k: 8 -> 2. Recent deploys: 2. Logs: retrieval: returned 2 hits (top_k=2) | search: warm cache miss",
+   "role": "user"
+  }
+ ]
+}

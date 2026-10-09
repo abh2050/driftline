@@ -1,0 +1,16 @@
+{
+ "content": "{\n  \"paraphrases\": [\n    \"Breach persisted for 19 one-minute windows. Metrics dropped: citation_rate 0.9493 -> 0.5222 (-45.0%), groundedness 4.6001 -> 2.2674 (-50.7%), top_score 0.8441 -> 0.3198 (-62.1%). Configuration differences since baseline: embedding_deployment: text-embedding-3-small -> text-embedding-3-large. Recent deploys: 2. Relevant logs: search: vector dimension 3072 queried against field with 1536 dims, fell back to keyword | retrieval: top score 0.21 below floor 0.5 | search: warm cache miss.\",\n    \"The incident lasted 19 one-minute windows. Observed metric regressions — citation_rate moved from 0.9493 to 0.5222 (-45.0%), groundedness from 4.6001 to 2.2674 (-50.7%), and top_score from 0.8441 to 0.3198 (-62.1%). Config changes compared to baseline include embedding_deployment: text-embedding-3-small -> text-embedding-3-large. There have been 2 recent deploys. Logs show: search: vector dimension 3072 queried against field with 1536 dims, fell back to keyword | retrieval: top score 0.21 below floor 0.5 | search: warm cache miss.\",\n    \"A breach was sustained across 19 one-minute windows. Key metrics: citation_rate 0.9493 -> 0.5222 (-45.0%), groundedness 4.6001 -> 2.2674 (-50.7%), top_score 0.8441 -> 0.3198 (-62.1%). Baseline vs current config: embedding_deployment: text-embedding-3-small -> text-embedding-3-large. Recent deploy count: 2. Logged events: search: vector dimension 3072 queried against field with 1536 dims, fell back to keyword | retrieval: top score 0.21 below floor 0.5 | search: warm cache miss.\",\n    \"Duration of breach: 19 one-minute windows. Performance changes: citation_rate decreased 0.9493 -> 0.5222 (-45.0%), groundedness decreased 4.6001 -> 2.2674 (-50.7%), and top_score decreased 0.8441 -> 0.3198 (-62.1%). Configuration drift since baseline: embedding_deployment: text-embedding-3-small -> text-embedding-3-large. Number of recent deploys: 2. Collected logs: search: vector dimension 3072 queried against field with 1536 dims, fell back to keyword | retrieval: top score 0.21 below floor 0.5 | search: warm cache miss.\"\n  ]\n}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0450#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 19 one-minute windows. Metrics: citation_rate 0.9493 -> 0.5222 (-45.0%), groundedness 4.6001 -> 2.2674 (-50.7%), top_score 0.8441 -> 0.3198 (-62.1%). Config changes since baseline: embedding_deployment: text-embedding-3-small -> text-embedding-3-large. Recent deploys: 2. Logs: search: vector dimension 3072 queried against field with 1536 dims, fell back to keyword | retrieval: top score 0.21 below floor 0.5 | search: warm cache miss",
+   "role": "user"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\":[\"A breach persisted across 14 one-minute windows. Observed metrics: citation_rate fell from 0.8881 to 0.7595 (−14.5%), top_score dropped from 0.8342 to 0.7626 (−8.6%). Configuration drift since baseline: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 1. Logs: citation parser: doc_id missing from search results | search: warm cache miss\",\"Issue lasted for 14 one-minute windows. Metric changes: citation_rate 0.8881 -> 0.7595 (−14.5%), top_score 0.8342 -> 0.7626 (−8.6%). Config diff from baseline: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 1. Logs: citation parser: doc_id missing from search results | search: warm cache miss\",\"Sustained breach covering 14 one-minute windows. Key metrics: citation_rate decreased 0.8881 to 0.7595 (−14.5%), top_score decreased 0.8342 to 0.7626 (−8.6%). Configuration change since baseline: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 1. Logs: citation parser: doc_id missing from search results | search: warm cache miss\",\"Breach window count: 14 one-minute windows. Metrics recorded: citation_rate 0.8881 -> 0.7595 (−14.5%), top_score 0.8342 -> 0.7626 (−8.6%). Config change relative to baseline: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 1. Logs: citation parser: doc_id missing from search results | search: warm cache miss\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0057#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 14 one-minute windows. Metrics: citation_rate 0.8881 -> 0.7595 (-14.5%), top_score 0.8342 -> 0.7626 (-8.6%). Config changes since baseline: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 1. Logs: citation parser: doc_id missing from search results | search: warm cache miss",
+   "role": "user"
+  }
+ ]
+}

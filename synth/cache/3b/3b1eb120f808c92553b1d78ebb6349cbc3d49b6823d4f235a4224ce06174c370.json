@@ -1,0 +1,16 @@
+{
+ "content": "{\n  \"paraphrases\": [\n    \"Breach persisted across 3 one-minute windows. Metrics moved: groundedness 4.5738 -> 4.3005 (-6.0%), hit_count 7.9158 -> 7.5122 (-5.1%). Config changes since baseline: none. Recent deploys: 0. Logs: search: document count 271, source count 300 | indexer cfw-docs-indexer: last run failed (quota exceeded on skillset) | search: warm cache miss\",\n    \"Sustained breach for 3 one-minute windows. Observed metric deltas: groundedness decreased from 4.5738 to 4.3005 (-6.0%), hit_count fell from 7.9158 to 7.5122 (-5.1%). Config changes since baseline: none. Recent deploys: 0. Logs: search: document count 271, source count 300 | indexer cfw-docs-indexer: last run failed (quota exceeded on skillset) | search: warm cache miss\",\n    \"Incident spanned 3 one-minute windows with a sustained breach. Metrics: groundedness 4.5738 -> 4.3005 (-6.0%), hit_count 7.9158 -> 7.5122 (-5.1%). Config changes since baseline: none. Recent deploys: 0. Logs: search: document count 271, source count 300 | indexer cfw-docs-indexer: last run failed (quota exceeded on skillset) | search: warm cache miss\",\n    \"There was a breach lasting 3 one-minute windows. Metric changes recorded: groundedness 4.5738 -> 4.3005 (-6.0%) and hit_count 7.9158 -> 7.5122 (-5.1%). Config changes since baseline: none. Recent deploys: 0. Logs: search: document count 271, source count 300 | indexer cfw-docs-indexer: last run failed (quota exceeded on skillset) | search: warm cache miss\"\n  ]\n}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0830#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 3 one-minute windows. Metrics: groundedness 4.5738 -> 4.3005 (-6.0%), hit_count 7.9158 -> 7.5122 (-5.1%). Config changes since baseline: none. Recent deploys: 0. Logs: search: document count 271, source count 300 | indexer cfw-docs-indexer: last run failed (quota exceeded on skillset) | search: warm cache miss",
+   "role": "user"
+  }
+ ]
+}

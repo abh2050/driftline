@@ -1,0 +1,16 @@
+{
+ "content": "# MM-P1-L3-IH01 — Maintenance manual - Machining induction billet heater #1\nRevision: Rev C  \nPlant: P1, line P1-L3  \nEquipment: EQ-P1-L3-IH01\n\n## Scope\nThis document covers preventive and corrective maintenance tasks for Machining induction billet heater #1 (EQ-P1-L3-IH01). Use this manual in conjunction with ECN-2026-005 and SOP-P1-L3-03 for electrical changes and SOP-P1-L3-05 for safety lockout procedures.\n\n## Tools\n- Standard insulated hand tools per SOP-P1-L3-05\n- Portable IR thermometer or process temperature probe compatible with plant data acquisition\n- Flow meter connection kit for coil cooling water verification\n- Personal protective equipment as required by SOP-P1-L3-05\n\n## Procedure\n- Verify lockout/tagout per SOP-P1-L3-05 before starting work on EQ-P1-L3-IH01.\n- Inspect coil assembly and busbar connections for signs of wear or overheating; follow ECN-2026-005 for approved repair changes.\n- Replace or tighten connections using appropriate insulated tools; follow electrical change guidance in ECN-2026-005.\n- Recommission heater controls following SOP-P1-L3-03. Allow system controls to reach steady state per SOP guidance.\n- Measure billet temperature at the process measurement point and verify against target. Measure coil cooling water flow at the coil inlet using the flow meter connection kit and record the result.\n- If measured values do not meet acceptance criteria, perform troubleshooting steps referenced in SOP-P1-L3-03 and ECN-2026-005, then re-measure after corrective action.\n\n## Acceptance criteria\n- The target billet temperature for Machining induction billet heater #1 (EQ-P1-L3-IH01) is 1235 °C.\n- The coil cooling water flow minimum for Machining induction billet heater #1 (EQ-P1-L3-IH01) is 79 L/min.\n- All electrical connections must comply with ECN-2026-005 revisions and safety steps in SOP-P1-L3-05. Rework is required if either criterion is not met; document actions and reference SOP-P1-L3-03 for control verification.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:MM-P1-L3-IH01:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: equipment maintenance manual\nDocument id: MM-P1-L3-IH01\nTitle: Maintenance manual - Machining induction billet heater #1\nRevision: Rev C\nPlant: P1, line P1-L3\nEquipment: EQ-P1-L3-IH01\nRelated documents to cite: ECN-2026-005, SOP-P1-L3-03, SOP-P1-L3-05\nValues to include exactly:\n- The target billet temperature for Machining induction billet heater #1 (EQ-P1-L3-IH01) is 1235 °C.\n- The coil cooling water flow minimum for Machining induction billet heater #1 (EQ-P1-L3-IH01) is 79 L/min.\nStructure: sections for scope, tools, procedure, acceptance criteria. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

@@ -1,0 +1,341 @@
+{
+ "baseline_config_hash": "7bbf54607d35",
+ "baseline_start": "2026-09-21T00:00:00+00:00",
+ "days": 14,
+ "deploys": [
+  {
+   "commit": "27059953bbeb5a6b4e170c4725bbf5021594cd17",
+   "ts": "2026-09-23T00:00:00+00:00"
+  },
+  {
+   "commit": "05e527f68991fa5b7f597dbf00cd77dc3145718b",
+   "ts": "2026-09-26T00:00:00+00:00"
+  },
+  {
+   "commit": "3c76a03263314e938ec94010b1bb06d69d253c76",
+   "ts": "2026-09-29T00:00:00+00:00"
+  },
+  {
+   "commit": "ebea08804acbb632af63464c1675048b40d7d4a5",
+   "ts": "2026-10-02T00:00:00+00:00"
+  }
+ ],
+ "segments": [
+  {
+   "end": "2026-10-07T04:00:00+00:00",
+   "fault_id": "F1",
+   "fault_onset": "2026-10-07T00:00:00+00:00",
+   "file": "faults/F1-t1.jsonl.gz",
+   "lead_in_commit": "f204704309fda29845a001fa8e843ab59b7e4dfc",
+   "start": "2026-10-06T22:00:00+00:00",
+   "trial": 1
+  },
+  {
+   "end": "2026-10-08T02:00:00+00:00",
+   "fault_id": "F1",
+   "fault_onset": "2026-10-07T22:00:00+00:00",
+   "file": "faults/F1-t2.jsonl.gz",
+   "lead_in_commit": "9c6a0eced3fb8be7f0c33a9e92d7316662a932bf",
+   "start": "2026-10-07T20:00:00+00:00",
+   "trial": 2
+  },
+  {
+   "end": "2026-10-10T07:00:00+00:00",
+   "fault_id": "F1",
+   "fault_onset": "2026-10-10T03:00:00+00:00",
+   "file": "faults/F1-t3.jsonl.gz",
+   "lead_in_commit": "16b120f2b9def2df1c8e27b17db00b98500d5e82",
+   "start": "2026-10-10T01:00:00+00:00",
+   "trial": 3
+  },
+  {
+   "end": "2026-10-10T02:00:00+00:00",
+   "fault_id": "F1",
+   "fault_onset": "2026-10-09T22:00:00+00:00",
+   "file": "faults/F1-t4.jsonl.gz",
+   "lead_in_commit": "71d354f4ace19dc9f7b703a33203367e798d4f80",
+   "start": "2026-10-09T20:00:00+00:00",
+   "trial": 4
+  },
+  {
+   "end": "2026-10-07T06:00:00+00:00",
+   "fault_id": "F1",
+   "fault_onset": "2026-10-07T02:00:00+00:00",
+   "file": "faults/F1-t5.jsonl.gz",
+   "lead_in_commit": "6145937fcd5b6b67b34be3d4f025dbd2a9aa73c6",
+   "start": "2026-10-07T00:00:00+00:00",
+   "trial": 5
+  },
+  {
+   "end": "2026-10-10T15:00:00+00:00",
+   "fault_id": "F2",
+   "fault_onset": "2026-10-10T11:00:00+00:00",
+   "file": "faults/F2-t1.jsonl.gz",
+   "lead_in_commit": "cae9b90411536bf9f10ad9cb12ef728ccb9a5056",
+   "start": "2026-10-10T09:00:00+00:00",
+   "trial": 1
+  },
+  {
+   "end": "2026-10-05T15:00:00+00:00",
+   "fault_id": "F2",
+   "fault_onset": "2026-10-05T11:00:00+00:00",
+   "file": "faults/F2-t2.jsonl.gz",
+   "lead_in_commit": "74c76162dbc49de4b8e3912ca254b15134b47eab",
+   "start": "2026-10-05T09:00:00+00:00",
+   "trial": 2
+  },
+  {
+   "end": "2026-10-07T11:00:00+00:00",
+   "fault_id": "F2",
+   "fault_onset": "2026-10-07T07:00:00+00:00",
+   "file": "faults/F2-t3.jsonl.gz",
+   "lead_in_commit": "d5fab973f60a38220003824a77bfded2d0d304d0",
+   "start": "2026-10-07T05:00:00+00:00",
+   "trial": 3
+  },
+  {
+   "end": "2026-10-09T02:00:00+00:00",
+   "fault_id": "F2",
+   "fault_onset": "2026-10-08T22:00:00+00:00",
+   "file": "faults/F2-t4.jsonl.gz",
+   "lead_in_commit": "0ceb9434c612e20476ed0596271e97aeaa8369ce",
+   "start": "2026-10-08T20:00:00+00:00",
+   "trial": 4
+  },
+  {
+   "end": "2026-10-06T11:00:00+00:00",
+   "fault_id": "F2",
+   "fault_onset": "2026-10-06T07:00:00+00:00",
+   "file": "faults/F2-t5.jsonl.gz",
+   "lead_in_commit": "09015f011b120a3abd66c3aae558134acc3a0525",
+   "start": "2026-10-06T05:00:00+00:00",
+   "trial": 5
+  },
+  {
+   "end": "2026-10-09T09:00:00+00:00",
+   "fault_id": "F3",
+   "fault_onset": "2026-10-09T05:00:00+00:00",
+   "file": "faults/F3-t1.jsonl.gz",
+   "lead_in_commit": "ab254573d960e521c8817b504983a34ae8147252",
+   "start": "2026-10-09T03:00:00+00:00",
+   "trial": 1
+  },
+  {
+   "end": "2026-10-10T16:00:00+00:00",
+   "fault_id": "F3",
+   "fault_onset": "2026-10-10T12:00:00+00:00",
+   "file": "faults/F3-t2.jsonl.gz",
+   "lead_in_commit": "240d67f0f4c0f1abc16b983f159ca1353b7dc2ad",
+   "start": "2026-10-10T10:00:00+00:00",
+   "trial": 2
+  },
+  {
+   "end": "2026-10-09T15:00:00+00:00",
+   "fault_id": "F3",
+   "fault_onset": "2026-10-09T11:00:00+00:00",
+   "file": "faults/F3-t3.jsonl.gz",
+   "lead_in_commit": "ff6966658279b74c32b5425618a31a9ce51130e8",
+   "start": "2026-10-09T09:00:00+00:00",
+   "trial": 3
+  },
+  {
+   "end": "2026-10-09T00:00:00+00:00",
+   "fault_id": "F3",
+   "fault_onset": "2026-10-08T20:00:00+00:00",
+   "file": "faults/F3-t4.jsonl.gz",
+   "lead_in_commit": "94b4f18871a2b64aeb0323cef41c8f6d65e1b20b",
+   "start": "2026-10-08T18:00:00+00:00",
+   "trial": 4
+  },
+  {
+   "end": "2026-10-09T05:00:00+00:00",
+   "fault_id": "F3",
+   "fault_onset": "2026-10-09T01:00:00+00:00",
+   "file": "faults/F3-t5.jsonl.gz",
+   "lead_in_commit": "629799977e63a622a7c031b3756dd244a8588434",
+   "start": "2026-10-08T23:00:00+00:00",
+   "trial": 5
+  },
+  {
+   "end": "2026-10-10T03:00:00+00:00",
+   "fault_id": "F4",
+   "fault_onset": "2026-10-09T23:00:00+00:00",
+   "file": "faults/F4-t1.jsonl.gz",
+   "lead_in_commit": "5c6084fde385492b38af4f0af2be8c8a8c0169b5",
+   "start": "2026-10-09T21:00:00+00:00",
+   "trial": 1
+  },
+  {
+   "end": "2026-10-08T19:00:00+00:00",
+   "fault_id": "F4",
+   "fault_onset": "2026-10-08T15:00:00+00:00",
+   "file": "faults/F4-t2.jsonl.gz",
+   "lead_in_commit": "41a20dced8fa553853dd3896d44be183555a672f",
+   "start": "2026-10-08T13:00:00+00:00",
+   "trial": 2
+  },
+  {
+   "end": "2026-10-06T22:00:00+00:00",
+   "fault_id": "F4",
+   "fault_onset": "2026-10-06T18:00:00+00:00",
+   "file": "faults/F4-t3.jsonl.gz",
+   "lead_in_commit": "d21c8cb87ec0d04d0886994d1812ec9517db8a9e",
+   "start": "2026-10-06T16:00:00+00:00",
+   "trial": 3
+  },
+  {
+   "end": "2026-10-09T22:00:00+00:00",
+   "fault_id": "F4",
+   "fault_onset": "2026-10-09T18:00:00+00:00",
+   "file": "faults/F4-t4.jsonl.gz",
+   "lead_in_commit": "0c8446210081fe75eda73969f5c4476320f62d63",
+   "start": "2026-10-09T16:00:00+00:00",
+   "trial": 4
+  },
+  {
+   "end": "2026-10-08T09:00:00+00:00",
+   "fault_id": "F4",
+   "fault_onset": "2026-10-08T05:00:00+00:00",
+   "file": "faults/F4-t5.jsonl.gz",
+   "lead_in_commit": "be10d6cc57eb5371f4e7aa3b8e74ea9308d1822d",
+   "start": "2026-10-08T03:00:00+00:00",
+   "trial": 5
+  },
+  {
+   "end": "2026-10-10T22:00:00+00:00",
+   "fault_id": "F5",
+   "fault_onset": "2026-10-10T18:00:00+00:00",
+   "file": "faults/F5-t1.jsonl.gz",
+   "lead_in_commit": "5253d5fe3a8a8185df67638a97a796c9cf1075f3",
+   "start": "2026-10-10T16:00:00+00:00",
+   "trial": 1
+  },
+  {
+   "end": "2026-10-05T19:00:00+00:00",
+   "fault_id": "F5",
+   "fault_onset": "2026-10-05T15:00:00+00:00",
+   "file": "faults/F5-t2.jsonl.gz",
+   "lead_in_commit": "25723a3c1979f417674c6cd6231ec8c444dfd805",
+   "start": "2026-10-05T13:00:00+00:00",
+   "trial": 2
+  },
+  {
+   "end": "2026-10-07T17:00:00+00:00",
+   "fault_id": "F5",
+   "fault_onset": "2026-10-07T13:00:00+00:00",
+   "file": "faults/F5-t3.jsonl.gz",
+   "lead_in_commit": "c8f50a1ec8027e4c44ea2124250e735ae3a324e2",
+   "start": "2026-10-07T11:00:00+00:00",
+   "trial": 3
+  },
+  {
+   "end": "2026-10-10T23:00:00+00:00",
+   "fault_id": "F5",
+   "fault_onset": "2026-10-10T19:00:00+00:00",
+   "file": "faults/F5-t4.jsonl.gz",
+   "lead_in_commit": "a697e76b39dc9179304c590cdbda901777ade116",
+   "start": "2026-10-10T17:00:00+00:00",
+   "trial": 4
+  },
+  {
+   "end": "2026-10-07T12:00:00+00:00",
+   "fault_id": "F5",
+   "fault_onset": "2026-10-07T08:00:00+00:00",
+   "file": "faults/F5-t5.jsonl.gz",
+   "lead_in_commit": "9e81bd123420d1d295b9eadac2d81bb96bae430f",
+   "start": "2026-10-07T06:00:00+00:00",
+   "trial": 5
+  },
+  {
+   "end": "2026-10-10T11:00:00+00:00",
+   "fault_id": "F6",
+   "fault_onset": "2026-10-10T07:00:00+00:00",
+   "file": "faults/F6-t1.jsonl.gz",
+   "lead_in_commit": "cb2c8934c460c801742656c8f7b3c2084f944c27",
+   "start": "2026-10-10T05:00:00+00:00",
+   "trial": 1
+  },
+  {
+   "end": "2026-10-06T01:00:00+00:00",
+   "fault_id": "F6",
+   "fault_onset": "2026-10-05T21:00:00+00:00",
+   "file": "faults/F6-t2.jsonl.gz",
+   "lead_in_commit": "ce6be1ee23cdd1ab7629cd23b98c774506623c3c",
+   "start": "2026-10-05T19:00:00+00:00",
+   "trial": 2
+  },
+  {
+   "end": "2026-10-06T18:00:00+00:00",
+   "fault_id": "F6",
+   "fault_onset": "2026-10-06T14:00:00+00:00",
+   "file": "faults/F6-t3.jsonl.gz",
+   "lead_in_commit": "ba3943b2ac052f7e9aeba1201f8f7c6c3854be35",
+   "start": "2026-10-06T12:00:00+00:00",
+   "trial": 3
+  },
+  {
+   "end": "2026-10-07T06:00:00+00:00",
+   "fault_id": "F6",
+   "fault_onset": "2026-10-07T02:00:00+00:00",
+   "file": "faults/F6-t4.jsonl.gz",
+   "lead_in_commit": "1fc495cbb0da0b4d6a97f07aece51d931b5b4390",
+   "start": "2026-10-07T00:00:00+00:00",
+   "trial": 4
+  },
+  {
+   "end": "2026-10-10T01:00:00+00:00",
+   "fault_id": "F6",
+   "fault_onset": "2026-10-09T21:00:00+00:00",
+   "file": "faults/F6-t5.jsonl.gz",
+   "lead_in_commit": "6ca3c91c56d0d3a997302109dd761b3a7e418ce4",
+   "start": "2026-10-09T19:00:00+00:00",
+   "trial": 5
+  },
+  {
+   "end": "2026-10-07T19:00:00+00:00",
+   "fault_id": "F7",
+   "fault_onset": "2026-10-07T15:00:00+00:00",
+   "file": "faults/F7-t1.jsonl.gz",
+   "lead_in_commit": "4261be4b6feb9db1d2003bbc7cbd742240d9bef2",
+   "start": "2026-10-07T13:00:00+00:00",
+   "trial": 1
+  },
+  {
+   "end": "2026-10-06T17:00:00+00:00",
+   "fault_id": "F7",
+   "fault_onset": "2026-10-06T13:00:00+00:00",
+   "file": "faults/F7-t2.jsonl.gz",
+   "lead_in_commit": "870fc4b43919746845daf7b5b3e93bb2d6fb7c5f",
+   "start": "2026-10-06T11:00:00+00:00",
+   "trial": 2
+  },
+  {
+   "end": "2026-10-07T16:00:00+00:00",
+   "fault_id": "F7",
+   "fault_onset": "2026-10-07T12:00:00+00:00",
+   "file": "faults/F7-t3.jsonl.gz",
+   "lead_in_commit": "5eb8ae522f339fc3ae4d793669bba05d849865d4",
+   "start": "2026-10-07T10:00:00+00:00",
+   "trial": 3
+  },
+  {
+   "end": "2026-10-08T07:00:00+00:00",
+   "fault_id": "F7",
+   "fault_onset": "2026-10-08T03:00:00+00:00",
+   "file": "faults/F7-t4.jsonl.gz",
+   "lead_in_commit": "fe38575768f34ea7e1be5ea3d900c0d4b1dacba0",
+   "start": "2026-10-08T01:00:00+00:00",
+   "trial": 4
+  },
+  {
+   "end": "2026-10-08T11:00:00+00:00",
+   "fault_id": "F7",
+   "fault_onset": "2026-10-08T07:00:00+00:00",
+   "file": "faults/F7-t5.jsonl.gz",
+   "lead_in_commit": "b8e13ea0694714ed1a18c55e88f9d038eb95aa8f",
+   "start": "2026-10-08T05:00:00+00:00",
+   "trial": 5
+  }
+ ],
+ "step_seconds": 10
+}

@@ -1,0 +1,16 @@
+{
+ "content": "{\"question\":\"Before starting maintenance on Machining shot blast cabinet #1 (EQ-P3-L3-SB01), what is the lubricant part number to use?\"}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "golden:G-073#0",
+ "messages": [
+  {
+   "content": "You write test questions for a document search assistant at Cascade Forge Works, a fictional forging manufacturer. Return JSON {\"question\": \"...\"}.",
+   "role": "system"
+  },
+  {
+   "content": "Write a question phrased as a check before doing work whose answer is this fact. Do not include the value itself.\nFact: the lubricant part number for Machining shot blast cabinet #1 (EQ-P3-L3-SB01) is CFW-LUB-709.",
+   "role": "user"
+  }
+ ]
+}

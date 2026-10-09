@@ -1,0 +1,16 @@
+{
+ "content": "# SOP-P2-L3-02 Product changeover - Machining line\n\nRevision: Rev D  \nPlant: P2, line P2-L3  \nEquipment: EQ-P2-L3-RR01, EQ-P2-L3-HT02, EQ-P2-L3-IH03\n\nPreconditions\n1. Line is in normal stop state and lockout/tagout is applied to EQ-P2-L3-RR01, EQ-P2-L3-HT02, and EQ-P2-L3-IH03.  \n2. Required parts and tooling staged at changeover location.  \n3. The lubricant part number for Machining radial ring rolling mill #1 (EQ-P2-L3-RR01) is CFW-LUB-225.  \n4. The target billet temperature for Machining induction billet heater #3 (EQ-P2-L3-IH03) is 1175 °C.\n\nRequired PPE\n1. Safety glasses, hearing protection, cut-resistant gloves, and steel-toe footwear.  \n2. Flame-resistant sleeves when accessing heated surfaces on EQ-P2-L3-IH03.  \n3. Respiratory protection as required by local permit or if oil mist is present.\n\nStandard changeover steps\n1. Verify Precondition 1 and confirm lockout/tagout per SB-1036.  \n2. Remove current tooling from EQ-P2-L3-RR01 and clean mounting surfaces. Inspect for wear and report deviations to maintenance.  \n3. Install new tooling and fasteners. Confirm alignment per SOP-P2-L3-03.  \n4. Replenish lubricant on EQ-P2-L3-RR01 using CFW-LUB-225. Record part number and batch in the changeover log.  \n5. Verify heater control settings on EQ-P2-L3-IH03 and confirm ability to reach and maintain 1175 °C before introducing billet stock. Do not introduce material until stable.  \n6. Bring EQ-P2-L3-HT02 to readiness state and verify interlocks. Perform dry run at no-load to confirm sequencing.  \n7. Run pilot piece(s) and verify dimensions and surface condition. If unacceptable, escalate per SOP-P2-L3-05.\n\nCompletion and cleanup\n1. Remove tooling debris and return spare parts to designated storage.  \n2. Update production schedule and traceability records with changeover details.\n\nSign-off\nOperator: ____________________  Date: __________  \nShift Supervisor: ______________  Date: __________\n\nRelated documents: SB-1036, SOP-P2-L3-03, SOP-P2-L3-05",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:SOP-P2-L3-02:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: standard operating procedure\nDocument id: SOP-P2-L3-02\nTitle: Product changeover - Machining line\nRevision: Rev D\nPlant: P2, line P2-L3\nEquipment: EQ-P2-L3-RR01, EQ-P2-L3-HT02, EQ-P2-L3-IH03\nRelated documents to cite: SB-1036, SOP-P2-L3-03, SOP-P2-L3-05\nValues to include exactly:\n- The lubricant part number for Machining radial ring rolling mill #1 (EQ-P2-L3-RR01) is CFW-LUB-225.\n- The target billet temperature for Machining induction billet heater #3 (EQ-P2-L3-IH03) is 1175 °C.\nStructure: numbered steps with preconditions, PPE and sign-off. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

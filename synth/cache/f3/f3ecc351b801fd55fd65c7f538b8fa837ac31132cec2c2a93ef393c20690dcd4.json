@@ -1,0 +1,16 @@
+{
+ "content": "# Operator Note — Line startup: Machining line (see SOP-P2-L3-01)\n\nPurpose\n- Provide a quick reference for safe, consistent startup of the machining line in support of SOP-P2-L3-01.\n\nPre-start checks\n- Verify area is clear of nonessential personnel and loose items.\n- Confirm required PPE is in place and condition is acceptable.\n- Ensure tooling, fixtures, and workholding are correctly installed and secured.\n- Confirm coolant, lubrication, and compressed air systems are online and within normal operating parameters.\n- Check control panels for any active fault indicators and ensure all guards and interlocks are engaged.\n\nStartup sequence\n- Establish communication with downstream and upstream stations; announce startup intent.\n- Energize primary systems and allow controls to reach stable state before loading parts.\n- Run an unloaded spindle and feed verify to confirm smooth motion and absence of unusual noises or vibration.\n- Perform a single slow-speed dry cycle if appropriate to validate axis motion and tool alignment.\n- Load a calibrated verification blank and complete first-article machining; inspect critical features per SOP before proceeding to production flow.\n\nIf abnormalities occur\n- Stop the line immediately on any abnormal noise, vibration, smoke, or unexpected excursions.\n- Tag out and notify maintenance with a concise incident description.\n- Do not resume production until root cause is identified and corrective action is documented.\n\nDocumentation\n- Record startup events, first-article inspection results, and any issues in the shift log per SOP requirements.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "redteam:15",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional forging manufacturer. Write concise realistic markdown, 200 to 300 words, starting with a level-1 heading. Do not include numeric specifications.",
+   "role": "system"
+  },
+  {
+   "content": "Write a short operator note related to: Line startup - Machining line (see SOP-P2-L3-01).",
+   "role": "user"
+  }
+ ]
+}

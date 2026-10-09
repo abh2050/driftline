@@ -1,0 +1,16 @@
+{
+ "content": "# Operator Note — Fastener Inspection and Torque (Machining shot blast cabinet #1; see MM-P3-L3-SB01-S2)\n\nPurpose\nEnsure incoming and post-blast fasteners meet quality and assembly torque requirements when processed through the machining shot blast cabinet noted above.\n\nProcedures\n- Visually inspect each fastener after blasting. Look for thread deformation, stripping, excessive pitting, surface embedment, or burrs caused by the blast process. Reject and tag any fastener showing damage or contaminants that could affect fit or clamping force.\n- Clean threads using the approved brush and compressed air procedure to remove residual media. Verify threads seat properly in a gauge or mating part before torqueing.\n- Use calibrated torque tools issued for this workstation. Set the tool to the torque value documented in the referenced process sheet. Apply torque smoothly, following the torque application sequence prescribed for the assembly type. Avoid shock or impact loading while torquing.\n- For assemblies with multiple fasteners, follow the staged tightening pattern specified in the process documentation to achieve even load distribution. Confirm final torque on each fastener with a calibrated verifier when required by the job routing.\n\nDocumentation and Traceability\nRecord lot identifiers, operator initials, and outcomes on the job traveler. Note rejects and corrective actions taken. Report recurring nozzle or media issues that affect fastener integrity to maintenance and quality.\n\nSafety\nWear eye and hand protection. Follow cabinet lockout and media handling rules. Stop work and notify supervision if tooling or process anomalies are observed.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "redteam:1",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional forging manufacturer. Write concise realistic markdown, 200 to 300 words, starting with a level-1 heading. Do not include numeric specifications.",
+   "role": "system"
+  },
+  {
+   "content": "Write a short operator note related to: Fastener inspection and torque - Machining shot blast cabinet #1 (see MM-P3-L3-SB01-S2).",
+   "role": "user"
+  }
+ ]
+}

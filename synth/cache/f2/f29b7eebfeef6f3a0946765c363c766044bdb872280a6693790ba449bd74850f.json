@@ -1,0 +1,16 @@
+{
+ "content": "# FAQ-029 Engineering FAQ #29\n\nRevision: Rev A\n\nQuestion: What is the target billet temperature setting for Machining induction billet heater #1 (EQ-P1-L3-IH01)?\nAnswer: Set and verify the controller target to 1235 °C for Machining induction billet heater #1 (EQ-P1-L3-IH01). Confirm actual billet surface reading aligns with the controller target before feed to machining.\n\nQuestion: What is the system pressure limit I must not exceed for Machining hydraulic forging press #2 (EQ-P1-L3-HP02)?\nAnswer: The system pressure limit for Machining hydraulic forging press #2 (EQ-P1-L3-HP02) is 295 bar. Do not operate the press with system pressure above this limit; document any trips or relief activations per SOP-P1-L3-03.\n\nQuestion: Which lubricant part number is specified for Heat Treat shot blast cabinet #3 (EQ-P3-L4-SB03)?\nAnswer: Use lubricant part number CFW-LUB-526 for Heat Treat shot blast cabinet #3 (EQ-P3-L4-SB03). Record lubricant lot and date on maintenance log at the time of application.\n\nQuestion: Which lubricant part number should be used for Machining induction billet heater #3 (EQ-P2-L3-IH03)?\nAnswer: Use lubricant part number CFW-LUB-725 for Machining induction billet heater #3 (EQ-P2-L3-IH03). Confirm compatibility with seals and cables before servicing.\n\nQuestion: Which lubricant part number is required for Ring Rolling induction billet heater #1 (EQ-P2-L2-IH01)?\nAnswer: The specified lubricant part number for Ring Rolling induction billet heater #1 (EQ-P2-L2-IH01) is CFW-LUB-938. Apply per manufacturer guidance and document application in the equipment maintenance record.\n\nRelated documents: SB-1037, SB-1038, SOP-P1-L3-03",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:FAQ-029:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: engineering FAQ\nDocument id: FAQ-029\nTitle: Engineering FAQ #29\nRevision: Rev A\nRelated documents to cite: SB-1037, SB-1038, SOP-P1-L3-03\nValues to include exactly:\n- The target billet temperature for Machining induction billet heater #1 (EQ-P1-L3-IH01) is 1235 °C.\n- The system pressure limit for Machining hydraulic forging press #2 (EQ-P1-L3-HP02) is 295 bar.\n- The lubricant part number for Heat Treat shot blast cabinet #3 (EQ-P3-L4-SB03) is CFW-LUB-526.\n- The lubricant part number for Machining induction billet heater #3 (EQ-P2-L3-IH03) is CFW-LUB-725.\n- The lubricant part number for Ring Rolling induction billet heater #1 (EQ-P2-L2-IH01) is CFW-LUB-938.\nStructure: five question and answer pairs, one per given value. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

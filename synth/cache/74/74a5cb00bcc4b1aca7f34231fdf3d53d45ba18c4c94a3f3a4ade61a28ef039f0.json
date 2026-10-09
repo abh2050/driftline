@@ -1,0 +1,16 @@
+{
+ "content": "{\n  \"paraphrases\": [\n    \"Breach sustained for 8 one-minute windows. Metrics: groundedness 4.5341 -> 4.3805 (-3.4%), p95_latency_ms 2667.4155 -> 4440.8928 (+66.5%), top_score 0.821 -> 0.8238 (+0.3%). Config changes since baseline: reranker_enabled: False -> True; reranker_deployment: Cohere-rerank-v4.0-fast -> Cohere-rerank-v4.0-pro; chunk_overlap: 64 -> 0. Recent deploys: 1. Logs: chunker: overlap=0, 14% of answers span chunk boundary | rerank: p95 1410 ms (Cohere-rerank-v4.0-pro) | search: warm cache miss\",\n    \"There was a breach for 8 one-minute windows. Metrics show groundedness dropping from 4.5341 to 4.3805 (-3.4%), p95_latency_ms increasing from 2667.4155 to 4440.8928 (+66.5%), and top_score moving 0.821 -> 0.8238 (+0.3%). Configs changed since baseline: reranker_enabled: False -> True; reranker_deployment: Cohere-rerank-v4.0-fast -> Cohere-rerank-v4.0-pro; chunk_overlap: 64 -> 0.. Recent deploys: 1. Logs include: chunker: overlap=0, 14% of answers span chunk boundary; rerank: p95 1410 ms (Cohere-rerank-v4.0-pro); search: warm cache miss.\",\n    \"Observed breach duration: 8 one-minute windows. Key metrics: groundedness 4.5341 -> 4.3805 (-3.4%), p95_latency_ms 2667.4155 -> 4440.8928 (+66.5%), top_score 0.821 -> 0.8238 (+0.3%). Baseline-to-current config diffs: reranker_enabled: False -> True; reranker_deployment: Cohere-rerank-v4.0-fast -> Cohere-rerank-v4.0-pro; chunk_overlap: 64 -> 0.. Recent deploys: 1. Relevant logs: chunker: overlap=0, 14% of answers span chunk boundary | rerank: p95 1410 ms (Cohere-rerank-v4.0-pro) | search: warm cache miss\",\n    \"Sustained breach across 8 one-minute windows. Metric changes: groundedness from 4.5341 to 4.3805 (-3.4%), p95_latency_ms from 2667.4155 to 4440.8928 (+66.5%), and top_score 0.821 -> 0.8238 (+0.3%). Config updates since baseline: reranker_enabled: False -> True; reranker_deployment: Cohere-rerank-v4.0-fast -> Cohere-rerank-v4.0-pro; chunk_overlap: 64 -> 0.. Number of recent deploys: 1. Logs: chunker: overlap=0, 14% of answers span chunk boundary; rerank: p95 1410 ms (Cohere-rerank-v4.0-pro); search: warm cache miss\"\n  ]\n}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0582#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 8 one-minute windows. Metrics: groundedness 4.5341 -> 4.3805 (-3.4%), p95_latency_ms 2667.4155 -> 4440.8928 (+66.5%), top_score 0.821 -> 0.8238 (+0.3%). Config changes since baseline: reranker_enabled: False -> True; reranker_deployment: Cohere-rerank-v4.0-fast -> Cohere-rerank-v4.0-pro; chunk_overlap: 64 -> 0. Recent deploys: 1. Logs: chunker: overlap=0, 14% of answers span chunk boundary | rerank: p95 1410 ms (Cohere-rerank-v4.0-pro) | search: warm cache miss",
+   "role": "user"
+  }
+ ]
+}

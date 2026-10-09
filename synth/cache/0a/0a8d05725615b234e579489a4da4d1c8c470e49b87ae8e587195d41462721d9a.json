@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\": [\"Breach persisted across 18 one-minute windows. Metrics changed: citation_rate 0.9166 -> 0.828 (-9.7%), groundedness 4.214 -> 3.7523 (-11.0%), top_score 0.8494 -> 0.7917 (-6.8%). Configuration drift since baseline: chunk_size: 512 -> 128. Recent deploys: 1. Logs show retrieval: chunks average 121 tokens; answers missing table rows | autoscaler: replicas 2 -> 3.\", \"Sustained breach lasted 18 one-minute windows. Observed metric shifts: citation_rate 0.9166 -> 0.828 (-9.7%), groundedness 4.214 -> 3.7523 (-11.0%), top_score 0.8494 -> 0.7917 (-6.8%). Config changes from baseline include chunk_size: 512 -> 128. Number of recent deploys: 1. Logs: retrieval: chunks average 121 tokens; answers missing table rows | autoscaler: replicas 2 -> 3.\", \"The incident spanned 18 one-minute windows. Key metrics: citation_rate decreased 0.9166 -> 0.828 (-9.7%), groundedness fell 4.214 -> 3.7523 (-11.0%), top_score dropped 0.8494 -> 0.7917 (-6.8%). Baseline config altered: chunk_size: 512 -> 128. Recent deploys count: 1. Logged details: retrieval: chunks average 121 tokens; answers missing table rows | autoscaler: replicas 2 -> 3.\", \"Breach timeframe: 18 one-minute windows. Metric deltas recorded: citation_rate 0.9166 -> 0.828 (-9.7%), groundedness 4.214 -> 3.7523 (-11.0%), top_score 0.8494 -> 0.7917 (-6.8%). Configuration since baseline shows chunk_size: 512 -> 128. Deploys since baseline: 1. Logs indicate retrieval: chunks average 121 tokens; answers missing table rows | autoscaler: replicas 2 -> 3.\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0855#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 18 one-minute windows. Metrics: citation_rate 0.9166 -> 0.828 (-9.7%), groundedness 4.214 -> 3.7523 (-11.0%), top_score 0.8494 -> 0.7917 (-6.8%). Config changes since baseline: chunk_size: 512 -> 128. Recent deploys: 1. Logs: retrieval: chunks average 121 tokens; answers missing table rows | autoscaler: replicas 2 -> 3",
+   "role": "user"
+  }
+ ]
+}

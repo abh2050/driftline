@@ -1,0 +1,16 @@
+{
+ "content": "# SOP-P3-L4-02 Product changeover - Heat Treat line\nRevision: Rev E  \nPlant: P3, line P3-L4  \nEquipment: EQ-P3-L4-RR01, EQ-P3-L4-HT02, EQ-P3-L4-SB03  \nRelated documents: MM-P3-L4-RR01-S3, MM-P3-L4-SB03, SB-1019\n\n1. Purpose\n   1.1 Define the required steps to perform a product changeover on the Heat Treat line while maintaining part integrity and traceability.\n\n2. Preconditions\n   2.1 Production order and new part print available and verified per MM-P3-L4-RR01-S3.  \n   2.2 All affected equipment at a complete stop and isolated per lockout procedures in MM-P3-L4-SB03.  \n   2.3 Materials staging confirmed against SB-1019.\n\n3. PPE\n   3.1 Operators: heat-resistant gloves, safety glasses, hearing protection, and protective footwear.  \n   3.2 Maintenance: arc-rated face shield for open furnace access and insulated gloves for handling hot tooling.\n\n4. Changeover sequence\n   4.1 Verify current recipe loaded on EQ-P3-L4-HT02 matches incoming product requirements.  \n   4.2 Remove and tag outgoing tooling on EQ-P3-L4-RR01 using the traceability label process in MM-P3-L4-RR01-S3.  \n   4.3 Install incoming tooling and verify fit by dry-check procedure.  \n   4.4 Confirm blast cabinet consumables and lubricant status before startup; the lubricant part number for Heat Treat shot blast cabinet #3 (EQ-P3-L4-SB03) is CFW-LUB-526.  \n   4.5 Energize systems and perform first-part verification. The quench delay maximum for Heat Treat heat treat furnace #2 (EQ-P3-L4-HT02) is 20 seconds.  \n   4.6 Record first-part measurements and attach inspection tag per SB-1019.\n\n5. Acceptance\n   5.1 If first-part inspection meets requirements, commence limited production run and monitor for stability.  \n   5.2 If nonconforming, stop line and notify maintenance per MM-P3-L4-SB03.\n\n6. Sign-off\n   6.1 Operator completing changeover signs name, employee ID, and timestamp on electronic record.  \n   6.2 Supervisor reviews and initials acceptance into production batch record.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:SOP-P3-L4-02:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: standard operating procedure\nDocument id: SOP-P3-L4-02\nTitle: Product changeover - Heat Treat line\nRevision: Rev E\nPlant: P3, line P3-L4\nEquipment: EQ-P3-L4-RR01, EQ-P3-L4-HT02, EQ-P3-L4-SB03\nRelated documents to cite: MM-P3-L4-RR01-S3, MM-P3-L4-SB03, SB-1019\nValues to include exactly:\n- The quench delay maximum for Heat Treat heat treat furnace #2 (EQ-P3-L4-HT02) is 20 seconds.\n- The lubricant part number for Heat Treat shot blast cabinet #3 (EQ-P3-L4-SB03) is CFW-LUB-526.\nStructure: numbered steps with preconditions, PPE and sign-off. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

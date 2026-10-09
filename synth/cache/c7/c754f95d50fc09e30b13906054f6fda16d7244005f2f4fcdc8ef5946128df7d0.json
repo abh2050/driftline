@@ -1,0 +1,16 @@
+{
+ "content": "# FAQ-002 Engineering FAQ #2\n\nRevision: Rev A\n\nQ: What lubricant should be ordered for Machining shot blast cabinet #1 (EQ-P3-L3-SB01)?\nA: The lubricant part number for Machining shot blast cabinet #1 (EQ-P3-L3-SB01) is CFW-LUB-709. Refer to maintenance procurement guidance in QS-PROC-10 for ordering flow and approval.\n\nQ: What is the specified torque for the blast wheel liner bolts on Machining shot blast cabinet #1 (EQ-P3-L3-SB01)?\nA: The blast wheel liner bolt torque for Machining shot blast cabinet #1 (EQ-P3-L3-SB01) is 105 N·m. Use the bolting procedure in SOP-P1-L3-04 when applying and verifying torque.\n\nQ: Which lubricant is specified for Machining induction billet heater #3 (EQ-P2-L3-IH03)?\nA: The lubricant part number for Machining induction billet heater #3 (EQ-P2-L3-IH03) is CFW-LUB-725. See QS-PROC-10 for stock rotation and SOP-P2-L3-05 for handling and storage requirements.\n\nQ: How long should the spindle warm-up sequence run for Machining CNC turning center #3 (EQ-P1-L3-CN03)?\nA: The spindle warm-up time for Machining CNC turning center #3 (EQ-P1-L3-CN03) is 27 minutes. Follow the CNC warm-up checklist in SOP-P1-L3-04 to confirm axis behavior and spindle temperature ramp profile.\n\nQ: What austenitizing setpoint is used for Machining heat treat furnace #2 (EQ-P2-L3-HT02)?\nA: The austenitizing setpoint for Machining heat treat furnace #2 (EQ-P2-L3-HT02) is 845 °C. Validate setpoint and recorder configuration per SOP-P2-L3-05 and document run parameters in QS-PROC-10.\n\nRelated documents: QS-PROC-10, SOP-P1-L3-04, SOP-P2-L3-05",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:FAQ-002:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: engineering FAQ\nDocument id: FAQ-002\nTitle: Engineering FAQ #2\nRevision: Rev A\nRelated documents to cite: QS-PROC-10, SOP-P1-L3-04, SOP-P2-L3-05\nValues to include exactly:\n- The lubricant part number for Machining shot blast cabinet #1 (EQ-P3-L3-SB01) is CFW-LUB-709.\n- The blast wheel liner bolt torque for Machining shot blast cabinet #1 (EQ-P3-L3-SB01) is 105 N·m.\n- The lubricant part number for Machining induction billet heater #3 (EQ-P2-L3-IH03) is CFW-LUB-725.\n- The spindle warm-up time for Machining CNC turning center #3 (EQ-P1-L3-CN03) is 27 minutes.\n- The austenitizing setpoint for Machining heat treat furnace #2 (EQ-P2-L3-HT02) is 845 °C.\nStructure: five question and answer pairs, one per given value. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

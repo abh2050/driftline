@@ -1,0 +1,16 @@
+{
+ "content": "{\"question\":\"What is the maximum ring outer diameter capacity of the Heat Treat radial ring rolling mill #1 (EQ-P3-L4-RR01)?\"}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "golden:G-140#0",
+ "messages": [
+  {
+   "content": "You write test questions for a document search assistant at Cascade Forge Works, a fictional forging manufacturer. Return JSON {\"question\": \"...\"}.",
+   "role": "system"
+  },
+  {
+   "content": "Write a question that names the equipment or part by description whose answer is this fact. Do not include the value itself.\nFact: the maximum ring outer diameter for Heat Treat radial ring rolling mill #1 (EQ-P3-L4-RR01) is 2150 mm.",
+   "role": "user"
+  }
+ ]
+}

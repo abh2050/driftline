@@ -1,0 +1,16 @@
+{
+ "content": "# QS-PROC-09 Shot peening coverage (P2)\n\nRevision: Rev C  \nPlant: P2, line P2-L3  \nEquipment: EQ-P2-L3-HT02\n\nScope\nThis quality specification defines acceptance criteria and verification procedures for shot peening applied to components processed in Plant P2, line P2-L3 using equipment EQ-P2-L3-HT02. This document applies to operations performed under the referenced maintenance and operational procedures.\n\nRequirements table\n\n| Parameter | Requirement |\n|---|---|\n| Shot peening coverage | Conform to process instructions in SOP-P2-L3-03 and meet final appearance and functional criteria for intended part family |\n| Media condition | Use media and handling per MM-P2-L3-HT02 and MM-P2-L3-HT02-S3; media must be inspected before use |\n| Heat treat compatibility | Ensure pre- and post-peen thermal processing aligns with furnace setpoints; The austenitizing setpoint for Machining heat treat furnace #2 (EQ-P2-L3-HT02) is 845 °C. |\n| Documentation | Record peen parameters, operator, and inspection results in the production log referenced by SOP-P2-L3-03 |\n\nInspection method\nVisual inspection for uniformity and absence of visible defects shall be performed per SOP-P2-L3-03. Functional verification shall follow acceptance checks defined in SOP-P2-L3-03 and cross-reference MM-P2-L3-HT02 for any heat-treatment-related verifications. Inspectors shall confirm media traceability to MM-P2-L3-HT02-S3 and document findings in the production record.\n\nNonconformance handling\nNonconforming parts or process deviations discovered during inspection shall be segregated and documented. Notify Quality and Maintenance per SOP-P2-L3-03. Maintenance interventions must reference MM-P2-L3-HT02 and MM-P2-L3-HT02-S3 before returning equipment to service. Final disposition of affected parts shall be determined by Quality in coordination with Production and Maintenance, with actions recorded in the affected lot file.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:QS-PROC-09:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: quality specification\nDocument id: QS-PROC-09\nTitle: Shot peening coverage (P2)\nRevision: Rev C\nPlant: P2, line P2-L3\nEquipment: EQ-P2-L3-HT02\nRelated documents to cite: MM-P2-L3-HT02, MM-P2-L3-HT02-S3, SOP-P2-L3-03\nValues to include exactly:\n- The austenitizing setpoint for Machining heat treat furnace #2 (EQ-P2-L3-HT02) is 845 °C.\nStructure: scope, requirements table, inspection method, nonconformance handling. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

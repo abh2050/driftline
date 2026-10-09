@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\":[\"Breach persisted for 20 one-minute windows. Observed metric drops: citation_rate 0.9676 -> 0.5055 (−47.8%), groundedness 4.4752 -> 4.3133 (−3.6%). Configuration moved from prompt_version: v3 -> v4-nocite. There has been 1 recent deploy. Relevant logs: prompt v4-nocite loaded | answer: 0 citations in response | gc pause 120 ms.\",\"Sustained violation spanned 20 one-minute windows. Metrics changed as follows: citation_rate 0.9676 -> 0.5055 (-47.8%), groundedness 4.4752 -> 4.3133 (-3.6%). Config diff: prompt_version: v3 -> v4-nocite. Number of recent deploys: 1. Log entries: prompt v4-nocite loaded | answer: 0 citations in response | gc pause 120 ms.\",\"Incident lasted across 20 one-minute windows. Metric deltas: citation_rate fell from 0.9676 to 0.5055 (a -47.8% change), groundedness moved from 4.4752 to 4.3133 (−3.6%). The prompt_version changed: v3 -> v4-nocite. There was 1 deploy recently. Logs show: prompt v4-nocite loaded | answer: 0 citations in response | gc pause 120 ms.\",\"The system was degraded for 20 one-minute windows. Key metrics: citation_rate 0.9676 -> 0.5055 (-47.8%), groundedness 4.4752 -> 4.3133 (-3.6%). Configuration change recorded: prompt_version: v3 -> v4-nocite. Recent deploy count: 1. Recorded logs: prompt v4-nocite loaded | answer: 0 citations in response | gc pause 120 ms\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0377#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 20 one-minute windows. Metrics: citation_rate 0.9676 -> 0.5055 (-47.8%), groundedness 4.4752 -> 4.3133 (-3.6%). Config changes since baseline: prompt_version: v3 -> v4-nocite. Recent deploys: 1. Logs: prompt v4-nocite loaded | answer: 0 citations in response | gc pause 120 ms",
+   "role": "user"
+  }
+ ]
+}

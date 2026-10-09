@@ -1,0 +1,16 @@
+{
+ "content": "# ECN-2026-007 - Change notice - Heat Treat hydraulic forging press #2\n\nRevision: Rev B  \nPlant: P1, line P1-L4  \nEquipment: EQ-P1-L4-HP02\n\nReason for change\nThis ECN updates the main ram bolt torque specification for Heat Treat hydraulic forging press #2 to address observed bolt preload loss during routine maintenance and to reduce risk of ram misalignment. Field inspections and retention of fastener condition require standardization of the torque value to ensure consistent clamp load and to improve joint integrity under cyclic operational loading. This change responds to findings in related maintenance and safety bulletins and aligns shop practice with current maintenance guidance.\n\nAffected items\n- Equipment: EQ-P1-L4-HP02 (main ram bolt)  \n- Maintenance procedures: SOP-P1-L4-05 (inspection and bolting steps)  \n- Maintenance work package: MM-P1-L4-HP02  \n- Safety bulletin: SB-1034 (referenced for hazard controls)\n\nImplementation\n- Update the main ram bolt torque for EQ-P1-L4-HP02: the main ram bolt torque for Heat Treat hydraulic forging press #2 (EQ-P1-L4-HP02) is 970 N·m.  \n- Revise SOP-P1-L4-05 to reflect the new torque value and include verification acceptance criteria during post-torque inspection.  \n- Update MM-P1-L4-HP02 work instructions and checklist items to require torque confirmation and recordkeeping per existing document control requirements.  \n- Execute a one-time re-torque and inspection of EQ-P1-L4-HP02 during the next planned maintenance window; record results in the maintenance log and close out per SOP-P1-L4-05.  \n- Ensure personnel performing the work are briefed on SB-1034 for required PPE and lockout procedures before starting work.\n\nApprovals\nPrepared by: Maintenance Engineering (refer to MM-P1-L4-HP02)  \nReviewed by: Plant Mechanical Lead (see SOP-P1-L4-05)  \nApproved by: Plant Manager (reference SB-1034 for safety concurrence)\n\nRelated documents: MM-P1-L4-HP02, SB-1034, SOP-P1-L4-05",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:ECN-2026-007:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: engineering change notice\nDocument id: ECN-2026-007\nTitle: Change notice - Heat Treat hydraulic forging press #2\nRevision: Rev B\nPlant: P1, line P1-L4\nEquipment: EQ-P1-L4-HP02\nRelated documents to cite: MM-P1-L4-HP02, SB-1034, SOP-P1-L4-05\nValues to include exactly:\n- The main ram bolt torque for Heat Treat hydraulic forging press #2 (EQ-P1-L4-HP02) is 970 N·m.\nStructure: reason for change, affected items, implementation, approvals. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

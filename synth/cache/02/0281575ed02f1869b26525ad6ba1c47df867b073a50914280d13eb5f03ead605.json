@@ -1,0 +1,16 @@
+{
+ "content": "{\"question\":\"What is the lubricant part number for Ring Rolling induction billet heater #2 (EQ-P1-L2-IH02)?\"}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "golden:G-040#0",
+ "messages": [
+  {
+   "content": "You write test questions for a document search assistant at Cascade Forge Works, a fictional forging manufacturer. Return JSON {\"question\": \"...\"}.",
+   "role": "system"
+  },
+  {
+   "content": "Write a direct question whose answer is this fact. Do not include the value itself.\nFact: the lubricant part number for Ring Rolling induction billet heater #2 (EQ-P1-L2-IH02) is CFW-LUB-788.",
+   "role": "user"
+  }
+ ]
+}

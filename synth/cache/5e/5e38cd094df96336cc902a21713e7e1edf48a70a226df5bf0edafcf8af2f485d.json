@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\": [\"Breach persisted across 25 one-minute windows. Metrics show groundedness dropped 4.2461 -> 4.1455 (-2.4%). No config changes since baseline. There was 1 recent deploy. Logs: indexer cfw-docs-indexer: status=disabled since 3h | search: 30 documents older than source revision | autoscaler: replicas 2 -> 3\", \"Observed breach lasted 25 one-minute windows. Groundedness moved from 4.2461 to 4.1455 (-2.4%). Config changes since baseline: none. Recent deploys: 1. Relevant logs: indexer cfw-docs-indexer: status=disabled since 3h | search: 30 documents older than source revision | autoscaler: replicas 2 -> 3\", \"The incident spanned 25 one-minute windows. Groundedness decreased 4.2461 -> 4.1455 (-2.4%). No config changes since baseline were detected. Recent deploys: 1. Logs captured: indexer cfw-docs-indexer: status=disabled since 3h | search: 30 documents older than source revision | autoscaler: replicas 2 -> 3\", \"Sustained breach: 25 one-minute windows. Groundedness: 4.2461 -> 4.1455 (-2.4%). Config changes since baseline: none. Recent deploys: 1. Logs include indexer cfw-docs-indexer: status=disabled since 3h | search: 30 documents older than source revision | autoscaler: replicas 2 -> 3\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0274#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 25 one-minute windows. Metrics: groundedness 4.2461 -> 4.1455 (-2.4%). Config changes since baseline: none. Recent deploys: 1. Logs: indexer cfw-docs-indexer: status=disabled since 3h | search: 30 documents older than source revision | autoscaler: replicas 2 -> 3",
+   "role": "user"
+  }
+ ]
+}

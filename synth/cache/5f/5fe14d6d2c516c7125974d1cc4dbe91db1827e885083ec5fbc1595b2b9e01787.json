@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\": [\"A breach persisted across 23 one-minute windows. Groundedness fell from 4.3807 to 4.0893 (a -6.7% change) and top_score dropped from 0.815 to 0.7853 (a -3.6% change). Config diffs from baseline show chunk_overlap: 64 -> 0. There has been 1 recent deploy. Logs record chunker: overlap=0; 14% of answers span chunk boundary; autoscaler: replicas 2 -> 3.\", \"The incident lasted for 23 one-minute windows. Metrics shifted: groundedness 4.3807 -> 4.0893 (-6.7%) and top_score 0.815 -> 0.7853 (-3.6%). Baseline config change: chunk_overlap: 64 -> 0. Recent deploys: 1. Log entries: chunker: overlap=0; 14% of answers span chunk boundary; autoscaler: replicas 2 -> 3.\", \"Sustained breach duration: 23 one-minute windows. Observed metric declines — groundedness decreased 4.3807 -> 4.0893 (-6.7%) and top_score decreased 0.815 -> 0.7853 (-3.6%). Configuration since baseline: chunk_overlap: 64 -> 0. There was 1 recent deploy. Logs show chunker: overlap=0, 14% of answers span chunk boundary, and autoscaler: replicas 2 -> 3.\", \"Breach window count: 23 one-minute windows. Key metric changes: groundedness 4.3807 -> 4.0893 (-6.7%); top_score 0.815 -> 0.7853 (-3.6%). Config change recorded: chunk_overlap: 64 -> 0. Recent deploys: 1. Log details: chunker: overlap=0; 14% of answers span chunk boundary; autoscaler: replicas 2 -> 3.\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-1196#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 23 one-minute windows. Metrics: groundedness 4.3807 -> 4.0893 (-6.7%), top_score 0.815 -> 0.7853 (-3.6%). Config changes since baseline: chunk_overlap: 64 -> 0. Recent deploys: 1. Logs: chunker: overlap=0, 14% of answers span chunk boundary | autoscaler: replicas 2 -> 3",
+   "role": "user"
+  }
+ ]
+}

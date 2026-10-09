@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\": [\"Breach persisted across 10 one-minute windows. Measured metrics: citation_rate 0.9276 -> 0.5733 (-38.2%), top_score 0.8587 -> 0.6826 (-20.5%). Configuration drift since baseline: index_schema.fields.doc_id.retrievable: True -> False. One recent deploy. Logs indicate the citation parser reported doc_id missing from search results and the autoscaler changed replicas 2 -> 3.\", \"Incident lasted for 10 one-minute windows. Metric changes observed: citation_rate dropped 0.9276 -> 0.5733 (-38.2%), top_score fell 0.8587 -> 0.6826 (-20.5%). Config modification from baseline: index_schema.fields.doc_id.retrievable switched True -> False. There was 1 deploy. Logs: citation parser: doc_id missing from search results; autoscaler: replicas 2 -> 3.\", \"Sustained breach duration: 10 one-minute windows. Key metrics: citation_rate 0.9276 -> 0.5733 (-38.2%), top_score 0.8587 -> 0.6826 (-20.5%). Configuration change compared to baseline: index_schema.fields.doc_id.retrievable changed from True to False. Recent deploy count: 1. Log entries include the citation parser indicating doc_id missing from search results and the autoscaler adjusting replicas 2 -> 3.\", \"Breach window count: 10 one-minute windows. Observed metric deltas: citation_rate 0.9276 -> 0.5733 (-38.2%) and top_score 0.8587 -> 0.6826 (-20.5%). Baseline vs current config: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 1. Logs show the citation parser flagged doc_id missing from search results and the autoscaler scaled replicas 2 -> 3.\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0974#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 10 one-minute windows. Metrics: citation_rate 0.9276 -> 0.5733 (-38.2%), top_score 0.8587 -> 0.6826 (-20.5%). Config changes since baseline: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 1. Logs: citation parser: doc_id missing from search results | autoscaler: replicas 2 -> 3",
+   "role": "user"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\":[\"Breach persisted across 22 one-minute windows. Metrics: error_rate 0.004 -> 0.0178 (+343.6%), groundedness 4.5433 -> 4.489 (-1.2%), hit_count 8.1662 -> 8.0731 (-1.1%), p95_latency_ms 2704.3372 -> 3887.6712 (+43.8%). Config changes since baseline: none. Recent deploys: 0. Logs: indexer cfw-docs-indexer: last run failed (quota exceeded on skillset) | search: 503 Service Unavailable (throttled, replicas=1) | healthcheck ok\",\"Total breach duration: 22 one-minute windows. Observed metrics: error_rate rose 0.004 -> 0.0178 (+343.6%), groundedness fell 4.5433 -> 4.489 (-1.2%), hit_count fell 8.1662 -> 8.0731 (-1.1%), p95_latency_ms increased 2704.3372 -> 3887.6712 (+43.8%). Config changes since baseline: none. Recent deploys: 0. Logs show: indexer cfw-docs-indexer: last run failed (quota exceeded on skillset); search: 503 Service Unavailable (throttled, replicas=1); healthcheck ok.\",\"Incident spanned 22 one-minute windows. Key metrics: error_rate 0.004 -> 0.0178 (+343.6%), groundedness 4.5433 -> 4.489 (-1.2%), hit_count 8.1662 -> 8.0731 (-1.1%), p95_latency_ms 2704.3372 -> 3887.6712 (+43.8%). No config changes since baseline. Recent deploys: 0. Relevant logs: indexer cfw-docs-indexer: last run failed (quota exceeded on skillset) | search: 503 Service Unavailable (throttled, replicas=1) | healthcheck ok\",\"Breach held for 22 one-minute windows. Metrics recorded: error_rate moved 0.004 -> 0.0178 (+343.6%), groundedness moved 4.5433 -> 4.489 (-1.2%), hit_count moved 8.1662 -> 8.0731 (-1.1%), p95_latency_ms moved 2704.3372 -> 3887.6712 (+43.8%). Config changes since baseline: none. Recent deploys: 0. Logs: indexer cfw-docs-indexer: last run failed (quota exceeded on skillset); search: 503 Service Unavailable (throttled, replicas=1); healthcheck ok\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-1164#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 22 one-minute windows. Metrics: error_rate 0.004 -> 0.0178 (+343.6%), groundedness 4.5433 -> 4.489 (-1.2%), hit_count 8.1662 -> 8.0731 (-1.1%), p95_latency_ms 2704.3372 -> 3887.6712 (+43.8%). Config changes since baseline: none. Recent deploys: 0. Logs: indexer cfw-docs-indexer: last run failed (quota exceeded on skillset) | search: 503 Service Unavailable (throttled, replicas=1) | healthcheck ok",
+   "role": "user"
+  }
+ ]
+}

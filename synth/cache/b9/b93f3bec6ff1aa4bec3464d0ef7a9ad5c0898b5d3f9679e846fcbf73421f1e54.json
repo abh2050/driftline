@@ -1,0 +1,16 @@
+{
+ "content": "# QS-CFW-7189-64 — Quality specification - bearing ring CFW-7189-64 (52100)\nRevision: Rev C  \nPlant: P1  \nParts: CFW-7189-64  \nThis revision supersedes Rev B.\n\nScope\nThis document defines the material and dimensional quality requirements, inspection method, and nonconformance handling for bearing ring CFW-7189-64 (CFW-7189-64) manufactured at Plant P1. It applies to finished forgings presented for final inspection and release.\n\nRequirements table\n| Characteristic | Requirement |\n|---|---|\n| Material | 52100 |\n| Hardness | The hardness range for bearing ring CFW-7189-64 (CFW-7189-64) is 22-26 HRC. |\n| Bore diameter tolerance | The bore diameter tolerance for bearing ring CFW-7189-64 (CFW-7189-64) is ±0.06 mm. |\n| Maximum forging weight | The maximum forging weight for bearing ring CFW-7189-64 (CFW-7189-64) is 22.9 kg. |\n| Surface condition | Free of laps, tears, and forging scale that compromise fit or function |\n\nInspection method\nVisual inspection: Inspect each part for surface defects and dimensional conformity to the requirements table. Use calibrated measuring instruments appropriate to the feature and resolution required. Hardness testing: Perform hardness checks on representative locations using a calibrated rockwell hardness tester and record values. For bore diameter: measure at opposed locations using an internal micrometer or bore gauge and record all readings. Sampling: Inspect items in accordance with the plant inspection plan; ensure traceability to batch and heat lot.\n\nNonconformance handling\nSuspect or nonconforming parts shall be tagged and segregated to prevent unintended use. Document nonconformance on the plant quality report and notify quality engineering. Disposition options include rework to requirements, use-as-is only with documented engineering approval, or scrap. Root cause analysis and corrective action shall be initiated for process or material causes to prevent recurrence.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:QS-CFW-7189-64:v2#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: quality specification\nDocument id: QS-CFW-7189-64\nTitle: Quality specification - bearing ring CFW-7189-64 (52100)\nRevision: Rev C\nPlant: P1\nParts: CFW-7189-64\nThis revision supersedes Rev B. Mention that in the header.\nRelated documents to cite: none\nValues to include exactly:\n- The hardness range for bearing ring CFW-7189-64 (CFW-7189-64) is 22-26 HRC.\n- The bore diameter tolerance for bearing ring CFW-7189-64 (CFW-7189-64) is ±0.06 mm.\n- The maximum forging weight for bearing ring CFW-7189-64 (CFW-7189-64) is 22.9 kg.\nStructure: scope, requirements table, inspection method, nonconformance handling. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

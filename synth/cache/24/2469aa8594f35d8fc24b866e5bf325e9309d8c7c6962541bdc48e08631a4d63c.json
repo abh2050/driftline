@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\":[\"Breach persisted for 26 one-minute windows. Observed metrics: error_rate 0.0041 -> 0.0423 (+920.8%), p95_latency_ms 2679.3951 -> 3086.4224 (+15.2%). Config changes since baseline: none. Recent deploys: 2. Relevant logs: retry: attempt 3/3 failed | chat: 429 Too Many Requests from gateway (rate limit) | search: warm cache miss\",\"Incident lasted across 26 one-minute windows. Metric deltas: error_rate 0.0041 -> 0.0423 (+920.8%), p95_latency_ms 2679.3951 -> 3086.4224 (+15.2%). No config changes since baseline. Recent deploys: 2. Logs captured: retry: attempt 3/3 failed | chat: 429 Too Many Requests from gateway (rate limit) | search: warm cache miss\",\"Service breach covered 26 one-minute windows. Key metrics changed: error_rate 0.0041 -> 0.0423 (+920.8%), p95_latency_ms 2679.3951 -> 3086.4224 (+15.2%). Config changes since baseline: none. Recent deploys: 2. Log entries of interest: retry: attempt 3/3 failed | chat: 429 Too Many Requests from gateway (rate limit) | search: warm cache miss\",\"Sustained breach spanned 26 one-minute windows. Measured metrics: error_rate 0.0041 -> 0.0423 (+920.8%), p95_latency_ms 2679.3951 -> 3086.4224 (+15.2%). Config changes since baseline: none. Recent deploys: 2. Collected logs: retry: attempt 3/3 failed | chat: 429 Too Many Requests from gateway (rate limit) | search: warm cache miss\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0208#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 26 one-minute windows. Metrics: error_rate 0.0041 -> 0.0423 (+920.8%), p95_latency_ms 2679.3951 -> 3086.4224 (+15.2%). Config changes since baseline: none. Recent deploys: 2. Logs: retry: attempt 3/3 failed | chat: 429 Too Many Requests from gateway (rate limit) | search: warm cache miss",
+   "role": "user"
+  }
+ ]
+}

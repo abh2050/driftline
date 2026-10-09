@@ -1,0 +1,16 @@
+{
+ "content": "# QS-CFW-1730-97 Quality specification - valve body CFW-1730-97 (F316)\n\nRevision: Rev A  \nPlant: P2  \nParts: CFW-1730-97\n\nScope\nThis specification defines the quality acceptance criteria and inspection method for valve body CFW-1730-97 (CFW-1730-97) forgings produced at Plant P2. It applies to incoming raw forgings and finished machined valve bodies prior to heat treatment handoff and final release.\n\nRequirements table\n| Item | Requirement |\n|---|---|\n| Hardness | The hardness range for valve body CFW-1730-97 (CFW-1730-97) is 25-29 HRC. |\n| Bore diameter tolerance | The bore diameter tolerance for valve body CFW-1730-97 (CFW-1730-97) is ±0.09 mm. |\n| Maximum forging weight | The maximum forging weight for valve body CFW-1730-97 (CFW-1730-97) is 118.5 kg. |\n\nInspection method\n- Hardness: Perform Rockwell hardness tests at the locations specified on the shop drawing for CFW-1730-97. Record individual readings and verify conformance to The hardness range for valve body CFW-1730-97 (CFW-1730-97) is 25-29 HRC. Use calibrated equipment traceable to plant calibration records.\n- Dimensional: Measure bore diameters with calibrated bore gauges or equivalent measurement systems. Verify the bore diameter tolerance for valve body CFW-1730-97 (CFW-1730-97) is ±0.09 mm. Record actual dimensions on the inspection report.\n- Weight: Verify forging weight against material handling documentation and scale readings to confirm The maximum forging weight for valve body CFW-1730-97 (CFW-1730-97) is 118.5 kg. Use calibrated scales and note any handling restrictions.\n\nNonconformance handling\nNonconforming items are segregated, tagged, and entered into the nonconformance log. For hardness, dimensional, or weight deviations from the table above, initiate an NCR and notify Quality Engineering. Disposition options include rework if the corrective action can demonstrably restore conformance to the listed requirements, or scrap if restoration is not feasible. Final disposition requires Quality approval prior to release.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:QS-CFW-1730-97:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: quality specification\nDocument id: QS-CFW-1730-97\nTitle: Quality specification - valve body CFW-1730-97 (F316)\nRevision: Rev A\nPlant: P2\nParts: CFW-1730-97\nRelated documents to cite: none\nValues to include exactly:\n- The hardness range for valve body CFW-1730-97 (CFW-1730-97) is 25-29 HRC.\n- The bore diameter tolerance for valve body CFW-1730-97 (CFW-1730-97) is ±0.09 mm.\n- The maximum forging weight for valve body CFW-1730-97 (CFW-1730-97) is 118.5 kg.\nStructure: scope, requirements table, inspection method, nonconformance handling. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "content": "# SOP-P3-L3-02 Product changeover - Machining line\n\nRevision: Rev E  \nPlant: P3, line P3-L3  \nEquipment: EQ-P3-L3-SB01, EQ-P3-L3-CN02, EQ-P3-L3-HP03  \nRelated documents: SB-1005, SB-1010, SOP-P3-L3-04\n\n1. Preconditions\n   1.1 Verify production schedule authorizes changeover for P3-L3.  \n   1.2 Confirm machine status is STOPPED and locked out per SB-1005 and SB-1010.  \n   1.3 All tooling for new product must be staged and cross-checked against SOP-P3-L3-04.\n\n2. PPE\n   2.1 Required PPE: safety glasses, cut-resistant gloves, hearing protection, steel-toe footwear.  \n   2.2 Use insulated tools when working on hydraulic components of EQ-P3-L3-HP03.  \n\n3. Preparation\n   3.1 Remove old fixtures from EQ-P3-L3-SB01 and EQ-P3-L3-CN02 following manufacturer access points.  \n   3.2 Inspect hydraulics on EQ-P3-L3-HP03 for leaks and secure fittings before assembly.  \n\n4. Lubrication and fasteners\n   4.1 Apply lubricant part number CFW-LUB-340.  \n   4.2 Tighten main ram bolt for Machining hydraulic forging press #3 (EQ-P3-L3-HP03) to the specified value: 1600 N·m.\n\n5. Alignment and verification\n   5.1 Install new tooling and perform alignment using referenced gauges in SOP-P3-L3-04.  \n   5.2 Verify sensor and switch positions against SB-1010 checklists.\n\n6. Functional check\n   6.1 Remove lockout and perform a dry cycle at no-load to confirm correct motion and clearance.  \n   6.2 If any abnormal indication occurs, return to lockout and troubleshoot per SB-1005.\n\n7. Documentation\n   7.1 Record changeover actions, torque application, lubricant batch, and any nonconformances in the line changeover log.  \n   7.2 Attach completed checklist to the job packet and reference SOP-P3-L3-04 where applicable.\n\n8. Sign-off\n   8.1 Operator name and signature: ____________________  \n   8.2 Supervisor name and signature: ____________________  \n   8.3 Date and time of final acceptance: ____________________\n\nReferences: SB-1005, SB-1010, SOP-P3-L3-04",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:SOP-P3-L3-02:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: standard operating procedure\nDocument id: SOP-P3-L3-02\nTitle: Product changeover - Machining line\nRevision: Rev E\nPlant: P3, line P3-L3\nEquipment: EQ-P3-L3-SB01, EQ-P3-L3-CN02, EQ-P3-L3-HP03\nRelated documents to cite: SB-1005, SB-1010, SOP-P3-L3-04\nValues to include exactly:\n- The main ram bolt torque for Machining hydraulic forging press #3 (EQ-P3-L3-HP03) is 1600 N·m.\n- The lubricant part number for Machining hydraulic forging press #3 (EQ-P3-L3-HP03) is CFW-LUB-340.\nStructure: numbered steps with preconditions, PPE and sign-off. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

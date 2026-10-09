@@ -1,0 +1,16 @@
+{
+ "content": "# QS-CFW-5798-88 - Quality specification - crankshaft blank CFW-5798-88 (4340)\n\nRevision: Rev D  \nPlant: P2  \nParts: CFW-5798-88\n\nScope\nThis document defines quality acceptance criteria and inspection requirements for crankshaft blank CFW-5798-88 (4340) produced at Plant P2. It applies to forged blanks delivered for machining and subsequent heat treatment processes. Items not covered by this document shall be controlled by contractual drawing and purchase order requirements.\n\nRequirements table\n| Characteristic | Requirement |\n|---|---|\n| Material | 4340 per applicable material certification |\n| Hardness (as-forged surface) | 25-29 HRC. |\n| Bore diameter tolerance | ±0.09 mm. |\n| Maximum forging weight | 119.4 kg. |\n| Surface condition | Free of forging laps, cold shuts, and cracks that affect usability |\n\nInspection method\nInspect each production lot per the following methods. Hardness shall be measured on the forged surface using a Rockwell hardness tester compliant with the operator qualification program; record values and verify they fall within 25-29 HRC. Bore diameter shall be checked with calibrated gauging or bore micrometry and confirmed to ±0.09 mm. Weigh the forging on calibrated scales and confirm the weight does not exceed 119.4 kg. Visual inspection for surface condition shall be performed under adequate lighting and with magnification as required by the operator to identify discontinuities that affect fit or integrity.\n\nNonconformance handling\nParts that fail to meet any requirement in the Requirements table are nonconforming. Isolate nonconforming items and tag with disposition pending. Evaluate nonconformances for repairability; repairs that could affect material properties or dimensional tolerances shall be rejected and returned to scrap stream. Document nonconformances in the quality record and notify Quality. Release of any disposition that deviates from the requirements in this document requires documented approval from Quality management.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:QS-CFW-5798-88:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: quality specification\nDocument id: QS-CFW-5798-88\nTitle: Quality specification - crankshaft blank CFW-5798-88 (4340)\nRevision: Rev D\nPlant: P2\nParts: CFW-5798-88\nRelated documents to cite: none\nValues to include exactly:\n- The hardness range for crankshaft blank CFW-5798-88 (CFW-5798-88) is 25-29 HRC.\n- The bore diameter tolerance for crankshaft blank CFW-5798-88 (CFW-5798-88) is ±0.09 mm.\n- The maximum forging weight for crankshaft blank CFW-5798-88 (CFW-5798-88) is 119.4 kg.\nStructure: scope, requirements table, inspection method, nonconformance handling. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

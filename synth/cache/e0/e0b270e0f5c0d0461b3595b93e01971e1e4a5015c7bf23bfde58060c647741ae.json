@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\": [\"Breach lasted for 15 one-minute windows. Metrics shifted: groundedness 4.4425 -> 4.0443 (-9.0%), top_score 0.8176 -> 0.7822 (-4.3%). Config change since baseline: chunk_overlap: 64 -> 0. Recent deploys: 1. Logs show: chunker: overlap=0, 14% of answers span chunk boundary | search: warm cache miss.\", \"We observed a breach sustained over 15 one-minute windows. Groundedness dropped from 4.4425 to 4.0443 (-9.0%), and top_score fell from 0.8176 to 0.7822 (-4.3%). The baseline-to-current config change is chunk_overlap: 64 -> 0. There has been 1 recent deploy. Relevant logs: chunker: overlap=0, 14% of answers span chunk boundary | search: warm cache miss.\", \"Duration: breach persisted for 15 one-minute windows. Key metrics: groundedness 4.4425 -> 4.0443 (-9.0%), top_score 0.8176 -> 0.7822 (-4.3%). Config delta since baseline: chunk_overlap: 64 -> 0. Recent deploys count: 1. Logs captured: chunker: overlap=0, 14% of answers span chunk boundary | search: warm cache miss.\", \"Incident: sustained breach across 15 one-minute windows. Metrics affected — groundedness moved 4.4425 -> 4.0443 (-9.0%) and top_score moved 0.8176 -> 0.7822 (-4.3%). Configuration changed from baseline: chunk_overlap: 64 -> 0. There was 1 recent deploy. Logs: chunker: overlap=0, 14% of answers span chunk boundary | search: warm cache miss.\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0393#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 15 one-minute windows. Metrics: groundedness 4.4425 -> 4.0443 (-9.0%), top_score 0.8176 -> 0.7822 (-4.3%). Config changes since baseline: chunk_overlap: 64 -> 0. Recent deploys: 1. Logs: chunker: overlap=0, 14% of answers span chunk boundary | search: warm cache miss",
+   "role": "user"
+  }
+ ]
+}

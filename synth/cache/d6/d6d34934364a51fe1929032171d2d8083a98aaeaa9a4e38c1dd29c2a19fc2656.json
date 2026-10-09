@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\":[\"Breach sustained for 21 one-minute windows. Metrics: citation_rate 0.9 -> 0.6424 (-28.6%), top_score 0.8608 -> 0.714 (-17.1%). Config changes since baseline: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 1. Logs: citation parser: doc_id missing from search results | search: warm cache miss\",\"There was a breach sustained for 21 one-minute windows. Observed metrics: citation_rate 0.9 -> 0.6424 (-28.6%), top_score 0.8608 -> 0.714 (-17.1%). Config changes since baseline include index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 1. Logs: citation parser: doc_id missing from search results | search: warm cache miss\",\"Sustained breach duration: 21 one-minute windows. Metric deltas: citation_rate 0.9 -> 0.6424 (-28.6%), top_score 0.8608 -> 0.714 (-17.1%). Config changes since baseline: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 1. Logs: citation parser: doc_id missing from search results | search: warm cache miss\",\"Incident: breach persisted for 21 one-minute windows. Key metrics changed: citation_rate 0.9 -> 0.6424 (-28.6%), top_score 0.8608 -> 0.714 (-17.1%). Config changes since baseline recorded: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 1. Logs: citation parser: doc_id missing from search results | search: warm cache miss\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0807#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 21 one-minute windows. Metrics: citation_rate 0.9 -> 0.6424 (-28.6%), top_score 0.8608 -> 0.714 (-17.1%). Config changes since baseline: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 1. Logs: citation parser: doc_id missing from search results | search: warm cache miss",
+   "role": "user"
+  }
+ ]
+}

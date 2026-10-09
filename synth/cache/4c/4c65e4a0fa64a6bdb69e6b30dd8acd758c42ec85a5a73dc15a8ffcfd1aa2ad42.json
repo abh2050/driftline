@@ -1,0 +1,16 @@
+{
+ "content": "# MM-P3-L3-SB01 Maintenance manual - Machining shot blast cabinet #1\nRevision: Rev B  \nPlant: P3, line P3-L3  \nEquipment: EQ-P3-L3-SB01\n\nScope\n- This document provides maintenance instructions for Machining shot blast cabinet #1 (EQ-P3-L3-SB01) for routine inspection, wear part replacement, and media top-up. Refer to MM-P3-L3-SB01-S2, SB-1022, and SOP-P3-L3-03 for related procedures and drawings.\n\nTools\n- Torque wrench capable of achieving 105 N·m.\n- Standard hand tools, flashlight, and PPE as specified in SOP-P3-L3-03.\n- Replacement blast wheel liner as per SB-1022.\n\nProcedure\n- Isolate and lock out EQ-P3-L3-SB01 in accordance with SOP-P3-L3-03 before any maintenance.\n- Remove access panels and inspect blast wheel liner for wear and foreign debris. Clean area and verify no loose fragments remain.\n- When replacing the blast wheel liner, install liner and fasteners finger-tight, then set final bolt torque to 105 N·m using the torque wrench. Verify each bolt meets the specified torque.\n- Check shot media level and top up to manufacturer-recommended level following guidance in SB-1022. The shot media top-up interval for Machining shot blast cabinet #1 (EQ-P3-L3-SB01) is 22 hours; record top-up events in the maintenance log.\n- Reinstall access panels, remove lockout, and perform functional check per SOP-P3-L3-03. Confirm no abnormal vibration or noise before returning to service.\n\nAcceptance criteria\n- Blast wheel liner fasteners are torqued to 105 N·m and secure with no visible gaps or misalignment.\n- No loose liner fragments or foreign debris present in the cabinet or discharge paths.\n- Shot media replenished according to the 22 hours top-up interval and recorded in the maintenance log.\n- Post-maintenance functional check yields normal operation with no abnormal vibration, noise, or material flow issues per SOP-P3-L3-03.\n- All work documented and cross-referenced to MM-P3-L3-SB01-S2 and SB-1022 for parts and installation verification.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:MM-P3-L3-SB01:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: equipment maintenance manual\nDocument id: MM-P3-L3-SB01\nTitle: Maintenance manual - Machining shot blast cabinet #1\nRevision: Rev B\nPlant: P3, line P3-L3\nEquipment: EQ-P3-L3-SB01\nRelated documents to cite: MM-P3-L3-SB01-S2, SB-1022, SOP-P3-L3-03\nValues to include exactly:\n- The blast wheel liner bolt torque for Machining shot blast cabinet #1 (EQ-P3-L3-SB01) is 105 N·m.\n- The shot media top-up interval for Machining shot blast cabinet #1 (EQ-P3-L3-SB01) is 22 hours.\nStructure: sections for scope, tools, procedure, acceptance criteria. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "content": "# FAQ-021 Engineering FAQ #21\n\nRevision: Rev A\n\nQ: What is the required spindle warm-up time for Machining CNC turning center #3 (EQ-P1-L3-CN03) before starting precision cuts?\nA: Warm the spindle for 27 minutes. Follow the warm-up procedure in SOP-P1-L3-04 for verification of runout and thermal stability.\n\nQ: How often must the main roll bearing on Hot Forge radial ring rolling mill #1 (EQ-P1-L1-RR01) be lubricated during continuous operation?\nA: Lubricate the main roll bearing at intervals of 120 hours of operation. Record lubrication actions in the equipment log per SOP-P1-L1-02.\n\nQ: What spindle warm-up time is specified for Hot Forge CNC turning center #2 (EQ-P1-L1-CN02) when preparing for die-fit operations?\nA: Warm the spindle for 21 minutes to reach stable thermal conditions before critical machining. Confirm following SOP-P1-L1-02 and SOP-P1-L3-04 as applicable.\n\nQ: What is the alarm setpoint for dust collector pressure drop on Heat Treat shot blast cabinet #3 (EQ-P3-L4-SB03)?\nA: The dust collector pressure drop alarm is set at 1510 Pa. If the alarm actuates, inspect filters and ducting and follow corrective steps in SOP-P3-L4-02.\n\nQ: What is the minimum acceptable coil cooling water flow for Hot Forge induction billet heater #2 (EQ-P2-L1-IH02) to prevent coil overheating?\nA: Maintain a minimum flow of 55 L/min. If flow falls below this value, stop induction heating and follow cooling and inspection procedures referenced in SOP-P1-L1-02 and SOP-P3-L4-02.\n\nRelated documents: SOP-P1-L1-02, SOP-P1-L3-04, SOP-P3-L4-02",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:FAQ-021:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: engineering FAQ\nDocument id: FAQ-021\nTitle: Engineering FAQ #21\nRevision: Rev A\nRelated documents to cite: SOP-P1-L1-02, SOP-P1-L3-04, SOP-P3-L4-02\nValues to include exactly:\n- The spindle warm-up time for Machining CNC turning center #3 (EQ-P1-L3-CN03) is 27 minutes.\n- The main roll bearing lubrication interval for Hot Forge radial ring rolling mill #1 (EQ-P1-L1-RR01) is 120 hours.\n- The spindle warm-up time for Hot Forge CNC turning center #2 (EQ-P1-L1-CN02) is 21 minutes.\n- The dust collector pressure drop alarm for Heat Treat shot blast cabinet #3 (EQ-P3-L4-SB03) is 1510 Pa.\n- The coil cooling water flow minimum for Hot Forge induction billet heater #2 (EQ-P2-L1-IH02) is 55 L/min.\nStructure: five question and answer pairs, one per given value. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

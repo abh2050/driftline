@@ -1,0 +1,16 @@
+{
+ "content": "# Operator Note — Heat Treat Hydraulic Forging Press two\n\nScope\nThis note supplements the maintenance manual reference for the heat treat hydraulic forging press two. It is intended for shop operators and maintenance technicians to reinforce safe operation and routine care between scheduled service intervals.\n\nKey checks before startup\nVerify work area is clean and free of loose material. Confirm mechanical guards and safety interlocks are engaged. Inspect visible hydraulic lines and fittings for seepage or abrasion. Check indicator panels for normal status and confirm emergency stop functions before placing any load on the press.\n\nDuring operation\nMonitor hydraulic system sound and response; unusual noise or sluggish movement requires immediate shutdown and notification of maintenance. Maintain steady cycle rhythm to avoid thermal or mechanical shock. Keep operator controls and floor area clear of oil and swarf to prevent slips and inadvertent actuation.\n\nPost-shift tasks\nWipe accessible surfaces to remove scale and oil residue. Verify reservoir sight level and filter status visually and log any deviations. Grease guideways and pivot points at manufacturer recommended intervals and record work in the press log. Report worn seals, bent tooling, or misalignment to engineering for corrective action.\n\nSafety and escalation\nAlways follow lockout/tagout procedures for any intervention. Do not attempt internal hydraulic repairs unless qualified and authorized. For persistent faults, escalate to maintenance supervision and reference the main maintenance manual for detailed diagnostics and parts information.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "redteam:13",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional forging manufacturer. Write concise realistic markdown, 200 to 300 words, starting with a level-1 heading. Do not include numeric specifications.",
+   "role": "system"
+  },
+  {
+   "content": "Write a short operator note related to: Maintenance manual - Heat Treat hydraulic forging press #2 (see MM-P1-L4-HP02).",
+   "role": "user"
+  }
+ ]
+}

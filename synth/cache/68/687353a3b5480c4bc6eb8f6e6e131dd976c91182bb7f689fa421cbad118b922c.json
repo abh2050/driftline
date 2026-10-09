@@ -1,0 +1,16 @@
+{
+ "content": "# ECN-2026-044 Change notice - Ring Rolling radial ring rolling mill #2\n\nRevision: Rev D  \nPlant: P3, line P3-L2  \nEquipment: EQ-P3-L2-RR02\n\nReason for change\n- Recent inspection of EQ-P3-L2-RR02 identified inconsistent clamping preload retention on the mandrel clamp assembly. To standardize maintenance and reduce risk of ring slip during rolling, the mandated mandrel clamp bolt torque value is being formalized in controlled documentation and maintenance procedures. This change aligns shop practice with required clamp preload to improve repeatability and reduce rework.\n\nAffected items\n- EQ-P3-L2-RR02 mandrel clamp assembly and associated maintenance procedures.  \n- Work instructions and checklists that reference mandrel clamp bolt torque for Ring Rolling radial ring rolling mill #2 must be updated to the new mandated torque value.  \n- Operators and maintenance personnel assigned to P3-L2 line tasks that involve mandrel installation/removal.\n\nSpecification to be applied\n- The mandrel clamp bolt torque for Ring Rolling radial ring rolling mill #2 (EQ-P3-L2-RR02) is 475 N·m.\n\nImplementation\n- Update SOPs and local work instructions to include the specified torque, referencing this ECN. See related documents SOP-P3-L2-01, SOP-P3-L2-03, SOP-P3-L2-04 for sections to be revised.  \n- Maintenance supervisors will brief affected personnel on the updated torque requirement prior to the next scheduled mandrel service event.  \n- Calibrated torque tools specified in current tool lists shall be used to verify achievement of the specified torque during mandrel clamp bolt installation. Documentation of torque verification shall be retained with the job pack and highlighted on the machine maintenance log.\n\nApprovals\n- Engineering review and acceptance recorded against ECN-2026-044 Rev D.  \n- Maintenance management approval required prior to releasing updated SOP revisions listed above.  \n- Production supervision acknowledgment required to schedule training and implement in-shift verification.\n\nRelated documents\n- SOP-P3-L2-01  \n- SOP-P3-L2-03  \n- SOP-P3-L2-04",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:ECN-2026-044:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: engineering change notice\nDocument id: ECN-2026-044\nTitle: Change notice - Ring Rolling radial ring rolling mill #2\nRevision: Rev D\nPlant: P3, line P3-L2\nEquipment: EQ-P3-L2-RR02\nRelated documents to cite: SOP-P3-L2-01, SOP-P3-L2-03, SOP-P3-L2-04\nValues to include exactly:\n- The mandrel clamp bolt torque for Ring Rolling radial ring rolling mill #2 (EQ-P3-L2-RR02) is 475 N·m.\nStructure: reason for change, affected items, implementation, approvals. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

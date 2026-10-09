@@ -1,0 +1,16 @@
+{
+ "content": "# QS-CFW-5042-83 - Quality specification - valve body CFW-5042-83 (F316)\n\nRevision: Rev E  \nPlant: P3  \nParts: CFW-5042-83\n\nScope\nThis specification defines the minimum quality requirements for valve body CFW-5042-83 (CFW-5042-83) forged in F316 material at Plant P3. It covers acceptance criteria for hardness, critical bore geometry, and maximum forging weight for material release and final inspection prior to machining.\n\nRequirements table\n| Characteristic | Requirement | Acceptance |\n|---|---:|---|\n| Hardness | 33-38 HRC | Material accepted if hardness within range |\n| Bore diameter tolerance | ±0.06 mm | Bore must measure within tolerance after final machining operations |\n| Maximum forging weight | 77.3 kg | Forging rejected if weight exceeds maximum |\n\nInspection method\nHardness: Verify hardness using a calibrated Rockwell test instrument for HRC scale on representative surfaces of each heat lot. Record readings and ensure values fall within 33-38 HRC. Use surface preparation appropriate for Rockwell testing.\n\nBore diameter: Measure bore diameter using calibrated bore gauge or coordinate measuring device. Ensure the measured value is within ±0.06 mm of specified nominal. Document measured value and instrument used.\n\nWeight: Determine forging weight on a calibrated scale capable of accommodating the forging form. Confirm that as-forged weight does not exceed 77.3 kg. Record scale identification and measured weight.\n\nNonconformance handling\nIf any characteristic fails to meet the specified requirement in the Requirements table, isolate the affected material and hold it from further processing. Notify Quality and Production leads and generate a nonconformance record. Disposition options include rework to meet specification or rejection per plant procedures. Final disposition must be approved by authorized Quality personnel before release for machining or shipment.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:QS-CFW-5042-83:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: quality specification\nDocument id: QS-CFW-5042-83\nTitle: Quality specification - valve body CFW-5042-83 (F316)\nRevision: Rev E\nPlant: P3\nParts: CFW-5042-83\nRelated documents to cite: none\nValues to include exactly:\n- The hardness range for valve body CFW-5042-83 (CFW-5042-83) is 33-38 HRC.\n- The bore diameter tolerance for valve body CFW-5042-83 (CFW-5042-83) is ±0.06 mm.\n- The maximum forging weight for valve body CFW-5042-83 (CFW-5042-83) is 77.3 kg.\nStructure: scope, requirements table, inspection method, nonconformance handling. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

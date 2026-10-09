@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\": [\"Breach persisted across 26 one-minute windows. Observed metric shifts: citation_rate 0.9752 -> 0.308 (-68.4%), groundedness 4.3045 -> 4.1495 (-3.6%), top_score 0.7893 -> 0.6837 (-13.4%). Configuration differences from baseline: index_schema.fields.doc_id.retrievable: True -> False; prompt_version: v3 -> v4-nocite. Recent deploy count: 1. Relevant logs: citation parser: doc_id missing from search results | answer: 0 citations in response | search: warm cache miss\"], \"paraphrases\": [\"A breach lasted for 26 one-minute windows. Metrics changed as follows: citation_rate 0.9752 -> 0.308 (-68.4%), groundedness 4.3045 -> 4.1495 (-3.6%), top_score 0.7893 -> 0.6837 (-13.4%). Config deltas since baseline show index_schema.fields.doc_id.retrievable: True -> False and prompt_version: v3 -> v4-nocite. There was 1 recent deploy. Logs show: citation parser: doc_id missing from search results | answer: 0 citations in response | search: warm cache miss\"], \"paraphrases\": [\"We observed a sustained breach for 26 one-minute windows. Key metric regressions: citation_rate 0.9752 -> 0.308 (-68.4%), groundedness 4.3045 -> 4.1495 (-3.6%), top_score 0.7893 -> 0.6837 (-13.4%). Config changes since baseline include index_schema.fields.doc_id.retrievable: True -> False and prompt_version: v3 -> v4-nocite. Recent deploys: 1. Log evidence: citation parser: doc_id missing from search results | answer: 0 citations in response | search: warm cache miss\"], \"paraphrases\": [\"Incident spanned 26 one-minute windows. Metric impact: citation_rate 0.9752 -> 0.308 (-68.4%), groundedness 4.3045 -> 4.1495 (-3.6%), top_score 0.7893 -> 0.6837 (-13.4%). Configuration drift from baseline: index_schema.fields.doc_id.retrievable: True -> False; prompt_version: v3 -> v4-nocite. Number of recent deploys: 1. Logged details: citation parser: doc_id missing from search results | answer: 0 citations in response | search: warm cache miss\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0294#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 26 one-minute windows. Metrics: citation_rate 0.9752 -> 0.308 (-68.4%), groundedness 4.3045 -> 4.1495 (-3.6%), top_score 0.7893 -> 0.6837 (-13.4%). Config changes since baseline: index_schema.fields.doc_id.retrievable: True -> False; prompt_version: v3 -> v4-nocite. Recent deploys: 1. Logs: citation parser: doc_id missing from search results | answer: 0 citations in response | search: warm cache miss",
+   "role": "user"
+  }
+ ]
+}

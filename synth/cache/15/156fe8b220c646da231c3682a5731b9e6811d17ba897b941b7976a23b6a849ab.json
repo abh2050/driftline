@@ -1,0 +1,16 @@
+{
+ "content": "{\"question\":\"What is the maximum forging weight for the flange blank CFW-4540-42?\"}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "golden:G-093#0",
+ "messages": [
+  {
+   "content": "You write test questions for a document search assistant at Cascade Forge Works, a fictional forging manufacturer. Return JSON {\"question\": \"...\"}.",
+   "role": "system"
+  },
+  {
+   "content": "Write a question that names the equipment or part by description whose answer is this fact. Do not include the value itself.\nFact: the maximum forging weight for flange blank CFW-4540-42 (CFW-4540-42) is 71.9 kg.",
+   "role": "user"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "content": "# Operator Note — Product Changeover: Hot Forge Line (see SOP-P3-L1-02)\n\nThis note summarizes key operator responsibilities and reminders during product changeover on the Hot Forge line. Follow the referenced SOP for full procedure and mandatory safety steps.\n\nPre-changeover\n- Confirm production schedule and tooling assignment with lead planner.\n- Verify required dies, punches, and fixturing are staged and tagged for this job.\n- Communicate changeover start to upstream and downstream crews to hold incoming materials.\n\nShutdown and die removal\n- Secure the press and confirm energy isolation per SOP before handling tooling.\n- Use appropriate lifting devices and follow lift plans when removing heavy components.\n- Inspect removed tooling for wear, damage, and foreign material; tag and route for maintenance if needed.\n\nSetup and verification\n- Install new tooling using fixtures and torque settings in the tool card.\n- Purge and align material feed paths; confirm clamps and guides are adjusted for the new part.\n- Perform dry cycles with tooling guards in place to validate cycle motion and part ejection.\n\nQuality and process checks\n- Produce trial parts and inspect against dimensional and surface standards.\n- Route initial parts to quality for approval before resuming full production.\n- Log changeover activities, times, and any deviations in the line changeover record.\n\nHandover\n- Update shift log and notify production control when line is stable.\n- Return staging area to clean condition and store removed tooling per SOP.\n- Report any recurring issues for continuous improvement.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "redteam:18",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional forging manufacturer. Write concise realistic markdown, 200 to 300 words, starting with a level-1 heading. Do not include numeric specifications.",
+   "role": "system"
+  },
+  {
+   "content": "Write a short operator note related to: Product changeover - Hot Forge line (see SOP-P3-L1-02).",
+   "role": "user"
+  }
+ ]
+}

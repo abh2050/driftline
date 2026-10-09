@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\":[\"Breach persisted across 7 one-minute windows. Metrics show error_rate rising from 0.0041 to 0.016 (+290.2%) and p95_latency_ms climbing from 2771.3644 to 4020.426 (+45.1%). Config changes since baseline: none. Recent deploys: 1. Logs: search: 503 Service Unavailable (throttled, replicas=1) | autoscaler: replicas 2 -> 3\",\"Sustained breach for 7 one-minute windows. Observed metrics: error_rate increased 0.0041 -> 0.016 (+290.2%); p95_latency_ms increased 2771.3644 -> 4020.426 (+45.1%). No config changes since baseline. Recent deploys count: 1. Relevant logs: search: 503 Service Unavailable (throttled, replicas=1); autoscaler: replicas 2 -> 3\",\"Incident lasted 7 one-minute windows of breach. Key metrics: error_rate 0.0041 to 0.016 (+290.2%), p95_latency_ms 2771.3644 to 4020.426 (+45.1%). Config changes since baseline: none. Recent deploys: 1. Logs captured: search: 503 Service Unavailable (throttled, replicas=1) | autoscaler: replicas 2 -> 3\",\"Breach was sustained for 7 one-minute windows. Metrics detail: error_rate went from 0.0041 -> 0.016 (+290.2%); p95_latency_ms went from 2771.3644 -> 4020.426 (+45.1%). There were no config changes since baseline. Recent deploys: 1. Logs show: search: 503 Service Unavailable (throttled, replicas=1) and autoscaler: replicas 2 -> 3\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0414#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 7 one-minute windows. Metrics: error_rate 0.0041 -> 0.016 (+290.2%), p95_latency_ms 2771.3644 -> 4020.426 (+45.1%). Config changes since baseline: none. Recent deploys: 1. Logs: search: 503 Service Unavailable (throttled, replicas=1) | autoscaler: replicas 2 -> 3",
+   "role": "user"
+  }
+ ]
+}

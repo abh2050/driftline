@@ -1,0 +1,16 @@
+{
+ "content": "# SOP-P2-L4-02 Product changeover - Heat Treat line\n\nRevision: Rev C  \nPlant: P2, line P2-L4  \nEquipment: EQ-P2-L4-RR01, EQ-P2-L4-HT02, EQ-P2-L4-HP03  \nRelated documents: ECN-2026-045, MM-P2-L4-RR01, SOP-P2-L4-03\n\nPreconditions:\n1. Operator trained and authorized for Heat Treat line and familiar with ECN-2026-045 and SOP-P2-L4-03.\n2. EQ-P2-L4-RR01 roll-runner line cleared of previous product and tagged per MM-P2-L4-RR01.\n3. All machine guards present and functional; no active maintenance lockouts on EQ-P2-L4-HT02 or EQ-P2-L4-HP03.\n\nPPE:\n4. Required PPE: safety glasses, heat-resistant gloves, face shield, steel-toe boots. Use hearing protection when alarms are active.\n\nChangeover steps:\n5. Verify current product program and confirm changeover authorization in the control system for EQ-P2-L4-HT02 and EQ-P2-L4-HP03.\n6. Confirm the austenitizing setpoint for Heat Treat heat treat furnace #2 (EQ-P2-L4-HT02) is 885 °C. Do not proceed if setpoint differs.\n7. Purge furnace atmosphere per plant atmosphere purge procedure referenced in ECN-2026-045; confirm oxygen sensor is within allowable limits before charging.\n8. Load billets from EQ-P2-L4-RR01 using standard transfer protocol in MM-P2-L4-RR01. Verify part geometry against changeover checklist.\n9. Before first press stroke, confirm the system pressure limit for Heat Treat hydraulic forging press #3 (EQ-P2-L4-HP03) is 320 bar. Lock out any command that would exceed this limit.\n10. Run one verification cycle: heat to setpoint, transfer, press cycle, quench/recovery per SOP-P2-L4-03 procedures. Inspect first three parts for dimensional and metallurgical acceptance criteria.\n11. If verification fails, stop line, tag product, notify maintenance and engineering, and reference ECN-2026-045 for disposition.\n\nSign-off:\n12. Complete changeover log with operator name, start and end times, and checklist items referenced. Initial and date the log.\n13. Supervisor verifies first-batch acceptance and signs the changeover record. Retain records per ECN-2026-045.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:SOP-P2-L4-02:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: standard operating procedure\nDocument id: SOP-P2-L4-02\nTitle: Product changeover - Heat Treat line\nRevision: Rev C\nPlant: P2, line P2-L4\nEquipment: EQ-P2-L4-RR01, EQ-P2-L4-HT02, EQ-P2-L4-HP03\nRelated documents to cite: ECN-2026-045, MM-P2-L4-RR01, SOP-P2-L4-03\nValues to include exactly:\n- The austenitizing setpoint for Heat Treat heat treat furnace #2 (EQ-P2-L4-HT02) is 885 °C.\n- The system pressure limit for Heat Treat hydraulic forging press #3 (EQ-P2-L4-HP03) is 320 bar.\nStructure: numbered steps with preconditions, PPE and sign-off. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

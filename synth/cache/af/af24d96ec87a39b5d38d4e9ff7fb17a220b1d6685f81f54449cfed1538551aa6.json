@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\":[\"A breach persisted across 24 one-minute windows. Measured metrics shifted: citation_rate dropped from 0.9678 to 0.1297 (a -86.6% change), and groundedness fell from 4.3682 to 4.0262 (a -7.8% change). Configuration since baseline shows prompt_version changed from v3 to v4-nocite. There has been 1 recent deploy. Relevant logs: prompt v4-nocite loaded; answer: 0 citations in response; gc pause 120 ms.\",\"Incident lasted for 24 one-minute windows. Key metrics: citation_rate 0.9678 -> 0.1297 (-86.6%), groundedness 4.3682 -> 4.0262 (-7.8%). Config delta from baseline: prompt_version: v3 -> v4-nocite. Recent deploys count: 1. Logs captured include: prompt v4-nocite loaded | answer: 0 citations in response | gc pause 120 ms.\",\"Sustained breach covered 24 one-minute windows. Observed metric changes were citation_rate declining from 0.9678 to 0.1297 (−86.6%) and groundedness decreasing from 4.3682 to 4.0262 (−7.8%). Baseline config change: prompt_version moved v3 -> v4-nocite. There was 1 recent deployment. Logged entries: prompt v4-nocite loaded; answer: 0 citations in response; gc pause 120 ms.\",\"The issue persisted for 24 one-minute windows. Metrics show citation_rate: 0.9678 -> 0.1297 (a -86.6% drop) and groundedness: 4.3682 -> 4.0262 (a -7.8% drop). Configuration since baseline indicates prompt_version changed from v3 to v4-nocite. Number of recent deploys: 1. Logs of interest: prompt v4-nocite loaded | answer: 0 citations in response | gc pause 120 ms\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0646#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 24 one-minute windows. Metrics: citation_rate 0.9678 -> 0.1297 (-86.6%), groundedness 4.3682 -> 4.0262 (-7.8%). Config changes since baseline: prompt_version: v3 -> v4-nocite. Recent deploys: 1. Logs: prompt v4-nocite loaded | answer: 0 citations in response | gc pause 120 ms",
+   "role": "user"
+  }
+ ]
+}

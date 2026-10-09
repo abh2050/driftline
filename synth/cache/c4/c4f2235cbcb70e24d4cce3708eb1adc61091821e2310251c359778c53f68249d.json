@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\":[\"Breach persisted across 12 one-minute windows. Groundedness fell from 4.2512 to 3.947 (−7.2%), and top_score dropped from 0.861 to 0.8299 (−3.6%). Config change from baseline: chunk_overlap set 64 -> 0. Recent deploys: 1. Logs show chunker: overlap=0; 14% of answers span chunk boundary; search: warm cache miss.\",\"A violation lasted for 12 one-minute windows. Metrics: groundedness 4.2512 -> 3.947 (−7.2%), top_score 0.861 -> 0.8299 (−3.6%). Baseline config modified: chunk_overlap changed 64 -> 0. There has been 1 recent deploy. Logs: chunker: overlap=0; 14% of answers span chunk boundary; search: warm cache miss.\",\"Incident spanned 12 consecutive one-minute windows. Measured drops: groundedness from 4.2512 to 3.947 (a −7.2% change), top_score from 0.861 to 0.8299 (a −3.6% change). Config delta since baseline: chunk_overlap 64 -> 0. Recent deploys count: 1. Relevant logs: chunker: overlap=0; 14% of answers span chunk boundary; search: warm cache miss.\",\"Sustained breach for 12 one-minute windows. Key metrics: groundedness decreased 4.2512 -> 3.947 (−7.2%), top_score decreased 0.861 -> 0.8299 (−3.6%). Config differences vs baseline: chunk_overlap: 64 -> 0. Number of recent deploys: 1. Logs captured: chunker: overlap=0, 14% of answers span chunk boundary | search: warm cache miss\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0703#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 12 one-minute windows. Metrics: groundedness 4.2512 -> 3.947 (-7.2%), top_score 0.861 -> 0.8299 (-3.6%). Config changes since baseline: chunk_overlap: 64 -> 0. Recent deploys: 1. Logs: chunker: overlap=0, 14% of answers span chunk boundary | search: warm cache miss",
+   "role": "user"
+  }
+ ]
+}

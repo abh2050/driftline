@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\":[\"Breach persisted across 14 one-minute windows. Observed metrics: citation_rate 0.937 -> 0.8054 (-14.0%), groundedness 4.2041 -> 3.1672 (-24.7%), top_score 0.7971 -> 0.7483 (-6.1%). Config changes since baseline: chunk_size: 512 -> 128; prompt_version: v3 -> v5. Recent deploys: 1. Logs: retrieval: chunks average 121 tokens; answers missing table rows | judge: answer contains claims not in context | token refresh ok\",\"Issue lasted for 14 one-minute windows. Metric deltas: citation_rate 0.937 -> 0.8054 (-14.0%), groundedness 4.2041 -> 3.1672 (-24.7%), top_score 0.7971 -> 0.7483 (-6.1%). Changes vs baseline: chunk_size: 512 -> 128; prompt_version: v3 -> v5. Recent deploys: 1. Logs captured: retrieval: chunks average 121 tokens; answers missing table rows | judge: answer contains claims not in context | token refresh ok\",\"An incident spanned 14 one-minute windows. Key measurements: citation_rate 0.937 -> 0.8054 (-14.0%), groundedness 4.2041 -> 3.1672 (-24.7%), top_score 0.7971 -> 0.7483 (-6.1%). Configuration drift since baseline: chunk_size: 512 -> 128; prompt_version: v3 -> v5. Recent deploys count: 1. Logs: retrieval: chunks average 121 tokens; answers missing table rows | judge: answer contains claims not in context | token refresh ok\",\"Sustained breach for 14 one-minute windows. Performance metrics: citation_rate 0.937 -> 0.8054 (-14.0%), groundedness 4.2041 -> 3.1672 (-24.7%), top_score 0.7971 -> 0.7483 (-6.1%). Baseline config differences: chunk_size: 512 -> 128; prompt_version: v3 -> v5. Recent deploys: 1. Logs show: retrieval: chunks average 121 tokens; answers missing table rows | judge: answer contains claims not in context | token refresh ok\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0238#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 14 one-minute windows. Metrics: citation_rate 0.937 -> 0.8054 (-14.0%), groundedness 4.2041 -> 3.1672 (-24.7%), top_score 0.7971 -> 0.7483 (-6.1%). Config changes since baseline: chunk_size: 512 -> 128; prompt_version: v3 -> v5. Recent deploys: 1. Logs: retrieval: chunks average 121 tokens; answers missing table rows | judge: answer contains claims not in context | token refresh ok",
+   "role": "user"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\":[\"Breach persisted across 11 one-minute windows. Metrics show groundedness 4.4321 -> 4.1083 (-7.3%), hit_count 7.8134 -> 7.4599 (-4.5%). Config changes since baseline: none. Recent deploys: 1. Logs: indexer cfw-docs-indexer: last run failed (quota exceeded on skillset) | search: document count 271, source count 300 | healthcheck ok\",\"An incident lasted for 11 one-minute windows. Recorded metrics: groundedness 4.4321 -> 4.1083 (-7.3%), hit_count 7.8134 -> 7.4599 (-4.5%). Config changes since baseline: none. Recent deploys: 1. Logs: indexer cfw-docs-indexer: last run failed (quota exceeded on skillset) | search: document count 271, source count 300 | healthcheck ok\",\"Sustained breach covered 11 one-minute windows. Metrics: groundedness 4.4321 -> 4.1083 (-7.3%), hit_count 7.8134 -> 7.4599 (-4.5%). Config changes since baseline: none. Recent deploys: 1. Logs: indexer cfw-docs-indexer: last run failed (quota exceeded on skillset) | search: document count 271, source count 300 | healthcheck ok\",\"The event persisted for 11 one-minute windows. Observed metrics: groundedness 4.4321 -> 4.1083 (-7.3%), hit_count 7.8134 -> 7.4599 (-4.5%). Config changes since baseline: none. Recent deploys: 1. Logs: indexer cfw-docs-indexer: last run failed (quota exceeded on skillset) | search: document count 271, source count 300 | healthcheck ok\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0230#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 11 one-minute windows. Metrics: groundedness 4.4321 -> 4.1083 (-7.3%), hit_count 7.8134 -> 7.4599 (-4.5%). Config changes since baseline: none. Recent deploys: 1. Logs: indexer cfw-docs-indexer: last run failed (quota exceeded on skillset) | search: document count 271, source count 300 | healthcheck ok",
+   "role": "user"
+  }
+ ]
+}

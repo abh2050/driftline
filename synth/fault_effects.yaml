@@ -1,0 +1,66 @@
+# Parametric fault effects for synthetic telemetry (ADR 0002).
+# Initial estimates; Phase 3 replays each fault against the real patient-rag once and
+# recalibrates these numbers from the observed shifts.
+baseline_config:
+  chunk_size: 512
+  chunk_overlap: 64
+  top_k: 8
+  embedding_deployment: text-embedding-3-small
+  chat_deployment: gpt-4.1-mini
+  prompt_version: v3
+  reranker_enabled: false
+  reranker_deployment: Cohere-rerank-v4.0-fast
+baseline:
+  latency_ms: {median: 1650, sigma: 0.28}
+  retrieval_latency_ms: {median: 140, sigma: 0.3}
+  top_score: {mean: 0.82, sd: 0.05}
+  mean_score: {mean: 0.71, sd: 0.05}
+  citation_count: {mean: 2.3}
+  citation_zero_rate: 0.07
+  groundedness: {mean: 4.4, sd: 0.45, sample_rate: 0.10}
+  error_rate: 0.004
+  tokens_in: {mean: 2300, sd: 250}
+  tokens_out: {mean: 190, sd: 60}
+  load_latency_gain: 0.35
+faults:
+  F1:  # chunk_size 512 -> 2048
+    config: {chunk_size: 2048}
+    top_score_delta: -0.09
+    mean_score_delta: -0.12
+    groundedness_delta: -0.7
+    citation_mult: 0.8
+    tokens_in_mult: 3.3
+    latency_mult: 1.25
+  F2:  # embedding deployment changed without reindex
+    config: {embedding_deployment: text-embedding-3-large}
+    top_score_set: {mean: 0.24, sd: 0.06}
+    mean_score_set: {mean: 0.15, sd: 0.05}
+    groundedness_delta: -2.1
+    citation_mult: 0.35
+    citation_zero_rate: 0.45
+  F3:  # top_k 8 -> 2
+    config: {top_k: 2}
+    hit_count_set: 2
+    groundedness_delta: -1.1
+    citation_mult: 0.55
+    tokens_in_mult: 0.3
+    latency_mult: 0.9
+  F4:  # prompt version without citation instruction
+    config: {prompt_version: v4-nocite}
+    citation_zero_rate: 0.9
+    citation_mult: 0.1
+    groundedness_delta: -0.35
+  F5:  # indexer disabled while 30 docs change (only fresh-doc queries degrade)
+    config: {}
+    affected_share: 0.12
+    groundedness_delta_affected: -1.6
+  F6:  # reranker enabled on the slow tier
+    config: {reranker_enabled: true, reranker_deployment: Cohere-rerank-v4.0-pro}
+    retrieval_latency_add_ms: 1350
+    latency_add_ms: 1350
+    top_score_delta: 0.02
+  F7:  # chat deployment throttled through APIM
+    config: {}
+    error_rate: 0.18
+    status_code: 429
+    latency_mult: 1.6

@@ -1,0 +1,16 @@
+{
+ "content": "# ECN-2026-004 Change notice - Hot Forge shot blast cabinet #2\n\nRevision: Rev E  \nPlant: P3, line P3-L1  \nEquipment: EQ-P3-L1-SB02\n\nReason for change\n- Replace the current lubricant specification for the Hot Forge shot blast cabinet #2 with the approved shop lubricant listing. This change clarifies maintenance procurement and standardizes lubricant use across P3 line assets. See OEM recommendation referenced in SB-1033 and procedural alignment required by SOP-P3-L1-02 and SOP-P3-L1-05.\n\nAffected items\n- EQ-P3-L1-SB02 lubrication point set: all grease and oil service points previously covered under generic site stock are affected. The lubricant to be used for EQ-P3-L1-SB02 is CFW-LUB-278 part number. Update maintenance records and parts lists to reflect CFW-LUB-278 part number in lieu of unspecified items.\n\nImplementation\n- Maintenance supervision will update the EQ-P3-L1-SB02 preventive maintenance instructions to specify CFW-LUB-278 part number at all applicable lubrication steps. Reference SB-1033 for technical feed recommendations and incorporate procedural steps from SOP-P3-L1-02 and SOP-P3-L1-05 where lubrication is documented.\n- Procurement shall add CFW-LUB-278 part number to the P3 consumables catalogue and ensure availability for scheduled work. Warehouse will flag existing stock for segregation until disposition is determined by maintenance leads.\n- Technicians will record the use of CFW-LUB-278 part number on the equipment history record for EQ-P3-L1-SB02 and note the ECN identifier when closing work orders.\n\nApprovals\n- Engineering review completed and cross-checked against SB-1033, SOP-P3-L1-02, and SOP-P3-L1-05. Approval signatures required from Maintenance Manager, Plant Engineering, and Procurement Buyer per ECN control rules. Preserve signed ECN with equipment history for EQ-P3-L1-SB02 and update the controlled document index.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:ECN-2026-004:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: engineering change notice\nDocument id: ECN-2026-004\nTitle: Change notice - Hot Forge shot blast cabinet #2\nRevision: Rev E\nPlant: P3, line P3-L1\nEquipment: EQ-P3-L1-SB02\nRelated documents to cite: SB-1033, SOP-P3-L1-02, SOP-P3-L1-05\nValues to include exactly:\n- The lubricant part number for Hot Forge shot blast cabinet #2 (EQ-P3-L1-SB02) is CFW-LUB-278.\nStructure: reason for change, affected items, implementation, approvals. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

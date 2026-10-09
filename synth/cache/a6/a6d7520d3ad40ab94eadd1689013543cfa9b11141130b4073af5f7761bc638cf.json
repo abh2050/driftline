@@ -1,0 +1,16 @@
+{
+ "content": "{\"question\":\"What is the main ram bolt torque for Machining hydraulic forging press #3 (EQ-P3-L3-HP03)?\"}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "golden:G-086#0",
+ "messages": [
+  {
+   "content": "You write test questions for a document search assistant at Cascade Forge Works, a fictional forging manufacturer. Return JSON {\"question\": \"...\"}.",
+   "role": "system"
+  },
+  {
+   "content": "Write a direct question whose answer is this fact. Do not include the value itself.\nFact: the main ram bolt torque for Machining hydraulic forging press #3 (EQ-P3-L3-HP03) is 1600 N·m.",
+   "role": "user"
+  }
+ ]
+}

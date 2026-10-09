@@ -1,0 +1,31 @@
+{
+  "generator": "routing",
+  "generator_version": "1.0.0",
+  "model_deployment": "gpt-5-mini",
+  "outputs_sha256": {
+    "fixes.jsonl": "c4be575f7705f81256015829790f522a60ef0972e6356583f31d36f8ed2559f2",
+    "routing.jsonl": "6b5b0c9566239370bb56d65ef6a1a77d8da902dcbe4eba8487e6c9402875f9b9",
+    "routing_perturbations.jsonl": "275acde5f9d5eed35a33bbf8cbd2e69a270fe4fa85b5f09080b1aa2c0b03f3bc"
+  },
+  "record_counts": {
+    "action_escalate": 161,
+    "action_pr": 885,
+    "action_runbook": 154,
+    "ambiguous": 240,
+    "fix_accept": 97,
+    "fix_cases": 200,
+    "noise_cases": 240,
+    "perturbations": 1600,
+    "perturbed_sources": 200,
+    "real_cases": 1200,
+    "severity_sev1": 120,
+    "severity_sev2": 321,
+    "severity_sev3": 587,
+    "severity_sev4": 172,
+    "specialist_index": 247,
+    "specialist_performance": 315,
+    "specialist_prompt": 242,
+    "specialist_retrieval": 396
+  },
+  "seed": 20261009
+}

@@ -1,0 +1,16 @@
+{
+ "content": "# FAQ-014 Engineering FAQ #14\n\nRevision: Rev A\n\nQ1: What lubricant do we use for Heat Treat heat treat furnace #2 (EQ-P2-L4-HT02)?\nA1: The lubricant part number for Heat Treat heat treat furnace #2 (EQ-P2-L4-HT02) is CFW-LUB-426. Reference lubricant master list and ordering per ECN-2026-033.\n\nQ2: What is the main ram bolt torque for Hot Forge hydraulic forging press #1 (EQ-P3-L1-HP01)?\nA2: The main ram bolt torque for Hot Forge hydraulic forging press #1 (EQ-P3-L1-HP01) is 1425 N·m. Apply during assembly and after major rebuilds; see machine bolting procedure in SB-1016.\n\nQ3: What lubricant do we use for Machining CNC turning center #2 (EQ-P3-L3-CN02)?\nA3: The lubricant part number for Machining CNC turning center #2 (EQ-P3-L3-CN02) is CFW-LUB-611. Use replacement and inventory procedures in ECN-2026-033.\n\nQ4: What is the austenitizing oven setpoint for Machining heat treat furnace #2 (EQ-P2-L3-HT02)?\nA4: The austenitizing setpoint for Machining heat treat furnace #2 (EQ-P2-L3-HT02) is 845 °C. Follow the control recipe and verification steps in MM-P2-L3-HT02.\n\nQ5: What is the shot media replenishment frequency for Hot Forge shot blast cabinet #3 (EQ-P2-L1-SB03)?\nA5: The shot media top-up interval for Hot Forge shot blast cabinet #3 (EQ-P2-L1-SB03) is 33 hours. Log top-ups per the maintenance checklist in SB-1016.\n\nRelated documents: ECN-2026-033, MM-P2-L3-HT02, SB-1016.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:FAQ-014:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: engineering FAQ\nDocument id: FAQ-014\nTitle: Engineering FAQ #14\nRevision: Rev A\nRelated documents to cite: ECN-2026-033, MM-P2-L3-HT02, SB-1016\nValues to include exactly:\n- The lubricant part number for Heat Treat heat treat furnace #2 (EQ-P2-L4-HT02) is CFW-LUB-426.\n- The main ram bolt torque for Hot Forge hydraulic forging press #1 (EQ-P3-L1-HP01) is 1425 N·m.\n- The lubricant part number for Machining CNC turning center #2 (EQ-P3-L3-CN02) is CFW-LUB-611.\n- The austenitizing setpoint for Machining heat treat furnace #2 (EQ-P2-L3-HT02) is 845 °C.\n- The shot media top-up interval for Hot Forge shot blast cabinet #3 (EQ-P2-L1-SB03) is 33 hours.\nStructure: five question and answer pairs, one per given value. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

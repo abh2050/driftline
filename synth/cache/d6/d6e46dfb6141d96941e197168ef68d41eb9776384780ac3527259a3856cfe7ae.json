@@ -1,0 +1,16 @@
+{
+ "content": "# SOP-P2-L3-01 Line startup - Machining line\n\nRevision: Rev B  \nPlant: P2, line P2-L3  \nEquipment: EQ-P2-L3-RR01, EQ-P2-L3-HT02, EQ-P2-L3-IH03\n\nPurpose\n1. Provide required sequence and preconditions for safe startup of the Machining line.\n\nPreconditions\n2. Verify equipment EQ-P2-L3-RR01, EQ-P2-L3-HT02, EQ-P2-L3-IH03 is installed and maintenance completed per MM-P2-L3-IH03-S3.  \n3. Confirm lubrication supply for Machining heat treat furnace #2 (EQ-P2-L3-HT02) matches part on record: CFW-LUB-373.  \n4. Ensure coil cooling water source is ready and pump alarm states cleared. The coil cooling water flow minimum for Machining induction billet heater #3 (EQ-P2-L3-IH03) is 72 L/min.\n\nPPE\n5. Required PPE: safety glasses, hearing protection, cut-resistant gloves, steel-toe footwear, and arc-rated face shield when performing hot-start tasks. Follow SB-1003 for PPE specifics and SB-1023 for lockout/tagout references.\n\nStartup Procedure\n6. Unlock and tag per SB-1023. Verify LOTO removed by authorized personnel.  \n7. Energize control cabinet for EQ-P2-L3-RR01 and confirm indicator lamps present.  \n8. Start coolant pump and confirm flow meets precondition in step 3. Monitor for alarms.  \n9. Prime lubricant lines to EQ-P2-L3-HT02 using lubricant CFW-LUB-373 and confirm pressure indication within normal range.  \n10. Bring EQ-P2-L3-IH03 to warm standby per MM-P2-L3-IH03-S3 before loading material.  \n11. With sensors nominal and no alarms, enable feed drives and verify slow jog of rollers. Observe safe clearances before full speed enable.  \n12. If any alarm or abnormal condition occurs, stop operation and follow SB-1023 for fault isolation.\n\nTroubleshooting and Escalation\n13. If coolant flow cannot reach required value, isolate system and notify Maintenance per MM-P2-L3-IH03-S3.  \n14. Record any deviations in the shift log and notify Plant Supervisor.\n\nSign-off\n15. Operator: _____________________  \n16. Supervisor: _____________________\n\nRelated documents\n- MM-P2-L3-IH03-S3  \n- SB-1003  \n- SB-1023",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:SOP-P2-L3-01:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: standard operating procedure\nDocument id: SOP-P2-L3-01\nTitle: Line startup - Machining line\nRevision: Rev B\nPlant: P2, line P2-L3\nEquipment: EQ-P2-L3-RR01, EQ-P2-L3-HT02, EQ-P2-L3-IH03\nRelated documents to cite: MM-P2-L3-IH03-S3, SB-1003, SB-1023\nValues to include exactly:\n- The coil cooling water flow minimum for Machining induction billet heater #3 (EQ-P2-L3-IH03) is 72 L/min.\n- The lubricant part number for Machining heat treat furnace #2 (EQ-P2-L3-HT02) is CFW-LUB-373.\nStructure: numbered steps with preconditions, PPE and sign-off. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

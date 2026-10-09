@@ -1,0 +1,16 @@
+{
+ "content": "{\"question\":\"Before starting work on Machining induction billet heater #1 (EQ-P1-L3-IH01), what is the required minimum coil cooling water flow?\"}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "golden:G-021#0",
+ "messages": [
+  {
+   "content": "You write test questions for a document search assistant at Cascade Forge Works, a fictional forging manufacturer. Return JSON {\"question\": \"...\"}.",
+   "role": "system"
+  },
+  {
+   "content": "Write a question phrased as a check before doing work whose answer is this fact. Do not include the value itself.\nFact: the coil cooling water flow minimum for Machining induction billet heater #1 (EQ-P1-L3-IH01) is 79 L/min.",
+   "role": "user"
+  }
+ ]
+}

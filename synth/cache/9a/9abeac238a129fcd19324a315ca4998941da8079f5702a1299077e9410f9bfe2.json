@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\": [\"A violation persisted across 17 one-minute windows. Key metrics moved: citation_rate 0.946 -> 0.7565 (-20.0%), groundedness 4.5742 -> 3.3994 (-25.7%), hit_count 7.7235 -> 1.4801 (-80.8%), tokens_in 2405.1983 -> 528.78 (-78.0%). Configuration drift from baseline: top_k: 8 -> 2. There was 1 recent deploy. Logs show retrieval: returned 2 hits (top_k=2) | token refresh ok.\", \"Sustained breach lasted 17 one-minute windows. Metrics compare baseline->current: citation_rate 0.946 -> 0.7565 (-20.0%); groundedness 4.5742 -> 3.3994 (-25.7%); hit_count 7.7235 -> 1.4801 (-80.8%); tokens_in 2405.1983 -> 528.78 (-78.0%). Config change since baseline: top_k: 8 -> 2. Recent deploys count: 1. Logged: retrieval: returned 2 hits (top_k=2) | token refresh ok.\", \"Incident span: 17 one-minute windows of breach. Observed metric drops: citation_rate 0.946 -> 0.7565 (-20.0%), groundedness 4.5742 -> 3.3994 (-25.7%), hit_count 7.7235 -> 1.4801 (-80.8%), tokens_in 2405.1983 -> 528.78 (-78.0%). Delta from baseline in config: top_k: 8 -> 2. There was 1 recent deploy. System logs: retrieval: returned 2 hits (top_k=2) | token refresh ok.\", \"Breach duration: 17 one-minute windows. Metrics degraded as follows: citation_rate 0.946 -> 0.7565 (-20.0%); groundedness 4.5742 -> 3.3994 (-25.7%); hit_count 7.7235 -> 1.4801 (-80.8%); tokens_in 2405.1983 -> 528.78 (-78.0%). Configuration change since baseline recorded: top_k: 8 -> 2. Recent deploys: 1. Relevant logs: retrieval: returned 2 hits (top_k=2) | token refresh ok.\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0742#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 17 one-minute windows. Metrics: citation_rate 0.946 -> 0.7565 (-20.0%), groundedness 4.5742 -> 3.3994 (-25.7%), hit_count 7.7235 -> 1.4801 (-80.8%), tokens_in 2405.1983 -> 528.78 (-78.0%). Config changes since baseline: top_k: 8 -> 2. Recent deploys: 1. Logs: retrieval: returned 2 hits (top_k=2) | token refresh ok",
+   "role": "user"
+  }
+ ]
+}

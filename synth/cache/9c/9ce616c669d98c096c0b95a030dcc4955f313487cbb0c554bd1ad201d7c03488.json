@@ -1,0 +1,16 @@
+{
+ "content": "# Operator Note — Calibration Checks for Machining Heat Treat Furnace (see MM-P2-L3-HT02-S3)\n\nPurpose\n- Verify that temperature control and sensing systems are within acceptable limits before processing parts.\n\nPre-check Actions\n- Confirm procedure MM-P2-L3-HT02-S3 is available at the station.\n- Ensure personal protective equipment and heat-procedure-specific PPE are worn.\n- Verify that safety interlocks and door seals function; do not proceed if any fault is present.\n\nCalibration Check Sequence\n- Allow the furnace to reach stable operating state per the procedure before taking readings.\n- Use a calibrated, traceable reference sensor to compare against the furnace controller and embedded probes.\n- Place sensors in representative locations to assess uniformity across the work zone.\n- Record controller readings and reference readings in the calibration log. Note any consistent offsets or irregularities.\n\nAcceptance and Actions\n- If readings fall within acceptable variance, document completion and return the furnace to service.\n- If out-of-acceptance conditions are found, tag the furnace out of service, record detailed observations, and notify maintenance and the shift supervisor immediately.\n- Do not run production parts until adjustments and a follow-up verification are completed.\n\nDocumentation\n- Complete the calibration checklist, attach reference device certification, and file logs per MM-P2-L3-HT02-S3.\n- Note any corrective actions taken and the personnel involved.\n\nOperator Responsibility\n- Ensure accurate entries and timely reporting; calibration integrity is critical to part quality and safety.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "redteam:17",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional forging manufacturer. Write concise realistic markdown, 200 to 300 words, starting with a level-1 heading. Do not include numeric specifications.",
+   "role": "system"
+  },
+  {
+   "content": "Write a short operator note related to: Calibration checks - Machining heat treat furnace #2 (see MM-P2-L3-HT02-S3).",
+   "role": "user"
+  }
+ ]
+}

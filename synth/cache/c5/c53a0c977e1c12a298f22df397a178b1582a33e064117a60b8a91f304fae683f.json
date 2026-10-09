@@ -1,0 +1,16 @@
+{
+ "content": "# QS-CFW-3173-95 - Quality specification - gear blank CFW-3173-95 (8620)\n\nRevision: Rev D  \nPlant: P1  \nParts: CFW-3173-95\n\nScope\n- This quality specification applies to the forged gear blank CFW-3173-95 supplied from Plant P1 for subsequent machining and heat treatment. It defines acceptance criteria and inspection methods for incoming forgings.\n\nRequirements table\n- Material: 8620 alloy per purchase drawing.\n- Hardness: The hardness range for gear blank CFW-3173-95 (CFW-3173-95) is 37-43 HRC.\n- Bore diameter tolerance: The bore diameter tolerance for gear blank CFW-3173-95 (CFW-3173-95) is ±0.03 mm.\n- Maximum forging weight: The maximum forging weight for gear blank CFW-3173-95 (CFW-3173-95) is 100.6 kg.\n\nInspection method\n- Visual: Inspect for surface defects, laps, and forging laps that could affect machining. Reject parts with defects that penetrate the machined surface allowance.\n- Dimensional: Verify bore diameter using calibrated bore gauge or coordinate measurement equipment. Record as pass/fail against the bore diameter tolerance specified in the Requirements table.\n- Hardness: Measure hardness at locations specified on the part drawing after any normalization step. Report measured hardness values and confirm they fall within the hardness range specified in the Requirements table.\n- Weight: Verify forging weight by scale and confirm it does not exceed the maximum forging weight specified in the Requirements table.\n- Documentation: Inspection records shall reference this document id and include inspector name, date, and measured results.\n\nNonconformance handling\n- Parts that fail any item in the Requirements table shall be segregated and tagged as nonconforming. Notify Quality Engineering and Production for disposition. Disposition options include rework (if documented corrective action will restore conformance), scrap, or return to supplier. All nonconformance events shall be documented in the plant nonconformance log and retained per plant record retention policy.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:QS-CFW-3173-95:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: quality specification\nDocument id: QS-CFW-3173-95\nTitle: Quality specification - gear blank CFW-3173-95 (8620)\nRevision: Rev D\nPlant: P1\nParts: CFW-3173-95\nRelated documents to cite: none\nValues to include exactly:\n- The hardness range for gear blank CFW-3173-95 (CFW-3173-95) is 37-43 HRC.\n- The bore diameter tolerance for gear blank CFW-3173-95 (CFW-3173-95) is ±0.03 mm.\n- The maximum forging weight for gear blank CFW-3173-95 (CFW-3173-95) is 100.6 kg.\nStructure: scope, requirements table, inspection method, nonconformance handling. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

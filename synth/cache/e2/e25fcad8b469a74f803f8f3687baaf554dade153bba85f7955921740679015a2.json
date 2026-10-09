@@ -1,0 +1,16 @@
+{
+ "content": "{\n  \"paraphrases\": [\n    \"Breach sustained for 23 one-minute windows. Metrics: citation_rate 0.8985 -> 0.1853 (-79.4%), error_rate 0.0041 -> 0.07 (+1602.6%), groundedness 4.3666 -> 3.9822 (-8.8%), p95_latency_ms 2687.7733 -> 3254.1086 (+21.1%). Config changes since baseline: prompt_version: v3 -> v4-nocite. Recent deploys: 1. Logs: answer: 0 citations in response | prompt v4-nocite loaded | chat: 429 Too Many Requests from gateway (rate limit) | token refresh ok\",\n    \"Observed breach for 23 one-minute windows. Metrics changed: citation_rate 0.8985 -> 0.1853 (-79.4%); error_rate 0.0041 -> 0.07 (+1602.6%); groundedness 4.3666 -> 3.9822 (-8.8%); p95_latency_ms 2687.7733 -> 3254.1086 (+21.1%). Configuration deltas since baseline: prompt_version: v3 -> v4-nocite. Recent deploys count: 1. Logs captured: answer: 0 citations in response | prompt v4-nocite loaded | chat: 429 Too Many Requests from gateway (rate limit) | token refresh ok\",\n    \"For 23 one-minute windows we were in breach. Key metrics: citation_rate 0.8985 -> 0.1853 (-79.4%), error_rate 0.0041 -> 0.07 (+1602.6%), groundedness 4.3666 -> 3.9822 (-8.8%), p95_latency_ms 2687.7733 -> 3254.1086 (+21.1%). Config change from baseline: prompt_version: v3 -> v4-nocite. Deploys since baseline: 1. Relevant logs: answer: 0 citations in response | prompt v4-nocite loaded | chat: 429 Too Many Requests from gateway (rate limit) | token refresh ok\",\n    \"Sustained breach lasted 23 one-minute windows. Metric shifts: citation_rate 0.8985 -> 0.1853 (-79.4%), error_rate 0.0041 -> 0.07 (+1602.6%), groundedness 4.3666 -> 3.9822 (-8.8%), p95_latency_ms 2687.7733 -> 3254.1086 (+21.1%). Configuration since baseline: prompt_version: v3 -> v4-nocite. Number of recent deploys: 1. Logs show: answer: 0 citations in response | prompt v4-nocite loaded | chat: 429 Too Many Requests from gateway (rate limit) | token refresh ok\"\n  ]\n}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-1151#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 23 one-minute windows. Metrics: citation_rate 0.8985 -> 0.1853 (-79.4%), error_rate 0.0041 -> 0.07 (+1602.6%), groundedness 4.3666 -> 3.9822 (-8.8%), p95_latency_ms 2687.7733 -> 3254.1086 (+21.1%). Config changes since baseline: prompt_version: v3 -> v4-nocite. Recent deploys: 1. Logs: answer: 0 citations in response | prompt v4-nocite loaded | chat: 429 Too Many Requests from gateway (rate limit) | token refresh ok",
+   "role": "user"
+  }
+ ]
+}

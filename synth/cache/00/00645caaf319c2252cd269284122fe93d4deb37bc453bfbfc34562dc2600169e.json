@@ -1,0 +1,16 @@
+{
+ "content": "{\n  \"paraphrases\": [\n    \"Breach persisted across 5 one-minute windows. Metrics show error_rate rose from 0.004 to 0.1842 (+4549.4%) and p95_latency_ms increased from 2698.8351 to 4275.4703 (+58.4%). Config changes since baseline: none. Recent deploys: 0. Logs observed: retry: attempt 3/3 failed | chat: 429 Too Many Requests from gateway (rate limit) | search: warm cache miss.\",\n    \"Sustained breach: 5 one-minute windows. Observed metric shifts — error_rate 0.004 -> 0.1842 (+4549.4%); p95_latency_ms 2698.8351 -> 4275.4703 (+58.4%). No config changes since baseline. Recent deploys count: 0. Collected logs: retry: attempt 3/3 failed | chat: 429 Too Many Requests from gateway (rate limit) | search: warm cache miss.\",\n    \"Incident lasted for 5 one-minute windows. Key metrics: error_rate moved from 0.004 to 0.1842 (+4549.4%), and p95_latency_ms went from 2698.8351 to 4275.4703 (+58.4%). Config changes since baseline: none. Recent deploys: 0. Relevant logs: retry: attempt 3/3 failed | chat: 429 Too Many Requests from gateway (rate limit) | search: warm cache miss.\",\n    \"Breach duration: 5 one-minute windows. Metric deltas — error_rate: 0.004 -> 0.1842 (+4549.4%); p95_latency_ms: 2698.8351 -> 4275.4703 (+58.4%). No configuration changes since baseline and recent deploys = 0. Logs include: retry: attempt 3/3 failed | chat: 429 Too Many Requests from gateway (rate limit) | search: warm cache miss.\"\n  ]\n}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0239#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 5 one-minute windows. Metrics: error_rate 0.004 -> 0.1842 (+4549.4%), p95_latency_ms 2698.8351 -> 4275.4703 (+58.4%). Config changes since baseline: none. Recent deploys: 0. Logs: retry: attempt 3/3 failed | chat: 429 Too Many Requests from gateway (rate limit) | search: warm cache miss",
+   "role": "user"
+  }
+ ]
+}

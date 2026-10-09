@@ -1,0 +1,16 @@
+{
+ "content": "# SB-1046 Safety bulletin: noise exposure\n\nRevision: Rev B  \nPlant: P1, line P1-L4  \nEquipment: EQ-P1-L4-CN01\n\nHazard description\nThis bulletin addresses elevated noise exposure risk associated with machining and heat-treat operations on the line. Intermittent high-impact contact events, bearing wear, and insufficient lubrication at the turning center can increase airborne noise and impulsive noise events that exceed allowable exposure for personnel working at or adjacent to the cell. Chronic exposure to elevated noise can cause permanent hearing damage and reduces situational awareness, increasing overall safety risk.\n\nAffected equipment\nPrimary affected asset: EQ-P1-L4-CN01 (Heat Treat CNC turning center #1). Ancillary exposure applies to operators, setup technicians, maintenance staff, and nearby line personnel who perform loading, unloading, setup, or inspection activities within the P1-L4 work envelope. The way lube refill interval for Heat Treat CNC turning center #1 (EQ-P1-L4-CN01) is 40 hours.\n\nRequired controls\n- Administrative: Limit duration of close-proximity tasks and rotate personnel away from the immediate cell during heavy machining periods. Refer to SOP-P1-L4-02 for permitted access and allowed presence protocols.  \n- Engineering: Ensure acoustic panels and enclosures are present and maintained per MM-P1-L4-CN01. Verify seals and guards are in place to reduce radiated noise before resuming production.  \n- Maintenance: Prioritize inspection of drive bearings, waylubrication system, and cutting tool condition to reduce mechanical noise sources. Update maintenance activities in accordance with MM-P1-L4-CN01. Replace or repair components showing abnormal noise before resuming normal operations.  \n- PPE: Require hearing protection for all personnel entering the immediate cell area. Supervisors must enforce PPE use and document compliance per SOP-P1-L4-05.  \n- Verification: Conduct noise monitoring and post-repair acoustic checks following actions and record results in maintenance logs referenced by MM-P1-L4-CN01.\n\nEffective date\nEffective immediately.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:SB-1046:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: safety bulletin\nDocument id: SB-1046\nTitle: Safety bulletin: noise exposure\nRevision: Rev B\nPlant: P1, line P1-L4\nEquipment: EQ-P1-L4-CN01\nRelated documents to cite: MM-P1-L4-CN01, SOP-P1-L4-02, SOP-P1-L4-05\nValues to include exactly:\n- The way lube refill interval for Heat Treat CNC turning center #1 (EQ-P1-L4-CN01) is 40 hours.\nStructure: hazard description, affected equipment, required controls, effective date. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

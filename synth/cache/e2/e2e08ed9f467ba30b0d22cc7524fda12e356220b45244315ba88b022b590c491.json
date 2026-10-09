@@ -1,0 +1,16 @@
+{
+ "content": "{\"question\": \"What is the hardness range for axle hub CFW-4713-78?\"}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "golden:G-028#0",
+ "messages": [
+  {
+   "content": "You write test questions for a document search assistant at Cascade Forge Works, a fictional forging manufacturer. Return JSON {\"question\": \"...\"}.",
+   "role": "system"
+  },
+  {
+   "content": "Write a question that names the equipment or part id whose answer is this fact. Do not include the value itself.\nFact: the hardness range for axle hub CFW-4713-78 (CFW-4713-78) is 29-32 HRC.",
+   "role": "user"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "content": "{\"question\":\"Have you confirmed the hardness of valve body CFW-2117-10 is within the specified hardness range for this part?\"}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "golden:G-064#0",
+ "messages": [
+  {
+   "content": "You write test questions for a document search assistant at Cascade Forge Works, a fictional forging manufacturer. Return JSON {\"question\": \"...\"}.",
+   "role": "system"
+  },
+  {
+   "content": "Write a question phrased as a check before doing work whose answer is this fact. Do not include the value itself.\nFact: the hardness range for valve body CFW-2117-10 (CFW-2117-10) is 39-44 HRC.",
+   "role": "user"
+  }
+ ]
+}

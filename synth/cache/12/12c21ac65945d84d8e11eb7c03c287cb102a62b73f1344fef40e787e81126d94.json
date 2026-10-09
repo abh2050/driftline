@@ -1,0 +1,16 @@
+{
+ "content": "{\n  \"paraphrases\": [\n    \"A breach persisted for 15 one-minute windows. Metrics changed: citation_rate 0.912 -> 0.6025 (-33.9%), top_score 0.7876 -> 0.6496 (-17.5%). Configuration altered since baseline: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 1. Logs: citation parser: doc_id missing from search results | search: warm cache miss\",\n    \"Sustained breach duration: 15 one-minute windows. Observed metric shifts: citation_rate 0.912 -> 0.6025 (-33.9%) and top_score 0.7876 -> 0.6496 (-17.5%). Config differences from baseline: index_schema.fields.doc_id.retrievable: True -> False. Number of recent deploys: 1. Logs captured: citation parser: doc_id missing from search results | search: warm cache miss\",\n    \"The incident lasted across 15 one-minute windows. Key metrics: citation_rate 0.912 -> 0.6025 (-33.9%) ; top_score 0.7876 -> 0.6496 (-17.5%). Config change compared to baseline: index_schema.fields.doc_id.retrievable: True -> False. Recent deploy count: 1. Log entries: citation parser: doc_id missing from search results | search: warm cache miss\",\n    \"Breach spanned 15 one-minute windows. Metric deltas: citation_rate 0.912 -> 0.6025 (-33.9%) and top_score 0.7876 -> 0.6496 (-17.5%). Baseline-to-current config change: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 1. Logs: citation parser: doc_id missing from search results | search: warm cache miss\"\n  ]\n}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0605#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 15 one-minute windows. Metrics: citation_rate 0.912 -> 0.6025 (-33.9%), top_score 0.7876 -> 0.6496 (-17.5%). Config changes since baseline: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 1. Logs: citation parser: doc_id missing from search results | search: warm cache miss",
+   "role": "user"
+  }
+ ]
+}

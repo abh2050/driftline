@@ -1,0 +1,16 @@
+{
+ "content": "# SOP-P1-L3-03 First-article inspection - Machining line\n\nRevision: Rev D  \nPlant: P1, line P1-L3  \nEquipment: EQ-P1-L3-IH01, EQ-P1-L3-HP02, EQ-P1-L3-CN03  \nRelated: ECN-2026-035, QS-PROC-04, SB-1026\n\n1. Purpose\n   - Confirm first-article parts produced on P1-L3 meet drawing and process requirements prior to batch release.\n\n2. Preconditions\n   - Production run setup complete on EQ-P1-L3-HP02 and EQ-P1-L3-CN03, and material conditioned on EQ-P1-L3-IH01.\n   - Verify change incorporation per ECN-2026-035 before inspection.\n   - Ensure QS-PROC-04 traceability requirements are in place.\n\n3. PPE\n   - Wear required plant PPE per SB-1026.\n\n4. Machine verification\n   - Confirm EQ-P1-L3-HP02 main ram bolt is tightened to the specification: The main ram bolt torque for Machining hydraulic forging press #2 (EQ-P1-L3-HP02) is 1330 N·m.\n   - Confirm cooling flow to EQ-P1-L3-IH01: The coil cooling water flow minimum for Machining induction billet heater #1 (EQ-P1-L3-IH01) is 79 L/min.\n   - Record verification results on first-article checklist.\n\n5. Dimensional inspection\n   - Perform full dimensional inspection against drawing notes and record results on first-article checklist.\n   - Capture critical characteristic disposition per QS-PROC-04.\n\n6. Functional checks\n   - Run functional checks on EQ-P1-L3-CN03 as applicable and document findings.\n\n7. Nonconformance handling\n   - If any characteristic fails, document per QS-PROC-04 and initiate containment per ECN-2026-035.\n\n8. Documentation and disposition\n   - Attach completed first-article checklist and inspection data to the lot files.\n   - Reference SB-1026 for documentation retention and access.\n\n9. Sign-off\n   - Inspector printed name, signature, and date.\n   - Engineering review printed name, signature, and date.\n   - Production supervisor printed name, signature, and date.\n\nReferences: ECN-2026-035; QS-PROC-04; SB-1026.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:SOP-P1-L3-03:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: standard operating procedure\nDocument id: SOP-P1-L3-03\nTitle: First-article inspection - Machining line\nRevision: Rev D\nPlant: P1, line P1-L3\nEquipment: EQ-P1-L3-IH01, EQ-P1-L3-HP02, EQ-P1-L3-CN03\nRelated documents to cite: ECN-2026-035, QS-PROC-04, SB-1026\nValues to include exactly:\n- The main ram bolt torque for Machining hydraulic forging press #2 (EQ-P1-L3-HP02) is 1330 N·m.\n- The coil cooling water flow minimum for Machining induction billet heater #1 (EQ-P1-L3-IH01) is 79 L/min.\nStructure: numbered steps with preconditions, PPE and sign-off. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

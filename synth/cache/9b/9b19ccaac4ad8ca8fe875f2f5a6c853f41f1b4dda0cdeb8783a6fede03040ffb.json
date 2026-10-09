@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\":[\"Breach persisted across 17 one-minute windows. Observed metric shifts: citation_rate 0.9474 -> 0.8621 (-9.0%), error_rate 0.004 -> 0.0315 (+684.9%), groundedness 4.5473 -> 4.1303 (-9.2%), hit_count 8.1131 -> 5.5236 (-31.9%), p95_latency_ms 2848.5593 -> 5601.3542 (+96.6%), tokens_in 2215.5439 -> 1673.6134 (-24.5%). Configuration delta since baseline: top_k: 8 -> 2. Recent deploys: 1. Relevant log lines: retrieval: returned 2 hits (top_k=2) | search: 503 Service Unavailable (throttled, replicas=1) | token refresh ok.\",\"For 17 consecutive one-minute windows the breach remained. Metrics changed as follows: citation_rate 0.9474 -> 0.8621 (-9.0%), error_rate 0.004 -> 0.0315 (+684.9%), groundedness 4.5473 -> 4.1303 (-9.2%), hit_count 8.1131 -> 5.5236 (-31.9%), p95_latency_ms 2848.5593 -> 5601.3542 (+96.6%), tokens_in 2215.5439 -> 1673.6134 (-24.5%). Config changes since baseline: top_k: 8 -> 2. There was 1 recent deploy. Logs include: retrieval: returned 2 hits (top_k=2) | search: 503 Service Unavailable (throttled, replicas=1) | token refresh ok.\",\"The system experienced a sustained breach for 17 one-minute windows. Key metric deltas: citation_rate 0.9474 -> 0.8621 (-9.0%), error_rate 0.004 -> 0.0315 (+684.9%), groundedness 4.5473 -> 4.1303 (-9.2%), hit_count 8.1131 -> 5.5236 (-31.9%), p95_latency_ms 2848.5593 -> 5601.3542 (+96.6%), tokens_in 2215.5439 -> 1673.6134 (-24.5%). Baseline config change: top_k: 8 -> 2. Recent deploy count: 1. Logged events: retrieval: returned 2 hits (top_k=2) | search: 503 Service Unavailable (throttled, replicas=1) | token refresh ok.\",\"Sustained breach duration: 17 one-minute windows. Measured metric changes: citation_rate 0.9474 -> 0.8621 (-9.0%), error_rate 0.004 -> 0.0315 (+684.9%), groundedness 4.5473 -> 4.1303 (-9.2%), hit_count 8.1131 -> 5.5236 (-31.9%), p95_latency_ms 2848.5593 -> 5601.3542 (+96.6%), tokens_in 2215.5439 -> 1673.6134 (-24.5%). Configuration since baseline shows top_k: 8 -> 2. There was 1 recent deploy. Logs: retrieval: returned 2 hits (top_k=2) | search: 503 Service Unavailable (throttled, replicas=1) | token refresh ok.\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0209#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 17 one-minute windows. Metrics: citation_rate 0.9474 -> 0.8621 (-9.0%), error_rate 0.004 -> 0.0315 (+684.9%), groundedness 4.5473 -> 4.1303 (-9.2%), hit_count 8.1131 -> 5.5236 (-31.9%), p95_latency_ms 2848.5593 -> 5601.3542 (+96.6%), tokens_in 2215.5439 -> 1673.6134 (-24.5%). Config changes since baseline: top_k: 8 -> 2. Recent deploys: 1. Logs: retrieval: returned 2 hits (top_k=2) | search: 503 Service Unavailable (throttled, replicas=1) | token refresh ok",
+   "role": "user"
+  }
+ ]
+}

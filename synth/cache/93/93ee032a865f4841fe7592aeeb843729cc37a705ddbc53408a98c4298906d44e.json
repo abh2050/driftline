@@ -1,0 +1,16 @@
+{
+ "content": "# FAQ-024 Engineering FAQ #24\n\nRevision: Rev A\n\nQuestion: What is the dust collector alarm setpoint for Hot Forge shot blast cabinet #3 (EQ-P2-L1-SB03)?\nAnswer: The dust collector pressure drop alarm for Hot Forge shot blast cabinet #3 (EQ-P2-L1-SB03) is 1240 Pa. See SB-1021 for blast cabinet maintenance and alarm response procedures.\n\nQuestion: How often should the way lube be replenished on the Heat Treat CNC turning center #1 (EQ-P1-L4-CN01)?\nAnswer: The way lube refill interval for Heat Treat CNC turning center #1 (EQ-P1-L4-CN01) is 40 hours. Follow lubrication logging and verification steps in SOP-P2-L1-05.\n\nQuestion: What is the control target for the induction billet heater used in machining (EQ-P1-L3-IH01)?\nAnswer: The target billet temperature for Machining induction billet heater #1 (EQ-P1-L3-IH01) is 1235 °C. Verify thermocouple calibration and control loops per MM-P2-L3-HT02.\n\nQuestion: What torque is required for the blast wheel liner bolts on Ring Rolling shot blast cabinet #1 (EQ-P3-L2-SB01)?\nAnswer: The blast wheel liner bolt torque for Ring Rolling shot blast cabinet #1 (EQ-P3-L2-SB01) is 100 N·m. Refer to SB-1021 for torque sequence, fastener grade, and inspection intervals.\n\nQuestion: Which lubricant part is specified for Machining heat treat furnace #2 (EQ-P2-L3-HT02)?\nAnswer: The lubricant part number for Machining heat treat furnace #2 (EQ-P2-L3-HT02) is CFW-LUB-373. Procurement, handling, and storage instructions are documented in MM-P2-L3-HT02 and SOP-P2-L1-05.\n\nRelated documents: MM-P2-L3-HT02, SB-1021, SOP-P2-L1-05",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:FAQ-024:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: engineering FAQ\nDocument id: FAQ-024\nTitle: Engineering FAQ #24\nRevision: Rev A\nRelated documents to cite: MM-P2-L3-HT02, SB-1021, SOP-P2-L1-05\nValues to include exactly:\n- The dust collector pressure drop alarm for Hot Forge shot blast cabinet #3 (EQ-P2-L1-SB03) is 1240 Pa.\n- The way lube refill interval for Heat Treat CNC turning center #1 (EQ-P1-L4-CN01) is 40 hours.\n- The target billet temperature for Machining induction billet heater #1 (EQ-P1-L3-IH01) is 1235 °C.\n- The blast wheel liner bolt torque for Ring Rolling shot blast cabinet #1 (EQ-P3-L2-SB01) is 100 N·m.\n- The lubricant part number for Machining heat treat furnace #2 (EQ-P2-L3-HT02) is CFW-LUB-373.\nStructure: five question and answer pairs, one per given value. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

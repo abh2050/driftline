@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\":[\"Breach persisted across 4 one-minute windows. Groundedness fell from 4.2941 to 4.2188 (−1.8%), and top_score decreased from 0.8188 to 0.8098 (−1.1%). Config diff since baseline: chunk_overlap changed from 64 to 0. There have been 2 recent deploys. Logs show chunker: overlap=0 and 14% of answers span chunk boundary, plus search: warm cache miss.\",\"Incident lasted 4 consecutive one-minute windows. Metrics: groundedness dropped 4.2941 -> 4.2188 (−1.8%); top_score dropped 0.8188 -> 0.8098 (−1.1%). Configuration since baseline: chunk_overlap: 64 -> 0; number of recent deploys: 2. Log entries: chunker: overlap=0; 14% of answers span chunk boundary; search: warm cache miss.\",\"Observed breach for 4 one-minute windows. Measured changes: groundedness 4.2941 → 4.2188 (down 1.8%), top_score 0.8188 → 0.8098 (down 1.1%). Config change from baseline: chunk_overlap set 64 -> 0. Recent deploy count: 2. Relevant logs: chunker: overlap=0; 14% of answers span chunk boundary; search: warm cache miss.\",\"Sustained breach covered 4 one-minute windows. Key metric shifts: groundedness 4.2941 -> 4.2188 (−1.8%), top_score 0.8188 -> 0.8098 (−1.1%). Config delta since baseline includes chunk_overlap: 64 -> 0. There were 2 recent deploys. Logs capture chunker: overlap=0, with 14% of answers span chunk boundary, and search: warm cache miss.\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0250#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 4 one-minute windows. Metrics: groundedness 4.2941 -> 4.2188 (-1.8%), top_score 0.8188 -> 0.8098 (-1.1%). Config changes since baseline: chunk_overlap: 64 -> 0. Recent deploys: 2. Logs: chunker: overlap=0, 14% of answers span chunk boundary | search: warm cache miss",
+   "role": "user"
+  }
+ ]
+}

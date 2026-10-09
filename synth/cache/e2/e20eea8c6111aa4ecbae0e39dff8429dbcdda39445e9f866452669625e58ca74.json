@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\":[\"Breach persisted across 28 one-minute windows. Metrics moved: citation_rate 0.9527 -> 0.6592 (-30.8%), top_score 0.7987 -> 0.6872 (-14.0%). Configuration changed since baseline: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 1. Logs: citation parser: doc_id missing from search results | gc pause 120 ms\",\"Sustained breach lasted for 28 one-minute windows. Observed metric shifts: citation_rate 0.9527 -> 0.6592 (-30.8%) and top_score 0.7987 -> 0.6872 (-14.0%). Config delta from baseline: index_schema.fields.doc_id.retrievable: True -> False. Deploys: 1. Related logs: citation parser: doc_id missing from search results | gc pause 120 ms\",\"The incident spanned 28 one-minute windows. Key metric changes were citation_rate 0.9527 -> 0.6592 (-30.8%) and top_score 0.7987 -> 0.6872 (-14.0%). Baseline vs current config: index_schema.fields.doc_id.retrievable: True -> False. Recent deploy count: 1. Log entries: citation parser: doc_id missing from search results | gc pause 120 ms\",\"Incident window count: 28 one-minute windows breached. Metrics: citation_rate 0.9527 -> 0.6592 (-30.8%) ; top_score 0.7987 -> 0.6872 (-14.0%). Configuration change detected since baseline: index_schema.fields.doc_id.retrievable: True -> False. Number of recent deploys: 1. Logs captured: citation parser: doc_id missing from search results | gc pause 120 ms\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0730#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 28 one-minute windows. Metrics: citation_rate 0.9527 -> 0.6592 (-30.8%), top_score 0.7987 -> 0.6872 (-14.0%). Config changes since baseline: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 1. Logs: citation parser: doc_id missing from search results | gc pause 120 ms",
+   "role": "user"
+  }
+ ]
+}

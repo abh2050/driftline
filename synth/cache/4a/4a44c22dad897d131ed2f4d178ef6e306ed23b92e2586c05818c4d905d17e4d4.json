@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\":[\"Breach was active across 13 one-minute windows. Metrics changed: citation_rate 0.9292 -> 0.5389 (-42.0%), top_score 0.8595 -> 0.7002 (-18.5%). Config changes since baseline: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 1. Logs: citation parser: doc_id missing from search results | healthcheck ok\",\"Sustained breach spanned 13 one-minute windows. Metric deltas: citation_rate 0.9292 -> 0.5389 (-42.0%), top_score 0.8595 -> 0.7002 (-18.5%). Config changes since baseline: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 1. Logs: citation parser: doc_id missing from search results | healthcheck ok\",\"There was a breach lasting 13 one-minute windows. Observed metrics: citation_rate 0.9292 -> 0.5389 (-42.0%), top_score 0.8595 -> 0.7002 (-18.5%). Config changes since baseline: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 1. Logs: citation parser: doc_id missing from search results | healthcheck ok\",\"Incident persisted for 13 one-minute windows. Key metrics: citation_rate 0.9292 -> 0.5389 (-42.0%), top_score 0.8595 -> 0.7002 (-18.5%). Config changes since baseline: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 1. Logs: citation parser: doc_id missing from search results | healthcheck ok\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0182#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 13 one-minute windows. Metrics: citation_rate 0.9292 -> 0.5389 (-42.0%), top_score 0.8595 -> 0.7002 (-18.5%). Config changes since baseline: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 1. Logs: citation parser: doc_id missing from search results | healthcheck ok",
+   "role": "user"
+  }
+ ]
+}

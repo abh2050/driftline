@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\": [\"Breach persisted across 12 one-minute windows. Metrics shifted: citation_rate 0.9401 -> 0.7937 (-15.6%), groundedness 4.3456 -> 4.2787 (-1.5%), p95_latency_ms 2671.1752 -> 3796.0741 (+42.1%). Configuration differences from baseline: scale.min_replicas: 1 -> 0; prompt_version: v3 -> v4-nocite. There was 1 recent deploy. Logs show: container: cold start 6.2 s | answer: 0 citations in response | search: warm cache miss.\" , \"For 12 consecutive one-minute windows the breach was active. Observed metric changes: citation_rate 0.9401 -> 0.7937 (-15.6%), groundedness 4.3456 -> 4.2787 (-1.5%), p95_latency_ms 2671.1752 -> 3796.0741 (+42.1%). Config drift vs baseline: scale.min_replicas: 1 -> 0; prompt_version: v3 -> v4-nocite. There has been 1 recent deploy. Relevant logs: container: cold start 6.2 s | answer: 0 citations in response | search: warm cache miss.\" , \"The incident lasted 12 one-minute windows. Key metric deltas: citation_rate 0.9401 -> 0.7937 (-15.6%), groundedness 4.3456 -> 4.2787 (-1.5%), p95_latency_ms 2671.1752 -> 3796.0741 (+42.1%). Configuration changes since baseline include scale.min_replicas: 1 -> 0 and prompt_version: v3 -> v4-nocite. Recent deploy count: 1. Logs captured: container: cold start 6.2 s | answer: 0 citations in response | search: warm cache miss.\" , \"Sustained breach spanned 12 one-minute windows. Metrics recorded: citation_rate 0.9401 -> 0.7937 (-15.6%), groundedness 4.3456 -> 4.2787 (-1.5%), p95_latency_ms 2671.1752 -> 3796.0741 (+42.1%). Baseline config diffs: scale.min_replicas: 1 -> 0; prompt_version: v3 -> v4-nocite. Number of recent deploys: 1. Log entries: container: cold start 6.2 s | answer: 0 citations in response | search: warm cache miss.\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0545#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 12 one-minute windows. Metrics: citation_rate 0.9401 -> 0.7937 (-15.6%), groundedness 4.3456 -> 4.2787 (-1.5%), p95_latency_ms 2671.1752 -> 3796.0741 (+42.1%). Config changes since baseline: scale.min_replicas: 1 -> 0; prompt_version: v3 -> v4-nocite. Recent deploys: 1. Logs: container: cold start 6.2 s | answer: 0 citations in response | search: warm cache miss",
+   "role": "user"
+  }
+ ]
+}

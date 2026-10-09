@@ -27,4 +27,6 @@ jobs:
         run: uv run mypy
       - name: pytest
         run: uv run pytest -q
-      # Added in later phases: Bicep lint, synthetic data determinism, layer 1 offline.
+      - name: synthetic data determinism
+        run: ./scripts/check-synth-determinism.sh
+      # Added in later phases: Bicep lint, layer 1 offline.

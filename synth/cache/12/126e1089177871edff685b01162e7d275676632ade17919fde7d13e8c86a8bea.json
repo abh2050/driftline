@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\":[\"Breach sustained for 28 one-minute windows. Observed p95_latency_ms rose from 2838.7197 to 6216.7356 (+119.0%). Config drift since baseline: scale.min_replicas: 1 -> 0. There was 1 recent deploy. Logs show container: cold start 6.2 s | healthcheck ok.\",\"For 28 one-minute windows the breach persisted. p95_latency_ms increased 2838.7197 -> 6216.7356 (+119.0%). Configuration difference from baseline: scale.min_replicas: 1 -> 0. Recent deploys count: 1. Log entries: container: cold start 6.2 s | healthcheck ok.\",\"A sustained breach lasted 28 one-minute windows. The p95_latency_ms metric jumped from 2838.7197 to 6216.7356 (+119.0%). Config changes versus baseline include scale.min_replicas: 1 -> 0. There was 1 recent deploy. Logs record container: cold start 6.2 s | healthcheck ok.\",\"The incident endured for 28 one-minute windows. p95_latency_ms went from 2838.7197 to 6216.7356, a +119.0% increase. Baseline config changed: scale.min_replicas: 1 -> 0. Recent deploys: 1. Relevant logs: container: cold start 6.2 s | healthcheck ok.\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0793#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 28 one-minute windows. Metrics: p95_latency_ms 2838.7197 -> 6216.7356 (+119.0%). Config changes since baseline: scale.min_replicas: 1 -> 0. Recent deploys: 1. Logs: container: cold start 6.2 s | healthcheck ok",
+   "role": "user"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "content": "# FAQ-009 Engineering FAQ #9\nRevision: Rev A\n\nQ1: What is the recommended spindle warm-up time for Machining CNC turning center #3 (EQ-P1-L3-CN03)?\nA1: The spindle warm-up time is 27 minutes. Allow the spindle to reach steady state before commencing precision turning operations. See ECN-2026-004 for the related change note.\n\nQ2: What is the minimum coil cooling water flow for Hot Forge induction billet heater #2 (EQ-P2-L1-IH02)?\nA2: The coil cooling water flow minimum is 55 L/min. Verify flow at the heater inlet during startup and monitor for sustained flow below this threshold. Refer to SOP-P2-L1-03 for procedures on flow verification and alarm responses.\n\nQ3: Which lubricant part number is used for Ring Rolling radial ring rolling mill #1 (EQ-P1-L2-RR01)?\nA3: Use lubricant part number CFW-LUB-961 for EQ-P1-L2-RR01. Apply per lubrication schedule and contamination control processes. See SOP-P3-L3-02 for handling and storage instructions.\n\nQ4: Which lubricant part number is used for Machining shot blast cabinet #1 (EQ-P3-L3-SB01)?\nA4: Use lubricant part number CFW-LUB-709 for EQ-P3-L3-SB01. Confirm compatibility with media and equipment surfaces before application. See SOP-P3-L3-02 for application method and PPE requirements.\n\nQ5: Which lubricant part number is used for Hot Forge shot blast cabinet #2 (EQ-P3-L1-SB02)?\nA5: Use lubricant part number CFW-LUB-278 for EQ-P3-L1-SB02. Record lubricant usage in the equipment log and follow contamination control. See SOP-P2-L1-03 and SOP-P3-L3-02 for maintenance and storage cross-references.\n\nRelated documents: ECN-2026-004, SOP-P2-L1-03, SOP-P3-L3-02\n\nDocument control note: This FAQ clarifies single-point operational values and part references. For procedural detail follow the cited SOPs and ECN.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:FAQ-009:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: engineering FAQ\nDocument id: FAQ-009\nTitle: Engineering FAQ #9\nRevision: Rev A\nRelated documents to cite: ECN-2026-004, SOP-P2-L1-03, SOP-P3-L3-02\nValues to include exactly:\n- The spindle warm-up time for Machining CNC turning center #3 (EQ-P1-L3-CN03) is 27 minutes.\n- The coil cooling water flow minimum for Hot Forge induction billet heater #2 (EQ-P2-L1-IH02) is 55 L/min.\n- The lubricant part number for Ring Rolling radial ring rolling mill #1 (EQ-P1-L2-RR01) is CFW-LUB-961.\n- The lubricant part number for Machining shot blast cabinet #1 (EQ-P3-L3-SB01) is CFW-LUB-709.\n- The lubricant part number for Hot Forge shot blast cabinet #2 (EQ-P3-L1-SB02) is CFW-LUB-278.\nStructure: five question and answer pairs, one per given value. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

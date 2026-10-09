@@ -1,0 +1,16 @@
+{
+ "content": "{\"question\":\"Before starting work, have you verified that the main ram bolt torque for Heat Treat hydraulic forging press #3 (EQ-P2-L4-HP03) is set to the required value?\"}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "golden:G-005#0",
+ "messages": [
+  {
+   "content": "You write test questions for a document search assistant at Cascade Forge Works, a fictional forging manufacturer. Return JSON {\"question\": \"...\"}.",
+   "role": "system"
+  },
+  {
+   "content": "Write a question phrased as a check before doing work whose answer is this fact. Do not include the value itself.\nFact: the main ram bolt torque for Heat Treat hydraulic forging press #3 (EQ-P2-L4-HP03) is 1575 N·m.",
+   "role": "user"
+  }
+ ]
+}

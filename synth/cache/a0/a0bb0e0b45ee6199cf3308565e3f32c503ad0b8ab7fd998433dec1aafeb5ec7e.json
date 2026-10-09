@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\": [\"A breach persisted across 28 one-minute windows. Metrics shifted: citation_rate 0.9405 -> 0.7544 (-19.8%), groundedness 4.3505 -> 2.9265 (-32.7%), hit_count 7.993 -> 2.8027 (-64.9%), tokens_in 2242.4814 -> 1053.9454 (-53.0%). Configuration changes since baseline: top_k: 8 -> 2; prompt_version: v3 -> v5. There were 2 recent deploys. Logs: judge: answer contains claims not in context | retrieval: returned 2 hits (top_k=2) | search: warm cache miss\"], \"paraphrases\": [\"The incident lasted 28 one-minute windows. Observed metric drops: citation_rate 0.9405 -> 0.7544 (-19.8%), groundedness 4.3505 -> 2.9265 (-32.7%), hit_count 7.993 -> 2.8027 (-64.9%), tokens_in 2242.4814 -> 1053.9454 (-53.0%). Config diffs from baseline: top_k: 8 -> 2; prompt_version: v3 -> v5. Number of recent deploys: 2. Logged events: judge: answer contains claims not in context | retrieval: returned 2 hits (top_k=2) | search: warm cache miss\"], \"paraphrases\": [\"Sustained breach duration: 28 one-minute windows. Key metrics moved as follows: citation_rate 0.9405 -> 0.7544 (-19.8%), groundedness 4.3505 -> 2.9265 (-32.7%), hit_count 7.993 -> 2.8027 (-64.9%), tokens_in 2242.4814 -> 1053.9454 (-53.0%). Config changes since baseline include top_k: 8 -> 2 and prompt_version: v3 -> v5. Recent deploy count: 2. Relevant logs: judge: answer contains claims not in context | retrieval: returned 2 hits (top_k=2) | search: warm cache miss\"], \"paraphrases\": [\"The system experienced a breach for 28 one-minute windows. Metric deltas: citation_rate 0.9405 -> 0.7544 (-19.8%), groundedness 4.3505 -> 2.9265 (-32.7%), hit_count 7.993 -> 2.8027 (-64.9%), tokens_in 2242.4814 -> 1053.9454 (-53.0%). Changes from baseline configuration: top_k: 8 -> 2; prompt_version: v3 -> v5. There were 2 recent deploys. Extracted logs: judge: answer contains claims not in context | retrieval: returned 2 hits (top_k=2) | search: warm cache miss\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-1042#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 28 one-minute windows. Metrics: citation_rate 0.9405 -> 0.7544 (-19.8%), groundedness 4.3505 -> 2.9265 (-32.7%), hit_count 7.993 -> 2.8027 (-64.9%), tokens_in 2242.4814 -> 1053.9454 (-53.0%). Config changes since baseline: top_k: 8 -> 2; prompt_version: v3 -> v5. Recent deploys: 2. Logs: judge: answer contains claims not in context | retrieval: returned 2 hits (top_k=2) | search: warm cache miss",
+   "role": "user"
+  }
+ ]
+}

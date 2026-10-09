@@ -1,0 +1,16 @@
+{
+ "content": "{\"question\":\"Quick—what's the minimum coil cooling water flow for Ring Rolling induction billet heater #2 (EQ-P1-L2-IH02)?\"}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "golden:G-009#0",
+ "messages": [
+  {
+   "content": "You write test questions for a document search assistant at Cascade Forge Works, a fictional forging manufacturer. Return JSON {\"question\": \"...\"}.",
+   "role": "system"
+  },
+  {
+   "content": "Write a question from someone in a hurry whose answer is this fact. Do not include the value itself.\nFact: the coil cooling water flow minimum for Ring Rolling induction billet heater #2 (EQ-P1-L2-IH02) is 46 L/min.",
+   "role": "user"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "content": "# ECN-2026-025 - Change notice - Hot Forge radial ring rolling mill #1\n\nRevision: Rev D  \nPlant: P1, line P1-L1  \nEquipment: EQ-P1-L1-RR01\n\n## Reason for change\nOperational feedback and bearing condition monitoring indicate accelerated grease depletion at the main roll bearing during standard production cycles. Analysis of lubricant consumption and bearing inspection records showed inconsistent grease distribution patterns originating from the current lubrication regimen. This change aligns the preventive maintenance practice with observed field conditions to reduce bearing wear, unplanned downtime, and potential scrap generation on the Hot Forge radial ring rolling mill #1.\n\nRelated documents: ECN-2026-034, ECN-2026-040, SOP-P1-L1-02\n\n## Affected items\n- Main roll bearing assembly on EQ-P1-L1-RR01\n- Lubrication task list and maintenance instructions referenced in SOP-P1-L1-02\n- Maintenance log entry template for EQ-P1-L1-RR01\n\n## Implementation\nUpdate the maintenance procedure for EQ-P1-L1-RR01 to set the main roll bearing lubrication interval for Hot Forge radial ring rolling mill #1 (EQ-P1-L1-RR01) to 120 hours. Technicians shall follow the lubrication method and approved lubricant specified in SOP-P1-L1-02 when performing the task. Replace the current task entry in the computerized maintenance system with the revised interval and ensure that the maintenance checklist for EQ-P1-L1-RR01 reflects the new interval. Conduct a focused training briefing for maintenance personnel on the updated interval and verification steps prior to the next scheduled maintenance window. Inspect and document grease distribution at the time of the first lubrication action under the new interval and enter findings in the maintenance log.\n\n## Approvals\n- Engineering: approval required in document control workflow per ECN-2026-034  \n- Maintenance management: approval required per SOP-P1-L1-02  \n- Operations: concurrence required per ECN-2026-040\n\nPrepared by: Maintenance Engineering  \nDistribution: Maintenance, Operations, Document Control",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:ECN-2026-025:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: engineering change notice\nDocument id: ECN-2026-025\nTitle: Change notice - Hot Forge radial ring rolling mill #1\nRevision: Rev D\nPlant: P1, line P1-L1\nEquipment: EQ-P1-L1-RR01\nRelated documents to cite: ECN-2026-034, ECN-2026-040, SOP-P1-L1-02\nValues to include exactly:\n- The main roll bearing lubrication interval for Hot Forge radial ring rolling mill #1 (EQ-P1-L1-RR01) is 120 hours.\nStructure: reason for change, affected items, implementation, approvals. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

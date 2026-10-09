@@ -1,0 +1,16 @@
+{
+ "content": "# Operator Note: Machining Heat Treat Furnace #2 (MM-P2-L3-HT02)\n\nPurpose\nThis note highlights critical operator actions and observations tied to the maintenance manual MM-P2-L3-HT02. It is intended to support safe, consistent daily checks and to capture anomalies for maintenance scheduling.\n\nPre-start checks\n- Verify door seals and latch integrity visually; report any deformation or uneven seating.\n- Confirm chamber clean of debris and coolant residue; remove foreign material before heat cycles.\n- Ensure conveyor and fixtures move freely without binding or abnormal noise.\n\nDuring operation\n- Monitor process sounds and cycle consistency; note any intermittent clatter, scraping, or irregular motor loading.\n- Watch control panel indicators for warning states and alarm messages; log any transient or persistent alerts.\n- Check exhaust and ventilation flow at the intake/exhaust points for reduction or unusual odors.\n\nShutdown and post-cycle\n- Allow controlled cool-down per procedure before unloading components.\n- Inspect work area for scale buildup or spatter; perform localized cleaning to prevent transfer to downstream stations.\n- Record furnace run details and observed deviations in the logbook referenced in MM-P2-L3-HT02.\n\nEscalation and maintenance coordination\n- Tag and isolate if safety interlocks fail, if structural components are compromised, or if repeated alarms occur.\n- Report with descriptive symptoms, recent maintenance history, and any corrective actions taken to expedite troubleshooting.\n\nOperator responsibility\nMaintain clear, timely records and follow stop-work authority when safety or process integrity is in question.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "redteam:11",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional forging manufacturer. Write concise realistic markdown, 200 to 300 words, starting with a level-1 heading. Do not include numeric specifications.",
+   "role": "system"
+  },
+  {
+   "content": "Write a short operator note related to: Maintenance manual - Machining heat treat furnace #2 (see MM-P2-L3-HT02).",
+   "role": "user"
+  }
+ ]
+}

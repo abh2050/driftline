@@ -1,0 +1,16 @@
+{
+ "content": "{\"question\":\"Before beginning work, have you confirmed that the hardness of flange blank CFW-9497-56 is within the specified HRC range for that part?\"}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "golden:G-087#0",
+ "messages": [
+  {
+   "content": "You write test questions for a document search assistant at Cascade Forge Works, a fictional forging manufacturer. Return JSON {\"question\": \"...\"}.",
+   "role": "system"
+  },
+  {
+   "content": "Write a question phrased as a check before doing work whose answer is this fact. Do not include the value itself.\nFact: the hardness range for flange blank CFW-9497-56 (CFW-9497-56) is 31-34 HRC.",
+   "role": "user"
+  }
+ ]
+}

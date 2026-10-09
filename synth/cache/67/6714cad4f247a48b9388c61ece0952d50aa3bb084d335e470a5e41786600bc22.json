@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\":[\"Breach persisted across 5 one-minute windows. Metrics moved: citation_rate 0.9477 -> 0.8049 (-15.1%), groundedness 4.2317 -> 2.827 (-33.2%). Config diff from baseline: prompt_version: v3 -> v5. Recent deploys: 2. Logs: judge: answer contains claims not in context | prompt v5 loaded (system prompt rewritten) | gc pause 120 ms\",\"Incident spanned 5 one-minute windows. Observed metric shifts: citation_rate 0.9477 -> 0.8049 (-15.1%) and groundedness 4.2317 -> 2.827 (-33.2%). Configuration change since baseline: prompt_version: v3 -> v5. Recent deploys count: 2. Logs: judge: answer contains claims not in context | prompt v5 loaded (system prompt rewritten) | gc pause 120 ms\",\"Sustained breach for 5 one-minute windows. Key metrics: citation_rate dropped 0.9477 -> 0.8049 (-15.1%); groundedness fell 4.2317 -> 2.827 (-33.2%). Config changes relative to baseline: prompt_version: v3 -> v5. Number of recent deploys: 2. Logs: judge: answer contains claims not in context | prompt v5 loaded (system prompt rewritten) | gc pause 120 ms\",\"Breach duration: 5 one-minute windows. Metric degradations: citation_rate 0.9477 -> 0.8049 (-15.1%) and groundedness 4.2317 -> 2.827 (-33.2%). Baseline config change: prompt_version: v3 -> v5. Recent deploys: 2. Logs: judge: answer contains claims not in context | prompt v5 loaded (system prompt rewritten) | gc pause 120 ms\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0806#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 5 one-minute windows. Metrics: citation_rate 0.9477 -> 0.8049 (-15.1%), groundedness 4.2317 -> 2.827 (-33.2%). Config changes since baseline: prompt_version: v3 -> v5. Recent deploys: 2. Logs: judge: answer contains claims not in context | prompt v5 loaded (system prompt rewritten) | gc pause 120 ms",
+   "role": "user"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\":[\"Breach persisted across 24 one-minute windows. Observed metrics changed: groundedness 4.3663 -> 3.765 (-13.8%), p95_latency_ms 2765.0972 -> 3290.8741 (+19.0%), tokens_in 2302.6389 -> 8038.4557 (+249.1%), top_score 0.8523 -> 0.7536 (-11.6%). Configuration drift from baseline: chunk_size: 512 -> 2048. Recent deploys: 1. Logs show retrieval: 8 hits, mean chunk length 1987 tokens | prompt truncated to fit context window (dropped 3 chunks) | autoscaler: replicas 2 -> 3.\" , \"For 24 one-minute windows the system remained in breach. Key metric deltas: groundedness 4.3663 -> 3.765 (-13.8%), p95_latency_ms 2765.0972 -> 3290.8741 (+19.0%), tokens_in 2302.6389 -> 8038.4557 (+249.1%), top_score 0.8523 -> 0.7536 (-11.6%). Config changes since baseline include chunk_size: 512 -> 2048. Recent deploys: 1. Log entries: retrieval: 8 hits, mean chunk length 1987 tokens | prompt truncated to fit context window (dropped 3 chunks) | autoscaler: replicas 2 -> 3.\", \"Sustained breach lasted 24 one-minute windows. Metrics: groundedness 4.3663 -> 3.765 (-13.8%), p95_latency_ms 2765.0972 -> 3290.8741 (+19.0%), tokens_in 2302.6389 -> 8038.4557 (+249.1%), top_score 0.8523 -> 0.7536 (-11.6%). Configuration deviation: chunk_size: 512 -> 2048. There was 1 recent deploy. Logs: retrieval: 8 hits, mean chunk length 1987 tokens | prompt truncated to fit context window (dropped 3 chunks) | autoscaler: replicas 2 -> 3.\", \"The incident spanned 24 one-minute windows in breach. Measured changes: groundedness 4.3663 -> 3.765 (-13.8%), p95_latency_ms 2765.0972 -> 3290.8741 (+19.0%), tokens_in 2302.6389 -> 8038.4557 (+249.1%), top_score 0.8523 -> 0.7536 (-11.6%). Baseline config altered: chunk_size: 512 -> 2048. Recent deploys: 1. Log summary: retrieval: 8 hits, mean chunk length 1987 tokens | prompt truncated to fit context window (dropped 3 chunks) | autoscaler: replicas 2 -> 3.\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0031#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 24 one-minute windows. Metrics: groundedness 4.3663 -> 3.765 (-13.8%), p95_latency_ms 2765.0972 -> 3290.8741 (+19.0%), tokens_in 2302.6389 -> 8038.4557 (+249.1%), top_score 0.8523 -> 0.7536 (-11.6%). Config changes since baseline: chunk_size: 512 -> 2048. Recent deploys: 1. Logs: retrieval: 8 hits, mean chunk length 1987 tokens | prompt truncated to fit context window (dropped 3 chunks) | autoscaler: replicas 2 -> 3",
+   "role": "user"
+  }
+ ]
+}

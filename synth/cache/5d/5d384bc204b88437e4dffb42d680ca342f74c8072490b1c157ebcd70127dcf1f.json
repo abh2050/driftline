@@ -1,0 +1,16 @@
+{
+ "content": "# SB-1038 Safety bulletin: pinch points during die change\n\nRevision: Rev D  \nPlant: P3, line P3-L4  \nEquipment: EQ-P3-L4-SB03\n\n## Hazard description\nPinch point injuries have been identified during die change activities on the line. Risk arises when die components, handling fixtures, and shot blast cabinet interfaces are moved or supported while personnel are within the change area. Incidents involve unexpected movement of tooling or workholding and contact with energized or suspended components. Inadequate guarding, lack of positive restraints, and failure to verify zero energy contribute to the hazard. Personnel should assume pinch points are present at all die contact and support surfaces until controls are implemented and verified.\n\n## Affected equipment\nPrimary affected equipment: EQ-P3-L4-SB03. This includes associated die change tooling, handling fixtures, and adjacent conveyor interfaces on line P3-L4. The shot blast cabinet interface to Heat Treat operations is included. The shot media top-up interval for Heat Treat shot blast cabinet #3 (EQ-P3-L4-SB03) is 48 hours.\n\n## Required controls\n- Establish and enforce an exclusion zone around the die change area. Only authorized personnel shall enter after controls are verified.  \n- Implement positive mechanical restraints and tag-out on all suspended or movable die components prior to entry. Verify restraint engagement visually and by test where practical.  \n- Verify energy isolation per applicable lockout/tagout procedure before any die handling or entry. Communicate status on the shiftboard and handover.  \n- Use designated handling fixtures and lifting points specified for EQ-P3-L4-SB03. Inspect fixtures per SOP before use.  \n- Conduct a pre-change briefing that includes roles, verification steps, and emergency procedures. Record completion per SOP requirements.  \n- Report any deviations, near misses, or control failures immediately and initiate corrective action per ECN-2026-026. See SOP-P3-L4-01 and SOP-P3-L4-02 for detailed procedures and checklists.\n\n## Effective date\nEffective date: immediate.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:SB-1038:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: safety bulletin\nDocument id: SB-1038\nTitle: Safety bulletin: pinch points during die change\nRevision: Rev D\nPlant: P3, line P3-L4\nEquipment: EQ-P3-L4-SB03\nRelated documents to cite: ECN-2026-026, SOP-P3-L4-01, SOP-P3-L4-02\nValues to include exactly:\n- The shot media top-up interval for Heat Treat shot blast cabinet #3 (EQ-P3-L4-SB03) is 48 hours.\nStructure: hazard description, affected equipment, required controls, effective date. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "content": "# ECN-2026-046 - Change notice - Machining induction billet heater #1\n\nRevision: Rev B  \nPlant: P1, line P1-L3  \nEquipment: EQ-P1-L3-IH01\n\nReason for change\nThe existing control setpoint for Machining induction billet heater #1 (EQ-P1-L3-IH01) requires adjustment to meet downstream machining metallurgical targets. Analysis of as-run logs and metallurgical rejects identified a consistent offset. To bring delivered billets into the acceptable hardness and dimensional stability window, the target billet temperature for Machining induction billet heater #1 (EQ-P1-L3-IH01) is 1235 °C. This change aligns heater control with the corrective actions documented in ECN-2026-029 and refines operator procedures per SOP-P1-L3-04 and SOP-P1-L3-05.\n\nAffected items\n- Control system setpoint configuration for EQ-P1-L3-IH01\n- Operator operating procedure references in SOP-P1-L3-04 and SOP-P1-L3-05\n- Batch records and shift logs that reference the previous setpoint\n- Training materials for operators assigned to line P1-L3\n\nImplementation\n- Update the setpoint in the PLC and DCS configuration for EQ-P1-L3-IH01 to the specified target temperature and lock change control per existing change management workflows referenced in ECN-2026-029.\n- Revise step language in SOP-P1-L3-04 and SOP-P1-L3-05 to reflect the new target and to include verification and record steps consistent with plant documentation practice.\n- Execute a controlled changeover during the next planned equipment window; perform verification runs and record actual measured billet inlet and outlet conditions to confirm the heater achieves the target.\n- Deliver operator briefing and a one-time training update to all operators assigned to line P1-L3 covering the revised setpoint and verification steps. Update batch record templates to record setpoint confirmation.\n\nApprovals\nPrepared by: Maintenance Engineering, P1-L3  \nReviewed by: Process Engineering, P1-L3  \nApproved by: Plant Operations Management\n\nRelated documents: ECN-2026-029, SOP-P1-L3-04, SOP-P1-L3-05",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:ECN-2026-046:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: engineering change notice\nDocument id: ECN-2026-046\nTitle: Change notice - Machining induction billet heater #1\nRevision: Rev B\nPlant: P1, line P1-L3\nEquipment: EQ-P1-L3-IH01\nRelated documents to cite: ECN-2026-029, SOP-P1-L3-04, SOP-P1-L3-05\nValues to include exactly:\n- The target billet temperature for Machining induction billet heater #1 (EQ-P1-L3-IH01) is 1235 °C.\nStructure: reason for change, affected items, implementation, approvals. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

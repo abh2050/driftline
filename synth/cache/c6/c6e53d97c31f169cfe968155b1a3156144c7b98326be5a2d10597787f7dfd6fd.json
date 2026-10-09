@@ -1,0 +1,16 @@
+{
+ "content": "{\"question\":\"What is the bore diameter tolerance specified for the crankshaft blank CFW-9184-50?\"}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "golden:G-033#0",
+ "messages": [
+  {
+   "content": "You write test questions for a document search assistant at Cascade Forge Works, a fictional forging manufacturer. Return JSON {\"question\": \"...\"}.",
+   "role": "system"
+  },
+  {
+   "content": "Write a question that names the equipment or part by description whose answer is this fact. Do not include the value itself.\nFact: the bore diameter tolerance for crankshaft blank CFW-9184-50 (CFW-9184-50) is ±0.02 mm.",
+   "role": "user"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "content": "# SOP-P3-L3-01 Line startup - Machining line\n\nRevision: Rev D  \nPlant: P3, line P3-L3  \nEquipment: EQ-P3-L3-SB01, EQ-P3-L3-CN02, EQ-P3-L3-HP03  \nRelated documents: ECN-2026-016, MM-P3-L3-CN02, MM-P3-L3-CN02-S1\n\n1. Purpose\n   - Provide required actions to start the machining line and verify safe readiness of EQ-P3-L3-SB01, EQ-P3-L3-CN02, and EQ-P3-L3-HP03.\n\n2. Preconditions\n   - Line power available and locked in accordance with facility lockout procedures.\n   - Maintenance tasks from ECN-2026-016 completed and signed off.\n   - Preventive maintenance on EQ-P3-L3-CN02 verified per MM-P3-L3-CN02 and MM-P3-L3-CN02-S1.\n\n3. PPE\n   - Safety glasses, hearing protection, cut-resistant gloves, steel-toe footwear, and face shield as required for machining operations.\n\n4. Lubrication check\n   - Confirm lubricant installed on EQ-P3-L3-CN02 matches part specification: The lubricant part number for Machining CNC turning center #2 (EQ-P3-L3-CN02) is CFW-LUB-611.\n\n5. Mechanical torque verification\n   - Verify main ram bolt on EQ-P3-L3-HP03 has been torqued to the required value: The main ram bolt torque for Machining hydraulic forging press #3 (EQ-P3-L3-HP03) is 1600 N·m.\n\n6. Machine power-up sequence\n   - Release local lockouts and follow machine control startup prompts for EQ-P3-L3-SB01, EQ-P3-L3-CN02, then EQ-P3-L3-HP03.\n   - Observe emergency stop logic and verify audible/visual alarms function.\n\n7. Functional checks\n   - Perform axis homing and tool detection on EQ-P3-L3-CN02.\n   - Run single-stroke test on EQ-P3-L3-HP03 with guard in place to confirm motion and interlocks.\n\n8. Quality and safety verification\n   - Confirm first-part dimensions and clamping integrity.\n   - Verify guarding and light curtains are operational.\n\n9. Abnormal conditions\n   - If alarms persist or torque/lubricant discrepant, secure equipment and notify maintenance per ECN-2026-016.\n\n10. Sign-off\n   - Operator prints name, signs, and records time. Supervisor verifies steps and initials completion.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:SOP-P3-L3-01:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: standard operating procedure\nDocument id: SOP-P3-L3-01\nTitle: Line startup - Machining line\nRevision: Rev D\nPlant: P3, line P3-L3\nEquipment: EQ-P3-L3-SB01, EQ-P3-L3-CN02, EQ-P3-L3-HP03\nRelated documents to cite: ECN-2026-016, MM-P3-L3-CN02, MM-P3-L3-CN02-S1\nValues to include exactly:\n- The lubricant part number for Machining CNC turning center #2 (EQ-P3-L3-CN02) is CFW-LUB-611.\n- The main ram bolt torque for Machining hydraulic forging press #3 (EQ-P3-L3-HP03) is 1600 N·m.\nStructure: numbered steps with preconditions, PPE and sign-off. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

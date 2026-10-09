@@ -1,0 +1,16 @@
+{
+ "content": "{\n  \"paraphrases\": [\n    \"Breach lasted for 12 one-minute windows. Metrics show error_rate rising from 0.0041 to 0.0307 (+645.4%) and p95_latency_ms increasing from 2664.1666 to 5382.5086 (+102.0%). Config changes since baseline: none. Recent deploys: 1. Logs: search: 503 Service Unavailable (throttled, replicas=1) | search: warm cache miss\",\n    \"Sustained breach observed across 12 one-minute windows. error_rate moved 0.0041 -> 0.0307 (+645.4%); p95_latency_ms moved 2664.1666 -> 5382.5086 (+102.0%). No config changes since baseline. Recent deploys: 1. Logs captured: search: 503 Service Unavailable (throttled, replicas=1) | search: warm cache miss\",\n    \"Incident spanned 12 one-minute windows. Measured metrics: error_rate 0.0041 -> 0.0307 (+645.4%), p95_latency_ms 2664.1666 -> 5382.5086 (+102.0%). Config changes since baseline: none. Recent deploys: 1. Relevant logs: search: 503 Service Unavailable (throttled, replicas=1) | search: warm cache miss\",\n    \"There was a breach for 12 one-minute windows. Metrics: error_rate increased from 0.0041 to 0.0307 (+645.4%), and p95_latency_ms increased from 2664.1666 to 5382.5086 (+102.0%). Config changes since baseline: none. Recent deploys: 1. Logs: search: 503 Service Unavailable (throttled, replicas=1) | search: warm cache miss\"\n  ]\n}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0074#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 12 one-minute windows. Metrics: error_rate 0.0041 -> 0.0307 (+645.4%), p95_latency_ms 2664.1666 -> 5382.5086 (+102.0%). Config changes since baseline: none. Recent deploys: 1. Logs: search: 503 Service Unavailable (throttled, replicas=1) | search: warm cache miss",
+   "role": "user"
+  }
+ ]
+}

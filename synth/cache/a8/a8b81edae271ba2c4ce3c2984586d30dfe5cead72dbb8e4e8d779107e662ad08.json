@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\":[\"Breach persisted across 16 one-minute windows. Metrics shifted: groundedness 4.4298 -> 4.1757 (-5.7%), p95_latency_ms 2797.3476 -> 4483.6541 (+60.3%), tokens_in 2400.5014 -> 4551.3279 (+89.6%), top_score 0.7995 -> 0.7796 (-2.5%). Configuration changes since baseline: reranker_enabled: False -> True; reranker_deployment: Cohere-rerank-v4.0-fast -> Cohere-rerank-v4.0-pro; chunk_size: 512 -> 2048. Recent deploys: 1. Logs: retrieval: 8 hits, mean chunk length 1987 tokens | rerank: p95 1410 ms (Cohere-rerank-v4.0-pro) | autoscaler: replicas 2 -> 3\"], \"paraphrases\": [\"The incident lasted for 16 consecutive one-minute windows. Observed metric deltas: groundedness 4.4298 -> 4.1757 (-5.7%), p95_latency_ms 2797.3476 -> 4483.6541 (+60.3%), tokens_in 2400.5014 -> 4551.3279 (+89.6%), top_score 0.7995 -> 0.7796 (-2.5%). Diffs from baseline config: reranker_enabled: False -> True; reranker_deployment: Cohere-rerank-v4.0-fast -> Cohere-rerank-v4.0-pro; chunk_size: 512 -> 2048. Deploys since baseline: 1. Logs: retrieval: 8 hits, mean chunk length 1987 tokens | rerank: p95 1410 ms (Cohere-rerank-v4.0-pro) | autoscaler: replicas 2 -> 3\"], \"paraphrases\": [\"Sustained breach spanned 16 one-minute windows. Key metric movements: groundedness 4.4298 -> 4.1757 (-5.7%), p95_latency_ms 2797.3476 -> 4483.6541 (+60.3%), tokens_in 2400.5014 -> 4551.3279 (+89.6%), top_score 0.7995 -> 0.7796 (-2.5%). Config changes since baseline include: reranker_enabled: False -> True; reranker_deployment: Cohere-rerank-v4.0-fast -> Cohere-rerank-v4.0-pro; chunk_size: 512 -> 2048. Number of recent deploys: 1. Logs: retrieval: 8 hits, mean chunk length 1987 tokens | rerank: p95 1410 ms (Cohere-rerank-v4.0-pro) | autoscaler: replicas 2 -> 3\"], \"paraphrases\": [\"There was a breach for 16 one-minute windows. Metric comparisons: groundedness 4.4298 -> 4.1757 (-5.7%), p95_latency_ms 2797.3476 -> 4483.6541 (+60.3%), tokens_in 2400.5014 -> 4551.3279 (+89.6%), top_score 0.7995 -> 0.7796 (-2.5%). Baseline-to-current config diffs: reranker_enabled: False -> True; reranker_deployment: Cohere-rerank-v4.0-fast -> Cohere-rerank-v4.0-pro; chunk_size: 512 -> 2048. Recent deploy count: 1. Logs: retrieval: 8 hits, mean chunk length 1987 tokens | rerank: p95 1410 ms (Cohere-rerank-v4.0-pro) | autoscaler: replicas 2 -> 3\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0745#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 16 one-minute windows. Metrics: groundedness 4.4298 -> 4.1757 (-5.7%), p95_latency_ms 2797.3476 -> 4483.6541 (+60.3%), tokens_in 2400.5014 -> 4551.3279 (+89.6%), top_score 0.7995 -> 0.7796 (-2.5%). Config changes since baseline: reranker_enabled: False -> True; reranker_deployment: Cohere-rerank-v4.0-fast -> Cohere-rerank-v4.0-pro; chunk_size: 512 -> 2048. Recent deploys: 1. Logs: retrieval: 8 hits, mean chunk length 1987 tokens | rerank: p95 1410 ms (Cohere-rerank-v4.0-pro) | autoscaler: replicas 2 -> 3",
+   "role": "user"
+  }
+ ]
+}

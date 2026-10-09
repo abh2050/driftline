@@ -1,0 +1,4 @@
+# Synthetic data generation (spec section 3). Same seed => byte identical outputs.
+seed: 20261009
+deployment: gpt-5-mini
+concurrency: 8

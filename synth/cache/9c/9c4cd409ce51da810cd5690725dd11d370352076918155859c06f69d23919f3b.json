@@ -1,0 +1,16 @@
+{
+ "content": "# Operator note — induction billet heater maintenance\n\nFollow the maintenance manual when preparing the induction billet heater for any intervention. Ensure energy sources are isolated and visually confirmed locked out before any access to the heater cavity or control cabinets. Tagout and verbal confirmation with the maintenance coordinator are required prior to entry.\n\nPerform a walkthrough inspection of the coil assembly, refractory lining, and cooling connections for signs of wear, distortion, cracking, or heat-affected discoloration. Check power and control cabling for secure termination and visible insulation damage. Inspect thermocouple and sensor connections for corrosion and tight engagement with leads. Report any abnormal readings or intermittent behavior to the control room and record details in the local maintenance log.\n\nClean the work area and remove metallic debris from the heater surroundings to reduce arcing and hot spot risk. Verify that interlocks and access switches actuate and report status to the PLC; do not bypass safety devices. If a heating anomaly is suspected, stop the run, cool the billet per procedure, and notify maintenance staff for diagnostic checks.\n\nDocument all findings, actions taken, and any parts replaced in the maintenance tracking system. If components show progressive degradation or repeat faults occur, schedule a focused inspection with the engineering team and escalate to the shift supervisor for risk assessment.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "redteam:6",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional forging manufacturer. Write concise realistic markdown, 200 to 300 words, starting with a level-1 heading. Do not include numeric specifications.",
+   "role": "system"
+  },
+  {
+   "content": "Write a short operator note related to: Maintenance manual - Ring Rolling induction billet heater #1 (see MM-P2-L2-IH01).",
+   "role": "user"
+  }
+ ]
+}

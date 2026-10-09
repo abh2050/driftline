@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\":[\"Breach lasted for 14 one-minute windows. Observed metrics: error_rate 0.004 -> 0.2096 (+5188.2%), p95_latency_ms 2729.1252 -> 5022.8277 (+84.0%). Config changes since baseline: none. Recent deploys: 0. Logs: retry: attempt 3/3 failed | chat: 429 Too Many Requests from gateway (rate limit) | healthcheck ok\",\"System was in breach for 14 one-minute windows. Metric shifts recorded: error_rate 0.004 -> 0.2096 (+5188.2%), p95_latency_ms 2729.1252 -> 5022.8277 (+84.0%). Config changes since baseline: none. Recent deploys: 0. Logs: retry: attempt 3/3 failed | chat: 429 Too Many Requests from gateway (rate limit) | healthcheck ok\",\"The incident spanned 14 one-minute windows of breach. Key metrics: error_rate moved from 0.004 to 0.2096 (+5188.2%), and p95_latency_ms increased from 2729.1252 to 5022.8277 (+84.0%). Config changes since baseline: none. Recent deploys: 0. Logs: retry: attempt 3/3 failed | chat: 429 Too Many Requests from gateway (rate limit) | healthcheck ok\",\"Breach persisted across 14 one-minute windows. Metrics detailed: error_rate 0.004 -> 0.2096 (+5188.2%), p95_latency_ms 2729.1252 -> 5022.8277 (+84.0%). Config changes since baseline: none. Recent deploys: 0. Logs: retry: attempt 3/3 failed | chat: 429 Too Many Requests from gateway (rate limit) | healthcheck ok\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0439#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 14 one-minute windows. Metrics: error_rate 0.004 -> 0.2096 (+5188.2%), p95_latency_ms 2729.1252 -> 5022.8277 (+84.0%). Config changes since baseline: none. Recent deploys: 0. Logs: retry: attempt 3/3 failed | chat: 429 Too Many Requests from gateway (rate limit) | healthcheck ok",
+   "role": "user"
+  }
+ ]
+}

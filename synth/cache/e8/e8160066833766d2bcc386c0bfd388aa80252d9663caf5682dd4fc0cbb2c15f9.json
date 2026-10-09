@@ -1,0 +1,16 @@
+{
+ "content": "{\n  \"paraphrases\": [\n    \"Breach persisted across 6 one-minute windows. Groundedness moved from 4.3161 to 4.0924 (−5.2%), hit_count dropped from 7.5914 to 7.3194 (−3.6%). Config changes since baseline: none. Recent deploys: 2. Logs: indexer cfw-docs-indexer: last run failed (quota exceeded on skillset) | search: document count 271, source count 300 | token refresh ok\",\n    \"Sustained breach lasted for 6 one-minute windows. Metrics: groundedness 4.3161 -> 4.0924 (−5.2%); hit_count 7.5914 -> 7.3194 (−3.6%). Config changes since baseline: none. Recent deploys: 2. Logs show indexer cfw-docs-indexer: last run failed (quota exceeded on skillset) | search: document count 271, source count 300 | token refresh ok\",\n    \"The breach continued for 6 one-minute windows. Groundedness decreased from 4.3161 to 4.0924 (−5.2%), hit_count decreased from 7.5914 to 7.3194 (−3.6%). Config changes since baseline: none. Recent deploys: 2. Logs: indexer cfw-docs-indexer: last run failed (quota exceeded on skillset) | search: document count 271, source count 300 | token refresh ok\",\n    \"Observed breach spanning 6 one-minute windows. Metrics recorded: groundedness 4.3161 -> 4.0924 (−5.2%), hit_count 7.5914 -> 7.3194 (−3.6%). Config changes since baseline: none. Recent deploys: 2. Logs: indexer cfw-docs-indexer: last run failed (quota exceeded on skillset) | search: document count 271, source count 300 | token refresh ok\"\n  ]\n}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0588#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 6 one-minute windows. Metrics: groundedness 4.3161 -> 4.0924 (-5.2%), hit_count 7.5914 -> 7.3194 (-3.6%). Config changes since baseline: none. Recent deploys: 2. Logs: indexer cfw-docs-indexer: last run failed (quota exceeded on skillset) | search: document count 271, source count 300 | token refresh ok",
+   "role": "user"
+  }
+ ]
+}

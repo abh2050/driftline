@@ -1,0 +1,16 @@
+{
+ "content": "{\"question\":\"Before machining, have you verified the specified bore diameter tolerance for axle hub CFW-9852-71 (CFW-9852-71) against the drawing/specification?\"}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "golden:G-063#0",
+ "messages": [
+  {
+   "content": "You write test questions for a document search assistant at Cascade Forge Works, a fictional forging manufacturer. Return JSON {\"question\": \"...\"}.",
+   "role": "system"
+  },
+  {
+   "content": "Write a question phrased as a check before doing work whose answer is this fact. Do not include the value itself.\nFact: the bore diameter tolerance for axle hub CFW-9852-71 (CFW-9852-71) is ±0.06 mm.",
+   "role": "user"
+  }
+ ]
+}

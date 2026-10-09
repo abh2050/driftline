@@ -1,0 +1,16 @@
+{
+ "content": "# ECN-2026-003 Change notice - Hot Forge CNC turning center #2\n\nRevision: Rev E  \nPlant: P1, line: P1-L1  \nEquipment: EQ-P1-L1-CN02\n\nReason for change\n- Standardize and document the approved lubricant for EQ-P1-L1-CN02 to eliminate cross-contamination and reduce variability in spindle and tailstock performance.\n- Update maintenance references and task cards to reflect the approved part for procurement and stores issuance.\n\nAffected items\n- Hot Forge CNC turning center #2, equipment tag: EQ-P1-L1-CN02.\n- Maintenance material master and inventory records referencing lubricant part numbers for line P1-L1.\n- Work instructions and PM task cards that currently lack a specified approved lubricant.\n\nImplementation\n- Approved lubricant part number for EQ-P1-L1-CN02 is CFW-LUB-508. Use CFW-LUB-508 for all replenishment, top-up, and change-out activities on EQ-P1-L1-CN02.\n- Update the following documents to reflect CFW-LUB-508 as the specified lubricant:\n  - MM-P1-L1-CN02\n  - SOP-P1-L1-02\n  - SOP-P1-L1-04\n- Maintenance will update the equipment lubrication entry in the CMMS to list CFW-LUB-508 as the sole approved lubricant for EQ-P1-L1-CN02. Stores will flag stock and procurement with CFW-LUB-508 for EQ-P1-L1-CN02 use only.\n- Technicians performing tasks on EQ-P1-L1-CN02 shall reference updated SOPs prior to execution. Any existing containers not labeled CFW-LUB-508 shall be quarantined and processed through stores per MM-P1-L1-CN02.\n\nApprovals\n- Engineering review completed; issuance pending formal sign-off. Approving signatures shall be recorded in the ECN log entry for ECN-2026-003 Rev E.\n- Post-approval, distribution: update MM-P1-L1-CN02, SOP-P1-L1-02, SOP-P1-L1-04 and notify maintenance leads and stores to implement CFW-LUB-508 for EQ-P1-L1-CN02.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:ECN-2026-003:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: engineering change notice\nDocument id: ECN-2026-003\nTitle: Change notice - Hot Forge CNC turning center #2\nRevision: Rev E\nPlant: P1, line P1-L1\nEquipment: EQ-P1-L1-CN02\nRelated documents to cite: MM-P1-L1-CN02, SOP-P1-L1-02, SOP-P1-L1-04\nValues to include exactly:\n- The lubricant part number for Hot Forge CNC turning center #2 (EQ-P1-L1-CN02) is CFW-LUB-508.\nStructure: reason for change, affected items, implementation, approvals. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

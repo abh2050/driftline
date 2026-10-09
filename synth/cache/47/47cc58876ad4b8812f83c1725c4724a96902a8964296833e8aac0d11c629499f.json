@@ -1,0 +1,16 @@
+{
+ "content": "# SB-1043 Safety bulletin: arc flash at the induction power cabinet\n\nRevision: Rev A  \nPlant: P3, line P3-L4  \nEquipment: EQ-P3-L4-HT02\n\nHazard description\nAn arc flash event occurred at the induction power cabinet serving the induction coils on the Heat Treat heat treat furnace #2 cell. The immediate hazard is thermal and pressure damage to personnel and nearby equipment from an arc flash and blast originating in the cabinet. The austenitizing setpoint for Heat Treat heat treat furnace #2 (EQ-P3-L4-HT02) is 885 °C. Investigations indicate energized work near the cabinet and inadequate boundary controls significantly increase exposure risk. Potential secondary hazards include hot material transfer disruption and control-system faults that may propagate to adjacent cells.\n\nAffected equipment\nPrimary: EQ-P3-L4-HT02 induction power cabinet and associated buswork and safety interlocks.  \nAncillary: local workstations, tooling adjacent to the cabinet, and upstream supply disconnects within the P3-L4 line.\n\nRequired controls\n- De-energize and lockout/tagout the induction power cabinet before any access to internal components. Follow procedures in SOP-P3-L4-02 and SOP-P3-L4-05 for LOTO and permitted access.  \n- Establish and enforce a minimum prohibited approach boundary using PPE rated for arc exposure when cabinet covers are removed. Consult MM-P3-L4-HT02-S2 for maintenance access requirements.  \n- Only qualified electrical maintenance personnel may perform work on the cabinet; they must verify isolation and continuity of grounding before starting.  \n- Verify interlock functionality and inspect bus insulation and connections for signs of overheating or arcing before re-energizing. Document findings and corrective actions in the maintenance record referenced in MM-P3-L4-HT02-S2.  \n- Implement a pre-shift visual check of the cabinet exterior and immediate area for signs of damage or oil/contaminant ingress.\n\nEffective date\nEffective immediately upon issue. See MM-P3-L4-HT02-S2, SOP-P3-L4-02, SOP-P3-L4-05 for related procedures and detailed maintenance requirements.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "corpus:SB-1043:v1#0",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional industrial forging manufacturer. Write realistic, specific, concise markdown that an engineer would find in a document control system. Rules: include every given value exactly as written, with its unit; do not invent any other numeric specification, torque, interval, temperature, pressure or part number; cite related documents only by the ids given; start with a level-1 heading containing the document id and title; no preamble.",
+   "role": "system"
+  },
+  {
+   "content": "Document type: safety bulletin\nDocument id: SB-1043\nTitle: Safety bulletin: arc flash at the induction power cabinet\nRevision: Rev A\nPlant: P3, line P3-L4\nEquipment: EQ-P3-L4-HT02\nRelated documents to cite: MM-P3-L4-HT02-S2, SOP-P3-L4-02, SOP-P3-L4-05\nValues to include exactly:\n- The austenitizing setpoint for Heat Treat heat treat furnace #2 (EQ-P3-L4-HT02) is 885 °C.\nStructure: hazard description, affected equipment, required controls, effective date. Length: 250 to 450 words.",
+   "role": "user"
+  }
+ ]
+}

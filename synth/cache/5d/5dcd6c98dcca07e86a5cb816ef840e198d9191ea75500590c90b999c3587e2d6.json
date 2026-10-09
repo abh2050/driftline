@@ -1,0 +1,16 @@
+{
+ "content": "{\"question\":\"What is the specified bore diameter tolerance for the gear blank identified as CFW-9335-36?\"}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "golden:G-129#0",
+ "messages": [
+  {
+   "content": "You write test questions for a document search assistant at Cascade Forge Works, a fictional forging manufacturer. Return JSON {\"question\": \"...\"}.",
+   "role": "system"
+  },
+  {
+   "content": "Write a question that names the equipment or part by description whose answer is this fact. Do not include the value itself.\nFact: the bore diameter tolerance for gear blank CFW-9335-36 (CFW-9335-36) is ±0.04 mm.",
+   "role": "user"
+  }
+ ]
+}

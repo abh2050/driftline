@@ -1,0 +1,16 @@
+{
+ "content": "{\n  \"paraphrases\": [\n    \"Breach persisted for 26 one-minute windows. Metrics changed: citation_rate 0.9099 -> 0.7568 (-16.8%), error_rate 0.0041 -> 0.1159 (+2720.1%), p95_latency_ms 2646.3658 -> 3833.3501 (+44.9%). Config changes since baseline: prompt_version: v3 -> v3.1. Recent deploys: 1. Logs observed: chat: 429 Too Many Requests from gateway (rate limit) | retry: attempt 3/3 failed | citation parser: 0 matches for pattern [doc:ID] | gc pause 120 ms.\",\n    \"The incident lasted 26 one-minute windows. Key metrics: citation_rate dropped 0.9099 -> 0.7568 (-16.8%); error_rate rose 0.0041 -> 0.1159 (+2720.1%); p95_latency_ms increased 2646.3658 -> 3833.3501 (+44.9%). Configuration differences from baseline: prompt_version: v3 -> v3.1. Number of recent deploys: 1. Collected logs: chat: 429 Too Many Requests from gateway (rate limit) | retry: attempt 3/3 failed | citation parser: 0 matches for pattern [doc:ID] | gc pause 120 ms.\",\n    \"Sustained breach for 26 one-minute windows. Observed metric deltas: citation_rate changed 0.9099 -> 0.7568 (-16.8%); error_rate changed 0.0041 -> 0.1159 (+2720.1%); p95_latency_ms changed 2646.3658 -> 3833.3501 (+44.9%). Config since baseline shows prompt_version: v3 -> v3.1. Recent deploy count: 1. Relevant logs: chat: 429 Too Many Requests from gateway (rate limit) | retry: attempt 3/3 failed | citation parser: 0 matches for pattern [doc:ID] | gc pause 120 ms.\",\n    \"Incident maintained for 26 one-minute windows. Metrics: citation_rate 0.9099 -> 0.7568 (-16.8%), error_rate 0.0041 -> 0.1159 (+2720.1%), p95_latency_ms 2646.3658 -> 3833.3501 (+44.9%). Config changes from baseline include prompt_version: v3 -> v3.1. Recent deploys: 1. Logs captured: chat: 429 Too Many Requests from gateway (rate limit) | retry: attempt 3/3 failed | citation parser: 0 matches for pattern [doc:ID] | gc pause 120 ms.\"\n  ]\n}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-1112#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 26 one-minute windows. Metrics: citation_rate 0.9099 -> 0.7568 (-16.8%), error_rate 0.0041 -> 0.1159 (+2720.1%), p95_latency_ms 2646.3658 -> 3833.3501 (+44.9%). Config changes since baseline: prompt_version: v3 -> v3.1. Recent deploys: 1. Logs: chat: 429 Too Many Requests from gateway (rate limit) | retry: attempt 3/3 failed | citation parser: 0 matches for pattern [doc:ID] | gc pause 120 ms",
+   "role": "user"
+  }
+ ]
+}

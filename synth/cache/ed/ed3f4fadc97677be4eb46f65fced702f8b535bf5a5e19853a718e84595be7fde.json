@@ -1,0 +1,16 @@
+{
+ "content": "{\"question\":\"Quick—what's the maximum forging weight for bearing ring CFW-1466-55?\"}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "golden:G-106#0",
+ "messages": [
+  {
+   "content": "You write test questions for a document search assistant at Cascade Forge Works, a fictional forging manufacturer. Return JSON {\"question\": \"...\"}.",
+   "role": "system"
+  },
+  {
+   "content": "Write a question from someone in a hurry whose answer is this fact. Do not include the value itself.\nFact: the maximum forging weight for bearing ring CFW-1466-55 (CFW-1466-55) is 27.4 kg.",
+   "role": "user"
+  }
+ ]
+}

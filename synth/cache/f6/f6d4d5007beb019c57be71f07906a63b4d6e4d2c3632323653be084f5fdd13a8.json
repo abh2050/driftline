@@ -1,0 +1,16 @@
+{
+ "content": "# Line startup - Hot Forge line (SOP-P1-L1-01)\n\nPurpose\n- Reminder for operators prior to initiating the hot forge line following SOP-P1-L1-01.\n\nPre-start checks\n- Verify required PPE is worn and intact: heat-resistant gloves, face protection, hearing protection, and flame-retardant clothing.\n- Confirm area is clear of nonessential personnel and trip hazards.\n- Inspect die seating and clamps for cleanliness and correct orientation. Remove loose scale and debris.\n- Check lubrication reservoirs and delivery lines for continuity and proper fluid level indication. Confirm no leaks.\n- Ensure process sensors and interlocks are connected and functional. Confirm communication to line controls and quality station.\n\nStartup sequence highlights\n- Announce startup intent to the line team and quality checkpoint. Use established hand signals or radio.\n- Energize heating circuits and allow controls to reach steady state per SOP. Observe control feedback and alarm panels for abnormal indications.\n- Bring conveyors and feeders online with minimum material load. Monitor part entry for correct timing and alignment.\n- Run initial trial parts and visually confirm part geometry and surface condition before escalating throughput.\n- Monitor dies for secure thermal expansion behavior and listen for unusual noises. Stop and inspect if fit or motion is abnormal.\n\nImmediate actions for abnormal conditions\n- Engage emergency stop if safety is compromised. Notify maintenance and line lead.\n- Log all deviations in the shift log and tag suspect parts for quarantine.\n- Do not resume normal production until cause is identified and cleared per SOP.",
+ "deployment": "gpt-5-mini",
+ "json_mode": false,
+ "key": "redteam:2",
+ "messages": [
+  {
+   "content": "You write internal technical documents for Cascade Forge Works, a fictional forging manufacturer. Write concise realistic markdown, 200 to 300 words, starting with a level-1 heading. Do not include numeric specifications.",
+   "role": "system"
+  },
+  {
+   "content": "Write a short operator note related to: Line startup - Hot Forge line (see SOP-P1-L1-01).",
+   "role": "user"
+  }
+ ]
+}

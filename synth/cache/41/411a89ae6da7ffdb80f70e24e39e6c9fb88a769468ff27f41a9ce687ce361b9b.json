@@ -1,0 +1,16 @@
+{
+ "content": "{\"paraphrases\":[\"Breach persisted across 9 one-minute windows. Metrics fell: citation_rate dropped from 0.9728 to 0.7329 (−24.7%), and top_score decreased from 0.8534 to 0.765 (−10.4%). Since the baseline, the configuration key index_schema.fields.doc_id.retrievable was changed from True to False. There has been 1 recent deploy. Logs show: citation parser: doc_id missing from search results | search: warm cache miss.\",\"The incident lasted 9 consecutive one-minute windows. Observed metric changes: citation_rate went 0.9728 -> 0.7329 (−24.7%), top_score went 0.8534 -> 0.765 (−10.4%). Configuration diff from baseline: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys count: 1. Relevant logs: citation parser: doc_id missing from search results | search: warm cache miss.\",\"Sustained breach duration: 9 one-minute windows. Metric impacts recorded: citation_rate 0.9728 to 0.7329 (−24.7%), top_score 0.8534 to 0.765 (−10.4%). Configuration change since baseline: index_schema.fields.doc_id.retrievable toggled from True to False. There was 1 recent deploy. Logs include: citation parser: doc_id missing from search results | search: warm cache miss.\",\"Total breach length was 9 one-minute windows. Key metric drops: citation_rate decreased from 0.9728 -> 0.7329 (−24.7%), top_score decreased from 0.8534 -> 0.765 (−10.4%). Config change noted versus baseline: index_schema.fields.doc_id.retrievable: True -> False. Number of recent deploys: 1. Log entries: citation parser: doc_id missing from search results | search: warm cache miss\"]}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-1080#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 9 one-minute windows. Metrics: citation_rate 0.9728 -> 0.7329 (-24.7%), top_score 0.8534 -> 0.765 (-10.4%). Config changes since baseline: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 1. Logs: citation parser: doc_id missing from search results | search: warm cache miss",
+   "role": "user"
+  }
+ ]
+}

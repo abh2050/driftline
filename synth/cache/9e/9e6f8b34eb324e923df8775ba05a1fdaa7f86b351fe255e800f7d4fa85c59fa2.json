@@ -1,0 +1,16 @@
+{
+ "content": "{\n  \"paraphrases\": [\n    \"Breach persisted across 3 one-minute windows. Metrics changed: citation_rate 0.9486 -> 0.881 (-7.1%), top_score 0.8156 -> 0.7861 (-3.6%). Configuration altered since baseline: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 2. Logs show: citation parser: doc_id missing from search results | healthcheck ok.\",\n    \"Sustained breach lasted 3 one-minute windows. Observed metrics: citation_rate 0.9486 -> 0.881 (-7.1%) and top_score 0.8156 -> 0.7861 (-3.6%). Config delta from baseline: index_schema.fields.doc_id.retrievable: True -> False. There have been 2 recent deploys. Logs: citation parser: doc_id missing from search results | healthcheck ok.\",\n    \"The system sustained a breach for 3 one-minute windows. Metric shifts recorded: citation_rate 0.9486 -> 0.881 (-7.1%); top_score 0.8156 -> 0.7861 (-3.6%). Configuration change since baseline: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys count: 2. Logs include: citation parser: doc_id missing from search results | healthcheck ok.\",\n    \"Breach condition held for 3 one-minute windows. Key metrics: citation_rate 0.9486 -> 0.881 (-7.1%), top_score 0.8156 -> 0.7861 (-3.6%). Baseline config differences: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 2. Logged entries: citation parser: doc_id missing from search results | healthcheck ok.\"\n  ]\n}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-0827#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 3 one-minute windows. Metrics: citation_rate 0.9486 -> 0.881 (-7.1%), top_score 0.8156 -> 0.7861 (-3.6%). Config changes since baseline: index_schema.fields.doc_id.retrievable: True -> False. Recent deploys: 2. Logs: citation parser: doc_id missing from search results | healthcheck ok",
+   "role": "user"
+  }
+ ]
+}

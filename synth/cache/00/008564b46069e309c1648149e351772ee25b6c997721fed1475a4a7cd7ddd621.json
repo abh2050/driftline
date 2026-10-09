@@ -1,0 +1,16 @@
+{
+ "content": "{\n  \"paraphrases\": [\n    \"Breach persisted for 21 one-minute windows. Metrics dropped: citation_rate 0.9467 -> 0.4851 (-48.8%), groundedness 4.2577 -> 1.748 (-58.9%), top_score 0.8292 -> 0.0102 (-98.8%). Configuration change since baseline: embedding_deployment: text-embedding-3-small -> text-embedding-3-large. Recent deploys: 1. Logs show retrieval top score 0.21, which is below the floor 0.5; search attempted a vector dimension 3072 queried against a field with 1536 dims and fell back to keyword; gc pause 120 ms.\",\n    \"For 21 consecutive one-minute windows the breach remained. Observed metric shifts: citation_rate 0.9467 -> 0.4851 (-48.8%), groundedness 4.2577 -> 1.748 (-58.9%), top_score 0.8292 -> 0.0102 (-98.8%). Baseline config changed: embedding_deployment: text-embedding-3-small -> text-embedding-3-large. Recent deploys: 1. In logs retrieval reported a top score of 0.21 (below floor 0.5); search used vectors of dimension 3072 against a field with 1536 dims and fell back to keyword; gc pause 120 ms.\",\n    \"The incident spanned 21 one-minute windows. Key metric decreases: citation_rate 0.9467 -> 0.4851 (-48.8%), groundedness 4.2577 -> 1.748 (-58.9%), top_score 0.8292 -> 0.0102 (-98.8%). Config delta from baseline: embedding_deployment: text-embedding-3-small -> text-embedding-3-large. Recent deploys: 1. Logs indicate retrieval top score = 0.21 (floor is 0.5); search queried vector dimension 3072 against a field with 1536 dims and fell back to keyword; gc pause 120 ms.\",\n    \"Sustained breach length: 21 one-minute windows. Metric rundown: citation_rate 0.9467 -> 0.4851 (-48.8%), groundedness 4.2577 -> 1.748 (-58.9%), top_score 0.8292 -> 0.0102 (-98.8%). Change since baseline: embedding_deployment: text-embedding-3-small -> text-embedding-3-large. Recent deploys: 1. Logs show retrieval top score 0.21 below floor 0.5; search used vector dimension 3072 against field with 1536 dims and fell back to keyword; gc pause 120 ms.\"\n  ]\n}",
+ "deployment": "gpt-5-mini",
+ "json_mode": true,
+ "key": "routing:para:R-1083#0",
+ "messages": [
+  {
+   "content": "You rewrite incident summaries for an SRE team. Keep every number, metric, config key and log fact; change wording, order and style. Return JSON {\"paraphrases\": [\"...\", \"...\", \"...\", \"...\"]} with exactly 4 items.",
+   "role": "system"
+  },
+  {
+   "content": "Breach sustained for 21 one-minute windows. Metrics: citation_rate 0.9467 -> 0.4851 (-48.8%), groundedness 4.2577 -> 1.748 (-58.9%), top_score 0.8292 -> 0.0102 (-98.8%). Config changes since baseline: embedding_deployment: text-embedding-3-small -> text-embedding-3-large. Recent deploys: 1. Logs: retrieval: top score 0.21 below floor 0.5 | search: vector dimension 3072 queried against field with 1536 dims, fell back to keyword | gc pause 120 ms",
+   "role": "user"
+  }
+ ]
+}
