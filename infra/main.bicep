@@ -35,6 +35,15 @@ param otelAllowedIps string = ''
 
 @description('Set by azd ("true"/"false") once the otel-collector app exists.')
 param otelCollectorExists string = 'false'
+param patientRagExists string = 'false'
+param trafficGenExists string = 'false'
+
+@description('Driftline API app registration (created by scripts/entra_app.py preprovision).')
+param driftlineApiAppId string
+param driftlineApiAudience string
+
+@description('Cron for traffic-gen (config/traffic.yaml schedule).')
+param trafficSchedule string = '*/5 * * * *'
 
 var otelIps = filter(map(split(otelAllowedIps, ','), ip => trim(ip)), ip => !empty(ip))
 
@@ -301,6 +310,66 @@ module otelCollector 'modules/container-app.bicep' = {
   }
 }
 
+// Settings every Driftline service needs: identity of the API, telemetry endpoint.
+var commonEnv = [
+  { name: 'AZURE_TENANT_ID', value: tenant().tenantId }
+  { name: 'AZURE_ENV_NAME', value: environmentName }
+  { name: 'DRIFTLINE_API_APP_ID', value: driftlineApiAppId }
+  { name: 'DRIFTLINE_API_AUDIENCE', value: driftlineApiAudience }
+  { name: 'OTEL_EXPORTER_OTLP_ENDPOINT', value: 'http://otel-collector' }
+]
+
+module patientRag 'modules/container-app.bicep' = {
+  scope: rg
+  name: 'app-patient-rag'
+  params: {
+    name: 'patient-rag'
+    location: location
+    tags: tags
+    environmentId: acaEnv.outputs.id
+    identityId: ids['patient-rag'].id
+    identityClientId: ids['patient-rag'].clientId
+    registryServer: registry.outputs.loginServer
+    exists: patientRagExists == 'true'
+    ingress: 'internal'
+    targetPort: 8000
+    transport: 'http'
+    daprAppId: 'patient-rag'
+    daprAppPort: 8000
+    // Fault and index state live in memory, so run exactly one replica.
+    minReplicas: 1
+    maxReplicas: 1
+    cpu: '1.0'
+    memory: '2Gi'
+    env: concat(commonEnv, [
+      { name: 'FOUNDRY_ENDPOINT', value: foundry.outputs.endpoint }
+      { name: 'SEARCH_ENDPOINT', value: search.outputs.endpoint }
+      { name: 'PUBSUB_NAME', value: 'pubsub-patient-rag' }
+    ])
+  }
+}
+
+module trafficGen 'modules/container-job.bicep' = {
+  scope: rg
+  name: 'job-traffic-gen'
+  params: {
+    name: 'traffic-gen'
+    location: location
+    tags: tags
+    environmentId: acaEnv.outputs.id
+    identityId: ids['traffic-gen'].id
+    identityClientId: ids['traffic-gen'].clientId
+    registryServer: registry.outputs.loginServer
+    exists: trafficGenExists == 'true'
+    triggerType: 'Schedule'
+    cronExpression: trafficSchedule
+    replicaTimeoutSeconds: 280
+    env: concat(commonEnv, [
+      { name: 'PATIENT_RAG_URL', value: 'http://patient-rag' }
+    ])
+  }
+}
+
 output AZURE_LOCATION string = location
 output AZURE_TENANT_ID string = tenant().tenantId
 output AZURE_RESOURCE_GROUP string = rg.name
@@ -320,6 +389,7 @@ output DCE_LOGS_ENDPOINT string = monitoring.outputs.dceLogsEndpoint
 output DECISIONS_DCR_IMMUTABLE_ID string = dcr.outputs.dcrImmutableId
 output DECISIONS_STREAM string = dcr.outputs.streamName
 output OTEL_COLLECTOR_FQDN string = otelCollector.outputs.fqdn
+output PATIENT_RAG_FQDN string = patientRag.outputs.fqdn
 output APIM_NAME string = apim.outputs.name
 // Service identities, consumed by scripts/entra_app.py (postprovision) for app role grants.
 output SERVICE_IDENTITIES array = [for s in services: {

@@ -1,0 +1,13 @@
+{
+  "fault_id": "F3",
+  "root_cause": "top_k changed from 8 to 2; too little context reaches the model and groundedness drops",
+  "specialist": "retrieval",
+  "severity": "sev2",
+  "action": "pr",
+  "expected_fix": {
+    "file": "apps/patient-rag/config/rag.yaml",
+    "set": {
+      "top_k": 8
+    }
+  }
+}

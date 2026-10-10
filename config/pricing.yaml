@@ -1,0 +1,11 @@
+# USD per 1M tokens (or per 1K rerank search units), used for cost attribution in telemetry,
+# router reports and PR bodies. Estimates from public list prices; adjust to your agreement.
+deployments:
+  gpt-5-mini: {input: 0.25, output: 2.00}
+  gpt-4.1-mini: {input: 0.40, output: 1.60}
+  gpt-oss-120b: {input: 0.15, output: 0.60}
+  gpt-5.4-mini: {input: 0.40, output: 1.60}
+  text-embedding-3-small: {input: 0.02, output: 0.0}
+  text-embedding-3-large: {input: 0.13, output: 0.0}
+  cohere-rerank-fast: {per_1k_searches: 2.00}
+  cohere-rerank-pro: {per_1k_searches: 2.50}

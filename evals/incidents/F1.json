@@ -1,0 +1,13 @@
+{
+  "fault_id": "F1",
+  "root_cause": "chunk_size changed from 512 to 2048 in apps/patient-rag/config/rag.yaml; larger chunks dilute retrieval and recall drops",
+  "specialist": "retrieval",
+  "severity": "sev2",
+  "action": "pr",
+  "expected_fix": {
+    "file": "apps/patient-rag/config/rag.yaml",
+    "set": {
+      "chunk_size": 512
+    }
+  }
+}

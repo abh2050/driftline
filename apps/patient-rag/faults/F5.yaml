@@ -1,0 +1,4 @@
+id: F5
+description: the indexer is disabled while 30 documents change (fresh questions go stale)
+overrides: {}
+state: {indexer_enabled: false, source_version: 2}

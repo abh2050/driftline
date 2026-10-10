@@ -1,0 +1,33 @@
+# Built from the repo root (uv workspace). Multi-stage: resolve with uv, run on slim.
+FROM ghcr.io/astral-sh/uv:0.6.14 AS uv
+
+FROM python:3.12-slim AS build
+COPY --from=uv /uv /usr/local/bin/uv
+ENV UV_COMPILE_BYTECODE=1 UV_LINK_MODE=copy UV_PYTHON_DOWNLOADS=never
+WORKDIR /src
+COPY pyproject.toml uv.lock ./
+COPY packages packages
+COPY apps/patient-rag/pyproject.toml apps/patient-rag/pyproject.toml
+COPY apps/traffic-gen/pyproject.toml apps/traffic-gen/pyproject.toml
+COPY apps/patient-rag/src apps/patient-rag/src
+RUN uv sync --frozen --no-dev --no-editable --package patient-rag
+
+FROM python:3.12-slim
+ARG GIT_COMMIT=unknown
+RUN useradd --create-home --uid 10001 app
+WORKDIR /src
+COPY --from=build /src/.venv /src/.venv
+COPY config config
+COPY apps/patient-rag/config apps/patient-rag/config
+COPY apps/patient-rag/prompts apps/patient-rag/prompts
+COPY apps/patient-rag/faults apps/patient-rag/faults
+COPY data/corpus data/corpus
+ENV PATH=/src/.venv/bin:$PATH \
+    PATIENT_RAG_HOME=/src/apps/patient-rag \
+    DRIFTLINE_CONFIG_DIR=/src/config \
+    CORPUS_DIR=/src/data/corpus \
+    GIT_COMMIT=${GIT_COMMIT} \
+    PYTHONUNBUFFERED=1
+USER app
+EXPOSE 8000
+CMD ["uvicorn", "patient_rag.app:app", "--host", "0.0.0.0", "--port", "8000", "--no-access-log"]

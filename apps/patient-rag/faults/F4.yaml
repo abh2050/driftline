@@ -1,0 +1,3 @@
+id: F4
+description: prompt_version moves to a version without the citation instruction
+overrides: {prompt_version: v4-nocite}

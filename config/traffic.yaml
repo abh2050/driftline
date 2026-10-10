@@ -1,0 +1,6 @@
+# traffic-gen (spec 5.1.2): a Container Apps job on a 5-minute cron.
+schedule: "*/5 * * * *"
+queries_per_run_at_peak: 24   # scaled by the hourly/weekday seasonality profile
+canaries_per_run: 4           # golden questions with expected answers (F5 signal)
+concurrency: 4
+patient_rag_url: http://patient-rag

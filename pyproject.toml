@@ -3,16 +3,28 @@ name = "driftline"
 version = "0.1.0"
 description = "Multi agent system that detects RAG quality drift and opens fix PRs"
 requires-python = ">=3.12,<3.13"
-dependencies = ["driftline-common"]
+dependencies = ["driftline-common", "patient-rag", "traffic-gen"]
+
+[project.scripts]
+driftline-eval = "evals.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["evals"]
 
 [tool.uv]
-package = false
+package = true
 
 [tool.uv.workspace]
-members = ["packages/*"]
+members = ["packages/*", "apps/patient-rag", "apps/traffic-gen"]
 
 [tool.uv.sources]
 driftline-common = { workspace = true }
+patient-rag = { workspace = true }
+traffic-gen = { workspace = true }
 
 [tool.ruff]
 line-length = 100
@@ -23,7 +35,7 @@ extend-exclude = ["apps/console"]
 select = ["E", "F", "W", "I", "B", "UP", "N", "S", "ASYNC", "RUF", "SIM", "PT"]
 
 [tool.ruff.lint.isort]
-known-first-party = ["driftline_common", "synth", "scripts"]
+known-first-party = ["driftline_common", "patient_rag", "traffic_gen", "synth", "scripts", "evals"]
 
 [tool.ruff.lint.per-file-ignores]
 "**/tests/**" = ["S101", "S311"]
@@ -34,17 +46,19 @@ known-first-party = ["driftline_common", "synth", "scripts"]
 strict = true
 python_version = "3.12"
 plugins = ["pydantic.mypy"]
-files = ["packages", "synth", "scripts", "tests"]
+files = ["packages", "apps/patient-rag/src", "apps/traffic-gen/src", "evals", "synth", "scripts", "tests"]
 explicit_package_bases = true
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
-testpaths = ["packages", "tests"]
+testpaths = ["packages", "apps", "tests"]
 addopts = "--import-mode=importlib"
 pythonpath = ["."]
+norecursedirs = ["node_modules", ".next", ".venv", "apps/console", "data", "synth/cache"]
 
 [dependency-groups]
 dev = [
+    "azure-ai-evaluation==1.18.8",
     "azure-mgmt-resource==26.0.0",
     "azure-monitor-query==2.0.0",
     "mypy==2.4.0",

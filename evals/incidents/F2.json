@@ -1,0 +1,13 @@
+{
+  "fault_id": "F2",
+  "root_cause": "embedding_deployment changed to text-embedding-3-large without reindexing; query vectors no longer match the index built with text-embedding-3-small",
+  "specialist": "retrieval",
+  "severity": "sev1",
+  "action": "pr",
+  "expected_fix": {
+    "file": "apps/patient-rag/config/rag.yaml",
+    "set": {
+      "embedding_deployment": "text-embedding-3-small"
+    }
+  }
+}

@@ -1,10 +1,10 @@
 {
   "generator": "corpus",
-  "generator_version": "1.0.0",
+  "generator_version": "1.1.0",
   "model_deployment": "gpt-5-mini",
   "outputs_sha256": {
-    "docs.jsonl": "477e81a0d6a2fb890272e61834f4a1ffb8a822083c3ff5c57b7d3966133f3e86",
-    "docs_v2.jsonl": "a3c9845915cafa3fca5ea26f92c7cf237fd3c3c747f7b479061b37efac47a4c0",
+    "docs.jsonl": "086209a57d57bbd06d512d7f0213ccd2901082460d06182020ea7d093fafc78f",
+    "docs_v2.jsonl": "f7aabeee73540ae21d411713525e4095439309cd8c72c9117b3e1aebabf7cf94",
     "graph.json": "815ecedb243d78b5bdfdd351b7c54eb57161e7997453fed88cb6ed1e8693b267"
   },
   "record_counts": {

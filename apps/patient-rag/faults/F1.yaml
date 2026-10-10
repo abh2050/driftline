@@ -1,0 +1,3 @@
+id: F1
+description: chunk_size changes from 512 to 2048 (retrieval recall drops)
+overrides: {chunk_size: 2048}

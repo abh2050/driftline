@@ -1,0 +1,3 @@
+id: F7
+description: the chat deployment is throttled through an APIM rate limit
+overrides: {chat_route: gateway}

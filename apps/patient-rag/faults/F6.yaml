@@ -1,0 +1,3 @@
+id: F6
+description: the reranker is enabled on a slow tier (p95 latency rises, quality holds)
+overrides: {reranker_enabled: true, reranker_deployment: cohere-rerank-pro}

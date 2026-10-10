@@ -1,0 +1,44 @@
+# Layer 1 report: baseline
+
+Date: 2026-10-10
+
+- config_hash: fe060ebd8698
+- foundry_evaluation: https://ai.azure.com/resource/build/evaluation/47573873-7b88-4d14-a3c9-f02686a1e92b?wsid=/subscriptions/37dc8b49-69c9-4d42-827d-9727d47224c1/resourceGroups/rg-dl-dev/providers/Microsoft.CognitiveServices/accounts/dl-dev-ai-rf5tbsjvwdzcs/projects/dl-dev-project&tid=d20df1df-ebc9-4c08-a135-00efa9ca488e
+- mode: live
+- source_version: 1
+
+| Metric | Value |
+|---|---|
+| questions | 150.0 |
+| error_rate | 0.0 |
+| recall_at_k | 0.96 |
+| mrr | 0.635 |
+| groundedness | 3.906 |
+| relevance | 4.0333 |
+| response_completeness | 3.3333 |
+| judged | 149.0 |
+| citation_rate | 0.9667 |
+| answer_accuracy | 0.94 |
+| latency_p50_ms | 1894.4 |
+| latency_p95_ms | 6014.2 |
+| cost_per_query_usd | 0.001752 |
+
+Config:
+
+```yaml
+chat_deployment: gpt-4.1-mini
+chat_route: direct
+chunk_overlap: 64
+chunk_size: 512
+embedding_deployment: text-embedding-3-small
+embedding_dimensions: 1536
+groundedness_sample_rate: 0.1
+index_prefix: cfw
+judge_deployment: gpt-5.4-mini
+max_answer_tokens: 400
+prompt_version: v3
+rerank_candidates: 20
+reranker_deployment: cohere-rerank-fast
+reranker_enabled: false
+top_k: 8
+```

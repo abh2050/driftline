@@ -1,0 +1,13 @@
+{
+  "fault_id": "F6",
+  "root_cause": "reranker enabled on the slow tier (cohere-rerank-pro); p95 latency rises while quality holds",
+  "specialist": "performance",
+  "severity": "sev3",
+  "action": "pr",
+  "expected_fix": {
+    "file": "apps/patient-rag/config/rag.yaml",
+    "set": {
+      "reranker_enabled": false
+    }
+  }
+}

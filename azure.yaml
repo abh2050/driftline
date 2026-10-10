@@ -12,6 +12,9 @@ hooks:
   postprovision:
     shell: sh
     run: uv run python -m scripts.entra_app post
+  predeploy:
+    shell: sh
+    run: azd env set GIT_COMMIT "$(git rev-parse --short HEAD)"
 services:
   otel-collector:
     project: apps/otel-collector
@@ -19,4 +22,22 @@ services:
     host: containerapp
     docker:
       path: Dockerfile
+      remoteBuild: true
+  patient-rag:
+    project: apps/patient-rag
+    language: docker
+    host: containerapp
+    docker:
+      path: Dockerfile
+      context: ../..
+      remoteBuild: true
+      buildArgs:
+        - GIT_COMMIT=${GIT_COMMIT}
+  traffic-gen:
+    project: apps/traffic-gen
+    language: docker
+    host: containerapp
+    docker:
+      path: Dockerfile
+      context: ../..
       remoteBuild: true

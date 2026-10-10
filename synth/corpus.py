@@ -25,7 +25,7 @@ from synth.common import (
 )
 from synth.topics import Equipment, Fact, TopicGraph, build_topic_graph, changed_value
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 OUT_DIR = DATA_DIR / "corpus"
 N_CHANGED = 30
 
@@ -343,7 +343,10 @@ def _prompt(d: Doc) -> list[dict[str, str]]:
         "change": "reason for change, affected items, implementation, approvals",
         "faq": "five question and answer pairs, one per given value",
     }[d.type]
-    lines.append(f"Structure: {style}. Length: 250 to 450 words.")
+    lines.append(
+        f"Structure: {style}. Length: 700 to 1000 words, with realistic detail "
+        "(background, step rationale, examples, records to keep)."
+    )
     return [
         {"role": "system", "content": SYSTEM_PROMPT},
         {"role": "user", "content": "\n".join(lines)},

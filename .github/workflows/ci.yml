@@ -29,7 +29,8 @@ jobs:
         run: uv run pytest -q
       - name: synthetic data determinism
         run: ./scripts/check-synth-determinism.sh
-      # Added in later phases: layer 1 offline.
+      - name: layer 1 offline
+        run: uv run driftline-eval layer1 --label baseline --offline
 
   bicep:
     runs-on: ubuntu-latest

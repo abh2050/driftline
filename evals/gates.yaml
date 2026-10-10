@@ -1,0 +1,14 @@
+# Layer 1 gate (spec 7.1.2). A patch passes when the degraded metric recovers to within
+# `recovery_tolerance` of baseline and no other metric regresses beyond its threshold.
+recovery_tolerance: 0.02
+metrics:
+  # name: {direction, max_regression}  (relative regression vs baseline)
+  recall_at_k: {direction: higher, max_regression: 0.03}
+  mrr: {direction: higher, max_regression: 0.05}
+  groundedness: {direction: higher, max_regression: 0.05}
+  relevance: {direction: higher, max_regression: 0.05}
+  response_completeness: {direction: higher, max_regression: 0.08}
+  citation_rate: {direction: higher, max_regression: 0.05}
+  answer_accuracy: {direction: higher, max_regression: 0.05}
+  latency_p95_ms: {direction: lower, max_regression: 0.30}
+  cost_per_query_usd: {direction: lower, max_regression: 0.30}

@@ -1,0 +1,13 @@
+{
+  "fault_id": "F4",
+  "root_cause": "prompt_version moved to v4-nocite, which lacks the citation instruction; citation rate collapses",
+  "specialist": "prompt",
+  "severity": "sev2",
+  "action": "pr",
+  "expected_fix": {
+    "file": "apps/patient-rag/config/rag.yaml",
+    "set": {
+      "prompt_version": "v3"
+    }
+  }
+}

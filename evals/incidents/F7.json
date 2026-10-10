@@ -1,0 +1,10 @@
+{
+  "fault_id": "F7",
+  "root_cause": "the chat deployment is throttled by an APIM rate limit; 429s raise error rate and latency; capacity is outside the repo",
+  "specialist": "performance",
+  "severity": "sev1",
+  "action": "escalate",
+  "expected_fix": {
+    "escalate": "raise the gateway rate limit or chat deployment capacity"
+  }
+}

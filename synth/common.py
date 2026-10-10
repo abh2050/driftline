@@ -84,6 +84,7 @@ class CachedLLM:
         self._credential: Any = None
         self.calls = 0
         self.hits = 0
+        self.used: set[str] = set()
 
     def _path(self, digest: str) -> Path:
         return self._cache_dir / digest[:2] / f"{digest}.json"
@@ -92,6 +93,7 @@ class CachedLLM:
         self, messages: Sequence[Message], *, json_mode: bool = False, key: str = ""
     ) -> str:
         digest = _cache_key(self.deployment, messages, json_mode, key)
+        self.used.add(digest)
         path = self._path(digest)
         if path.exists():
             self.hits += 1
@@ -127,6 +129,16 @@ class CachedLLM:
         }
         path.write_text(json.dumps(record, ensure_ascii=False, indent=1, sort_keys=True) + "\n")
         return content
+
+
+def prune_cache(llm: CachedLLM, cache_dir: Path = CACHE_DIR) -> int:
+    """Delete cached responses the last full run did not use. Returns the number removed."""
+    removed = 0
+    for path in cache_dir.glob("*/*.json"):
+        if path.stem not in llm.used:
+            path.unlink()
+            removed += 1
+    return removed
 
 
 async def aclose(llm: LLM) -> None:

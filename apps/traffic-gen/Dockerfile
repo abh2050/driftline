@@ -1,0 +1,26 @@
+# Built from the repo root (uv workspace).
+FROM ghcr.io/astral-sh/uv:0.6.14 AS uv
+
+FROM python:3.12-slim AS build
+COPY --from=uv /uv /usr/local/bin/uv
+ENV UV_COMPILE_BYTECODE=1 UV_LINK_MODE=copy UV_PYTHON_DOWNLOADS=never
+WORKDIR /src
+COPY pyproject.toml uv.lock ./
+COPY packages packages
+COPY apps/patient-rag/pyproject.toml apps/patient-rag/pyproject.toml
+COPY apps/traffic-gen/pyproject.toml apps/traffic-gen/pyproject.toml
+COPY apps/traffic-gen/src apps/traffic-gen/src
+RUN uv sync --frozen --no-dev --no-editable --package traffic-gen
+
+FROM python:3.12-slim
+RUN useradd --create-home --uid 10001 app
+WORKDIR /src
+COPY --from=build /src/.venv /src/.venv
+COPY config config
+COPY evals/datasets/traffic.jsonl evals/datasets/golden.jsonl evals/datasets/seasonality.json evals/datasets/
+ENV PATH=/src/.venv/bin:$PATH \
+    DRIFTLINE_CONFIG_DIR=/src/config \
+    DATASETS_DIR=/src/evals/datasets \
+    PYTHONUNBUFFERED=1
+USER app
+CMD ["traffic-gen"]

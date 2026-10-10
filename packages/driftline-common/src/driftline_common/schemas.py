@@ -44,5 +44,7 @@ class TelemetryEvent(BaseModel):
     config_hash: str
     prompt_version: str
     git_commit: str
+    # Canary requests carry an expected answer; True when the answer contained it.
+    canary_correct: bool | None = None
     # Synthetic replay only: the true fault label of the segment, None when clean.
     fault_id: str | None = None

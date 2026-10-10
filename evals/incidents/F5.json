@@ -1,0 +1,14 @@
+{
+  "fault_id": "F5",
+  "root_cause": "the indexer was disabled while 30 source documents changed; the index serves stale values and fresh-document answers are wrong",
+  "specialist": "index",
+  "severity": "sev2",
+  "action": "runbook",
+  "expected_fix": {
+    "runbook": [
+      "re-enable the indexer",
+      "reindex from source version 2",
+      "verify canary correctness on fresh questions"
+    ]
+  }
+}

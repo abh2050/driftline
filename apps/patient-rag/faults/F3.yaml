@@ -1,0 +1,3 @@
+id: F3
+description: top_k changes from 8 to 2 (groundedness drops)
+overrides: {top_k: 2}

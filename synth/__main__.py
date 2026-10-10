@@ -10,10 +10,10 @@ import argparse
 import asyncio
 
 from synth import corpus, golden, redteam, routing, telemetry, traffic
-from synth.common import CachedLLM, aclose, load_synth_config
+from synth.common import CachedLLM, aclose, load_synth_config, prune_cache
 
 
-async def run_all(seed: int) -> None:
+async def run_all(seed: int, prune: bool = False) -> None:
     cfg = load_synth_config()
     llm = CachedLLM(cfg.deployment, cfg.concurrency)
     try:
@@ -24,6 +24,8 @@ async def run_all(seed: int) -> None:
         print("routing:", await routing.generate(seed, llm))
         print("redteam:", await redteam.generate(seed, llm))
         print(f"llm calls {llm.calls}, cache hits {llm.hits}")
+        if prune:
+            print(f"pruned {prune_cache(llm)} unused cache entries")
     finally:
         await aclose(llm)
 
@@ -31,7 +33,9 @@ async def run_all(seed: int) -> None:
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--seed", type=int, default=load_synth_config().seed)
-    asyncio.run(run_all(ap.parse_args().seed))
+    ap.add_argument("--prune", action="store_true", help="delete unused synth/cache entries")
+    args = ap.parse_args()
+    asyncio.run(run_all(args.seed, args.prune))
 
 
 if __name__ == "__main__":
