@@ -20,6 +20,10 @@
     "ingestExists": { "value": "${SERVICE_INGEST_RESOURCE_EXISTS=false}" },
     "detectorExists": { "value": "${SERVICE_DETECTOR_RESOURCE_EXISTS=false}" },
     "replayExists": { "value": "${SERVICE_REPLAY_RESOURCE_EXISTS=false}" },
+    "githubMcpExists": { "value": "${SERVICE_GITHUB_MCP_RESOURCE_EXISTS=false}" },
+    "kqlToolExists": { "value": "${SERVICE_KQL_TOOL_RESOURCE_EXISTS=false}" },
+    "orchestratorExists": { "value": "${SERVICE_ORCHESTRATOR_RESOURCE_EXISTS=false}" },
+    "githubKeyExists": { "value": "${GITHUB_KEY_EXISTS=false}" },
     "driftlineApiAppId": { "value": "${DRIFTLINE_API_APP_ID}" },
     "driftlineApiAudience": { "value": "${DRIFTLINE_API_AUDIENCE}" },
     "modelDeployments": {

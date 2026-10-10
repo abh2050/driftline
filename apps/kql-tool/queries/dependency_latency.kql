@@ -1,0 +1,8 @@
+// description: latency and failures of patient-rag's outbound calls (search, embeddings, chat, rerank)
+// params: minutes:int(5..1440)=60
+OTelSpans
+| where TimeGenerated > ago({minutes}m) and ServiceName == "patient-rag" and Kind == "SPAN_KIND_CLIENT"
+| summarize calls = count(), failures = countif(StatusCode == "STATUS_CODE_ERROR"),
+            p95_ms = percentile(DurationMs, 95)
+  by target = tostring(Attributes["server.address"]), status = tostring(Attributes["http.response.status_code"])
+| order by calls desc

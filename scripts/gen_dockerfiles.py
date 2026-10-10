@@ -9,7 +9,17 @@ from __future__ import annotations
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-MEMBERS = ["patient-rag", "traffic-gen", "router", "ingest", "detector", "replay"]
+MEMBERS = [
+    "patient-rag",
+    "traffic-gen",
+    "router",
+    "ingest",
+    "detector",
+    "replay",
+    "orchestrator",
+    "github-mcp",
+    "kql-tool",
+]
 # workspace members whose source a service needs besides its own
 SOURCE_DEPS = {"detector": ["ingest"]}
 
@@ -57,6 +67,30 @@ SERVICES: dict[str, tuple[str, list[str], list[str], str]] = {
         [],
         [],
         '["uvicorn", "detector.app:app", "--host", "0.0.0.0", "--port", "8000", "--no-access-log"]',
+    ),
+    "github-mcp": (
+        "github-mcp-proxy",
+        [],
+        [],
+        '["uvicorn", "github_mcp_proxy.app:app", "--host", "0.0.0.0", "--port", "8000", '
+        '"--no-access-log"]',
+    ),
+    "kql-tool": (
+        "kql-tool",
+        ["COPY apps/kql-tool/queries apps/kql-tool/queries"],
+        ["KQL_QUERIES_DIR=/src/apps/kql-tool/queries"],
+        '["uvicorn", "kql_tool.app:app", "--host", "0.0.0.0", "--port", "8000", "--no-access-log"]',
+    ),
+    "orchestrator": (
+        "orchestrator",
+        [
+            "COPY apps/orchestrator/prompts apps/orchestrator/prompts",
+            "COPY apps/patient-rag/config apps/patient-rag/config",
+            "COPY evals/gates.yaml evals/gates.yaml",
+        ],
+        ["ORCHESTRATOR_HOME=/src/apps/orchestrator"],
+        '["uvicorn", "orchestrator.app:app", "--host", "0.0.0.0", "--port", "8000", '
+        '"--no-access-log"]',
     ),
     "replay": (
         "replay",

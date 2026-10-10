@@ -17,6 +17,7 @@ APP_DIR = Path(os.environ.get("PATIENT_RAG_HOME", Path(__file__).resolve().paren
 class RagConfig(BaseModel):
     model_config = ConfigDict(extra="forbid", frozen=True)
 
+    config_revision: int = 1
     chunk_size: int = Field(gt=32)
     chunk_overlap: int = Field(ge=0)
     top_k: int = Field(ge=1, le=50)

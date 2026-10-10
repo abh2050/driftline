@@ -1,11 +1,26 @@
-# Model deployment per agent (ADR 0001).
+# Driftline agents (spec 5.1.7, ADR 0001, ADR 0006). Each agent is registered as a versioned
+# prompt agent in Foundry Agent Service and calls tools through APIM with its own identity.
 defaults:
   deployment: gpt-5-mini
 agents:
-  retrieval-specialist: {}
-  prompt-specialist: {}
-  index-specialist: {}
-  performance-specialist: {}
-  validator: {}
-  pr-writer: {}
-  explainer: {}
+  retrieval-specialist:
+    identity: agent-retrieval
+    tools: [github_read, kql]
+  prompt-specialist:
+    identity: agent-prompt
+    tools: [github_read, kql]
+  index-specialist:
+    identity: agent-index
+    tools: [github_read, kql]
+  performance-specialist:
+    identity: agent-performance
+    tools: [github_read, kql]
+  validator:
+    identity: agent-validator
+    tools: []
+  pr-writer:
+    identity: agent-prwriter
+    tools: [github_write]
+  explainer:
+    identity: agent-explainer
+    tools: [github_read, kql]

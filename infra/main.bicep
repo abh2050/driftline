@@ -41,6 +41,12 @@ param routerExists string = 'false'
 param ingestExists string = 'false'
 param detectorExists string = 'false'
 param replayExists string = 'false'
+param githubMcpExists string = 'false'
+param kqlToolExists string = 'false'
+param orchestratorExists string = 'false'
+
+@description('"true" once the GitHub App private key is in Key Vault (HUMAN_STEPS); the secret-scoped role needs it to exist.')
+param githubKeyExists string = 'false'
 
 @description('Driftline API app registration (created by scripts/entra_app.py preprovision).')
 param driftlineApiAppId string
@@ -68,6 +74,16 @@ var services = [
   'github-mcp'
   'console'
 ]
+// One identity per agent, so APIM can tell agents apart (ADR 0006).
+var agents = [
+  'agent-retrieval'
+  'agent-prompt'
+  'agent-index'
+  'agent-performance'
+  'agent-validator'
+  'agent-prwriter'
+  'agent-explainer'
+]
 
 resource rg 'Microsoft.Resources/resourceGroups@2025-04-01' = {
   name: 'rg-${environmentName}'
@@ -78,7 +94,7 @@ resource rg 'Microsoft.Resources/resourceGroups@2025-04-01' = {
 module identity 'modules/identity.bicep' = {
   scope: rg
   name: 'identity'
-  params: { location: location, prefix: prefix, services: services, tags: tags }
+  params: { location: location, prefix: prefix, services: concat(services, agents), tags: tags }
 }
 
 // Principal lookups by service name.
@@ -194,6 +210,9 @@ module keyvault 'modules/keyvault.bicep' = {
     prefix: prefix
     tags: tags
     roleAssignments: [union(me, { role: 'secretsOfficer' })]
+    secretReaders: githubKeyExists == 'true' ? [
+      union(sp(ids['github-mcp'].principalId), { secretName: 'github-app-private-key' })
+    ] : []
   }
 }
 
@@ -321,7 +340,9 @@ var commonEnv = [
   { name: 'AZURE_ENV_NAME', value: environmentName }
   { name: 'DRIFTLINE_API_APP_ID', value: driftlineApiAppId }
   { name: 'DRIFTLINE_API_AUDIENCE', value: driftlineApiAudience }
-  { name: 'OTEL_EXPORTER_OTLP_ENDPOINT', value: 'http://otel-collector' }
+  // The collector's short app name does not resolve in the environment (ADR 0006), so
+  // services use its internal FQDN over HTTPS.
+  { name: 'OTEL_EXPORTER_OTLP_ENDPOINT', value: 'https://${otelCollector.outputs.fqdn}' }
 ]
 
 module patientRag 'modules/container-app.bicep' = {
@@ -486,6 +507,123 @@ module replay 'modules/container-job.bicep' = {
   }
 }
 
+// The MCP backends sit behind APIM: external ingress restricted to APIM's public IP, and
+// each verifies APIM's managed-identity token (role mcp.gateway).
+module githubMcp 'modules/container-app.bicep' = {
+  scope: rg
+  name: 'app-github-mcp'
+  params: {
+    name: 'github-mcp'
+    location: location
+    tags: tags
+    environmentId: acaEnv.outputs.id
+    identityId: ids['github-mcp'].id
+    identityClientId: ids['github-mcp'].clientId
+    registryServer: registry.outputs.loginServer
+    exists: githubMcpExists == 'true'
+    ingress: 'external'
+    allowedIps: ['${apim.outputs.publicIp}/32']
+    targetPort: 8000
+    transport: 'http'
+    minReplicas: 1
+    maxReplicas: 1
+    cpu: '0.5'
+    memory: '1Gi'
+    env: concat(commonEnv, [
+      { name: 'KEYVAULT_URI', value: keyvault.outputs.uri }
+      { name: 'MCP_UPSTREAM', value: 'http://127.0.0.1:8082' }
+    ])
+    sidecars: [
+      {
+        name: 'github-mcp-server'
+        image: 'ghcr.io/github/github-mcp-server:v2.0.2'
+        args: ['http']
+        env: [
+          { name: 'GITHUB_TOOLSETS', value: 'repos,pull_requests' }
+        ]
+        resources: { cpu: json('0.25'), memory: '0.5Gi' }
+      }
+    ]
+  }
+}
+
+module kqlTool 'modules/container-app.bicep' = {
+  scope: rg
+  name: 'app-kql-tool'
+  params: {
+    name: 'kql-tool'
+    location: location
+    tags: tags
+    environmentId: acaEnv.outputs.id
+    identityId: ids['kql-tool'].id
+    identityClientId: ids['kql-tool'].clientId
+    registryServer: registry.outputs.loginServer
+    exists: kqlToolExists == 'true'
+    ingress: 'external'
+    allowedIps: ['${apim.outputs.publicIp}/32']
+    targetPort: 8000
+    transport: 'http'
+    minReplicas: 0
+    maxReplicas: 1
+    env: concat(commonEnv, [
+      { name: 'LOG_ANALYTICS_WORKSPACE_ID', value: monitoring.outputs.workspaceCustomerId }
+    ])
+  }
+}
+
+module apimMcp 'modules/apim-mcp.bicep' = {
+  scope: rg
+  name: 'apim-mcp'
+  params: {
+    apimName: apim.outputs.name
+    tenantId: tenant().tenantId
+    driftlineApiAppId: driftlineApiAppId
+    driftlineApiAudience: driftlineApiAudience
+    githubMcpUrl: 'https://${githubMcp.outputs.fqdn}/mcp'
+    kqlToolUrl: 'https://${kqlTool.outputs.fqdn}/mcp'
+    workspaceId: monitoring.outputs.workspaceId
+  }
+}
+
+module orchestrator 'modules/container-app.bicep' = {
+  scope: rg
+  name: 'app-orchestrator'
+  params: {
+    name: 'orchestrator'
+    location: location
+    tags: tags
+    environmentId: acaEnv.outputs.id
+    identityId: ids.orchestrator.id
+    identityClientId: ids.orchestrator.clientId
+    extraIdentityIds: [for a in agents: ids[a].id]
+    registryServer: registry.outputs.loginServer
+    exists: orchestratorExists == 'true'
+    ingress: 'internal'
+    targetPort: 8000
+    transport: 'http'
+    daprAppId: 'orchestrator'
+    daprAppPort: 8000
+    minReplicas: 1
+    maxReplicas: 1
+    cpu: '1.0'
+    memory: '2Gi'
+    env: concat(commonEnv, [
+      { name: 'FOUNDRY_ENDPOINT', value: foundry.outputs.endpoint }
+      { name: 'FOUNDRY_PROJECT_ENDPOINT', value: foundry.outputs.projectEndpoint }
+      { name: 'COSMOS_ENDPOINT', value: cosmos.outputs.endpoint }
+      { name: 'STORAGE_BLOB_ENDPOINT', value: storage.outputs.blobEndpoint }
+      { name: 'CONTENT_SAFETY_ENDPOINT', value: contentsafety.outputs.endpoint }
+      { name: 'PUBSUB_NAME', value: 'pubsub-orchestrator' }
+      { name: 'ROUTER_URL', value: 'http://router' }
+      { name: 'PATIENT_RAG_URL', value: 'http://patient-rag' }
+      { name: 'GITHUB_MCP_URL', value: apimMcp.outputs.githubMcpEndpoint }
+      { name: 'KQL_MCP_URL', value: apimMcp.outputs.kqlMcpEndpoint }
+      { name: 'AGENT_IDENTITIES', value: string(toObject(agents, a => a, a => ids[a].clientId)) }
+      { name: 'APPINSIGHTS_RESOURCE_ID', value: monitoring.outputs.appInsightsId }
+    ])
+  }
+}
+
 output AZURE_LOCATION string = location
 output AZURE_TENANT_ID string = tenant().tenantId
 output AZURE_RESOURCE_GROUP string = rg.name
@@ -508,7 +646,11 @@ output OTEL_COLLECTOR_FQDN string = otelCollector.outputs.fqdn
 output PATIENT_RAG_FQDN string = patientRag.outputs.fqdn
 output APIM_NAME string = apim.outputs.name
 // Service identities, consumed by scripts/entra_app.py (postprovision) for app role grants.
-output SERVICE_IDENTITIES array = [for s in services: {
+output APIM_PRINCIPAL_ID string = apim.outputs.principalId
+output APIM_GATEWAY_URL string = apim.outputs.gatewayUrl
+output GITHUB_MCP_URL string = apimMcp.outputs.githubMcpEndpoint
+output KQL_MCP_URL string = apimMcp.outputs.kqlMcpEndpoint
+output SERVICE_IDENTITIES array = [for s in concat(services, agents): {
   service: s
   principalId: ids[s].principalId
   clientId: ids[s].clientId

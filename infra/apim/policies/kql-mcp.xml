@@ -1,0 +1,51 @@
+<!--
+  kql-tool MCP policy (spec 5.1.12): any Driftline agent identity may call the read-only named
+  queries. JWT validation, per-identity rate limit, tracing and backend managed identity match
+  the GitHub MCP policy.
+-->
+<policies>
+  <inbound>
+    <base />
+    <validate-jwt header-name="Authorization" failed-validation-httpcode="401"
+                  failed-validation-error-message="Unauthorized" output-token-variable-name="jwt">
+      <openid-config url="https://login.microsoftonline.com/{{tenant-id}}/v2.0/.well-known/openid-configuration" />
+      <audiences>
+        <audience>{{driftline-api-app-id}}</audience>
+        <audience>{{driftline-api-audience}}</audience>
+      </audiences>
+      <issuers>
+        <issuer>https://login.microsoftonline.com/{{tenant-id}}/v2.0</issuer>
+        <issuer>https://sts.windows.net/{{tenant-id}}/</issuer>
+      </issuers>
+    </validate-jwt>
+    <set-variable name="caller" value="@(((Jwt)context.Variables["jwt"]).Claims.GetValueOrDefault("oid", "unknown"))" />
+    <set-variable name="roles" value="@(((Jwt)context.Variables["jwt"]).Claims.GetValueOrDefault("roles", "none"))" />
+    <choose>
+      <when condition="@(!((string)context.Variables["roles"]).Split(',').Any(r => r.Trim().StartsWith("agent.")))">
+        <return-response>
+          <set-status code="403" reason="Forbidden" />
+          <set-header name="x-driftline-blocked-by" exists-action="override"><value>apim</value></set-header>
+        </return-response>
+      </when>
+    </choose>
+    <trace source="driftline-mcp" severity="information">
+      <message>kql-tool call</message>
+      <metadata name="caller" value="@((string)context.Variables["caller"])" />
+      <metadata name="traceparent" value="@(context.Request.Headers.GetValueOrDefault("traceparent", "none"))" />
+    </trace>
+    <rate-limit-by-key calls="120" renewal-period="60" counter-key="@((string)context.Variables["caller"])" />
+    <authentication-managed-identity resource="{{driftline-api-audience}}" output-token-variable-name="backendToken" />
+    <set-header name="Authorization" exists-action="override">
+      <value>@("Bearer " + (string)context.Variables["backendToken"])</value>
+    </set-header>
+  </inbound>
+  <backend>
+    <base />
+  </backend>
+  <outbound>
+    <base />
+  </outbound>
+  <on-error>
+    <base />
+  </on-error>
+</policies>

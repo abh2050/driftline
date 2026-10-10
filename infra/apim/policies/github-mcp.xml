@@ -1,0 +1,130 @@
+<!--
+  GitHub MCP server policy (spec 5.1.12). Every call:
+  1. must carry a valid Entra JWT for the Driftline API (agent managed identities);
+  2. is checked against global denials (merge, deletes, branch protection, repository admin),
+     pushes to main, the file-write allowlist and the caller's per-agent tool allowlist;
+  3. is rate limited per identity and traced with identity, tool and W3C trace id;
+  4. reaches the backend with APIM's own managed identity (role mcp.gateway), never the
+     agent's token.
+  Denials return HTTP 403 with a JSON-RPC error and header x-driftline-blocked-by: apim.
+-->
+<policies>
+  <inbound>
+    <base />
+    <validate-jwt header-name="Authorization" failed-validation-httpcode="401"
+                  failed-validation-error-message="Unauthorized" output-token-variable-name="jwt">
+      <openid-config url="https://login.microsoftonline.com/{{tenant-id}}/v2.0/.well-known/openid-configuration" />
+      <audiences>
+        <audience>{{driftline-api-app-id}}</audience>
+        <audience>{{driftline-api-audience}}</audience>
+      </audiences>
+      <issuers>
+        <issuer>https://login.microsoftonline.com/{{tenant-id}}/v2.0</issuer>
+        <issuer>https://sts.windows.net/{{tenant-id}}/</issuer>
+      </issuers>
+    </validate-jwt>
+    <!-- APIM rejects empty strings as policy values, so every value below has a non-empty default. -->
+    <set-variable name="caller" value="@(((Jwt)context.Variables["jwt"]).Claims.GetValueOrDefault("oid", "unknown"))" />
+    <set-variable name="roles" value="@(((Jwt)context.Variables["jwt"]).Claims.GetValueOrDefault("roles", "none"))" />
+    <set-variable name="rpc" value="@{
+      if (context.Request.Method != "POST") { return "{}"; }
+      var body = context.Request.Body?.As<JObject>(preserveContent: true);
+      return body == null ? "{}" : body.ToString(Newtonsoft.Json.Formatting.None);
+    }" />
+    <set-variable name="tool" value="@{
+      var rpc = JObject.Parse((string)context.Variables["rpc"]);
+      var name = (string)rpc["method"] == "tools/call" ? ((string)rpc["params"]?["name"] ?? "") : "";
+      return name == "" ? "none" : name;
+    }" />
+    <set-variable name="verdict" value="@{
+      var tool = (string)context.Variables["tool"];
+      if (tool == "none") { return "allow"; }
+      var rpc = JObject.Parse((string)context.Variables["rpc"]);
+      var args = rpc["params"]?["arguments"] as JObject ?? new JObject();
+      var roles = ((string)context.Variables["roles"]).Split(',').Select(r => r.Trim()).ToArray();
+
+      var never = new [] { "merge_pull_request", "update_pull_request_branch", "delete_file",
+        "delete_repository", "create_repository", "fork_repository", "pull_request_review_write",
+        "update_branch_protection", "delete_branch" };
+      if (never.Contains(tool)) { return "deny:" + tool + " is never allowed"; }
+
+      var branch = (string)args["branch"] ?? "";
+      var writes = new [] { "create_or_update_file", "push_files" };
+      if (writes.Contains(tool) && (branch == "main" || branch == "refs/heads/main" || branch == "")) {
+        return "deny:writes to main are not allowed";
+      }
+      if (tool == "create_branch" && !branch.StartsWith("driftline/")) {
+        return "deny:branches must be named driftline/*";
+      }
+      if (tool == "create_pull_request" && !(((string)args["head"] ?? "").StartsWith("driftline/"))) {
+        return "deny:pull requests must come from driftline/* branches";
+      }
+      var allowedPrefixes = new [] { "apps/patient-rag/config/", "apps/patient-rag/prompts/" };
+      var paths = new System.Collections.Generic.List<string>();
+      if (tool == "create_or_update_file") { paths.Add((string)args["path"] ?? ""); }
+      if (tool == "push_files" && args["files"] is JArray files) {
+        foreach (var f in files) { paths.Add((string)f["path"] ?? ""); }
+      }
+      foreach (var p in paths) {
+        if (p.Contains("..") || !allowedPrefixes.Any(a => p.StartsWith(a))) {
+          return "deny:write outside the allowlist: " + p;
+        }
+      }
+
+      var read = new [] { "get_file_contents", "list_commits", "get_commit", "list_branches",
+        "search_code", "list_pull_requests", "pull_request_read", "search_pull_requests" };
+      var prWriter = read.Concat(new [] { "create_branch", "create_or_update_file", "push_files",
+        "create_pull_request", "update_pull_request" }).ToArray();
+      var allow = new System.Collections.Generic.Dictionary<string, string[]> {
+        { "agent.retrieval", read }, { "agent.prompt", read }, { "agent.index", read },
+        { "agent.performance", read }, { "agent.validator", read }, { "agent.explainer", read },
+        { "agent.prwriter", prWriter }
+      };
+      if (roles.Any(r => allow.ContainsKey(r) && allow[r].Contains(tool))) { return "allow"; }
+      return "deny:" + tool + " is not in the allowlist for roles [" + string.Join(",", roles) + "]";
+    }" />
+    <trace source="driftline-mcp" severity="information">
+      <message>@("github-mcp " + (string)context.Variables["tool"] + " -> " + (string)context.Variables["verdict"])</message>
+      <metadata name="caller" value="@((string)context.Variables["caller"])" />
+      <metadata name="roles" value="@((string)context.Variables["roles"])" />
+      <metadata name="tool" value="@((string)context.Variables["tool"])" />
+      <metadata name="traceparent" value="@(context.Request.Headers.GetValueOrDefault("traceparent", "none"))" />
+    </trace>
+    <choose>
+      <when condition="@(((string)context.Variables["verdict"]).StartsWith("deny:"))">
+        <return-response>
+          <set-status code="403" reason="Forbidden" />
+          <set-header name="Content-Type" exists-action="override"><value>application/json</value></set-header>
+          <set-header name="x-driftline-blocked-by" exists-action="override"><value>apim</value></set-header>
+          <set-body>@{
+            var rpc = JObject.Parse((string)context.Variables["rpc"]);
+            return new JObject(
+              new JProperty("jsonrpc", "2.0"),
+              new JProperty("id", rpc["id"]),
+              new JProperty("error", new JObject(
+                new JProperty("code", -32003),
+                new JProperty("message", "Forbidden by Driftline gateway policy: " + ((string)context.Variables["verdict"]).Substring(5))))
+            ).ToString();
+          }</set-body>
+        </return-response>
+      </when>
+    </choose>
+    <rate-limit-by-key calls="120" renewal-period="60" counter-key="@((string)context.Variables["caller"])" />
+    <authentication-managed-identity resource="{{driftline-api-audience}}" output-token-variable-name="backendToken" />
+    <set-header name="Authorization" exists-action="override">
+      <value>@("Bearer " + (string)context.Variables["backendToken"])</value>
+    </set-header>
+    <set-header name="x-driftline-caller" exists-action="override">
+      <value>@((string)context.Variables["caller"])</value>
+    </set-header>
+  </inbound>
+  <backend>
+    <base />
+  </backend>
+  <outbound>
+    <base />
+  </outbound>
+  <on-error>
+    <base />
+  </on-error>
+</policies>

@@ -73,3 +73,27 @@ services:
       path: Dockerfile
       context: ../..
       remoteBuild: true
+  github-mcp:
+    project: apps/github-mcp
+    language: docker
+    host: containerapp
+    docker:
+      path: Dockerfile
+      context: ../..
+      remoteBuild: true
+  kql-tool:
+    project: apps/kql-tool
+    language: docker
+    host: containerapp
+    docker:
+      path: Dockerfile
+      context: ../..
+      remoteBuild: true
+  orchestrator:
+    project: apps/orchestrator
+    language: docker
+    host: containerapp
+    docker:
+      path: Dockerfile
+      context: ../..
+      remoteBuild: true

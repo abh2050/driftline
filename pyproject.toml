@@ -3,7 +3,7 @@ name = "driftline"
 version = "0.1.0"
 description = "Multi agent system that detects RAG quality drift and opens fix PRs"
 requires-python = ">=3.12,<3.13"
-dependencies = ["driftline-common", "patient-rag", "traffic-gen", "router", "ingest", "detector", "replay"]
+dependencies = ["driftline-common", "patient-rag", "traffic-gen", "router", "ingest", "detector", "replay", "orchestrator", "github_mcp_proxy", "kql_tool", "orchestrator"]
 
 [project.scripts]
 driftline-eval = "evals.cli:main"
@@ -19,7 +19,7 @@ packages = ["evals"]
 package = true
 
 [tool.uv.workspace]
-members = ["packages/*", "apps/patient-rag", "apps/traffic-gen", "apps/router", "apps/ingest", "apps/detector", "apps/replay"]
+members = ["packages/*", "apps/patient-rag", "apps/traffic-gen", "apps/router", "apps/ingest", "apps/detector", "apps/replay", "apps/orchestrator", "apps/github-mcp", "apps/kql-tool"]
 
 [tool.uv.sources]
 driftline-common = { workspace = true }
@@ -29,6 +29,9 @@ router = { workspace = true }
 ingest = { workspace = true }
 detector = { workspace = true }
 replay = { workspace = true }
+orchestrator = { workspace = true }
+github-mcp-proxy = { workspace = true }
+kql-tool = { workspace = true }
 
 [tool.ruff]
 line-length = 100
@@ -39,7 +42,7 @@ extend-exclude = ["apps/console"]
 select = ["E", "F", "W", "I", "B", "UP", "N", "S", "ASYNC", "RUF", "SIM", "PT"]
 
 [tool.ruff.lint.isort]
-known-first-party = ["driftline_common", "patient_rag", "traffic_gen", "router", "ingest", "detector", "replay", "synth", "scripts", "evals"]
+known-first-party = ["driftline_common", "patient_rag", "traffic_gen", "router", "ingest", "detector", "replay", "orchestrator", "github_mcp_proxy", "kql_tool", "synth", "scripts", "evals"]
 
 [tool.ruff.lint.per-file-ignores]
 "**/tests/**" = ["S101", "S311"]
@@ -50,9 +53,9 @@ known-first-party = ["driftline_common", "patient_rag", "traffic_gen", "router",
 strict = true
 python_version = "3.12"
 plugins = ["pydantic.mypy"]
-files = ["packages", "apps/patient-rag/src", "apps/traffic-gen/src", "apps/router/src", "apps/ingest/src", "apps/detector/src", "apps/replay/src", "evals", "synth", "scripts", "tests"]
+files = ["packages", "apps/patient-rag/src", "apps/traffic-gen/src", "apps/router/src", "apps/ingest/src", "apps/detector/src", "apps/replay/src", "apps/orchestrator/src", "apps/github-mcp/src", "apps/kql-tool/src", "evals", "synth", "scripts", "tests"]
 explicit_package_bases = true
-mypy_path = ["packages/driftline-common/src", "apps/patient-rag/src", "apps/traffic-gen/src", "apps/router/src", "apps/ingest/src", "apps/detector/src", "apps/replay/src", "."]
+mypy_path = ["packages/driftline-common/src", "apps/patient-rag/src", "apps/traffic-gen/src", "apps/router/src", "apps/ingest/src", "apps/detector/src", "apps/replay/src", "apps/orchestrator/src", "apps/github-mcp/src", "apps/kql-tool/src", "."]
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"

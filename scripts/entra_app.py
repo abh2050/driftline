@@ -31,24 +31,24 @@ ROLES: dict[str, tuple[str, list[str]]] = {
     "agent.validator": ("Tool allowlist for validator", ["Application"]),
     "agent.prwriter": ("Tool allowlist for pr-writer", ["Application"]),
     "agent.explainer": ("Read-only tool allowlist for explainer", ["Application"]),
+    "mcp.gateway": ("APIM calling the MCP backends (github-mcp, kql-tool)", ["Application"]),
 }
 
 # service identity -> app roles (spec section 10)
 GRANTS: dict[str, list[str]] = {
     "traffic-gen": ["patientrag.query"],
     "detector": ["router.invoke"],
-    "orchestrator": [
-        "router.invoke",
-        "agent.retrieval",
-        "agent.prompt",
-        "agent.index",
-        "agent.performance",
-        "agent.validator",
-        "agent.prwriter",
-        "agent.explainer",
-    ],
+    "orchestrator": ["router.invoke"],
     "sandbox-runner": ["router.invoke", "patientrag.query"],
     "ops-api": ["router.invoke", "patientrag.admin", "ops.write"],
+    # one identity per agent (ADR 0006); APIM maps each role to a tool allowlist
+    "agent-retrieval": ["agent.retrieval"],
+    "agent-prompt": ["agent.prompt"],
+    "agent-index": ["agent.index"],
+    "agent-performance": ["agent.performance"],
+    "agent-validator": ["agent.validator"],
+    "agent-prwriter": ["agent.prwriter"],
+    "agent-explainer": ["agent.explainer"],
 }
 
 GRAPH = "https://graph.microsoft.com/v1.0"
@@ -130,6 +130,8 @@ def post() -> None:
     have = {(a["principalId"], a["appRoleId"]) for a in existing}
     added = 0
     for service, roles in GRANTS.items():
+        if service not in identities:
+            continue
         principal = identities[service]["principalId"]
         for r in roles:
             rid = role_id(env_name, r)
@@ -141,6 +143,30 @@ def post() -> None:
                 {"principalId": principal, "resourceId": sp_id, "appRoleId": rid},
             )
             added += 1
+    apim = azd_get("APIM_PRINCIPAL_ID")
+    if apim and (apim, role_id(env_name, "mcp.gateway")) not in have:
+        graph(
+            "POST",
+            f"/servicePrincipals/{sp_id}/appRoleAssignedTo",
+            {
+                "principalId": apim,
+                "resourceId": sp_id,
+                "appRoleId": role_id(env_name, "mcp.gateway"),
+            },
+        )
+        added += 1
+    # revoke grants that are no longer declared (e.g. agent roles moved off the orchestrator)
+    wanted = {
+        (identities[s]["principalId"], role_id(env_name, r))
+        for s, rs in GRANTS.items()
+        for r in rs
+        if s in identities
+    }
+    managed = {i["principalId"] for i in identities.values()}
+    for a in existing:
+        if a["principalId"] in managed and (a["principalId"], a["appRoleId"]) not in wanted:
+            graph("DELETE", f"/servicePrincipals/{sp_id}/appRoleAssignedTo/{a['id']}")
+            added -= 1
     me = azd_get("AZURE_PRINCIPAL_ID")
     if me and (me, role_id(env_name, "admin")) not in have:
         graph(

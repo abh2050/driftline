@@ -23,6 +23,10 @@ param maxReplicas int = 1
 param cpu string = '0.25'
 param memory string = '0.5Gi'
 param probes array = []
+@description('Additional user-assigned identity resource ids (e.g. per-agent identities).')
+param extraIdentityIds array = []
+@description('Extra containers in the same app (sidecars), full container objects.')
+param sidecars array = []
 @description('Image used until azd deploys the service image.')
 param placeholderImage string = 'mcr.microsoft.com/k8se/quickstart:latest'
 
@@ -44,7 +48,7 @@ resource app 'Microsoft.App/containerApps@2025-01-01' = {
   tags: union(tags, { 'azd-service-name': name })
   identity: {
     type: 'UserAssigned'
-    userAssignedIdentities: { '${identityId}': {} }
+    userAssignedIdentities: toObject(concat([identityId], extraIdentityIds), id => id, id => {})
   }
   properties: {
     environmentId: environmentId
@@ -67,7 +71,7 @@ resource app 'Microsoft.App/containerApps@2025-01-01' = {
       }
     }
     template: {
-      containers: [
+      containers: concat([
         {
           name: 'main'
           image: image
@@ -75,7 +79,7 @@ resource app 'Microsoft.App/containerApps@2025-01-01' = {
           resources: { cpu: json(cpu), memory: memory }
           probes: probes
         }
-      ]
+      ], sidecars)
       scale: { minReplicas: minReplicas, maxReplicas: maxReplicas }
     }
   }

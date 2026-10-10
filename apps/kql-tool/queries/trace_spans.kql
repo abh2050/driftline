@@ -1,0 +1,7 @@
+// description: every span of one trace, in time order
+// params: trace_id:hex32
+OTelSpans
+| where TimeGenerated > ago(7d) and TraceId == "{trace_id}"
+| project TimeGenerated, ServiceName, Name, DurationMs, StatusCode, ParentSpanId, SpanId
+| order by TimeGenerated asc
+| take 200

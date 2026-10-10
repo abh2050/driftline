@@ -1,0 +1,9 @@
+# GitHub App used by github-mcp (spec 5.1.13). Not secrets; the private key is in Key Vault
+# as `github-app-private-key`.
+app_id: 5258486
+installation_id: 169994430
+repository: abh2050/driftline
+# Installation tokens are minted with only these permissions, whatever the App is granted.
+token_permissions:
+  contents: write
+  pull_requests: write

@@ -43,6 +43,8 @@ class RouterConfig(_Strict):
 
 class AgentConfig(_Strict):
     deployment: str | None = None
+    identity: str
+    tools: list[Literal["github_read", "github_write", "kql"]] = Field(default_factory=list)
 
 
 class AgentDefaults(_Strict):

@@ -1,0 +1,7 @@
+// description: recent router decisions of one type with scores and margin
+// params: hours:int(1..168)=24, decision_type:enum(D1,D2,D3,D4,D5,D6)=D3
+DriftlineDecisions_CL
+| where TimeGenerated > ago({hours}h) and DecisionType == "{decision_type}"
+| project TimeGenerated, QuestionId, IncidentId, Client, Chosen, Margin, Scores, Escalated
+| order by TimeGenerated desc
+| take 50

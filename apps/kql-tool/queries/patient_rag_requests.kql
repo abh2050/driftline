@@ -1,0 +1,8 @@
+// description: patient-rag request volume, error rate and latency in 5-minute buckets
+// params: minutes:int(5..1440)=60
+OTelSpans
+| where TimeGenerated > ago({minutes}m) and Name == "patient-rag.ask"
+| summarize requests = count(), errors = countif(StatusCode == "STATUS_CODE_ERROR"),
+            p50_ms = percentile(DurationMs, 50), p95_ms = percentile(DurationMs, 95)
+  by bin(TimeGenerated, 5m), config_hash = tostring(Attributes["driftline.config_hash"])
+| order by TimeGenerated asc

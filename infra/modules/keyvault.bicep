@@ -33,5 +33,23 @@ resource ra 'Microsoft.Authorization/roleAssignments@2022-04-01' = [for a in rol
   }
 }]
 
+@description('Principals that may read exactly one secret: [{principalId, principalType, secretName}].')
+param secretReaders array = []
+
+resource secrets 'Microsoft.KeyVault/vaults/secrets@2024-11-01' existing = [for r in secretReaders: {
+  parent: kv
+  name: r.secretName
+}]
+
+resource secretRa 'Microsoft.Authorization/roleAssignments@2022-04-01' = [for (r, i) in secretReaders: {
+  name: guid(kv.id, r.secretName, r.principalId, roles.secretsUser)
+  scope: secrets[i]
+  properties: {
+    principalId: r.principalId
+    principalType: r.principalType
+    roleDefinitionId: subscriptionResourceId('Microsoft.Authorization/roleDefinitions', roles.secretsUser)
+  }
+}]
+
 output name string = kv.name
 output uri string = kv.properties.vaultUri

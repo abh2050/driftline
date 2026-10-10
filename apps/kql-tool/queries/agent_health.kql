@@ -1,0 +1,8 @@
+// description: per-agent p95 latency, error rate and invocation count (live agent health for D3)
+// params: minutes:int(5..240)=15
+OTelSpans
+| where TimeGenerated > ago({minutes}m) and isnotempty(Attributes["gen_ai.agent.name"])
+| summarize invocations = count(), errors = countif(StatusCode == "STATUS_CODE_ERROR"),
+            p95_ms = percentile(DurationMs, 95)
+  by agent = tostring(Attributes["gen_ai.agent.name"])
+| extend error_rate = todouble(errors) / invocations

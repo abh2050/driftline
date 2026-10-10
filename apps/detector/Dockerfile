@@ -13,6 +13,9 @@ COPY apps/router/pyproject.toml apps/router/pyproject.toml
 COPY apps/ingest/pyproject.toml apps/ingest/pyproject.toml
 COPY apps/detector/pyproject.toml apps/detector/pyproject.toml
 COPY apps/replay/pyproject.toml apps/replay/pyproject.toml
+COPY apps/orchestrator/pyproject.toml apps/orchestrator/pyproject.toml
+COPY apps/github-mcp/pyproject.toml apps/github-mcp/pyproject.toml
+COPY apps/kql-tool/pyproject.toml apps/kql-tool/pyproject.toml
 COPY apps/detector/src apps/detector/src
 COPY apps/ingest/src apps/ingest/src
 RUN uv sync --frozen --no-dev --no-editable --package detector
