@@ -46,3 +46,23 @@ For each record, check that the question is answerable from the source fact and 
 Tell Claude Code when `reviewed` is 30 or more.
 
 > **2026-10-09:** The owner deferred this review and asked to continue to Phase 2. Phase 1 is accepted with this item **open**. Complete it before relying on layer 1 numbers in reports.
+
+## 2026-10-10: Create the Driftline GitHub App (Phase 6)
+
+The agents open pull requests through a GitHub App (not a personal token), with access to this repository only.
+
+1. Go to https://github.com/settings/apps/new and fill in:
+   - **GitHub App name:** `driftline-abh2050` (names are global; add a suffix if it's taken)
+   - **Homepage URL:** `https://github.com/abh2050/driftline`
+   - **Webhook:** untick **Active**
+   - **Repository permissions:** Contents **Read and write**, Pull requests **Read and write**, Metadata **Read-only** (set automatically). Leave everything else at No access.
+   - **Where can this GitHub App be installed?** Only on this account
+   - Click **Create GitHub App**.
+2. On the app page, note the **App ID**. Under **Private keys**, click **Generate a private key**, which downloads a `.pem` file.
+3. In the left menu, click **Install App**, then **Install** next to your account, choose **Only select repositories**, pick `driftline` and click **Install**. The URL then ends in `/installations/<number>`. That number is the **installation ID**.
+4. Store the key in Key Vault (replace the path), then delete the local file:
+
+       az keyvault secret set --vault-name dl-dev-kv-rf5tbsjvwdzcs --name github-app-private-key --file ~/Downloads/<your-app>.private-key.pem -o none
+       rm ~/Downloads/<your-app>.private-key.pem
+
+5. Tell Claude Code the **App ID** and **installation ID**. They are not secrets, but never paste the key itself.
