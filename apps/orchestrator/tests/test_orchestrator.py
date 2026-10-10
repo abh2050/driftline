@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 from pathlib import Path
 
 import pytest
@@ -12,10 +13,11 @@ RAG = (Path(__file__).resolve().parents[2] / "patient-rag" / "config" / "rag.yam
 
 
 def test_patch_sets_key_pins_and_bumps_revision() -> None:
+    current = int(re.search(r"^config_revision: (\d+)", RAG, re.M).group(1))  # type: ignore[union-attr]
     out = patch_rag_yaml(RAG, {"top_k": 8}, "inc-1")
     assert "top_k: 8" in out
     assert "pinned by Driftline inc-1" in out
-    assert "config_revision: 2" in out
+    assert f"config_revision: {current + 1}" in out
     assert out.count("\n") == RAG.count("\n")  # comments and order preserved
 
 

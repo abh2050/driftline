@@ -87,3 +87,11 @@ def test_build_event_canary_and_cost() -> None:
     assert bad.error
     assert bad.status_code == 429
     assert bad.canary_correct is False
+
+
+def test_config_revision_does_not_change_hash() -> None:
+    base = load_base_config()
+    assert (
+        apply(base, {"config_revision": base.config_revision + 5}).config_hash()
+        == base.config_hash()
+    )

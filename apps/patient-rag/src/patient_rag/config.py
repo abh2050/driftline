@@ -35,7 +35,9 @@ class RagConfig(BaseModel):
     index_prefix: str
 
     def config_hash(self) -> str:
-        blob = json.dumps(self.model_dump(), sort_keys=True).encode()
+        # config_revision is deployment metadata (bumped by fix PRs), not behavior, so it is
+        # excluded: a fix PR that restores values yields the original baseline hash.
+        blob = json.dumps(self.model_dump(exclude={"config_revision"}), sort_keys=True).encode()
         return hashlib.sha256(blob).hexdigest()[:12]
 
     def index_name(self) -> str:
