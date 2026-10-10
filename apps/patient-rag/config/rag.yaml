@@ -1,8 +1,8 @@
 # patient-rag behavior (spec 5.1.1). Faults in ../faults/*.yaml override these keys at runtime.
-config_revision: 1          # bumped by every Driftline fix PR to force a redeploy (ADR 0006)
+config_revision: 2          # bumped by every Driftline fix PR to force a redeploy (ADR 0006)
 chunk_size: 512            # tokens per chunk (cl100k)
 chunk_overlap: 64
-top_k: 8
+top_k: 8                    # pinned by Driftline inc-20261010182722-380b12
 embedding_deployment: text-embedding-3-small
 embedding_dimensions: 1536
 chat_deployment: gpt-4.1-mini
