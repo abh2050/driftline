@@ -5,10 +5,10 @@ from pathlib import Path
 
 import pytest
 from pydantic import ValidationError
-from router.clients import RulesRouterClient, _parse, find_scores
 
 from driftline_common.decision import CATALOG, Decision, normalize, top_two
 from evals.layer2a_router.run import calibration, macro_f1
+from router.clients import RulesRouterClient, _parse, find_scores
 
 DATA = Path(__file__).resolve().parents[3] / "evals" / "datasets"
 

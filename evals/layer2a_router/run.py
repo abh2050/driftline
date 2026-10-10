@@ -352,10 +352,9 @@ def render_markdown(data: dict[str, Any]) -> str:
 
 
 async def run(clients: list[str] | None, sample: int | None) -> dict[str, Any]:
-    from router.clients import build_clients
-
     from driftline_common.foundry import make_openai_client
     from driftline_common.pricing import Pricing
+    from router.clients import build_clients
 
     cfg = load_router_config()
     openai = make_openai_client(max_retries=8)
