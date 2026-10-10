@@ -56,6 +56,23 @@ def _layer1(args: argparse.Namespace) -> int:
     return 0
 
 
+def _layer2a(args: argparse.Namespace) -> int:
+    import asyncio
+
+    from driftline_common.config import load_router_config
+    from evals.layer2a_router.run import report, run
+
+    clients = args.clients.split(",") if args.clients else None
+    if args.offline:
+        cfg = load_router_config()
+        data = report(clients or list(cfg.clients), args.sample, cfg.escalation_threshold)
+    else:
+        data = asyncio.run(run(clients, args.sample))
+    for c, types in data["clients"].items():
+        print(c, {t: m["accuracy"] for t, m in types.items()})
+    return 0
+
+
 def _gate(args: argparse.Namespace) -> int:
     from evals.layer1.run import run_offline
 
@@ -92,6 +109,11 @@ def main() -> None:
     l1.add_argument("--concurrency", type=int, default=2)
     l1.add_argument("--no-upload", action="store_true")
     l1.set_defaults(fn=_layer1)
+    l2a = sub.add_parser("layer2a", help="router benchmark over the routing dataset")
+    l2a.add_argument("--clients", help="comma-separated client names (default: all)")
+    l2a.add_argument("--sample", type=int, help="first N real cases (quick runs)")
+    l2a.add_argument("--offline", action="store_true", help="report from stored results")
+    l2a.set_defaults(fn=_layer2a)
     g = sub.add_parser("gate", help="apply evals/gates.yaml to two layer 1 fixtures")
     g.add_argument("--baseline", default="baseline")
     g.add_argument("--candidate", required=True)

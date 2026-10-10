@@ -6,11 +6,13 @@ clients:
   gpt-5-mini:
     kind: llm
     deployment: gpt-5-mini
+    reasoning_effort: low
   gpt-4.1-mini:
     kind: llm
     deployment: gpt-4.1-mini
   gpt-oss-120b:
     kind: llm
     deployment: gpt-oss-120b
+    reasoning_effort: low
   rules:
     kind: rules

@@ -19,6 +19,7 @@ class _Strict(BaseModel):
 class RouterClientConfig(_Strict):
     kind: Literal["llm", "rules"]
     deployment: str | None = None
+    reasoning_effort: Literal["minimal", "low", "medium", "high"] | None = None
 
     @model_validator(mode="after")
     def _llm_needs_deployment(self) -> Self:
@@ -56,13 +57,26 @@ class AgentsConfig(_Strict):
         return self.agents[agent].deployment or self.defaults.deployment
 
 
+class MetricRule(_Strict):
+    min_rel_change: float = Field(ge=0)
+    min_abs_change: float = Field(default=0.0, ge=0)
+    sd_floor: float = Field(gt=0)
+    min_samples: int = Field(default=1, ge=1)
+    ewma_alpha: float | None = Field(default=None, gt=0, le=1)  # overrides the global alpha
+
+
 class DetectorConfig(_Strict):
     schedule: str
     ewma_alpha: float = Field(gt=0, le=1)
     cusum_k: float = Field(ge=0)
     cusum_h: float = Field(gt=0)
     min_breach_windows: int = Field(ge=1)
-    metrics: list[str]
+    aggregate_windows: int = Field(ge=1)
+    warmup_windows: int = Field(ge=1)
+    min_window_count: int = Field(ge=1)
+    recovery_windows: int = Field(ge=1)
+    noise_cooldown_windows: int = Field(ge=0)
+    metrics: dict[str, MetricRule]
 
 
 def config_dir() -> Path:

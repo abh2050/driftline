@@ -1,0 +1,109 @@
+{
+ "client": "gpt-oss-120b",
+ "decision": {
+  "chosen": "index",
+  "client": "gpt-oss-120b",
+  "cost_usd": 0.0001608,
+  "decision_type": "D3",
+  "escalated": false,
+  "input_tokens": 580,
+  "latency_ms": 832.4,
+  "margin": 0.55,
+  "model": "gpt-oss-120b",
+  "options": [
+   "retrieval",
+   "prompt",
+   "index",
+   "performance"
+  ],
+  "output_tokens": 123,
+  "question_id": "R-0008",
+  "rationale": "Index shows highest error rate and latency, indicating stale content or schema problems causing the incident.",
+  "scores": {
+   "index": 0.7,
+   "performance": 0.05,
+   "prompt": 0.1,
+   "retrieval": 0.15
+  }
+ },
+ "request": {
+  "context": {
+   "agent_health": {
+    "index": {
+     "error_rate": 0.154,
+     "p95_latency_ms": 54776,
+     "queue_depth": 12
+    },
+    "performance": {
+     "error_rate": 0.004,
+     "p95_latency_ms": 9992,
+     "queue_depth": 2
+    },
+    "prompt": {
+     "error_rate": 0.013,
+     "p95_latency_ms": 8738,
+     "queue_depth": 1
+    },
+    "retrieval": {
+     "error_rate": 0.015,
+     "p95_latency_ms": 13232,
+     "queue_depth": 1
+    }
+   },
+   "config_diff": [
+    {
+     "from": "v3",
+     "key": "prompt_version",
+     "to": "v5"
+    }
+   ],
+   "log_snippets": [
+    "retry: attempt 3/3 failed",
+    "chat: 429 Too Many Requests from gateway (rate limit)",
+    "judge: answer contains claims not in context",
+    "healthcheck ok"
+   ],
+   "metric_deltas": {
+    "citation_rate": {
+     "baseline": 0.9278,
+     "current": 0.8748,
+     "delta_pct": -5.7
+    },
+    "error_rate": {
+     "baseline": 0.0039,
+     "current": 0.1383,
+     "delta_pct": 3456.5
+    },
+    "groundedness": {
+     "baseline": 4.6093,
+     "current": 4.0057,
+     "delta_pct": -13.1
+    },
+    "p95_latency_ms": {
+     "baseline": 2669.4486,
+     "current": 4453.3912,
+     "delta_pct": 66.8
+    }
+   },
+   "recent_deploys": [
+    {
+     "commit": "a7fa93c",
+     "files": [
+      "apps/patient-rag/config/rag.yaml",
+      "apps/patient-rag/prompts/v5.md"
+     ],
+     "minutes_ago": 169
+    }
+   ],
+   "window_count": 15
+  },
+  "options": [
+   "retrieval",
+   "prompt",
+   "index",
+   "performance"
+  ],
+  "question": "Which specialist agent should investigate this incident?",
+  "rubric": "retrieval: chunking, top_k, embeddings, reranking quality. prompt: prompt version, citation behavior, instruction changes. index: stale content, indexer state, index schema. performance: latency, throttling, capacity, errors from dependencies. Agent health is context: prefer the right specialist even if it is slow."
+ }
+}
