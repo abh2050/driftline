@@ -46,8 +46,15 @@ def load_effects() -> dict[str, Any]:
     return data
 
 
-def config_hash(cfg: dict[str, Any]) -> str:
-    return hashlib.sha256(json.dumps(cfg, sort_keys=True).encode()).hexdigest()[:12]
+def rag_config_hash(fault: str | None) -> tuple[str, str]:
+    """(config hash, prompt version) exactly as patient-rag computes them, so replayed
+    windows resolve against patient-rag's /configs registry."""
+    from patient_rag.config import apply, load_base_config, load_fault
+
+    cfg = load_base_config()
+    if fault:
+        cfg = apply(cfg, load_fault(fault).overrides)
+    return cfg.config_hash(), cfg.prompt_version
 
 
 def _load_profile() -> tuple[list[float], list[float], dict[str, list[float]]]:
@@ -82,13 +89,13 @@ class Generator:
         id_prefix: str,
     ) -> Iterator[dict[str, Any]]:
         b = self.fx["baseline"]
-        cfg = dict(self.fx["baseline_config"])
-        clean_hash = config_hash(cfg)
+        clean_hash, clean_prompt = rag_config_hash(None)
         f: dict[str, Any] = {}
-        faulted_hash = clean_hash
+        faulted_hash, faulted_prompt = clean_hash, clean_prompt
         if fault:
             f = self.fx["faults"][fault]
-            faulted_hash = config_hash({**cfg, **f.get("config", {})})
+            faulted_hash, faulted_prompt = rag_config_hash(fault)
+        base_top_k = int(self.fx["baseline_config"]["top_k"])
         for i in range(seconds // STEP_S):
             ts = start + timedelta(seconds=i * STEP_S)
             active = fault is not None and i * STEP_S >= fault_from
@@ -122,8 +129,8 @@ class Generator:
                 )
             top = min(max(top, 0.0), 1.0)
             mean = min(max(mean, 0.0), top)
-            top_k = int({**cfg, **f.get("config", {})}["top_k"]) if active else int(cfg["top_k"])
-            hits = e.get("hit_count_set", top_k if r.random() > 0.03 else r.randrange(1, top_k))
+            top_k = int(e.get("hit_count_set", base_top_k))
+            hits = top_k if r.random() > 0.03 else r.randrange(1, top_k)
 
             zero_rate = e.get("citation_zero_rate", b["citation_zero_rate"])
             if r.random() < zero_rate:
@@ -141,6 +148,10 @@ class Generator:
                 g = r.gauss(b["groundedness"]["mean"] + delta, b["groundedness"]["sd"])
                 grounded = round(min(max(g, 1.0), 5.0), 2)
 
+            canary: bool | None = None
+            if r.random() < b["canary"]["rate"]:
+                persona = "synthetic"
+                canary = r.random() < e.get("canary_accuracy", b["canary"]["accuracy"])
             err_rate = e.get("error_rate", b["error_rate"])
             error = r.random() < err_rate
             status = (
@@ -180,10 +191,9 @@ class Generator:
                 "tokens_out": t_out,
                 "cost_usd": round(t_in * PRICE_IN + t_out * PRICE_OUT, 7),
                 "config_hash": faulted_hash if active else clean_hash,
-                "prompt_version": str(
-                    ({**cfg, **f.get("config", {})} if active else cfg)["prompt_version"]
-                ),
+                "prompt_version": faulted_prompt if active else clean_prompt,
                 "git_commit": commit,
+                "canary_correct": None if error or canary is None else canary,
                 "fault_id": fault if active else None,
             }
             TelemetryEvent.model_validate(ev)
@@ -264,7 +274,7 @@ def generate(seed: int) -> dict[str, Any]:
         "step_seconds": STEP_S,
         "deploys": deploys,
         "segments": segments,
-        "baseline_config_hash": config_hash(g.fx["baseline_config"]),
+        "baseline_config_hash": rag_config_hash(None)[0],
     }
     idx_path = OUT_DIR / "index.json"
     idx_path.write_text(json.dumps(index, indent=1, sort_keys=True) + "\n")

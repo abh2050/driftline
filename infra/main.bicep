@@ -37,6 +37,10 @@ param otelAllowedIps string = ''
 param otelCollectorExists string = 'false'
 param patientRagExists string = 'false'
 param trafficGenExists string = 'false'
+param routerExists string = 'false'
+param ingestExists string = 'false'
+param detectorExists string = 'false'
+param replayExists string = 'false'
 
 @description('Driftline API app registration (created by scripts/entra_app.py preprovision).')
 param driftlineApiAppId string
@@ -272,6 +276,7 @@ module acaEnv 'modules/aca-env.bicep' = {
     prefix: prefix
     tags: tags
     serviceBusFqdn: servicebus.outputs.fqdn
+    detectorSchedule: '@every 1m'
     pubsubIdentities: [for s in ['patient-rag', 'ingest', 'detector', 'orchestrator', 'ops-api']: {
       appId: s
       clientId: ids[s].clientId
@@ -366,6 +371,117 @@ module trafficGen 'modules/container-job.bicep' = {
     replicaTimeoutSeconds: 280
     env: concat(commonEnv, [
       { name: 'PATIENT_RAG_URL', value: 'http://patient-rag' }
+    ])
+  }
+}
+
+module router 'modules/container-app.bicep' = {
+  scope: rg
+  name: 'app-router'
+  params: {
+    name: 'router'
+    location: location
+    tags: tags
+    environmentId: acaEnv.outputs.id
+    identityId: ids.router.id
+    identityClientId: ids.router.clientId
+    registryServer: registry.outputs.loginServer
+    exists: routerExists == 'true'
+    ingress: 'internal'
+    targetPort: 8000
+    transport: 'http'
+    minReplicas: 1
+    maxReplicas: 3
+    cpu: '0.5'
+    memory: '1Gi'
+    env: concat(commonEnv, [
+      { name: 'FOUNDRY_ENDPOINT', value: foundry.outputs.endpoint }
+      { name: 'DCE_LOGS_ENDPOINT', value: monitoring.outputs.dceLogsEndpoint }
+      { name: 'DECISIONS_DCR_IMMUTABLE_ID', value: dcr.outputs.dcrImmutableId }
+      { name: 'DECISIONS_STREAM', value: dcr.outputs.streamName }
+    ])
+  }
+}
+
+module ingest 'modules/container-app.bicep' = {
+  scope: rg
+  name: 'app-ingest'
+  params: {
+    name: 'ingest'
+    location: location
+    tags: tags
+    environmentId: acaEnv.outputs.id
+    identityId: ids.ingest.id
+    identityClientId: ids.ingest.clientId
+    registryServer: registry.outputs.loginServer
+    exists: ingestExists == 'true'
+    ingress: 'internal'
+    targetPort: 8000
+    transport: 'http'
+    daprAppId: 'ingest'
+    daprAppPort: 8000
+    // Open windows live in memory until their minute closes, so one replica.
+    minReplicas: 1
+    maxReplicas: 1
+    cpu: '0.5'
+    memory: '1Gi'
+    env: concat(commonEnv, [
+      { name: 'COSMOS_ENDPOINT', value: cosmos.outputs.endpoint }
+      { name: 'PUBSUB_NAME', value: 'pubsub-ingest' }
+    ])
+  }
+}
+
+module detector 'modules/container-app.bicep' = {
+  scope: rg
+  name: 'app-detector'
+  params: {
+    name: 'detector'
+    location: location
+    tags: tags
+    environmentId: acaEnv.outputs.id
+    identityId: ids.detector.id
+    identityClientId: ids.detector.clientId
+    registryServer: registry.outputs.loginServer
+    exists: detectorExists == 'true'
+    ingress: 'internal'
+    targetPort: 8000
+    transport: 'http'
+    daprAppId: 'detector'
+    daprAppPort: 8000
+    minReplicas: 1
+    maxReplicas: 1
+    cpu: '0.5'
+    memory: '1Gi'
+    env: concat(commonEnv, [
+      { name: 'COSMOS_ENDPOINT', value: cosmos.outputs.endpoint }
+      { name: 'PUBSUB_NAME', value: 'pubsub-detector' }
+      { name: 'ROUTER_URL', value: 'http://router' }
+      { name: 'PATIENT_RAG_URL', value: 'http://patient-rag' }
+    ])
+  }
+}
+
+module replay 'modules/container-job.bicep' = {
+  scope: rg
+  name: 'job-replay'
+  params: {
+    name: 'replay'
+    location: location
+    tags: tags
+    environmentId: acaEnv.outputs.id
+    identityId: ids.replay.id
+    identityClientId: ids.replay.clientId
+    registryServer: registry.outputs.loginServer
+    exists: replayExists == 'true'
+    triggerType: 'Manual'
+    replicaTimeoutSeconds: 3600
+    cpu: '0.5'
+    memory: '1Gi'
+    env: concat(commonEnv, [
+      { name: 'SERVICEBUS_FQDN', value: servicebus.outputs.fqdn }
+      { name: 'REPLAY_PLAN', value: 'clean:48' }
+      { name: 'REPLAY_SPEED', value: '1440' }
     ])
   }
 }

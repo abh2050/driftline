@@ -1,12 +1,21 @@
-# Detector schedule and change detection parameters.
+# Detector (spec 5.1.5): EWMA baselines + one-sided CUSUM per metric, then D1 verification.
 schedule: "*/1 * * * *"
-ewma_alpha: 0.1
-cusum_k: 0.5
-cusum_h: 5.0
-min_breach_windows: 3
+ewma_alpha: 0.05           # baseline adapts slowly (about 20 blocks of memory)
+cusum_k: 0.5               # allowance, in baseline standard deviations
+cusum_h: 6.0               # decision threshold
+min_breach_windows: 2      # consecutive breached observations before asking D1
+aggregate_windows: 5       # each observation is a non-overlapping block of N windows
+warmup_windows: 24         # observations (blocks) before a stream's baseline is trusted
+min_window_count: 1
+recovery_windows: 4        # healthy observations before an open incident closes
+noise_cooldown_windows: 6  # after D1 says noise, ignore that metric for this long
 metrics:
-  - recall_at_k
-  - groundedness
-  - citation_rate
-  - latency_p95_ms
-  - error_rate
+  # min_rel_change guards against alarms on tiny but statistically "significant" shifts;
+  # sd_floor keeps sigma from collapsing on very stable metrics.
+  groundedness: {min_rel_change: 0.08, min_abs_change: 0.3, sd_floor: 0.3, min_samples: 3}
+  top_score: {min_rel_change: 0.05, min_abs_change: 0.03, sd_floor: 0.01}
+  citation_rate: {min_rel_change: 0.15, min_abs_change: 0.10, sd_floor: 0.04}
+  canary_accuracy: {min_rel_change: 0.15, min_abs_change: 0.18, sd_floor: 0.13, min_samples: 4}
+  hit_count: {min_rel_change: 0.20, min_abs_change: 1.0, sd_floor: 0.2}
+  latency_p95_ms: {min_rel_change: 0.35, min_abs_change: 700, sd_floor: 300, ewma_alpha: 0.2}
+  error_rate: {min_rel_change: 1.0, min_abs_change: 0.04, sd_floor: 0.02}

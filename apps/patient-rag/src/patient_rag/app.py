@@ -33,7 +33,7 @@ from driftline_common.pricing import Pricing
 from driftline_common.schemas import Persona, TelemetryEvent
 from driftline_common.telemetry import setup_telemetry
 from patient_rag.clients import Clients
-from patient_rag.config import RagConfig, apply, load_base_config, load_fault
+from patient_rag.config import APP_DIR, RagConfig, apply, load_base_config, load_fault
 from patient_rag.grounding import GroundednessJudge
 from patient_rag.index import build_index
 from patient_rag.pipeline import RagPipeline, RagResult
@@ -170,6 +170,20 @@ FastAPIInstrumentor.instrument_app(app, excluded_urls="healthz")
 @app.get("/healthz")
 async def healthz() -> dict[str, str]:
     return {"status": "ok"}
+
+
+@app.get("/configs")
+async def configs() -> dict[str, Any]:
+    """Every config patient-rag can run (baseline and each fault), keyed by config hash.
+
+    The detector uses this registry to turn config hashes into a config diff.
+    """
+    base = load_base_config()
+    out = {base.config_hash(): {"label": "baseline", "config": base.model_dump()}}
+    for fault in sorted(p.stem for p in (APP_DIR / "faults").glob("*.yaml")):
+        cfg = apply(base, load_fault(fault).overrides)
+        out.setdefault(cfg.config_hash(), {"label": fault, "config": cfg.model_dump()})
+    return out
 
 
 @app.get("/state")

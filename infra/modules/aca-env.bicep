@@ -36,6 +36,23 @@ resource pubsub 'Microsoft.App/managedEnvironments/daprComponents@2025-01-01' = 
   }
 }]
 
+@description('Dapr cron input binding that ticks the detector (config/detector.yaml schedule).')
+param detectorSchedule string
+
+resource detectorCron 'Microsoft.App/managedEnvironments/daprComponents@2025-01-01' = {
+  parent: env
+  name: 'detector-cron'
+  properties: {
+    componentType: 'bindings.cron'
+    version: 'v1'
+    metadata: [
+      { name: 'schedule', value: detectorSchedule }
+      { name: 'direction', value: 'input' }
+    ]
+    scopes: ['detector']
+  }
+}
+
 output id string = env.id
 output name string = env.name
 output defaultDomain string = env.properties.defaultDomain

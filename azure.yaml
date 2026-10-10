@@ -41,3 +41,35 @@ services:
       path: Dockerfile
       context: ../..
       remoteBuild: true
+  router:
+    project: apps/router
+    language: docker
+    host: containerapp
+    docker:
+      path: Dockerfile
+      context: ../..
+      remoteBuild: true
+  ingest:
+    project: apps/ingest
+    language: docker
+    host: containerapp
+    docker:
+      path: Dockerfile
+      context: ../..
+      remoteBuild: true
+  detector:
+    project: apps/detector
+    language: docker
+    host: containerapp
+    docker:
+      path: Dockerfile
+      context: ../..
+      remoteBuild: true
+  replay:
+    project: apps/replay
+    language: docker
+    host: containerapp
+    docker:
+      path: Dockerfile
+      context: ../..
+      remoteBuild: true

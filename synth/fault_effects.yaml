@@ -22,6 +22,7 @@ baseline:
   tokens_in: {mean: 2300, sd: 250}
   tokens_out: {mean: 190, sd: 60}
   load_latency_gain: 0.35
+  canary: {rate: 0.20, accuracy: 0.94}
 faults:
   F1:  # chunk_size 512 -> 2048
     config: {chunk_size: 2048}
@@ -50,10 +51,10 @@ faults:
     citation_zero_rate: 0.9
     citation_mult: 0.1
     groundedness_delta: -0.35
-  F5:  # indexer disabled while 30 docs change (only fresh-doc queries degrade)
+  F5:  # indexer disabled while 30 docs change: answers stay grounded but go stale, so only
+       # canaries about the changed documents fail
     config: {}
-    affected_share: 0.12
-    groundedness_delta_affected: -1.6
+    canary_accuracy: 0.62
   F6:  # reranker enabled on the slow tier
     config: {reranker_enabled: true, reranker_deployment: Cohere-rerank-v4.0-pro}
     retrieval_latency_add_ms: 1350

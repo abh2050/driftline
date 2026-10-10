@@ -17,6 +17,7 @@ def test_repo_configs_load() -> None:
     agents = load_agents_config()
     assert agents.deployment_for("retrieval-specialist") == agents.defaults.deployment
     assert load_detector_config().min_breach_windows >= 1
+    assert "canary_accuracy" in load_detector_config().metrics
 
 
 def test_unknown_active_client_is_rejected(tmp_path: Path) -> None:

@@ -4,9 +4,13 @@ requires-python = "==3.12.*"
 
 [manifest]
 members = [
+    "detector",
     "driftline",
     "driftline-common",
+    "ingest",
     "patient-rag",
+    "replay",
+    "router",
     "traffic-gen",
 ]
 
@@ -199,6 +203,19 @@ wheels = [
 ]
 
 [[package]]
+name = "azure-cosmos"
+version = "4.17.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "azure-core" },
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/d0/6d/5604820fa3417d98e61c57d07447500fce600d10695bed02f396c2d548b7/azure_cosmos-4.17.1.tar.gz", hash = "sha256:d692928a54d88163e96d41d8f899229ca2f6a6bf21973ece2bfc1f72d4b4edd8", size = 2494950 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ca/04/d99d0b32c9265d0890b071fc062ae76c0dedc94a8071b9c36c8b0962d6a2/azure_cosmos-4.17.1-py3-none-any.whl", hash = "sha256:a33b796d055d1923b6dc7b6195aa1cfb5ae786dbc38771bb4ad702b0e5ec18db", size = 505766 },
+]
+
+[[package]]
 name = "azure-identity"
 version = "1.26.0"
 source = { registry = "https://pypi.org/simple" }
@@ -238,6 +255,20 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/61/e1/c6196381cc6bb3eff9e24f5bf31b7fd962651ddbd6120bc2a4c482a7af16/azure_mgmt_resource-26.0.0.tar.gz", hash = "sha256:54227c5db06d3be4dd4b77ad885b273e9eb2606d1de653c5b534066cfbb60c0c", size = 117372 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/e6/6e/3e776a0817ebe3558fbd8d3f98b1bd8fa75a46596e5cf9bb4377960c4611/azure_mgmt_resource-26.0.0-py3-none-any.whl", hash = "sha256:ef36559a4c0843b4272aa584efb455c686e4c3f6357421b38c82f405c01a9a9f", size = 102492 },
+]
+
+[[package]]
+name = "azure-monitor-ingestion"
+version = "1.1.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "azure-core" },
+    { name = "isodate" },
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/71/a9/71d9da3ab13db73e3d4f344f9e4a06bc220d7fe7de8f96264d36ae2189d1/azure_monitor_ingestion-1.1.0.tar.gz", hash = "sha256:97afee780d9ae3069128cde77027d4cc62fa824fe64d5bac880ac4a64b0a0c4e", size = 61818 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/f7/9f/e9a55bbe647aceeaf78f1bf48e00699b8d5135dd6756af9f98dc7b4fa005/azure_monitor_ingestion-1.1.0-py3-none-any.whl", hash = "sha256:41765fb3df8e0933f1a7eaf1cb0a5f30acce856afa8831bfa4777ad26594f019", size = 57560 },
 ]
 
 [[package]]
@@ -466,6 +497,25 @@ wheels = [
 ]
 
 [[package]]
+name = "detector"
+version = "0.1.0"
+source = { editable = "apps/detector" }
+dependencies = [
+    { name = "azure-cosmos" },
+    { name = "driftline-common" },
+    { name = "ingest" },
+    { name = "uvicorn" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "azure-cosmos", specifier = "==4.17.1" },
+    { name = "driftline-common", editable = "packages/driftline-common" },
+    { name = "ingest", editable = "apps/ingest" },
+    { name = "uvicorn", specifier = "==0.54.0" },
+]
+
+[[package]]
 name = "distlib"
 version = "0.4.3"
 source = { registry = "https://pypi.org/simple" }
@@ -479,8 +529,12 @@ name = "driftline"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
+    { name = "detector" },
     { name = "driftline-common" },
+    { name = "ingest" },
     { name = "patient-rag" },
+    { name = "replay" },
+    { name = "router" },
     { name = "traffic-gen" },
 ]
 
@@ -499,8 +553,12 @@ dev = [
 
 [package.metadata]
 requires-dist = [
+    { name = "detector", editable = "apps/detector" },
     { name = "driftline-common", editable = "packages/driftline-common" },
+    { name = "ingest", editable = "apps/ingest" },
     { name = "patient-rag", editable = "apps/patient-rag" },
+    { name = "replay", editable = "apps/replay" },
+    { name = "router", editable = "apps/router" },
     { name = "traffic-gen", editable = "apps/traffic-gen" },
 ]
 
@@ -711,6 +769,23 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz", hash = "sha256:a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44", size = 216463 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/58/a2/bb081bab032533a855d44de1d56f8e8426114ff1ba5d1f07a438a0a654f8/idna-3.20-py3-none-any.whl", hash = "sha256:ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c", size = 69583 },
+]
+
+[[package]]
+name = "ingest"
+version = "0.1.0"
+source = { editable = "apps/ingest" }
+dependencies = [
+    { name = "azure-cosmos" },
+    { name = "driftline-common" },
+    { name = "uvicorn" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "azure-cosmos", specifier = "==4.17.1" },
+    { name = "driftline-common", editable = "packages/driftline-common" },
+    { name = "uvicorn", specifier = "==0.54.0" },
 ]
 
 [[package]]
@@ -1502,6 +1577,17 @@ wheels = [
 ]
 
 [[package]]
+name = "replay"
+version = "0.1.0"
+source = { editable = "apps/replay" }
+dependencies = [
+    { name = "driftline-common" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "driftline-common", editable = "packages/driftline-common" }]
+
+[[package]]
 name = "requests"
 version = "2.34.2"
 source = { registry = "https://pypi.org/simple" }
@@ -1527,6 +1613,23 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/42/f2/05f29bc3913aea15eb670be136045bf5c5bbf4b99ecb839da9b422bb2c85/requests-oauthlib-2.0.0.tar.gz", hash = "sha256:b3dffaebd884d8cd778494369603a9e7b58d29111bf6b41bdc2dcd87203af4e9", size = 55650 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/3b/5d/63d4ae3b9daea098d5d6f5da83984853c1bbacd5dc826764b249fe119d24/requests_oauthlib-2.0.0-py2.py3-none-any.whl", hash = "sha256:7dd8a5c40426b779b0868c404bdef9768deccf22749cde15852df527e6269b36", size = 24179 },
+]
+
+[[package]]
+name = "router"
+version = "0.1.0"
+source = { editable = "apps/router" }
+dependencies = [
+    { name = "azure-monitor-ingestion" },
+    { name = "driftline-common" },
+    { name = "uvicorn" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "azure-monitor-ingestion", specifier = "==1.1.0" },
+    { name = "driftline-common", editable = "packages/driftline-common" },
+    { name = "uvicorn", specifier = "==0.54.0" },
 ]
 
 [[package]]

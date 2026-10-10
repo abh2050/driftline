@@ -16,6 +16,10 @@
     "otelCollectorExists": { "value": "${SERVICE_OTEL_COLLECTOR_RESOURCE_EXISTS=false}" },
     "patientRagExists": { "value": "${SERVICE_PATIENT_RAG_RESOURCE_EXISTS=false}" },
     "trafficGenExists": { "value": "${SERVICE_TRAFFIC_GEN_RESOURCE_EXISTS=false}" },
+    "routerExists": { "value": "${SERVICE_ROUTER_RESOURCE_EXISTS=false}" },
+    "ingestExists": { "value": "${SERVICE_INGEST_RESOURCE_EXISTS=false}" },
+    "detectorExists": { "value": "${SERVICE_DETECTOR_RESOURCE_EXISTS=false}" },
+    "replayExists": { "value": "${SERVICE_REPLAY_RESOURCE_EXISTS=false}" },
     "driftlineApiAppId": { "value": "${DRIFTLINE_API_APP_ID}" },
     "driftlineApiAudience": { "value": "${DRIFTLINE_API_AUDIENCE}" },
     "modelDeployments": {
