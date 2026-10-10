@@ -4,6 +4,7 @@ which layer blocked them.
   python -m orchestrator.probe merge --pr 12           # pr-writer tries to merge a PR
   python -m orchestrator.probe push-main               # pr-writer tries to write to main
   python -m orchestrator.probe write-outside           # pr-writer writes outside the allowlist
+  python -m orchestrator.probe read-faults --identity agent-retrieval   # reads a fault file
 
 Runs inside Azure (orchestrator image, `safety-probe` job) where agent identities exist. Each
 attempt is audited under incident id `probe-<date>`.
@@ -45,6 +46,10 @@ PROBES: dict[str, tuple[str, dict[str, Any]]] = {
             "content": "# probe\n",
             "message": "probe: outside",
         },
+    ),
+    "read-faults": (
+        "get_file_contents",
+        {"owner": OWNER, "repo": REPO, "path": "apps/patient-rag/faults/F1.yaml"},
     ),
 }
 

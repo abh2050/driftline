@@ -78,6 +78,7 @@ class DetectorConfig(_Strict):
     min_window_count: int = Field(ge=1)
     recovery_windows: int = Field(ge=1)
     noise_cooldown_windows: int = Field(ge=0)
+    config_lookback_minutes: int = Field(default=180, ge=0)
     metrics: dict[str, MetricRule]
 
 

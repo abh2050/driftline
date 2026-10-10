@@ -20,7 +20,6 @@ GITHUB_READ = [
     "list_commits",
     "get_commit",
     "list_branches",
-    "search_code",
     "list_pull_requests",
     "pull_request_read",
 ]

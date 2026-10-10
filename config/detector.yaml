@@ -9,6 +9,7 @@ warmup_windows: 24         # observations (blocks) before a stream's baseline is
 min_window_count: 1
 recovery_windows: 4        # healthy observations before an open incident closes
 noise_cooldown_windows: 6  # after D1 says noise, ignore that metric for this long
+config_lookback_minutes: 180  # an incident's config diff covers changes this long before it
 metrics:
   # min_rel_change guards against alarms on tiny but statistically "significant" shifts;
   # sd_floor keeps sigma from collapsing on very stable metrics.

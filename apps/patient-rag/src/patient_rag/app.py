@@ -80,12 +80,13 @@ class State:
         self.index_version = 1  # what the serving index was built from
         self.indexer_enabled = True
         self.reindexing = False
+        self.chat_route = "direct"
         self.pipeline = RagPipeline(clients, self.cfg)
 
     async def set_config(self, cfg: RagConfig) -> None:
         old = self.pipeline
         self.cfg = cfg
-        self.pipeline = RagPipeline(self.clients, cfg)
+        self.pipeline = RagPipeline(self.clients, cfg, chat_route=self.chat_route)
         await old.close()
 
     def snapshot(self) -> dict[str, Any]:
@@ -97,6 +98,7 @@ class State:
             "source_version": self.source_version,
             "index_version": self.index_version,
             "indexer_enabled": self.indexer_enabled,
+            "chat_route": self.chat_route,
             "reindexing": self.reindexing,
         }
 
@@ -238,6 +240,7 @@ async def inject_fault(req: FaultRequest, who: Admin) -> dict[str, Any]:
         fault = load_fault(req.fault_id)
     except KeyError as e:
         raise HTTPException(404, f"unknown fault {req.fault_id}") from e
+    s.chat_route = str(fault.state.get("chat_route", "direct"))
     await s.set_config(apply(s.base, fault.overrides))
     s.fault_id = fault.id
     if "indexer_enabled" in fault.state:
@@ -251,6 +254,7 @@ async def inject_fault(req: FaultRequest, who: Admin) -> dict[str, Any]:
 @app.post("/admin/reset")
 async def reset(who: Admin) -> dict[str, Any]:
     s: State = app.state.s
+    s.chat_route = "direct"
     await s.set_config(s.base)
     s.fault_id = None
     s.indexer_enabled = True

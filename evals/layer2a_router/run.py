@@ -50,7 +50,12 @@ def tasks(sample: int | None = None) -> list[dict[str, Any]]:
 
     def ctx(c: dict[str, Any], dtype: str) -> dict[str, Any]:
         # Live agent health is D3 context only (spec 4.2).
-        ev = {k: v for k, v in c["evidence"].items() if dtype == "D3" or k != "agent_health"}
+        # Named as the orchestrator sends it (ADR 0007): the agents' health, not the service's.
+        ev = {
+            ("investigator_agent_health" if k == "agent_health" else k): v
+            for k, v in c["evidence"].items()
+            if dtype == "D3" or k != "agent_health"
+        }
         return {"summary": c["summary"], **ev}
 
     for c in cases:

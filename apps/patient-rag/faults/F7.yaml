@@ -1,3 +1,5 @@
 id: F7
 description: the chat deployment is throttled through an APIM rate limit
-overrides: {chat_route: gateway}
+# runtime routing, not a repository setting: the evidence is 429s, not a config diff
+overrides: {}
+state: {chat_route: gateway}

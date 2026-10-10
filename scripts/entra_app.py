@@ -38,7 +38,8 @@ ROLES: dict[str, tuple[str, list[str]]] = {
 GRANTS: dict[str, list[str]] = {
     "traffic-gen": ["patientrag.query"],
     "detector": ["router.invoke"],
-    "orchestrator": ["router.invoke"],
+    # patientrag.admin: approved runbooks (re-enable the indexer, reindex)
+    "orchestrator": ["router.invoke", "patientrag.admin"],
     "sandbox-runner": ["router.invoke", "patientrag.query"],
     "ops-api": ["router.invoke", "patientrag.admin", "ops.write"],
     # one identity per agent (ADR 0006); APIM maps each role to a tool allowlist

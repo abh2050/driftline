@@ -16,6 +16,7 @@ COPY apps/replay/pyproject.toml apps/replay/pyproject.toml
 COPY apps/orchestrator/pyproject.toml apps/orchestrator/pyproject.toml
 COPY apps/github-mcp/pyproject.toml apps/github-mcp/pyproject.toml
 COPY apps/kql-tool/pyproject.toml apps/kql-tool/pyproject.toml
+COPY apps/sandbox-runner/pyproject.toml apps/sandbox-runner/pyproject.toml
 COPY apps/replay/src apps/replay/src
 RUN uv sync --frozen --no-dev --no-editable --package replay
 

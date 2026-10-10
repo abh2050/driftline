@@ -1,0 +1,27 @@
+<!-- F7 chat gateway: tenant tokens for Foundry only, then a deliberately low rate limit.
+     Bursts from traffic-gen get 429s, which raise patient-rag error rate and latency. -->
+<policies>
+  <inbound>
+    <base />
+    <validate-jwt header-name="Authorization" failed-validation-httpcode="401" require-scheme="Bearer">
+      <openid-config url="https://login.microsoftonline.com/{tenant-id}/v2.0/.well-known/openid-configuration" />
+      <audiences>
+        <audience>https://ai.azure.com</audience>
+      </audiences>
+      <issuers>
+        <issuer>https://sts.windows.net/{tenant-id}/</issuer>
+        <issuer>https://login.microsoftonline.com/{tenant-id}/v2.0</issuer>
+      </issuers>
+    </validate-jwt>
+    <rate-limit calls="2" renewal-period="60" remaining-calls-header-name="x-ratelimit-remaining" />
+  </inbound>
+  <backend>
+    <base />
+  </backend>
+  <outbound>
+    <base />
+  </outbound>
+  <on-error>
+    <base />
+  </on-error>
+</policies>

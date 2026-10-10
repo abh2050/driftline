@@ -56,3 +56,6 @@ def test_window_metrics() -> None:
     assert w.groundedness == 4.0
     assert w.canary_accuracy == 0.5
     assert w.error_rate == 1 / 3
+    assert w.status_codes == {"429": 1}
+    assert w.retrieval_p95_ms == 100
+    assert w.llm_p95_ms == 900

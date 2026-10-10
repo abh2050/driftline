@@ -44,13 +44,21 @@ class AgentFactory:
         self.credential = credential
         self.project_endpoint = os.environ["FOUNDRY_PROJECT_ENDPOINT"]
 
-    def build(self, name: str, tools: list[Any] | None = None) -> Agent[Any]:
+    def build(
+        self, name: str, tools: list[Any] | None = None, middleware: list[Any] | None = None
+    ) -> Agent[Any]:
         client = FoundryChatClient(
             project_endpoint=self.project_endpoint,
             model=self.cfg.deployment_for(name),
             credential=self.credential,
         )
-        return Agent(client=client, name=name, instructions=instructions(name), tools=tools or None)
+        return Agent(
+            client=client,
+            name=name,
+            instructions=instructions(name),
+            tools=tools or None,
+            middleware=middleware or None,
+        )
 
     def identity(self, name: str) -> str:
         return self.cfg.agents[name].identity

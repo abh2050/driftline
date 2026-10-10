@@ -6,7 +6,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
-from typing import Any, Literal
+from typing import Any
 
 import yaml
 from pydantic import BaseModel, ConfigDict, Field
@@ -28,7 +28,6 @@ class RagConfig(BaseModel):
     reranker_enabled: bool
     reranker_deployment: str
     rerank_candidates: int = Field(ge=1)
-    chat_route: Literal["direct", "gateway"]
     max_answer_tokens: int
     groundedness_sample_rate: float = Field(ge=0, le=1)
     judge_deployment: str

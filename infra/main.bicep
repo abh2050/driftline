@@ -44,6 +44,7 @@ param replayExists string = 'false'
 param githubMcpExists string = 'false'
 param kqlToolExists string = 'false'
 param orchestratorExists string = 'false'
+param sandboxRunnerExists string = 'false'
 
 @description('"true" once the GitHub App private key is in Key Vault (HUMAN_STEPS); the secret-scoped role needs it to exist.')
 param githubKeyExists string = 'false'
@@ -168,6 +169,7 @@ module servicebus 'modules/servicebus.bicep' = {
       { name: 'incidents', subscriptions: ['orchestrator', 'ops-api'] }
       { name: 'validations', subscriptions: ['orchestrator'] }
       { name: 'approvals', subscriptions: ['orchestrator'] }
+      { name: 'sandbox', subscriptions: ['sandbox-runner'] }
     ]
     roleAssignments: [
       union(sp(ids['patient-rag'].principalId), { role: 'sender' })
@@ -177,6 +179,7 @@ module servicebus 'modules/servicebus.bicep' = {
       union(sp(ids.orchestrator.principalId), { role: 'receiver' })
       union(sp(ids.orchestrator.principalId), { role: 'sender' })
       union(sp(ids['sandbox-runner'].principalId), { role: 'sender' })
+      union(sp(ids['sandbox-runner'].principalId), { role: 'receiver' })
       union(sp(ids['ops-api'].principalId), { role: 'sender' })
       union(sp(ids['ops-api'].principalId), { role: 'receiver' })
       union(me, { role: 'owner' })
@@ -227,6 +230,8 @@ module search 'modules/search.bicep' = {
     roleAssignments: [
       union(sp(ids['patient-rag'].principalId), { role: 'reader' })
       union(sp(ids['sandbox-runner'].principalId), { role: 'contributor' })
+      // creates and deletes its temporary sbx-* indexes (ADR 0007)
+      union(sp(ids['sandbox-runner'].principalId), { role: 'serviceContributor' })
       union(me, { role: 'contributor' })
       union(me, { role: 'serviceContributor' })
     ]
@@ -371,6 +376,8 @@ module patientRag 'modules/container-app.bicep' = {
       { name: 'FOUNDRY_ENDPOINT', value: foundry.outputs.endpoint }
       { name: 'SEARCH_ENDPOINT', value: search.outputs.endpoint }
       { name: 'PUBSUB_NAME', value: 'pubsub-patient-rag' }
+      // F7 routes chat through the rate-limited APIM gateway (runtime state chat_route)
+      { name: 'CHAT_GATEWAY_URL', value: '${apim.outputs.gatewayUrl}/chat-gateway' }
     ])
   }
 }
@@ -582,6 +589,58 @@ module apimMcp 'modules/apim-mcp.bicep' = {
     githubMcpUrl: 'https://${githubMcp.outputs.fqdn}/mcp'
     kqlToolUrl: 'https://${kqlTool.outputs.fqdn}/mcp'
     workspaceId: monitoring.outputs.workspaceId
+  }
+}
+
+// F7: an APIM pass-through to Foundry with a deliberately low rate limit. patient-rag uses it
+// only while fault F7 sets its runtime chat_route to 'gateway', and keeps its own token.
+module apimChat 'modules/apim-chat.bicep' = {
+  scope: rg
+  name: 'apim-chat'
+  params: {
+    apimName: apim.outputs.name
+    tenantId: tenant().tenantId
+    foundryEndpoint: foundry.outputs.endpoint
+  }
+}
+
+// Validates candidate fixes (spec 5.1.8): one execution per message on the sandbox topic.
+module sandboxRunner 'modules/container-job.bicep' = {
+  scope: rg
+  name: 'job-sandbox-runner'
+  params: {
+    name: 'sandbox-runner'
+    location: location
+    tags: tags
+    environmentId: acaEnv.outputs.id
+    identityId: ids['sandbox-runner'].id
+    identityClientId: ids['sandbox-runner'].clientId
+    registryServer: registry.outputs.loginServer
+    exists: sandboxRunnerExists == 'true'
+    triggerType: 'Event'
+    eventScaleRules: [
+      {
+        name: 'sandbox-requests'
+        type: 'azure-servicebus'
+        metadata: {
+          namespace: servicebus.outputs.name
+          topicName: 'sandbox'
+          subscriptionName: 'sandbox-runner'
+          messageCount: '1'
+        }
+        identity: ids['sandbox-runner'].id
+      }
+    ]
+    replicaTimeoutSeconds: 2700
+    cpu: '2.0'
+    memory: '4Gi'
+    env: concat(commonEnv, [
+      { name: 'FOUNDRY_ENDPOINT', value: foundry.outputs.endpoint }
+      { name: 'FOUNDRY_PROJECT_ENDPOINT', value: foundry.outputs.projectEndpoint }
+      { name: 'SEARCH_ENDPOINT', value: search.outputs.endpoint }
+      { name: 'SERVICEBUS_FQDN', value: servicebus.outputs.fqdn }
+      { name: 'STORAGE_BLOB_ENDPOINT', value: storage.outputs.blobEndpoint }
+    ])
   }
 }
 

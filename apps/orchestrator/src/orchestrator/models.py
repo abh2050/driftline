@@ -7,7 +7,7 @@ from typing import Any
 
 import yaml
 from agent_framework._workflows._checkpoint_encoding import register_checkpoint_type
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 
 
 class Evidence(BaseModel):
@@ -18,6 +18,12 @@ class Evidence(BaseModel):
 class ConfigChange(BaseModel):
     key: str = Field(description="a key of apps/patient-rag/config/rag.yaml")
     value: str = Field(description="the new value as it would appear in YAML, e.g. 8, false, v3")
+
+    @field_validator("key")
+    @classmethod
+    def bare_key(cls, v: str) -> str:
+        """Models sometimes qualify the key with the file ("…/rag.yaml:prompt_version")."""
+        return v.rsplit(":", 1)[-1].rsplit("/", 1)[-1].strip()
 
 
 class RcaResult(BaseModel):
@@ -48,10 +54,36 @@ class IncidentRun:
     pr_url: str | None = None
     status: str = "routing"
     notes: list[str] = field(default_factory=list)
+    specialists: list[str] = field(default_factory=list)
+    rcas: dict[str, dict[str, Any]] = field(default_factory=dict)
+    action: str | None = None
+    escalations: list[str] = field(default_factory=list)
+    validation: dict[str, Any] | None = None
+    resolution: dict[str, Any] | None = None
 
     @property
     def id(self) -> str:
         return str(self.incident["id"])
 
 
+@dataclass
+class HumanRequest:
+    """What the console approvals inbox shows (runbook approval or escalation)."""
+
+    incident_id: str
+    kind: str  # "runbook" | "escalation"
+    summary: str
+    runbook: list[str] = field(default_factory=list)
+    reasons: list[str] = field(default_factory=list)
+
+
+@dataclass
+class HumanResponse:
+    approved: bool
+    by: str
+    note: str = ""
+
+
 register_checkpoint_type(IncidentRun)
+register_checkpoint_type(HumanRequest)
+register_checkpoint_type(HumanResponse)

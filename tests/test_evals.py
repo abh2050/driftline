@@ -74,3 +74,9 @@ def test_aggregate() -> None:
     assert m["answer_accuracy"] == 0.5
     assert m["citation_rate"] == 0.5
     assert m["groundedness"] == 4.0
+
+
+def test_gate_ignores_drops_within_judge_noise() -> None:
+    cand = {**BASE, "groundedness": 4.2}  # -6.7%, above the 5% threshold
+    assert not gate(BASE, cand, "recall_at_k", GATES).passed
+    assert gate(BASE, cand, "recall_at_k", GATES, noise={"groundedness": 0.2}).passed

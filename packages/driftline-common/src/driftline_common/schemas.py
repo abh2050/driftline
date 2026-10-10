@@ -90,6 +90,9 @@ class Window(BaseModel):
     errors: int
     latency_p50_ms: float
     latency_p95_ms: float
+    status_codes: dict[str, int] = Field(default_factory=dict)  # non-200 responses
+    retrieval_p95_ms: float | None = None
+    llm_p95_ms: float | None = None
     top_score: float | None = None
     mean_score: float | None = None
     hit_count: float | None = None
@@ -153,5 +156,8 @@ class Incident(BaseModel):
     config_diff: list[dict[str, object]]
     recent_deploys: list[dict[str, object]]
     d1: dict[str, object] | None = None
+    # what a person would look at first: response codes and which stage got slower
+    error_status_counts: dict[str, int] = Field(default_factory=dict)
+    stage_latency_p95_ms: dict[str, dict[str, float | None]] = Field(default_factory=dict)
     fault_label: str | None = None  # synthetic replays only (true fault id) for evals
     traceparent: str | None = None

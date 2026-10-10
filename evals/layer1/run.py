@@ -9,6 +9,7 @@ a fixture so offline mode can recompute every metric without Azure calls.
 from __future__ import annotations
 
 import asyncio
+import gzip
 import json
 import os
 import tempfile
@@ -28,6 +29,25 @@ GOLDEN = EVALS_DIR / "datasets" / "golden.jsonl"
 JUDGE_METRICS = ("groundedness", "relevance", "response_completeness")
 
 
+def read_fixture(label: str) -> list[dict[str, Any]]:
+    """Fixtures are stored as <label>.jsonl, or gzipped when large (fault runs with long
+    chunks exceed the repository's file size limit)."""
+    plain, packed = FIXTURES / f"{label}.jsonl", FIXTURES / f"{label}.jsonl.gz"
+    text = plain.read_text() if plain.exists() else gzip.decompress(packed.read_bytes()).decode()
+    return [json.loads(x) for x in text.splitlines() if x.strip()]
+
+
+def write_fixture(label: str, rows: list[dict[str, Any]]) -> None:
+    FIXTURES.mkdir(parents=True, exist_ok=True)
+    text = "".join(json.dumps(r, sort_keys=True) + "\n" for r in rows)
+    plain, packed = FIXTURES / f"{label}.jsonl", FIXTURES / f"{label}.jsonl.gz"
+    if label == "baseline":  # read uncompressed by sandbox-runner
+        plain.write_text(text)
+        return
+    packed.write_bytes(gzip.compress(text.encode(), mtime=0))
+    plain.unlink(missing_ok=True)
+
+
 def load_golden(limit: int | None) -> list[dict[str, Any]]:
     rows = [json.loads(x) for x in GOLDEN.read_text().splitlines() if x.strip()]
     rows = [r for r in rows if not r.get("rejected")]
@@ -41,7 +61,11 @@ def expected_value(g: dict[str, Any], source_version: int) -> str:
 
 
 async def answer_all(
-    golden: list[dict[str, Any]], overrides: dict[str, Any], source_version: int, concurrency: int
+    golden: list[dict[str, Any]],
+    overrides: dict[str, Any],
+    source_version: int,
+    concurrency: int,
+    index_name: str | None = None,
 ) -> tuple[list[dict[str, Any]], Any]:
     from patient_rag.clients import Clients
     from patient_rag.config import apply, load_base_config
@@ -49,7 +73,7 @@ async def answer_all(
 
     cfg = apply(load_base_config(), overrides)
     clients = Clients(max_retries=8)
-    pipeline = RagPipeline(clients, cfg)
+    pipeline = RagPipeline(clients, cfg, index_name=index_name)
     pricing = Pricing.load()
     sem = asyncio.Semaphore(concurrency)
 
@@ -200,10 +224,7 @@ def run_live(
     golden = load_golden(limit)
     rows, cfg = asyncio.run(answer_all(golden, overrides, source_version, concurrency))
     studio_url = judge(rows, label=label, upload=upload)
-    FIXTURES.mkdir(parents=True, exist_ok=True)
-    (FIXTURES / f"{label}.jsonl").write_text(
-        "".join(json.dumps(r, sort_keys=True) + "\n" for r in rows)
-    )
+    write_fixture(label, rows)
     metrics = aggregate(rows)
     write_report(
         label,
@@ -221,10 +242,9 @@ def run_live(
 
 def run_rejudge(label: str, *, upload: bool) -> dict[str, float]:
     """Re-score a stored fixture's answers with the judge (no new pipeline calls)."""
-    path = FIXTURES / f"{label}.jsonl"
-    rows = [json.loads(x) for x in path.read_text().splitlines() if x.strip()]
+    rows = read_fixture(label)
     studio_url = judge(rows, label=label, upload=upload)
-    path.write_text("".join(json.dumps(r, sort_keys=True) + "\n" for r in rows))
+    write_fixture(label, rows)
     metrics = aggregate(rows)
     previous = sorted(REPORTS.glob(f"*-layer1-{label}.json"))
     meta: dict[str, Any] = json.loads(previous[-1].read_text()) if previous else {}
@@ -239,6 +259,4 @@ def run_rejudge(label: str, *, upload: bool) -> dict[str, float]:
 
 
 def run_offline(label: str) -> dict[str, float]:
-    path = FIXTURES / f"{label}.jsonl"
-    rows = [json.loads(x) for x in path.read_text().splitlines() if x.strip()]
-    return aggregate(rows)
+    return aggregate(read_fixture(label))

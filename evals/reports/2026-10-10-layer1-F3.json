@@ -1,0 +1,40 @@
+{
+  "config": {
+    "chat_deployment": "gpt-4.1-mini",
+    "chat_route": "direct",
+    "chunk_overlap": 64,
+    "chunk_size": 512,
+    "config_revision": 1,
+    "embedding_deployment": "text-embedding-3-small",
+    "embedding_dimensions": 1536,
+    "groundedness_sample_rate": 0.1,
+    "index_prefix": "cfw",
+    "judge_deployment": "gpt-5.4-mini",
+    "max_answer_tokens": 400,
+    "prompt_version": "v3",
+    "rerank_candidates": 20,
+    "reranker_deployment": "cohere-rerank-fast",
+    "reranker_enabled": false,
+    "top_k": 2
+  },
+  "config_hash": "948f53cff853",
+  "foundry_evaluation": "https://ai.azure.com/resource/build/evaluation/93e05644-722e-4e20-b96b-dd71eb011c97?wsid=/subscriptions/37dc8b49-69c9-4d42-827d-9727d47224c1/resourceGroups/rg-dl-dev/providers/Microsoft.CognitiveServices/accounts/dl-dev-ai-rf5tbsjvwdzcs/projects/dl-dev-project&tid=d20df1df-ebc9-4c08-a135-00efa9ca488e",
+  "label": "F3",
+  "metrics": {
+    "answer_accuracy": 0.64,
+    "citation_rate": 0.8,
+    "cost_per_query_usd": 0.000529,
+    "error_rate": 0.0,
+    "groundedness": 3.3733,
+    "judged": 150.0,
+    "latency_p50_ms": 1220.6,
+    "latency_p95_ms": 1900.7,
+    "mrr": 0.54,
+    "questions": 150.0,
+    "recall_at_k": 0.6533,
+    "relevance": 3.6667,
+    "response_completeness": 2.74
+  },
+  "mode": "live",
+  "source_version": 1
+}

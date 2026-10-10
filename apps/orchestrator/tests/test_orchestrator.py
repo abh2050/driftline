@@ -83,3 +83,22 @@ def test_pr_body_contains_required_sections() -> None:
         "A human must review",
     ):
         assert needle in body
+
+
+def test_shield_middleware_is_function_middleware() -> None:
+    from agent_framework import Agent
+
+    from orchestrator.safety import shield_middleware
+
+    mw = shield_middleware(None, None, "inc", "agent-x")  # type: ignore[arg-type]
+    # Agent classifies middleware at construction; an unclassifiable one raises here
+    Agent(client=object(), middleware=[mw])  # type: ignore[arg-type]
+
+
+def test_config_change_keys_are_bare() -> None:
+    from orchestrator.models import ConfigChange
+
+    assert ConfigChange(key="apps/patient-rag/config/rag.yaml:prompt_version", value="v3").key == (
+        "prompt_version"
+    )
+    assert ConfigChange(key=" top_k ", value="8").key == "top_k"

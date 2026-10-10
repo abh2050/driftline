@@ -11,6 +11,7 @@
 synth/cache
 data/redteam
 evals/fixtures
+!evals/fixtures/layer1/baseline.jsonl
 evals/reports
 apps/console
 docs

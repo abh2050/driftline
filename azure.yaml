@@ -97,3 +97,11 @@ services:
       path: Dockerfile
       context: ../..
       remoteBuild: true
+  sandbox-runner:
+    project: apps/sandbox-runner
+    language: docker
+    host: containerapp
+    docker:
+      path: Dockerfile
+      context: ../..
+      remoteBuild: true

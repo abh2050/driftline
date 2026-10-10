@@ -26,6 +26,14 @@ class _Acc:
 def build_window(stream: str, start: datetime, events: list[TelemetryEvent]) -> Window:
     ok = [e for e in events if not e.error]
     lat = sorted(e.latency_ms for e in events)
+    codes: dict[str, int] = {}
+    for e in events:
+        if e.status_code != 200:
+            codes[str(e.status_code)] = codes.get(str(e.status_code), 0) + 1
+
+    def p95(xs: list[float]) -> float | None:
+        s = sorted(xs)
+        return round(s[min(len(s) - 1, int(0.95 * len(s)))], 1) if s else None
 
     def mean(xs: list[float]) -> float | None:
         return round(statistics.fmean(xs), 4) if xs else None
@@ -48,6 +56,9 @@ def build_window(stream: str, start: datetime, events: list[TelemetryEvent]) -> 
         errors=len(events) - len(ok),
         latency_p50_ms=round(lat[len(lat) // 2], 1),
         latency_p95_ms=round(lat[min(len(lat) - 1, int(0.95 * len(lat)))], 1),
+        status_codes=codes,
+        retrieval_p95_ms=p95([e.retrieval_latency_ms for e in ok]),
+        llm_p95_ms=p95([e.llm_latency_ms for e in ok]),
         top_score=mean([e.top_score for e in ok if e.top_score is not None]),
         mean_score=mean([e.mean_score for e in ok if e.mean_score is not None]),
         hit_count=mean([float(e.hit_count) for e in ok]),

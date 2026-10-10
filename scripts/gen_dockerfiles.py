@@ -19,9 +19,10 @@ MEMBERS = [
     "orchestrator",
     "github-mcp",
     "kql-tool",
+    "sandbox-runner",
 ]
 # workspace members whose source a service needs besides its own
-SOURCE_DEPS = {"detector": ["ingest"]}
+SOURCE_DEPS = {"detector": ["ingest"], "sandbox-runner": ["patient-rag"]}
 
 # service -> (package, extra runtime COPY lines, env lines, CMD)
 SERVICES: dict[str, tuple[str, list[str], list[str], str]] = {
@@ -91,6 +92,27 @@ SERVICES: dict[str, tuple[str, list[str], list[str], str]] = {
         ["ORCHESTRATOR_HOME=/src/apps/orchestrator"],
         '["uvicorn", "orchestrator.app:app", "--host", "0.0.0.0", "--port", "8000", '
         '"--no-access-log"]',
+    ),
+    "sandbox-runner": (
+        "sandbox-runner",
+        [
+            "COPY apps/patient-rag/config apps/patient-rag/config",
+            "COPY apps/patient-rag/prompts apps/patient-rag/prompts",
+            "COPY apps/patient-rag/faults apps/patient-rag/faults",
+            "COPY data/corpus data/corpus",
+            "COPY evals/__init__.py evals/gates.yaml evals/",
+            "COPY evals/layer1 evals/layer1",
+            "COPY evals/datasets/golden.jsonl evals/datasets/golden.jsonl",
+            "COPY evals/fixtures/layer1/baseline.jsonl evals/fixtures/layer1/baseline.jsonl",
+        ],
+        [
+            "PATIENT_RAG_HOME=/src/apps/patient-rag",
+            "CORPUS_DIR=/src/data/corpus",
+            "EVALS_DIR=/src/evals",
+            "PYTHONPATH=/src",
+            "HOME=/home/app",
+        ],
+        '["sandbox-runner"]',
     ),
     "replay": (
         "replay",

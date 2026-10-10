@@ -114,19 +114,31 @@ CATALOG: dict[str, DecisionSpec] = {
         "D3",
         "Which specialist agent should investigate this incident?",
         ("retrieval", "prompt", "index", "performance"),
-        "retrieval: chunking, top_k, embeddings, reranking quality. prompt: prompt version, "
-        "citation behavior, instruction changes. index: stale content, indexer state, index "
-        "schema. performance: latency, throttling, capacity, errors from dependencies. "
-        "Agent health is context: prefer the right specialist even if it is slow.",
+        "retrieval: chunking, top_k, embeddings, reranking quality; retrieval scores or hit "
+        "counts fall. When latency is what broke and quality held, it is performance even if "
+        "a retrieval setting changed (for example a slow reranker tier). prompt: prompt "
+        "version, citation behavior, instruction changes; citation rate falls. index: stale "
+        "content, indexer state, index schema; answers to fresh (canary) questions go wrong "
+        "with no config change. performance: latency, throttling, capacity, errors from "
+        "dependencies or the model gateway (429s); error rate and latency rise. "
+        "investigator_agent_health describes Driftline's own specialist agents, not the "
+        "patient-rag service: use it only to break ties, and prefer the right specialist even"
+        " if it is slow.",
     ),
     "D4": DecisionSpec(
         "D4",
         "Given the root cause analysis, what action should Driftline take?",
         ("pr", "runbook", "escalate"),
-        "pr: the cause is a setting or prompt in the repository and a patch can fix it. "
-        "runbook: the cause is runtime state (indexer, data) that an operator must change. "
-        "escalate: the cause is outside Driftline's control (capacity, quotas, provider) or "
-        "the evidence is too unclear to act.",
+        "pr: the cause is a setting or prompt that lives in the repository and a patch can "
+        "fix it. This includes a bad value that is live at runtime but differs from the "
+        "repository: the PR pins the good value and redeploys. Restoring chunking settings "
+        "is also pr: the service queries the index that matches its chunk settings, so the "
+        "original index is used again without a manual reindex. "
+        "runbook: the cause is runtime state outside the config (indexer stopped, stale data, "
+        "index needing a rebuild) that an operator restores. "
+        "escalate: the cause is outside Driftline's control (throttling or 429s, quotas, "
+        "deployment capacity, provider outages), even if temporary mitigations exist, or the "
+        "evidence is too unclear to act.",
     ),
     "D5": DecisionSpec(
         "D5",

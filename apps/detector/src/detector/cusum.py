@@ -10,7 +10,7 @@ import math
 import statistics
 from collections import deque
 from dataclasses import dataclass, field
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import Any
 
 from driftline_common.config import DetectorConfig
@@ -60,6 +60,8 @@ class StreamState:
     pending: int = 0  # windows received since the last evaluated block
     recent: deque[Window] = field(default_factory=lambda: deque(maxlen=30))
     commits_seen: list[str] = field(default_factory=list)
+    # (window start, config hash) each time the running config changes (ADR 0007)
+    config_log: list[tuple[str, str]] = field(default_factory=list)
 
     def to_doc(self) -> dict[str, Any]:
         return {
@@ -76,6 +78,7 @@ class StreamState:
             "pending": self.pending,
             "recent": [w.model_dump(mode="json") for w in self.recent],
             "commits_seen": self.commits_seen[-20:],
+            "config_log": [list(e) for e in self.config_log[-20:]],
         }
 
     @classmethod
@@ -93,7 +96,21 @@ class StreamState:
         st.pending = int(doc.get("pending", 0))
         st.recent = deque((Window.model_validate(w) for w in doc["recent"]), maxlen=30)
         st.commits_seen = list(doc.get("commits_seen", []))
+        st.config_log = [(str(a), str(h)) for a, h in doc.get("config_log", [])]
         return st
+
+
+def incident_baseline_hash(st: StreamState, run_start: datetime, cfg: DetectorConfig) -> str | None:
+    """The config in effect `config_lookback_minutes` before the breach run began.
+
+    A gradual fault keeps blocks below the CUSUM threshold for a while, so "the config of the
+    last healthy block" can already be the faulted one; the change log is not fooled by that.
+    """
+    if not st.config_log:
+        return st.baseline_config_hash
+    cutoff = (run_start - timedelta(minutes=cfg.config_lookback_minutes)).isoformat()
+    before = [h for at, h in st.config_log if at <= cutoff]
+    return before[-1] if before else st.config_log[0][1]
 
 
 def pool(windows: list[Window], cfg: DetectorConfig) -> Observation:
@@ -218,6 +235,8 @@ def advance(st: StreamState, w: Window, cfg: DetectorConfig) -> tuple[str, Breac
     """Feed one window. Returns ("breach", b) when D1 should be asked, ("recovered", None)
     when an open incident's metrics have recovered, else ("none", None)."""
     st.last_window = w.start.isoformat()
+    if not st.config_log or st.config_log[-1][1] != w.config_hash:
+        st.config_log = [*st.config_log[-19:], (w.start.isoformat(), w.config_hash)]
     if w.count < cfg.min_window_count:
         return "none", None
     st.recent.append(w)

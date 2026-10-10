@@ -75,12 +75,34 @@ def relative_change(direction: str, baseline: float, value: float) -> float:
     return delta if direction == "higher" else -delta
 
 
+JUDGE_METRICS = ("groundedness", "relevance", "response_completeness")
+
+
+def paired_stderr(
+    base_rows: Sequence[dict[str, Any]], cand_rows: Sequence[dict[str, Any]], metric: str
+) -> float:
+    """Standard error of the mean per-question difference (same questions in both runs)."""
+    base = {r["id"]: r.get(metric) for r in base_rows}
+    diffs = [
+        float(c[metric]) - float(base[c["id"]])  # type: ignore[arg-type]
+        for c in cand_rows
+        if _scored(c.get(metric)) and _scored(base.get(c["id"]))
+    ]
+    if len(diffs) < 3:
+        return 0.0
+    return statistics.stdev(diffs) / math.sqrt(len(diffs))
+
+
 def gate(
     baseline: dict[str, float],
     candidate: dict[str, float],
     degraded_metric: str,
     gates: dict[str, Any],
+    noise: dict[str, float] | None = None,
 ) -> GateResult:
+    """noise: per-metric standard error of the paired difference. A regression must exceed
+    both the configured threshold and two standard errors, so LLM-judge noise on a small
+    sample is not mistaken for a regression."""
     specs = gates["metrics"]
     tol = float(gates["recovery_tolerance"])
     details: dict[str, dict[str, float]] = {}
@@ -94,7 +116,10 @@ def gate(
             "candidate": candidate[name],
             "regression": round(worse, 4),
         }
-        if name != degraded_metric and worse > float(spec["max_regression"]):
+        se = (noise or {}).get(name, 0.0)
+        noise_rel = 2 * se / abs(baseline[name]) if baseline[name] else 0.0
+        details[name]["noise_rel"] = round(noise_rel, 4)
+        if name != degraded_metric and worse > max(float(spec["max_regression"]), noise_rel):
             regressions[name] = round(worse, 4)
     spec = specs[degraded_metric]
     recovered = (

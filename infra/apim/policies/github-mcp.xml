@@ -48,6 +48,15 @@
         "update_branch_protection", "delete_branch" };
       if (never.Contains(tool)) { return "deny:" + tool + " is never allowed"; }
 
+      // Fault definitions, eval answers and design docs would hand agents the answer, so no
+      // agent may read them (ADR 0007). Code search is not offered for the same reason.
+      var hidden = new [] { "apps/patient-rag/faults", "evals", "synth", "data", "docs", "scripts" };
+      var readPath = (((string)args["path"]) ?? "").TrimStart('/');
+      if (tool == "get_file_contents" && (readPath.Contains("..") ||
+          hidden.Any(h => readPath == h || readPath.StartsWith(h + "/")))) {
+        return "deny:reading " + readPath + " is not allowed";
+      }
+
       var branch = (string)args["branch"] ?? "";
       var writes = new [] { "create_or_update_file", "push_files" };
       if (writes.Contains(tool) && (branch == "main" || branch == "refs/heads/main" || branch == "")) {
@@ -72,7 +81,7 @@
       }
 
       var read = new [] { "get_file_contents", "list_commits", "get_commit", "list_branches",
-        "search_code", "list_pull_requests", "pull_request_read", "search_pull_requests" };
+        "list_pull_requests", "pull_request_read", "search_pull_requests" };
       var prWriter = read.Concat(new [] { "create_branch", "create_or_update_file", "push_files",
         "create_pull_request", "update_pull_request" }).ToArray();
       var allow = new System.Collections.Generic.Dictionary<string, string[]> {

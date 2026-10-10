@@ -10,7 +10,6 @@ prompt_version: v3
 reranker_enabled: false
 reranker_deployment: cohere-rerank-fast
 rerank_candidates: 20      # vector hits fetched before reranking down to top_k
-chat_route: direct         # direct | gateway (through APIM; used by F7)
 max_answer_tokens: 400
 groundedness_sample_rate: 0.10
 judge_deployment: gpt-5.4-mini

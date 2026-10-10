@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import logging
 import os
+import statistics
 import uuid
 from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
@@ -26,6 +27,7 @@ from detector.cusum import (
     StreamState,
     advance,
     breach_windows,
+    incident_baseline_hash,
     reset_after_close,
     suppress,
 )
@@ -40,6 +42,29 @@ tracer = trace.get_tracer("detector")
 ROUTER_URL = os.environ.get("ROUTER_URL", "http://router")
 PATIENT_RAG_URL = os.environ.get("PATIENT_RAG_URL", "http://patient-rag")
 MAX_WINDOWS_PER_TICK = 5000
+
+
+def status_counts(run: list[Window]) -> dict[str, int]:
+    out: dict[str, int] = {}
+    for w in run:
+        for code, n in w.status_codes.items():
+            out[code] = out.get(code, 0) + n
+    return out
+
+
+def stage_latency(st: StreamState, run: list[Window]) -> dict[str, dict[str, float | None]]:
+    """Median per-window stage p95 before the breach run and during it."""
+    during_ids = {w.id for w in run}
+    before = [w for w in st.recent if w.id not in during_ids]
+
+    def med(ws: list[Window], attr: str) -> float | None:
+        xs = [v for w in ws if (v := getattr(w, attr)) is not None]
+        return round(statistics.median(xs), 1) if xs else None
+
+    return {
+        stage: {"before": med(before, attr), "during": med(run, attr)}
+        for stage, attr in (("retrieval", "retrieval_p95_ms"), ("llm", "llm_p95_ms"))
+    }
 
 
 def config_diff(
@@ -120,7 +145,8 @@ class Detector:
         ]
 
     async def ask_d1(self, st: StreamState, breach: Breach, run: list[Window]) -> dict[str, Any]:
-        diff = config_diff(self.registry, st.baseline_config_hash, run[-1].config_hash)
+        baseline = incident_baseline_hash(st, run[0].start, self.cfg)
+        diff = config_diff(self.registry, baseline, run[-1].config_hash)
         commits = sorted({c for w in run for c in w.git_commits})
         context = {
             "summary": summarize(breach, diff, len(run)),
@@ -139,7 +165,7 @@ class Detector:
             headers={**await self.token.header(), **inject_context()},
         )
         resp.raise_for_status()
-        return {"decision": resp.json(), "context": context, "diff": diff}
+        return {"decision": resp.json(), "context": context, "diff": diff, "baseline": baseline}
 
     async def open_incident(
         self, st: StreamState, breach: Breach, run: list[Window], d1: dict[str, Any]
@@ -158,9 +184,11 @@ class Detector:
                 metric_deltas={m: MetricDelta(**d) for m, d in breach.deltas.items()},
                 window_count=len(run),
                 config_hash=run[-1].config_hash,
-                baseline_config_hash=st.baseline_config_hash or run[0].config_hash,
+                baseline_config_hash=d1["baseline"] or run[0].config_hash,
                 config_diff=d1["diff"],
                 recent_deploys=d1["context"]["recent_deploys"],
+                error_status_counts=status_counts(run),
+                stage_latency_p95_ms=stage_latency(st, run),
                 d1=d1["decision"],
                 fault_label=",".join(sorted({f for w in run for f in w.fault_ids})) or None,
                 traceparent=carrier.get("traceparent"),

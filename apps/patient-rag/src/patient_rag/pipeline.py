@@ -64,9 +64,18 @@ def format_context(hits: list[Hit]) -> str:
 
 
 class RagPipeline:
-    def __init__(self, clients: Clients, cfg: RagConfig, *, index_name: str | None = None) -> None:
+    def __init__(
+        self,
+        clients: Clients,
+        cfg: RagConfig,
+        *,
+        index_name: str | None = None,
+        chat_route: str = "direct",
+    ) -> None:
         self.clients = clients
         self.cfg = cfg
+        # "gateway" sends chat through the rate-limited APIM API (fault F7); runtime state
+        self.chat_route = chat_route
         self.index_name = index_name or cfg.index_name()
         self._search = SearchClient(clients.search_endpoint, self.index_name, clients.credential)
 
@@ -118,7 +127,7 @@ class RagPipeline:
             t1 = time.perf_counter()
             user = f"Document excerpts:\n\n{format_context(hits)}\n\nQuestion: {query}"
             chat = await self.clients.chat(
-                cfg.chat_route, cfg.chat_deployment, cfg.prompt(), user, cfg.max_answer_tokens
+                self.chat_route, cfg.chat_deployment, cfg.prompt(), user, cfg.max_answer_tokens
             )
             t2 = time.perf_counter()
         except Exception as e:

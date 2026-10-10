@@ -14,6 +14,7 @@ from detector.cusum import (
     StreamState,
     advance,
     breach_windows,
+    incident_baseline_hash,
     reset_after_close,
     suppress,
 )
@@ -29,6 +30,8 @@ class SimIncident:
     metrics: list[str]
     fault_ids: list[str]
     closed_at: str | None = None
+    baseline_config_hash: str | None = None
+    config_hash: str | None = None
 
 
 def windows_from_events(events: Iterable[TelemetryEvent]) -> list[Window]:
@@ -61,6 +64,8 @@ def simulate(
                         w.start.isoformat(),
                         breach.metrics,
                         sorted({f for x in run for f in x.fault_ids}),
+                        baseline_config_hash=incident_baseline_hash(st, run[0].start, cfg),
+                        config_hash=run[-1].config_hash,
                     )
                 )
             else:
