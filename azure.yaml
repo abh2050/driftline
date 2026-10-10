@@ -105,3 +105,18 @@ services:
       path: Dockerfile
       context: ../..
       remoteBuild: true
+  ops-api:
+    project: apps/ops-api
+    language: docker
+    host: containerapp
+    docker:
+      path: Dockerfile
+      context: ../..
+      remoteBuild: true
+  console:
+    project: apps/console
+    language: docker
+    host: containerapp
+    docker:
+      path: Dockerfile
+      remoteBuild: true

@@ -539,11 +539,13 @@ class HumanGate(Executor):
             "approved" if response.approved else "rejected",
             run.resolution,
         )
+        # an approved runbook closes the incident once it has run (or been handed to an
+        # operator); an acknowledged escalation stays with people as "escalated"
         status = "closed"
         if original.kind == "runbook" and response.approved:
-            status = await execute_runbook(run)
-        elif original.kind == "escalation":
-            status = "escalated" if response.approved else "closed"
+            run.resolution["outcome"] = await execute_runbook(run)
+        elif original.kind == "escalation" and response.approved:
+            status = "escalated"
         await save_status(run, status, pending=None, resolution=run.resolution)
         await ctx.yield_output(run)
 

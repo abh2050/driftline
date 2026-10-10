@@ -20,6 +20,7 @@ MEMBERS = [
     "github-mcp",
     "kql-tool",
     "sandbox-runner",
+    "ops-api",
 ]
 # workspace members whose source a service needs besides its own
 SOURCE_DEPS = {"detector": ["ingest"], "sandbox-runner": ["patient-rag"]}
@@ -113,6 +114,12 @@ SERVICES: dict[str, tuple[str, list[str], list[str], str]] = {
             "HOME=/home/app",
         ],
         '["sandbox-runner"]',
+    ),
+    "ops-api": (
+        "ops-api",
+        ["COPY evals/reports evals/reports"],
+        ["REPORTS_DIR=/src/evals/reports"],
+        '["uvicorn", "ops_api.app:app", "--host", "0.0.0.0", "--port", "8000", "--no-access-log"]',
     ),
     "replay": (
         "replay",

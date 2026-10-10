@@ -45,6 +45,8 @@ param githubMcpExists string = 'false'
 param kqlToolExists string = 'false'
 param orchestratorExists string = 'false'
 param sandboxRunnerExists string = 'false'
+param opsApiExists string = 'false'
+param consoleExists string = 'false'
 
 @description('"true" once the GitHub App private key is in Key Vault (HUMAN_STEPS); the secret-scoped role needs it to exist.')
 param githubKeyExists string = 'false'
@@ -201,6 +203,7 @@ module storage 'modules/storage.bicep' = {
       union(sp(ids['ops-api'].principalId), { role: 'reader', container: 'eval-results' })
       union(me, { role: 'contributor', container: 'audit' })
       union(me, { role: 'contributor', container: 'eval-results' })
+      union(sp(ids.console.principalId), { role: 'contributor', container: 'tokens' })
     ]
   }
 }
@@ -588,6 +591,7 @@ module apimMcp 'modules/apim-mcp.bicep' = {
     driftlineApiAudience: driftlineApiAudience
     githubMcpUrl: 'https://${githubMcp.outputs.fqdn}/mcp'
     kqlToolUrl: 'https://${kqlTool.outputs.fqdn}/mcp'
+    opsApiUrl: 'https://${opsApi.outputs.fqdn}'
     workspaceId: monitoring.outputs.workspaceId
   }
 }
@@ -683,6 +687,92 @@ module orchestrator 'modules/container-app.bicep' = {
   }
 }
 
+// ops-api may start replay runs and nothing else in Azure Resource Manager.
+module opsApiReplayRole 'modules/job-role.bicep' = {
+  scope: rg
+  name: 'ops-api-replay-role'
+  params: {
+    jobName: replay.outputs.name
+    principalId: ids['ops-api'].principalId
+    roleDefinitionId: 'b9a307c4-5aa3-4b52-ba60-2b17c136cd7b' // Container Apps Jobs Operator
+  }
+}
+
+// Human-facing API (spec 5.1.11). External ingress for APIM's MCP API; every route checks the
+// caller's Driftline API token, and the console reaches it inside the environment.
+module opsApi 'modules/container-app.bicep' = {
+  scope: rg
+  name: 'app-ops-api'
+  params: {
+    name: 'ops-api'
+    location: location
+    tags: tags
+    environmentId: acaEnv.outputs.id
+    identityId: ids['ops-api'].id
+    identityClientId: ids['ops-api'].clientId
+    registryServer: registry.outputs.loginServer
+    exists: opsApiExists == 'true'
+    ingress: 'external'
+    targetPort: 8000
+    transport: 'http'
+    daprAppId: 'ops-api'
+    daprAppPort: 8000
+    minReplicas: 1
+    maxReplicas: 1
+    cpu: '0.5'
+    memory: '1Gi'
+    env: concat(commonEnv, [
+      { name: 'COSMOS_ENDPOINT', value: cosmos.outputs.endpoint }
+      { name: 'PUBSUB_NAME', value: 'pubsub-ops-api' }
+      { name: 'ORCHESTRATOR_URL', value: 'http://orchestrator' }
+      { name: 'PATIENT_RAG_URL', value: 'http://patient-rag' }
+      { name: 'REPLAY_JOB_ID', value: opsApiReplayRole.outputs.jobId }
+      { name: 'APPINSIGHTS_RESOURCE_ID', value: monitoring.outputs.appInsightsId }
+    ])
+  }
+}
+
+// Web console (spec 5.2): Entra sign-in through Container Apps authentication.
+module consoleApp 'modules/container-app.bicep' = {
+  scope: rg
+  name: 'app-console'
+  params: {
+    name: 'console'
+    location: location
+    tags: tags
+    environmentId: acaEnv.outputs.id
+    identityId: ids.console.id
+    identityClientId: ids.console.clientId
+    registryServer: registry.outputs.loginServer
+    exists: consoleExists == 'true'
+    ingress: 'external'
+    targetPort: 3000
+    transport: 'http'
+    minReplicas: 1
+    maxReplicas: 2
+    cpu: '0.5'
+    memory: '1Gi'
+    // not a credential: the client id of the identity Easy Auth uses as a federated credential
+    secrets: [{ name: 'override-use-mi-fic-assertion-client-id', value: ids.console.clientId }]
+    env: [
+      { name: 'OPS_API_URL', value: 'http://ops-api' }
+    ]
+  }
+}
+
+module consoleAuth 'modules/console-auth.bicep' = {
+  scope: rg
+  name: 'console-auth'
+  params: {
+    appName: consoleApp.outputs.name
+    tenantId: tenant().tenantId
+    clientId: driftlineApiAppId
+    audience: driftlineApiAudience
+    identityId: ids.console.id
+    tokensContainerUri: storage.outputs.tokensContainerUri
+  }
+}
+
 output AZURE_LOCATION string = location
 output AZURE_TENANT_ID string = tenant().tenantId
 output AZURE_RESOURCE_GROUP string = rg.name
@@ -709,6 +799,9 @@ output APIM_PRINCIPAL_ID string = apim.outputs.principalId
 output APIM_GATEWAY_URL string = apim.outputs.gatewayUrl
 output GITHUB_MCP_URL string = apimMcp.outputs.githubMcpEndpoint
 output KQL_MCP_URL string = apimMcp.outputs.kqlMcpEndpoint
+output OPS_MCP_URL string = apimMcp.outputs.opsMcpEndpoint
+output CONSOLE_URL string = 'https://${consoleApp.outputs.fqdn}'
+output OPS_API_URL string = 'https://${opsApi.outputs.fqdn}'
 output SERVICE_IDENTITIES array = [for s in concat(services, agents): {
   service: s
   principalId: ids[s].principalId

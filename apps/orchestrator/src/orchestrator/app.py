@@ -10,6 +10,7 @@ HTTP: status, manual rerun, and /respond (the same resume path, for operators an
 from __future__ import annotations
 
 import asyncio
+import json
 import logging
 import os
 from collections.abc import AsyncIterator
@@ -19,6 +20,7 @@ from typing import Annotated, Any
 from azure.cosmos.aio import CosmosClient
 from azure.identity.aio import DefaultAzureCredential
 from fastapi import Depends, FastAPI, HTTPException, Request
+from fastapi.responses import StreamingResponse
 from opentelemetry import context, trace
 from pydantic import BaseModel
 
@@ -32,7 +34,8 @@ from orchestrator.checkpoints import CosmosCheckpointStorage
 from orchestrator.identities import AgentIdentities
 from orchestrator.models import HumanResponse, IncidentRun
 from orchestrator.router_client import RouterClient
-from orchestrator.safety import PromptShield
+from orchestrator.safety import PromptShield, shield_middleware
+from orchestrator.tools import mcp_tool
 from orchestrator.workflow import build_workflow, deps
 
 log = logging.getLogger("orchestrator")
@@ -40,6 +43,11 @@ tracer = trace.get_tracer("orchestrator")
 PUBSUB = os.environ.get("PUBSUB_NAME", "pubsub-orchestrator")
 # answering a human gate or re-running a workflow is an operator action (ops-api)
 Operator = Annotated[Principal, Depends(require_roles("ops.write"))]
+
+
+class ChatRequest(BaseModel):
+    question: str
+    incident_id: str | None = None
 
 
 class Answer(BaseModel):
@@ -232,3 +240,52 @@ async def rerun(incident_id: str, _: Operator) -> dict[str, Any]:
     except Exception as e:
         raise HTTPException(404, "unknown incident") from e
     return {"started": start({k: v for k, v in doc.items() if not k.startswith("_")})}
+
+
+@app.post("/chat")
+async def chat(req: ChatRequest, who: Operator) -> StreamingResponse:
+    """The explainer agent, streamed as plain text (spec 5.2e, through ops-api)."""
+    record: dict[str, Any] = {}
+    if req.incident_id:
+        try:
+            doc = await deps.incidents.read_item(req.incident_id, partition_key="incident")
+            record = {k: v for k, v in doc.items() if not k.startswith("_")}
+        except Exception as e:
+            raise HTTPException(404, "unknown incident") from e
+    identity = deps.factory.identity("explainer")
+    token = await deps.identities.token(identity)
+    prompt = req.question
+    if record:
+        prompt = (
+            f"Incident record:\n{json.dumps(record, default=str)[:20000]}\n\nQuestion: {prompt}"
+        )
+
+    async def stream() -> AsyncIterator[str]:
+        tools = [mcp_tool(t, token) for t in deps.factory.cfg.agents["explainer"].tools]
+        with tracer.start_as_current_span("orchestrator.chat") as span:
+            span.set_attribute("gen_ai.agent.name", "explainer")
+            if req.incident_id:
+                span.set_attribute("driftline.incident_id", req.incident_id)
+            try:
+                for t in tools:
+                    await t.__aenter__()
+                agent = deps.factory.build(
+                    "explainer",
+                    tools,
+                    middleware=[
+                        shield_middleware(
+                            deps.shield, deps.audit, req.incident_id or "chat", identity
+                        )
+                    ],
+                )
+                async for update in agent.run(prompt, stream=True):
+                    if update.text:
+                        yield update.text
+            except Exception as e:
+                log.exception("chat failed")
+                yield f"\n\n[explainer error: {type(e).__name__}]"
+            finally:
+                for t in tools:
+                    await t.close()
+
+    return StreamingResponse(stream(), media_type="text/plain; charset=utf-8")

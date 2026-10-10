@@ -45,6 +45,22 @@ resource evalResults 'Microsoft.Storage/storageAccounts/blobServices/containers@
   name: 'eval-results'
 }
 
+// Container Apps authentication token store for the console (managed identity, no SAS).
+resource tokens 'Microsoft.Storage/storageAccounts/blobServices/containers@2025-06-01' = {
+  parent: blob
+  name: 'tokens'
+}
+
+resource tokenRoles 'Microsoft.Authorization/roleAssignments@2022-04-01' = [for a in filter(roleAssignments, x => x.container == 'tokens'): {
+  name: guid(sa.id, 'tokens', a.principalId, a.role)
+  scope: tokens
+  properties: {
+    principalId: a.principalId
+    principalType: a.principalType
+    roleDefinitionId: subscriptionResourceId('Microsoft.Authorization/roleDefinitions', roles[a.role])
+  }
+}]
+
 var roles = {
   contributor: 'ba92f5b4-2d11-453d-a403-e96b0029c9fe'
   reader: '2a2b9908-6ea1-4ae2-8e65-a410df84e7d1'
@@ -72,3 +88,4 @@ resource evalRoles 'Microsoft.Authorization/roleAssignments@2022-04-01' = [for a
 
 output name string = sa.name
 output blobEndpoint string = sa.properties.primaryEndpoints.blob
+output tokensContainerUri string = '${sa.properties.primaryEndpoints.blob}tokens'

@@ -66,3 +66,17 @@ The agents open pull requests through a GitHub App (not a personal token), with 
        rm ~/Downloads/<your-app>.private-key.pem
 
 5. Tell Claude Code the **App ID** and **installation ID**. They are not secrets, but never paste the key itself.
+
+## 2026-10-10: Sign in to the console and run the Phase 8 acceptance
+
+Signing in needs you in a browser. It is also the first real test of sign-in without a client secret (ADR 0008).
+
+1. Open https://console.blackmoss-24796a62.westus3.azurecontainerapps.io and sign in with the account you use for Azure. It holds the **admin** role.
+   - If you see `AADSTS7000215` (invalid client secret) or another sign-in error, copy the error code and correlation ID and tell Claude Code. The managed-identity credential was rejected, and Claude Code switches the console to browser sign-in (ADR 0008 fallback). Do not create a client secret.
+2. **Demo:** open **Demo** and click **Replay F3**. The log shows the replay stream.
+3. **Incidents:** stay on **Incidents**. Within about 3 minutes a sev1 `hit_count` incident appears, and its status moves through routing → investigating → validating → pr_open (about 10 minutes, because the sandbox evaluation runs first). Click **Enable notifications** if you want browser alerts for sev1, sev2 and escalations.
+4. Open the incident. Check the D2, D3 and D4 routing charts with margins, the root cause with evidence, the sandbox evaluation table, the D5 and D6 decisions, the cost and the trace link. Then click **Pull request #…** to open the PR. Close the PR without merging; it is a demo fix.
+5. **Approvals:** find an F5 runbook (index specialist, "re-enable the indexer…"), add a note and click **Approve runbook**. Within a minute the incident's status becomes **closed**, and its page shows who approved. Approving re-enables the live indexer and rebuilds the live index from the current source; this is harmless.
+6. Viewer check (optional; the automated tests already cover it): an account with only the **viewer** role on "Driftline API (dl-dev)" sees "Admin role required" on **Demo**, and ops-api refuses demo and approval calls with 403. To try it, add a test user in Entra ID, assign it **viewer** under Enterprise applications → Driftline API (dl-dev) → Users and groups, and sign in with it in a private window.
+
+Tell Claude Code what you saw at each step, especially any sign-in error.

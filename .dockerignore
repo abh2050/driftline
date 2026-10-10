@@ -13,5 +13,6 @@ data/redteam
 evals/fixtures
 !evals/fixtures/layer1/baseline.jsonl
 evals/reports
+!evals/reports/*-router.json
 apps/console
 docs

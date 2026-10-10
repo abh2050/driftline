@@ -114,6 +114,43 @@ def pre() -> None:
         )
     uri = f"api://{tenant}/driftline-api-{env_name}"
     graph("PATCH", f"/applications/{app['id']}", {"identifierUris": [uri]})
+    # The console signs users in with this same registration (Container Apps authentication)
+    # and asks for a token for its own API; pre-authorizing itself avoids a consent prompt.
+    scope_id = role_id(env_name, "scope/user_impersonation")
+    graph(
+        "PATCH",
+        f"/applications/{app['id']}",
+        {
+            "api": {
+                "requestedAccessTokenVersion": 2,
+                "oauth2PermissionScopes": [
+                    {
+                        "id": scope_id,
+                        "value": "user_impersonation",
+                        "type": "User",
+                        "isEnabled": True,
+                        "adminConsentDisplayName": "Use Driftline as the signed-in user",
+                        "adminConsentDescription": "The Driftline console calls ops-api for you.",
+                        "userConsentDisplayName": "Use Driftline as you",
+                        "userConsentDescription": "The Driftline console calls ops-api for you.",
+                    }
+                ],
+            },
+            "web": {"implicitGrantSettings": {"enableIdTokenIssuance": True}},
+        },
+    )
+    graph(
+        "PATCH",
+        f"/applications/{app['id']}",
+        {
+            "api": {
+                "preAuthorizedApplications": [
+                    {"appId": app["appId"], "delegatedPermissionIds": [scope_id]}
+                ]
+            }
+        },
+    )
+    azd_set("DRIFTLINE_API_OBJECT_ID", app["id"])
     sps = graph("GET", f"/servicePrincipals?$filter=appId eq '{app['appId']}'")["value"]
     sp = sps[0] if sps else graph("POST", "/servicePrincipals", {"appId": app["appId"]})
     graph("PATCH", f"/servicePrincipals/{sp['id']}", {"appRoleAssignmentRequired": True})
@@ -168,6 +205,7 @@ def post() -> None:
         if a["principalId"] in managed and (a["principalId"], a["appRoleId"]) not in wanted:
             graph("DELETE", f"/servicePrincipals/{sp_id}/appRoleAssignedTo/{a['id']}")
             added -= 1
+    console_sign_in(env_name, identities)
     me = azd_get("AZURE_PRINCIPAL_ID")
     if me and (me, role_id(env_name, "admin")) not in have:
         graph(
@@ -177,6 +215,35 @@ def post() -> None:
         )
         added += 1
     print(f"entra app: {added} role grants added, {len(have)} already present")
+
+
+def console_sign_in(env_name: str, identities: dict[str, Any]) -> None:
+    """Redirect URI for the console, and its managed identity as a federated credential so
+    Container Apps authentication needs no client secret (ADR 0008)."""
+    obj = azd_get("DRIFTLINE_API_OBJECT_ID")
+    url = azd_get("CONSOLE_URL")
+    if not obj or not url or "console" not in identities:
+        return
+    app = graph("GET", f"/applications/{obj}?$select=web")
+    redirect = f"{url}/.auth/login/aad/callback"
+    uris = app["web"].get("redirectUris") or []
+    if redirect not in uris:
+        graph("PATCH", f"/applications/{obj}", {"web": {"redirectUris": [*uris, redirect]}})
+    tenant = az("account", "show")["tenantId"]
+    fic = {
+        "name": f"console-{env_name}",
+        "issuer": f"https://login.microsoftonline.com/{tenant}/v2.0",
+        "subject": identities["console"]["principalId"],
+        "audiences": ["api://AzureADTokenExchange"],
+        "description": "Driftline console (Container Apps authentication) managed identity",
+    }
+    existing = graph("GET", f"/applications/{obj}/federatedIdentityCredentials")["value"]
+    if not any(f["name"] == fic["name"] and f["subject"] == fic["subject"] for f in existing):
+        for f in existing:
+            if f["name"] == fic["name"]:
+                graph("DELETE", f"/applications/{obj}/federatedIdentityCredentials/{f['id']}")
+        graph("POST", f"/applications/{obj}/federatedIdentityCredentials", fic)
+    print(f"entra app: console sign-in at {url}")
 
 
 if __name__ == "__main__":

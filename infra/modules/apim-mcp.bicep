@@ -6,6 +6,7 @@ param driftlineApiAppId string
 param driftlineApiAudience string
 param githubMcpUrl string
 param kqlToolUrl string
+param opsApiUrl string
 param workspaceId string
 
 resource apim 'Microsoft.ApiManagement/service@2024-05-01' existing = {
@@ -31,6 +32,7 @@ resource nv 'Microsoft.ApiManagement/service/namedValues@2024-05-01' = [for item
 var servers = [
   { name: 'github-mcp', path: 'github-mcp', url: githubMcpUrl, policy: loadTextContent('../apim/policies/github-mcp.xml'), title: 'GitHub MCP (Driftline)' }
   { name: 'kql-mcp', path: 'kql-mcp', url: kqlToolUrl, policy: loadTextContent('../apim/policies/kql-mcp.xml'), title: 'Driftline KQL tool' }
+  { name: 'ops-mcp', path: 'ops-mcp', url: opsApiUrl, policy: loadTextContent('../apim/policies/ops-mcp.xml'), title: 'Driftline operations (incidents and approvals)' }
 ]
 
 // Existing MCP servers are proxied through a backend resource referenced by backendId; with
@@ -87,3 +89,4 @@ resource diag 'Microsoft.Insights/diagnosticSettings@2021-05-01-preview' = {
 
 output githubMcpEndpoint string = '${apim.properties.gatewayUrl}/github-mcp/mcp'
 output kqlMcpEndpoint string = '${apim.properties.gatewayUrl}/kql-mcp/mcp'
+output opsMcpEndpoint string = '${apim.properties.gatewayUrl}/ops-mcp/mcp'

@@ -10,6 +10,7 @@ members = [
     "github-mcp-proxy",
     "ingest",
     "kql-tool",
+    "ops-api",
     "orchestrator",
     "patient-rag",
     "replay",
@@ -631,6 +632,7 @@ dependencies = [
     { name = "github-mcp-proxy" },
     { name = "ingest" },
     { name = "kql-tool" },
+    { name = "ops-api" },
     { name = "orchestrator" },
     { name = "patient-rag" },
     { name = "replay" },
@@ -659,6 +661,7 @@ requires-dist = [
     { name = "github-mcp-proxy", editable = "apps/github-mcp" },
     { name = "ingest", editable = "apps/ingest" },
     { name = "kql-tool", editable = "apps/kql-tool" },
+    { name = "ops-api", editable = "apps/ops-api" },
     { name = "orchestrator", editable = "apps/orchestrator" },
     { name = "patient-rag", editable = "apps/patient-rag" },
     { name = "replay", editable = "apps/replay" },
@@ -1480,6 +1483,25 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/7c/b5/df4b61da899f6ebdffdbdf0c8b0f3189ee57151694ccd5b7d50ee2906241/opentelemetry_util_http-0.66b1.tar.gz", hash = "sha256:047dea1a628031f857a5a32261dc0e955bc162d39993ed1cffb8f2cff5ba8a62", size = 11586 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/eb/9b/c77ecaea79ba0de1a11e7f06a7f5eea7043ec23f1860dcf5f03536698e4c/opentelemetry_util_http-0.66b1-py3-none-any.whl", hash = "sha256:8f443d7abcaf29c4a07b373bbd31b5b39132c0ed3c27d015a59dc0323d5b1c58", size = 8387 },
+]
+
+[[package]]
+name = "ops-api"
+version = "0.1.0"
+source = { editable = "apps/ops-api" }
+dependencies = [
+    { name = "azure-cosmos" },
+    { name = "driftline-common" },
+    { name = "mcp" },
+    { name = "uvicorn" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "azure-cosmos", specifier = "==4.17.1" },
+    { name = "driftline-common", editable = "packages/driftline-common" },
+    { name = "mcp", specifier = "==1.30.0" },
+    { name = "uvicorn", specifier = "==0.54.0" },
 ]
 
 [[package]]

@@ -17,6 +17,7 @@ COPY apps/orchestrator/pyproject.toml apps/orchestrator/pyproject.toml
 COPY apps/github-mcp/pyproject.toml apps/github-mcp/pyproject.toml
 COPY apps/kql-tool/pyproject.toml apps/kql-tool/pyproject.toml
 COPY apps/sandbox-runner/pyproject.toml apps/sandbox-runner/pyproject.toml
+COPY apps/ops-api/pyproject.toml apps/ops-api/pyproject.toml
 COPY apps/ingest/src apps/ingest/src
 RUN uv sync --frozen --no-dev --no-editable --package ingest
 

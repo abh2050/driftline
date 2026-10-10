@@ -177,7 +177,8 @@ async def test_runbook_pauses_then_resumes_from_checkpoint(setup: Any) -> None:
     assert resumed.get_outputs()
     doc = store.docs["inc-test"]
     # the prompt specialist has no automated runbook actions: approval is recorded only
-    assert doc["status"] == "runbook_approved"
+    assert doc["status"] == "closed"
+    assert doc["resolution"]["outcome"] == "runbook_approved"
     assert doc["resolution"]["approved"] is True
     assert "human-response" in audit.steps
 

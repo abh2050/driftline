@@ -1,0 +1,48 @@
+<!--
+  ops-api MCP policy (spec 5.1.11, 5.1.12): people (Copilot Studio, VS Code, Claude Desktop) call
+  with their own Entra token for the Driftline API. APIM validates it, requires the viewer or
+  admin role, rate limits and logs per user, then forwards the same token: ops-api checks the
+  role again on every tool (respond_to_approval needs admin).
+-->
+<policies>
+  <inbound>
+    <base />
+    <validate-jwt header-name="Authorization" failed-validation-httpcode="401"
+                  failed-validation-error-message="Unauthorized" output-token-variable-name="jwt">
+      <openid-config url="https://login.microsoftonline.com/{{tenant-id}}/v2.0/.well-known/openid-configuration" />
+      <audiences>
+        <audience>{{driftline-api-app-id}}</audience>
+        <audience>{{driftline-api-audience}}</audience>
+      </audiences>
+      <issuers>
+        <issuer>https://login.microsoftonline.com/{{tenant-id}}/v2.0</issuer>
+        <issuer>https://sts.windows.net/{{tenant-id}}/</issuer>
+      </issuers>
+    </validate-jwt>
+    <set-variable name="caller" value="@(((Jwt)context.Variables[&quot;jwt&quot;]).Claims.GetValueOrDefault(&quot;oid&quot;, &quot;unknown&quot;))" />
+    <set-variable name="roles" value="@(((Jwt)context.Variables[&quot;jwt&quot;]).Claims.GetValueOrDefault(&quot;roles&quot;, &quot;none&quot;))" />
+    <choose>
+      <when condition="@(!((string)context.Variables[&quot;roles&quot;]).Split(',').Any(r => r.Trim() == &quot;viewer&quot; || r.Trim() == &quot;admin&quot;))">
+        <return-response>
+          <set-status code="403" reason="Forbidden" />
+          <set-header name="x-driftline-blocked-by" exists-action="override"><value>apim</value></set-header>
+        </return-response>
+      </when>
+    </choose>
+    <trace source="driftline-mcp" severity="information">
+      <message>ops-api MCP call</message>
+      <metadata name="caller" value="@((string)context.Variables[&quot;caller&quot;])" />
+      <metadata name="traceparent" value="@(context.Request.Headers.GetValueOrDefault(&quot;traceparent&quot;, &quot;none&quot;))" />
+    </trace>
+    <rate-limit-by-key calls="60" renewal-period="60" counter-key="@((string)context.Variables[&quot;caller&quot;])" />
+  </inbound>
+  <backend>
+    <base />
+  </backend>
+  <outbound>
+    <base />
+  </outbound>
+  <on-error>
+    <base />
+  </on-error>
+</policies>

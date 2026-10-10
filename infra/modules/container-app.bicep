@@ -27,6 +27,8 @@ param probes array = []
 param extraIdentityIds array = []
 @description('Extra containers in the same app (sidecars), full container objects.')
 param sidecars array = []
+@description('Container Apps secrets [{name, value}]; used for non-credential settings such as the Easy Auth managed-identity client id.')
+param secrets array = []
 @description('Image used until azd deploys the service image.')
 param placeholderImage string = 'mcr.microsoft.com/k8se/quickstart:latest'
 
@@ -56,6 +58,7 @@ resource app 'Microsoft.App/containerApps@2025-01-01' = {
     configuration: {
       activeRevisionsMode: 'Single'
       registries: [{ server: registryServer, identity: identityId }]
+      secrets: secrets
       ingress: ingress == 'none' ? null : {
         external: ingress == 'external'
         targetPort: targetPort

@@ -1,5 +1,11 @@
+import { ChatBox } from "@/components/chat-box";
 import { PageHeader } from "@/components/page-header";
 
 export default function ChatPage() {
-  return <PageHeader title="Chat" description="Ask the explainer agent about incidents." />;
+  return (
+    <>
+      <PageHeader title="Chat" description="Ask the explainer agent about incidents." />
+      <ChatBox />
+    </>
+  );
 }
