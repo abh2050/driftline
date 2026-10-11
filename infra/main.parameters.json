@@ -26,6 +26,7 @@
     "sandboxRunnerExists": { "value": "${SERVICE_SANDBOX_RUNNER_RESOURCE_EXISTS=false}" },
     "opsApiExists": { "value": "${SERVICE_OPS_API_RESOURCE_EXISTS=false}" },
     "consoleExists": { "value": "${SERVICE_CONSOLE_RESOURCE_EXISTS=false}" },
+    "ciPrincipalId": { "value": "${CI_PRINCIPAL_ID=}" },
     "githubKeyExists": { "value": "${GITHUB_KEY_EXISTS=false}" },
     "driftlineApiAppId": { "value": "${DRIFTLINE_API_APP_ID}" },
     "driftlineApiAudience": { "value": "${DRIFTLINE_API_AUDIENCE}" },

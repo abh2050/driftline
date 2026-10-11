@@ -85,3 +85,29 @@ def test_calibration_perfect_and_overconfident() -> None:
 def test_macro_f1() -> None:
     pairs = [("a", "a"), ("b", "b"), ("a", "b")]
     assert 0 < macro_f1(pairs, ["a", "b"]) < 1
+
+
+async def test_content_filter_gives_the_conservative_option() -> None:
+    from types import SimpleNamespace
+
+    import httpx
+    import openai
+
+    from driftline_common.decision import CATALOG, CONTENT_FILTERED
+    from driftline_common.pricing import Pricing
+    from router.clients import LLMRouterClient
+
+    async def refuse(**_: object) -> None:
+        raise openai.BadRequestError(
+            "filtered",
+            response=httpx.Response(400, request=httpx.Request("POST", "https://x")),
+            body={"code": "content_filter", "message": "filtered"},
+        )
+
+    fake = SimpleNamespace(chat=SimpleNamespace(completions=SimpleNamespace(create=refuse)))
+    client = LLMRouterClient("m", "m", fake, Pricing.load())  # type: ignore[arg-type]
+    for dtype, safe in [("D6", "deny"), ("D5", "reject"), ("D4", "escalate"), ("D2", "sev1")]:
+        spec = CATALOG[dtype]
+        d = await client.decide(spec.question, list(spec.options), {}, decision_type=dtype)
+        assert d.chosen == safe
+        assert d.rationale == CONTENT_FILTERED

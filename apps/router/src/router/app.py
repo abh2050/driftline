@@ -18,7 +18,7 @@ from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor
 
 from driftline_common.auth import Principal, require_roles
 from driftline_common.config import load_router_config
-from driftline_common.decision import DecideRequest, Decision, DecisionClient
+from driftline_common.decision import CONTENT_FILTERED, DecideRequest, Decision, DecisionClient
 from driftline_common.foundry import make_openai_client
 from driftline_common.pricing import Pricing
 from driftline_common.telemetry import setup_telemetry
@@ -85,7 +85,9 @@ async def decide(req: DecideRequest, who: Invoker) -> Decision:
             decision_type=req.decision_type,
         )
         router_ms = (time.perf_counter() - t0) * 1000
-        d.escalated = max(d.scores.values()) < cfg.escalation_threshold
+        d.escalated = (
+            max(d.scores.values()) < cfg.escalation_threshold or d.rationale == CONTENT_FILTERED
+        )
         span.set_attribute("driftline.decision_type", req.decision_type)
         span.set_attribute("driftline.incident_id", req.incident_id or "")
         span.set_attribute("driftline.caller", who.app_id or who.subject)

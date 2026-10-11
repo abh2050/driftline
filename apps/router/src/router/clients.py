@@ -8,10 +8,18 @@ import re
 import time
 from typing import Any
 
+import openai
 from openai import AsyncOpenAI
 
 from driftline_common.config import RouterConfig
-from driftline_common.decision import Decision, DecisionClient, normalize, top_two
+from driftline_common.decision import (
+    CONSERVATIVE,
+    CONTENT_FILTERED,
+    Decision,
+    DecisionClient,
+    normalize,
+    top_two,
+)
 from driftline_common.pricing import Pricing
 
 SYSTEM = (
@@ -109,11 +117,16 @@ class LLMRouterClient:
         valid = False
         # One retry on invalid output; its latency and tokens count toward this decision.
         for _ in range(2):
-            resp = await self._openai.chat.completions.create(
-                model=self.deployment,
-                messages=self.messages(question, options, context, rubric),  # type: ignore[arg-type]
-                **kwargs,
-            )
+            try:
+                resp = await self._openai.chat.completions.create(
+                    model=self.deployment,
+                    messages=self.messages(question, options, context, rubric),  # type: ignore[arg-type]
+                    **kwargs,
+                )
+            except openai.BadRequestError as e:
+                if getattr(e, "code", None) != "content_filter" and "content_filter" not in str(e):
+                    raise
+                return self._filtered(question_id, options, decision_type, t0)
             if resp.usage:
                 tin += resp.usage.prompt_tokens
                 tout += resp.usage.completion_tokens
@@ -141,6 +154,28 @@ class LLMRouterClient:
             decision_type=decision_type,
             client=self.name,
             rationale=rationale[:500] if valid else "invalid_output",
+        )
+
+    def _filtered(
+        self, question_id: str, options: list[str], decision_type: str, t0: float
+    ) -> Decision:
+        """The content filter refused the prompt: pick the option that hands control to people
+        and force an escalation (the router marks every content-filtered decision)."""
+        safe = CONSERVATIVE.get(decision_type, options[0])
+        safe = safe if safe in options else options[0]
+        return Decision(
+            question_id=question_id,
+            options=options,
+            scores={o: (1.0 if o == safe else 0.0) for o in options},
+            chosen=safe,
+            margin=1.0,
+            latency_ms=round((time.perf_counter() - t0) * 1000, 1),
+            model=self.deployment,
+            input_tokens=0,
+            cost_usd=0.0,
+            decision_type=decision_type,
+            client=self.name,
+            rationale=CONTENT_FILTERED,
         )
 
 

@@ -51,6 +51,16 @@ log = logging.getLogger("orchestrator.workflow")
 tracer = trace.get_tracer("orchestrator")
 REPO_OWNER, REPO_NAME = "abh2050", "driftline"
 VALIDATION_TIMEOUT_S = int(os.environ.get("VALIDATION_TIMEOUT_S", "2400"))
+# Eval replays (layer 2b) run the whole workflow, D6 included, but open no pull request.
+DRY_RUN_STREAMS = tuple(
+    s for s in os.environ.get("PR_DRY_RUN_STREAM_PREFIXES", "replay-eval-").split(",") if s
+)
+
+
+def pr_dry_run(run: IncidentRun) -> bool:
+    return str(run.incident.get("stream", "")).startswith(DRY_RUN_STREAMS)
+
+
 # Runbooks the orchestrator may execute after a human approves them (patient-rag admin API).
 RUNBOOK_ACTIONS: dict[str, list[tuple[str, str, dict[str, Any] | None]]] = {
     "index": [("POST", "/admin/indexer", {"enabled": True}), ("POST", "/admin/reindex", None)],
@@ -424,19 +434,24 @@ async def write_pr(run: IncidentRun, ctx: WorkflowContext[IncidentRun, IncidentR
                     lineterm="",
                 )
             )
-            writer = deps.factory.build("pr-writer")
-            summary = await writer.run(
-                "Write the PR summary for this incident fix.\n\n"
-                + json.dumps(
-                    {"incident": evidence_context(run), "rca": run.rca, "diff": diff}, default=str
+            dry = pr_dry_run(run)
+            summary_text = "(dry run: no summary)"
+            if not dry:
+                writer = deps.factory.build("pr-writer")
+                summary = await writer.run(
+                    "Write the PR summary for this incident fix.\n\n"
+                    + json.dumps(
+                        {"incident": evidence_context(run), "rca": run.rca, "diff": diff},
+                        default=str,
+                    )
                 )
-            )
-            usage = summary.usage_details or {}
-            run.costs["tokens_usd"] += deps.pricing.chat(
-                deps.factory.cfg.deployment_for("pr-writer"),
-                int(usage.get("input_token_count") or 0),
-                int(usage.get("output_token_count") or 0),
-            )
+                summary_text = summary.text
+                usage = summary.usage_details or {}
+                run.costs["tokens_usd"] += deps.pricing.chat(
+                    deps.factory.cfg.deployment_for("pr-writer"),
+                    int(usage.get("input_token_count") or 0),
+                    int(usage.get("output_token_count") or 0),
+                )
             writes: list[tuple[str, dict[str, Any]]] = [
                 (
                     "create_branch",
@@ -465,11 +480,12 @@ async def write_pr(run: IncidentRun, ctx: WorkflowContext[IncidentRun, IncidentR
                 if not await precheck(run, tool, args, [ALLOWED_FILE]):
                     allowed = False
                     break
-                await call(gh, tool, run, identity, **args)
+                if not dry:
+                    await call(gh, tool, run, identity, **args)
             if allowed:
                 body = render(
                     asdict(run),
-                    summary.text,
+                    summary_text,
                     diff,
                     trace_id,
                     eval_rows(run.validation or {}, run.incident),
@@ -483,6 +499,14 @@ async def write_pr(run: IncidentRun, ctx: WorkflowContext[IncidentRun, IncidentR
                     "title": f"Driftline: fix {run.id} ({', '.join(sorted(rca.changes()))})",
                 }
                 if await precheck(run, "create_pull_request", pr_args, [ALLOWED_FILE]):
+                    if dry:
+                        run.notes.append("dry run: D6 allowed every write; no PR opened")
+                        await deps.audit.write(
+                            run.id, "pr-dry-run", identity, "allowed", {"title": pr_args["title"]}
+                        )
+                        await save_status(run, "pr_dry_run")
+                        await ctx.yield_output(run)
+                        return
                     run.pr_url = _pr_url(
                         await call(gh, "create_pull_request", run, identity, **pr_args)
                     )

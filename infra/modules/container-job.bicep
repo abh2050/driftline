@@ -17,13 +17,18 @@ param replicaTimeoutSeconds int = 600
 param cpu string = '0.25'
 param memory string = '0.5Gi'
 param placeholderImage string = 'mcr.microsoft.com/k8se/quickstart-jobs:latest'
+@description('Additional user-assigned identities (e.g. agent identities for the safety probe).')
+param extraIdentityIds array = []
+@description('Run another service\'s image instead of the job\'s own (empty: the job\'s own).')
+param imageOverride string = ''
+param command array = []
 
-module current 'fetch-job-image.bicep' = if (exists) {
+module current 'fetch-job-image.bicep' = if (exists && empty(imageOverride)) {
   name: 'fetch-job-image-${name}'
   params: { name: name }
 }
 
-var image = exists ? current!.outputs.image : placeholderImage
+var image = !empty(imageOverride) ? imageOverride : (exists ? current!.outputs.image : placeholderImage)
 
 resource job 'Microsoft.App/jobs@2025-01-01' = {
   name: name
@@ -31,7 +36,7 @@ resource job 'Microsoft.App/jobs@2025-01-01' = {
   tags: union(tags, { 'azd-service-name': name })
   identity: {
     type: 'UserAssigned'
-    userAssignedIdentities: { '${identityId}': {} }
+    userAssignedIdentities: toObject(concat([identityId], extraIdentityIds), id => id, id => {})
   }
   properties: {
     environmentId: environmentId
@@ -61,6 +66,7 @@ resource job 'Microsoft.App/jobs@2025-01-01' = {
         {
           name: 'main'
           image: image
+          command: empty(command) ? null : command
           env: concat(env, [{ name: 'AZURE_CLIENT_ID', value: identityClientId }])
           resources: { cpu: json(cpu), memory: memory }
         }

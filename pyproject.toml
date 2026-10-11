@@ -50,6 +50,7 @@ known-first-party = ["driftline_common", "patient_rag", "traffic_gen", "router",
 "**/tests/**" = ["S101", "S311"]
 "synth/**" = ["S311"]
 "scripts/**" = ["S603", "S607"]
+"evals/layer3_safety/**" = ["S603", "S607"]  # az CLI with fixed arguments
 
 [tool.mypy]
 strict = true

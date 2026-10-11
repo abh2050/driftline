@@ -161,6 +161,18 @@ CATALOG: dict[str, DecisionSpec] = {
 }
 
 
+# When the model refuses the context outright (Azure OpenAI content filter, e.g. an injected
+# document), the router answers with the option that hands control to people (ADR 0009).
+CONSERVATIVE = {
+    "D1": "real",
+    "D2": "sev1",
+    "D4": "escalate",
+    "D5": "reject",
+    "D6": "deny",
+}
+CONTENT_FILTERED = "content_filter"
+
+
 class DecideRequest(BaseModel):
     """Body of POST /decide on the router service."""
 

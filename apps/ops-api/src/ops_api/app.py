@@ -17,6 +17,7 @@ import os
 import uuid
 from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Annotated, Any
 
@@ -24,9 +25,13 @@ import httpx
 from azure.cosmos.aio import CosmosClient
 from azure.identity.aio import DefaultAzureCredential
 from fastapi import Depends, FastAPI, HTTPException, Request, Response
+from fastapi.exception_handlers import http_exception_handler
 from fastapi.responses import StreamingResponse
 from opentelemetry import trace
+from starlette.exceptions import HTTPException as StarletteHTTPException
 
+from driftline_common import auth
+from driftline_common.audit import AuditWriter
 from driftline_common.auth import Principal, ServiceToken, require_roles
 from driftline_common.dapr import DaprPublisher
 from driftline_common.telemetry import inject_context, setup_telemetry
@@ -68,6 +73,7 @@ class State:
     token: ServiceToken
     publisher: DaprPublisher
     hub: Hub
+    audit: AuditWriter | None
 
 
 st = State()
@@ -103,12 +109,15 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     st.token = ServiceToken(st.cred)
     st.publisher = DaprPublisher(PUBSUB)
     st.hub = Hub()
+    st.audit = AuditWriter(credential=st.cred) if os.environ.get("STORAGE_BLOB_ENDPOINT") else None
     poller = asyncio.create_task(poll_changes())
     async with app.state.mcp_lifespan():
         try:
             yield
         finally:
             poller.cancel()
+            if st.audit:
+                await st.audit.close()
             await st.publisher.close()
             await st.http.aclose()
             await st.cosmos.close()
@@ -117,6 +126,31 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
 
 
 app = FastAPI(title="ops-api", lifespan=lifespan)
+
+
+@app.exception_handler(StarletteHTTPException)
+async def audit_denials(request: Request, exc: StarletteHTTPException) -> Response:
+    """Every refused request (401/403) leaves an audit record naming the caller (spec 7.4)."""
+    if exc.status_code in (401, 403) and getattr(st, "audit", None) is not None:
+        header = request.headers.get("authorization", "")
+        caller, roles = "anonymous", []
+        try:
+            if header.lower().startswith("bearer "):
+                p = auth.verify_token(header[7:])
+                caller, roles = who(p), sorted(p.roles)
+        except Exception:
+            caller = "invalid-token"
+        try:
+            await st.audit.write(  # type: ignore[union-attr]
+                f"ops-api-denials-{datetime.now(UTC):%Y%m%d}",
+                "denied",
+                caller,
+                str(exc.status_code),
+                {"method": request.method, "path": request.url.path, "roles": roles},
+            )
+        except Exception:
+            log.exception("could not audit a denial")
+    return await http_exception_handler(request, exc)
 
 
 @app.get("/healthz")

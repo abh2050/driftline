@@ -91,6 +91,34 @@ def _gate(args: argparse.Namespace) -> int:
     return 0 if result.passed else 1
 
 
+def _layer2b(args: argparse.Namespace) -> int:
+    import asyncio
+
+    from evals.layer2b_system.run import FAULTS, run
+
+    faults = args.faults.split(",") if args.faults else FAULTS
+    summary = asyncio.run(
+        run(
+            args.trials,
+            faults,
+            args.clean_hours,
+            args.speed,
+            not args.no_upload,
+            rescore=args.rescore,
+        )
+    )
+    print(json.dumps(summary, indent=2, default=str))
+    return 0
+
+
+def _layer3(args: argparse.Namespace) -> int:
+    from evals.layer3_safety.run import run
+
+    summary = run(start=not args.report_only, upload_results=not args.no_upload)
+    print(json.dumps(summary, indent=2))
+    return 0 if summary["pass_rate"] == 1.0 else 1
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(
         prog="driftline-eval",
@@ -114,6 +142,18 @@ def main() -> None:
     l2a.add_argument("--sample", type=int, help="first N real cases (quick runs)")
     l2a.add_argument("--offline", action="store_true", help="report from stored results")
     l2a.set_defaults(fn=_layer2a)
+    l2b = sub.add_parser("layer2b", help="end-to-end system on replayed faults")
+    l2b.add_argument("--trials", type=int, default=3, help="trials per fault (spec: 5; ADR 0009)")
+    l2b.add_argument("--faults", help="comma-separated, default F1-F7")
+    l2b.add_argument("--clean-hours", type=int, default=48, help="0 skips the clean replay")
+    l2b.add_argument("--speed", default="1440")
+    l2b.add_argument("--no-upload", action="store_true")
+    l2b.add_argument("--rescore", metavar="RUN_ID", help="score an earlier run from Cosmos")
+    l2b.set_defaults(fn=_layer2b)
+    l3 = sub.add_parser("layer3", help="safety and policy cases (safety-probe job)")
+    l3.add_argument("--report-only", action="store_true", help="report the latest results")
+    l3.add_argument("--no-upload", action="store_true")
+    l3.set_defaults(fn=_layer3)
     g = sub.add_parser("gate", help="apply evals/gates.yaml to two layer 1 fixtures")
     g.add_argument("--baseline", default="baseline")
     g.add_argument("--candidate", required=True)

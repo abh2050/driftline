@@ -18,7 +18,11 @@ from typing import Any
 
 # value -> (description, allowed member types)
 ROLES: dict[str, tuple[str, list[str]]] = {
-    "viewer": ("Read incidents, reports and chat in the Driftline console", ["User"]),
+    # Application too: the layer 3 viewer probe identity holds it (spec 7.4)
+    "viewer": (
+        "Read incidents, reports and chat in the Driftline console",
+        ["User", "Application"],
+    ),
     "admin": ("Demo controls and approvals in the Driftline console", ["User"]),
     "router.invoke": ("Call the router service", ["Application"]),
     "patientrag.admin": ("Apply and reset faults on patient-rag", ["Application"]),
@@ -42,6 +46,7 @@ GRANTS: dict[str, list[str]] = {
     "orchestrator": ["router.invoke", "patientrag.admin"],
     "sandbox-runner": ["router.invoke", "patientrag.query"],
     "ops-api": ["router.invoke", "patientrag.admin", "ops.write"],
+    "viewer-probe": ["viewer"],
     # one identity per agent (ADR 0006); APIM maps each role to a tool allowlist
     "agent-retrieval": ["agent.retrieval"],
     "agent-prompt": ["agent.prompt"],
@@ -151,6 +156,7 @@ def pre() -> None:
         },
     )
     azd_set("DRIFTLINE_API_OBJECT_ID", app["id"])
+    ci_identity(env_name, tenant)
     sps = graph("GET", f"/servicePrincipals?$filter=appId eq '{app['appId']}'")["value"]
     sp = sps[0] if sps else graph("POST", "/servicePrincipals", {"appId": app["appId"]})
     graph("PATCH", f"/servicePrincipals/{sp['id']}", {"appRoleAssignmentRequired": True})
@@ -215,6 +221,36 @@ def post() -> None:
         )
         added += 1
     print(f"entra app: {added} role grants added, {len(have)} already present")
+
+
+CI_REPO = "abh2050/driftline"
+
+
+def ci_identity(env_name: str, tenant: str) -> None:
+    """App registration for GitHub Actions (nightly evals) with OIDC federation from this
+    repository's main branch: no client secret. Azure roles are granted in Bicep."""
+    name = f"Driftline CI ({env_name})"
+    found = graph("GET", f"/applications?$filter=displayName eq '{name}'")["value"]
+    app = (
+        found[0]
+        if found
+        else graph("POST", "/applications", {"displayName": name, "signInAudience": "AzureADMyOrg"})
+    )
+    sps = graph("GET", f"/servicePrincipals?$filter=appId eq '{app['appId']}'")["value"]
+    sp = sps[0] if sps else graph("POST", "/servicePrincipals", {"appId": app["appId"]})
+    fic = {
+        "name": "github-main",
+        "issuer": "https://token.actions.githubusercontent.com",
+        "subject": f"repo:{CI_REPO}:ref:refs/heads/main",
+        "audiences": ["api://AzureADTokenExchange"],
+        "description": "GitHub Actions on main (nightly-evals workflow)",
+    }
+    existing = graph("GET", f"/applications/{app['id']}/federatedIdentityCredentials")["value"]
+    if not any(f["name"] == fic["name"] for f in existing):
+        graph("POST", f"/applications/{app['id']}/federatedIdentityCredentials", fic)
+    azd_set("CI_CLIENT_ID", app["appId"])
+    azd_set("CI_PRINCIPAL_ID", sp["id"])
+    print(f"ci identity: {name} appId={app['appId']} (tenant {tenant})")
 
 
 def console_sign_in(env_name: str, identities: dict[str, Any]) -> None:

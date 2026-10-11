@@ -29,10 +29,12 @@ COPY config config
 COPY apps/orchestrator/prompts apps/orchestrator/prompts
 COPY apps/patient-rag/config apps/patient-rag/config
 COPY evals/gates.yaml evals/gates.yaml
+COPY data/redteam/redteam.jsonl data/redteam/redteam.jsonl
 ENV PATH=/src/.venv/bin:$PATH \
     DRIFTLINE_CONFIG_DIR=/src/config \
     PYTHONUNBUFFERED=1 \
-    ORCHESTRATOR_HOME=/src/apps/orchestrator
+    ORCHESTRATOR_HOME=/src/apps/orchestrator \
+    REDTEAM_FILE=/src/data/redteam/redteam.jsonl
 USER app
 EXPOSE 8000
 CMD ["uvicorn", "orchestrator.app:app", "--host", "0.0.0.0", "--port", "8000", "--no-access-log"]

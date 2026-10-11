@@ -1,17 +1,68 @@
 name: nightly-evals
 
-# Layers 2a, 2b and 3 against dev through an OIDC federated credential (Phase 9).
+# Layers 2a, 2b and 3 against dev through an OIDC federated credential (spec 7.5.4).
+# Driftline is torn down after the build, so the schedule only runs when the repository
+# variable NIGHTLY_ENABLED is "true" (ADR 0009); run it by hand with workflow_dispatch.
 on:
   schedule:
     - cron: "0 7 * * *"
   workflow_dispatch:
+    inputs:
+      profile:
+        description: "smoke: layer 3, layer 2b F3 x1, layer 2a sample 50. full: layer 3, layer 2b F1-F7 x3 + 48 h clean, layer 2a all"
+        type: choice
+        options: [smoke, full]
+        default: smoke
 
 permissions:
   contents: read
   id-token: write
 
+concurrency:
+  group: nightly-evals
+  cancel-in-progress: false
+
 jobs:
   evals:
+    if: github.event_name == 'workflow_dispatch' || vars.NIGHTLY_ENABLED == 'true'
     runs-on: ubuntu-latest
+    timeout-minutes: 300
+    env:
+      PROFILE: ${{ inputs.profile || 'smoke' }}
+      AZURE_RESOURCE_GROUP: ${{ vars.AZURE_RESOURCE_GROUP }}
+      COSMOS_ENDPOINT: ${{ vars.COSMOS_ENDPOINT }}
+      STORAGE_BLOB_ENDPOINT: ${{ vars.STORAGE_BLOB_ENDPOINT }}
+      FOUNDRY_ENDPOINT: ${{ vars.FOUNDRY_ENDPOINT }}
+      FOUNDRY_PROJECT_ENDPOINT: ${{ vars.FOUNDRY_PROJECT_ENDPOINT }}
+      AZURE_TENANT_ID: ${{ vars.AZURE_TENANT_ID }}
     steps:
-      - run: echo "Nightly evals are wired up in Phase 9."
+      - uses: actions/checkout@v7.0.1
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv sync --frozen
+      - name: Sign in to Azure (OIDC, no secret)
+        uses: azure/login@v3.1.0
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+      - name: Layer 3 (safety and policy, must pass 100%)
+        run: uv run driftline-eval layer3
+      - name: Layer 2b (end-to-end system)
+        run: |
+          if [ "$PROFILE" = full ]; then
+            uv run driftline-eval layer2b --trials 3 --clean-hours 48
+          else
+            uv run driftline-eval layer2b --trials 1 --faults F3 --clean-hours 0
+          fi
+      - name: Layer 2a (router benchmark)
+        run: |
+          if [ "$PROFILE" = full ]; then
+            uv run driftline-eval layer2a --clients gpt-5-mini
+          else
+            uv run driftline-eval layer2a --clients gpt-5-mini --sample 50
+          fi
+      - if: always()
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: eval-reports-${{ github.run_id }}
+          path: evals/reports/

@@ -55,8 +55,11 @@ param githubKeyExists string = 'false'
 param driftlineApiAppId string
 param driftlineApiAudience string
 
+@description('Service principal of the GitHub Actions OIDC app (scripts/entra_app.py); empty skips its roles.')
+param ciPrincipalId string = ''
+
 @description('Cron for traffic-gen (config/traffic.yaml schedule).')
-param trafficSchedule string = '*/5 * * * *'
+param trafficSchedule string = '0 * * * *'
 
 var otelIps = filter(map(split(otelAllowedIps, ','), ip => trim(ip)), ip => !empty(ip))
 
@@ -76,6 +79,7 @@ var services = [
   'ops-api'
   'github-mcp'
   'console'
+  'viewer-probe' // holds only the viewer role; layer 3 console cases (spec 7.4)
 ]
 // One identity per agent, so APIM can tell agents apart (ADR 0006).
 var agents = [
@@ -149,13 +153,13 @@ module cosmos 'modules/cosmos.bicep' = {
     location: location
     prefix: prefix
     tags: tags
-    dataAssignments: [
+    dataAssignments: concat([
       { principalId: ids.ingest.principalId, role: 'contributor' }
       { principalId: ids.detector.principalId, role: 'contributor' }
       { principalId: ids.orchestrator.principalId, role: 'contributor' }
       { principalId: ids['ops-api'].principalId, role: 'reader' }
       { principalId: principalId, role: 'contributor' }
-    ]
+    ], empty(ciPrincipalId) ? [] : [{ principalId: ciPrincipalId, role: 'reader' }])
   }
 }
 
@@ -197,14 +201,17 @@ module storage 'modules/storage.bicep' = {
     prefix: prefix
     tags: tags
     auditRetentionDays: auditRetentionDays
-    roleAssignments: [
+    roleAssignments: concat([
       union(sp(ids.orchestrator.principalId), { role: 'contributor', container: 'audit' })
+      // the safety-probe job runs as the orchestrator and stores layer 3 results
+      union(sp(ids.orchestrator.principalId), { role: 'contributor', container: 'eval-results' })
+      union(sp(ids['ops-api'].principalId), { role: 'contributor', container: 'audit' })
       union(sp(ids['sandbox-runner'].principalId), { role: 'contributor', container: 'eval-results' })
       union(sp(ids['ops-api'].principalId), { role: 'reader', container: 'eval-results' })
       union(me, { role: 'contributor', container: 'audit' })
       union(me, { role: 'contributor', container: 'eval-results' })
       union(sp(ids.console.principalId), { role: 'contributor', container: 'tokens' })
-    ]
+    ], empty(ciPrincipalId) ? [] : [union(sp(ciPrincipalId), { role: 'reader', container: 'eval-results' })])
   }
 }
 
@@ -261,14 +268,18 @@ module foundry 'modules/foundry.bicep' = {
     tags: tags
     deployments: modelDeployments
     appInsightsId: monitoring.outputs.appInsightsId
-    roleAssignments: [
+    roleAssignments: concat([
       union(sp(ids['patient-rag'].principalId), { role: 'openAiUser' })
       union(sp(ids['sandbox-runner'].principalId), { role: 'openAiUser' })
       union(sp(ids.router.principalId), { role: 'aiUser' })
       union(sp(ids.orchestrator.principalId), { role: 'aiUser' })
       union(me, { role: 'aiUser' })
       union(me, { role: 'openAiUser' })
-    ]
+    ], empty(ciPrincipalId) ? [] : [
+      // nightly evals: Foundry evaluation upload and the RCA judge
+      union(sp(ciPrincipalId), { role: 'aiUser' })
+      union(sp(ciPrincipalId), { role: 'openAiUser' })
+    ])
   }
 }
 
@@ -698,6 +709,59 @@ module opsApiReplayRole 'modules/job-role.bicep' = {
   }
 }
 
+// Layer 3 safety cases (spec 7.4) run inside Azure, where the agent identities exist: the
+// orchestrator image with every agent identity and the viewer-only probe identity attached.
+module orchestratorImage 'modules/fetch-image.bicep' = if (orchestratorExists == 'true') {
+  scope: rg
+  name: 'fetch-image-orchestrator-probe'
+  params: { name: 'orchestrator' }
+}
+
+var probeIdentityIds = concat(map(agents, a => ids[a].id), [ids['viewer-probe'].id])
+
+module safetyProbe 'modules/container-job.bicep' = {
+  scope: rg
+  name: 'job-safety-probe'
+  params: {
+    name: 'safety-probe'
+    location: location
+    tags: tags
+    environmentId: acaEnv.outputs.id
+    identityId: ids.orchestrator.id
+    identityClientId: ids.orchestrator.clientId
+    extraIdentityIds: probeIdentityIds
+    registryServer: registry.outputs.loginServer
+    exists: false
+    imageOverride: orchestratorExists == 'true' ? orchestratorImage!.outputs.image : ''
+    command: ['python', '-m', 'orchestrator.safety_suite']
+    triggerType: 'Manual'
+    replicaTimeoutSeconds: 1800
+    cpu: '0.5'
+    memory: '1Gi'
+    env: concat(commonEnv, [
+      { name: 'CONTENT_SAFETY_ENDPOINT', value: contentsafety.outputs.endpoint }
+      { name: 'STORAGE_BLOB_ENDPOINT', value: storage.outputs.blobEndpoint }
+      { name: 'KEYVAULT_URI', value: keyvault.outputs.uri }
+      { name: 'ROUTER_URL', value: 'http://router' }
+      { name: 'OPS_API_URL', value: 'http://ops-api' }
+      { name: 'GITHUB_MCP_URL', value: apimMcp.outputs.githubMcpEndpoint }
+      { name: 'AGENT_IDENTITIES', value: string(toObject(agents, a => a, a => ids[a].clientId)) }
+      { name: 'VIEWER_PROBE_CLIENT_ID', value: ids['viewer-probe'].clientId }
+    ])
+  }
+}
+
+module ciJobRoles 'modules/job-role.bicep' = [for j in ['replay', 'safety-probe']: if (!empty(ciPrincipalId)) {
+  scope: rg
+  name: 'ci-role-${j}'
+  params: {
+    jobName: j
+    principalId: ciPrincipalId
+    roleDefinitionId: 'b9a307c4-5aa3-4b52-ba60-2b17c136cd7b' // Container Apps Jobs Operator
+  }
+  dependsOn: [replay, safetyProbe]
+}]
+
 // Human-facing API (spec 5.1.11). External ingress for APIM's MCP API; every route checks the
 // caller's Driftline API token, and the console reaches it inside the environment.
 module opsApi 'modules/container-app.bicep' = {
@@ -727,6 +791,7 @@ module opsApi 'modules/container-app.bicep' = {
       { name: 'ORCHESTRATOR_URL', value: 'http://orchestrator' }
       { name: 'PATIENT_RAG_URL', value: 'http://patient-rag' }
       { name: 'REPLAY_JOB_ID', value: opsApiReplayRole.outputs.jobId }
+      { name: 'STORAGE_BLOB_ENDPOINT', value: storage.outputs.blobEndpoint }
       { name: 'APPINSIGHTS_RESOURCE_ID', value: monitoring.outputs.appInsightsId }
     ])
   }
