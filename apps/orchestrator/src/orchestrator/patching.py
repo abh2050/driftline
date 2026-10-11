@@ -35,7 +35,8 @@ def patch_rag_yaml(text: str, changes: dict[str, Any], incident_id: str) -> str:
             raise PatchError(f"unknown or protected key: {key}")
         i = keys[key]
         comment = f"# pinned by Driftline {incident_id}"
-        lines[i] = f"{key}: {_render(value)}".ljust(28) + comment
+        # align comments, but always leave a space: YAML needs whitespace before "#"
+        lines[i] = f"{key}: {_render(value)} ".ljust(28) + comment
     if "config_revision" in keys:
         i = keys["config_revision"]
         current = int(re.findall(r"\d+", lines[i])[0])
