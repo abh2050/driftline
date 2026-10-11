@@ -26,7 +26,7 @@
 </p>
 
 <p align="center">
-  <a href="docs/site/video/brag.mp4"><img src="docs/site/video/preview.gif" alt="20-second film: hit_count falls after top_k changes from 8 to 2; Driftline detects it, routes it to the retrieval specialist, proves the fix in a sandbox and opens a PR" width="800"></a>
+  <a href="docs/site/video/brag.mp4"><img src="docs/site/video/film-preview.gif" alt="20-second film: hit_count falls after top_k changes from 8 to 2; Driftline detects it, routes it to the retrieval specialist, proves the fix in a sandbox and opens a PR" width="800"></a>
 </p>
 
 ---
