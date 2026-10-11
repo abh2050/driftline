@@ -36,7 +36,7 @@ from orchestrator.models import HumanResponse, IncidentRun
 from orchestrator.router_client import RouterClient
 from orchestrator.safety import PromptShield, shield_middleware
 from orchestrator.tools import mcp_tool
-from orchestrator.workflow import build_workflow, deps
+from orchestrator.workflow import REPO_NAME, REPO_OWNER, build_workflow, deps
 
 log = logging.getLogger("orchestrator")
 tracer = trace.get_tracer("orchestrator")
@@ -54,6 +54,58 @@ class Answer(BaseModel):
     approved: bool
     by: str
     note: str = ""
+
+
+PR_WATCH_S = int(os.environ.get("PR_WATCH_SECONDS", "300"))
+
+
+def pr_number(url: str) -> int | None:
+    tail = url.rstrip("/").rsplit("/", 1)[-1]
+    return int(tail) if tail.isdigit() else None
+
+
+async def pr_state(gh: Any, number: int) -> tuple[str, bool]:
+    """(state, merged) of one pull request, read through APIM with a read-only agent."""
+    raw = await gh.call_tool(
+        "pull_request_read", method="get", owner=REPO_OWNER, repo=REPO_NAME, pullNumber=number
+    )
+    text = raw if isinstance(raw, str) else "".join(str(getattr(c, "text", "")) for c in raw)
+    data = json.loads(text)
+    return str(data.get("state", "")), bool(data.get("merged") or data.get("merged_at"))
+
+
+async def watch_prs() -> None:
+    """Follow fix PRs after they open: closed unmerged closes the incident; merged waits
+    for the detector to see recovery (the new revision replaces the faulted runtime)."""
+    while True:
+        await asyncio.sleep(PR_WATCH_S)
+        try:
+            docs = [
+                d
+                async for d in deps.incidents.query_items(
+                    "SELECT * FROM c WHERE c.status = 'pr_open'", partition_key="incident"
+                )
+            ]
+            if not docs:
+                continue
+            token = await deps.identities.token(deps.factory.identity("explainer"))
+            async with mcp_tool("github_read", token) as gh:
+                for doc in docs:
+                    number = pr_number(str(doc.get("pr_url") or ""))
+                    if number is None:
+                        continue
+                    state, merged = await pr_state(gh, number)
+                    if state != "closed":
+                        continue
+                    status = "fix_merged" if merged else "closed"
+                    outcome = "pr_merged" if merged else "pr_closed_unmerged"
+                    doc["status"] = status
+                    doc["resolution"] = {**(doc.get("resolution") or {}), "outcome": outcome}
+                    await deps.incidents.upsert_item(doc)
+                    await deps.audit.write(doc["id"], "pr-state", "github", outcome, {"pr": number})
+                    log.warning("incident %s: PR #%s %s", doc["id"], number, outcome)
+        except Exception:
+            log.exception("PR watch failed")
 
 
 @asynccontextmanager
@@ -80,9 +132,11 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
         await deps.factory.register_all()
     except Exception:
         log.exception("Foundry agent registration failed")
+    watcher = asyncio.create_task(watch_prs())
     try:
         yield
     finally:
+        watcher.cancel()
         for t in running.values():
             t.cancel()
         await deps.router.close()

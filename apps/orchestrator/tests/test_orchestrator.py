@@ -150,3 +150,10 @@ def test_pin_comment_never_joins_a_long_value() -> None:
     text = "reranker_deployment: cohere-rerank-fast\nconfig_revision: 1\n"
     out = patch_rag_yaml(text, {"reranker_deployment": "cohere-rerank-fast"}, "inc-x")
     assert _yaml.safe_load(out)["reranker_deployment"] == "cohere-rerank-fast"
+
+
+def test_pr_number_from_url() -> None:
+    from orchestrator.app import pr_number
+
+    assert pr_number("https://github.com/abh2050/driftline/pull/11") == 11
+    assert pr_number("not a url") is None
