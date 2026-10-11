@@ -238,16 +238,36 @@ def ci_identity(env_name: str, tenant: str) -> None:
     )
     sps = graph("GET", f"/servicePrincipals?$filter=appId eq '{app['appId']}'")["value"]
     sp = sps[0] if sps else graph("POST", "/servicePrincipals", {"appId": app["appId"]})
-    fic = {
-        "name": "github-main",
-        "issuer": "https://token.actions.githubusercontent.com",
-        "subject": f"repo:{CI_REPO}:ref:refs/heads/main",
-        "audiences": ["api://AzureADTokenExchange"],
-        "description": "GitHub Actions on main (nightly-evals workflow)",
-    }
+    # GitHub issues subjects with immutable owner and repository ids for newer repositories
+    # (repo:<owner>@<id>/<repo>@<id>:...); trust both forms of this repository's main branch.
+    subjects = {"github-main": f"repo:{CI_REPO}:ref:refs/heads/main"}
+    ids = subprocess.run(
+        ["gh", "api", f"repos/{CI_REPO}", "--jq", '"\\(.owner.id) \\(.id)"'],
+        capture_output=True,
+        text=True,
+    )
+    if ids.returncode == 0 and ids.stdout.strip():
+        owner_id, repo_id = ids.stdout.split()
+        owner, repo = CI_REPO.split("/")
+        subjects["github-main-ids"] = (
+            f"repo:{owner}@{owner_id}/{repo}@{repo_id}:ref:refs/heads/main"
+        )
     existing = graph("GET", f"/applications/{app['id']}/federatedIdentityCredentials")["value"]
-    if not any(f["name"] == fic["name"] for f in existing):
-        graph("POST", f"/applications/{app['id']}/federatedIdentityCredentials", fic)
+    have = {f["name"] for f in existing}
+    for fic_name, subject in subjects.items():
+        if fic_name in have:
+            continue
+        graph(
+            "POST",
+            f"/applications/{app['id']}/federatedIdentityCredentials",
+            {
+                "name": fic_name,
+                "issuer": "https://token.actions.githubusercontent.com",
+                "subject": subject,
+                "audiences": ["api://AzureADTokenExchange"],
+                "description": "GitHub Actions on main (nightly-evals workflow)",
+            },
+        )
     azd_set("CI_CLIENT_ID", app["appId"])
     azd_set("CI_PRINCIPAL_ID", sp["id"])
     print(f"ci identity: {name} appId={app['appId']} (tenant {tenant})")
