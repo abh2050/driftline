@@ -60,7 +60,7 @@ export type IncidentDetail = {
   escalations: string[];
   validation: Validation | null;
   costs: { tokens_usd?: number; decisions_usd?: number };
-  resolution: { approved: boolean; by: string; note: string; kind: string } | null;
+  resolution: { approved?: boolean; by?: string; note?: string; kind?: string; outcome?: string } | null;
   pr_url: string | null;
   trace_url: string | null;
 };

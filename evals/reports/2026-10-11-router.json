@@ -1,0 +1,2115 @@
+{
+ "clients": {
+  "gpt-4.1-mini": {
+   "D1": {
+    "accuracy": 0.9569,
+    "accuracy_lenient": null,
+    "accuracy_not_escalated": 0.9569,
+    "cost_per_1k_usd": 0.2846,
+    "ece": 0.0611,
+    "errors": 0,
+    "escalation_rate": 0.0,
+    "flip_rate": null,
+    "invalid_output_rate": 0.0,
+    "latency_client_ms": {
+     "p50": 1271.3,
+     "p95": 2914.5,
+     "p99": 3528.9
+    },
+    "latency_model_ms": {
+     "p50": 1271.2,
+     "p95": 2914.4,
+     "p99": 3528.8
+    },
+    "macro_f1": 0.9201,
+    "n": 1440,
+    "reliability": [
+     {
+      "accuracy": 0.0,
+      "bin": 0,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.1,
+      "lo": 0.0
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 1,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.2,
+      "lo": 0.1
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 2,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.3,
+      "lo": 0.2
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 3,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.4,
+      "lo": 0.3
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 4,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.5,
+      "lo": 0.4
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 5,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.6,
+      "lo": 0.5
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 6,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.7,
+      "lo": 0.6
+     },
+     {
+      "accuracy": 0.75,
+      "bin": 7,
+      "confidence": 0.7,
+      "count": 184,
+      "hi": 0.8,
+      "lo": 0.7
+     },
+     {
+      "accuracy": 0.9171,
+      "bin": 8,
+      "confidence": 0.8272,
+      "count": 193,
+      "hi": 0.9,
+      "lo": 0.8
+     },
+     {
+      "accuracy": 1.0,
+      "bin": 9,
+      "confidence": 0.9421,
+      "count": 1063,
+      "hi": 1.0,
+      "lo": 0.9
+     }
+    ]
+   },
+   "D2": {
+    "accuracy": 0.5167,
+    "accuracy_lenient": null,
+    "accuracy_not_escalated": 0.5171,
+    "cost_per_1k_usd": 0.3546,
+    "ece": 0.393,
+    "errors": 0,
+    "escalation_rate": 0.0008,
+    "flip_rate": 0.13,
+    "invalid_output_rate": 0.0,
+    "latency_client_ms": {
+     "p50": 1479.3,
+     "p95": 3063.4,
+     "p99": 3704.6
+    },
+    "latency_model_ms": {
+     "p50": 1479.1,
+     "p95": 3063.2,
+     "p99": 3704.5
+    },
+    "macro_f1": 0.4299,
+    "n": 1200,
+    "reliability": [
+     {
+      "accuracy": 0.0,
+      "bin": 0,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.1,
+      "lo": 0.0
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 1,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.2,
+      "lo": 0.1
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 2,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.3,
+      "lo": 0.2
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 3,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.4,
+      "lo": 0.3
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 4,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.5,
+      "lo": 0.4
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 5,
+      "confidence": 0.5999,
+      "count": 1,
+      "hi": 0.6,
+      "lo": 0.5
+     },
+     {
+      "accuracy": 0.0385,
+      "bin": 6,
+      "confidence": 0.6999,
+      "count": 130,
+      "hi": 0.7,
+      "lo": 0.6
+     },
+     {
+      "accuracy": 0.2965,
+      "bin": 7,
+      "confidence": 0.7998,
+      "count": 172,
+      "hi": 0.8,
+      "lo": 0.7
+     },
+     {
+      "accuracy": 0.608,
+      "bin": 8,
+      "confidence": 0.896,
+      "count": 301,
+      "hi": 0.9,
+      "lo": 0.8
+     },
+     {
+      "accuracy": 0.6393,
+      "bin": 9,
+      "confidence": 0.9945,
+      "count": 596,
+      "hi": 1.0,
+      "lo": 0.9
+     }
+    ]
+   },
+   "D3": {
+    "accuracy": 0.7417,
+    "accuracy_lenient": 0.8217,
+    "accuracy_not_escalated": 0.7524,
+    "cost_per_1k_usd": 0.4101,
+    "ece": 0.1517,
+    "errors": 0,
+    "escalation_rate": 0.0275,
+    "flip_rate": 0.0944,
+    "invalid_output_rate": 0.0,
+    "latency_client_ms": {
+     "p50": 1083.7,
+     "p95": 1582.4,
+     "p99": 2076.7
+    },
+    "latency_model_ms": {
+     "p50": 1083.6,
+     "p95": 1582.4,
+     "p99": 2076.6
+    },
+    "macro_f1": 0.7186,
+    "n": 1200,
+    "reliability": [
+     {
+      "accuracy": 0.0,
+      "bin": 0,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.1,
+      "lo": 0.0
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 1,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.2,
+      "lo": 0.1
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 2,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.3,
+      "lo": 0.2
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 3,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.4,
+      "lo": 0.3
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 4,
+      "confidence": 0.45,
+      "count": 2,
+      "hi": 0.5,
+      "lo": 0.4
+     },
+     {
+      "accuracy": 0.3871,
+      "bin": 5,
+      "confidence": 0.5645,
+      "count": 31,
+      "hi": 0.6,
+      "lo": 0.5
+     },
+     {
+      "accuracy": 0.3137,
+      "bin": 6,
+      "confidence": 0.6627,
+      "count": 153,
+      "hi": 0.7,
+      "lo": 0.6
+     },
+     {
+      "accuracy": 0.5857,
+      "bin": 7,
+      "confidence": 0.7069,
+      "count": 391,
+      "hi": 0.8,
+      "lo": 0.7
+     },
+     {
+      "accuracy": 0.9563,
+      "bin": 8,
+      "confidence": 0.8314,
+      "count": 504,
+      "hi": 0.9,
+      "lo": 0.8
+     },
+     {
+      "accuracy": 1.0,
+      "bin": 9,
+      "confidence": 0.9,
+      "count": 119,
+      "hi": 1.0,
+      "lo": 0.9
+     }
+    ]
+   },
+   "D4": {
+    "accuracy": 0.9033,
+    "accuracy_lenient": null,
+    "accuracy_not_escalated": 0.9054,
+    "cost_per_1k_usd": 0.3577,
+    "ece": 0.0812,
+    "errors": 0,
+    "escalation_rate": 0.0042,
+    "flip_rate": 0.0256,
+    "invalid_output_rate": 0.0,
+    "latency_client_ms": {
+     "p50": 1083.6,
+     "p95": 1692.0,
+     "p99": 2113.4
+    },
+    "latency_model_ms": {
+     "p50": 1083.5,
+     "p95": 1691.9,
+     "p99": 2113.4
+    },
+    "macro_f1": 0.7928,
+    "n": 1200,
+    "reliability": [
+     {
+      "accuracy": 0.0,
+      "bin": 0,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.1,
+      "lo": 0.0
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 1,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.2,
+      "lo": 0.1
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 2,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.3,
+      "lo": 0.2
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 3,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.4,
+      "lo": 0.3
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 4,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.5,
+      "lo": 0.4
+     },
+     {
+      "accuracy": 0.4,
+      "bin": 5,
+      "confidence": 0.5,
+      "count": 5,
+      "hi": 0.6,
+      "lo": 0.5
+     },
+     {
+      "accuracy": 0.4694,
+      "bin": 6,
+      "confidence": 0.6357,
+      "count": 49,
+      "hi": 0.7,
+      "lo": 0.6
+     },
+     {
+      "accuracy": 0.3404,
+      "bin": 7,
+      "confidence": 0.7085,
+      "count": 47,
+      "hi": 0.8,
+      "lo": 0.7
+     },
+     {
+      "accuracy": 0.8526,
+      "bin": 8,
+      "confidence": 0.8742,
+      "count": 346,
+      "hi": 0.9,
+      "lo": 0.8
+     },
+     {
+      "accuracy": 0.9934,
+      "bin": 9,
+      "confidence": 0.9083,
+      "count": 753,
+      "hi": 1.0,
+      "lo": 0.9
+     }
+    ]
+   },
+   "D5": {
+    "accuracy": 0.685,
+    "accuracy_lenient": null,
+    "accuracy_not_escalated": 0.685,
+    "cost_per_1k_usd": 0.266,
+    "ece": 0.2864,
+    "errors": 0,
+    "escalation_rate": 0.0,
+    "flip_rate": null,
+    "invalid_output_rate": 0.0,
+    "latency_client_ms": {
+     "p50": 1387.9,
+     "p95": 2730.2,
+     "p99": 10054.7
+    },
+    "latency_model_ms": {
+     "p50": 1387.8,
+     "p95": 2730.1,
+     "p99": 10054.5
+    },
+    "macro_f1": 0.6572,
+    "n": 200,
+    "reliability": [
+     {
+      "accuracy": 0.0,
+      "bin": 0,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.1,
+      "lo": 0.0
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 1,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.2,
+      "lo": 0.1
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 2,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.3,
+      "lo": 0.2
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 3,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.4,
+      "lo": 0.3
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 4,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.5,
+      "lo": 0.4
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 5,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.6,
+      "lo": 0.5
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 6,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.7,
+      "lo": 0.6
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 7,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.8,
+      "lo": 0.7
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 8,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.9,
+      "lo": 0.8
+     },
+     {
+      "accuracy": 0.685,
+      "bin": 9,
+      "confidence": 0.9714,
+      "count": 200,
+      "hi": 1.0,
+      "lo": 0.9
+     }
+    ]
+   }
+  },
+  "gpt-5-mini": {
+   "D1": {
+    "accuracy": 0.9549,
+    "accuracy_lenient": null,
+    "accuracy_not_escalated": 0.9549,
+    "cost_per_1k_usd": 0.4726,
+    "ece": 0.048,
+    "errors": 0,
+    "escalation_rate": 0.0,
+    "flip_rate": null,
+    "invalid_output_rate": 0.0,
+    "latency_client_ms": {
+     "p50": 2491.0,
+     "p95": 3544.2,
+     "p99": 4473.0
+    },
+    "latency_model_ms": {
+     "p50": 2490.9,
+     "p95": 3544.1,
+     "p99": 4472.9
+    },
+    "macro_f1": 0.9149,
+    "n": 1440,
+    "reliability": [
+     {
+      "accuracy": 0.0,
+      "bin": 0,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.1,
+      "lo": 0.0
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 1,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.2,
+      "lo": 0.1
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 2,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.3,
+      "lo": 0.2
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 3,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.4,
+      "lo": 0.3
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 4,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.5,
+      "lo": 0.4
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 5,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.6,
+      "lo": 0.5
+     },
+     {
+      "accuracy": 0.5714,
+      "bin": 6,
+      "confidence": 0.6386,
+      "count": 7,
+      "hi": 0.7,
+      "lo": 0.6
+     },
+     {
+      "accuracy": 0.7941,
+      "bin": 7,
+      "confidence": 0.7279,
+      "count": 34,
+      "hi": 0.8,
+      "lo": 0.7
+     },
+     {
+      "accuracy": 0.7589,
+      "bin": 8,
+      "confidence": 0.8401,
+      "count": 141,
+      "hi": 0.9,
+      "lo": 0.8
+     },
+     {
+      "accuracy": 0.9833,
+      "bin": 9,
+      "confidence": 0.9397,
+      "count": 1258,
+      "hi": 1.0,
+      "lo": 0.9
+     }
+    ]
+   },
+   "D2": {
+    "accuracy": 0.8217,
+    "accuracy_lenient": null,
+    "accuracy_not_escalated": 0.8221,
+    "cost_per_1k_usd": 0.8218,
+    "ece": 0.0762,
+    "errors": 0,
+    "escalation_rate": 0.0025,
+    "flip_rate": 0.1588,
+    "invalid_output_rate": 0.0,
+    "latency_client_ms": {
+     "p50": 3547.1,
+     "p95": 4999.1,
+     "p99": 6023.6
+    },
+    "latency_model_ms": {
+     "p50": 3547.0,
+     "p95": 4999.0,
+     "p99": 6023.5
+    },
+    "macro_f1": 0.7998,
+    "n": 1200,
+    "reliability": [
+     {
+      "accuracy": 0.0,
+      "bin": 0,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.1,
+      "lo": 0.0
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 1,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.2,
+      "lo": 0.1
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 2,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.3,
+      "lo": 0.2
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 3,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.4,
+      "lo": 0.3
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 4,
+      "confidence": 0.45,
+      "count": 1,
+      "hi": 0.5,
+      "lo": 0.4
+     },
+     {
+      "accuracy": 1.0,
+      "bin": 5,
+      "confidence": 0.5999,
+      "count": 2,
+      "hi": 0.6,
+      "lo": 0.5
+     },
+     {
+      "accuracy": 0.6364,
+      "bin": 6,
+      "confidence": 0.6754,
+      "count": 11,
+      "hi": 0.7,
+      "lo": 0.6
+     },
+     {
+      "accuracy": 0.5849,
+      "bin": 7,
+      "confidence": 0.7639,
+      "count": 53,
+      "hi": 0.8,
+      "lo": 0.7
+     },
+     {
+      "accuracy": 0.7925,
+      "bin": 8,
+      "confidence": 0.8779,
+      "count": 583,
+      "hi": 0.9,
+      "lo": 0.8
+     },
+     {
+      "accuracy": 0.88,
+      "bin": 9,
+      "confidence": 0.9353,
+      "count": 550,
+      "hi": 1.0,
+      "lo": 0.9
+     }
+    ]
+   },
+   "D3": {
+    "accuracy": 0.8925,
+    "accuracy_lenient": 0.9667,
+    "accuracy_not_escalated": 0.893,
+    "cost_per_1k_usd": 0.7158,
+    "ece": 0.091,
+    "errors": 0,
+    "escalation_rate": 0.0033,
+    "flip_rate": 0.0819,
+    "invalid_output_rate": 0.0,
+    "latency_client_ms": {
+     "p50": 2869.1,
+     "p95": 4080.9,
+     "p99": 4887.9
+    },
+    "latency_model_ms": {
+     "p50": 2869.0,
+     "p95": 4080.8,
+     "p99": 4887.8
+    },
+    "macro_f1": 0.8924,
+    "n": 1200,
+    "reliability": [
+     {
+      "accuracy": 0.0,
+      "bin": 0,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.1,
+      "lo": 0.0
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 1,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.2,
+      "lo": 0.1
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 2,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.3,
+      "lo": 0.2
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 3,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.4,
+      "lo": 0.3
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 4,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.5,
+      "lo": 0.4
+     },
+     {
+      "accuracy": 0.75,
+      "bin": 5,
+      "confidence": 0.56,
+      "count": 4,
+      "hi": 0.6,
+      "lo": 0.5
+     },
+     {
+      "accuracy": 0.4667,
+      "bin": 6,
+      "confidence": 0.6453,
+      "count": 30,
+      "hi": 0.7,
+      "lo": 0.6
+     },
+     {
+      "accuracy": 0.6207,
+      "bin": 7,
+      "confidence": 0.7375,
+      "count": 174,
+      "hi": 0.8,
+      "lo": 0.7
+     },
+     {
+      "accuracy": 0.9268,
+      "bin": 8,
+      "confidence": 0.8447,
+      "count": 615,
+      "hi": 0.9,
+      "lo": 0.8
+     },
+     {
+      "accuracy": 0.9973,
+      "bin": 9,
+      "confidence": 0.9119,
+      "count": 377,
+      "hi": 1.0,
+      "lo": 0.9
+     }
+    ]
+   },
+   "D4": {
+    "accuracy": 0.91,
+    "accuracy_lenient": null,
+    "accuracy_not_escalated": 0.9099,
+    "cost_per_1k_usd": 0.5594,
+    "ece": 0.0662,
+    "errors": 0,
+    "escalation_rate": 0.0008,
+    "flip_rate": 0.0225,
+    "invalid_output_rate": 0.0,
+    "latency_client_ms": {
+     "p50": 2408.6,
+     "p95": 3366.7,
+     "p99": 4122.8
+    },
+    "latency_model_ms": {
+     "p50": 2408.6,
+     "p95": 3366.7,
+     "p99": 4122.8
+    },
+    "macro_f1": 0.7974,
+    "n": 1200,
+    "reliability": [
+     {
+      "accuracy": 0.0,
+      "bin": 0,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.1,
+      "lo": 0.0
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 1,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.2,
+      "lo": 0.1
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 2,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.3,
+      "lo": 0.2
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 3,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.4,
+      "lo": 0.3
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 4,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.5,
+      "lo": 0.4
+     },
+     {
+      "accuracy": 1.0,
+      "bin": 5,
+      "confidence": 0.55,
+      "count": 1,
+      "hi": 0.6,
+      "lo": 0.5
+     },
+     {
+      "accuracy": 0.4545,
+      "bin": 6,
+      "confidence": 0.6045,
+      "count": 11,
+      "hi": 0.7,
+      "lo": 0.6
+     },
+     {
+      "accuracy": 0.6129,
+      "bin": 7,
+      "confidence": 0.7364,
+      "count": 31,
+      "hi": 0.8,
+      "lo": 0.7
+     },
+     {
+      "accuracy": 0.7438,
+      "bin": 8,
+      "confidence": 0.871,
+      "count": 281,
+      "hi": 0.9,
+      "lo": 0.8
+     },
+     {
+      "accuracy": 0.9795,
+      "bin": 9,
+      "confidence": 0.9363,
+      "count": 876,
+      "hi": 1.0,
+      "lo": 0.9
+     }
+    ]
+   },
+   "D5": {
+    "accuracy": 0.945,
+    "accuracy_lenient": null,
+    "accuracy_not_escalated": 0.945,
+    "cost_per_1k_usd": 0.9028,
+    "ece": 0.0552,
+    "errors": 0,
+    "escalation_rate": 0.0,
+    "flip_rate": null,
+    "invalid_output_rate": 0.0,
+    "latency_client_ms": {
+     "p50": 4040.7,
+     "p95": 4924.3,
+     "p99": 6000.4
+    },
+    "latency_model_ms": {
+     "p50": 4040.7,
+     "p95": 4924.2,
+     "p99": 6000.3
+    },
+    "macro_f1": 0.945,
+    "n": 200,
+    "reliability": [
+     {
+      "accuracy": 0.0,
+      "bin": 0,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.1,
+      "lo": 0.0
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 1,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.2,
+      "lo": 0.1
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 2,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.3,
+      "lo": 0.2
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 3,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.4,
+      "lo": 0.3
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 4,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.5,
+      "lo": 0.4
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 5,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.6,
+      "lo": 0.5
+     },
+     {
+      "accuracy": 1.0,
+      "bin": 6,
+      "confidence": 0.6,
+      "count": 1,
+      "hi": 0.7,
+      "lo": 0.6
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 7,
+      "confidence": 0.7167,
+      "count": 3,
+      "hi": 0.8,
+      "lo": 0.7
+     },
+     {
+      "accuracy": 0.5455,
+      "bin": 8,
+      "confidence": 0.8364,
+      "count": 11,
+      "hi": 0.9,
+      "lo": 0.8
+     },
+     {
+      "accuracy": 0.9838,
+      "bin": 9,
+      "confidence": 0.9552,
+      "count": 185,
+      "hi": 1.0,
+      "lo": 0.9
+     }
+    ]
+   }
+  },
+  "gpt-oss-120b": {
+   "D1": {
+    "accuracy": 0.959,
+    "accuracy_lenient": null,
+    "accuracy_not_escalated": 0.9645,
+    "cost_per_1k_usd": 0.1746,
+    "ece": 0.1119,
+    "errors": 0,
+    "escalation_rate": 0.0806,
+    "flip_rate": null,
+    "invalid_output_rate": 0.0806,
+    "latency_client_ms": {
+     "p50": 880.2,
+     "p95": 2079.0,
+     "p99": 2816.1
+    },
+    "latency_model_ms": {
+     "p50": 880.1,
+     "p95": 2078.9,
+     "p99": 2816.0
+    },
+    "macro_f1": 0.9183,
+    "n": 1440,
+    "reliability": [
+     {
+      "accuracy": 0.0,
+      "bin": 0,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.1,
+      "lo": 0.0
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 1,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.2,
+      "lo": 0.1
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 2,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.3,
+      "lo": 0.2
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 3,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.4,
+      "lo": 0.3
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 4,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.5,
+      "lo": 0.4
+     },
+     {
+      "accuracy": 0.8966,
+      "bin": 5,
+      "confidence": 0.5,
+      "count": 116,
+      "hi": 0.6,
+      "lo": 0.5
+     },
+     {
+      "accuracy": 0.5217,
+      "bin": 6,
+      "confidence": 0.6348,
+      "count": 23,
+      "hi": 0.7,
+      "lo": 0.6
+     },
+     {
+      "accuracy": 0.7838,
+      "bin": 7,
+      "confidence": 0.7158,
+      "count": 74,
+      "hi": 0.8,
+      "lo": 0.7
+     },
+     {
+      "accuracy": 0.9451,
+      "bin": 8,
+      "confidence": 0.8349,
+      "count": 364,
+      "hi": 0.9,
+      "lo": 0.8
+     },
+     {
+      "accuracy": 1.0,
+      "bin": 9,
+      "confidence": 0.9219,
+      "count": 863,
+      "hi": 1.0,
+      "lo": 0.9
+     }
+    ]
+   },
+   "D2": {
+    "accuracy": 0.8617,
+    "accuracy_lenient": null,
+    "accuracy_not_escalated": 0.897,
+    "cost_per_1k_usd": 0.2552,
+    "ece": 0.044,
+    "errors": 0,
+    "escalation_rate": 0.045,
+    "flip_rate": 0.2238,
+    "invalid_output_rate": 0.0339,
+    "latency_client_ms": {
+     "p50": 1516.3,
+     "p95": 3396.7,
+     "p99": 4135.7
+    },
+    "latency_model_ms": {
+     "p50": 1516.1,
+     "p95": 3396.5,
+     "p99": 4135.6
+    },
+    "macro_f1": 0.8489,
+    "n": 1200,
+    "reliability": [
+     {
+      "accuracy": 0.0,
+      "bin": 0,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.1,
+      "lo": 0.0
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 1,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.2,
+      "lo": 0.1
+     },
+     {
+      "accuracy": 0.0784,
+      "bin": 2,
+      "confidence": 0.25,
+      "count": 51,
+      "hi": 0.3,
+      "lo": 0.2
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 3,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.4,
+      "lo": 0.3
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 4,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.5,
+      "lo": 0.4
+     },
+     {
+      "accuracy": 0.6667,
+      "bin": 5,
+      "confidence": 0.5833,
+      "count": 3,
+      "hi": 0.6,
+      "lo": 0.5
+     },
+     {
+      "accuracy": 0.7353,
+      "bin": 6,
+      "confidence": 0.6661,
+      "count": 34,
+      "hi": 0.7,
+      "lo": 0.6
+     },
+     {
+      "accuracy": 0.8161,
+      "bin": 7,
+      "confidence": 0.7628,
+      "count": 87,
+      "hi": 0.8,
+      "lo": 0.7
+     },
+     {
+      "accuracy": 0.9003,
+      "bin": 8,
+      "confidence": 0.853,
+      "count": 642,
+      "hi": 0.9,
+      "lo": 0.8
+     },
+     {
+      "accuracy": 0.9243,
+      "bin": 9,
+      "confidence": 0.9411,
+      "count": 383,
+      "hi": 1.0,
+      "lo": 0.9
+     }
+    ]
+   },
+   "D3": {
+    "accuracy": 0.8667,
+    "accuracy_lenient": 0.9483,
+    "accuracy_not_escalated": 0.8888,
+    "cost_per_1k_usd": 0.2268,
+    "ece": 0.1178,
+    "errors": 0,
+    "escalation_rate": 0.0558,
+    "flip_rate": 0.1056,
+    "invalid_output_rate": 0.0207,
+    "latency_client_ms": {
+     "p50": 1047.7,
+     "p95": 2258.7,
+     "p99": 3091.9
+    },
+    "latency_model_ms": {
+     "p50": 1047.6,
+     "p95": 2258.7,
+     "p99": 3091.8
+    },
+    "macro_f1": 0.869,
+    "n": 1200,
+    "reliability": [
+     {
+      "accuracy": 0.0,
+      "bin": 0,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.1,
+      "lo": 0.0
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 1,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.2,
+      "lo": 0.1
+     },
+     {
+      "accuracy": 0.3913,
+      "bin": 2,
+      "confidence": 0.25,
+      "count": 23,
+      "hi": 0.3,
+      "lo": 0.2
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 3,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.4,
+      "lo": 0.3
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 4,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.5,
+      "lo": 0.4
+     },
+     {
+      "accuracy": 0.5455,
+      "bin": 5,
+      "confidence": 0.5466,
+      "count": 44,
+      "hi": 0.6,
+      "lo": 0.5
+     },
+     {
+      "accuracy": 0.6286,
+      "bin": 6,
+      "confidence": 0.6202,
+      "count": 105,
+      "hi": 0.7,
+      "lo": 0.6
+     },
+     {
+      "accuracy": 0.8484,
+      "bin": 7,
+      "confidence": 0.715,
+      "count": 488,
+      "hi": 0.8,
+      "lo": 0.7
+     },
+     {
+      "accuracy": 0.975,
+      "bin": 8,
+      "confidence": 0.8402,
+      "count": 521,
+      "hi": 0.9,
+      "lo": 0.8
+     },
+     {
+      "accuracy": 1.0,
+      "bin": 9,
+      "confidence": 0.9032,
+      "count": 19,
+      "hi": 1.0,
+      "lo": 0.9
+     }
+    ]
+   },
+   "D4": {
+    "accuracy": 0.9242,
+    "accuracy_lenient": null,
+    "accuracy_not_escalated": 0.9291,
+    "cost_per_1k_usd": 0.1952,
+    "ece": 0.114,
+    "errors": 0,
+    "escalation_rate": 0.0133,
+    "flip_rate": 0.0494,
+    "invalid_output_rate": 0.0104,
+    "latency_client_ms": {
+     "p50": 988.9,
+     "p95": 1935.0,
+     "p99": 2639.9
+    },
+    "latency_model_ms": {
+     "p50": 988.9,
+     "p95": 1935.0,
+     "p99": 2639.8
+    },
+    "macro_f1": 0.8417,
+    "n": 1200,
+    "reliability": [
+     {
+      "accuracy": 0.0,
+      "bin": 0,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.1,
+      "lo": 0.0
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 1,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.2,
+      "lo": 0.1
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 2,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.3,
+      "lo": 0.2
+     },
+     {
+      "accuracy": 0.75,
+      "bin": 3,
+      "confidence": 0.3333,
+      "count": 8,
+      "hi": 0.4,
+      "lo": 0.3
+     },
+     {
+      "accuracy": 1.0,
+      "bin": 4,
+      "confidence": 0.425,
+      "count": 2,
+      "hi": 0.5,
+      "lo": 0.4
+     },
+     {
+      "accuracy": 0.1667,
+      "bin": 5,
+      "confidence": 0.5167,
+      "count": 6,
+      "hi": 0.6,
+      "lo": 0.5
+     },
+     {
+      "accuracy": 0.5263,
+      "bin": 6,
+      "confidence": 0.6079,
+      "count": 38,
+      "hi": 0.7,
+      "lo": 0.6
+     },
+     {
+      "accuracy": 0.7029,
+      "bin": 7,
+      "confidence": 0.7109,
+      "count": 138,
+      "hi": 0.8,
+      "lo": 0.7
+     },
+     {
+      "accuracy": 0.9711,
+      "bin": 8,
+      "confidence": 0.8414,
+      "count": 865,
+      "hi": 0.9,
+      "lo": 0.8
+     },
+     {
+      "accuracy": 1.0,
+      "bin": 9,
+      "confidence": 0.9034,
+      "count": 143,
+      "hi": 1.0,
+      "lo": 0.9
+     }
+    ]
+   },
+   "D5": {
+    "accuracy": 0.9,
+    "accuracy_lenient": null,
+    "accuracy_not_escalated": 0.9316,
+    "cost_per_1k_usd": 0.2642,
+    "ece": 0.0979,
+    "errors": 0,
+    "escalation_rate": 0.05,
+    "flip_rate": null,
+    "invalid_output_rate": 0.045,
+    "latency_client_ms": {
+     "p50": 1632.7,
+     "p95": 3504.7,
+     "p99": 4137.0
+    },
+    "latency_model_ms": {
+     "p50": 1632.5,
+     "p95": 3504.6,
+     "p99": 4136.8
+    },
+    "macro_f1": 0.8995,
+    "n": 200,
+    "reliability": [
+     {
+      "accuracy": 0.0,
+      "bin": 0,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.1,
+      "lo": 0.0
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 1,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.2,
+      "lo": 0.1
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 2,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.3,
+      "lo": 0.2
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 3,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.4,
+      "lo": 0.3
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 4,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.5,
+      "lo": 0.4
+     },
+     {
+      "accuracy": 0.3,
+      "bin": 5,
+      "confidence": 0.5,
+      "count": 10,
+      "hi": 0.6,
+      "lo": 0.5
+     },
+     {
+      "accuracy": 0.9167,
+      "bin": 6,
+      "confidence": 0.6292,
+      "count": 12,
+      "hi": 0.7,
+      "lo": 0.6
+     },
+     {
+      "accuracy": 0.1429,
+      "bin": 7,
+      "confidence": 0.7,
+      "count": 7,
+      "hi": 0.8,
+      "lo": 0.7
+     },
+     {
+      "accuracy": 0.94,
+      "bin": 8,
+      "confidence": 0.8406,
+      "count": 50,
+      "hi": 0.9,
+      "lo": 0.8
+     },
+     {
+      "accuracy": 0.9752,
+      "bin": 9,
+      "confidence": 0.9318,
+      "count": 121,
+      "hi": 1.0,
+      "lo": 0.9
+     }
+    ]
+   }
+  },
+  "rules": {
+   "D1": {
+    "accuracy": 1.0,
+    "accuracy_lenient": null,
+    "accuracy_not_escalated": 1.0,
+    "cost_per_1k_usd": 0.0,
+    "ece": 0.3,
+    "errors": 0,
+    "escalation_rate": 0.0,
+    "flip_rate": null,
+    "invalid_output_rate": 0.0,
+    "latency_client_ms": {
+     "p50": 0.0,
+     "p95": 0.0,
+     "p99": 0.0
+    },
+    "latency_model_ms": {
+     "p50": 0.0,
+     "p95": 0.0,
+     "p99": 0.0
+    },
+    "macro_f1": 1.0,
+    "n": 1440,
+    "reliability": [
+     {
+      "accuracy": 0.0,
+      "bin": 0,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.1,
+      "lo": 0.0
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 1,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.2,
+      "lo": 0.1
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 2,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.3,
+      "lo": 0.2
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 3,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.4,
+      "lo": 0.3
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 4,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.5,
+      "lo": 0.4
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 5,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.6,
+      "lo": 0.5
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 6,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.7,
+      "lo": 0.6
+     },
+     {
+      "accuracy": 1.0,
+      "bin": 7,
+      "confidence": 0.7,
+      "count": 1440,
+      "hi": 0.8,
+      "lo": 0.7
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 8,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.9,
+      "lo": 0.8
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 9,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 1.0,
+      "lo": 0.9
+     }
+    ]
+   },
+   "D2": {
+    "accuracy": 0.3867,
+    "accuracy_lenient": null,
+    "accuracy_not_escalated": 0.3867,
+    "cost_per_1k_usd": 0.0,
+    "ece": 0.3133,
+    "errors": 0,
+    "escalation_rate": 0.0,
+    "flip_rate": 0.0,
+    "invalid_output_rate": 0.0,
+    "latency_client_ms": {
+     "p50": 0.0,
+     "p95": 0.0,
+     "p99": 0.0
+    },
+    "latency_model_ms": {
+     "p50": 0.0,
+     "p95": 0.0,
+     "p99": 0.0
+    },
+    "macro_f1": 0.3966,
+    "n": 1200,
+    "reliability": [
+     {
+      "accuracy": 0.0,
+      "bin": 0,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.1,
+      "lo": 0.0
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 1,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.2,
+      "lo": 0.1
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 2,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.3,
+      "lo": 0.2
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 3,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.4,
+      "lo": 0.3
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 4,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.5,
+      "lo": 0.4
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 5,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.6,
+      "lo": 0.5
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 6,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.7,
+      "lo": 0.6
+     },
+     {
+      "accuracy": 0.3867,
+      "bin": 7,
+      "confidence": 0.7,
+      "count": 1200,
+      "hi": 0.8,
+      "lo": 0.7
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 8,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.9,
+      "lo": 0.8
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 9,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 1.0,
+      "lo": 0.9
+     }
+    ]
+   },
+   "D3": {
+    "accuracy": 0.8783,
+    "accuracy_lenient": 0.9825,
+    "accuracy_not_escalated": 0.8783,
+    "cost_per_1k_usd": 0.0,
+    "ece": 0.1783,
+    "errors": 0,
+    "escalation_rate": 0.0,
+    "flip_rate": 0.01,
+    "invalid_output_rate": 0.0,
+    "latency_client_ms": {
+     "p50": 0.0,
+     "p95": 0.0,
+     "p99": 0.0
+    },
+    "latency_model_ms": {
+     "p50": 0.0,
+     "p95": 0.0,
+     "p99": 0.0
+    },
+    "macro_f1": 0.8784,
+    "n": 1200,
+    "reliability": [
+     {
+      "accuracy": 0.0,
+      "bin": 0,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.1,
+      "lo": 0.0
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 1,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.2,
+      "lo": 0.1
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 2,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.3,
+      "lo": 0.2
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 3,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.4,
+      "lo": 0.3
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 4,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.5,
+      "lo": 0.4
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 5,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.6,
+      "lo": 0.5
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 6,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.7,
+      "lo": 0.6
+     },
+     {
+      "accuracy": 0.8783,
+      "bin": 7,
+      "confidence": 0.7,
+      "count": 1200,
+      "hi": 0.8,
+      "lo": 0.7
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 8,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.9,
+      "lo": 0.8
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 9,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 1.0,
+      "lo": 0.9
+     }
+    ]
+   },
+   "D4": {
+    "accuracy": 0.9283,
+    "accuracy_lenient": null,
+    "accuracy_not_escalated": 0.9283,
+    "cost_per_1k_usd": 0.0,
+    "ece": 0.2283,
+    "errors": 0,
+    "escalation_rate": 0.0,
+    "flip_rate": 0.0006,
+    "invalid_output_rate": 0.0,
+    "latency_client_ms": {
+     "p50": 0.0,
+     "p95": 0.0,
+     "p99": 0.0
+    },
+    "latency_model_ms": {
+     "p50": 0.0,
+     "p95": 0.0,
+     "p99": 0.0
+    },
+    "macro_f1": 0.8956,
+    "n": 1200,
+    "reliability": [
+     {
+      "accuracy": 0.0,
+      "bin": 0,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.1,
+      "lo": 0.0
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 1,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.2,
+      "lo": 0.1
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 2,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.3,
+      "lo": 0.2
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 3,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.4,
+      "lo": 0.3
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 4,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.5,
+      "lo": 0.4
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 5,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.6,
+      "lo": 0.5
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 6,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.7,
+      "lo": 0.6
+     },
+     {
+      "accuracy": 0.9283,
+      "bin": 7,
+      "confidence": 0.7,
+      "count": 1200,
+      "hi": 0.8,
+      "lo": 0.7
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 8,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.9,
+      "lo": 0.8
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 9,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 1.0,
+      "lo": 0.9
+     }
+    ]
+   },
+   "D5": {
+    "accuracy": 0.845,
+    "accuracy_lenient": null,
+    "accuracy_not_escalated": 0.845,
+    "cost_per_1k_usd": 0.0,
+    "ece": 0.145,
+    "errors": 0,
+    "escalation_rate": 0.0,
+    "flip_rate": null,
+    "invalid_output_rate": 0.0,
+    "latency_client_ms": {
+     "p50": 0.0,
+     "p95": 0.0,
+     "p99": 0.0
+    },
+    "latency_model_ms": {
+     "p50": 0.0,
+     "p95": 0.0,
+     "p99": 0.0
+    },
+    "macro_f1": 0.8425,
+    "n": 200,
+    "reliability": [
+     {
+      "accuracy": 0.0,
+      "bin": 0,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.1,
+      "lo": 0.0
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 1,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.2,
+      "lo": 0.1
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 2,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.3,
+      "lo": 0.2
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 3,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.4,
+      "lo": 0.3
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 4,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.5,
+      "lo": 0.4
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 5,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.6,
+      "lo": 0.5
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 6,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.7,
+      "lo": 0.6
+     },
+     {
+      "accuracy": 0.845,
+      "bin": 7,
+      "confidence": 0.7,
+      "count": 200,
+      "hi": 0.8,
+      "lo": 0.7
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 8,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 0.9,
+      "lo": 0.8
+     },
+     {
+      "accuracy": 0.0,
+      "bin": 9,
+      "confidence": 0.0,
+      "count": 0,
+      "hi": 1.0,
+      "lo": 0.9
+     }
+    ]
+   }
+  }
+ },
+ "escalation_threshold": 0.6,
+ "generated": "2026-10-11",
+ "sample": null
+}

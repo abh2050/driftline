@@ -16,7 +16,8 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { ops, pct } from "@/lib/ops";
 import type { RouterReport } from "@/lib/types";
 
-const COLORS = ["var(--chart-1)", "var(--chart-2)", "var(--chart-3)", "var(--chart-4)", "var(--chart-5)"];
+// distinguishable on white and for common colour-vision deficiencies
+const COLORS = ["#2563eb", "#ea580c", "#16a34a", "#9333ea", "#0891b2"];
 
 export function RouterReportView() {
   const [report, setReport] = useState<RouterReport | null>(null);
@@ -113,9 +114,9 @@ export function RouterReportView() {
               <YAxis domain={[0, 1]} tickCount={6} />
               <Tooltip formatter={(v) => (v === null ? "–" : Number(v).toFixed(3))} />
               <Legend />
-              <Line dataKey="ideal" stroke="var(--muted-foreground)" strokeDasharray="4 4" dot={false} />
+              <Line dataKey="ideal" name="perfect calibration" stroke="#94a3b8" strokeDasharray="4 4" dot={false} />
               {clients.map((c, i) => (
-                <Line key={c} dataKey={c} stroke={COLORS[i % COLORS.length]} connectNulls isAnimationActive={false} />
+                <Line key={c} dataKey={c} stroke={COLORS[i % COLORS.length]} strokeWidth={2} connectNulls isAnimationActive={false} />
               ))}
             </LineChart>
           </ResponsiveContainer>

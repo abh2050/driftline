@@ -1,0 +1,7 @@
+# rendered intermediates; rebuild with: node capture.mjs frames 20.5 && python music.py
+frames/
+stills/
+*.jpg
+*.png
+*.wav
+*.woff2

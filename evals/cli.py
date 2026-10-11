@@ -70,6 +70,15 @@ def _layer2a(args: argparse.Namespace) -> int:
         data = asyncio.run(run(clients, args.sample))
     for c, types in data["clients"].items():
         print(c, {t: m["accuracy"] for t, m in types.items()})
+    if not args.offline:
+        from evals.trends import publish
+
+        for c, types in data["clients"].items():
+            publish(
+                "layer2a",
+                str(data.get("generated", "")),
+                {f"{c}.{t}.accuracy": m["accuracy"] for t, m in types.items()},
+            )
     return 0
 
 
@@ -119,6 +128,13 @@ def _layer3(args: argparse.Namespace) -> int:
     return 0 if summary["pass_rate"] == 1.0 else 1
 
 
+def _trends(args: argparse.Namespace) -> int:
+    from evals.trends import backfill
+
+    print(f"published {backfill()} eval metric rows")
+    return 0
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(
         prog="driftline-eval",
@@ -154,6 +170,8 @@ def main() -> None:
     l3.add_argument("--report-only", action="store_true", help="report the latest results")
     l3.add_argument("--no-upload", action="store_true")
     l3.set_defaults(fn=_layer3)
+    tr = sub.add_parser("trends", help="publish existing report summaries to Log Analytics")
+    tr.set_defaults(fn=_trends)
     g = sub.add_parser("gate", help="apply evals/gates.yaml to two layer 1 fixtures")
     g.add_argument("--baseline", default="baseline")
     g.add_argument("--candidate", required=True)

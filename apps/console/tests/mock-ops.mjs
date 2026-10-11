@@ -1,4 +1,5 @@
 // Mocked ops-api for Playwright (spec 10.2): fixed fixtures, an SSE feed and a streamed chat.
+import { readFileSync } from "node:fs";
 import http from "node:http";
 
 const port = Number(process.env.MOCK_OPS_PORT ?? 3199);
@@ -63,6 +64,9 @@ const bins = Array.from({ length: 10 }, (_, i) => ({ bin: i, lo: i / 10, hi: (i 
 const metrics = { n: 1200, accuracy: 0.9, accuracy_lenient: 0.95, macro_f1: 0.88, ece: 0.05, flip_rate: 0.1, cost_per_1k_usd: 0.7, escalation_rate: 0.01, latency_model_ms: { p50: 3000, p95: 4200, p99: 5100 }, reliability: bins };
 const report = { report: "2026-10-10-router.json", generated: now, escalation_threshold: 0.6, clients: { "gpt-5-mini": { D3: metrics, D4: metrics }, rules: { D3: metrics, D4: metrics } } };
 
+// MOCK_DATA: real data exported by scripts/export_console_fixture.py (screenshots)
+const real = process.env.MOCK_DATA ? JSON.parse(readFileSync(process.env.MOCK_DATA, "utf8")) : null;
+
 const json = (res, body, status = 200) => {
   res.writeHead(status, { "content-type": "application/json" });
   res.end(JSON.stringify(body));
@@ -74,6 +78,23 @@ http
     const p = url.pathname;
     if (p === "/healthz") return json(res, { status: "ok" });
     if (p === "/me") return json(res, { name: "admin@example.com", roles: ["admin"], admin: true });
+    if (real && p === "/incidents") return json(res, real.incidents);
+    if (real && p === `/incidents/${real.incident_id}`) return json(res, real.detail);
+    if (real && p === "/approvals") return json(res, real.approvals);
+    if (real && p === "/router/report") return json(res, real.router);
+    if (real && p === "/chat") {
+      res.writeHead(200, { "content-type": "text/plain; charset=utf-8" });
+      const words = real.chat.answer.split(/(?<= )/);
+      let i = 0;
+      const t = setInterval(() => {
+        if (i < words.length) res.write(words.slice(i, (i += 12)).join(""));
+        else {
+          clearInterval(t);
+          res.end();
+        }
+      }, 20);
+      return;
+    }
     if (p === "/incidents") return json(res, [summary("inc-123"), summary("inc-older", { severity: "sev3", status: "closed", detected_at: "2026-10-09T10:00:00Z" })]);
     if (p === "/incidents/inc-123") return json(res, detail);
     if (p.startsWith("/incidents/") && p.endsWith("/respond")) return json(res, { approved: true, by: "admin@example.com" });
@@ -83,6 +104,11 @@ http
     if (p === "/demo/fault") return json(res, { fault_id: "F3" });
     if (p === "/demo/reset") return json(res, { fault_id: null });
     if (p === "/v1/traces") return json(res, {});
+    if (real && p === "/stream") {
+      res.writeHead(200, { "content-type": "text/event-stream", "cache-control": "no-cache" });
+      res.write("retry: 3000\n\n");
+      return;
+    }
     if (p === "/stream") {
       res.writeHead(200, { "content-type": "text/event-stream", "cache-control": "no-cache" });
       res.write("retry: 3000\n\n");

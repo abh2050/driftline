@@ -21,6 +21,7 @@ from azure.identity import DefaultAzureCredential
 from azure.storage.blob import BlobServiceClient
 
 from evals.foundry_upload import upload
+from evals.trends import publish
 
 REPORTS = Path(__file__).resolve().parents[1] / "reports"
 LAYER_ORDER = [
@@ -180,5 +181,7 @@ def run(*, start: bool, upload_results: bool) -> dict[str, Any]:
         if upload_results
         else None
     )
-    print(write_report(result, summary, studio))
+    path = write_report(result, summary, studio)
+    publish("layer3", result["run"], summary, path.name)
+    print(path)
     return summary

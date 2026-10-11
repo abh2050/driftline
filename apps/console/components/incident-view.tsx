@@ -168,11 +168,14 @@ export function IncidentView({ id }: { id: string }) {
         ))}
       </section>
 
-      {inc.resolution && (
+      {inc.resolution?.by && (
         <p className="text-sm">
           {inc.resolution.kind} {inc.resolution.approved ? "approved" : "rejected"} by {inc.resolution.by}
           {inc.resolution.note && <> — {inc.resolution.note}</>}
         </p>
+      )}
+      {inc.resolution?.outcome && (
+        <p className="text-sm text-muted-foreground">Outcome: {inc.resolution.outcome.replaceAll("_", " ")}</p>
       )}
     </div>
   );

@@ -11,7 +11,8 @@ hooks:
     run: uv run python -m scripts.entra_app pre
   postprovision:
     shell: sh
-    run: uv run python -m scripts.entra_app post
+    # Entra grants and console sign-in, then a searchable index (skips seeded indexes)
+    run: uv run python -m scripts.entra_app post && uv run python -m scripts.seed_index
   predeploy:
     shell: sh
     run: azd env set GIT_COMMIT "$(git rev-parse --short HEAD)"

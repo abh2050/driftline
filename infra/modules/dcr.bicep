@@ -1,4 +1,5 @@
-// Custom table DriftlineDecisions_CL and the logs-ingestion DCR the router writes to.
+// Custom tables DriftlineDecisions_CL (router decisions) and DriftlineEvals_CL (one row per
+// eval metric per run, for the workbook's nightly trends) and the logs-ingestion DCR.
 param location string
 param prefix string
 param tags object
@@ -41,15 +42,38 @@ resource table 'Microsoft.OperationalInsights/workspaces/tables@2025-07-01' = {
   }
 }
 
+var evalColumns = [
+  { name: 'TimeGenerated', type: 'datetime' }
+  { name: 'Layer', type: 'string' }
+  { name: 'RunId', type: 'string' }
+  { name: 'Metric', type: 'string' }
+  { name: 'Value', type: 'real' }
+  { name: 'Source', type: 'string' }
+  { name: 'Report', type: 'string' }
+]
+
+resource evalTable 'Microsoft.OperationalInsights/workspaces/tables@2025-07-01' = {
+  parent: law
+  name: 'DriftlineEvals_CL'
+  properties: {
+    schema: {
+      name: 'DriftlineEvals_CL'
+      columns: evalColumns
+    }
+    retentionInDays: 90
+  }
+}
+
 resource dcr 'Microsoft.Insights/dataCollectionRules@2024-03-11' = {
   name: '${prefix}-dcr-decisions'
   location: location
   tags: tags
-  dependsOn: [table]
+  dependsOn: [table, evalTable]
   properties: {
     dataCollectionEndpointId: dceId
     streamDeclarations: {
       'Custom-DriftlineDecisions': { columns: columns }
+      'Custom-DriftlineEvals': { columns: evalColumns }
     }
     destinations: {
       logAnalytics: [
@@ -62,6 +86,12 @@ resource dcr 'Microsoft.Insights/dataCollectionRules@2024-03-11' = {
         destinations: ['law']
         transformKql: 'source'
         outputStream: 'Custom-DriftlineDecisions_CL'
+      }
+      {
+        streams: ['Custom-DriftlineEvals']
+        destinations: ['law']
+        transformKql: 'source'
+        outputStream: 'Custom-DriftlineEvals_CL'
       }
     ]
   }
@@ -82,3 +112,4 @@ resource writerRoles 'Microsoft.Authorization/roleAssignments@2022-04-01' = [for
 output dcrId string = dcr.id
 output dcrImmutableId string = dcr.properties.immutableId
 output streamName string = 'Custom-DriftlineDecisions'
+output evalsStreamName string = 'Custom-DriftlineEvals'

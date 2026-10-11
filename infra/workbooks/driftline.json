@@ -1,0 +1,363 @@
+{
+  "version": "Notebook/1.0",
+  "items": [
+    {
+      "type": 1,
+      "content": {
+        "json": "# Driftline\nIncidents from detection to fix, the router's decisions, the agents' latency and cost, and eval trends. Spans come from every service through otel-collector (`OTelSpans`); router decisions from `DriftlineDecisions_CL`; eval summaries from `DriftlineEvals_CL`."
+      }
+    },
+    {
+      "type": 9,
+      "content": {
+        "version": "KqlParameterItem/1.0",
+        "parameters": [
+          {
+            "id": "ws",
+            "version": "KqlParameterItem/1.0",
+            "name": "Workspace",
+            "type": 5,
+            "isRequired": true,
+            "typeSettings": {
+              "resourceTypeFilter": {
+                "microsoft.operationalinsights/workspaces": true
+              }
+            },
+            "value": "{WorkspaceId}",
+            "isHiddenWhenLocked": true
+          },
+          {
+            "id": "tr",
+            "version": "KqlParameterItem/1.0",
+            "name": "TimeRange",
+            "type": 4,
+            "value": {
+              "durationMs": 604800000
+            },
+            "typeSettings": {
+              "selectableValues": [
+                {
+                  "durationMs": 3600000
+                },
+                {
+                  "durationMs": 86400000
+                },
+                {
+                  "durationMs": 259200000
+                },
+                {
+                  "durationMs": 604800000
+                },
+                {
+                  "durationMs": 2592000000
+                }
+              ]
+            }
+          },
+          {
+            "id": "inc",
+            "version": "KqlParameterItem/1.0",
+            "name": "Incident",
+            "type": 2,
+            "query": "OTelSpans\n| where TimeGenerated {TimeRange}\n| extend Incident = tostring(Attributes[\"driftline.incident_id\"])\n| where isnotempty(Incident)\n| summarize Last = max(TimeGenerated) by Incident\n| order by Last desc\n| project value = Incident, label = Incident",
+            "queryType": 0,
+            "resourceType": "microsoft.operationalinsights/workspaces",
+            "crossComponentResources": [
+              "{Workspace}"
+            ],
+            "timeContextFromParameter": "TimeRange",
+            "typeSettings": {
+              "showDefault": false
+            }
+          }
+        ],
+        "style": "pills",
+        "queryType": 0,
+        "resourceType": "microsoft.operationalinsights/workspaces"
+      },
+      "name": "parameters"
+    },
+    {
+      "type": 1,
+      "content": {
+        "json": "## Incident timeline\nEach workflow step per incident, from the detector to the PR or the approval."
+      }
+    },
+    {
+      "type": 3,
+      "content": {
+        "version": "KqlItem/1.0",
+        "query": "OTelSpans\n| where TimeGenerated {TimeRange}\n| extend Incident = tostring(Attributes[\"driftline.incident_id\"])\n| where isnotempty(Incident)\n| where Name in (\"detector.incident\", \"orchestrator.workflow\", \"orchestrator.severity\",\n    \"orchestrator.route\", \"orchestrator.investigate\", \"orchestrator.validate\",\n    \"orchestrator.write_pr\", \"orchestrator.resume\", \"ops-api.respond\")\n| summarize Start = min(TimeGenerated), End = max(EndTime) by Incident, Step = Name\n| extend Seconds = round(datetime_diff(\"millisecond\", End, Start) / 1000.0, 1)\n| order by Incident desc, Start asc",
+        "size": 0,
+        "title": "Incident timeline",
+        "timeContextFromParameter": "TimeRange",
+        "queryType": 0,
+        "resourceType": "microsoft.operationalinsights/workspaces",
+        "crossComponentResources": [
+          "{Workspace}"
+        ],
+        "visualization": "table",
+        "gridSettings": {
+          "formatters": [
+            {
+              "columnMatch": "Seconds",
+              "formatter": 4,
+              "formatOptions": {
+                "palette": "blue"
+              }
+            }
+          ]
+        }
+      },
+      "name": "incident-timeline"
+    },
+    {
+      "type": 1,
+      "content": {
+        "json": "## Trace waterfall\nPick an incident above: every span of its traces, in start order."
+      }
+    },
+    {
+      "type": 3,
+      "content": {
+        "version": "KqlItem/1.0",
+        "query": "let traces = OTelSpans\n| where TimeGenerated {TimeRange}\n| where tostring(Attributes[\"driftline.incident_id\"]) == \"{Incident}\"\n| distinct TraceId;\nlet spans = OTelSpans\n| where TimeGenerated {TimeRange}\n| where TraceId in (traces);\nlet t0 = toscalar(spans | summarize min(TimeGenerated));\nspans\n| extend StartS = round(datetime_diff(\"millisecond\", TimeGenerated, t0) / 1000.0, 2),\n    DurationS = round(DurationMs / 1000.0, 2)\n| project StartS, DurationS, Service = ServiceName, Span = Name, Status = StatusCode,\n    Agent = tostring(Attributes[\"gen_ai.agent.name\"]), TraceId, SpanId, ParentSpanId\n| order by StartS asc",
+        "size": 0,
+        "title": "Trace waterfall",
+        "timeContextFromParameter": "TimeRange",
+        "queryType": 0,
+        "resourceType": "microsoft.operationalinsights/workspaces",
+        "crossComponentResources": [
+          "{Workspace}"
+        ],
+        "visualization": "table",
+        "gridSettings": {
+          "formatters": [
+            {
+              "columnMatch": "DurationS",
+              "formatter": 4,
+              "formatOptions": {
+                "palette": "orange"
+              }
+            }
+          ],
+          "rowLimit": 2000
+        }
+      },
+      "name": "trace-waterfall",
+      "conditionalVisibility": {
+        "parameterName": "Incident",
+        "comparison": "isNotEqualTo",
+        "value": ""
+      }
+    },
+    {
+      "type": 1,
+      "content": {
+        "json": "## Latency by agent and model"
+      }
+    },
+    {
+      "type": 3,
+      "content": {
+        "version": "KqlItem/1.0",
+        "query": "OTelSpans\n| where TimeGenerated {TimeRange}\n| extend Agent = tostring(Attributes[\"gen_ai.agent.name\"])\n| where isnotempty(Agent) and Name startswith \"invoke_agent\"\n| summarize Calls = count(), P50ms = round(percentile(DurationMs, 50)),\n    P95ms = round(percentile(DurationMs, 95)) by Agent\n| order by P95ms desc",
+        "size": 0,
+        "title": "Latency by agent",
+        "timeContextFromParameter": "TimeRange",
+        "queryType": 0,
+        "resourceType": "microsoft.operationalinsights/workspaces",
+        "crossComponentResources": [
+          "{Workspace}"
+        ],
+        "visualization": "table",
+        "gridSettings": {
+          "formatters": [
+            {
+              "columnMatch": "P95ms",
+              "formatter": 4,
+              "formatOptions": {
+                "palette": "blue"
+              }
+            }
+          ]
+        }
+      },
+      "name": "latency-by-agent"
+    },
+    {
+      "type": 3,
+      "content": {
+        "version": "KqlItem/1.0",
+        "query": "OTelSpans\n| where TimeGenerated {TimeRange}\n| where Name startswith \"chat \"\n| extend Model = tostring(Attributes[\"gen_ai.request.model\"]), Service = ServiceName\n| summarize Calls = count(), P50ms = round(percentile(DurationMs, 50)),\n    P95ms = round(percentile(DurationMs, 95)),\n    InputTokens = sum(toint(Attributes[\"gen_ai.usage.input_tokens\"])),\n    OutputTokens = sum(toint(Attributes[\"gen_ai.usage.output_tokens\"])) by Model, Service\n| order by Calls desc",
+        "size": 0,
+        "title": "Latency and tokens by model",
+        "timeContextFromParameter": "TimeRange",
+        "queryType": 0,
+        "resourceType": "microsoft.operationalinsights/workspaces",
+        "crossComponentResources": [
+          "{Workspace}"
+        ],
+        "visualization": "table",
+        "gridSettings": {
+          "formatters": [
+            {
+              "columnMatch": "P95ms",
+              "formatter": 4,
+              "formatOptions": {
+                "palette": "blue"
+              }
+            }
+          ]
+        }
+      },
+      "name": "latency-and-tokens-by-model"
+    },
+    {
+      "type": 1,
+      "content": {
+        "json": "## Router decisions"
+      }
+    },
+    {
+      "type": 3,
+      "content": {
+        "version": "KqlItem/1.0",
+        "query": "DriftlineDecisions_CL\n| where TimeGenerated {TimeRange}\n| summarize Decisions = count(), P50ms = round(percentile(LatencyMs, 50)),\n    P95ms = round(percentile(LatencyMs, 95)), P99ms = round(percentile(LatencyMs, 99)),\n    Escalated = countif(Escalated) by DecisionType, Client\n| order by DecisionType asc",
+        "size": 0,
+        "title": "Router decision latency",
+        "timeContextFromParameter": "TimeRange",
+        "queryType": 0,
+        "resourceType": "microsoft.operationalinsights/workspaces",
+        "crossComponentResources": [
+          "{Workspace}"
+        ],
+        "visualization": "table",
+        "gridSettings": {
+          "formatters": [
+            {
+              "columnMatch": "P95ms",
+              "formatter": 4,
+              "formatOptions": {
+                "palette": "blue"
+              }
+            }
+          ]
+        }
+      },
+      "name": "router-decision-latency"
+    },
+    {
+      "type": 3,
+      "content": {
+        "version": "KqlItem/1.0",
+        "query": "DriftlineDecisions_CL\n| where TimeGenerated {TimeRange}\n| mv-apply kv = parse_json(tostring(Scores)) on (\n    extend v = todouble(kv[tostring(bag_keys(kv)[0])]) | summarize Top = max(v))\n| summarize Decisions = count() by Confidence = bin(Top, 0.1), DecisionType\n| order by Confidence asc",
+        "size": 0,
+        "title": "Confidence distribution",
+        "timeContextFromParameter": "TimeRange",
+        "queryType": 0,
+        "resourceType": "microsoft.operationalinsights/workspaces",
+        "crossComponentResources": [
+          "{Workspace}"
+        ],
+        "visualization": "barchart"
+      },
+      "name": "confidence-distribution"
+    },
+    {
+      "type": 3,
+      "content": {
+        "version": "KqlItem/1.0",
+        "query": "DriftlineDecisions_CL\n| where TimeGenerated {TimeRange}\n| summarize EscalationRate = round(todouble(countif(Escalated)) / count(), 4)\n    by bin(TimeGenerated, 1h), DecisionType\n| render timechart",
+        "size": 0,
+        "title": "Escalation rate",
+        "timeContextFromParameter": "TimeRange",
+        "queryType": 0,
+        "resourceType": "microsoft.operationalinsights/workspaces",
+        "crossComponentResources": [
+          "{Workspace}"
+        ],
+        "visualization": "timechart"
+      },
+      "name": "escalation-rate"
+    },
+    {
+      "type": 1,
+      "content": {
+        "json": "## Cost per incident\nAgent tokens (priced from config/pricing.yaml) and router decisions."
+      }
+    },
+    {
+      "type": 3,
+      "content": {
+        "version": "KqlItem/1.0",
+        "query": "let prices = datatable(Model: string, InPerM: real, OutPerM: real) [\"gpt-5-mini\", 0.25, 2.0, \"gpt-4.1-mini\", 0.4, 1.6, \"gpt-oss-120b\", 0.15, 0.6, \"gpt-5.4-mini\", 0.4, 1.6, \"text-embedding-3-small\", 0.02, 0.0, \"text-embedding-3-large\", 0.13, 0.0];\nlet incidentTraces = OTelSpans\n| where TimeGenerated {TimeRange}\n| extend Incident = tostring(Attributes[\"driftline.incident_id\"])\n| where isnotempty(Incident)\n| distinct TraceId, Incident;\nlet tokens = OTelSpans\n| where TimeGenerated {TimeRange} and Name startswith \"chat \"\n| extend Model = tostring(Attributes[\"gen_ai.request.model\"]),\n    In = toint(Attributes[\"gen_ai.usage.input_tokens\"]),\n    Out = toint(Attributes[\"gen_ai.usage.output_tokens\"])\n| join kind=inner incidentTraces on TraceId\n| join kind=leftouter prices on Model\n| summarize TokensUsd = sum((In * InPerM + Out * OutPerM) / 1000000.0) by Incident;\nlet decisions = DriftlineDecisions_CL\n| where TimeGenerated {TimeRange} and isnotempty(IncidentId)\n| summarize DecisionsUsd = sum(CostUsd) by Incident = IncidentId;\ntokens\n| join kind=fullouter decisions on Incident\n| project Incident = coalesce(Incident, Incident1), TokensUsd = round(coalesce(TokensUsd, 0.0), 5),\n    DecisionsUsd = round(coalesce(DecisionsUsd, 0.0), 5)\n| extend TotalUsd = TokensUsd + DecisionsUsd\n| order by TotalUsd desc\n| take 30",
+        "size": 0,
+        "title": "Cost per incident",
+        "timeContextFromParameter": "TimeRange",
+        "queryType": 0,
+        "resourceType": "microsoft.operationalinsights/workspaces",
+        "crossComponentResources": [
+          "{Workspace}"
+        ],
+        "visualization": "barchart",
+        "chartSettings": {
+          "seriesLabelSettings": [],
+          "xAxis": "Incident",
+          "yAxis": [
+            "TokensUsd",
+            "DecisionsUsd"
+          ],
+          "group": null,
+          "createOtherGroup": 0
+        }
+      },
+      "name": "cost-per-incident"
+    },
+    {
+      "type": 1,
+      "content": {
+        "json": "## Eval trends\nLayer 2a, 2b and 3 summaries from local and nightly runs (`driftline-eval`)."
+      }
+    },
+    {
+      "type": 3,
+      "content": {
+        "version": "KqlItem/1.0",
+        "query": "DriftlineEvals_CL\n| where TimeGenerated {TimeRange}\n| where Metric in (\"pass_rate\", \"detection_recall\", \"routing_accuracy\", \"rca_top1_exact\",\n    \"correct_action_rate\", \"fix_acceptance_rate\") or Metric endswith \".D3.accuracy\"\n| project TimeGenerated, Series = strcat(Layer, \" \", Metric), Value\n| render timechart",
+        "size": 0,
+        "title": "Eval trends",
+        "timeContextFromParameter": "TimeRange",
+        "queryType": 0,
+        "resourceType": "microsoft.operationalinsights/workspaces",
+        "crossComponentResources": [
+          "{Workspace}"
+        ],
+        "visualization": "timechart"
+      },
+      "name": "eval-trends"
+    },
+    {
+      "type": 3,
+      "content": {
+        "version": "KqlItem/1.0",
+        "query": "DriftlineEvals_CL\n| where TimeGenerated {TimeRange}\n| summarize arg_max(TimeGenerated, Value, RunId, Report, Source) by Layer, Metric\n| order by Layer asc, Metric asc",
+        "size": 0,
+        "title": "Latest eval results",
+        "timeContextFromParameter": "TimeRange",
+        "queryType": 0,
+        "resourceType": "microsoft.operationalinsights/workspaces",
+        "crossComponentResources": [
+          "{Workspace}"
+        ],
+        "visualization": "table"
+      },
+      "name": "latest-eval-results"
+    }
+  ],
+  "isLocked": false,
+  "fallbackResourceIds": [
+    "{WorkspaceId}"
+  ],
+  "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json"
+}

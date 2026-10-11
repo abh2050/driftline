@@ -79,3 +79,8 @@ dev = [
     "ruff==0.17.0",
     "types-pyyaml==6.0.12.20260906",
 ]
+
+[[tool.mypy.overrides]]
+# scripts/gen_diagrams.py runs with `uv run --with diagrams` (not a project dependency)
+module = ["diagrams", "diagrams.*"]
+ignore_missing_imports = true

@@ -1,0 +1,3502 @@
+{
+ "incidents": [
+  {
+   "id": "inc-20261011015035-924ae2",
+   "status": "closed",
+   "severity": "sev1",
+   "stream": "replay-demo-f3-b280b1",
+   "breached_metrics": [
+    "hit_count"
+   ],
+   "opened_at": "2026-10-09T05:00:00Z",
+   "detected_at": "2026-10-11T01:50:35.694091Z",
+   "closed_at": null,
+   "specialist": "retrieval",
+   "action": "pr",
+   "pr_url": "https://github.com/abh2050/driftline/pull/11",
+   "awaiting": null,
+   "fault_label": "F3",
+   "updated": 1791684331
+  },
+  {
+   "id": "inc-20261011010737-b4cc75",
+   "status": "pr_dry_run",
+   "severity": "sev1",
+   "stream": "replay-eval-f3-t1-e55050",
+   "breached_metrics": [
+    "hit_count"
+   ],
+   "opened_at": "2026-10-09T04:59:00Z",
+   "detected_at": "2026-10-11T01:07:37.172269Z",
+   "closed_at": null,
+   "specialist": "retrieval",
+   "action": "pr",
+   "pr_url": null,
+   "awaiting": null,
+   "fault_label": "F3",
+   "updated": 1791681050
+  },
+  {
+   "id": "inc-20261011001134-c0e372",
+   "status": "closed",
+   "severity": "sev3",
+   "stream": "live",
+   "breached_metrics": [
+    "citation_rate"
+   ],
+   "opened_at": "2026-10-10T23:00:00Z",
+   "detected_at": "2026-10-11T00:11:34.409254Z",
+   "closed_at": "2026-10-11T01:00:00+00:00",
+   "specialist": "prompt",
+   "action": "runbook",
+   "pr_url": null,
+   "awaiting": "runbook",
+   "fault_label": null,
+   "updated": 1791685172
+  },
+  {
+   "id": "inc-20261010234444-b7a5e5",
+   "status": "awaiting_human",
+   "severity": "sev1",
+   "stream": "replay-eval-f7-t3-3e0c94",
+   "breached_metrics": [
+    "latency_p95_ms",
+    "error_rate"
+   ],
+   "opened_at": "2026-10-07T12:00:00Z",
+   "detected_at": "2026-10-10T23:44:44.093801Z",
+   "closed_at": null,
+   "specialist": "performance",
+   "action": "escalate",
+   "pr_url": null,
+   "awaiting": "escalation",
+   "fault_label": "F7",
+   "updated": 1791676072
+  },
+  {
+   "id": "inc-20261010234441-92dd5a",
+   "status": "pr_dry_run",
+   "severity": "sev3",
+   "stream": "replay-eval-f6-t3-3e0c94",
+   "breached_metrics": [
+    "latency_p95_ms"
+   ],
+   "opened_at": "2026-10-06T14:05:00Z",
+   "detected_at": "2026-10-10T23:44:41.240399Z",
+   "closed_at": "2026-10-06T16:49:00+00:00",
+   "specialist": "performance",
+   "action": "pr",
+   "pr_url": null,
+   "awaiting": null,
+   "fault_label": "F6",
+   "updated": 1791676431
+  },
+  {
+   "id": "inc-20261010234438-783459",
+   "status": "closed",
+   "severity": "sev3",
+   "stream": "replay-eval-f5-t3-3e0c94",
+   "breached_metrics": [
+    "canary_accuracy"
+   ],
+   "opened_at": "2026-10-07T15:40:00Z",
+   "detected_at": "2026-10-10T23:44:38.727833Z",
+   "closed_at": "2026-10-07T16:57:00+00:00",
+   "specialist": "index",
+   "action": "runbook",
+   "pr_url": null,
+   "awaiting": "runbook",
+   "fault_label": "F5",
+   "updated": 1791676894
+  },
+  {
+   "id": "inc-20261010234436-fe3b61",
+   "status": "awaiting_human",
+   "severity": "sev1",
+   "stream": "replay-eval-f5-t3-3e0c94",
+   "breached_metrics": [
+    "canary_accuracy"
+   ],
+   "opened_at": "2026-10-07T13:20:00Z",
+   "detected_at": "2026-10-10T23:44:36.679837Z",
+   "closed_at": "2026-10-07T14:44:00+00:00",
+   "specialist": "index",
+   "action": "runbook",
+   "pr_url": null,
+   "awaiting": "runbook",
+   "fault_label": "F5",
+   "updated": 1791675966
+  },
+  {
+   "id": "inc-20261010234342-042ab0",
+   "status": "pr_dry_run",
+   "severity": "sev2",
+   "stream": "replay-eval-f4-t3-3e0c94",
+   "breached_metrics": [
+    "citation_rate"
+   ],
+   "opened_at": "2026-10-06T18:00:00Z",
+   "detected_at": "2026-10-10T23:43:42.985710Z",
+   "closed_at": null,
+   "specialist": "prompt",
+   "action": "pr",
+   "pr_url": null,
+   "awaiting": null,
+   "fault_label": "F4",
+   "updated": 1791676312
+  },
+  {
+   "id": "inc-20261010234340-4c57f9",
+   "status": "pr_dry_run",
+   "severity": "sev1",
+   "stream": "replay-eval-f3-t3-3e0c94",
+   "breached_metrics": [
+    "hit_count"
+   ],
+   "opened_at": "2026-10-09T10:59:00Z",
+   "detected_at": "2026-10-10T23:43:40.387149Z",
+   "closed_at": null,
+   "specialist": "retrieval",
+   "action": "pr",
+   "pr_url": null,
+   "awaiting": null,
+   "fault_label": "F3",
+   "updated": 1791676187
+  },
+  {
+   "id": "inc-20261010234336-a761dd",
+   "status": "pr_dry_run",
+   "severity": "sev1",
+   "stream": "replay-eval-f2-t3-3e0c94",
+   "breached_metrics": [
+    "groundedness",
+    "top_score",
+    "citation_rate"
+   ],
+   "opened_at": "2026-10-07T06:57:00Z",
+   "detected_at": "2026-10-10T23:43:36.500763Z",
+   "closed_at": null,
+   "specialist": "retrieval",
+   "action": "pr",
+   "pr_url": null,
+   "awaiting": null,
+   "fault_label": "F2",
+   "updated": 1791676071
+  },
+  {
+   "id": "inc-20261010234236-3dd18b",
+   "status": "pr_dry_run",
+   "severity": "sev3",
+   "stream": "replay-eval-f1-t3-3e0c94",
+   "breached_metrics": [
+    "top_score"
+   ],
+   "opened_at": "2026-10-10T03:04:00Z",
+   "detected_at": "2026-10-10T23:42:36.248836Z",
+   "closed_at": null,
+   "specialist": "retrieval",
+   "action": "pr",
+   "pr_url": null,
+   "awaiting": null,
+   "fault_label": "F1",
+   "updated": 1791675951
+  },
+  {
+   "id": "inc-20261010232547-c0def5",
+   "status": "awaiting_human",
+   "severity": "sev1",
+   "stream": "replay-eval-f7-t2-3e0c94",
+   "breached_metrics": [
+    "latency_p95_ms",
+    "error_rate"
+   ],
+   "opened_at": "2026-10-06T13:00:00Z",
+   "detected_at": "2026-10-10T23:25:47.113418Z",
+   "closed_at": null,
+   "specialist": "performance",
+   "action": "escalate",
+   "pr_url": null,
+   "awaiting": "escalation",
+   "fault_label": "F7",
+   "updated": 1791674977
+  },
+  {
+   "id": "inc-20261010232544-e23f75",
+   "status": "pr_dry_run",
+   "severity": "sev3",
+   "stream": "replay-eval-f6-t2-3e0c94",
+   "breached_metrics": [
+    "latency_p95_ms"
+   ],
+   "opened_at": "2026-10-05T21:05:00Z",
+   "detected_at": "2026-10-10T23:25:44.656399Z",
+   "closed_at": null,
+   "specialist": "performance",
+   "action": "pr",
+   "pr_url": null,
+   "awaiting": null,
+   "fault_label": "F6",
+   "updated": 1791675353
+  },
+  {
+   "id": "inc-20261010232542-2c615f",
+   "status": "awaiting_human",
+   "severity": "sev3",
+   "stream": "replay-eval-f5-t2-3e0c94",
+   "breached_metrics": [
+    "canary_accuracy"
+   ],
+   "opened_at": "2026-10-05T15:20:00Z",
+   "detected_at": "2026-10-10T23:25:42.486424Z",
+   "closed_at": null,
+   "specialist": "index",
+   "action": "runbook",
+   "pr_url": null,
+   "awaiting": "runbook",
+   "fault_label": "F5",
+   "updated": 1791674908
+  },
+  {
+   "id": "inc-20261010232539-496dbc",
+   "status": "pr_dry_run",
+   "severity": "sev2",
+   "stream": "replay-eval-f4-t2-3e0c94",
+   "breached_metrics": [
+    "citation_rate"
+   ],
+   "opened_at": "2026-10-08T14:59:00Z",
+   "detected_at": "2026-10-10T23:25:39.678952Z",
+   "closed_at": null,
+   "specialist": "prompt",
+   "action": "pr",
+   "pr_url": null,
+   "awaiting": null,
+   "fault_label": "F4",
+   "updated": 1791675231
+  },
+  {
+   "id": "inc-20261010232536-323cf2",
+   "status": "pr_dry_run",
+   "severity": "sev1",
+   "stream": "replay-eval-f3-t2-3e0c94",
+   "breached_metrics": [
+    "hit_count"
+   ],
+   "opened_at": "2026-10-10T11:59:00Z",
+   "detected_at": "2026-10-10T23:25:36.939814Z",
+   "closed_at": null,
+   "specialist": "retrieval",
+   "action": "pr",
+   "pr_url": null,
+   "awaiting": null,
+   "fault_label": "F3",
+   "updated": 1791675106
+  },
+  {
+   "id": "inc-20261010232438-ae13e2",
+   "status": "pr_dry_run",
+   "severity": "sev1",
+   "stream": "replay-eval-f2-t2-3e0c94",
+   "breached_metrics": [
+    "top_score",
+    "citation_rate"
+   ],
+   "opened_at": "2026-10-05T10:58:00Z",
+   "detected_at": "2026-10-10T23:24:38.421945Z",
+   "closed_at": null,
+   "specialist": "retrieval",
+   "action": "pr",
+   "pr_url": null,
+   "awaiting": null,
+   "fault_label": "F2",
+   "updated": 1791674988
+  },
+  {
+   "id": "inc-20261010232435-4305c5",
+   "status": "pr_dry_run",
+   "severity": "sev3",
+   "stream": "replay-eval-f1-t2-3e0c94",
+   "breached_metrics": [
+    "top_score"
+   ],
+   "opened_at": "2026-10-07T21:58:00Z",
+   "detected_at": "2026-10-10T23:24:35.687483Z",
+   "closed_at": null,
+   "specialist": "retrieval",
+   "action": "pr",
+   "pr_url": null,
+   "awaiting": null,
+   "fault_label": "F1",
+   "updated": 1791674870
+  },
+  {
+   "id": "inc-20261010230936-57667f",
+   "status": "awaiting_human",
+   "severity": "sev3",
+   "stream": "replay-eval-f7-t1-3e0c94",
+   "breached_metrics": [
+    "latency_p95_ms",
+    "error_rate"
+   ],
+   "opened_at": "2026-10-07T14:59:00Z",
+   "detected_at": "2026-10-10T23:09:36.358875Z",
+   "closed_at": null,
+   "specialist": "performance",
+   "action": "escalate",
+   "pr_url": null,
+   "awaiting": "escalation",
+   "fault_label": "F7",
+   "updated": 1791673971
+  },
+  {
+   "id": "inc-20261010230844-103921",
+   "status": "pr_dry_run",
+   "severity": "sev3",
+   "stream": "replay-eval-f6-t1-3e0c94",
+   "breached_metrics": [
+    "latency_p95_ms"
+   ],
+   "opened_at": "2026-10-10T07:00:00Z",
+   "detected_at": "2026-10-10T23:08:44.323539Z",
+   "closed_at": null,
+   "specialist": "retrieval",
+   "action": "pr",
+   "pr_url": null,
+   "awaiting": null,
+   "fault_label": "F6",
+   "updated": 1791674363
+  },
+  {
+   "id": "inc-20261010230841-41d75d",
+   "status": "closed",
+   "severity": "sev1",
+   "stream": "replay-eval-f5-t1-3e0c94",
+   "breached_metrics": [
+    "canary_accuracy"
+   ],
+   "opened_at": "2026-10-10T18:30:00Z",
+   "detected_at": "2026-10-10T23:08:41.863632Z",
+   "closed_at": "2026-10-10T21:57:00+00:00",
+   "specialist": "index",
+   "action": "runbook",
+   "pr_url": null,
+   "awaiting": "runbook",
+   "fault_label": "F5",
+   "updated": 1791674739
+  },
+  {
+   "id": "inc-20261010230839-801bf0",
+   "status": "pr_dry_run",
+   "severity": "sev2",
+   "stream": "replay-eval-f4-t1-3e0c94",
+   "breached_metrics": [
+    "citation_rate"
+   ],
+   "opened_at": "2026-10-09T23:00:00Z",
+   "detected_at": "2026-10-10T23:08:39.666195Z",
+   "closed_at": null,
+   "specialist": "prompt",
+   "action": "pr",
+   "pr_url": null,
+   "awaiting": null,
+   "fault_label": "F4",
+   "updated": 1791674241
+  },
+  {
+   "id": "inc-20261010230836-17dd4e",
+   "status": "pr_dry_run",
+   "severity": "sev1",
+   "stream": "replay-eval-f3-t1-3e0c94",
+   "breached_metrics": [
+    "hit_count"
+   ],
+   "opened_at": "2026-10-09T04:57:00Z",
+   "detected_at": "2026-10-10T23:08:36.206560Z",
+   "closed_at": null,
+   "specialist": "retrieval",
+   "action": "pr",
+   "pr_url": null,
+   "awaiting": null,
+   "fault_label": "F3",
+   "updated": 1791674125
+  },
+  {
+   "id": "inc-20261010230737-13aa31",
+   "status": "pr_dry_run",
+   "severity": "sev1",
+   "stream": "replay-eval-f2-t1-3e0c94",
+   "breached_metrics": [
+    "top_score",
+    "citation_rate"
+   ],
+   "opened_at": "2026-10-10T10:57:00Z",
+   "detected_at": "2026-10-10T23:07:37.977288Z",
+   "closed_at": null,
+   "specialist": "retrieval",
+   "action": "pr",
+   "pr_url": null,
+   "awaiting": null,
+   "fault_label": "F2",
+   "updated": 1791674002
+  },
+  {
+   "id": "inc-20261010230735-5c25ce",
+   "status": "pr_dry_run",
+   "severity": "sev3",
+   "stream": "replay-eval-f1-t1-3e0c94",
+   "breached_metrics": [
+    "top_score"
+   ],
+   "opened_at": "2026-10-07T00:02:00Z",
+   "detected_at": "2026-10-10T23:07:35.619717Z",
+   "closed_at": null,
+   "specialist": "retrieval",
+   "action": "pr",
+   "pr_url": null,
+   "awaiting": null,
+   "fault_label": "F1",
+   "updated": 1791673885
+  },
+  {
+   "id": "inc-20261010223335-2a8724",
+   "status": "pr_dry_run",
+   "severity": "sev1",
+   "stream": "replay-eval-f3-t1-7a8884",
+   "breached_metrics": [
+    "hit_count"
+   ],
+   "opened_at": "2026-10-09T05:00:00Z",
+   "detected_at": "2026-10-10T22:33:35.734248Z",
+   "closed_at": null,
+   "specialist": "retrieval",
+   "action": "pr",
+   "pr_url": null,
+   "awaiting": null,
+   "fault_label": "F3",
+   "updated": 1791671991
+  },
+  {
+   "id": "inc-20261010223239-2253cf",
+   "status": "pr_dry_run",
+   "severity": "sev1",
+   "stream": "replay-eval-f2-t1-7a8884",
+   "breached_metrics": [
+    "top_score",
+    "citation_rate"
+   ],
+   "opened_at": "2026-10-10T11:00:00Z",
+   "detected_at": "2026-10-10T22:32:39.073740Z",
+   "closed_at": null,
+   "specialist": "retrieval",
+   "action": "pr",
+   "pr_url": null,
+   "awaiting": null,
+   "fault_label": "F2",
+   "updated": 1791671873
+  },
+  {
+   "id": "inc-20261010223235-d51947",
+   "status": "pr_dry_run",
+   "severity": "sev3",
+   "stream": "replay-eval-f1-t1-7a8884",
+   "breached_metrics": [
+    "top_score"
+   ],
+   "opened_at": "2026-10-06T23:59:00Z",
+   "detected_at": "2026-10-10T22:32:35.526554Z",
+   "closed_at": null,
+   "specialist": "retrieval",
+   "action": "pr",
+   "pr_url": null,
+   "awaiting": null,
+   "fault_label": "F1",
+   "updated": 1791671754
+  },
+  {
+   "id": "inc-20261010211333-49dcab",
+   "status": "closed",
+   "severity": "sev3",
+   "stream": "live",
+   "breached_metrics": [
+    "latency_p95_ms"
+   ],
+   "opened_at": "2026-10-10T21:00:00Z",
+   "detected_at": "2026-10-10T21:13:33.773840Z",
+   "closed_at": "2026-10-10T21:55:00+00:00",
+   "specialist": "performance",
+   "action": "runbook",
+   "pr_url": null,
+   "awaiting": "runbook",
+   "fault_label": null,
+   "updated": 1791670111
+  },
+  {
+   "id": "inc-20261010203241-e63293",
+   "status": "fix_merged",
+   "severity": "sev2",
+   "stream": "replay-fin2-f4",
+   "breached_metrics": [
+    "citation_rate"
+   ],
+   "opened_at": "2026-10-08T05:00:00Z",
+   "detected_at": "2026-10-10T20:32:41.474629Z",
+   "closed_at": null,
+   "specialist": "prompt",
+   "action": "pr",
+   "pr_url": "https://github.com/abh2050/driftline/pull/10",
+   "awaiting": null,
+   "fault_label": "F4",
+   "updated": 1791684331
+  },
+  {
+   "id": "inc-20261010203238-a0c0a6",
+   "status": "closed",
+   "severity": "sev1",
+   "stream": "replay-fin2-f1",
+   "breached_metrics": [
+    "top_score"
+   ],
+   "opened_at": "2026-10-07T02:01:00Z",
+   "detected_at": "2026-10-10T20:32:38.982353Z",
+   "closed_at": null,
+   "specialist": "retrieval",
+   "action": "pr",
+   "pr_url": "https://github.com/abh2050/driftline/pull/9",
+   "awaiting": null,
+   "fault_label": "F1",
+   "updated": 1791684330
+  },
+  {
+   "id": "inc-20261010201154-21ead8",
+   "status": "closed",
+   "severity": "sev3",
+   "stream": "replay-fin-f7",
+   "breached_metrics": [
+    "latency_p95_ms",
+    "error_rate"
+   ],
+   "opened_at": "2026-10-08T07:00:00Z",
+   "detected_at": "2026-10-10T20:11:54.883622Z",
+   "closed_at": null,
+   "specialist": "performance",
+   "action": "escalate",
+   "pr_url": null,
+   "awaiting": null,
+   "fault_label": "F7",
+   "updated": 1791664839
+  },
+  {
+   "id": "inc-20261010201150-55af26",
+   "status": "closed",
+   "severity": "sev3",
+   "stream": "replay-fin-f6",
+   "breached_metrics": [
+    "latency_p95_ms"
+   ],
+   "opened_at": "2026-10-09T21:01:00Z",
+   "detected_at": "2026-10-10T20:11:50.893757Z",
+   "closed_at": null,
+   "specialist": "performance",
+   "action": "pr",
+   "pr_url": "https://github.com/abh2050/driftline/pull/8",
+   "awaiting": null,
+   "fault_label": "F6",
+   "updated": 1791684330
+  },
+  {
+   "id": "inc-20261010201147-119668",
+   "status": "awaiting_human",
+   "severity": "sev1",
+   "stream": "replay-fin-f5",
+   "breached_metrics": [
+    "canary_accuracy"
+   ],
+   "opened_at": "2026-10-07T08:05:00Z",
+   "detected_at": "2026-10-10T20:11:47.528894Z",
+   "closed_at": null,
+   "specialist": "index",
+   "action": "runbook",
+   "pr_url": null,
+   "awaiting": "runbook",
+   "fault_label": "F5",
+   "updated": 1791663326
+  },
+  {
+   "id": "inc-20261010201145-81666d",
+   "status": "awaiting_human",
+   "severity": "sev1",
+   "stream": "replay-fin-f4",
+   "breached_metrics": [
+    "citation_rate"
+   ],
+   "opened_at": "2026-10-08T05:00:00Z",
+   "detected_at": "2026-10-10T20:11:45.138012Z",
+   "closed_at": null,
+   "specialist": "prompt",
+   "action": "pr",
+   "pr_url": null,
+   "awaiting": "escalation",
+   "fault_label": "F4",
+   "updated": 1791663427
+  },
+  {
+   "id": "inc-20261010201141-b0cee7",
+   "status": "fix_merged",
+   "severity": "sev1",
+   "stream": "replay-fin-f3",
+   "breached_metrics": [
+    "hit_count"
+   ],
+   "opened_at": "2026-10-09T00:57:00Z",
+   "detected_at": "2026-10-10T20:11:41.220557Z",
+   "closed_at": null,
+   "specialist": "retrieval",
+   "action": "pr",
+   "pr_url": "https://github.com/abh2050/driftline/pull/7",
+   "awaiting": null,
+   "fault_label": "F3",
+   "updated": 1791684330
+  },
+  {
+   "id": "inc-20261010201135-138d7f",
+   "status": "closed",
+   "severity": "sev4",
+   "stream": "live",
+   "breached_metrics": [
+    "latency_p95_ms"
+   ],
+   "opened_at": "2026-10-10T19:55:00Z",
+   "detected_at": "2026-10-10T20:11:35.849978Z",
+   "closed_at": "2026-10-10T20:50:00+00:00",
+   "specialist": "performance",
+   "action": "escalate",
+   "pr_url": null,
+   "awaiting": "escalation",
+   "fault_label": null,
+   "updated": 1791665791
+  },
+  {
+   "id": "inc-20261010201038-eb7fd7",
+   "status": "awaiting_human",
+   "severity": "sev1",
+   "stream": "replay-fin-f1",
+   "breached_metrics": [
+    "top_score"
+   ],
+   "opened_at": "2026-10-07T02:03:00Z",
+   "detected_at": "2026-10-10T20:10:38.383337Z",
+   "closed_at": null,
+   "specialist": "retrieval",
+   "action": "runbook",
+   "pr_url": null,
+   "awaiting": "runbook",
+   "fault_label": "F1",
+   "updated": 1791663182
+  },
+  {
+   "id": "inc-20261010192135-271de0",
+   "status": "awaiting_human",
+   "severity": "sev1",
+   "stream": "replay-p7f5",
+   "breached_metrics": [
+    "canary_accuracy"
+   ],
+   "opened_at": "2026-10-10T21:59:00Z",
+   "detected_at": "2026-10-10T19:21:35.692813Z",
+   "closed_at": null,
+   "specialist": "index",
+   "action": "runbook",
+   "pr_url": null,
+   "awaiting": "runbook",
+   "fault_label": "F5",
+   "updated": 1791660155
+  },
+  {
+   "id": "inc-20261010191841-9ab279",
+   "status": "awaiting_human",
+   "severity": "sev1",
+   "stream": "replay-acc2-f7",
+   "breached_metrics": [
+    "error_rate"
+   ],
+   "opened_at": "2026-10-08T03:04:00Z",
+   "detected_at": "2026-10-10T19:18:41.725124Z",
+   "closed_at": null,
+   "specialist": "performance",
+   "action": "runbook",
+   "pr_url": null,
+   "awaiting": "runbook",
+   "fault_label": "F7",
+   "updated": 1791660092
+  }
+ ],
+ "detail": {
+  "id": "inc-20261011015035-924ae2",
+  "pk": "incident",
+  "stream": "replay-demo-f3-b280b1",
+  "status": "closed",
+  "opened_at": "2026-10-09T05:00:00Z",
+  "detected_at": "2026-10-11T01:50:35.694091Z",
+  "breached_metrics": [
+   "hit_count"
+  ],
+  "metric_deltas": {
+   "hit_count": {
+    "baseline": 7.8603,
+    "current": 2,
+    "delta_pct": -74.6,
+    "cusum": 57.77
+   }
+  },
+  "window_count": 10,
+  "config_hash": "150116ff3f18",
+  "baseline_config_hash": "b97109e0ad35",
+  "config_diff": [
+   {
+    "key": "top_k",
+    "from": 8,
+    "to": 2
+   }
+  ],
+  "recent_deploys": [
+   {
+    "commit": "ab254573d960e521c8817b504983a34ae8147252"
+   }
+  ],
+  "d1": {
+   "question_id": "d1-e5cb20db",
+   "options": [
+    "real",
+    "noise"
+   ],
+   "scores": {
+    "real": 0.95,
+    "noise": 0.05
+   },
+   "chosen": "real",
+   "margin": 0.9,
+   "latency_ms": 1960.5,
+   "model": "gpt-5-mini",
+   "input_tokens": 316,
+   "cost_usd": 0.000355,
+   "decision_type": "D1",
+   "client": "gpt-5-mini",
+   "escalated": false,
+   "rationale": "Sustained 10-minute breach with a large -74.6% hit_count drop coinciding with a config change (top_k 8\u21922) and a recent deploy strongly indicates a real incident rather than brief noise.",
+   "output_tokens": 138
+  },
+  "error_status_counts": {},
+  "stage_latency_p95_ms": {
+   "retrieval": {
+    "before": 233.2,
+    "during": 224.2
+   },
+   "llm": {
+    "before": 2379.8,
+    "during": 1834
+   }
+  },
+  "fault_label": "F3",
+  "traceparent": "00-6089a32d8cc8c2a6ed24a9fc0c0ff449-e353d3bb77250d4a-01",
+  "severity": "sev1",
+  "action": "pr",
+  "validation": {
+   "run_id": "2a4cdd7aef",
+   "incident_id": "inc-20261011015035-924ae2",
+   "changes": {
+    "top_k": 8
+   },
+   "running": {
+    "top_k": 2
+   },
+   "config_hash": "b97109e0ad35",
+   "questions": 40,
+   "temp_index": null,
+   "target_metric": "recall_at_k",
+   "baseline": {
+    "questions": 40,
+    "error_rate": 0,
+    "recall_at_k": 0.95,
+    "mrr": 0.6792,
+    "groundedness": 3.95,
+    "relevance": 4.025,
+    "response_completeness": 3.475,
+    "judged": 40,
+    "citation_rate": 0.925,
+    "answer_accuracy": 0.925,
+    "latency_p50_ms": 1712.7,
+    "latency_p95_ms": 4309.8,
+    "cost_per_query_usd": 0.001769
+   },
+   "candidate": {
+    "questions": 40,
+    "error_rate": 0,
+    "recall_at_k": 0.95,
+    "mrr": 0.6792,
+    "groundedness": 3.825,
+    "relevance": 4.025,
+    "response_completeness": 3.475,
+    "judged": 40,
+    "citation_rate": 0.925,
+    "answer_accuracy": 0.925,
+    "latency_p50_ms": 1409.1,
+    "latency_p95_ms": 1829.6,
+    "cost_per_query_usd": 0.001767
+   },
+   "gate": {
+    "passed": true,
+    "recovered": true,
+    "regressions": {},
+    "details": {
+     "recall_at_k": {
+      "baseline": 0.95,
+      "candidate": 0.95,
+      "regression": 0,
+      "noise_rel": 0
+     },
+     "mrr": {
+      "baseline": 0.6792,
+      "candidate": 0.6792,
+      "regression": 0,
+      "noise_rel": 0
+     },
+     "groundedness": {
+      "baseline": 3.95,
+      "candidate": 3.825,
+      "regression": 0.0316,
+      "noise_rel": 0.0633
+     },
+     "relevance": {
+      "baseline": 4.025,
+      "candidate": 4.025,
+      "regression": 0,
+      "noise_rel": 0.0356
+     },
+     "response_completeness": {
+      "baseline": 3.475,
+      "candidate": 3.475,
+      "regression": 0,
+      "noise_rel": 0.0583
+     },
+     "citation_rate": {
+      "baseline": 0.925,
+      "candidate": 0.925,
+      "regression": 0,
+      "noise_rel": 0
+     },
+     "answer_accuracy": {
+      "baseline": 0.925,
+      "candidate": 0.925,
+      "regression": 0,
+      "noise_rel": 0
+     },
+     "latency_p95_ms": {
+      "baseline": 4309.8,
+      "candidate": 1829.6,
+      "regression": -0.5755,
+      "noise_rel": 0
+     },
+     "cost_per_query_usd": {
+      "baseline": 0.001769,
+      "candidate": 0.001767,
+      "regression": -0.0011,
+      "noise_rel": 0
+     }
+    }
+   },
+   "finished_at": "2026-10-11T01:53:42.056004+00:00",
+   "blob": "inc-20261011015035-924ae2/2a4cdd7aef.json"
+  },
+  "pr_url": "https://github.com/abh2050/driftline/pull/11",
+  "resolution": {
+   "outcome": "pr_closed_unmerged"
+  },
+  "summary": {
+   "id": "inc-20261011015035-924ae2",
+   "status": "closed",
+   "severity": "sev1",
+   "stream": "replay-demo-f3-b280b1",
+   "breached_metrics": [
+    "hit_count"
+   ],
+   "opened_at": "2026-10-09T05:00:00Z",
+   "detected_at": "2026-10-11T01:50:35.694091Z",
+   "closed_at": null,
+   "specialist": "retrieval",
+   "action": "pr",
+   "pr_url": "https://github.com/abh2050/driftline/pull/11",
+   "awaiting": null,
+   "fault_label": "F3",
+   "updated": 1791684331
+  },
+  "decisions": {
+   "D2": {
+    "chosen": "sev1",
+    "scores": {
+     "sev1": 0.9,
+     "sev2": 0.06,
+     "sev3": 0.03,
+     "sev4": 0.01
+    },
+    "margin": 0.84,
+    "escalated": false,
+    "rationale": "hit_count (a groundedness/retrieval metric) dropped ~74.6% after top_k changed 8\u21922, exceeding the sev1 groundedness-down threshold (>=40%), so this most closely matches sev1.",
+    "client": "gpt-5-mini",
+    "cost_usd": 0.000802,
+    "latency_ms": 3690.1
+   },
+   "D3": {
+    "chosen": "retrieval",
+    "scores": {
+     "retrieval": 0.9,
+     "prompt": 0.03,
+     "index": 0.03,
+     "performance": 0.04
+    },
+    "margin": 0.86,
+    "escalated": false,
+    "rationale": "A large drop in hit_count coincides with a config change reducing top_k (8\u21922), pointing to a retrieval tuning/regression rather than latency, indexing freshness, or prompt changes.",
+    "client": "gpt-5-mini",
+    "cost_usd": 0.0005235,
+    "latency_ms": 2402.9
+   },
+   "D4": {
+    "chosen": "pr",
+    "scores": {
+     "pr": 0.949905,
+     "runbook": 0.049995,
+     "escalate": 0.0001
+    },
+    "margin": 0.89991,
+    "escalated": false,
+    "rationale": "The root cause is a repo/config setting change (top_k reduced from 8 to 2) that should be fixed by restoring/pinning the correct value via a PR, with minor uncertainty if an operator-run rollback could also resolve it immediately.",
+    "client": "gpt-5-mini",
+    "cost_usd": 0.0004265,
+    "latency_ms": 2016.6
+   },
+   "D5": {
+    "chosen": "accept",
+    "scores": {
+     "accept": 0.95,
+     "reject": 0.05
+    },
+    "margin": 0.9,
+    "escalated": false,
+    "rationale": "The target metric recall_at_k recovered to baseline (0.95), gate shows passed and recovered with no regressions, and the patch only modifies apps/patient-rag/config (top_k change), so it meets the acceptance criteria.",
+    "client": "gpt-5-mini",
+    "cost_usd": 0.0006605,
+    "latency_ms": 3244.3
+   },
+   "D6": {
+    "chosen": "allow",
+    "scores": {
+     "allow": 0.949905,
+     "needs_human": 0.049995,
+     "deny": 0.0001
+    },
+    "margin": 0.89991,
+    "escalated": false,
+    "rationale": "The PR opens a branch and modifies only apps/patient-rag/config/rag.yaml, which is within the allowed paths for automated write actions, so it should be allowed (with slight uncertainty for any unusual unseen context).",
+    "client": "gpt-5-mini",
+    "cost_usd": 0.0003775,
+    "latency_ms": 2048.3
+   }
+  },
+  "specialists": [
+   "retrieval"
+  ],
+  "specialist": "retrieval",
+  "rca": {
+   "root_cause": "top_k was reduced from 8 to 2 in the running configuration, which reduced the number of retrieved document hits per query and caused hit_count to drop ~75%.",
+   "evidence": [
+    {
+     "source": "metric: hit_count",
+     "detail": "Baseline hit_count 7.8603 \u2192 current 2.0 (delta -74.6%, cusum 57.77) as provided in the incident payload."
+    },
+    {
+     "source": "config_diff",
+     "detail": "The provided config diff shows top_k changed from 8 to 2 (key: top_k, from: 8, to: 2)."
+    },
+    {
+     "source": "file: apps/patient-rag/config/rag.yaml",
+     "detail": "Repository copy of apps/patient-rag/config/rag.yaml shows top_k: 8 (file contents downloaded from repo). This indicates the repository's pinned/default value is 8 while the running config (per the diff) is 2."
+    },
+    {
+     "source": "query: agent_health",
+     "detail": "agent_health query (last 60m) shows very low retrieval-specialist invocations (2) consistent with overall reduced retrieval activity; no errors reported. Columns: [agent, invocations, errors, p95_ms] had retrieval-specialist invocations = 2."
+    },
+    {
+     "source": "file: apps/patient-rag/prompts/v3.md",
+     "detail": "Prompt v3 (installed/pinned in repo) confirms prompt_version is v3 in rag.yaml, ruling out a prompt switch as the immediate cause (prompt content unchanged)."
+    }
+   ],
+   "config_changes": [
+    {
+     "key": "top_k",
+     "value": "8"
+    }
+   ],
+   "runbook": [],
+   "confidence": 0.9
+  },
+  "rcas": {
+   "retrieval": {
+    "root_cause": "top_k was reduced from 8 to 2 in the running configuration, which reduced the number of retrieved document hits per query and caused hit_count to drop ~75%.",
+    "evidence": [
+     {
+      "source": "metric: hit_count",
+      "detail": "Baseline hit_count 7.8603 \u2192 current 2.0 (delta -74.6%, cusum 57.77) as provided in the incident payload."
+     },
+     {
+      "source": "config_diff",
+      "detail": "The provided config diff shows top_k changed from 8 to 2 (key: top_k, from: 8, to: 2)."
+     },
+     {
+      "source": "file: apps/patient-rag/config/rag.yaml",
+      "detail": "Repository copy of apps/patient-rag/config/rag.yaml shows top_k: 8 (file contents downloaded from repo). This indicates the repository's pinned/default value is 8 while the running config (per the diff) is 2."
+     },
+     {
+      "source": "query: agent_health",
+      "detail": "agent_health query (last 60m) shows very low retrieval-specialist invocations (2) consistent with overall reduced retrieval activity; no errors reported. Columns: [agent, invocations, errors, p95_ms] had retrieval-specialist invocations = 2."
+     },
+     {
+      "source": "file: apps/patient-rag/prompts/v3.md",
+      "detail": "Prompt v3 (installed/pinned in repo) confirms prompt_version is v3 in rag.yaml, ruling out a prompt switch as the immediate cause (prompt content unchanged)."
+     }
+    ],
+    "config_changes": [
+     {
+      "key": "top_k",
+      "value": "8"
+     }
+    ],
+    "runbook": [],
+    "confidence": 0.9
+   }
+  },
+  "escalations": [],
+  "costs": {
+   "tokens_usd": 0.016282,
+   "decisions_usd": 0.0036837499999999995
+  },
+  "notes": [],
+  "trace_url": null
+ },
+ "approvals": [
+  {
+   "incident_id": "inc-20261010234444-b7a5e5",
+   "kind": "escalation",
+   "summary": "Transient throttling / rate-limiting of the chat/LLM gateway (429s) causing elevated LLM latency and downstream request errors.",
+   "runbook": [
+    "Immediate mitigation (fast):",
+    "1) Throttle client concurrency and enable/ensure exponential backoff for LLM calls. Reduce parallel requests to the chat_deployment (gpt-4.1-mini) until errors drop.",
+    "2) If a gateway or API key quota is exhausted, drop nonessential background/low-priority requests (maintenance jobs) to preserve capacity for user-facing traffic.",
+    "",
+    "Investigate & confirm:",
+    "3) Correlate the 429 responses with provider/gateway logs and trace IDs. Pull traces for failing requests and note timestamps and request IDs for escalation.",
+    "   - Check the gateway/edge logs that sit in front of the chat provider for spikes or rate-limit responses around the incident times.",
+    "4) Check the LLM/chat provider dashboard (quota, rate-limit windows, per-key limits) to determine if a provider-side throttling event or quota exhaustion occurred.",
+    "5) Examine service-side metrics and recent deploy logs for the listed commit (5eb8ae522f33) to confirm no hidden runtime change (build-time flags, env var changes) altered request patterns.",
+    "",
+    "Corrective actions (short-term):",
+    "6) If provider-side throttling is confirmed and cannot be immediately lifted, fail fast for new requests or return a degraded response with a clear user-facing error while throttling is in effect.",
+    "7) If a configuration/regression at deploy time is suspected and a safe previous revision exists, consider rolling back the recent deploy while continuing investigation.",
+    "",
+    "Corrective actions (medium-term):",
+    "8) Implement client-side circuit breaker for LLM calls: open the circuit on repeated 429s to avoid piling on retries and causing cascading latency increases.",
+    "9) Add/verify per-API-key rate-limiting, request queuing, and prioritized request lanes (so high-priority traffic continues when capacity is constrained).",
+    "10) Add alerting that distinguishes dependency 429s (rate-limits) from provider 5xxs, and include the LLM stage p95 in dependency alerts.",
+    "",
+    "Escalation (if provider-side):",
+    "11) If provider quota/behavior is implicated, collect traces, timestamps, and representative request IDs, then escalate to the provider support team with those artifacts.",
+    "",
+    "Validation & postmortem:",
+    "12) After mitigation, monitor error_rate and latency_p95_ms until they return to baseline. Verify the LLM stage p95 returns to pre-incident range.",
+    "13) In the postmortem, record root cause, timeline, and gap in defensive controls (backoff, circuit breaker, throttling), and plan follow-ups."
+   ],
+   "reasons": [],
+   "severity": "sev1",
+   "specialist": "performance",
+   "detected_at": "2026-10-10T23:44:44.093801Z"
+  },
+  {
+   "incident_id": "inc-20261010234436-fe3b61",
+   "kind": "runbook",
+   "summary": "Runtime indexer failure / stale index (indexer agent slow or not completing runs) causing retrieval to return wrong/missing documents and therefore low canary accuracy.",
+   "runbook": [
+    "Confirm the canary failure and scope: re-run the canary test (single known QA query) and capture the full request/response, retrieval hits, and cited doc IDs.",
+    "Check indexer agent health metrics and recent invocations (agent name: index-specialist). Verify p95, error rates, and invocation counts from monitoring (you already saw p95 \u224847s). If p95 is high or invocations low, proceed.",
+    "Inspect indexer worker logs for recent failures or timeouts (look for the index-specialist process / pod logs). Search logs for errors, embedding failures, timeouts or OOMs around the canary times and around the recent deploy.",
+    "Verify index contents for index_prefix 'cfw' (from apps/patient-rag/config/rag.yaml): run a document-count / index summary query against the search/index store to confirm document count and last-indexed timestamp. If the index is empty or last-indexed is older than expected, the index is stale.",
+    "If index documents are missing or old, check the indexing job status: find the most recent index run job, its logs, and exit status. If there is a queued/failed job, examine why embeddings or storage writes failed.",
+    "Check connectivity to embedding service (embedding_deployment = text-embedding-3-small) and search backend: validate API access, credentials, and recent errors in dependency logs. If embeddings failed, indexer runs will fail to produce vectors.",
+    "If the indexer pod(s) are unhealthy (CrashLoopBackOff, OOMKilled, or stuck), attempt a controlled restart of the indexer worker(s) and monitor logs as it starts a new run. If running on k8s: kubectl rollout restart or restart the specific deployment; capture logs on restart.",
+    "If the indexing job is healthy but results are inconsistent, re-run a full reindex for index_prefix 'cfw' and watch the job to completion. Monitor: indexing job logs, embedding calls, and final document counts. Do not change rag.yaml values during this troubleshooting.",
+    "After reindex completes, re-run the canary queries and confirm canary_accuracy returns to baseline. Capture retrieval hits and cited doc IDs to confirm correct documents are returned (prompt v3 requires citations).",
+    "If reindex fails repeatedly due to embedding/LLM service failures, escalate to infra/ML infra to restore the embedding_deployment endpoint or credentials (evidence: indexer logs + embedding_deployment in rag.yaml).",
+    "If indexer runs are succeeding but canary still fails, capture a failing request trace (full trace/span) including retrieval decisions and recent decisions for D3 for further analysis, and escalate to Doc QA / Index schema team to check whether a schema change or document ingestion rule dropped required fields.",
+    "If root cause cannot be resolved within the window, temporarily disable automated canary alerts or pause rollouts (per runbook policy) while the index is being recovered, to avoid noisy alerting \u2014 but only after communicating to stakeholders."
+   ],
+   "reasons": [],
+   "severity": "sev1",
+   "specialist": "index",
+   "detected_at": "2026-10-10T23:44:36.679837Z"
+  },
+  {
+   "incident_id": "inc-20261010232547-c0def5",
+   "kind": "escalation",
+   "summary": "Runtime throttling of the LLM (chat) dependency: chat-stage P95 latency increased sharply while retrieval stayed flat, and 429 (rate-limit) responses were observed. Reranker is disabled in config so a slow reranker is not the cause; this is a runtime capacity/throttle issue (external gateway or chat deployment throttling or degraded chat service after the recent deploy).",
+   "runbook": [
+    "Immediate mitigation (5\u201315 min):",
+    "1) Verify current 429/latency spike in live logs and dashboards (confirm request IDs and timestamps). Source: error_status_counts (429s) and stage_latency_p95_ms.llm.",
+    "2) Reduce concurrency from upstream/gateway if possible (temporarily throttle client concurrency) to stop further 429s and reduce queueing latency.",
+    "3) Increase client-side retries with exponential backoff for 429s (if not already present) and ensure jitter is used. Avoid aggressive immediate retries that amplify throttling.",
+    "4) If the system has a circuit-breaker for LLM failures, open it to return an informative error to clients instead of queuing to the throttled LLM.",
+    "",
+    "Diagnosis (15\u201360 min):",
+    "5) Check the chat provider/gateway quotas and recent error logs for quota-exceeded or rate-limit messages (provider console and gateway logs). Cite: error_status_counts (429).",
+    "6) Inspect recent traces for slow LLM calls and headers returned by the provider (rate-limit headers, e.g. Retry-After). Correlate with p95 increases in stage_latency_p95_ms.llm.",
+    "7) Verify no hidden reranker or extra LLM calls are being made at runtime (double-check instrumentation despite reranker_enabled:false in apps/patient-rag/config/rag.yaml).",
+    "8) Check the deployment at commit 870fc4b43919746845daf7b5b3e93bb2d6fb7c5f for non-config changes that could increase LLM call rate or payload sizes (note: config_diff is empty in the incident).",
+    "",
+    "Remediation (60\u2013240 min):",
+    "9) If provider quota exhausted or provider-side throttling: escalate to provider support and request immediate rate/quota relief or investigate provider incident. Provide timestamps and request IDs from step 1.",
+    "10) If gateway (internal) is enforcing a rate limit: raise gateway capacity or adjust rate-limit policy temporarily for patient-rag traffic.",
+    "11) Consider short-term configuration mitigations if acceptable: reduce max_answer_tokens or lower concurrency limits from clients to decrease per-request cost/time while recovering (implement via traffic shaping rather than code changes).",
+    "",
+    "Post-incident follow-up:",
+    "12) Add monitoring/alerting on provider rate-limit headers and LLM-stage 429 rate to detect recurrence earlier.",
+    "13) If recurring capacity needs are identified, plan capacity increase or deploy a fallback cheaper model for high-volume traffic.",
+    "14) Document a runbook for switching traffic to alternative chat_deployment if future throttling occurs (include tested alternative deployments and config keys to change)."
+   ],
+   "reasons": [],
+   "severity": "sev1",
+   "specialist": "performance",
+   "detected_at": "2026-10-10T23:25:47.113418Z"
+  },
+  {
+   "incident_id": "inc-20261010232542-2c615f",
+   "kind": "runbook",
+   "summary": "Runtime retrieval/indexer outage or severe degradation causing document retrievals to fail or time out, so the assistant frequently returns 'no answer from docs' under the v3 prompt (reducing canary accuracy).",
+   "runbook": [
+    "Immediate triage (5\u201315 min):",
+    "1) Confirm retrieval/indexer health:",
+    "   - Check indexer jobs/services: e.g., kubectl get pods -n <ns> | grep indexer/patient-rag and kubectl logs <indexer-pod> (or your orchestration equivalent). Look for recent failures, crashloops, or missing runs since the recent deploy.",
+    "   - Check index document counts for index_prefix 'cfw' (configured in apps/patient-rag/config/rag.yaml). If your search API supports it, run a count query for the index and compare to expected doc counts.",
+    "2) Check vector DB / search service and embeddings:",
+    "   - Verify vector DB is reachable and not returning errors/timeouts (connection, CPU, disk pressure).",
+    "   - Check embedding service health for embedding_deployment 'text-embedding-3-small' and recent embedding job errors or queue backlog.",
+    "3) Inspect retrieval-specialist and index-specialist logs (agent logs):",
+    "   - Pull recent logs for 'retrieval-specialist' and 'index-specialist' for the last 60 minutes. Look for timeouts, rate-limit errors, DNS/connectivity errors, or out-of-memory events. Agent_health showed p95 latencies of ~156s and ~47s respectively which indicates timeouts or blocked workers.",
+    "4) Check recent indexer job runs and schedules:",
+    "   - If the indexer is a scheduled job, confirm the last successful run time. If there is no recent successful run, the index may be stale or empty.",
+    "5) Quick remediation (if indexer/job is stopped or failing):",
+    "   - Restart the indexer job or pod and monitor logs for progress. If the job is a one-off, re-run the reindex pipeline for Cascade Forge Works documents.",
+    "   - If reindex succeeds, run the canary suite (the same canary queries that produce canary_accuracy) and validate accuracy returns to baseline.",
+    "6) If vector DB or embeddings are unhealthy:",
+    "   - Restart/scale the affected service. If storage or cluster-level issues exist, escalate to infra/SRE. Check for disk fullness, eviction, or network partitions.",
+    "7) If retrieval latency is high but services appear nominal:",
+    "   - Investigate throttling/rate limits between services (embedding calls, search queries).",
+    "   - Consider temporarily increasing worker counts or timeouts for the retrieval/index workers while root cause is addressed, then revert.",
+    "8) Post-recovery validation:",
+    "   - Run the canary suite across the same window_count (10) used in the incident and confirm canary_accuracy returns to expected baseline (>= 0.9).",
+    "   - Monitor agent_health and dependency metrics for several hours to ensure the regression does not recur.",
+    "9) If the recent deploy coincides with service failures and restarting the indexer/services does not restore behavior:",
+    "   - Collect deploy logs and the commit diff of the deploy, escalate to the deploy author and infra. Although config_diff is empty, a deploy can change runtime artifacts or infra wiring; gather logs and metrics around the deploy time for correlation.",
+    "10) If unable to resolve within SLA (escalation):",
+    "   - Escalate to platform SRE and include: retrieval-specialist and index-specialist logs, vector DB health metrics, embedding service metrics, index document counts, and canary query logs.",
+    "",
+    "Monitoring and follow-up:",
+    "- After recovery, enable or add an automated alert on retrieval-specialist p95 exceeding X ms (choose threshold between 2\u201310s depending on normal) and on index document count drops/zero for index_prefix 'cfw'.",
+    "- Add a daily check that verifies the indexer has run successfully at least once in the past 24 hours."
+   ],
+   "reasons": [],
+   "severity": "sev3",
+   "specialist": "index",
+   "detected_at": "2026-10-10T23:25:42.486424Z"
+  },
+  {
+   "incident_id": "inc-20261010230936-57667f",
+   "kind": "escalation",
+   "summary": "Chat (LLM) requests were being throttled by the gateway / upstream rate limits causing 429s, which triggered retries/backoffs and drove up p95 LLM latency and overall request error rate.",
+   "runbook": [
+    "Immediate diagnosis (10 min):",
+    "  1) Verify 429s in gateway/provider logs: search API/gateway logs for 429 responses and capture timestamps, request IDs, and any rate-limit headers (Retry-After, X-RateLimit-*) for the period of the incident. (Evidence: error_status_counts 429:10).",
+    "  2) Correlate 429s with LLM call traces: gather traces/spans for a sample of affected requests to the chat/LLM deployment to confirm the 429s originate from the provider/gateway and to measure retry/backoff behavior. (Evidence: stage_latency_p95_ms shows LLM impact).",
+    "  3) Check client-side retry behavior and concurrency: inspect the service logs to see whether exponential backoff and jitter are in effect or if aggressive immediate retries amplified load on the LLM gateway.",
+    "",
+    "Mitigation (10\u201330 min):",
+    "  4) Apply short-term throttling on outgoing LLM traffic from patient-rag: reduce concurrency (limit in-flight LLM calls) or enable a small request queue to smooth bursts. This is a runtime change to the service/load-balancer \u2014 do NOT change external quotas here. Rationale: reduces new 429s and curbs retries that increase latency.",
+    "  5) Temporarily increase retry backoff and add jitter in the client calling the LLM (if safe), to avoid synchronized retry storms. Configure longer Retry-After respect when provided by gateway.",
+    "  6) If the gateway reports a Retry-After header or provider quota error, honor it and reduce request rate immediately.",
+    "",
+    "Escalation (if 429s continue after mitigations, 30\u201360 min):",
+    "  7) Collect evidence for provider escalation: timestamps, example request IDs/trace IDs, full raw response headers and bodies from the 429 responses, and request rate (rps) and concurrency at the time of the 429s. Include the chat_deployment name (gpt-4.1-mini) and the recent deploy commit SHA (4261be4b6feb9db1d2003bbc7cbd742240d9bef2).",
+    "  8) Open an incident with the provider/gateway (include evidence above) to determine whether a quota or gateway limit was reached or whether there was a transient upstream throttling event. Escalate to provider support / account team; do not attempt to 'patch' provider quotas from the repo.",
+    "",
+    "Post-incident remediation (hours\u2013days):",
+    "  9) If provider quota/throughput limits caused the event, plan capacity changes or purchase higher throughput/soft-limits with the provider. If limits cannot be raised, consider moving to a higher-concurrency deployment or adding a fallback LLM deployment in rag.yaml (see notes).",
+    " 10) Harden client behavior: add circuit breaker that opens on repeated 429s, tune retry/backoff/jitter, and limit parallel LLM calls from patient-rag to a safe concurrency threshold.",
+    " 11) Add monitoring and alerting: alert on rising 429 counts and rising llm p95; add a dashboard correlating 429s, LLM p95, and app error_rate to detect recurrences early.",
+    "",
+    "Notes (non-actionable in this runbook):",
+    "  - The repo config (apps/patient-rag/config/rag.yaml) shows chat_deployment=gpt-4.1-mini and reranker_enabled=false. No config diff was reported, so this is a runtime capacity/throttling issue rather than a config change. (Evidence: config file; config_diff: []).",
+    "  - Capacity or quota changes that must be made with the provider should be escalated to provider support and the on-call escalation path; do not attempt to patch provider-side quotas from the repository."
+   ],
+   "reasons": [],
+   "severity": "sev3",
+   "specialist": "performance",
+   "detected_at": "2026-10-10T23:09:36.358875Z"
+  },
+  {
+   "incident_id": "inc-20261010201147-119668",
+   "kind": "runbook",
+   "summary": "Indexing/runtime state (indexer busy/stalled) caused the index to be inconsistent during the canary window, so the RAG answers were grounded in incomplete/stale index content and canary accuracy dropped.",
+   "runbook": [
+    "Confirm indexer activity and state:",
+    "  - Check indexer (index-specialist) service/process status and recent logs (look for long-running jobs, retries, or stalls). Use the deployment/host orchestration UI or `journalctl`/pod logs as appropriate.",
+    "  - Verify last successful indexer run time and current run progress. Look for an index build, reindex, or validation job that started around the deploy time.",
+    "Inspect index health and document counts:",
+    "  - Query the search/index store for document counts for the 'cfw' index_prefix and compare to expected counts (pre-deploy snapshot if available).",
+    "  - Run a few known canary queries directly against the index (not through the app) to see whether expected document excerpts are present.",
+    "If indexing is in-progress and healthy but slow:",
+    "  - Allow the job to finish while monitoring agent_health p95 and index document counts.",
+    "  - If job keeps progressing (counts increasing) re-run canaries after completion and confirm canary_accuracy recovers.",
+    "If indexing appears stalled or the indexer is unresponsive:",
+    "  - Restart the indexer process/pod (index-specialist).",
+    "  - After restart, monitor logs for errors and confirm indexing resumes; if it fails repeatedly, capture logs and escalate to infra/SRE.",
+    "If the index is corrupted or missing expected documents after a full/restarted indexing attempt:",
+    "  - Trigger a forced reindex from authoritative source (follow org runbook for index rebuild), monitor progress, and re-run canaries when complete.",
+    "Roll-back / mitigation (if customer-impacting and rebuild will take long):",
+    "  - Consider rolling back to the previous deploy (the commit before 9e81bd...) if that is quicker and acceptable; validate canaries on rollback.",
+    "Post-recovery checks:",
+    "  - Once canary_accuracy returns to baseline, confirm p95 latencies of index-specialist and retrieval-specialist return to normal ranges and that canary queries are consistently passing across the window_count.",
+    "  - Collect and retain indexer logs and timing for post-mortem.",
+    "Escalation:",
+    "  - If a restart/reindex does not restore expected index content, escalate to the infra/SRE team with logs, index counts, and the deploy commit id (9e81bd123420...)."
+   ],
+   "reasons": [],
+   "severity": "sev1",
+   "specialist": "index",
+   "detected_at": "2026-10-10T20:11:47.528894Z"
+  },
+  {
+   "incident_id": "inc-20261010201145-81666d",
+   "kind": "escalation",
+   "summary": "A configuration change switched the RAG prompt from v3 (which required explicit document citations) to v4-nocite (which removes the citation instruction). That prompt change removed the model's citation requirement and caused the observed ~93% drop in citation_rate.",
+   "runbook": [],
+   "reasons": [
+    "fix not accepted (gate passed=False, D5=reject): ValidationError: 1 validation error for RagConfig\n`apps/patient-rag/config/rag.yaml:prompt_version`\n  Extra inputs are not permitted [type=extra_forbidden, input_value='v3', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/extra_forbidden"
+   ],
+   "severity": "sev1",
+   "specialist": "prompt",
+   "detected_at": "2026-10-10T20:11:45.138012Z"
+  },
+  {
+   "incident_id": "inc-20261010201038-eb7fd7",
+   "kind": "runbook",
+   "summary": "A recent change increased chunk_size from 512 to 2048 at runtime, which diluted vector matches and caused the top_score to drop.",
+   "runbook": [
+    "1) Confirm running configuration source: check for any runtime overrides or faults that set chunk_size=2048 (faults / runtime feature flags). If an override exists, remove it so the service reads apps/patient-rag/config/rag.yaml.",
+    "2) Apply the config change to the running system: ensure apps/patient-rag/config/rag.yaml has chunk_size: 512 (already in repo) and redeploy the patient-rag service so runtime config matches the repo.",
+    "3) Rebuild / re-chunk and reindex the vector store after chunk_size change: re-run the indexing pipeline to produce vectors consistent with the chunk_size=512 chunks (required so embeddings/vectors align with the new chunking).",
+    "4) Post-deploy validation: run a small set of known queries and verify top_score returns to baseline range (near 0.82). Monitor top_score, cusum, and error_rate for 30\u201360 minutes.",
+    "5) If top_score does not recover after reindexing and redeploy, escalate to embeddings/DB owners to verify embedding deployment and index integrity (check that embedding_deployment matches the one used to create vectors: text-embedding-3-small)."
+   ],
+   "reasons": [],
+   "severity": "sev1",
+   "specialist": "retrieval",
+   "detected_at": "2026-10-10T20:10:38.383337Z"
+  },
+  {
+   "incident_id": "inc-20261010192135-271de0",
+   "kind": "runbook",
+   "summary": "Indexer/runtime degradation: the indexer / retrieval pipeline is running slowly or stuck (index-specialist / retrieval tasks showing very high p95 durations), causing retrievals to return stale or incomplete context and dropping canary accuracy. This is a runtime state issue (indexer health), not a config change.",
+   "runbook": [
+    "Confirm indexer / ingestion health:",
+    "  1) Check indexer worker / scheduler status and recent job history (timestamps of last successful full/partial index). Look for failures, long-running jobs, or backfills.",
+    "  2) Inspect indexer and retrieval logs for errors or long GC/IO pauses around the deploy time and during the canary failures.",
+    "Restart / recover indexer processes:",
+    "  3) If the indexer background process is unresponsive or showing long p95 durations, restart the indexer worker(s) gracefully and monitor agent_health p95 for index-specialist and retrieval-specialist to return to normal.",
+    "  4) If there are stuck indexing jobs, cancel/hard-restart them and trigger a targeted re-run for the affected collections (start with canary documents).",
+    "Reindex / repair data if necessary:",
+    "  5) If restarting does not restore correctness, run a reindex of the Cascade Forge Works source (or re-run the last successful index job) for the index prefix cfw and monitor progress.",
+    "  6) After reindex completes, run the canary suite and confirm canary_accuracy returns to baseline.",
+    "Validate retrieval pipeline and latency:",
+    "  7) Verify retrieval p95 and patient_rag_requests p95 drop to acceptable ranges and that retrievals return expected doc ids for sample canaries.",
+    "Rollback / escalate:",
+    "  8) If indexer restarts or reindexing fail, roll back the recent deploy (if that deploy touched indexing infra) OR escalate to infra/ops with indexer logs, job ids, and the deploy commit id (5253d5fe3a8a8...).",
+    "Postmortem / prevention:",
+    "  9) If the cause was long-running or queued indexing jobs after deploy, add alerts for index-specialist p95 > 30s and missing successful index job timestamps for > 10 minutes. Document the incident and any manual steps required to reindex."
+   ],
+   "reasons": [],
+   "severity": "sev1",
+   "specialist": "index",
+   "detected_at": "2026-10-10T19:21:35.692813Z"
+  },
+  {
+   "incident_id": "inc-20261010191841-9ab279",
+   "kind": "runbook",
+   "summary": "Outgoing chat (LLM) calls were being rate-limited (429 throttles) by the LLM provider causing elevated error rate; this is a runtime throttling event rather than a config change.",
+   "runbook": [
+    "Immediate (0\u201310 minutes): Reduce user impact and stop retry storms",
+    "1) Apply client-side throttling/backoff immediately: stop sending retries without exponential backoff. If your client has a concurrency limiter/gateway, reduce concurrent outbound LLM calls by ~50% immediately.",
+    "   - Rationale / evidence: 14 x 429s observed in incident payload; LLM p95 rose while retrieval did not.",
+    "2) Disable any aggressive retries in the service path for 429s (turn off immediate retry loops) and ensure 429s are handled with exponential backoff (e.g. initial 500\u20131000 ms, factor 2, capped).",
+    "   - Where to change: runtime config or deployment flags for request retry logic \u2014 do not edit rag.yaml for this emergency mitigation.",
+    "3) If you have a fallback LLM deployment / lower-tier model available, route new requests there for the immediate window (or return a graceful degraded response).",
+    "   - Evidence: chat_deployment is gpt-4.1-mini (apps/patient-rag/config/rag.yaml) and 429s indicate the current provider deployment is throttling.",
+    "",
+    "Short-term (10\u201360 minutes): Triage and gather diagnostics",
+    "4) Collect detailed request traces and provider responses for all 429s (timestamps, request ids, trace ids). Correlate with request traces from patient-rag to find the failing calls.",
+    "   - Useful queries/logs: the patient_rag_requests time buckets (we observed high p95s at 18:45 and adjacent windows) and your provider request logs for gpt-4.1-mini.",
+    "5) Check the LLM provider (gpt-4.1-mini) quota/usage dashboards and rate-limit logs for spikes or quota limits during the incident window. Gather any provider error messages or rate-limit headers (Retry-After).",
+    "   - Evidence: 429s in incident payload; dependency_latency query returned no rows so provider dashboard is necessary.",
+    "6) Review gateway/APIM logs only if chat_route is through APIM. For this deployment chat_route is direct (apps/patient-rag/config/rag.yaml), so prioritize provider-side logs.",
+    "",
+    "If provider quota/capacity is the cause",
+    "7) Escalate to the provider (include timestamps, request ids, trace ids and sample 429 responses). Request quota increase or ask whether there was a transient throttling event in the provider region.",
+    "   - Evidence: multiple 429s and LLM-stage latency increase; external quota/capacity is outside repo and must be escalated.",
+    "",
+    "Recovery and post-incident (after service stabilized)",
+    "8) Re-introduce controlled concurrency and retry behavior (token-bucket or circuit-breaker). Configure sensible client-side limits and Retry-After handling for 429s.",
+    "9) Add or verify telemetry: ensure dependency_latency and per-dependency error counts are recorded (the dependency_latency query returned no rows; improve visibility so next incident includes provider call metrics).",
+    "10) Run a postmortem with amounts of traffic during the incident and decide whether to add a secondary fallback model or implement automatic load shedding.",
+    "",
+    "Commands / checks to run now",
+    "A) Pull recent request traces that returned 429 and include request IDs (time range matching incident windows, e.g. the buckets seen in patient_rag_requests around 18:30\u201319:00).",
+    "B) Query provider logs/dashboards for gpt-4.1-mini for the same time window and export any 429/RateLimit responses (Retry-After values, quotas).",
+    "C) If you have a service/gateway that can temporarily limit concurrency, reduce concurrency and monitor error_rate for improvement.",
+    "",
+    "Escalation criteria",
+    "- If provider dashboard shows a quota or regional outage -> escalate to provider support with exported logs and traces.",
+    "- If error_rate does not fall after client-side throttling and retries are already polite -> escalate (high confidence the provider is enforcing limits)."
+   ],
+   "reasons": [],
+   "severity": "sev1",
+   "specialist": "performance",
+   "detected_at": "2026-10-10T19:18:41.725124Z"
+  }
+ ],
+ "router": {
+  "clients": {
+   "gpt-4.1-mini": {
+    "D1": {
+     "accuracy": 0.9569,
+     "accuracy_lenient": null,
+     "accuracy_not_escalated": 0.9569,
+     "cost_per_1k_usd": 0.2846,
+     "ece": 0.0611,
+     "errors": 0,
+     "escalation_rate": 0.0,
+     "flip_rate": null,
+     "invalid_output_rate": 0.0,
+     "latency_client_ms": {
+      "p50": 1271.3,
+      "p95": 2914.5,
+      "p99": 3528.9
+     },
+     "latency_model_ms": {
+      "p50": 1271.2,
+      "p95": 2914.4,
+      "p99": 3528.8
+     },
+     "macro_f1": 0.9201,
+     "n": 1440,
+     "reliability": [
+      {
+       "accuracy": 0.0,
+       "bin": 0,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.1,
+       "lo": 0.0
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 1,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.2,
+       "lo": 0.1
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 2,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.3,
+       "lo": 0.2
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 3,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.4,
+       "lo": 0.3
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 4,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.5,
+       "lo": 0.4
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 5,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.6,
+       "lo": 0.5
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 6,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.7,
+       "lo": 0.6
+      },
+      {
+       "accuracy": 0.75,
+       "bin": 7,
+       "confidence": 0.7,
+       "count": 184,
+       "hi": 0.8,
+       "lo": 0.7
+      },
+      {
+       "accuracy": 0.9171,
+       "bin": 8,
+       "confidence": 0.8272,
+       "count": 193,
+       "hi": 0.9,
+       "lo": 0.8
+      },
+      {
+       "accuracy": 1.0,
+       "bin": 9,
+       "confidence": 0.9421,
+       "count": 1063,
+       "hi": 1.0,
+       "lo": 0.9
+      }
+     ]
+    },
+    "D2": {
+     "accuracy": 0.5167,
+     "accuracy_lenient": null,
+     "accuracy_not_escalated": 0.5171,
+     "cost_per_1k_usd": 0.3546,
+     "ece": 0.393,
+     "errors": 0,
+     "escalation_rate": 0.0008,
+     "flip_rate": 0.13,
+     "invalid_output_rate": 0.0,
+     "latency_client_ms": {
+      "p50": 1479.3,
+      "p95": 3063.4,
+      "p99": 3704.6
+     },
+     "latency_model_ms": {
+      "p50": 1479.1,
+      "p95": 3063.2,
+      "p99": 3704.5
+     },
+     "macro_f1": 0.4299,
+     "n": 1200,
+     "reliability": [
+      {
+       "accuracy": 0.0,
+       "bin": 0,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.1,
+       "lo": 0.0
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 1,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.2,
+       "lo": 0.1
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 2,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.3,
+       "lo": 0.2
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 3,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.4,
+       "lo": 0.3
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 4,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.5,
+       "lo": 0.4
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 5,
+       "confidence": 0.5999,
+       "count": 1,
+       "hi": 0.6,
+       "lo": 0.5
+      },
+      {
+       "accuracy": 0.0385,
+       "bin": 6,
+       "confidence": 0.6999,
+       "count": 130,
+       "hi": 0.7,
+       "lo": 0.6
+      },
+      {
+       "accuracy": 0.2965,
+       "bin": 7,
+       "confidence": 0.7998,
+       "count": 172,
+       "hi": 0.8,
+       "lo": 0.7
+      },
+      {
+       "accuracy": 0.608,
+       "bin": 8,
+       "confidence": 0.896,
+       "count": 301,
+       "hi": 0.9,
+       "lo": 0.8
+      },
+      {
+       "accuracy": 0.6393,
+       "bin": 9,
+       "confidence": 0.9945,
+       "count": 596,
+       "hi": 1.0,
+       "lo": 0.9
+      }
+     ]
+    },
+    "D3": {
+     "accuracy": 0.7417,
+     "accuracy_lenient": 0.8217,
+     "accuracy_not_escalated": 0.7524,
+     "cost_per_1k_usd": 0.4101,
+     "ece": 0.1517,
+     "errors": 0,
+     "escalation_rate": 0.0275,
+     "flip_rate": 0.0944,
+     "invalid_output_rate": 0.0,
+     "latency_client_ms": {
+      "p50": 1083.7,
+      "p95": 1582.4,
+      "p99": 2076.7
+     },
+     "latency_model_ms": {
+      "p50": 1083.6,
+      "p95": 1582.4,
+      "p99": 2076.6
+     },
+     "macro_f1": 0.7186,
+     "n": 1200,
+     "reliability": [
+      {
+       "accuracy": 0.0,
+       "bin": 0,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.1,
+       "lo": 0.0
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 1,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.2,
+       "lo": 0.1
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 2,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.3,
+       "lo": 0.2
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 3,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.4,
+       "lo": 0.3
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 4,
+       "confidence": 0.45,
+       "count": 2,
+       "hi": 0.5,
+       "lo": 0.4
+      },
+      {
+       "accuracy": 0.3871,
+       "bin": 5,
+       "confidence": 0.5645,
+       "count": 31,
+       "hi": 0.6,
+       "lo": 0.5
+      },
+      {
+       "accuracy": 0.3137,
+       "bin": 6,
+       "confidence": 0.6627,
+       "count": 153,
+       "hi": 0.7,
+       "lo": 0.6
+      },
+      {
+       "accuracy": 0.5857,
+       "bin": 7,
+       "confidence": 0.7069,
+       "count": 391,
+       "hi": 0.8,
+       "lo": 0.7
+      },
+      {
+       "accuracy": 0.9563,
+       "bin": 8,
+       "confidence": 0.8314,
+       "count": 504,
+       "hi": 0.9,
+       "lo": 0.8
+      },
+      {
+       "accuracy": 1.0,
+       "bin": 9,
+       "confidence": 0.9,
+       "count": 119,
+       "hi": 1.0,
+       "lo": 0.9
+      }
+     ]
+    },
+    "D4": {
+     "accuracy": 0.9033,
+     "accuracy_lenient": null,
+     "accuracy_not_escalated": 0.9054,
+     "cost_per_1k_usd": 0.3577,
+     "ece": 0.0812,
+     "errors": 0,
+     "escalation_rate": 0.0042,
+     "flip_rate": 0.0256,
+     "invalid_output_rate": 0.0,
+     "latency_client_ms": {
+      "p50": 1083.6,
+      "p95": 1692.0,
+      "p99": 2113.4
+     },
+     "latency_model_ms": {
+      "p50": 1083.5,
+      "p95": 1691.9,
+      "p99": 2113.4
+     },
+     "macro_f1": 0.7928,
+     "n": 1200,
+     "reliability": [
+      {
+       "accuracy": 0.0,
+       "bin": 0,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.1,
+       "lo": 0.0
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 1,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.2,
+       "lo": 0.1
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 2,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.3,
+       "lo": 0.2
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 3,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.4,
+       "lo": 0.3
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 4,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.5,
+       "lo": 0.4
+      },
+      {
+       "accuracy": 0.4,
+       "bin": 5,
+       "confidence": 0.5,
+       "count": 5,
+       "hi": 0.6,
+       "lo": 0.5
+      },
+      {
+       "accuracy": 0.4694,
+       "bin": 6,
+       "confidence": 0.6357,
+       "count": 49,
+       "hi": 0.7,
+       "lo": 0.6
+      },
+      {
+       "accuracy": 0.3404,
+       "bin": 7,
+       "confidence": 0.7085,
+       "count": 47,
+       "hi": 0.8,
+       "lo": 0.7
+      },
+      {
+       "accuracy": 0.8526,
+       "bin": 8,
+       "confidence": 0.8742,
+       "count": 346,
+       "hi": 0.9,
+       "lo": 0.8
+      },
+      {
+       "accuracy": 0.9934,
+       "bin": 9,
+       "confidence": 0.9083,
+       "count": 753,
+       "hi": 1.0,
+       "lo": 0.9
+      }
+     ]
+    },
+    "D5": {
+     "accuracy": 0.685,
+     "accuracy_lenient": null,
+     "accuracy_not_escalated": 0.685,
+     "cost_per_1k_usd": 0.266,
+     "ece": 0.2864,
+     "errors": 0,
+     "escalation_rate": 0.0,
+     "flip_rate": null,
+     "invalid_output_rate": 0.0,
+     "latency_client_ms": {
+      "p50": 1387.9,
+      "p95": 2730.2,
+      "p99": 10054.7
+     },
+     "latency_model_ms": {
+      "p50": 1387.8,
+      "p95": 2730.1,
+      "p99": 10054.5
+     },
+     "macro_f1": 0.6572,
+     "n": 200,
+     "reliability": [
+      {
+       "accuracy": 0.0,
+       "bin": 0,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.1,
+       "lo": 0.0
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 1,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.2,
+       "lo": 0.1
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 2,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.3,
+       "lo": 0.2
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 3,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.4,
+       "lo": 0.3
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 4,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.5,
+       "lo": 0.4
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 5,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.6,
+       "lo": 0.5
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 6,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.7,
+       "lo": 0.6
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 7,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.8,
+       "lo": 0.7
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 8,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.9,
+       "lo": 0.8
+      },
+      {
+       "accuracy": 0.685,
+       "bin": 9,
+       "confidence": 0.9714,
+       "count": 200,
+       "hi": 1.0,
+       "lo": 0.9
+      }
+     ]
+    }
+   },
+   "gpt-5-mini": {
+    "D1": {
+     "accuracy": 0.9549,
+     "accuracy_lenient": null,
+     "accuracy_not_escalated": 0.9549,
+     "cost_per_1k_usd": 0.4726,
+     "ece": 0.048,
+     "errors": 0,
+     "escalation_rate": 0.0,
+     "flip_rate": null,
+     "invalid_output_rate": 0.0,
+     "latency_client_ms": {
+      "p50": 2491.0,
+      "p95": 3544.2,
+      "p99": 4473.0
+     },
+     "latency_model_ms": {
+      "p50": 2490.9,
+      "p95": 3544.1,
+      "p99": 4472.9
+     },
+     "macro_f1": 0.9149,
+     "n": 1440,
+     "reliability": [
+      {
+       "accuracy": 0.0,
+       "bin": 0,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.1,
+       "lo": 0.0
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 1,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.2,
+       "lo": 0.1
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 2,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.3,
+       "lo": 0.2
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 3,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.4,
+       "lo": 0.3
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 4,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.5,
+       "lo": 0.4
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 5,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.6,
+       "lo": 0.5
+      },
+      {
+       "accuracy": 0.5714,
+       "bin": 6,
+       "confidence": 0.6386,
+       "count": 7,
+       "hi": 0.7,
+       "lo": 0.6
+      },
+      {
+       "accuracy": 0.7941,
+       "bin": 7,
+       "confidence": 0.7279,
+       "count": 34,
+       "hi": 0.8,
+       "lo": 0.7
+      },
+      {
+       "accuracy": 0.7589,
+       "bin": 8,
+       "confidence": 0.8401,
+       "count": 141,
+       "hi": 0.9,
+       "lo": 0.8
+      },
+      {
+       "accuracy": 0.9833,
+       "bin": 9,
+       "confidence": 0.9397,
+       "count": 1258,
+       "hi": 1.0,
+       "lo": 0.9
+      }
+     ]
+    },
+    "D2": {
+     "accuracy": 0.8217,
+     "accuracy_lenient": null,
+     "accuracy_not_escalated": 0.8221,
+     "cost_per_1k_usd": 0.8218,
+     "ece": 0.0762,
+     "errors": 0,
+     "escalation_rate": 0.0025,
+     "flip_rate": 0.1588,
+     "invalid_output_rate": 0.0,
+     "latency_client_ms": {
+      "p50": 3547.1,
+      "p95": 4999.1,
+      "p99": 6023.6
+     },
+     "latency_model_ms": {
+      "p50": 3547.0,
+      "p95": 4999.0,
+      "p99": 6023.5
+     },
+     "macro_f1": 0.7998,
+     "n": 1200,
+     "reliability": [
+      {
+       "accuracy": 0.0,
+       "bin": 0,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.1,
+       "lo": 0.0
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 1,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.2,
+       "lo": 0.1
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 2,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.3,
+       "lo": 0.2
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 3,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.4,
+       "lo": 0.3
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 4,
+       "confidence": 0.45,
+       "count": 1,
+       "hi": 0.5,
+       "lo": 0.4
+      },
+      {
+       "accuracy": 1.0,
+       "bin": 5,
+       "confidence": 0.5999,
+       "count": 2,
+       "hi": 0.6,
+       "lo": 0.5
+      },
+      {
+       "accuracy": 0.6364,
+       "bin": 6,
+       "confidence": 0.6754,
+       "count": 11,
+       "hi": 0.7,
+       "lo": 0.6
+      },
+      {
+       "accuracy": 0.5849,
+       "bin": 7,
+       "confidence": 0.7639,
+       "count": 53,
+       "hi": 0.8,
+       "lo": 0.7
+      },
+      {
+       "accuracy": 0.7925,
+       "bin": 8,
+       "confidence": 0.8779,
+       "count": 583,
+       "hi": 0.9,
+       "lo": 0.8
+      },
+      {
+       "accuracy": 0.88,
+       "bin": 9,
+       "confidence": 0.9353,
+       "count": 550,
+       "hi": 1.0,
+       "lo": 0.9
+      }
+     ]
+    },
+    "D3": {
+     "accuracy": 0.8925,
+     "accuracy_lenient": 0.9667,
+     "accuracy_not_escalated": 0.893,
+     "cost_per_1k_usd": 0.7158,
+     "ece": 0.091,
+     "errors": 0,
+     "escalation_rate": 0.0033,
+     "flip_rate": 0.0819,
+     "invalid_output_rate": 0.0,
+     "latency_client_ms": {
+      "p50": 2869.1,
+      "p95": 4080.9,
+      "p99": 4887.9
+     },
+     "latency_model_ms": {
+      "p50": 2869.0,
+      "p95": 4080.8,
+      "p99": 4887.8
+     },
+     "macro_f1": 0.8924,
+     "n": 1200,
+     "reliability": [
+      {
+       "accuracy": 0.0,
+       "bin": 0,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.1,
+       "lo": 0.0
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 1,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.2,
+       "lo": 0.1
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 2,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.3,
+       "lo": 0.2
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 3,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.4,
+       "lo": 0.3
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 4,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.5,
+       "lo": 0.4
+      },
+      {
+       "accuracy": 0.75,
+       "bin": 5,
+       "confidence": 0.56,
+       "count": 4,
+       "hi": 0.6,
+       "lo": 0.5
+      },
+      {
+       "accuracy": 0.4667,
+       "bin": 6,
+       "confidence": 0.6453,
+       "count": 30,
+       "hi": 0.7,
+       "lo": 0.6
+      },
+      {
+       "accuracy": 0.6207,
+       "bin": 7,
+       "confidence": 0.7375,
+       "count": 174,
+       "hi": 0.8,
+       "lo": 0.7
+      },
+      {
+       "accuracy": 0.9268,
+       "bin": 8,
+       "confidence": 0.8447,
+       "count": 615,
+       "hi": 0.9,
+       "lo": 0.8
+      },
+      {
+       "accuracy": 0.9973,
+       "bin": 9,
+       "confidence": 0.9119,
+       "count": 377,
+       "hi": 1.0,
+       "lo": 0.9
+      }
+     ]
+    },
+    "D4": {
+     "accuracy": 0.91,
+     "accuracy_lenient": null,
+     "accuracy_not_escalated": 0.9099,
+     "cost_per_1k_usd": 0.5594,
+     "ece": 0.0662,
+     "errors": 0,
+     "escalation_rate": 0.0008,
+     "flip_rate": 0.0225,
+     "invalid_output_rate": 0.0,
+     "latency_client_ms": {
+      "p50": 2408.6,
+      "p95": 3366.7,
+      "p99": 4122.8
+     },
+     "latency_model_ms": {
+      "p50": 2408.6,
+      "p95": 3366.7,
+      "p99": 4122.8
+     },
+     "macro_f1": 0.7974,
+     "n": 1200,
+     "reliability": [
+      {
+       "accuracy": 0.0,
+       "bin": 0,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.1,
+       "lo": 0.0
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 1,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.2,
+       "lo": 0.1
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 2,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.3,
+       "lo": 0.2
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 3,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.4,
+       "lo": 0.3
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 4,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.5,
+       "lo": 0.4
+      },
+      {
+       "accuracy": 1.0,
+       "bin": 5,
+       "confidence": 0.55,
+       "count": 1,
+       "hi": 0.6,
+       "lo": 0.5
+      },
+      {
+       "accuracy": 0.4545,
+       "bin": 6,
+       "confidence": 0.6045,
+       "count": 11,
+       "hi": 0.7,
+       "lo": 0.6
+      },
+      {
+       "accuracy": 0.6129,
+       "bin": 7,
+       "confidence": 0.7364,
+       "count": 31,
+       "hi": 0.8,
+       "lo": 0.7
+      },
+      {
+       "accuracy": 0.7438,
+       "bin": 8,
+       "confidence": 0.871,
+       "count": 281,
+       "hi": 0.9,
+       "lo": 0.8
+      },
+      {
+       "accuracy": 0.9795,
+       "bin": 9,
+       "confidence": 0.9363,
+       "count": 876,
+       "hi": 1.0,
+       "lo": 0.9
+      }
+     ]
+    },
+    "D5": {
+     "accuracy": 0.945,
+     "accuracy_lenient": null,
+     "accuracy_not_escalated": 0.945,
+     "cost_per_1k_usd": 0.9028,
+     "ece": 0.0552,
+     "errors": 0,
+     "escalation_rate": 0.0,
+     "flip_rate": null,
+     "invalid_output_rate": 0.0,
+     "latency_client_ms": {
+      "p50": 4040.7,
+      "p95": 4924.3,
+      "p99": 6000.4
+     },
+     "latency_model_ms": {
+      "p50": 4040.7,
+      "p95": 4924.2,
+      "p99": 6000.3
+     },
+     "macro_f1": 0.945,
+     "n": 200,
+     "reliability": [
+      {
+       "accuracy": 0.0,
+       "bin": 0,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.1,
+       "lo": 0.0
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 1,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.2,
+       "lo": 0.1
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 2,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.3,
+       "lo": 0.2
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 3,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.4,
+       "lo": 0.3
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 4,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.5,
+       "lo": 0.4
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 5,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.6,
+       "lo": 0.5
+      },
+      {
+       "accuracy": 1.0,
+       "bin": 6,
+       "confidence": 0.6,
+       "count": 1,
+       "hi": 0.7,
+       "lo": 0.6
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 7,
+       "confidence": 0.7167,
+       "count": 3,
+       "hi": 0.8,
+       "lo": 0.7
+      },
+      {
+       "accuracy": 0.5455,
+       "bin": 8,
+       "confidence": 0.8364,
+       "count": 11,
+       "hi": 0.9,
+       "lo": 0.8
+      },
+      {
+       "accuracy": 0.9838,
+       "bin": 9,
+       "confidence": 0.9552,
+       "count": 185,
+       "hi": 1.0,
+       "lo": 0.9
+      }
+     ]
+    }
+   },
+   "gpt-oss-120b": {
+    "D1": {
+     "accuracy": 0.959,
+     "accuracy_lenient": null,
+     "accuracy_not_escalated": 0.9645,
+     "cost_per_1k_usd": 0.1746,
+     "ece": 0.1119,
+     "errors": 0,
+     "escalation_rate": 0.0806,
+     "flip_rate": null,
+     "invalid_output_rate": 0.0806,
+     "latency_client_ms": {
+      "p50": 880.2,
+      "p95": 2079.0,
+      "p99": 2816.1
+     },
+     "latency_model_ms": {
+      "p50": 880.1,
+      "p95": 2078.9,
+      "p99": 2816.0
+     },
+     "macro_f1": 0.9183,
+     "n": 1440,
+     "reliability": [
+      {
+       "accuracy": 0.0,
+       "bin": 0,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.1,
+       "lo": 0.0
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 1,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.2,
+       "lo": 0.1
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 2,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.3,
+       "lo": 0.2
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 3,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.4,
+       "lo": 0.3
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 4,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.5,
+       "lo": 0.4
+      },
+      {
+       "accuracy": 0.8966,
+       "bin": 5,
+       "confidence": 0.5,
+       "count": 116,
+       "hi": 0.6,
+       "lo": 0.5
+      },
+      {
+       "accuracy": 0.5217,
+       "bin": 6,
+       "confidence": 0.6348,
+       "count": 23,
+       "hi": 0.7,
+       "lo": 0.6
+      },
+      {
+       "accuracy": 0.7838,
+       "bin": 7,
+       "confidence": 0.7158,
+       "count": 74,
+       "hi": 0.8,
+       "lo": 0.7
+      },
+      {
+       "accuracy": 0.9451,
+       "bin": 8,
+       "confidence": 0.8349,
+       "count": 364,
+       "hi": 0.9,
+       "lo": 0.8
+      },
+      {
+       "accuracy": 1.0,
+       "bin": 9,
+       "confidence": 0.9219,
+       "count": 863,
+       "hi": 1.0,
+       "lo": 0.9
+      }
+     ]
+    },
+    "D2": {
+     "accuracy": 0.8617,
+     "accuracy_lenient": null,
+     "accuracy_not_escalated": 0.897,
+     "cost_per_1k_usd": 0.2552,
+     "ece": 0.044,
+     "errors": 0,
+     "escalation_rate": 0.045,
+     "flip_rate": 0.2238,
+     "invalid_output_rate": 0.0339,
+     "latency_client_ms": {
+      "p50": 1516.3,
+      "p95": 3396.7,
+      "p99": 4135.7
+     },
+     "latency_model_ms": {
+      "p50": 1516.1,
+      "p95": 3396.5,
+      "p99": 4135.6
+     },
+     "macro_f1": 0.8489,
+     "n": 1200,
+     "reliability": [
+      {
+       "accuracy": 0.0,
+       "bin": 0,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.1,
+       "lo": 0.0
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 1,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.2,
+       "lo": 0.1
+      },
+      {
+       "accuracy": 0.0784,
+       "bin": 2,
+       "confidence": 0.25,
+       "count": 51,
+       "hi": 0.3,
+       "lo": 0.2
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 3,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.4,
+       "lo": 0.3
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 4,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.5,
+       "lo": 0.4
+      },
+      {
+       "accuracy": 0.6667,
+       "bin": 5,
+       "confidence": 0.5833,
+       "count": 3,
+       "hi": 0.6,
+       "lo": 0.5
+      },
+      {
+       "accuracy": 0.7353,
+       "bin": 6,
+       "confidence": 0.6661,
+       "count": 34,
+       "hi": 0.7,
+       "lo": 0.6
+      },
+      {
+       "accuracy": 0.8161,
+       "bin": 7,
+       "confidence": 0.7628,
+       "count": 87,
+       "hi": 0.8,
+       "lo": 0.7
+      },
+      {
+       "accuracy": 0.9003,
+       "bin": 8,
+       "confidence": 0.853,
+       "count": 642,
+       "hi": 0.9,
+       "lo": 0.8
+      },
+      {
+       "accuracy": 0.9243,
+       "bin": 9,
+       "confidence": 0.9411,
+       "count": 383,
+       "hi": 1.0,
+       "lo": 0.9
+      }
+     ]
+    },
+    "D3": {
+     "accuracy": 0.8667,
+     "accuracy_lenient": 0.9483,
+     "accuracy_not_escalated": 0.8888,
+     "cost_per_1k_usd": 0.2268,
+     "ece": 0.1178,
+     "errors": 0,
+     "escalation_rate": 0.0558,
+     "flip_rate": 0.1056,
+     "invalid_output_rate": 0.0207,
+     "latency_client_ms": {
+      "p50": 1047.7,
+      "p95": 2258.7,
+      "p99": 3091.9
+     },
+     "latency_model_ms": {
+      "p50": 1047.6,
+      "p95": 2258.7,
+      "p99": 3091.8
+     },
+     "macro_f1": 0.869,
+     "n": 1200,
+     "reliability": [
+      {
+       "accuracy": 0.0,
+       "bin": 0,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.1,
+       "lo": 0.0
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 1,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.2,
+       "lo": 0.1
+      },
+      {
+       "accuracy": 0.3913,
+       "bin": 2,
+       "confidence": 0.25,
+       "count": 23,
+       "hi": 0.3,
+       "lo": 0.2
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 3,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.4,
+       "lo": 0.3
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 4,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.5,
+       "lo": 0.4
+      },
+      {
+       "accuracy": 0.5455,
+       "bin": 5,
+       "confidence": 0.5466,
+       "count": 44,
+       "hi": 0.6,
+       "lo": 0.5
+      },
+      {
+       "accuracy": 0.6286,
+       "bin": 6,
+       "confidence": 0.6202,
+       "count": 105,
+       "hi": 0.7,
+       "lo": 0.6
+      },
+      {
+       "accuracy": 0.8484,
+       "bin": 7,
+       "confidence": 0.715,
+       "count": 488,
+       "hi": 0.8,
+       "lo": 0.7
+      },
+      {
+       "accuracy": 0.975,
+       "bin": 8,
+       "confidence": 0.8402,
+       "count": 521,
+       "hi": 0.9,
+       "lo": 0.8
+      },
+      {
+       "accuracy": 1.0,
+       "bin": 9,
+       "confidence": 0.9032,
+       "count": 19,
+       "hi": 1.0,
+       "lo": 0.9
+      }
+     ]
+    },
+    "D4": {
+     "accuracy": 0.9242,
+     "accuracy_lenient": null,
+     "accuracy_not_escalated": 0.9291,
+     "cost_per_1k_usd": 0.1952,
+     "ece": 0.114,
+     "errors": 0,
+     "escalation_rate": 0.0133,
+     "flip_rate": 0.0494,
+     "invalid_output_rate": 0.0104,
+     "latency_client_ms": {
+      "p50": 988.9,
+      "p95": 1935.0,
+      "p99": 2639.9
+     },
+     "latency_model_ms": {
+      "p50": 988.9,
+      "p95": 1935.0,
+      "p99": 2639.8
+     },
+     "macro_f1": 0.8417,
+     "n": 1200,
+     "reliability": [
+      {
+       "accuracy": 0.0,
+       "bin": 0,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.1,
+       "lo": 0.0
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 1,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.2,
+       "lo": 0.1
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 2,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.3,
+       "lo": 0.2
+      },
+      {
+       "accuracy": 0.75,
+       "bin": 3,
+       "confidence": 0.3333,
+       "count": 8,
+       "hi": 0.4,
+       "lo": 0.3
+      },
+      {
+       "accuracy": 1.0,
+       "bin": 4,
+       "confidence": 0.425,
+       "count": 2,
+       "hi": 0.5,
+       "lo": 0.4
+      },
+      {
+       "accuracy": 0.1667,
+       "bin": 5,
+       "confidence": 0.5167,
+       "count": 6,
+       "hi": 0.6,
+       "lo": 0.5
+      },
+      {
+       "accuracy": 0.5263,
+       "bin": 6,
+       "confidence": 0.6079,
+       "count": 38,
+       "hi": 0.7,
+       "lo": 0.6
+      },
+      {
+       "accuracy": 0.7029,
+       "bin": 7,
+       "confidence": 0.7109,
+       "count": 138,
+       "hi": 0.8,
+       "lo": 0.7
+      },
+      {
+       "accuracy": 0.9711,
+       "bin": 8,
+       "confidence": 0.8414,
+       "count": 865,
+       "hi": 0.9,
+       "lo": 0.8
+      },
+      {
+       "accuracy": 1.0,
+       "bin": 9,
+       "confidence": 0.9034,
+       "count": 143,
+       "hi": 1.0,
+       "lo": 0.9
+      }
+     ]
+    },
+    "D5": {
+     "accuracy": 0.9,
+     "accuracy_lenient": null,
+     "accuracy_not_escalated": 0.9316,
+     "cost_per_1k_usd": 0.2642,
+     "ece": 0.0979,
+     "errors": 0,
+     "escalation_rate": 0.05,
+     "flip_rate": null,
+     "invalid_output_rate": 0.045,
+     "latency_client_ms": {
+      "p50": 1632.7,
+      "p95": 3504.7,
+      "p99": 4137.0
+     },
+     "latency_model_ms": {
+      "p50": 1632.5,
+      "p95": 3504.6,
+      "p99": 4136.8
+     },
+     "macro_f1": 0.8995,
+     "n": 200,
+     "reliability": [
+      {
+       "accuracy": 0.0,
+       "bin": 0,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.1,
+       "lo": 0.0
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 1,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.2,
+       "lo": 0.1
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 2,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.3,
+       "lo": 0.2
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 3,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.4,
+       "lo": 0.3
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 4,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.5,
+       "lo": 0.4
+      },
+      {
+       "accuracy": 0.3,
+       "bin": 5,
+       "confidence": 0.5,
+       "count": 10,
+       "hi": 0.6,
+       "lo": 0.5
+      },
+      {
+       "accuracy": 0.9167,
+       "bin": 6,
+       "confidence": 0.6292,
+       "count": 12,
+       "hi": 0.7,
+       "lo": 0.6
+      },
+      {
+       "accuracy": 0.1429,
+       "bin": 7,
+       "confidence": 0.7,
+       "count": 7,
+       "hi": 0.8,
+       "lo": 0.7
+      },
+      {
+       "accuracy": 0.94,
+       "bin": 8,
+       "confidence": 0.8406,
+       "count": 50,
+       "hi": 0.9,
+       "lo": 0.8
+      },
+      {
+       "accuracy": 0.9752,
+       "bin": 9,
+       "confidence": 0.9318,
+       "count": 121,
+       "hi": 1.0,
+       "lo": 0.9
+      }
+     ]
+    }
+   },
+   "rules": {
+    "D1": {
+     "accuracy": 1.0,
+     "accuracy_lenient": null,
+     "accuracy_not_escalated": 1.0,
+     "cost_per_1k_usd": 0.0,
+     "ece": 0.3,
+     "errors": 0,
+     "escalation_rate": 0.0,
+     "flip_rate": null,
+     "invalid_output_rate": 0.0,
+     "latency_client_ms": {
+      "p50": 0.0,
+      "p95": 0.0,
+      "p99": 0.0
+     },
+     "latency_model_ms": {
+      "p50": 0.0,
+      "p95": 0.0,
+      "p99": 0.0
+     },
+     "macro_f1": 1.0,
+     "n": 1440,
+     "reliability": [
+      {
+       "accuracy": 0.0,
+       "bin": 0,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.1,
+       "lo": 0.0
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 1,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.2,
+       "lo": 0.1
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 2,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.3,
+       "lo": 0.2
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 3,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.4,
+       "lo": 0.3
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 4,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.5,
+       "lo": 0.4
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 5,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.6,
+       "lo": 0.5
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 6,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.7,
+       "lo": 0.6
+      },
+      {
+       "accuracy": 1.0,
+       "bin": 7,
+       "confidence": 0.7,
+       "count": 1440,
+       "hi": 0.8,
+       "lo": 0.7
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 8,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.9,
+       "lo": 0.8
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 9,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 1.0,
+       "lo": 0.9
+      }
+     ]
+    },
+    "D2": {
+     "accuracy": 0.3867,
+     "accuracy_lenient": null,
+     "accuracy_not_escalated": 0.3867,
+     "cost_per_1k_usd": 0.0,
+     "ece": 0.3133,
+     "errors": 0,
+     "escalation_rate": 0.0,
+     "flip_rate": 0.0,
+     "invalid_output_rate": 0.0,
+     "latency_client_ms": {
+      "p50": 0.0,
+      "p95": 0.0,
+      "p99": 0.0
+     },
+     "latency_model_ms": {
+      "p50": 0.0,
+      "p95": 0.0,
+      "p99": 0.0
+     },
+     "macro_f1": 0.3966,
+     "n": 1200,
+     "reliability": [
+      {
+       "accuracy": 0.0,
+       "bin": 0,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.1,
+       "lo": 0.0
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 1,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.2,
+       "lo": 0.1
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 2,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.3,
+       "lo": 0.2
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 3,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.4,
+       "lo": 0.3
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 4,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.5,
+       "lo": 0.4
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 5,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.6,
+       "lo": 0.5
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 6,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.7,
+       "lo": 0.6
+      },
+      {
+       "accuracy": 0.3867,
+       "bin": 7,
+       "confidence": 0.7,
+       "count": 1200,
+       "hi": 0.8,
+       "lo": 0.7
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 8,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.9,
+       "lo": 0.8
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 9,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 1.0,
+       "lo": 0.9
+      }
+     ]
+    },
+    "D3": {
+     "accuracy": 0.8783,
+     "accuracy_lenient": 0.9825,
+     "accuracy_not_escalated": 0.8783,
+     "cost_per_1k_usd": 0.0,
+     "ece": 0.1783,
+     "errors": 0,
+     "escalation_rate": 0.0,
+     "flip_rate": 0.01,
+     "invalid_output_rate": 0.0,
+     "latency_client_ms": {
+      "p50": 0.0,
+      "p95": 0.0,
+      "p99": 0.0
+     },
+     "latency_model_ms": {
+      "p50": 0.0,
+      "p95": 0.0,
+      "p99": 0.0
+     },
+     "macro_f1": 0.8784,
+     "n": 1200,
+     "reliability": [
+      {
+       "accuracy": 0.0,
+       "bin": 0,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.1,
+       "lo": 0.0
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 1,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.2,
+       "lo": 0.1
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 2,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.3,
+       "lo": 0.2
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 3,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.4,
+       "lo": 0.3
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 4,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.5,
+       "lo": 0.4
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 5,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.6,
+       "lo": 0.5
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 6,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.7,
+       "lo": 0.6
+      },
+      {
+       "accuracy": 0.8783,
+       "bin": 7,
+       "confidence": 0.7,
+       "count": 1200,
+       "hi": 0.8,
+       "lo": 0.7
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 8,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.9,
+       "lo": 0.8
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 9,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 1.0,
+       "lo": 0.9
+      }
+     ]
+    },
+    "D4": {
+     "accuracy": 0.9283,
+     "accuracy_lenient": null,
+     "accuracy_not_escalated": 0.9283,
+     "cost_per_1k_usd": 0.0,
+     "ece": 0.2283,
+     "errors": 0,
+     "escalation_rate": 0.0,
+     "flip_rate": 0.0006,
+     "invalid_output_rate": 0.0,
+     "latency_client_ms": {
+      "p50": 0.0,
+      "p95": 0.0,
+      "p99": 0.0
+     },
+     "latency_model_ms": {
+      "p50": 0.0,
+      "p95": 0.0,
+      "p99": 0.0
+     },
+     "macro_f1": 0.8956,
+     "n": 1200,
+     "reliability": [
+      {
+       "accuracy": 0.0,
+       "bin": 0,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.1,
+       "lo": 0.0
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 1,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.2,
+       "lo": 0.1
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 2,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.3,
+       "lo": 0.2
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 3,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.4,
+       "lo": 0.3
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 4,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.5,
+       "lo": 0.4
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 5,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.6,
+       "lo": 0.5
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 6,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.7,
+       "lo": 0.6
+      },
+      {
+       "accuracy": 0.9283,
+       "bin": 7,
+       "confidence": 0.7,
+       "count": 1200,
+       "hi": 0.8,
+       "lo": 0.7
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 8,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.9,
+       "lo": 0.8
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 9,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 1.0,
+       "lo": 0.9
+      }
+     ]
+    },
+    "D5": {
+     "accuracy": 0.845,
+     "accuracy_lenient": null,
+     "accuracy_not_escalated": 0.845,
+     "cost_per_1k_usd": 0.0,
+     "ece": 0.145,
+     "errors": 0,
+     "escalation_rate": 0.0,
+     "flip_rate": null,
+     "invalid_output_rate": 0.0,
+     "latency_client_ms": {
+      "p50": 0.0,
+      "p95": 0.0,
+      "p99": 0.0
+     },
+     "latency_model_ms": {
+      "p50": 0.0,
+      "p95": 0.0,
+      "p99": 0.0
+     },
+     "macro_f1": 0.8425,
+     "n": 200,
+     "reliability": [
+      {
+       "accuracy": 0.0,
+       "bin": 0,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.1,
+       "lo": 0.0
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 1,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.2,
+       "lo": 0.1
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 2,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.3,
+       "lo": 0.2
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 3,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.4,
+       "lo": 0.3
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 4,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.5,
+       "lo": 0.4
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 5,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.6,
+       "lo": 0.5
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 6,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.7,
+       "lo": 0.6
+      },
+      {
+       "accuracy": 0.845,
+       "bin": 7,
+       "confidence": 0.7,
+       "count": 200,
+       "hi": 0.8,
+       "lo": 0.7
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 8,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 0.9,
+       "lo": 0.8
+      },
+      {
+       "accuracy": 0.0,
+       "bin": 9,
+       "confidence": 0.0,
+       "count": 0,
+       "hi": 1.0,
+       "lo": 0.9
+      }
+     ]
+    }
+   }
+  },
+  "escalation_threshold": 0.6,
+  "generated": "2026-10-11",
+  "sample": null,
+  "report": "2026-10-11-router.json"
+ },
+ "chat": {
+  "question": "Why was this incident routed to the retrieval specialist, and is the fix safe?",
+  "answer": "Why routed to retrieval specialist\n- The alert was a large, sustained drop in hit_count (baseline 7.8603 \u2192 current 2.0, \u221274.6%, cusum 57.77), a metric tied to retrieval/groundedness.\n- A config diff showed top_k was reduced from 8 \u2192 2 at the same time, which directly reduces the number of retrieved document hits per query.\n- Repository files show the repo/default value is top_k: 8 while the running config was 2, and prompt files indicate no prompt switch, so the most likely cause is a retrieval tuning/config change rather than prompts, indexing, or latency.\n- The D3 decision therefore picked \u201cretrieval\u201d with high confidence (0.9) because the metric, timing, and config diff all point to a retrieval regression.\n\nIs the fix safe?\n- The recommended fix was to restore/pin top_k back to  correct value (via a PR). Automated validation shows this is safe:\n  - recall_at_k recovered to baseline (baseline 0.95 \u2192 candidate 0.95).\n  - Gate passed and recovered with no regressions flagged in the evaluated metrics.\n  - Small groundedness drop (3.95 \u2192 3.825) was measured but treated as within noise (noise_rel small).\n  - Latency p95 improved (4309.8 \u2192 1829.6) and cost per query stayed essentially unchanged.\n  - The change is confined to apps/patient-rag/config/rag.yaml (an allowed path), and the D6 decision allowed the automated write.\n- System confidence in the RCA/fix is ~0.9.\n\nOperational note: the incident record shows a PR was created but the final outcome is \"pr_closed_unmerged.\" The record does not explain why the PR was closed unmerged, so I can\u2019t say whether the change was actually deployed or why the PR was closed."
+ },
+ "incident_id": "inc-20261011015035-924ae2"
+}

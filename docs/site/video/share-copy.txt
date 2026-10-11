@@ -1,0 +1,1 @@
+Your RAG doesn't crash, it drifts. Driftline catches the drift, routes it to the right specialist agent, proves the fix on golden questions in a sandbox and opens the pull request. It never merges. 21/21 injected faults caught, 55/55 attacks blocked, about $0.07 per incident, all on Azure. github.com/abh2050/driftline

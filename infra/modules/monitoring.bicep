@@ -123,6 +123,7 @@ output workspaceId string = law.id
 output workspaceName string = law.name
 output workspaceCustomerId string = law.properties.customerId
 output appInsightsId string = appi.id
+output amwId string = amw.id
 output appInsightsName string = appi.name
 output dceId string = dce.id
 output dceLogsEndpoint string = dce.properties.logsIngestion.endpoint

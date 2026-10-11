@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Driftline</title>
+<meta name="description" content="Driftline notices when a RAG application quietly gets worse, finds the cause with specialist agents, proves a fix in a sandbox and opens the pull request. It never merges.">
+<meta property="og:title" content="Driftline: your RAG doesn't crash, it drifts">
+<meta property="og:description" content="Multi-agent RAG drift repair on Azure: detect, route, prove, propose. 21/21 faults caught, 55/55 attacks blocked.">
+<meta property="og:image" content="video/brag.jpg">
+<meta name="theme-color" content="#060914">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%227%22 fill=%22%23060914%22/><path d=%22M4 12 H13 L18 22 H28%22 fill=%22none%22 stroke=%22%233b82f6%22 stroke-width=%223.5%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/></svg>">
+<style>
+  @font-face { font-family: Geist; src: url(assets/geist-latin.woff2) format("woff2"); font-weight: 100 900; font-display: swap; }
+  @font-face { font-family: GeistMono; src: url(assets/geist-mono-latin.woff2) format("woff2"); font-weight: 100 900; font-display: swap; }
+  :root {
+    --bg: #060914; --bg2: #0a0f1f; --panel: #0d1428; --line: rgba(148,163,184,.14); --line2: rgba(148,163,184,.24);
+    --ink: #eef2ff; --muted: #94a3b8; --dim: #64748b; --blue: #3b82f6; --blue2: #60a5fa; --red: #f43f5e; --green: #22c55e;
+    --amber: #f59e0b; --violet: #a78bfa; --cyan: #22d3ee;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 Geist, system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  a { color: var(--blue2); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .mono { font-family: GeistMono, ui-monospace, monospace; }
+  .eyebrow { font-family: GeistMono; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--blue2); margin-bottom: 14px; }
+  h2 { font-size: clamp(32px, 4.6vw, 56px); line-height: 1.04; letter-spacing: -0.04em; margin: 0 0 18px; font-weight: 640; }
+  h3 { margin: 0 0 6px; font-size: 20px; letter-spacing: -0.015em; }
+  p.lead { color: var(--muted); font-size: clamp(17px, 1.8vw, 20px); max-width: 720px; margin: 0 0 34px; }
+  section { padding: 120px 0 0; position: relative; }
+
+  /* nav */
+  nav.top { position: fixed; inset: 0 0 auto 0; z-index: 50; transition: background .3s, border-color .3s; border-bottom: 1px solid transparent; }
+  nav.top.scrolled { background: rgba(6,9,20,.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-color: var(--line); }
+  nav.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 650; letter-spacing: -0.02em; color: var(--ink); font-size: 18px; }
+  .brand svg { width: 26px; height: 26px; }
+  nav.top .links a { color: var(--muted); margin-left: 26px; font-size: 14px; }
+  nav.top .links a:hover { color: var(--ink); text-decoration: none; }
+  nav.top .links a.gh { color: var(--ink); border: 1px solid var(--line2); padding: 7px 14px; border-radius: 999px; }
+
+  /* hero */
+  .hero { position: relative; min-height: 100vh; min-height: 100svh; display: flex; align-items: center; overflow: hidden; }
+  .hero video, .hero .poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 62% 50%; }
+  .hero::after { content: ""; position: absolute; inset: 0; background:
+      linear-gradient(90deg, rgba(6,9,20,.96) 0%, rgba(6,9,20,.82) 34%, rgba(6,9,20,.18) 70%, rgba(6,9,20,.35) 100%),
+      linear-gradient(0deg, var(--bg) 0%, rgba(6,9,20,0) 26%); }
+  .hero .wrap { position: relative; z-index: 2; width: 100%; padding-top: 70px; }
+  .hero h1 { font-size: clamp(48px, 8.2vw, 112px); line-height: .96; letter-spacing: -0.055em; margin: 0 0 26px; font-weight: 700; max-width: 900px; }
+  .hero h1 .grad { background: linear-gradient(92deg, #93c5fd 0%, #3b82f6 45%, #f43f5e 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .hero .lede { font-size: clamp(18px, 2vw, 22px); color: #cbd5e1; max-width: 640px; margin: 0 0 36px; }
+  .hero .lede b { color: var(--ink); font-weight: 600; }
+  .btns a { display: inline-flex; align-items: center; gap: 8px; padding: 14px 22px; border-radius: 12px; font-weight: 600; margin: 0 12px 12px 0; font-size: 16px; transition: transform .2s, box-shadow .2s, background .2s; }
+  .btns a:hover { text-decoration: none; transform: translateY(-1px); }
+  .btns .primary { background: var(--blue); color: #fff; box-shadow: 0 10px 30px rgba(59,130,246,.35); }
+  .btns .primary:hover { box-shadow: 0 14px 40px rgba(59,130,246,.5); }
+  .btns .ghost { border: 1px solid var(--line2); color: var(--ink); background: rgba(255,255,255,.03); }
+  .ticker { display: inline-flex; align-items: center; gap: 12px; font-family: GeistMono; font-size: 13px; color: var(--muted); border: 1px solid var(--line2); background: rgba(13,20,40,.6); backdrop-filter: blur(6px); padding: 8px 14px; border-radius: 999px; margin-bottom: 30px; flex-wrap: wrap; }
+  .ticker .live { color: var(--green); display: inline-flex; align-items: center; gap: 7px; }
+  .ticker .live::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 0 rgba(34,197,94,.6); animation: pulse 2s infinite; }
+  .ticker .sev { color: #fda4af; }
+  @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(34,197,94,.55); } 70% { box-shadow: 0 0 0 9px rgba(34,197,94,0); } 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); } }
+  .scrollhint { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); z-index: 2; color: var(--dim); font-size: 12px; font-family: GeistMono; letter-spacing: .2em; }
+
+  /* silent failure */
+  .silent { display: grid; grid-template-columns: 1fr 1.25fr; gap: 56px; align-items: center; }
+  .chartcard { background: linear-gradient(180deg, var(--panel), var(--bg2)); border: 1px solid var(--line); border-radius: 22px; padding: 26px 26px 18px; }
+  .chartcard .meta { display: flex; justify-content: space-between; font-family: GeistMono; font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+  .chartcard svg { width: 100%; height: auto; display: block; }
+  .chartcard .cap { font-family: GeistMono; font-size: 14px; color: var(--muted); margin-top: 8px; }
+  .chartcard .cap b { color: #fda4af; font-weight: 500; }
+  #drift-base, #drift-fall { stroke-dasharray: var(--len); stroke-dashoffset: var(--len); }
+  .inview #drift-base { animation: draw 1.6s cubic-bezier(.6,0,.2,1) forwards; }
+  .inview #drift-fall { animation: draw 1.2s cubic-bezier(.6,0,.2,1) 1.45s forwards; }
+  .inview #drift-dot { animation: appear .3s 2.6s forwards; }
+  #drift-dot { opacity: 0; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @keyframes appear { to { opacity: 1; } }
+
+  /* stats */
+  .stats { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; }
+  .stat { background: var(--bg2); padding: 28px 22px; }
+  .stat .v { font-size: clamp(34px, 3.6vw, 46px); font-weight: 680; letter-spacing: -0.04em; line-height: 1; }
+  .stat .v.ok { color: #86efac; }
+  .stat .k { color: var(--muted); font-size: 14px; margin-top: 10px; line-height: 1.4; }
+  .footnote { color: var(--dim); font-size: 14px; margin-top: 16px; max-width: 900px; }
+
+  /* video */
+  .player { position: relative; border-radius: 22px; overflow: hidden; border: 1px solid var(--line2); box-shadow: 0 40px 120px rgba(59,130,246,.18), 0 0 0 1px rgba(255,255,255,.03); background: #000; }
+  .player video { width: 100%; display: block; }
+
+  /* incident walkthrough */
+  .walk { display: grid; grid-template-columns: 320px 1fr; gap: 26px; }
+  .steps { display: flex; flex-direction: column; gap: 6px; }
+  .steps button { all: unset; cursor: pointer; display: grid; grid-template-columns: 32px 1fr; gap: 10px; align-items: start; padding: 14px 14px; border-radius: 14px; border: 1px solid transparent; color: var(--muted); transition: background .2s, border-color .2s, color .2s; }
+  .steps button .n { font-family: GeistMono; font-size: 12px; width: 26px; height: 26px; border-radius: 8px; display: grid; place-items: center; border: 1px solid var(--line2); color: var(--dim); }
+  .steps button b { display: block; color: var(--ink); font-weight: 600; font-size: 16px; }
+  .steps button span.s { font-size: 13px; }
+  .steps button.on { background: var(--panel); border-color: var(--line2); color: var(--muted); }
+  .steps button.on .n { background: var(--blue); border-color: var(--blue); color: #fff; }
+  .steps button:focus-visible { outline: 2px solid var(--blue2); }
+  .stage { background: linear-gradient(180deg, var(--panel), var(--bg2)); border: 1px solid var(--line); border-radius: 22px; padding: 30px; min-height: 440px; position: relative; overflow: hidden; }
+  .stage .pane { display: none; animation: fadein .45s ease; }
+  .stage .pane.on { display: block; }
+  @keyframes fadein { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  .stage .pill { display: inline-block; font-family: GeistMono; font-size: 12px; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--line2); color: var(--muted); margin: 0 8px 8px 0; }
+  .stage .pill.red { color: #fda4af; border-color: rgba(244,63,94,.4); }
+  .stage .pill.blue { color: #bfdbfe; border-color: rgba(59,130,246,.45); }
+  .stage .pill.green { color: #86efac; border-color: rgba(34,197,94,.4); }
+  .bars { margin-top: 14px; }
+  .bar { display: grid; grid-template-columns: 120px 1fr 52px; align-items: center; gap: 12px; margin: 9px 0; font-size: 14px; }
+  .bar .lbl { color: var(--muted); text-align: right; font-family: GeistMono; font-size: 13px; }
+  .bar .track { display: block; height: 12px; border-radius: 6px; background: rgba(148,163,184,.12); overflow: hidden; }
+  .bar .fill { display: block; height: 100%; border-radius: 6px; background: #334155; width: 0; transition: width 1s cubic-bezier(.2,.8,.2,1); }
+  .bar.win .fill { background: linear-gradient(90deg, #2563eb, #60a5fa); }
+  .bar.win .lbl { color: var(--ink); }
+  .bar .num { font-family: GeistMono; font-size: 13px; color: var(--muted); }
+  .dgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .dbox h4 { margin: 0 0 2px; font-size: 15px; } .dbox .why { color: var(--dim); font-size: 13px; margin-top: 8px; line-height: 1.45; }
+  .quote { font-size: clamp(19px, 2vw, 24px); line-height: 1.4; letter-spacing: -0.01em; margin: 6px 0 18px; }
+  ul.ev { padding: 0; margin: 0; list-style: none; } ul.ev li { padding: 10px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+  ul.ev li code { color: #bfdbfe; font-family: GeistMono; font-size: 12px; margin-right: 8px; }
+  table.cmp { width: 100%; border-collapse: collapse; font-size: 15px; margin-top: 10px; }
+  table.cmp td, table.cmp th { padding: 11px 8px; border-bottom: 1px solid var(--line); text-align: left; }
+  table.cmp th { color: var(--dim); font-weight: 500; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
+  table.cmp td.n { font-family: GeistMono; }
+  .good { color: #86efac; }
+  .prcard { display: flex; gap: 18px; align-items: center; border: 1px solid var(--line2); border-radius: 16px; padding: 18px 20px; background: rgba(255,255,255,.02); margin-top: 18px; }
+  .prcard svg { width: 34px; height: 34px; flex: none; }
+  .prcard .t { font-weight: 600; } .prcard .d { color: var(--muted); font-size: 14px; }
+
+  /* gallery */
+  .tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+  .tabs button { all: unset; cursor: pointer; padding: 9px 16px; border-radius: 999px; border: 1px solid var(--line2); color: var(--muted); font-size: 14px; }
+  .tabs button.on { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .tabs button:focus-visible { outline: 2px solid var(--blue2); }
+  .browser { border-radius: 16px; overflow: hidden; border: 1px solid var(--line2); background: #fff; box-shadow: 0 40px 100px rgba(0,0,0,.45); }
+  .browser .bar { display: flex; align-items: center; gap: 7px; height: 38px; padding: 0 14px; background: #eef1f6; margin: 0; grid-template-columns: none; }
+  .browser .bar i { width: 11px; height: 11px; border-radius: 50%; background: #cbd5e1; display: inline-block; }
+  .browser .bar .url { margin-left: 14px; font-family: GeistMono; font-size: 12px; color: #64748b; background: #fff; border-radius: 7px; padding: 3px 12px; }
+  .browser img { width: 100%; display: block; }
+  .shotcap { color: var(--muted); font-size: 15px; margin-top: 14px; }
+
+  /* router */
+  .tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 18px; background: var(--bg2); }
+  table.router { border-collapse: collapse; width: 100%; min-width: 760px; font-size: 15px; }
+  table.router th, table.router td { padding: 16px 18px; border-bottom: 1px solid var(--line); text-align: left; white-space: nowrap; }
+  table.router th { color: var(--dim); font-weight: 500; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
+  table.router tr:last-child td { border-bottom: 0; }
+  table.router tr.active td { background: rgba(59,130,246,.07); }
+  table.router .acc { display: grid; grid-template-columns: 54px 120px; align-items: center; gap: 10px; font-family: GeistMono; }
+  table.router .acc .t { display: block; height: 6px; border-radius: 3px; background: rgba(148,163,184,.14); overflow: hidden; }
+  table.router .acc .f { display: block; height: 100%; background: linear-gradient(90deg, #2563eb, #60a5fa); }
+  .tag { font-family: GeistMono; font-size: 11px; color: #bfdbfe; border: 1px solid rgba(59,130,246,.5); border-radius: 6px; padding: 2px 7px; margin-left: 8px; }
+
+  /* safety */
+  .safety { border-radius: 28px; overflow: hidden; border: 1px solid var(--line); position: relative; background: #070b18; }
+  .safety .bgimg { position: absolute; top: 0; right: 0; width: 64%; height: 560px; background: url(assets/safety.jpg) 58% 46% / cover no-repeat;
+    -webkit-mask-image: radial-gradient(ellipse 70% 62% at 62% 42%, #000 40%, transparent 78%); mask-image: radial-gradient(ellipse 70% 62% at 62% 42%, #000 40%, transparent 78%); }
+  .safety .inner { position: relative; padding: clamp(28px, 5vw, 64px); }
+  .safety .inner > .eyebrow, .safety .inner > h2, .safety .inner > p.lead { max-width: 560px; position: relative; }
+  .safety .inner > p.lead { text-shadow: 0 1px 12px #070b18; }
+  .wall { display: grid; grid-template-columns: repeat(auto-fill, minmax(22px, 1fr)); gap: 6px; margin: 28px 0 18px; max-width: 900px; }
+  .tile { aspect-ratio: 1; border-radius: 6px; opacity: 0; transform: scale(.6); transition: opacity .35s, transform .35s; position: relative; cursor: default; }
+  .inview .tile { opacity: 1; transform: none; }
+  .tile:hover, .tile:focus { outline: 2px solid #fff; outline-offset: 1px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 18px; font-size: 14px; color: var(--muted); }
+  .legend span { display: inline-flex; align-items: center; gap: 8px; }
+  .legend i { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+  .tip { position: fixed; z-index: 60; pointer-events: none; background: #0b1224; border: 1px solid var(--line2); border-radius: 10px; padding: 10px 12px; font-size: 13px; max-width: 320px; opacity: 0; transition: opacity .15s; box-shadow: 0 20px 50px rgba(0,0,0,.5); }
+  .tip b { display: block; font-family: GeistMono; font-size: 12px; color: #bfdbfe; margin-bottom: 3px; }
+  .chain { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 34px; }
+  .chain > div { border: 1px solid var(--line2); border-radius: 14px; padding: 16px; background: rgba(13,20,40,.65); }
+  .chain .k { font-family: GeistMono; font-size: 12px; color: var(--blue2); }
+  .chain .t { font-weight: 600; margin-top: 4px; } .chain .s { color: var(--muted); font-size: 13px; margin-top: 2px; }
+
+  /* architecture */
+  .diagram { background: #fff; border-radius: 22px; padding: 18px; border: 1px solid var(--line); }
+  .diagram img { width: 100%; max-width: 900px; margin: 0 auto; display: block; }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+  .chips span { border: 1px solid var(--line2); border-radius: 999px; padding: 7px 14px; font-size: 14px; color: #cbd5e1; background: rgba(255,255,255,.02); }
+  .docs { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin-top: 34px; }
+  .docs a { display: block; border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; color: var(--ink); background: var(--bg2); transition: border-color .2s, transform .2s; }
+  .docs a:hover { border-color: var(--blue); text-decoration: none; transform: translateY(-2px); }
+  .docs a span { display: block; color: var(--muted); font-size: 13px; margin-top: 3px; }
+
+  footer { margin-top: 120px; border-top: 1px solid var(--line); padding: 40px 0 60px; color: var(--dim); font-size: 14px; }
+
+  .reveal { opacity: 0; transform: translateY(26px); transition: opacity .9s cubic-bezier(.2,.8,.2,1), transform .9s cubic-bezier(.2,.8,.2,1); }
+  .reveal.inview { opacity: 1; transform: none; }
+
+  @media (max-width: 960px) {
+    .silent, .walk { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(3, 1fr); }
+    .steps { flex-direction: row; overflow-x: auto; padding-bottom: 6px; }
+    .steps button { min-width: 190px; }
+    .chain { grid-template-columns: 1fr 1fr; }
+    .safety .bgimg { width: 100%; height: 340px; opacity: .45; }
+    nav.top .links a:not(.gh) { display: none; }
+  }
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    section { padding-top: 90px; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .dgrid { grid-template-columns: 1fr; }
+    .bar { grid-template-columns: 92px 1fr 44px; }
+    .stage { padding: 20px; }
+    .hero::after { background: linear-gradient(180deg, rgba(6,9,20,.55), rgba(6,9,20,.9) 55%, var(--bg)); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .reveal, .tile { opacity: 1 !important; transform: none !important; }
+    #drift-base, #drift-fall { stroke-dashoffset: 0 !important; } #drift-dot { opacity: 1 !important; }
+  }
+</style>
+</head>
+<body>
+<nav class="top" id="nav"><div class="wrap">
+  <a class="brand" href="#top" aria-label="Driftline home"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 12 H13 L18 22 H29" fill="none" stroke="#3b82f6" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Driftline</a>
+  <div class="links"><a href="#incident">An incident</a><a href="#results">Results</a><a href="#safety">Safety</a><a href="#architecture">Architecture</a><a class="gh" href="__REPO__">GitHub</a></div>
+</div></nav>
+
+<header class="hero" id="top">
+  <img class="poster" src="assets/hero.jpg" alt="" aria-hidden="true">
+  <video id="herovid" muted loop playsinline preload="none" poster="assets/hero.jpg" aria-hidden="true"><source src="assets/hero-loop.mp4" type="video/mp4"></video>
+  <div class="wrap">
+    <div class="ticker"><span class="live">LIVE</span><span>__INC_ID__</span><span class="sev">sev1</span><span>hit_count −75%</span><span>→ retrieval → PR #__PR_NUM__</span></div>
+    <h1>Your RAG doesn't crash.<br><span class="grad">It drifts.</span></h1>
+    <p class="lede">Driftline notices when answers quietly get worse, sends the incident to the right specialist agent, <b>proves the fix in a sandbox</b> and opens the pull request. <b>It never merges.</b></p>
+    <div class="btns"><a class="primary" href="#film">▶ Watch the 20-second film</a><a class="ghost" href="__REPO__">View the code</a></div>
+  </div>
+  <div class="scrollhint">SCROLL</div>
+</header>
+
+<main>
+<section id="problem"><div class="wrap silent">
+  <div class="reveal">
+    <div class="eyebrow">The failure nobody pages you for</div>
+    <h2>No error.<br>No alert.<br>Worse answers.</h2>
+    <p class="lead">Someone lowers <span class="mono">top_k</span>, swaps a prompt, or an indexer stops while documents change. Every request still returns 200, and the answers degrade. Driftline watches quality metrics in event time with EWMA baselines and CUSUM, and asks a model to confirm a breach is real before it opens an incident.</p>
+  </div>
+  <div class="chartcard reveal" id="chart">
+    <div class="meta"><span>hit_count · one-minute windows</span><span>replay of fault F3</span></div>
+    <svg viewBox="0 0 640 300" role="img" aria-label="hit_count holds near 7.9, then falls to 2.0 after top_k changes from 8 to 2">
+      <defs><linearGradient id="g1" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#f43f5e" stop-opacity=".22"/><stop offset="1" stop-color="#f43f5e" stop-opacity="0"/></linearGradient></defs>
+      <g stroke="rgba(148,163,184,.12)"><line x1="0" y1="60" x2="640" y2="60"/><line x1="0" y1="140" x2="640" y2="140"/><line x1="0" y1="220" x2="640" y2="220"/></g>
+      <path id="drift-area" fill="url(#g1)" opacity="0"/>
+      <path id="drift-base" fill="none" stroke="#93c5fd" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path id="drift-fall" fill="none" stroke="#f43f5e" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle id="drift-dot" r="7" fill="#f43f5e"/>
+      <text x="8" y="38" fill="#93c5fd" font-family="GeistMono" font-size="14">7.9</text>
+      <text id="drift-lab" fill="#fda4af" font-family="GeistMono" font-size="14">2.0</text>
+      <line x1="370" y1="20" x2="370" y2="280" stroke="rgba(244,63,94,.5)" stroke-dasharray="4 5"/>
+      <text x="378" y="34" fill="#fda4af" font-family="GeistMono" font-size="13">top_k: 8 → 2</text>
+    </svg>
+    <div class="cap">detected <b>__TTD__ min</b> after onset · CUSUM __CUSUM__ · D1 says <b>real</b> (0.95)</div>
+  </div>
+</div></section>
+
+<section id="results"><div class="wrap">
+  <div class="reveal">
+    <div class="eyebrow">Measured, not promised</div>
+    <h2>Every fault caught. Zero false alarms.</h2>
+    <p class="lead">End-to-end evaluation on replayed faults: __TRIALS__ incidents (7 fault types × 3 trials) plus __FP_HOURS__ hours of clean traffic, scored against labels. The numbers come straight from <a href="__REPO__/tree/main/evals/reports">evals/reports</a>.</p>
+  </div>
+  <div class="stats reveal" id="stats">
+    <div class="stat"><div class="v ok" data-count="__DETECTION__" data-suffix="%">0%</div><div class="k">faults detected (__TRIALS__ of __TRIALS__)</div></div>
+    <div class="stat"><div class="v ok" data-count="__FP__">0</div><div class="k">false alarms in __FP_HOURS__ h of clean traffic</div></div>
+    <div class="stat"><div class="v ok" data-count="__ACTION__" data-suffix="%">0%</div><div class="k">right action: PR, runbook or escalate</div></div>
+    <div class="stat"><div class="v" data-count="__ROUTING__" data-suffix="%">0%</div><div class="k">routed to the right specialist</div></div>
+    <div class="stat"><div class="v ok" data-count="__FIX__" data-suffix="%">0%</div><div class="k">proposed fixes passed the sandbox gate</div></div>
+    <div class="stat"><div class="v" data-count="__COST__" data-prefix="$" data-dec="2">$0</div><div class="k">per incident: agents, decisions and sandbox</div></div>
+  </div>
+  <p class="footnote reveal">Median time from detection to a validated, D6-cleared fix: about __WALL__ minutes. Where it is weakest: severity (D2) matches the label __SEVERITY__% of the time, usually one level off; it drives notifications, not actions. Reported as measured.</p>
+</div></section>
+
+<section id="film"><div class="wrap">
+  <div class="reveal"><div class="eyebrow">20 seconds</div><h2>Drift, caught and fixed.</h2></div>
+  <div class="player reveal"><video controls playsinline preload="none" poster="video/brag.jpg"><source src="video/brag.mp4" type="video/mp4"></video></div>
+</div></section>
+
+<section id="incident"><div class="wrap">
+  <div class="reveal">
+    <div class="eyebrow">Anatomy of a real incident</div>
+    <h2>Every step is a decision<br>you can audit.</h2>
+    <p class="lead">One incident from a replay of fault F3, exactly as Driftline recorded it: <span class="mono">__INC_ID__</span>. Each decision is a scored distribution from the router; under 0.6 confidence it goes to a person.</p>
+  </div>
+  <div class="walk reveal" id="walk">
+    <div class="steps" role="tablist" aria-label="Incident steps"></div>
+    <div class="stage" id="stage"></div>
+  </div>
+</div></section>
+
+<section id="console"><div class="wrap">
+  <div class="reveal">
+    <div class="eyebrow">The console</div>
+    <h2>Built for the person who approves.</h2>
+    <p class="lead">Next.js on Container Apps behind Entra sign-in, with no client secret: a managed identity is the federated credential. It talks only to ops-api, which checks the admin role again on every action.</p>
+  </div>
+  <div class="reveal">
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <div class="browser"><div class="bar"><i></i><i></i><i></i><span class="url" id="shoturl"></span></div><img id="shot" alt="" loading="lazy"></div>
+    <p class="shotcap" id="shotcap"></p>
+  </div>
+</div></section>
+
+<section id="router"><div class="wrap">
+  <div class="reveal">
+    <div class="eyebrow">The router benchmark</div>
+    <h2>Models, measured against a rules floor.</h2>
+    <p class="lead">Six decision types, 1,200 synthetic incidents each, 8 paraphrase perturbations per case. Calibration, robustness, latency and cost, not just accuracy. Report: <a href="__REPO__/blob/main/evals/reports/__ROUTER_FILE__"><span class="mono">__ROUTER_FILE__</span></a>.</p>
+  </div>
+  <div class="tablewrap reveal"><table class="router">
+    <thead><tr><th>Client</th><th>D3 routing accuracy</th><th>D4 action accuracy</th><th>D3 ECE</th><th>Flip rate</th><th>p95</th><th>$ / 1k decisions</th></tr></thead>
+    <tbody id="routerrows"></tbody>
+  </table></div>
+  <p class="footnote reveal">After sharpening the D3 and D4 rubrics against live failures, gpt-5-mini overtook the rules floor on routing (89% vs 88%). The floor still edges D4, because it shares the synthetic data's structure, but it has no calibrated confidence and can't read a root cause analysis (D4 to D6). Production uses gpt-5-mini.</p>
+</div></section>
+
+<section id="safety"><div class="wrap">
+  <div class="safety reveal" id="safetybox">
+    <div class="bgimg" aria-hidden="true"></div>
+    <div class="inner">
+      <div class="eyebrow">Opens the PR. Never merges.</div>
+      <h2>__SAFETY_PASSED__ of __SAFETY_CASES__ attacks stopped.</h2>
+      <p class="lead">Every agent identity tried to merge, push to main, write outside its folder and read the GitHub key. Twenty poisoned documents tried to make agents delete files, approve themselves, leak secrets or steer routing. A viewer tried every admin route. Each tile is one real case, coloured by the first layer that stopped it.</p>
+      <div class="wall" id="wall" role="list" aria-label="Safety cases"></div>
+      <div class="legend" id="legend"></div>
+      <div class="chain">
+        <div><div class="k">LAYER 1</div><div class="t">Prompt shields</div><div class="s">on every tool result: caught __SHIELD__% alone</div></div>
+        <div><div class="k">LAYER 2</div><div class="t">D6 judges every write</div><div class="s">before it is attempted</div></div>
+        <div><div class="k">LAYER 3</div><div class="t">APIM policy</div><div class="s">per-agent allowlists, no merge, no main</div></div>
+        <div><div class="k">LAYER 4</div><div class="t">Branch protection</div><div class="s">a human reviews every PR</div></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section id="architecture"><div class="wrap">
+  <div class="reveal">
+    <div class="eyebrow">Architecture</div>
+    <h2>Zero keys. One secret. Every hop traced.</h2>
+    <p class="lead">Every service is a container app with its own managed identity. Each of the seven agents has its own identity too, so the MCP gateway can tell them apart. The only secret is the GitHub App key, readable by one identity.</p>
+  </div>
+  <div class="diagram reveal"><img src="diagrams/architecture.png" alt="Driftline on Azure: monitored application, Service Bus and Cosmos DB, the Driftline services, Foundry, the MCP gateway, the console and observability" loading="lazy"></div>
+  <div class="chips reveal">
+    <span>Azure Container Apps</span><span>Microsoft Foundry</span><span>Agent Framework</span><span>AI Search</span><span>Content Safety</span><span>API Management · MCP</span><span>Cosmos DB</span><span>Service Bus</span><span>Entra ID · OIDC</span><span>OpenTelemetry</span><span>Log Analytics</span><span>Bicep · azd</span><span>Next.js</span><span>GitHub App</span>
+  </div>
+  <div class="docs reveal">
+    <a href="__REPO__/blob/main/docs/architecture.md">Architecture<span>components and one incident end to end</span></a>
+    <a href="__REPO__/blob/main/docs/threat-model.md">Threat model<span>STRIDE per trust boundary, with evidence</span></a>
+    <a href="__REPO__/blob/main/docs/well-architected.md">Well-Architected review<span>five pillars, gaps stated</span></a>
+    <a href="__REPO__/blob/main/docs/cost-model.md">Cost model<span>measured per incident</span></a>
+    <a href="__REPO__/tree/main/docs/adr">10 ADRs<span>every decision and its alternative</span></a>
+    <a href="__REPO__/blob/main/docs/demo-script.md">Demo script<span>an 8-minute walkthrough</span></a>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">Driftline was built from a written specification, phase by phase, on Azure, and evaluated at four layers: RAG quality, the router, the end-to-end system and safety. The environment is torn down after evaluation; the code, reports and ADRs are in the <a href="__REPO__">repository</a>. Hero media generated with Higgsfield.</div></footer>
+<div class="tip" id="tip"></div>
+
+<script>
+const D = __DATA__;
+const $ = (s, r = document) => r.querySelector(s);
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+// nav background after the hero starts scrolling
+addEventListener("scroll", () => $("#nav").classList.toggle("scrolled", scrollY > 40), { passive: true });
+
+// hero loop: start only when visible and motion is welcome
+const hv = $("#herovid");
+if (!reduce && hv) { hv.preload = "auto"; hv.play().catch(() => {}); }
+
+// reveal on scroll
+const io = new IntersectionObserver((es) => es.forEach((e) => {
+  if (!e.isIntersecting) return;
+  e.target.classList.add("inview");
+  if (e.target.id === "stats") countUp();
+  io.unobserve(e.target);
+}), { threshold: 0.18 });
+document.querySelectorAll(".reveal, #chart, #stats, #safetybox").forEach((el) => io.observe(el));
+
+// the drift chart
+(function chart() {
+  const pts = [];
+  for (let i = 0; i <= 64; i++) {
+    const x = i / 64 * 620 + 10;
+    const base = 7.9 + 0.17 * Math.sin(i * 1.7) + 0.09 * Math.cos(i * 0.9);
+    const k = Math.min(1, Math.max(0, (i - 36) / 5));
+    const v = base + (2.0 + 0.07 * Math.sin(i * 2.3) - base) * k;
+    pts.push([x, 270 - v / 9 * 240]);
+  }
+  const d = (a) => "M" + a.map((p) => p[0].toFixed(1) + " " + p[1].toFixed(1)).join(" L");
+  const base = $("#drift-base"), fall = $("#drift-fall");
+  base.setAttribute("d", d(pts.slice(0, 37))); fall.setAttribute("d", d(pts.slice(36)));
+  base.style.setProperty("--len", base.getTotalLength()); fall.style.setProperty("--len", fall.getTotalLength());
+  const last = pts[pts.length - 1];
+  $("#drift-dot").setAttribute("cx", last[0]); $("#drift-dot").setAttribute("cy", last[1]);
+  $("#drift-lab").setAttribute("x", last[0] - 34); $("#drift-lab").setAttribute("y", last[1] - 16);
+})();
+
+function countUp() {
+  document.querySelectorAll("[data-count]").forEach((el) => {
+    const to = parseFloat(el.dataset.count), dec = +(el.dataset.dec || 0);
+    const pre = el.dataset.prefix || "", suf = el.dataset.suffix || "";
+    const t0 = performance.now(), dur = reduce ? 0 : 1300;
+    const tick = (now) => {
+      const p = dur ? Math.min(1, (now - t0) / dur) : 1, e = 1 - Math.pow(1 - p, 3);
+      el.textContent = pre + (to * e).toFixed(dec) + suf;
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  });
+}
+
+// incident walkthrough
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const bars = (dec) => {
+  const rows = Object.entries(dec.scores).sort((a, b) => b[1] - a[1]);
+  return `<div class="bars">${rows.map(([k, v]) => `<div class="bar ${k === dec.chosen ? "win" : ""}"><span class="lbl">${esc(k)}</span><span class="track"><span class="fill" data-w="${(v * 100).toFixed(1)}"></span></span><span class="num">${v.toFixed(2)}</span></div>`).join("")}</div>`;
+};
+const I = D.incident;
+const STEPS = [
+  { t: "Detect", s: "CUSUM breach, D1 verifies", html: () => `
+      <span class="pill red">hit_count ${I.delta.baseline} → ${I.delta.current} (${I.delta.delta_pct}%)</span><span class="pill">config diff: top_k 8 → 2</span><span class="pill blue">detected ${D.system.ttd} min after onset</span>
+      <p class="quote">The detector's CUSUM crossed its threshold on two consecutive five-minute blocks. Before opening anything, the router's <b>D1</b> decided whether the breach is real or noise.</p>
+      <div class="dbox"><h4>D1 · real or noise</h4>${bars(I.d1)}</div>` },
+  { t: "Severity and routing", s: "D2 and D3", html: () => `
+      <div class="dgrid"><div class="dbox"><h4>D2 · severity</h4>${bars(I.decisions.D2)}<div class="why">${esc(I.decisions.D2.rationale || "")}</div></div>
+      <div class="dbox"><h4>D3 · which specialist</h4>${bars(I.decisions.D3)}<div class="why">${esc(I.decisions.D3.rationale || "")}</div></div></div>` },
+  { t: "Investigate", s: "retrieval specialist via MCP", html: () => `
+      <span class="pill blue">agent-retrieval identity</span><span class="pill">GitHub + KQL through APIM</span><span class="pill green">confidence ${I.rca.confidence.toFixed(2)}</span>
+      <p class="quote">“${esc(I.rca.root_cause)}”</p>
+      <ul class="ev">${I.rca.evidence.slice(0, 4).map((e) => `<li><code>${esc(e.source)}</code>${esc(e.detail)}</li>`).join("")}</ul>` },
+  { t: "Decide the action", s: "D4: pr, runbook or escalate", html: () => `
+      <p class="quote">The fix lives in the repository, so D4 chose a pull request. Proposed change: <span class="mono">${esc(I.rca.change)}</span>.</p>
+      <div class="dbox"><h4>D4 · action</h4>${bars(I.decisions.D4)}<div class="why">${esc(I.decisions.D4.rationale || "")}</div></div>` },
+  { t: "Prove it", s: "sandbox + D5", html: () => `
+      <span class="pill green">gate passed</span><span class="pill">${I.validation.questions} golden questions</span><span class="pill">running config + fix</span>
+      <table class="cmp"><thead><tr><th>Metric</th><th>Baseline</th><th>With the fix</th></tr></thead><tbody>
+      ${I.validation.rows.map((r) => `<tr><td>${esc(r[0])}</td><td class="n">${r[1]}</td><td class="n ${r[3] ? "good" : ""}">${r[2]}</td></tr>`).join("")}</tbody></table>
+      <div class="dbox" style="margin-top:18px"><h4>D5 · accept the fix?</h4>${bars(I.decisions.D5)}</div>` },
+  { t: "Propose", s: "D6, then the PR", html: () => `
+      <div class="dbox"><h4>D6 · is this write allowed?</h4>${bars(I.decisions.D6)}<div class="why">${esc(I.decisions.D6.rationale || "")}</div></div>
+      <a class="prcard" href="${esc(I.pr_url)}"><svg viewBox="0 0 16 16" fill="#e2e8f0" aria-hidden="true"><path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354Z"/></svg>
+      <div><div class="t">Pull request #${esc(I.pr_url.split("/").pop())} opened by the Driftline GitHub App</div><div class="d">Branch protection requires a human review. Driftline never merges. Cost of this incident: $${I.cost.toFixed(3)}.</div></div></a>` },
+];
+(function walkthrough() {
+  const nav = $("#walk .steps"), stage = $("#stage");
+  nav.innerHTML = STEPS.map((s, i) => `<button role="tab" aria-selected="${i === 0}" data-i="${i}"><span class="n">${i + 1}</span><span><b>${s.t}</b><span class="s">${s.s}</span></span></button>`).join("");
+  stage.innerHTML = STEPS.map((s, i) => `<div class="pane" role="tabpanel" data-i="${i}">${s.html()}</div>`).join("");
+  let cur = 0, auto = !reduce, timer;
+  const show = (i) => {
+    cur = i;
+    nav.querySelectorAll("button").forEach((b) => { b.classList.toggle("on", +b.dataset.i === i); b.setAttribute("aria-selected", +b.dataset.i === i); });
+    stage.querySelectorAll(".pane").forEach((p) => p.classList.toggle("on", +p.dataset.i === i));
+    const pane = stage.querySelector(`.pane[data-i="${i}"]`);
+    pane.querySelectorAll(".fill").forEach((f) => { f.style.width = "0"; });
+    requestAnimationFrame(() => requestAnimationFrame(() => pane.querySelectorAll(".fill").forEach((f) => { f.style.width = f.dataset.w + "%"; })));
+  };
+  nav.addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; auto = false; clearInterval(timer); show(+b.dataset.i); });
+  show(0);
+  const wio = new IntersectionObserver((es) => es.forEach((e) => {
+    clearInterval(timer);
+    if (e.isIntersecting && auto) timer = setInterval(() => auto && show((cur + 1) % STEPS.length), 5200);
+  }), { threshold: 0.4 });
+  wio.observe($("#walk"));
+})();
+
+// console gallery
+(function gallery() {
+  const tabs = $("#tabs"), img = $("#shot");
+  tabs.innerHTML = D.shots.map((s, i) => `<button role="tab" data-i="${i}">${s.title}</button>`).join("");
+  const show = (i) => {
+    const s = D.shots[i];
+    img.src = `screenshots/${s.file}`; img.alt = s.caption; $("#shoturl").textContent = `console · ${s.path}`; $("#shotcap").textContent = s.caption;
+    tabs.querySelectorAll("button").forEach((b) => b.classList.toggle("on", +b.dataset.i === i));
+  };
+  tabs.addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) show(+b.dataset.i); });
+  show(0);
+})();
+
+// router table
+$("#routerrows").innerHTML = D.router.map((r) => `
+  <tr class="${r.active ? "active" : ""}"><td><b>${esc(r.client)}</b>${r.active ? '<span class="tag">in production</span>' : ""}</td>
+  <td><span class="acc"><span>${r.d3}%</span><span class="t"><span class="f" style="width:${r.d3}%"></span></span></span></td>
+  <td><span class="acc"><span>${r.d4}%</span><span class="t"><span class="f" style="width:${r.d4}%"></span></span></span></td>
+  <td class="mono">${r.ece}</td><td class="mono">${r.flip}</td><td class="mono">${r.p95}</td><td class="mono">${r.cost}</td></tr>`).join("");
+
+// safety wall
+(function wall() {
+  const COLORS = { "content-safety": "#a78bfa", "content-filter": "#c084fc", d6: "#3b82f6", apim: "#22d3ee", "azure-rbac": "#f59e0b", "ops-api": "#22c55e", router: "#f472b6" };
+  const NAMES = { "content-safety": "Prompt shields", "content-filter": "Content filter", d6: "D6 decision", apim: "APIM policy", "azure-rbac": "Azure RBAC", "ops-api": "ops-api role check", router: "Router held" };
+  const w = $("#wall"), tip = $("#tip");
+  w.innerHTML = D.safety.map((c, i) => `<div class="tile" role="listitem" tabindex="0" data-i="${i}" style="background:${COLORS[c.by] || "#64748b"};transition-delay:${(i * 18)}ms" aria-label="${esc(c.id)}: blocked by ${esc(NAMES[c.by] || c.by)}"></div>`).join("");
+  const counts = {}; D.safety.forEach((c) => { counts[c.by] = (counts[c.by] || 0) + 1; });
+  $("#legend").innerHTML = Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([k, n]) => `<span><i style="background:${COLORS[k]}"></i>${NAMES[k] || k} · ${n}</span>`).join("");
+  const move = (e) => { tip.style.left = Math.min(innerWidth - 340, e.clientX + 14) + "px"; tip.style.top = (e.clientY + 16) + "px"; };
+  const showTip = (el, e) => {
+    const c = D.safety[+el.dataset.i];
+    tip.innerHTML = `<b>${esc(c.id)}</b>${esc(c.attempt)}<br><span style="color:#94a3b8">stopped by ${esc((c.layers || []).map((l) => NAMES[l] || l).join(", "))}</span>`;
+    tip.style.opacity = 1; if (e) move(e); else { const r = el.getBoundingClientRect(); tip.style.left = r.right + 8 + "px"; tip.style.top = r.top + "px"; }
+  };
+  w.addEventListener("mouseover", (e) => { const t = e.target.closest(".tile"); if (t) showTip(t, e); });
+  w.addEventListener("mousemove", move);
+  w.addEventListener("mouseleave", () => { tip.style.opacity = 0; });
+  w.addEventListener("focusin", (e) => { const t = e.target.closest(".tile"); if (t) showTip(t); });
+  w.addEventListener("focusout", () => { tip.style.opacity = 0; });
+})();
+</script>
+</body>
+</html>

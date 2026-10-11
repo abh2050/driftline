@@ -10,6 +10,7 @@ repos:
         exclude: ^apps/console/tsconfig\.json$
       - id: check-added-large-files
         args: [--maxkb=4096]
+        exclude: ^docs/site/video/brag\.mp4$  # the 20 s film, shown in the README and on Pages
       - id: detect-private-key
   - repo: local
     hooks:

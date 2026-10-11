@@ -12,6 +12,14 @@ extensions:
       - https://monitor.azure.com/.default
 
 receivers:
+  # the collector's own metrics (otelcol_exporter_send_failed_*), for the drop-rate alert
+  prometheus/self:
+    config:
+      scrape_configs:
+        - job_name: otel-collector
+          scrape_interval: 60s
+          static_configs:
+            - targets: ["127.0.0.1:8888"]
   otlp:
     protocols:
       grpc:
@@ -52,6 +60,14 @@ processors:
       - name: baseline
         type: probabilistic
         probabilistic: { sampling_percentage: 10 }
+  # FastAPI's per-request internal spans and ingest's per-event HTTP server span carried
+  # most of the Log Analytics volume (about 1 GB a day) and no diagnostic value. Errors stay.
+  filter/noise:
+    error_mode: ignore
+    traces:
+      span:
+        - 'IsMatch(name, "^fastapi\\.") and status.code != STATUS_CODE_ERROR'
+        - 'resource.attributes["service.name"] == "ingest" and name == "POST /events/telemetry" and status.code != STATUS_CODE_ERROR'
   cumulative_to_delta:
   resource/env:
     attributes:
@@ -94,6 +110,12 @@ service:
   telemetry:
     metrics:
       level: normal
+      readers:
+        - pull:
+            exporter:
+              prometheus:
+                host: 127.0.0.1
+                port: 8888
   pipelines:
     traces/in:
       receivers: [otlp]
@@ -101,10 +123,10 @@ service:
       exporters: [span_metrics, forward/sample]
     traces/out:
       receivers: [forward/sample]
-      processors: [tail_sampling, batch]
+      processors: [filter/noise, tail_sampling, batch]
       exporters: [otlp_http/azuremonitor]
     metrics:
-      receivers: [otlp, span_metrics]
+      receivers: [otlp, span_metrics, prometheus/self]
       processors: [memory_limiter, resource/env, cumulative_to_delta, batch]
       exporters: [otlp_http/azuremonitor]
     logs:

@@ -1,0 +1,211 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Driftline brag</title>
+<style>
+  @font-face { font-family: Geist; src: url(geist-latin.woff2) format("woff2"); font-weight: 100 900; }
+  @font-face { font-family: GeistMono; src: url(geist-mono-latin.woff2) format("woff2"); font-weight: 100 900; }
+  :root { --ink: #0a0a0a; --muted: #6b7280; --blue: #2563eb; --line: #e5e7eb; --bg: #ffffff; --soft: #f8fafc; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1920px; height: 1080px; overflow: hidden; background: var(--bg); }
+  body { font-family: Geist, system-ui, sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+  .scene { position: absolute; inset: 0; opacity: 0; }
+  .h1 { font-size: 104px; font-weight: 640; letter-spacing: -0.035em; line-height: 1.02; }
+  .h2 { font-size: 64px; font-weight: 620; letter-spacing: -0.03em; line-height: 1.08; }
+  .mono { font-family: GeistMono, ui-monospace, monospace; }
+  .muted { color: var(--muted); }
+  .blue { color: var(--blue); }
+  /* camera over a real screenshot */
+  .cam { position: absolute; overflow: hidden; border-radius: 22px; background: #fff;
+         box-shadow: 0 30px 80px rgba(15, 23, 42, 0.16), 0 0 0 1px rgba(15, 23, 42, 0.07); }
+  .cam .stage { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+  .cam img { display: block; }
+  .glow { position: absolute; border: 4px solid var(--blue); border-radius: 14px; opacity: 0;
+          box-shadow: 0 0 0 9999px rgba(255,255,255,0); }
+  .card { position: absolute; width: 360px; height: 230px; border-radius: 22px; background: var(--soft);
+          border: 2px solid var(--line); padding: 30px 30px; }
+  .card .n { font-family: GeistMono; font-size: 22px; color: var(--muted); }
+  .card .t { font-size: 36px; font-weight: 620; letter-spacing: -0.02em; margin-top: 18px; line-height: 1.12; }
+  .card .s { font-size: 22px; color: var(--muted); margin-top: 10px; }
+  .card.on { border-color: var(--blue); background: #eff6ff; }
+  .card.on .n { color: var(--blue); }
+</style>
+</head>
+<body>
+
+<!-- 1 hook -->
+<section class="scene" id="s1">
+  <div class="h1" id="s1h" style="position:absolute;left:160px;top:170px">Your RAG got worse.</div>
+  <svg id="chart" width="1600" height="470" style="position:absolute;left:160px;top:400px" viewBox="0 0 1600 470">
+    <line x1="0" y1="430" x2="1600" y2="430" stroke="#e5e7eb" stroke-width="2"/>
+    <text x="0" y="24" font-family="GeistMono" font-size="24" fill="#6b7280">hit_count</text>
+    <path id="line" fill="none" stroke="#0a0a0a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="fall" fill="none" stroke="#dc2626" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle id="dot" r="11" fill="#dc2626" opacity="0"/>
+    <text id="lab1" x="22" y="60" font-family="GeistMono" font-size="30" fill="#0a0a0a">7.9</text>
+    <text id="lab2" font-family="GeistMono" font-size="30" fill="#dc2626" opacity="0">2.0</text>
+  </svg>
+  <div class="mono muted" id="s1c" style="position:absolute;left:160px;top:900px;font-size:34px"></div>
+</section>
+
+<!-- 2 reveal -->
+<section class="scene" id="s2">
+  <div class="h2" style="position:absolute;left:160px;top:120px">Driftline <span class="blue">noticed.</span></div>
+  <div class="muted" style="position:absolute;left:160px;top:205px;font-size:32px">Sev1 incident, detected live from telemetry.</div>
+  <div class="cam" id="cam2" style="left:160px;top:300px;width:1600px;height:700px"><div class="stage"><img src="incidents.png" width="2880" height="1800"><div class="glow" id="g2" style="left:40px;top:468px;width:2800px;height:78px"></div></div></div>
+</section>
+
+<!-- 3 routing -->
+<section class="scene" id="s3">
+  <div class="h2" style="position:absolute;left:160px;top:120px">Routed to the right specialist.</div>
+  <div class="muted" style="position:absolute;left:160px;top:205px;font-size:32px">Every decision is a scored, audited choice.</div>
+  <div class="cam" id="cam3" style="left:160px;top:300px;width:1600px;height:700px"><div class="stage"><img src="incident.png" width="2880" height="2512"></div></div>
+</section>
+
+<!-- 4 proof -->
+<section class="scene" id="s4">
+  <div class="h2" style="position:absolute;left:160px;top:120px">Proves the fix <span class="blue">before</span> the PR exists.</div>
+  <div class="muted" style="position:absolute;left:160px;top:205px;font-size:32px">40 golden questions in a sandbox, against the baseline.</div>
+  <div class="cam" id="cam4" style="left:160px;top:300px;width:1600px;height:700px"><div class="stage"><img src="incident.png" width="2880" height="2512"><div class="glow" id="g4" style="left:2048px;top:1018px;width:208px;height:70px"></div><div style="position:absolute;left:0;top:2392px;width:2880px;height:120px;background:#fff"></div></div></div>
+</section>
+
+<!-- 5 safety -->
+<section class="scene" id="s5">
+  <div class="h2" style="position:absolute;left:160px;top:150px">Opens the PR. <span class="blue">Never merges.</span></div>
+  <div id="cards"></div>
+  <div style="position:absolute;left:160px;top:820px;font-size:40px;font-weight:600" id="s5n">
+    <span class="mono" id="cnt">0</span> / 55 attacks blocked <span class="muted" style="font-weight:400">in the safety eval</span></div>
+</section>
+
+<!-- 6 outro -->
+<section class="scene" id="s6">
+  <div style="position:absolute;left:0;right:0;top:300px;text-align:center">
+    <div class="h1" style="font-size:150px">Driftline</div>
+    <div style="font-size:44px;margin-top:26px;font-weight:520" id="verbs">Detect → Route → Prove → Propose</div>
+    <div class="muted" style="font-size:32px;margin-top:40px" id="stats">21/21 faults caught · 0 false alarms in 48 h · ~$0.07 per incident</div>
+    <div class="mono blue" style="font-size:30px;margin-top:56px" id="url">github.com/abh2050/driftline</div>
+  </div>
+</section>
+
+<script>
+const S = [ [0, 3.6], [3.6, 7.2], [7.2, 11.0], [11.0, 14.6], [14.6, 17.6], [17.6, 20.5] ];
+const FADE = 0.3;
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const ease = x => { x = clamp(x); return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
+const out = x => 1 - Math.pow(1 - clamp(x), 3);
+const lerp = (a, b, p) => a + (b - a) * p;
+const $ = id => document.getElementById(id);
+
+// hit_count series: noisy baseline near 7.9, then the drop to 2.0
+const pts = [];
+for (let i = 0; i <= 60; i++) {
+  const x = i / 60;
+  const base = 7.9 + 0.18 * Math.sin(i * 1.7) + 0.1 * Math.cos(i * 0.9);
+  const v = x < 0.55 ? base : lerp(base, 2.0 + 0.08 * Math.sin(i * 2.1), clamp((x - 0.55) / 0.08));
+  pts.push([x * 1560 + 20, 430 - (v / 9) * 380]);
+}
+const fullPath = "M" + pts.map(p => p[0].toFixed(1) + " " + p[1].toFixed(1)).join(" L");
+$("line").setAttribute("d", fullPath);
+const pathLen = $("line").getTotalLength();
+$("line").style.strokeDasharray = pathLen;
+// the red overlay starts where the series leaves its baseline
+const cut = 33;
+$("fall").setAttribute("d", "M" + pts.slice(cut).map(p => p[0].toFixed(1) + " " + p[1].toFixed(1)).join(" L"));
+const fallLen = $("fall").getTotalLength();
+$("fall").style.strokeDasharray = fallLen;
+const tmp = document.createElementNS("http://www.w3.org/2000/svg", "path");
+tmp.setAttribute("d", "M" + pts.slice(0, cut + 1).map(p => p[0] + " " + p[1]).join(" L"));
+const fallStart = tmp.getTotalLength();
+
+// camera: show rect [x, y, w, h] of the image (in image pixels) inside the frame
+function camera(camId, a, b, p) {
+  const cam = $(camId), img = cam.querySelector(".stage");
+  const W = cam.clientWidth, H = cam.clientHeight;
+  const r = a.map((v, i) => lerp(v, b[i], p));
+  const s = Math.min(W / r[2], H / r[3]);
+  const ox = (W - r[2] * s) / 2 - r[0] * s, oy = (H - r[3] * s) / 2 - r[1] * s;
+  img.style.transform = `translate(${ox}px, ${oy}px) scale(${s})`;
+}
+
+const CARDS = [
+  ["1", "Prompt shields", "on every tool result"],
+  ["2", "D6 judges", "every write first"],
+  ["3", "APIM policy", "no merge, no push to main"],
+  ["4", "Human review", "branch protection"],
+];
+$("cards").innerHTML = CARDS.map((c, i) =>
+  `<div class="card" id="card${i}" style="left:${160 + i * 400}px;top:380px">
+     <div class="n">${c[0]}</div><div class="t">${c[1]}</div><div class="s">${c[2]}</div></div>`).join("");
+
+function sceneAlpha(i, t) {
+  const [a, b] = S[i];
+  if (t < a - FADE || t > b + FADE) return 0;
+  // stagger: the old scene leaves in the first half of the fade, the new arrives in the second
+  const inP = clamp((t - a) / FADE), outP = clamp((b - t) / FADE);
+  if (i === 0) return t < b ? 1 : outP;
+  if (i === S.length - 1) return inP;
+  return Math.min(inP, outP);
+}
+
+window.renderAt = function (t) {
+  S.forEach((_, i) => {
+    const el = $("s" + (i + 1));
+    const al = sceneAlpha(i, t);
+    el.style.opacity = al;
+    el.style.transform = `translateY(${(1 - out(al)) * 18}px)`;
+  });
+
+  // 1 hook
+  const h = clamp((t - 0.1) / 0.6);
+  $("s1h").style.opacity = out(h);
+  $("s1h").style.transform = `translateY(${(1 - out(h)) * 30}px)`;
+  const draw = ease((t - 0.5) / 1.9);
+  $("line").style.strokeDashoffset = pathLen * (1 - draw);
+  const end = $("line").getPointAtLength(pathLen * draw);
+  $("dot").setAttribute("cx", end.x); $("dot").setAttribute("cy", end.y);
+  $("dot").setAttribute("opacity", draw > 0.02 && draw < 1.01 ? 1 : 0);
+  const drawn = pathLen * draw;
+  $("fall").style.strokeDashoffset = fallLen - clamp(drawn - fallStart, 0, fallLen);
+  $("dot").setAttribute("fill", drawn > fallStart ? "#dc2626" : "#0a0a0a");
+  $("lab2").setAttribute("x", pts[60][0] - 70); $("lab2").setAttribute("y", pts[60][1] - 30);
+  $("lab2").setAttribute("opacity", clamp((draw - 0.92) / 0.08));
+  const cap = "top_k: 8 → 2 · no error · no alert";
+  const chars = Math.floor(clamp((t - 1.4) / 1.1) * cap.length);
+  $("s1c").textContent = cap.slice(0, chars);
+
+  // 2 reveal: incident feed rises, focus on the top rows
+  const p2 = ease((t - 3.6) / 3.2);
+  camera("cam2", [0, 380, 2880, 1260], [30, 395, 2300, 1005], p2);
+  $("g2").style.opacity = out((t - 4.6) / 0.5);
+
+  // 3 routing: from the three decision charts into D3
+  const p3 = ease((t - 7.4) / 3.2);
+  camera("cam3", [40, 380, 2800, 520], [980, 395, 925, 470], p3);
+
+  // 4 proof: sandbox table, then down to D5 accept
+  // hold on the table (gate passed), then glide down to D5
+  const p4 = ease((t - 12.4) / 1.9);
+  camera("cam4", [1450, 940, 1400, 920], [40, 1890, 1420, 500], p4);
+  $("g4").style.opacity = out((t - 11.5) / 0.4) * (1 - clamp((t - 12.6) / 0.4));
+
+  // 5 safety: cards light up in order, counter runs to 55
+  CARDS.forEach((_, i) => {
+    const on = t > 15.0 + i * 0.42;
+    $("card" + i).classList.toggle("on", on);
+    const ap = clamp((t - 14.75 - i * 0.12) / 0.4);
+    $("card" + i).style.opacity = out(ap);
+    $("card" + i).style.transform = `translateY(${(1 - out(ap)) * 24}px)`;
+  });
+  $("cnt").textContent = Math.round(55 * ease((t - 15.0) / 1.7));
+
+  // 6 outro
+  const v = clamp((t - 18.1) / 0.6), st = clamp((t - 18.6) / 0.6), u = clamp((t - 19.0) / 0.6);
+  $("verbs").style.opacity = out(v); $("stats").style.opacity = out(st); $("url").style.opacity = out(u);
+};
+
+window.ready = Promise.all([document.fonts.ready, ...[...document.images].map(i => i.decode())]);
+renderAt(0);
+</script>
+</body>
+</html>

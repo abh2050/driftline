@@ -3,6 +3,10 @@
 import { Bar, BarChart, CartesianGrid, Cell, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import type { Decision } from "@/lib/types";
 
+// The chosen option stands out; the rest stay readable but quiet.
+const CHOSEN = "#2563eb";
+const OTHER = "#cbd5e1";
+
 const TITLES: Record<string, string> = {
   D1: "Is it real?",
   D2: "Severity",
@@ -33,11 +37,11 @@ export function DecisionChart({ type, decision }: { type: string; decision: Deci
           <BarChart data={data} layout="vertical" margin={{ left: 16, right: 16 }}>
             <CartesianGrid horizontal={false} strokeDasharray="3 3" />
             <XAxis type="number" domain={[0, 1]} tickCount={6} />
-            <YAxis type="category" dataKey="option" width={90} />
+            <YAxis type="category" dataKey="option" width={96} interval={0} tick={{ fontSize: 12 }} />
             <Tooltip formatter={(v) => Number(v).toFixed(3)} />
             <Bar dataKey="score" isAnimationActive={false}>
               {data.map((d) => (
-                <Cell key={d.option} fill={d.option === decision.chosen ? "var(--chart-1)" : "var(--chart-3)"} />
+                <Cell key={d.option} fill={d.option === decision.chosen ? CHOSEN : OTHER} />
               ))}
             </Bar>
           </BarChart>

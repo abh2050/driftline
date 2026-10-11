@@ -28,6 +28,7 @@ from azure.cosmos.aio import CosmosClient
 from azure.identity.aio import DefaultAzureCredential
 
 from evals.foundry_upload import upload
+from evals.trends import publish
 from scripts.replay import start as start_replay
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -365,5 +366,7 @@ async def run(
         "foundry_evaluation": studio,
         "finished_at": datetime.now(UTC).isoformat(),
     }
-    print(write_report(summary, rows, meta))
+    path = write_report(summary, rows, meta)
+    publish("layer2b", run_id, summary, path.name)
+    print(path)
     return summary

@@ -130,7 +130,7 @@ module dcr 'modules/dcr.bicep' = {
     tags: tags
     workspaceName: monitoring.outputs.workspaceName
     dceId: monitoring.outputs.dceId
-    writers: [sp(ids.router.principalId), me]
+    writers: concat([sp(ids.router.principalId), me], empty(ciPrincipalId) ? [] : [sp(ciPrincipalId)])
   }
 }
 
@@ -293,6 +293,31 @@ module apim 'modules/apim.bicep' = {
     publisherEmail: first(budgetContactEmails)
     sku: apimSku
   }
+}
+
+module alerts 'modules/alerts.bicep' = {
+  scope: rg
+  name: 'alerts'
+  params: {
+    location: location
+    prefix: prefix
+    tags: tags
+    workspaceId: monitoring.outputs.workspaceId
+    amwId: monitoring.outputs.amwId
+    emails: budgetContactEmails
+  }
+  dependsOn: [dcr]
+}
+
+module workbook 'modules/workbook.bicep' = {
+  scope: rg
+  name: 'workbook'
+  params: {
+    location: location
+    tags: tags
+    workspaceId: monitoring.outputs.workspaceId
+  }
+  dependsOn: [dcr]
 }
 
 module budget 'modules/budget.bicep' = {
@@ -866,6 +891,7 @@ output GITHUB_MCP_URL string = apimMcp.outputs.githubMcpEndpoint
 output KQL_MCP_URL string = apimMcp.outputs.kqlMcpEndpoint
 output OPS_MCP_URL string = apimMcp.outputs.opsMcpEndpoint
 output CONSOLE_URL string = 'https://${consoleApp.outputs.fqdn}'
+output WORKBOOK_ID string = workbook.outputs.id
 output OPS_API_URL string = 'https://${opsApi.outputs.fqdn}'
 output SERVICE_IDENTITIES array = [for s in concat(services, agents): {
   service: s

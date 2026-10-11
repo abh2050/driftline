@@ -15,7 +15,7 @@ export default defineConfig({
     {
       command: `node tests/mock-ops.mjs`,
       url: `http://localhost:${mockPort}/healthz`,
-      env: { MOCK_OPS_PORT: String(mockPort) },
+      env: { MOCK_OPS_PORT: String(mockPort), MOCK_DATA: process.env.MOCK_DATA ?? "" },
       reuseExistingServer: !process.env.CI,
     },
     {

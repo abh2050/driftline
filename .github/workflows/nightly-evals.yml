@@ -35,6 +35,9 @@ jobs:
       FOUNDRY_ENDPOINT: ${{ vars.FOUNDRY_ENDPOINT }}
       FOUNDRY_PROJECT_ENDPOINT: ${{ vars.FOUNDRY_PROJECT_ENDPOINT }}
       AZURE_TENANT_ID: ${{ vars.AZURE_TENANT_ID }}
+      # eval summaries to DriftlineEvals_CL for the workbook's trends view
+      DCE_LOGS_ENDPOINT: ${{ vars.DCE_LOGS_ENDPOINT }}
+      DECISIONS_DCR_IMMUTABLE_ID: ${{ vars.DECISIONS_DCR_IMMUTABLE_ID }}
     steps:
       - uses: actions/checkout@v7.0.1
       - uses: astral-sh/setup-uv@v10.1.0

@@ -1,0 +1,21 @@
+{
+ "hero.jpg": {
+  "asset": "hero.jpg",
+  "model": "higgsfield-ai/soul/standard",
+  "prompt": "Cinematic abstract visualization of a monitoring signal: a single thin luminous electric-blue line of light streams left to right across a deep navy-black void, runs level, then sags sharply downward glowing warm red where it breaks, then rises back to level in clean blue. Fine glowing particles and faint grid lines recede into depth, soft volumetric haze, shallow depth of field, premium technology launch aesthetic, minimal, high contrast, lots of empty dark space on the left for a headline, no text, no letters, no logos",
+  "request_id": "9063f151-012c-48c4-88f5-5739d59b1401",
+  "source_url": "https://d3u0tzju9qaucj.cloudfront.net/db289e2a-b3ba-4c8b-9013-4890a356ae53/3eb840af-74cf-44a7-b241-ac0f78b9c76c.png"
+ },
+ "hero-loop.mp4": {
+  "asset": "hero-loop.mp4",
+  "model": "kling-video/v2.5-turbo/pro/image-to-video",
+  "prompt": "Slow, elegant camera drift. The luminous line of light flows continuously left to right, particles drift gently, the red break pulses softly then heals into blue. Subtle, smooth, seamless ambient motion, no cuts, no text",
+  "request_id": "a940fdf5-d74e-47d4-b4ed-14866e32f722"
+ },
+ "safety.jpg": {
+  "asset": "safety.jpg",
+  "model": "higgsfield-ai/soul/standard",
+  "prompt": "Abstract premium tech visual: four translucent layered glass panels in a row, each glowing faint blue, a single red spark trying to pass through and being stopped at the panels, deep navy-black background, soft volumetric light, minimal, no text, no letters",
+  "request_id": "4369339c-bc09-4d84-a8a1-1bf1d7efdbf8"
+ }
+}
