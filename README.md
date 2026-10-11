@@ -115,7 +115,7 @@ Sharpening the D3 and D4 rubrics against live failures moved gpt-5-mini's routin
 
 Prompt shields alone caught only 10% of the poisoned documents, which is why the other layers exist. [Full report](evals/reports/2026-10-10-layer3.md)
 
-<p align="center"><img src="docs/site/diagrams/security.png" alt="Who can write to the repository" width="85%"></p>
+<p align="center"><img src="docs/site/diagrams/security.png" alt="Who can write to the repository" width="70%"></p>
 
 ## The console
 
@@ -134,7 +134,7 @@ Next.js on Container Apps behind Entra sign-in, with no client secret (a managed
 
 ## Architecture
 
-<p align="center"><img src="docs/site/diagrams/architecture.png" alt="Driftline on Azure" width="80%"></p>
+<p align="center"><img src="docs/site/diagrams/architecture.png" alt="Driftline on Azure" width="62%"></p>
 
 - **Zero keys.** Every service runs under its own managed identity, and so does each of the seven agents, so the MCP gateway can tell them apart and enforce per-agent tool allowlists. CI signs in with GitHub OIDC. The only secret is the GitHub App key, held in Key Vault and readable by one identity.
 - **One trace per incident.** OpenTelemetry flows through a collector (tail sampling, span metrics, a noise filter) into Log Analytics and Application Insights. A workbook shows the incident timeline, trace waterfall, agent and model latency, router confidence, cost per incident and eval trends. Alerts cover the router p95 SLO, escalation rate, collector drops and budget.
