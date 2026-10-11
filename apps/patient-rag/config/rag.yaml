@@ -6,7 +6,7 @@ top_k: 8                    # pinned by Driftline inc-20261010201141-b0cee7
 embedding_deployment: text-embedding-3-small
 embedding_dimensions: 1536
 chat_deployment: gpt-4.1-mini
-prompt_version: v3
+prompt_version: v3          # pinned by Driftline inc-20261010203241-e63293
 reranker_enabled: false
 reranker_deployment: cohere-rerank-fast
 rerank_candidates: 20      # vector hits fetched before reranking down to top_k
